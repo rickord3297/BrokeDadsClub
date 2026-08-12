@@ -1,6 +1,6 @@
 import { createPublicClient } from "@/lib/supabase/public";
 
-export type ProductArt = "tee" | "mug" | "cap" | "sticker" | "hoodie";
+export type ProductArt = "tee" | "mug" | "cap" | "sticker" | "hoodie" | "patch";
 
 export type Product = {
   id: string;
@@ -10,10 +10,36 @@ export type Product = {
   price_cents: number;
   category: string;
   art: ProductArt;
+  image?: string;
+  image_fit?: "cover" | "contain";
   active: boolean;
 };
 
 export const seedProducts: Product[] = [
+  {
+    id: "prod_club_patch",
+    slug: "club-patch",
+    name: "Castle Patch",
+    description:
+      "The official club crest. Navy, tan, and a castle you cannot actually afford. Iron-on or sew it to the jacket that has seen every school drop-off.",
+    price_cents: 1200,
+    category: "Gear",
+    art: "patch",
+    image: "/brand/club-patch.png",
+    active: true,
+  },
+  {
+    id: "prod_stripe_patch",
+    slug: "candy-stripe-patch",
+    name: "Candy-Stripe Castle Patch",
+    description:
+      "Same club, louder border. Teal field, copper candy-stripe merrow, puff-white letters. Sew it on the jacket the theme park never saw a dime from.",
+    price_cents: 1200,
+    category: "Gear",
+    art: "patch",
+    image: "/brand/club-patch-stripe.png",
+    active: true,
+  },
   {
     id: "prod_club_tee",
     slug: "club-tee",
@@ -23,6 +49,19 @@ export const seedProducts: Product[] = [
     price_cents: 2800,
     category: "Apparel",
     art: "tee",
+    active: true,
+  },
+  {
+    id: "prod_block_castle_tee",
+    slug: "block-castle-tee",
+    name: "Block Castle Tee",
+    description:
+      "Toy blocks, toy cars, pacifiers, and a pile of money you no longer have. Soft cotton, black tee, the whole dad economy on the chest.",
+    price_cents: 2800,
+    category: "Apparel",
+    art: "tee",
+    image: "/brand/block-castle-tee.png",
+    image_fit: "contain",
     active: true,
   },
   {
@@ -91,7 +130,9 @@ export async function getProducts(): Promise<Product[]> {
   if (supabase) {
     const { data, error } = await supabase
       .from("products")
-      .select("id, slug, name, description, price_cents, category, art, active")
+      .select(
+        "id, slug, name, description, price_cents, category, art, image, image_fit, active",
+      )
       .eq("active", true)
       .order("price_cents", { ascending: true });
 

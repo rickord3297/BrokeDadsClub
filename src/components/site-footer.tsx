@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ClubMark } from "@/components/club-mark";
+import { ClubLogo } from "@/components/club-logo";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { site } from "@/lib/site";
 
@@ -9,7 +9,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[1.2fr_0.8fr]">
         <div>
           <div className="flex items-center gap-3">
-            <ClubMark className="h-9 w-9" />
+            <ClubLogo size={64} className="shrink-0 bg-paper" />
             <p className="font-stamp text-2xl uppercase tracking-[0.14em]">
               {site.name}
             </p>

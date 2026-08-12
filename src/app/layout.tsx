@@ -34,6 +34,11 @@ export const metadata: Metadata = {
     url: site.url,
     siteName: site.name,
     type: "website",
+    images: ["/brand/club-logo.png"],
+  },
+  icons: {
+    icon: "/brand/club-logo.png",
+    apple: "/brand/club-logo.png",
   },
 };
 

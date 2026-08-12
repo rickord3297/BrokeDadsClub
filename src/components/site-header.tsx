@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { ClubMark } from "@/components/club-mark";
+import { ClubLogo } from "@/components/club-logo";
 import { useCart } from "@/components/cart-provider";
+import { site } from "@/lib/site";
 
 const nav = [
   { href: "/guides", label: "Guides" },
@@ -19,13 +20,13 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-rule/80 bg-paper/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="flex items-center gap-3 text-ink">
-          <ClubMark className="h-9 w-9 text-pine" />
+          <ClubLogo size={64} priority className="shrink-0" />
           <span className="leading-tight">
             <span className="block font-stamp text-[1.35rem] uppercase tracking-[0.12em]">
               Broke Dads Club
             </span>
-            <span className="hidden text-xs text-ink-soft sm:block">
-              Est. whenever. Dues: whatever you can spare.
+            <span className="hidden text-xs font-medium tracking-wide text-rust sm:block">
+              {site.tagline}
             </span>
           </span>
         </Link>

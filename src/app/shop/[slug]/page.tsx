@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AddToCartButton } from "@/components/add-to-cart-button";
-import { ProductArt } from "@/components/product-art";
+import { ProductMedia } from "@/components/product-media";
 import { formatMoney } from "@/lib/format";
 import { getProduct, getProducts } from "@/lib/products";
 
@@ -29,8 +29,8 @@ export default async function ProductPage({
 
   return (
     <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2">
-      <div className="overflow-hidden rounded-3xl border border-rule">
-        <ProductArt art={product.art} />
+      <div className="overflow-hidden rounded-3xl border border-rule bg-paper-2">
+        <ProductMedia product={product} />
       </div>
       <div className="flex flex-col justify-center">
         <p className="text-xs uppercase tracking-[0.18em] text-rust">

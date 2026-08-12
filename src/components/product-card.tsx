@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ProductArt } from "@/components/product-art";
+import { ProductMedia } from "@/components/product-media";
 import { formatMoney } from "@/lib/format";
 import type { Product } from "@/lib/products";
 
@@ -9,8 +9,8 @@ export function ProductCard({ product }: { product: Product }) {
       href={`/shop/${product.slug}`}
       className="group overflow-hidden rounded-2xl border border-rule bg-paper-2"
     >
-      <div className="aspect-square overflow-hidden">
-        <ProductArt art={product.art} />
+      <div className="aspect-square overflow-hidden bg-paper">
+        <ProductMedia product={product} />
       </div>
       <div className="space-y-1 p-4">
         <p className="text-xs uppercase tracking-[0.16em] text-ink-soft">

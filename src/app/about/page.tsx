@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
@@ -12,6 +13,13 @@ export default function AboutPage() {
     <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
       <p className="text-xs uppercase tracking-[0.18em] text-rust">About</p>
       <h1 className="mt-3 font-display text-5xl">You&apos;re not the only one doing the math.</h1>
+      <Image
+        src="/brand/club-logo.png"
+        alt="Broke Dads Club crest"
+        width={240}
+        height={240}
+        className="mx-auto my-8"
+      />
       <div className="prose-guide mt-8">
         <p>
           {site.name} is for dads who love their kids more than their bank
@@ -23,7 +31,9 @@ export default function AboutPage() {
           The site does two jobs. The <Link href="/guides">guides</Link> are the
           reason to show up: groceries, money talks, cheap dates, work that
           fits around bedtime. The <Link href="/shop">shop</Link> is how we
-          keep those guides free and the lights on.
+          keep those guides free and the lights on. The crest — castle, crowns,
+          and a drawbridge — is the joke and the membership card: family magic
+          costs a fortune, and we are still in the club.
         </p>
         <h2>What we are not</h2>
         <p>

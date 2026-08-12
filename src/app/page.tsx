@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { GuideCard } from "@/components/guide-card";
 import { ProductCard } from "@/components/product-card";
 import { getGuides } from "@/lib/guides";
-import { getProducts } from "@/lib/products";
+import { getProducts, type Product } from "@/lib/products";
 import { site } from "@/lib/site";
 
 export default async function Home() {
@@ -43,27 +44,24 @@ export default async function Home() {
             </div>
           </div>
 
-          <aside className="rounded-3xl border border-rule bg-paper-2 p-6 sm:p-8">
-            <p className="font-stamp text-sm uppercase tracking-[0.2em] text-pine">
-              This week&apos;s mix
+          <aside className="flex flex-col items-center justify-center text-center">
+            <Image
+              src="/brand/club-logo.png"
+              alt="Broke Dads Club crest — castle, crowns, and the club name"
+              width={420}
+              height={420}
+              priority
+              className="h-auto w-full max-w-[380px]"
+            />
+            <p className="mt-3 max-w-xs text-sm text-ink-soft">
+              The official crest. A castle you cannot afford, and a club you can.
             </p>
-            <ul className="mt-6 space-y-5">
-              {[
-                ["01", "Money", "Feed a family without the shame spiral."],
-                ["02", "Time", "Date night that doesn't need a sitter and a second mortgage."],
-                ["03", "Gear", "Merch that pays for the next article."],
-              ].map(([num, label, copy]) => (
-                <li key={num} className="flex gap-4">
-                  <span className="font-stamp text-2xl text-gold">{num}</span>
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.16em] text-ink-soft">
-                      {label}
-                    </p>
-                    <p className="mt-1 font-display text-xl leading-snug">{copy}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <Link
+              href="/shop/club-patch"
+              className="mt-3 text-sm font-medium text-pine hover:text-rust"
+            >
+              Get the patch →
+            </Link>
           </aside>
         </div>
       </section>
@@ -97,9 +95,22 @@ export default async function Home() {
             </Link>
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {products.slice(0, 4).map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+            {[
+              products.find((product) => product.slug === "club-patch"),
+              products.find((product) => product.slug === "candy-stripe-patch"),
+              products.find((product) => product.slug === "block-castle-tee"),
+              ...products.filter(
+                (product) =>
+                  product.slug !== "club-patch" &&
+                  product.slug !== "candy-stripe-patch" &&
+                  product.slug !== "block-castle-tee",
+              ),
+            ]
+              .filter((product): product is Product => product != null)
+              .slice(0, 4)
+              .map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
           </div>
         </div>
       </section>
