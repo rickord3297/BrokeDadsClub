@@ -1,6 +1,8 @@
 # Broke Dads Club
 
-Content site + shop for [brokedadsclub.com](https://brokedadsclub.com).
+eCommerce and content platform for [brokedadsclub.com](https://brokedadsclub.com).
+
+Repo: [github.com/rickord3297/BrokeDadsClub](https://github.com/rickord3297/BrokeDadsClub)
 
 - **Guides** live in `content/guides` as Markdown (edit in Git / Cursor).
 - **Products, subscribers, and orders** live in Supabase when you connect it.
@@ -21,13 +23,10 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## 1. GitHub
 
-Create an empty GitHub repo, then from this folder:
+This project is already connected to `rickord3297/BrokeDadsClub`. After local commits:
 
 ```bash
-git add .
-git commit -m "Initial Broke Dads Club site"
-git remote add origin git@github.com:YOUR_USER/BrokeDadsClub.git
-git push -u origin main
+git push origin main
 ```
 
 ## 2. Supabase
@@ -53,7 +52,7 @@ Prices are created on the fly at checkout. You do not need Stripe product IDs fo
 
 ## 4. Vercel
 
-1. Import the GitHub repo.
+1. Import [rickord3297/BrokeDadsClub](https://github.com/rickord3297/BrokeDadsClub).
 2. Add the same env vars as `.env.example`.
 3. Set `NEXT_PUBLIC_SITE_URL` to `https://brokedadsclub.com`.
 4. Deploy.
