@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f3ede3;
+  --paper-2: #ebe3d4;
+  --ink: #1c1915;
+  --ink-soft: #5c5348;
+  --pine: #1f3d32;
+  --pine-2: #2f5a48;
+  --rust: #c45c26;
+  --rust-2: #a4491c;
+  --gold: #c9a15b;
+  --rule: #d4c8b4;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-pine: var(--pine);
+  --color-pine-2: var(--pine-2);
+  --color-rust: var(--rust);
+  --color-rust-2: var(--rust-2);
+  --color-gold: var(--gold);
+  --color-rule: var(--rule);
+  --font-sans: var(--font-figtree);
+  --font-display: var(--font-fraunces);
+  --font-stamp: var(--font-oswald);
+}
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(201, 161, 91, 0.18), transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, rgba(31, 61, 50, 0.08), transparent 50%),
+    var(--paper);
+  min-height: 100%;
+}
+
+::selection {
+  background: var(--pine);
+  color: var(--paper);
+}
+
+.prose-guide h2 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 1.65rem;
+  line-height: 1.25;
+  margin: 2.25rem 0 0.75rem;
+}
+
+.prose-guide h3 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 1.25rem;
+  margin: 1.75rem 0 0.5rem;
+}
+
+.prose-guide p,
+.prose-guide li {
+  color: var(--ink);
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.prose-guide p {
+  margin: 0 0 1.15rem;
+}
+
+.prose-guide ul {
+  margin: 0 0 1.25rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.prose-guide li {
+  margin-bottom: 0.4rem;
+}
+
+.prose-guide strong {
+  font-weight: 650;
+}
