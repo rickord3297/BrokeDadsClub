@@ -1,19 +1,24 @@
 "use client";
 
 import { useId, useState } from "react";
+import { useRouter } from "next/navigation";
 
 type NewsletterFormProps = {
   variant?: "footer" | "article";
   submitLabel?: string;
   source?: string;
+  /** After a successful signup, send them to the lead magnet. */
+  successHref?: string;
 };
 
 export function NewsletterForm({
   variant = "footer",
   submitLabel = "Get Free Weekly Tactics",
   source = "footer",
+  successHref,
 }: NewsletterFormProps) {
   const inputId = useId();
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">(
     "idle",
@@ -41,8 +46,16 @@ export function NewsletterForm({
     }
 
     setStatus("done");
-    setMessage(payload.message ?? "You're in. Check your inbox mindset: Monday tactics incoming.");
     setEmail("");
+    if (successHref) {
+      setMessage("You're in. Opening your checklist…");
+      router.push(successHref);
+      return;
+    }
+    setMessage(
+      payload.message ??
+        "You're in. Check your inbox mindset: Monday tactics incoming.",
+    );
   }
 
   return (

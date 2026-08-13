@@ -14,7 +14,7 @@ export function SiteFooter() {
               {site.name}
             </p>
           </div>
-          <p className="mt-4 max-w-md text-sm leading-6 text-paper/80">
+          <p className="mt-4 max-w-md text-sm leading-6 text-paper/90">
             Guides for the money, the kids, and the long haul, plus merch that
             funds the next article. No shame. No hustle-bro nonsense.
           </p>
@@ -24,24 +24,34 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <p className="font-display text-xl">Get free weekly tactics</p>
-          <p className="mt-2 text-sm text-paper/75">
-            One email a week. Money, kids, time. No hustle spam. Unsubscribe
-            whenever.
+          <p className="font-display text-xl">Get the checklist + weekly tactics</p>
+          <p className="mt-2 text-sm leading-6 text-paper/90">
+            Free $47 grocery-week checklist when you join. One email a week after
+            that. Unsubscribe whenever.
           </p>
           <div className="mt-4">
-            <NewsletterForm source="footer" />
+            <NewsletterForm
+              source="footer"
+              submitLabel="Send me the checklist"
+              successHref="/resources/grocery-week-checklist?joined=1"
+            />
           </div>
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4 text-xs text-paper/60 sm:px-6">
+      <div className="border-t border-white/15">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4 text-sm text-paper/85 sm:px-6">
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <div className="flex gap-4">
-            <Link href="/guides">Guides</Link>
-            <Link href="/shop">Shop</Link>
-            <Link href="/about">About</Link>
+          <div className="flex gap-4 font-medium">
+            <Link href="/guides" className="hover:text-gold">
+              Guides
+            </Link>
+            <Link href="/shop" className="hover:text-gold">
+              Shop
+            </Link>
+            <Link href="/about" className="hover:text-gold">
+              About
+            </Link>
           </div>
         </div>
       </div>

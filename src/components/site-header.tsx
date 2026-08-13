@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 const nav = [
   { href: "/guides", label: "Guides" },
   { href: "/shop", label: "Shop" },
-  { href: "/about", label: "The Club" },
+  { href: "/about", label: "About" },
 ];
 
 export function SiteHeader() {

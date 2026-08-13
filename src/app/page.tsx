@@ -7,8 +7,19 @@ import { getGuides } from "@/lib/guides";
 import { getProducts } from "@/lib/products";
 import { site } from "@/lib/site";
 
+const productBadges: Record<string, string> = {
+  "club-patch": "Club Favorite",
+  "block-castle-tee": "Best Seller",
+  "candy-stripe-patch": "Fan Pick",
+};
+
+const productOrder = ["club-patch", "block-castle-tee", "candy-stripe-patch"];
+
 export default async function Home() {
   const [guides, products] = await Promise.all([getGuides(), getProducts()]);
+  const featuredProducts = productOrder
+    .map((slug) => products.find((product) => product.slug === slug))
+    .filter((product): product is NonNullable<typeof product> => product != null);
 
   return (
     <div>
@@ -27,7 +38,8 @@ export default async function Home() {
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-ink-soft">
               {site.name} is a content desk for dads doing the math out loud.
-              Practical guides first. Optional club goods later. {site.tagline}
+              Practical guides first. Club goods that fund the next one.{" "}
+              {site.tagline}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -37,12 +49,22 @@ export default async function Home() {
                 Read the guides
               </Link>
               <Link
-                href="/resources/grocery-week-checklist"
-                className="rounded-full border border-ink px-5 py-3 text-sm font-semibold hover:bg-ink hover:text-paper"
+                href="/shop"
+                className="rounded-full bg-rust px-5 py-3 text-sm font-semibold text-paper hover:bg-rust-2"
               >
-                Free grocery checklist
+                Shop the club
               </Link>
             </div>
+            <p className="mt-4 text-sm text-ink-soft">
+              Or grab the{" "}
+              <Link
+                href="/resources/grocery-week-checklist"
+                className="font-medium text-pine underline decoration-rule underline-offset-2 hover:text-rust"
+              >
+                free $47 grocery-week checklist
+              </Link>
+              .
+            </p>
           </div>
 
           <aside className="flex flex-col items-center justify-center text-center">
@@ -88,36 +110,45 @@ export default async function Home() {
         <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
           <div>
             <p className="text-xs uppercase tracking-[0.18em] text-rust">
-              Sunday dispatch
+              Free starter kit
             </p>
             <h2 className="mt-2 font-display text-4xl">
-              Free weekly tactics. No hustle spam.
+              Get the grocery-week checklist + weekly tactics
             </h2>
             <p className="mt-4 max-w-xl text-lg leading-8 text-ink-soft">
-              One email a week: money, kids, time. Prefer printables first? Grab the{" "}
+              Sign up and we&apos;ll point you to the printable{" "}
               <Link
                 href="/resources/grocery-week-checklist"
                 className="font-medium text-pine hover:text-rust"
               >
                 $47 grocery-week checklist
               </Link>
-              .
+              . Then one email a week: money, kids, time. No hustle spam.
             </p>
           </div>
           <div>
-            <NewsletterForm variant="article" source="homepage" />
+            <NewsletterForm
+              variant="article"
+              source="homepage-lead-magnet"
+              submitLabel="Send me the checklist"
+              successHref="/resources/grocery-week-checklist?joined=1"
+            />
+            <p className="mt-3 text-xs leading-5 text-ink-soft">
+              Instant checklist access when you join. Unsubscribe whenever.
+            </p>
           </div>
         </div>
       </section>
 
-      {products.length > 0 ? (
+      {featuredProducts.length > 0 ? (
         <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <div className="flex items-end justify-between gap-4">
             <div>
               <p className="text-xs uppercase tracking-[0.18em] text-rust">Shop</p>
-              <h2 className="mt-2 font-display text-4xl">Optional club goods</h2>
+              <h2 className="mt-2 font-display text-4xl">Club goods</h2>
               <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
-                Merch funds the desk. Skip it when the grocery list wins.
+                Proceeds fund independent tactics and guides for parents. Wear the
+                club. Keep the desk open.
               </p>
             </div>
             <Link href="/shop" className="text-sm font-medium text-pine hover:text-rust">
@@ -125,8 +156,12 @@ export default async function Home() {
             </Link>
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {products.slice(0, 3).map((product) => (
-              <ProductCard key={product.id} product={product} />
+            {featuredProducts.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                badge={productBadges[product.slug]}
+              />
             ))}
           </div>
         </section>
