@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { GuideCard } from "@/components/guide-card";
+import { NewsletterForm } from "@/components/newsletter-form";
 import { ProductCard } from "@/components/product-card";
 import { getGuides } from "@/lib/guides";
 import { getProducts } from "@/lib/products";
@@ -25,8 +26,8 @@ export default async function Home() {
               Still showing up.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-ink-soft">
-              {site.name} is two things on purpose: a content desk with useful
-              dad tactics, and a shop that funds the work. {site.tagline}
+              {site.name} is a content desk for dads doing the math out loud.
+              Practical guides first. Optional club goods later. {site.tagline}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -36,10 +37,10 @@ export default async function Home() {
                 Read the guides
               </Link>
               <Link
-                href="/shop"
+                href="/resources/grocery-week-checklist"
                 className="rounded-full border border-ink px-5 py-3 text-sm font-semibold hover:bg-ink hover:text-paper"
               >
-                Shop the club
+                Free grocery checklist
               </Link>
             </div>
           </div>
@@ -57,10 +58,10 @@ export default async function Home() {
               The official crest. A castle you cannot afford, and a club you can.
             </p>
             <Link
-              href="/shop/club-patch"
+              href="/guides/the-dad-tax"
               className="mt-3 text-sm font-medium text-pine hover:text-rust"
             >
-              Get the patch →
+              Start with the dad tax →
             </Link>
           </aside>
         </div>
@@ -84,11 +85,40 @@ export default async function Home() {
       </section>
 
       <section className="border-y border-rule bg-paper-2/60">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+          <div>
+            <p className="text-xs uppercase tracking-[0.18em] text-rust">
+              Sunday dispatch
+            </p>
+            <h2 className="mt-2 font-display text-4xl">
+              Free weekly tactics. No hustle spam.
+            </h2>
+            <p className="mt-4 max-w-xl text-lg leading-8 text-ink-soft">
+              One email a week: money, kids, time. Prefer printables first? Grab the{" "}
+              <Link
+                href="/resources/grocery-week-checklist"
+                className="font-medium text-pine hover:text-rust"
+              >
+                $47 grocery-week checklist
+              </Link>
+              .
+            </p>
+          </div>
+          <div>
+            <NewsletterForm variant="article" source="homepage" />
+          </div>
+        </div>
+      </section>
+
+      {products.length > 0 ? (
+        <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <div className="flex items-end justify-between gap-4">
             <div>
               <p className="text-xs uppercase tracking-[0.18em] text-rust">Shop</p>
-              <h2 className="mt-2 font-display text-4xl">Club goods</h2>
+              <h2 className="mt-2 font-display text-4xl">Optional club goods</h2>
+              <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
+                Merch funds the desk. Skip it when the grocery list wins.
+              </p>
             </div>
             <Link href="/shop" className="text-sm font-medium text-pine hover:text-rust">
               Full shop →
@@ -99,8 +129,8 @@ export default async function Home() {
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
     </div>
   );
 }

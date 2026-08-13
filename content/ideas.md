@@ -6,14 +6,17 @@
 
 | Idea | Status | Go live | Notes |
 |------|--------|---------|-------|
-| Gas station dinner that still counts as feeding your kids | draft | 2026-09-01 | [`gas-station-dinner.md`](guides/gas-station-dinner.md) |
-| When the other dad’s vacation photos hit | draft | 2026-09-08 | [`when-the-other-dads-vacation-photos-hit.md`](guides/when-the-other-dads-vacation-photos-hit.md) |
+| Gas station dinner that still counts as feeding your kids | scheduled | 2026-09-01 | [`gas-station-dinner.md`](guides/gas-station-dinner.md) |
+| When the other dad’s vacation photos hit | scheduled | 2026-09-08 | [`when-the-other-dads-vacation-photos-hit.md`](guides/when-the-other-dads-vacation-photos-hit.md) |
 | Explaining “we can’t go” without making it a speech | live | 2026-08-12 | [`explaining-we-cant-go.md`](guides/explaining-we-cant-go.md) |
-| The school supply list that quietly wrecks August | draft | 2026-08-20 | [`school-supply-list.md`](guides/school-supply-list.md) |
-| Cheap weekend that isn’t just screen time | draft | 2026-09-22 | [`cheap-weekend-not-just-screens.md`](guides/cheap-weekend-not-just-screens.md) |
-| What to say when someone asks what you do for fun | draft | 2026-09-29 | [`what-do-you-do-for-fun.md`](guides/what-do-you-do-for-fun.md) |
+| The school supply list that quietly wrecks August | scheduled | 2026-08-20 | [`school-supply-list.md`](guides/school-supply-list.md) |
+| Cheap weekend that isn’t just screen time | scheduled | 2026-09-22 | [`cheap-weekend-not-just-screens.md`](guides/cheap-weekend-not-just-screens.md) |
+| What to say when someone asks what you do for fun | scheduled | 2026-09-29 | [`what-do-you-do-for-fun.md`](guides/what-do-you-do-for-fun.md) |
 | Fixing the car vs paying for daycare: picking the lesser disaster | live | 2026-08-12 | [`car-vs-daycare.md`](guides/car-vs-daycare.md) |
 | Birthday party math for kids who notice everything | live | 2026-08-12 | [`birthday-party-math.md`](guides/birthday-party-math.md) |
+| The kid who won't sleep | scheduled | 2026-10-06 | [`the-kid-who-wont-sleep.md`](guides/the-kid-who-wont-sleep.md) |
+| How to handle the early riser | scheduled | 2026-10-13 | [`how-to-handle-the-early-riser.md`](guides/how-to-handle-the-early-riser.md) |
+| Kids who don't listen to Mom | scheduled | 2026-10-20 | [`kids-who-dont-listen-to-mom.md`](guides/kids-who-dont-listen-to-mom.md) |
 | The $47 grocery week | live | 2026-08-04 | `the-47-dollar-grocery-week` |
 | Cheap date night that still feels like a date | live | 2026-07-28 | `cheap-date-night` |
 | The dad tax: why everything costs more | live | 2026-07-21 | `the-dad-tax` |

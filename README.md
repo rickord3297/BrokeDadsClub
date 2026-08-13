@@ -79,11 +79,20 @@ Keep the domain in Route 53. Point it at Vercel; do not move the registrar unles
    - **CNAME** `www` → `cname.vercel-dns.com`
 3. Wait for SSL. Apex and `www` should both serve this app.
 
-Leave any leftover Amplify / S3 / placeholder records out of the way so the new A/CNAME can take over. That is why the domain currently 503s — nothing healthy is answering yet.
+Leave any leftover Amplify / S3 / placeholder records out of the way so the new A/CNAME can take over.
 
 ## What to do next
 
-- Replace seed merch with real photos (Supabase Storage or `/public`).
+### Content / mission (priority)
+- Keep the weekly cadence in [`content/ideas.md`](content/ideas.md) / [`content/DRAFTS.md`](content/DRAFTS.md).
+- Google Search Console: add `https://brokedadsclub.com` → URL prefix or domain property → submit `https://brokedadsclub.com/sitemap.xml`.
+- Vercel → Analytics: enable Web Analytics + Speed Insights if the dashboard still prompts (code is already wired).
+
+### Swag (later)
+- Keep only photo’d SKUs in the shop (already filtered).
+- Add Stripe keys when ready to take real orders (`STRIPE_SECRET_KEY`, webhook secret, publishable key).
 - Hook Printful / Printify when you want print-on-demand fulfillment.
-- Add more guides as `.md` files in `content/guides`.
-- Optional: Supabase Auth for a members area later.
+
+### Optional later
+- Supabase Auth for a members area.
+- More lead magnets after the grocery checklist loop is working.

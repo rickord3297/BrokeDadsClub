@@ -24,12 +24,13 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <p className="font-display text-xl">Get the Sunday dispatch</p>
+          <p className="font-display text-xl">Get free weekly tactics</p>
           <p className="mt-2 text-sm text-paper/75">
-            One email a week. A tactic you can use Monday. Unsubscribe whenever.
+            One email a week. Money, kids, time. No hustle spam. Unsubscribe
+            whenever.
           </p>
           <div className="mt-4">
-            <NewsletterForm />
+            <NewsletterForm source="footer" />
           </div>
         </div>
       </div>
