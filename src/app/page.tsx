@@ -47,7 +47,7 @@ export default async function Home() {
           <aside className="flex flex-col items-center justify-center text-center">
             <Image
               src="/brand/club-logo.png"
-              alt="Broke Dads Club crest — castle, crowns, and the club name"
+              alt="Broke Dads Club crest, castle, crowns, and the club name"
               width={420}
               height={420}
               priority

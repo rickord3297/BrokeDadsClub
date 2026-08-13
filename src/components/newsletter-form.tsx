@@ -1,13 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 
-export function NewsletterForm() {
+type NewsletterFormProps = {
+  variant?: "footer" | "article";
+  submitLabel?: string;
+  source?: string;
+};
+
+export function NewsletterForm({
+  variant = "footer",
+  submitLabel = "Get Free Weekly Tactics",
+  source = "footer",
+}: NewsletterFormProps) {
+  const inputId = useId();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">(
     "idle",
   );
   const [message, setMessage] = useState("");
+
+  const isArticle = variant === "article";
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -17,7 +30,7 @@ export function NewsletterForm() {
     const response = await fetch("/api/subscribe", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ email, source }),
     });
     const payload = (await response.json()) as { message?: string };
 
@@ -28,33 +41,45 @@ export function NewsletterForm() {
     }
 
     setStatus("done");
-    setMessage(payload.message ?? "You're in.");
+    setMessage(payload.message ?? "You're in. Check your inbox mindset: Monday tactics incoming.");
     setEmail("");
   }
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-2 sm:flex-row">
-      <label className="sr-only" htmlFor="newsletter-email">
+    <form onSubmit={onSubmit} className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+      <label className="sr-only" htmlFor={inputId}>
         Email
       </label>
       <input
-        id="newsletter-email"
+        id={inputId}
         type="email"
         required
         value={email}
         onChange={(event) => setEmail(event.target.value)}
         placeholder="dad@email.com"
-        className="h-11 flex-1 rounded-full border border-white/20 bg-white/10 px-4 text-sm text-paper outline-none placeholder:text-paper/50 focus:border-gold"
+        className={
+          isArticle
+            ? "h-11 flex-1 rounded-full border border-rule bg-paper px-4 text-sm text-ink outline-none placeholder:text-ink-soft focus:border-pine"
+            : "h-11 flex-1 rounded-full border border-white/20 bg-white/10 px-4 text-sm text-paper outline-none placeholder:text-paper/50 focus:border-gold"
+        }
       />
       <button
         type="submit"
         disabled={status === "loading"}
-        className="h-11 rounded-full bg-gold px-5 text-sm font-semibold text-ink hover:bg-paper disabled:opacity-60"
+        className={
+          isArticle
+            ? "h-11 rounded-full bg-pine px-5 text-sm font-semibold text-paper hover:bg-pine-2 disabled:opacity-60"
+            : "h-11 rounded-full bg-gold px-5 text-sm font-semibold text-ink hover:bg-paper disabled:opacity-60"
+        }
       >
-        {status === "loading" ? "Joining…" : "Join"}
+        {status === "loading" ? "Sending…" : submitLabel}
       </button>
       {message ? (
-        <p className="basis-full text-sm text-gold">{message}</p>
+        <p
+          className={`basis-full text-sm ${isArticle ? "text-pine" : "text-gold"}`}
+        >
+          {message}
+        </p>
       ) : null}
     </form>
   );

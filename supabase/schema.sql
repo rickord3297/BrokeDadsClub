@@ -17,8 +17,12 @@ create table if not exists public.products (
 create table if not exists public.subscribers (
   id uuid primary key default gen_random_uuid(),
   email text unique not null,
+  source text,
   created_at timestamptz not null default now()
 );
+
+-- If subscribers already exists without source:
+-- alter table public.subscribers add column if not exists source text;
 
 create table if not exists public.orders (
   id uuid primary key default gen_random_uuid(),

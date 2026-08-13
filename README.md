@@ -11,6 +11,13 @@ Repo: [github.com/rickord3297/BrokeDadsClub](https://github.com/rickord3297/Brok
 
 The site runs without Supabase or Stripe. Connect them when you are ready to take real orders and emails.
 
+## Guides
+
+- **Desk:** [`content/ideas.md`](content/ideas.md) — log ideas, set **Go live** dates, track status.
+- **Draft:** in Cursor say **Write a BDC guide from …** (skill: `.cursor/skills/write-bdc-guide`).
+- **Files:** `content/guides/*.md` — use frontmatter `status: draft | scheduled | published` and `publishedAt`.
+- Scheduled posts appear on the go-live date after you push (site rechecks about hourly).
+
 ## Local
 
 ```bash
@@ -31,12 +38,17 @@ git push origin main
 
 ## 2. Supabase
 
-1. Create a project.
-2. SQL editor → paste `supabase/schema.sql` → run.
-3. Copy **Project URL** and **anon public** key into `.env.local` / Vercel.
-4. Copy the **service role** key too (webhook writes orders; never expose it to the browser).
+Project: [Broke Dads Club](https://rbkzgzrdawxlfdbcqpom.supabase.co) (`rbkzgzrdawxlfdbcqpom`)
 
-Until those env vars exist, the shop uses the built-in seed catalog.
+1. Local: copy `.env.example` → `.env.local` and fill `NEXT_PUBLIC_SUPABASE_ANON_KEY` (and optional `SUPABASE_SERVICE_ROLE_KEY` for Stripe order webhooks).
+2. Vercel → Project → **Settings → Environment Variables** (Production):
+   - `NEXT_PUBLIC_SUPABASE_URL` = `https://rbkzgzrdawxlfdbcqpom.supabase.co`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY` = Project Settings → API → `anon` `public`
+   - `SUPABASE_SERVICE_ROLE_KEY` = Project Settings → API → `service_role` (server only; never `NEXT_PUBLIC_`)
+   - `NEXT_PUBLIC_SITE_URL` = `https://brokedadsclub.com`
+3. Redeploy after saving env vars.
+
+Tables already created: `products`, `subscribers`, `orders` (+ seed catalog).
 
 ## 3. Stripe
 

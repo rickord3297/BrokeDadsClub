@@ -4,7 +4,7 @@ import { getProducts } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Shop",
-  description: "Broke Dads Club merch — castle patches, the block-castle tee, hoodies, and gear that fund the guides.",
+  description: "Broke Dads Club merch, castle patches, the block-castle tee, hoodies, and gear that fund the guides.",
 };
 
 export default async function ShopPage() {

@@ -1,15 +1,36 @@
 ---
 title: Cheap date night that still feels like a date
 slug: cheap-date-night
+seoTitle: "Affordable Date Night Ideas at Home (With Kids) | Broke Dads Club"
+description: "Skip the sitter and the second mortgage. A 90-minute at-home date night that still feels like you picked each other."
 excerpt: You do not need a sitter and a second mortgage. You need a closed kitchen, a plan, and 90 minutes that are not about logistics.
 category: Time
 readTime: 5 min
 publishedAt: "2026-07-28"
+status: published
+keywords:
+  - cheap date night ideas with kids
+  - affordable date night ideas at home
+  - date night at home with kids
+  - free date night for parents
+  - budget date night for couples with kids
+related:
+  - cheap-weekend-not-just-screens
+  - what-do-you-do-for-fun
+  - explaining-we-cant-go
+shop:
+  - club-hoodie
+  - broke-mug
+faq:
+  - question: Can you have a real date night without a babysitter?
+    answer: Yes. Close the kitchen, put phones away, and give the kids a simple plan so the adults get 90 focused minutes.
+  - question: What if we only have $20?
+    answer: Split a bakery item, walk, or sit in the car at sunset. The venue matters less than uninterrupted attention.
 ---
 
 Date night dies in the logistics. The second you start pricing a sitter, parking, and a restaurant that takes adults seriously, the couch wins.
 
-Keep the kids. Change the rules.
+Keep the kids. Change the rules. For a whole weekend version of this energy, see [cheap weekend that isn't just screens](/guides/cheap-weekend-not-just-screens).
 
 ## The 90-minute home date
 

@@ -5,7 +5,7 @@ import { getGuides } from "@/lib/guides";
 export const metadata: Metadata = {
   title: "Guides",
   description:
-    "Practical dad guides on money, time, kids, and gear — written for fathers stretching every dollar.",
+    "Practical dad guides on money, time, kids, and gear, written for fathers stretching every dollar.",
 };
 
 export default function GuidesPage() {

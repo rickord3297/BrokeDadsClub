@@ -1,15 +1,36 @@
 ---
 title: Side hustles that don't steal bedtime
 slug: side-hustles-that-dont-steal-bedtime
+seoTitle: "Side Hustles for Dads That Don't Steal Bedtime | Broke Dads Club"
+description: "Extra cash without a second life. Filter gigs like a dad: clear end times, skills you already have, first dollar in 14 days."
 excerpt: Extra money is useful. A second life that makes you a ghost at 7:30 p.m. is not. Filter gigs like a dad, not like a podcast.
 category: Work
 readTime: 6 min
 publishedAt: "2026-07-14"
+status: published
+keywords:
+  - side hustles for dads
+  - side hustle that fits around kids
+  - extra money without losing bedtime
+  - weekend side jobs for fathers
+  - dad friendly side hustles
+related:
+  - car-vs-daycare
+  - the-dad-tax
+  - cheap-date-night
+shop:
+  - club-hoodie
+  - dad-cap
+faq:
+  - question: What side hustles work for dads with kids?
+    answer: "Ones that stop at bedtime: odd jobs with a clear end, selling what you already own, shift-shaped work, or one skill with one offer and a Saturday."
+  - question: How much should a dad side hustle aim for?
+    answer: "Pick a monthly number that changes something real ($150-$200 toward a fund or groceries), then stop stacking hustles once you hit it."
 ---
 
 If a side hustle requires you to become a morning person, a content creator, and a limited-liability corporation before Friday, it is not a side hustle. It is a second job with worse health insurance.
 
-Filter every idea through bedtime.
+Filter every idea through bedtime. If the cash is for an emergency triangle like [car vs daycare](/guides/car-vs-daycare), aim for the minimum that moves the needle, not a brand.
 
 ## The dad filter
 
@@ -31,4 +52,4 @@ Anything that needs a personal brand, a daily post, a course funnel, or "just 20
 
 ## A number to aim at
 
-Pick a monthly number that changes something: $150 toward the sinking fund, $200 off the grocery stress, one car repair. Hit it. Stop adding hustles. Extra money that costs you bedtime is just a more expensive way to be tired.
+Pick a monthly number that changes something: $150 toward the sinking fund, $200 off the grocery stress, one car repair. Hit it. Stop adding hustles. Extra money that costs you bedtime is just a more expensive way to be tired, another face of [the dad tax](/guides/the-dad-tax).

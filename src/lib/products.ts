@@ -113,7 +113,7 @@ export const seedProducts: Product[] = [
 function isProduct(value: unknown): value is Product {
   if (!value || typeof value !== "object") return false;
   const row = value as Record<string, unknown>;
-  return (
+  const baseOk =
     typeof row.id === "string" &&
     typeof row.slug === "string" &&
     typeof row.name === "string" &&
@@ -121,8 +121,18 @@ function isProduct(value: unknown): value is Product {
     typeof row.price_cents === "number" &&
     typeof row.category === "string" &&
     typeof row.art === "string" &&
-    typeof row.active === "boolean"
-  );
+    typeof row.active === "boolean";
+  if (!baseOk) return false;
+
+  if (row.image != null && typeof row.image !== "string") return false;
+  if (row.image_fit != null && row.image_fit !== "cover" && row.image_fit !== "contain") {
+    return false;
+  }
+
+  // Normalize nulls from Postgres into undefined for the Product type.
+  if (row.image == null) delete row.image;
+  if (row.image_fit == null) delete row.image_fit;
+  return true;
 }
 
 export async function getProducts(): Promise<Product[]> {

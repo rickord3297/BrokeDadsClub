@@ -15,7 +15,7 @@ export function SiteFooter() {
             </p>
           </div>
           <p className="mt-4 max-w-md text-sm leading-6 text-paper/80">
-            Guides for the money, the kids, and the long haul — plus merch that
+            Guides for the money, the kids, and the long haul, plus merch that
             funds the next article. No shame. No hustle-bro nonsense.
           </p>
           <p className="mt-6 text-xs uppercase tracking-[0.18em] text-gold">

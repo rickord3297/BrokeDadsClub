@@ -24,15 +24,15 @@ export default function AboutPage() {
         <p>
           {site.name} is for dads who love their kids more than their bank
           account currently reflects. That is not a character flaw. It is a
-          season — sometimes a long one — and it goes better with tactics and
+          season (sometimes a long one), and it goes better with tactics and
           company.
         </p>
         <p>
           The site does two jobs. The <Link href="/guides">guides</Link> are the
           reason to show up: groceries, money talks, cheap dates, work that
           fits around bedtime. The <Link href="/shop">shop</Link> is how we
-          keep those guides free and the lights on. The crest — castle, crowns,
-          and a drawbridge — is the joke and the membership card: family magic
+          keep those guides free and the lights on. The crest (castle, crowns,
+          and a drawbridge) is the joke and the membership card: family magic
           costs a fortune, and we are still in the club.
         </p>
         <h2>What we are not</h2>
