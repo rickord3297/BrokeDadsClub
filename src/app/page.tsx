@@ -3,7 +3,7 @@ import Link from "next/link";
 import { GuideCard } from "@/components/guide-card";
 import { ProductCard } from "@/components/product-card";
 import { getGuides } from "@/lib/guides";
-import { getProducts, type Product } from "@/lib/products";
+import { getProducts } from "@/lib/products";
 import { site } from "@/lib/site";
 
 export default async function Home() {
@@ -94,23 +94,10 @@ export default async function Home() {
               Full shop →
             </Link>
           </div>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              products.find((product) => product.slug === "club-patch"),
-              products.find((product) => product.slug === "candy-stripe-patch"),
-              products.find((product) => product.slug === "block-castle-tee"),
-              ...products.filter(
-                (product) =>
-                  product.slug !== "club-patch" &&
-                  product.slug !== "candy-stripe-patch" &&
-                  product.slug !== "block-castle-tee",
-              ),
-            ]
-              .filter((product): product is Product => product != null)
-              .slice(0, 4)
-              .map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {products.slice(0, 3).map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
           </div>
         </div>
       </section>

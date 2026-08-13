@@ -60,5 +60,5 @@ faq:
 - Audience: stretched dads. Dignity over shame.
 - Tagline energy: *Broke doesn't mean broken.*
 - Dry, practical, specific. No hustle-bro, no 4 a.m. grind, no “just budget better.”
-- Soft shop links only if the user asks.
+- Soft shop links only if the user asks. Do not insert product callouts into guides.
 - **Never use em dashes or en dashes.** They read as fake/AI. Prefer a period, comma, colon, parentheses, or a plain hyphen in ranges (`15-45`, `$150-$200`). For labeled lists write `**Label:** rest` (colon), not a long dash.

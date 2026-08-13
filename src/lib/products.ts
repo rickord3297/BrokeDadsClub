@@ -49,7 +49,7 @@ export const seedProducts: Product[] = [
     price_cents: 2800,
     category: "Apparel",
     art: "tee",
-    active: true,
+    active: false,
   },
   {
     id: "prod_block_castle_tee",
@@ -73,7 +73,7 @@ export const seedProducts: Product[] = [
     price_cents: 4800,
     category: "Apparel",
     art: "hoodie",
-    active: true,
+    active: false,
   },
   {
     id: "prod_cap",
@@ -84,7 +84,7 @@ export const seedProducts: Product[] = [
     price_cents: 2400,
     category: "Apparel",
     art: "cap",
-    active: true,
+    active: false,
   },
   {
     id: "prod_mug",
@@ -95,7 +95,7 @@ export const seedProducts: Product[] = [
     price_cents: 1600,
     category: "Home",
     art: "mug",
-    active: true,
+    active: false,
   },
   {
     id: "prod_stickers",
@@ -106,9 +106,14 @@ export const seedProducts: Product[] = [
     price_cents: 800,
     category: "Gear",
     art: "sticker",
-    active: true,
+    active: false,
   },
 ];
+
+/** Only sell items with real product photos (no placeholder art). */
+function hasProductPhoto(product: Product): boolean {
+  return typeof product.image === "string" && product.image.length > 0;
+}
 
 function isProduct(value: unknown): value is Product {
   if (!value || typeof value !== "object") return false;
@@ -147,11 +152,11 @@ export async function getProducts(): Promise<Product[]> {
       .order("price_cents", { ascending: true });
 
     if (!error && data?.length) {
-      return data.filter(isProduct);
+      return data.filter(isProduct).filter(hasProductPhoto);
     }
   }
 
-  return seedProducts.filter((product) => product.active);
+  return seedProducts.filter((product) => product.active && hasProductPhoto(product));
 }
 
 export async function getProduct(slug: string): Promise<Product | null> {

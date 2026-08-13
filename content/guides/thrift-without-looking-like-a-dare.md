@@ -45,6 +45,6 @@ Leave with a list or leave empty. Browsing hungry is how you bring home a bowlin
 
 ## For you, specifically
 
-Dads often dress like the afterthought in the family photo. One good used chore coat, one pair of jeans that fit, and the [club cap](/shop/dad-cap) will carry more outfits than a drawer of "funny" tees you do not respect.
+Dads often dress like the afterthought in the family photo. One good used chore coat, one pair of jeans that fit, and a cap you respect will carry more outfits than a drawer of "funny" tees you do not respect.
 
 Looking like you meant it is not vanity. It is how you walk into a room without apologizing for your life. The kids are watching that, too.

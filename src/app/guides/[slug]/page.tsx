@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { GuideEmailCta } from "@/components/guide-email-cta";
-import { GuideShopCallout } from "@/components/guide-shop-callout";
 import { RelatedGuides } from "@/components/related-guides";
 import { formatDate } from "@/lib/format";
 import {
@@ -142,11 +141,6 @@ export default async function GuidePage({
         }
       : null;
 
-  const shopSlugs =
-    guide.shop.length > 0
-      ? guide.shop
-      : ["club-patch", "block-castle-tee", "broke-mug"];
-
   return (
     <article className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
       <script
@@ -196,7 +190,6 @@ export default async function GuidePage({
         </section>
       ) : null}
 
-      <GuideShopCallout slugs={shopSlugs} />
       <RelatedGuides guides={related} />
 
       <p className="mt-12 border-t border-rule pt-6 text-sm">
