@@ -124,6 +124,15 @@ export function guideKeywords(guide: Guide): string[] {
   return [...new Set([...guide.keywords, ...fallback])];
 }
 
+export function getGuidesSince(sinceIsoDate: string): Guide[] {
+  const since = new Date(`${sinceIsoDate}T00:00:00.000Z`);
+  if (Number.isNaN(since.getTime())) return [];
+  return getGuides().filter((guide) => {
+    const published = new Date(`${guide.publishedAt}T00:00:00.000Z`);
+    return !Number.isNaN(published.getTime()) && published.getTime() >= since.getTime();
+  });
+}
+
 export function getRelatedGuides(guide: Guide, limit = 3): Guide[] {
   const all = getGuides().filter((item) => item.slug !== guide.slug);
   const preferred = guide.related

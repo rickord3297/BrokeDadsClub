@@ -4,7 +4,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "The Club",
+  title: "About",
   description: "What Broke Dads Club is, who it's for, and why the shop exists.",
 };
 
@@ -44,10 +44,11 @@ export default function AboutPage() {
         </p>
         <h2>Membership</h2>
         <p>
-          There is no velvet rope. Join the Sunday dispatch, read what&apos;s
-          useful, share it with another dad who is quietly doing the same
-          arithmetic. If you want a card in your wallet later, we&apos;ll build
-          that. Right now the dues are optional and the door is open.
+          There is no velvet rope. Read what&apos;s useful, share it with
+          another dad who is quietly doing the same arithmetic, and grab the
+          weekly recap if you want new guides in your inbox. If you want a
+          card in your wallet later, we&apos;ll build that. Right now the
+          dues are optional and the door is open.
         </p>
       </div>
     </div>

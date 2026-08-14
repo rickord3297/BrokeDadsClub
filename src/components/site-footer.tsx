@@ -24,17 +24,15 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <p className="font-display text-xl">Get the checklist + weekly tactics</p>
+          <p className="font-display text-xl">
+            Get a weekly recap of new content.
+          </p>
           <p className="mt-2 text-sm leading-6 text-paper/90">
-            Free $47 grocery-week checklist when you join. One email a week after
-            that. Unsubscribe whenever.
+            One email when a new guide goes up. Quiet weeks stay quiet.
+            Unsubscribe whenever.
           </p>
           <div className="mt-4">
-            <NewsletterForm
-              source="footer"
-              submitLabel="Send me the checklist"
-              successHref="/resources/grocery-week-checklist?joined=1"
-            />
+            <NewsletterForm source="footer" submitLabel="Get the recap" />
           </div>
         </div>
       </div>

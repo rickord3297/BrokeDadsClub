@@ -15,7 +15,7 @@ export default async function ShopPage() {
       <p className="text-xs uppercase tracking-[0.18em] text-rust">Club goods</p>
       <h1 className="mt-3 font-display text-5xl">The shop</h1>
       <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
-        Wear the club. Fund the desk. Every order helps keep the guides free.
+        Wear the club. Fund the desk. Proceeds keep the guides free.
       </p>
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {products.map((product) => (

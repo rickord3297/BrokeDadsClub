@@ -35,5 +35,7 @@ export async function POST(request: Request) {
     );
   }
 
-  return NextResponse.json({ message: "You're in. Sunday dispatch incoming." });
+  return NextResponse.json({
+    message: "You're on the recap list. We'll send when there's something new.",
+  });
 }

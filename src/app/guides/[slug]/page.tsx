@@ -94,10 +94,6 @@ export default async function GuidePage({
   const keywords = guideKeywords(guide);
   const related = getRelatedGuides(guide);
   const [beforeCta, afterCta] = splitGuideContent(guide.content);
-  const leadHref =
-    guide.slug === "the-47-dollar-grocery-week"
-      ? "/resources/grocery-week-checklist"
-      : undefined;
 
   const articleLd = {
     "@context": "https://schema.org",
@@ -166,7 +162,7 @@ export default async function GuidePage({
         <Markdown content={beforeCta} />
       </div>
 
-      <GuideEmailCta source={`guide:${guide.slug}`} leadHref={leadHref} />
+      <GuideEmailCta source={`guide:${guide.slug}`} />
 
       {afterCta ? (
         <div className="prose-guide">

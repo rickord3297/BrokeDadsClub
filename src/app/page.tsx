@@ -7,12 +7,6 @@ import { getGuides } from "@/lib/guides";
 import { getProducts } from "@/lib/products";
 import { site } from "@/lib/site";
 
-const productBadges: Record<string, string> = {
-  "club-patch": "Club Favorite",
-  "block-castle-tee": "Best Seller",
-  "candy-stripe-patch": "Fan Pick",
-};
-
 const productOrder = ["club-patch", "block-castle-tee", "candy-stripe-patch"];
 
 export default async function Home() {
@@ -110,32 +104,22 @@ export default async function Home() {
         <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
           <div>
             <p className="text-xs uppercase tracking-[0.18em] text-rust">
-              Free starter kit
+              Weekly recap
             </p>
             <h2 className="mt-2 font-display text-4xl">
-              Get the grocery-week checklist + weekly tactics
+              Get a weekly recap of new content.
             </h2>
             <p className="mt-4 max-w-xl text-lg leading-8 text-ink-soft">
-              Sign up and we&apos;ll point you to the printable{" "}
-              <Link
-                href="/resources/grocery-week-checklist"
-                className="font-medium text-pine hover:text-rust"
-              >
-                $47 grocery-week checklist
-              </Link>
-              . Then one email a week: money, kids, time. No hustle spam.
+              One email when a new guide (or a useful update) goes up. Quiet
+              weeks stay quiet. Unsubscribe whenever.
             </p>
           </div>
           <div>
             <NewsletterForm
               variant="article"
-              source="homepage-lead-magnet"
-              submitLabel="Send me the checklist"
-              successHref="/resources/grocery-week-checklist?joined=1"
+              source="homepage-recap"
+              submitLabel="Get the recap"
             />
-            <p className="mt-3 text-xs leading-5 text-ink-soft">
-              Instant checklist access when you join. Unsubscribe whenever.
-            </p>
           </div>
         </div>
       </section>
@@ -157,11 +141,7 @@ export default async function Home() {
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {featuredProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                badge={productBadges[product.slug]}
-              />
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </section>

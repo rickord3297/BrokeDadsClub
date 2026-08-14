@@ -43,6 +43,9 @@ export default async function ProductPage({
         <p className="mt-6 max-w-lg text-lg leading-8 text-ink-soft">
           {product.description}
         </p>
+        <p className="mt-4 max-w-lg text-sm leading-6 text-ink-soft">
+          Proceeds fund the guides.
+        </p>
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <AddToCartButton product={product} />
           <Link href="/cart" className="text-sm font-medium text-pine hover:text-rust">

@@ -18,6 +18,8 @@ create table if not exists public.subscribers (
   id uuid primary key default gen_random_uuid(),
   email text unique not null,
   source text,
+  unsubscribe_token uuid not null default gen_random_uuid(),
+  unsubscribed_at timestamptz,
   created_at timestamptz not null default now()
 );
 

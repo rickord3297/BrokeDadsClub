@@ -81,6 +81,12 @@ Keep the domain in Route 53. Point it at Vercel; do not move the registrar unles
 
 Leave any leftover Amplify / S3 / placeholder records out of the way so the new A/CNAME can take over.
 
+### Email recap (Amazon SES)
+- Verify `brokedadsclub.com` in AWS SES (DKIM + SPF). Request production access if you are still in the SES sandbox.
+- Create an IAM user that can `ses:SendEmail` / `ses:SendRawEmail`.
+- In Vercel, set `AWS_REGION`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `SES_FROM_EMAIL`, `CRON_SECRET`, and `SUPABASE_SERVICE_ROLE_KEY`.
+- Cron: Sundays 14:00 UTC (`/api/cron/weekly-recap`). Skips the week if no new live guides.
+
 ## What to do next
 
 ### Content / mission (priority)

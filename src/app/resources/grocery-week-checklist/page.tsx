@@ -38,23 +38,9 @@ const week = [
   { day: "Sun", plan: "Soup from the carcass or last beans; freeze a quart" },
 ];
 
-export default async function GroceryWeekChecklistPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ joined?: string }>;
-}) {
-  const { joined } = await searchParams;
-  const justJoined = joined === "1";
-
+export default function GroceryWeekChecklistPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
-      {justJoined ? (
-        <p className="mb-8 rounded-2xl border border-pine/25 bg-pine/10 px-4 py-3 text-sm leading-6 text-pine print:hidden">
-          You&apos;re on the Sunday dispatch. Print this checklist, stick it on
-          the fridge, and you&apos;re already ahead.
-        </p>
-      ) : null}
-
       <p className="text-xs uppercase tracking-[0.18em] text-rust print:hidden">
         Free resource
       </p>
@@ -130,9 +116,7 @@ export default async function GroceryWeekChecklistPage({
       </section>
 
       <div className="mt-12 print:hidden">
-        {justJoined ? null : (
-          <GuideEmailCta source="resource:grocery-week-checklist" />
-        )}
+        <GuideEmailCta source="resource:grocery-week-checklist" />
         <p className="mt-8 text-sm">
           <Link
             href="/guides/the-47-dollar-grocery-week"
