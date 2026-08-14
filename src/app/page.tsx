@@ -21,7 +21,7 @@ export default async function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:py-24">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-rust">
-              A club for the stretched-thin
+              A place for the stretched-thin dads doing their best
             </p>
             <h1 className="mt-4 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
               Raising kids.
