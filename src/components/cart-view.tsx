@@ -17,7 +17,11 @@ export function CartView() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        items: items.map((item) => ({ id: item.id, quantity: item.quantity })),
+        items: items.map((item) => ({
+          id: item.id,
+          quantity: item.quantity,
+          size: item.size,
+        })),
       }),
     });
     const payload = (await response.json()) as { url?: string; message?: string };
@@ -44,12 +48,18 @@ export function CartView() {
     <div className="space-y-6">
       <ul className="divide-y divide-rule rounded-2xl border border-rule bg-paper">
         {items.map((item) => (
-          <li key={item.id} className="flex flex-wrap items-center justify-between gap-4 p-4">
+          <li
+            key={`${item.id}:${item.size ?? "one"}`}
+            className="flex flex-wrap items-center justify-between gap-4 p-4"
+          >
             <div>
               <Link href={`/shop/${item.slug}`} className="font-display text-xl hover:text-rust">
                 {item.name}
               </Link>
-              <p className="text-sm text-ink-soft">{formatMoney(item.price_cents)} each</p>
+              <p className="text-sm text-ink-soft">
+                {formatMoney(item.price_cents)} each
+                {item.size ? ` · Size ${item.size}` : ""}
+              </p>
             </div>
             <div className="flex items-center gap-3">
               <label className="text-sm text-ink-soft">
@@ -59,14 +69,14 @@ export function CartView() {
                   min={1}
                   value={item.quantity}
                   onChange={(event) =>
-                    setQuantity(item.id, Number(event.target.value))
+                    setQuantity(item.id, Number(event.target.value), item.size)
                   }
                   className="ml-2 w-16 rounded-md border border-rule bg-paper px-2 py-1"
                 />
               </label>
               <button
                 type="button"
-                onClick={() => removeItem(item.id)}
+                onClick={() => removeItem(item.id, item.size)}
                 className="text-sm text-ink-soft hover:text-rust"
               >
                 Remove

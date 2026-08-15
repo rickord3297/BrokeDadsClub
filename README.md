@@ -13,6 +13,7 @@ The site runs without Supabase or Stripe. Connect them when you are ready to tak
 
 ## Guides
 
+- **Daily scan:** say **Scan trends** (or run the morning automation). It logs the pass in [`content/trends.md`](content/trends.md) and adds only BDC-shaped hooks to [`content/ideas.md`](content/ideas.md). It does not publish.
 - **Desk:** [`content/ideas.md`](content/ideas.md) — log ideas, set **Go live** dates, track status.
 - **Draft:** in Cursor say **Write a BDC guide from …** (skill: `.cursor/skills/write-bdc-guide`).
 - **Files:** `content/guides/*.md` — use frontmatter `status: draft | scheduled | published` and `publishedAt`.
@@ -94,10 +95,11 @@ Leave any leftover Amplify / S3 / placeholder records out of the way so the new 
 - Google Search Console: add `https://brokedadsclub.com` → URL prefix or domain property → submit `https://brokedadsclub.com/sitemap.xml`.
 - Vercel → Analytics: enable Web Analytics + Speed Insights if the dashboard still prompts (code is already wired).
 
-### Swag (later)
-- Keep only photo’d SKUs in the shop (already filtered).
+### Swag
+- Shop only shows real product photos. Print files on a dark square (tees) stay hidden until Printify mockups replace them.
+- Connect Printify now to generate on-garment mockups and map SKUs. Do not sell a tee until that mockup is the shop image.
+- Order wiring already exists (`src/lib/printify.ts` + Stripe webhook). It stays dark until `PRINTIFY_API_TOKEN`, `PRINTIFY_SHOP_ID`, and Stripe keys are set.
 - Add Stripe keys when ready to take real orders (`STRIPE_SECRET_KEY`, webhook secret, publishable key).
-- Hook Printful / Printify when you want print-on-demand fulfillment.
 
 ### Optional later
 - Supabase Auth for a members area.

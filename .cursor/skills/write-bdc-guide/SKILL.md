@@ -3,10 +3,23 @@ name: write-bdc-guide
 description: >-
   Drafts Broke Dads Club guides from content/ideas.md into content/guides/*.md.
   Use when the user drops ideas, asks to draft new ideas, write a guide, schedule
-  a post, or turn backlog rows into articles.
+  a post, scan trends, or turn backlog rows into articles.
 ---
 
 # Write a BDC guide
+
+## Daily relevance scan
+
+When the user says **Scan trends**, **daily scan**, or a scheduled agent runs this skill:
+
+1. Search the open web for what parents and dads are talking about *today* (news, Google Trends, Reddit r/daddit and r/parenting, back-to-school / sports / money headlines). Prefer topics a stretched dad would actually search or argue about at pickup.
+2. Read `content/ideas.md` and live/scheduled guides. Skip duplicates and near-duplicates.
+3. Keep only BDC-shaped angles: money, time, kids, work, gear, dignity. Drop celebrity gossip, culture-war bait, and “10 side hustles.”
+4. Append 1-3 new rows to the ideas table with Status `idea`, a specific title, and Notes like `trend YYYY-MM-DD: <source/hook>`. Do not invent a Go live date yet.
+5. Log the pass in `content/trends.md` (date, what you scanned, what you kept, what you skipped). Even a zero-keep day gets a row so we can see the cadence.
+6. Stop there unless the user (or the automation prompt) also says to draft. Never set `published` from a trend scan. Never stuff product callouts into a trend piece.
+
+A daily scan is for relevance, not volume. One honest dad-angle idea beats five generic parenting listicles.
 
 ## Default workflow
 

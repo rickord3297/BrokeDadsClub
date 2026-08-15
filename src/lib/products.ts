@@ -2,6 +2,13 @@ import { createPublicClient } from "@/lib/supabase/public";
 
 export type ProductArt = "tee" | "mug" | "cap" | "sticker" | "hoodie" | "patch";
 
+export const APPAREL_SIZES = ["S", "M", "L", "XL", "2XL"] as const;
+export type ApparelSize = (typeof APPAREL_SIZES)[number];
+
+export function productNeedsSize(product: { art: ProductArt }) {
+  return product.art === "tee" || product.art === "hoodie";
+}
+
 export type Product = {
   id: string;
   slug: string;
@@ -51,7 +58,7 @@ export const seedProducts: Product[] = [
     art: "tee",
     image: "/brand/club-pup-tee.jpg",
     image_fit: "contain",
-    active: true,
+    active: false,
   },
   {
     id: "prod_club_tee",
@@ -75,7 +82,7 @@ export const seedProducts: Product[] = [
     art: "tee",
     image: "/brand/block-castle-tee.png",
     image_fit: "contain",
-    active: true,
+    active: false,
   },
   {
     id: "prod_hoodie",
@@ -125,7 +132,18 @@ export const seedProducts: Product[] = [
 
 /** Only sell items with real product photos (no placeholder art). */
 function hasProductPhoto(product: Product): boolean {
-  return typeof product.image === "string" && product.image.length > 0;
+  if (typeof product.image !== "string" || product.image.length === 0) {
+    return false;
+  }
+  // Print files on a dark square are not on-garment mockups. Hold apparel
+  // until Printify (or a photo) shows the design on the actual product.
+  if (
+    (product.art === "tee" || product.art === "hoodie") &&
+    product.image_fit === "contain"
+  ) {
+    return false;
+  }
+  return true;
 }
 
 function isProduct(value: unknown): value is Product {

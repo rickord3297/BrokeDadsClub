@@ -1,11 +1,14 @@
 # Content desk
 
+**Daily:** tell Cursor **Scan trends** (or let the morning automation run). That searches what dads and parents are talking about, logs the pass in [`trends.md`](trends.md), and adds only BDC-shaped hooks here as Status `idea`. It does not publish.
+
 **Drop ideas in the table below** (Status `idea`). Then tell Cursor: **Draft new ideas:** every `idea` row becomes a guide file with `status: draft` (not on the live site).
 
 **Review drafts:** open files in [`content/guides/`](guides/), anything with `status: draft` in the top. Or browse [`DRAFTS.md`](DRAFTS.md).
 
 | Idea | Status | Go live | Notes |
 |------|--------|---------|-------|
+| The second bill after school starts (fees, sports, fundraisers) | idea | | trend 2026-08-14: hidden costs after the supply list; NRF/Texas A&M "second bill" |
 | Gas station dinner that still counts as feeding your kids | scheduled | 2026-09-01 | [`gas-station-dinner.md`](guides/gas-station-dinner.md) |
 | When the other dad’s vacation photos hit | scheduled | 2026-09-08 | [`when-the-other-dads-vacation-photos-hit.md`](guides/when-the-other-dads-vacation-photos-hit.md) |
 | Explaining “we can’t go” without making it a speech | live | 2026-08-12 | [`explaining-we-cant-go.md`](guides/explaining-we-cant-go.md) |

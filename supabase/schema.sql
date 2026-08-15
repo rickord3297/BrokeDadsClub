@@ -33,6 +33,8 @@ create table if not exists public.orders (
   amount_total integer not null default 0,
   currency text not null default 'usd',
   status text not null default 'paid',
+  printify_order_id text,
+  printify_status text,
   created_at timestamptz not null default now()
 );
 
@@ -63,10 +65,10 @@ values
    2800, 'Apparel', 'tee', null, null, false),
   ('prod_block_castle_tee', 'block-castle-tee', 'Block Castle Tee',
    'Toy blocks, toy cars, pacifiers, and a pile of money you no longer have. Soft cotton, black tee, the whole dad economy on the chest.',
-   2800, 'Apparel', 'tee', '/brand/block-castle-tee.png', 'contain', true),
+   2800, 'Apparel', 'tee', '/brand/block-castle-tee.png', 'contain', false),
   ('prod_club_pup_tee', 'club-pup-tee', 'Club Pup Tee',
    'Golden pup, blue wrench, grass stains implied. Soft cotton. For dads whose best coworker still has four paws.',
-   2800, 'Apparel', 'tee', '/brand/club-pup-tee.jpg', 'contain', true),
+   2800, 'Apparel', 'tee', '/brand/club-pup-tee.jpg', 'contain', false),
   ('prod_hoodie', 'club-hoodie', 'School-Run Hoodie',
    'The one you live in from October to April. Heavy fleece, kangaroo pocket for snacks, and a wordmark that says you belong here.',
    4800, 'Apparel', 'hoodie', null, null, false),
