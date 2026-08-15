@@ -1,4 +1,5 @@
 import { cache } from "react";
+import { clubProductCopy } from "@/lib/product-copy";
 import {
   isPrintifyConfigured,
   listPrintifyCatalog,
@@ -200,11 +201,16 @@ async function getPrintifyProducts(): Promise<Product[]> {
         const override = printifyCopyOverrides[row.id];
         const art = artFromPrintify(override?.name ?? copy.title, copy.tags);
         const pricing = catalogPricing(variants, override?.price_cents);
+        const clubCopy = clubProductCopy({
+          title: override?.name ?? copy.title,
+          art,
+          rawDescription: copy.description,
+        });
         return {
           id: row.id,
           slug: override?.slug ?? slugify(copy.title),
-          name: override?.name ?? copy.title,
-          description: override?.description ?? copy.description,
+          name: override?.name ?? clubCopy.name,
+          description: override?.description ?? clubCopy.description,
           price_cents: pricing.price_cents,
           category: art === "tee" || art === "hoodie" || art === "cap" ? "Apparel" : "Gear",
           art,

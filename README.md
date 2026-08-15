@@ -96,7 +96,7 @@ Leave any leftover Amplify / S3 / placeholder records out of the way so the new 
 - Vercel → Analytics: enable Web Analytics + Speed Insights if the dashboard still prompts (code is already wired).
 
 ### Swag
-- Shop shows live Printify products (mockups, sizes, SKUs). Patches are off the site until remade in Printify.
+- **Copy:** Printify's AI titles and descriptions never hit the shop as-is. The site rewrites them into Broke Dads Club voice (short, dry, no souvenir-shop captions). Hand-written overrides in `src/lib/products.ts` still win when we have them.
 - **Price:** BDC charges one retail price per product (page and cart match). Club Pup is $19.99. New Printify items use that product's lowest Printify variant price unless we set an override.
 - **Before you publish in Printify:** Variants → select all sizes/colors → set the same price. Then publish. The site refreshes about every 2 minutes.
 - Keep a product unpublished (or not visible) in Printify until that price is set, or it will show up on brokedadsclub.com as soon as it is public.
