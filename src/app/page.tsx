@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ChecklistSignup } from "@/components/checklist-signup";
 import { GuideCard } from "@/components/guide-card";
@@ -22,67 +21,45 @@ export default async function Home() {
   return (
     <div>
       <section className="border-b border-rule">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:py-24">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.16em] text-pine">
-              A place for the stretched-thin dads doing their best
-            </p>
-            <h1 className="mt-4 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
-              Raising kids.
-              <br />
-              Stretching dollars.
-              <br />
-              Still showing up.
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-ink-soft">
-              {site.name} is a content desk for dads doing the math out loud.
-              Practical guides first. Club goods that fund the next one.{" "}
-              {site.tagline}
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link
-                href="/guides"
-                className="rounded-full bg-pine px-5 py-3 text-sm font-semibold text-paper hover:bg-pine-2"
-              >
-                Read the guides
-              </Link>
-              <Link
-                href="/resources"
-                className="rounded-full border border-ink px-5 py-3 text-sm font-semibold hover:bg-ink hover:text-paper"
-              >
-                Free printables
-              </Link>
-              <Link
-                href="/shop"
-                className="rounded-full border border-ink px-5 py-3 text-sm font-semibold hover:bg-ink hover:text-paper"
-              >
-                Shop the club
-              </Link>
-            </div>
-            <div className="mt-8 max-w-md">
-              <ChecklistSignup source="homepage-hero" compact />
-            </div>
-          </div>
-
-          <aside className="flex flex-col items-center justify-center text-center">
-            <Image
-              src="/brand/club-logo.png"
-              alt="Broke Dads Club crest, castle, crowns, and the club name"
-              width={420}
-              height={420}
-              priority
-              className="h-auto w-full max-w-[380px]"
-            />
-            <p className="mt-3 max-w-xs text-sm text-ink-soft">
-              The official crest. A castle you cannot afford, and a club you can.
-            </p>
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-24">
+          <p className="text-sm font-bold uppercase tracking-[0.16em] text-pine">
+            A place for the stretched-thin dads doing their best
+          </p>
+          <h1 className="mt-4 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+            Raising kids.
+            <br />
+            Stretching dollars.
+            <br />
+            Still showing up.
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-8 text-ink-soft">
+            {site.name} is a content desk for dads doing the math out loud.
+            Practical guides first. Club goods that fund the next one.{" "}
+            {site.tagline}
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
-              href="/guides/the-dad-tax"
-              className="mt-3 text-sm font-medium text-pine hover:text-rust"
+              href="/guides"
+              className="rounded-full bg-pine px-5 py-3 text-sm font-semibold text-paper hover:bg-pine-2"
             >
-              Start with the dad tax →
+              Read the guides
             </Link>
-          </aside>
+            <Link
+              href="/resources"
+              className="rounded-full border border-ink px-5 py-3 text-sm font-semibold hover:bg-ink hover:text-paper"
+            >
+              Free printables
+            </Link>
+            <Link
+              href="/shop"
+              className="rounded-full border border-ink px-5 py-3 text-sm font-semibold hover:bg-ink hover:text-paper"
+            >
+              Shop the club
+            </Link>
+          </div>
+          <div className="mt-8 max-w-md">
+            <ChecklistSignup source="homepage-hero" compact />
+          </div>
         </div>
       </section>
 
