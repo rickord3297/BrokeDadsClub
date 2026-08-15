@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useId, useState } from "react";
+import { site } from "@/lib/site";
 
 type NewsletterFormProps = {
   variant?: "footer" | "article";
@@ -14,7 +15,7 @@ type NewsletterFormProps = {
 
 export function NewsletterForm({
   variant = "footer",
-  submitLabel = "Get the recap",
+  submitLabel = site.weekStart.button,
   source = "footer",
   successMessage,
   successHref,
@@ -52,7 +53,7 @@ export function NewsletterForm({
     setMessage(
       successMessage ??
         payload.message ??
-        "You're on the recap list. We'll send when there's something new.",
+        site.weekStart.success,
     );
   }
 

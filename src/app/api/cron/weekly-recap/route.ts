@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getGuidesSince } from "@/lib/guides";
+import { getGuides, getGuidesSince } from "@/lib/guides";
 import { buildRecapEmail, recapWindowStart } from "@/lib/recap";
 import { isSesConfigured, sendSesEmail } from "@/lib/ses";
 import { site } from "@/lib/site";
@@ -28,12 +28,17 @@ export async function GET(request: Request) {
   }
 
   const since = recapWindowStart();
-  const guides = getGuidesSince(since);
+  const publishedThisWeek = getGuidesSince(since);
+  const quietWeek = publishedThisWeek.length === 0;
+  const fallback =
+    getGuides().find((guide) => guide.slug === "the-47-dollar-grocery-week") ??
+    getGuides()[0];
+  const guides = quietWeek ? (fallback ? [fallback] : []) : publishedThisWeek;
   if (guides.length === 0) {
     return NextResponse.json({
       ok: true,
       skipped: true,
-      reason: "No new guides this week.",
+      reason: "No guides available to send.",
       since,
     });
   }
@@ -68,7 +73,7 @@ export async function GET(request: Request) {
   let failed = 0;
   for (const subscriber of subscribers) {
     const unsubscribeUrl = `${site.url}/unsubscribe?token=${subscriber.unsubscribe_token}`;
-    const recap = buildRecapEmail(guides, unsubscribeUrl);
+    const recap = buildRecapEmail(guides, unsubscribeUrl, { quietWeek });
     try {
       await sendSesEmail({
         to: subscriber.email,
@@ -86,6 +91,7 @@ export async function GET(request: Request) {
   return NextResponse.json({
     ok: true,
     since,
+    quietWeek,
     guides: guides.map((guide) => guide.slug),
     attempted: subscribers.length,
     sent,

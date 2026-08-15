@@ -11,7 +11,7 @@ export function RecapTopics({
 
   return (
     <p className={className}>
-      Recent:{" "}
+      Worth using this week:{" "}
       {recent.map((guide, index) => (
         <span key={guide.slug}>
           {index > 0 ? ", " : null}

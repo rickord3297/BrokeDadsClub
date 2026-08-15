@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { NewsletterForm } from "@/components/newsletter-form";
+import { RecapTopics } from "@/components/recap-topics";
+import { site } from "@/lib/site";
 
-export function ChecklistSignup({
+export function WeekStartSignup({
   source,
   compact = false,
 }: {
@@ -15,35 +17,36 @@ export function ChecklistSignup({
       }`}
     >
       <p className="text-xs font-bold uppercase tracking-[0.16em] text-pine">
-        Free checklist
+        {site.weekStart.kicker}
       </p>
       <p
         className={`mt-2 font-display leading-snug ${
           compact ? "text-2xl" : "text-3xl"
         }`}
       >
-        The $47 grocery-week plan
+        {site.weekStart.title}
       </p>
-      <p className="mt-2 text-sm leading-6 text-ink-soft">
-        Cart list sized for about 3-4 people, a tired-night pasta, three rules.
-      </p>
+      <p className="mt-2 text-sm leading-6 text-ink-soft">{site.weekStart.body}</p>
+      {compact ? null : (
+        <div className="mt-3">
+          <RecapTopics />
+        </div>
+      )}
       <div className="mt-4">
         <NewsletterForm
           variant="article"
           source={source}
-          submitLabel="Send me the checklist"
-          successMessage="You're on the list. The checklist is ready."
-          successHref="/resources/grocery-week-checklist"
-          successLinkLabel="Open the checklist"
+          submitLabel={site.weekStart.button}
+          successMessage={site.weekStart.success}
         />
       </div>
       <p className="mt-3 text-sm text-ink-soft">
-        Skip the inbox?{" "}
+        Want a sheet on the fridge now?{" "}
         <Link
-          href="/resources/grocery-week-checklist"
+          href="/resources"
           className="font-medium text-pine underline decoration-rule underline-offset-2 hover:text-rust"
         >
-          Open it now
+          Open the printables
         </Link>
       </p>
     </aside>

@@ -31,19 +31,19 @@ export function SiteFooter() {
 
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold">
-            Weekly recap
+            {site.weekStart.kicker}
           </p>
-          <p className="mt-2 font-display text-xl">
-            One email when a new guide goes up.
-          </p>
-          <p className="mt-2 text-sm leading-6 text-paper/90">
-            Quiet weeks stay quiet. Unsubscribe whenever.
-          </p>
+          <p className="mt-2 font-display text-xl">{site.weekStart.title}</p>
+          <p className="mt-2 text-sm leading-6 text-paper/90">{site.weekStart.body}</p>
           <div className="mt-3">
             <RecapTopics className="text-sm leading-6 text-paper/80 [&_a]:hover:text-gold" />
           </div>
           <div className="mt-4">
-            <NewsletterForm source="footer" submitLabel="Get the recap" />
+            <NewsletterForm
+              source="footer"
+              submitLabel={site.weekStart.button}
+              successMessage={site.weekStart.success}
+            />
           </div>
         </div>
       </div>

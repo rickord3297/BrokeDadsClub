@@ -47,7 +47,7 @@ export default function AboutPage() {
         <p>
           There is no velvet rope. Read what&apos;s useful, share it with
           another dad who is quietly doing the same arithmetic, and grab the
-          weekly recap if you want new guides in your inbox. If you want a
+          Sunday email if you want a start to the week in your inbox. If you want a
           card in your wallet later, we&apos;ll build that. Right now the
           dues are optional and the door is open.
         </p>

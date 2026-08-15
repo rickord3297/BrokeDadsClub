@@ -31,16 +31,16 @@ export default async function UnsubscribePage({
 
   return (
     <div className="mx-auto max-w-xl px-4 py-16 sm:px-6">
-      <p className="text-xs uppercase tracking-[0.18em] text-rust">Recap list</p>
+      <p className="text-xs uppercase tracking-[0.18em] text-rust">Sunday list</p>
       <h1 className="mt-3 font-display text-4xl">
         {status === "done" ? "You're off the list." : "Unsubscribe"}
       </h1>
       <p className="mt-4 text-base leading-7 text-ink-soft">
         {status === "done"
-          ? "No more weekly recaps. The guides stay free either way."
+          ? "No more Sunday emails. The guides stay free either way."
           : status === "error"
             ? "Could not update that subscription. Try the link from your email again."
-            : "Use the unsubscribe link in a recap email to get off the list."}
+            : "Use the unsubscribe link in a Sunday email to get off the list."}
       </p>
       <p className="mt-8 text-sm">
         <Link href="/guides" className="text-pine hover:text-rust">

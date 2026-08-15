@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createPublicClient } from "@/lib/supabase/public";
+import { site } from "@/lib/site";
 
 export async function POST(request: Request) {
   const body = (await request.json()) as {
@@ -36,6 +37,6 @@ export async function POST(request: Request) {
   }
 
   return NextResponse.json({
-    message: "You're on the recap list. We'll send when there's something new.",
+    message: site.weekStart.success,
   });
 }

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChecklistSignup } from "@/components/checklist-signup";
+import { WeekStartSignup } from "@/components/week-start-signup";
 import { GuideCard } from "@/components/guide-card";
 import { ProductCard } from "@/components/product-card";
 import { ResourceCard } from "@/components/resource-card";
@@ -58,7 +58,7 @@ export default async function Home() {
             </Link>
           </div>
           <div className="mt-8 max-w-md">
-            <ChecklistSignup source="homepage-hero" compact />
+            <WeekStartSignup source="homepage-hero" compact />
           </div>
         </div>
       </section>
