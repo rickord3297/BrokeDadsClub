@@ -31,6 +31,9 @@ type PrintifyCatalogProduct = {
   images?: Array<{
     src: string;
     is_default?: boolean;
+    is_selected_for_publishing?: boolean;
+    position?: string;
+    variant_ids?: number[];
   }>;
   options?: Array<{
     name: string;
@@ -54,6 +57,12 @@ export type PrintifyVariant = {
   size?: string;
   color?: string;
   price_cents: number;
+};
+
+export type PrintifyPhoto = {
+  src: string;
+  color?: string;
+  angle: "front" | "back" | "lifestyle" | "other";
 };
 
 export function isPrintifyConfigured() {
@@ -140,20 +149,60 @@ export function variantsFromPrintifyProduct(product: PrintifyCatalogProduct) {
   return variants;
 }
 
+function photoAngle(image: NonNullable<PrintifyCatalogProduct["images"]>[number]): PrintifyPhoto["angle"] {
+  const src = image.src ?? "";
+  if (image.position === "front" || src.includes("camera_label=front")) return "front";
+  if (image.position === "back" || src.includes("camera_label=back")) return "back";
+  if (src.includes("camera_label=lifestyle")) return "lifestyle";
+  return "other";
+}
+
+export function printifyProductGallery(
+  product: PrintifyCatalogProduct,
+  variants: PrintifyVariant[],
+): PrintifyPhoto[] {
+  const colorByVariantId = new Map(
+    variants
+      .filter((variant) => variant.color)
+      .map((variant) => [variant.id, variant.color as string]),
+  );
+  const photos: PrintifyPhoto[] = [];
+  const seen = new Set<string>();
+
+  for (const image of product.images ?? []) {
+    if (image.is_selected_for_publishing === false) continue;
+    const src = image.src ?? "";
+    if (!src || src.includes("camera_label=folded")) continue;
+    const angle = photoAngle(image);
+    if (angle === "other") continue;
+
+    const colors = [
+      ...new Set(
+        (image.variant_ids ?? [])
+          .map((id) => colorByVariantId.get(id))
+          .filter((color): color is string => Boolean(color)),
+      ),
+    ];
+    const colorKeys = colors.length ? colors : [undefined];
+    for (const color of colorKeys) {
+      const key = `${color ?? "any"}:${angle}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      photos.push({ src, color, angle });
+    }
+  }
+
+  const rank = { front: 0, lifestyle: 1, back: 2, other: 3 };
+  return photos.sort((a, b) => {
+    const colorRank = (color?: string) => (color === "White" ? 0 : 1);
+    const colorCmp = colorRank(a.color) - colorRank(b.color) || (a.color ?? "").localeCompare(b.color ?? "");
+    if (colorCmp !== 0) return colorCmp;
+    return rank[a.angle] - rank[b.angle];
+  });
+}
+
 export function printifyProductImage(product: PrintifyCatalogProduct) {
-  const images = product.images ?? [];
-  const scored = images
-    .map((image) => {
-      const src = image.src ?? "";
-      let score = 0;
-      if (src.includes("camera_label=front")) score += 3;
-      if (src.includes("camera_label=lifestyle")) score += 2;
-      if (image.is_default) score += 1;
-      if (src.includes("camera_label=folded")) score -= 2;
-      return { src, score };
-    })
-    .sort((a, b) => b.score - a.score);
-  return scored[0]?.src;
+  return printifyProductGallery(product, variantsFromPrintifyProduct(product))[0]?.src;
 }
 
 export function printifyProductCopy(product: PrintifyCatalogProduct) {

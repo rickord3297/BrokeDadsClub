@@ -2,8 +2,9 @@ import {
   isPrintifyConfigured,
   listPrintifyCatalog,
   printifyProductCopy,
-  printifyProductImage,
+  printifyProductGallery,
   variantsFromPrintifyProduct,
+  type PrintifyPhoto,
   type PrintifyVariant,
 } from "@/lib/printify";
 import { createPublicClient } from "@/lib/supabase/public";
@@ -21,6 +22,7 @@ export type Product = {
   category: string;
   art: ProductArt;
   image?: string;
+  images?: PrintifyPhoto[];
   image_fit?: "cover" | "contain";
   active: boolean;
   variants?: PrintifyVariant[];
@@ -33,10 +35,11 @@ export function productNeedsSize(product: Product) {
   return product.art === "tee" || product.art === "hoodie";
 }
 
-export function productSizes(product: Product) {
+export function productSizes(product: Product, color?: string) {
   const sizes = [
     ...new Set(
       (product.variants ?? [])
+        .filter((variant) => !color || !variant.color || variant.color === color)
         .map((variant) => variant.size)
         .filter((size): size is string => Boolean(size)),
     ),
@@ -49,13 +52,18 @@ export function productSizes(product: Product) {
 }
 
 export function productColors(product: Product) {
-  return [
+  const colors = [
     ...new Set(
       (product.variants ?? [])
         .map((variant) => variant.color)
         .filter((color): color is string => Boolean(color)),
     ),
   ];
+  return colors.sort((a, b) => {
+    if (a === "White") return -1;
+    if (b === "White") return 1;
+    return a.localeCompare(b);
+  });
 }
 
 export function findVariant(
@@ -99,7 +107,7 @@ const printifyCopyOverrides: Record<
     slug: "club-pup-tee",
     name: "Club Pup Tee",
     description:
-      "Golden pup, blue wrench, grass stains implied. Soft cotton Gildan. For dads whose best coworker still has four paws.",
+      "The club dog is on his back. The wrench is in the grass. BROKE DADS CLUB is on the chest so another dad in the pickup line might actually nod at you. Soft Gildan cotton, printed after you check out. White, graphite heather, or military green. For dads whose best coworker still has four paws.",
   },
 };
 
@@ -111,7 +119,8 @@ async function getPrintifyProducts(): Promise<Product[]> {
       .map((row) => {
         const variants = variantsFromPrintifyProduct(row);
         const copy = printifyProductCopy(row);
-        const image = printifyProductImage(row);
+        const images = printifyProductGallery(row, variants);
+        const image = images[0]?.src;
         if (!variants.length || !image) return null;
         const override = printifyCopyOverrides[row.id];
         const art = artFromPrintify(override?.name ?? copy.title, copy.tags);
@@ -124,6 +133,7 @@ async function getPrintifyProducts(): Promise<Product[]> {
           category: art === "tee" || art === "hoodie" || art === "cap" ? "Apparel" : "Gear",
           art,
           image,
+          images,
           active: true,
           variants,
         };
@@ -193,7 +203,7 @@ export const seedProducts: Product[] = [
     slug: "club-pup-tee",
     name: "Club Pup Tee",
     description:
-      "Golden pup, blue wrench, grass stains implied. Soft cotton. For dads whose best coworker still has four paws.",
+      "The club dog is on his back. The wrench is in the grass. BROKE DADS CLUB is on the chest so another dad in the pickup line might actually nod at you. Soft Gildan cotton, printed after you check out.",
     price_cents: 2800,
     category: "Apparel",
     art: "tee",

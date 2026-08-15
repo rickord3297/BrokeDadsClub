@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useCart } from "@/components/cart-provider";
 import {
   APPAREL_SIZES,
@@ -11,17 +11,35 @@ import {
   type Product,
 } from "@/lib/products";
 
-export function AddToCartButton({ product }: { product: Product }) {
+export function AddToCartButton({
+  product,
+  color: controlledColor,
+  onColorChange,
+  hideColorSelect = false,
+}: {
+  product: Product;
+  color?: string;
+  onColorChange?: (color: string) => void;
+  hideColorSelect?: boolean;
+}) {
   const { addItem } = useCart();
-  const sizes = productSizes(product);
   const colors = productColors(product);
+  const [internalColor, setInternalColor] = useState(colors[0] ?? "");
+  const color = controlledColor ?? internalColor;
+  const sizes = productSizes(product, color || undefined);
   const needsSize = productNeedsSize(product) || sizes.length > 0;
   const [size, setSize] = useState(
     sizes.includes("L") ? "L" : (sizes[0] ?? APPAREL_SIZES[2]),
   );
-  const [color, setColor] = useState(colors[0] ?? "");
   const [added, setAdded] = useState(false);
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    if (!sizes.length) return;
+    if (!sizes.includes(size)) {
+      setSize(sizes.includes("L") ? "L" : sizes[0]);
+    }
+  }, [size, sizes]);
 
   const selected = useMemo(
     () =>
@@ -32,10 +50,15 @@ export function AddToCartButton({ product }: { product: Product }) {
     [product, needsSize, size, color],
   );
 
+  function setColor(next: string) {
+    if (onColorChange) onColorChange(next);
+    else setInternalColor(next);
+  }
+
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap items-center gap-3">
-        {colors.length > 1 ? (
+        {colors.length > 1 && !hideColorSelect ? (
           <label className="text-sm text-ink-soft">
             Color
             <select
