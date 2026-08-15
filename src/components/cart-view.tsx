@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { useCart } from "@/components/cart-provider";
+import { cartLineKey, useCart } from "@/components/cart-provider";
 import { formatMoney } from "@/lib/format";
 
 export function CartView() {
@@ -21,6 +21,8 @@ export function CartView() {
           id: item.id,
           quantity: item.quantity,
           size: item.size,
+          color: item.color,
+          sku: item.sku,
         })),
       }),
     });
@@ -49,7 +51,7 @@ export function CartView() {
       <ul className="divide-y divide-rule rounded-2xl border border-rule bg-paper">
         {items.map((item) => (
           <li
-            key={`${item.id}:${item.size ?? "one"}`}
+            key={cartLineKey(item)}
             className="flex flex-wrap items-center justify-between gap-4 p-4"
           >
             <div>
@@ -58,6 +60,7 @@ export function CartView() {
               </Link>
               <p className="text-sm text-ink-soft">
                 {formatMoney(item.price_cents)} each
+                {item.color ? ` · ${item.color}` : ""}
                 {item.size ? ` · Size ${item.size}` : ""}
               </p>
             </div>
@@ -69,14 +72,14 @@ export function CartView() {
                   min={1}
                   value={item.quantity}
                   onChange={(event) =>
-                    setQuantity(item.id, Number(event.target.value), item.size)
+                    setQuantity(cartLineKey(item), Number(event.target.value))
                   }
                   className="ml-2 w-16 rounded-md border border-rule bg-paper px-2 py-1"
                 />
               </label>
               <button
                 type="button"
-                onClick={() => removeItem(item.id, item.size)}
+                onClick={() => removeItem(cartLineKey(item))}
                 className="text-sm text-ink-soft hover:text-rust"
               >
                 Remove

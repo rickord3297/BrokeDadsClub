@@ -1,10 +1,20 @@
 import { NextResponse } from "next/server";
 import { printifySku } from "@/lib/printify";
-import { getProductById, productNeedsSize } from "@/lib/products";
+import {
+  findVariant,
+  getProductById,
+  productNeedsSize,
+} from "@/lib/products";
 import { site } from "@/lib/site";
 import { getStripe } from "@/lib/stripe";
 
-type CheckoutItem = { id: string; quantity: number; size?: string };
+type CheckoutItem = {
+  id: string;
+  quantity: number;
+  size?: string;
+  color?: string;
+  sku?: string;
+};
 
 export async function POST(request: Request) {
   const stripe = getStripe();
@@ -37,7 +47,8 @@ export async function POST(request: Request) {
         { status: 400 },
       );
     }
-    const size = item.size?.trim().toUpperCase() || undefined;
+    const size = item.size?.trim() || undefined;
+    const color = item.color?.trim() || undefined;
     if (productNeedsSize(product) && !size) {
       return NextResponse.json(
         { message: `Pick a size for ${product.name}.` },
@@ -45,20 +56,28 @@ export async function POST(request: Request) {
       );
     }
 
-    const sku = printifySku(product.slug, productNeedsSize(product) ? size : undefined);
+    const variant = findVariant(product, { size, color });
+    const sku =
+      item.sku ||
+      variant?.sku ||
+      printifySku(product.slug, productNeedsSize(product) ? size : undefined);
+    const price_cents = variant?.price_cents ?? product.price_cents;
+    const label = [product.name, color, size].filter(Boolean).join(" · ");
+
     orderItems.push({ id: product.id, quantity, size, sku });
     lineItems.push({
       quantity,
       price_data: {
         currency: "usd",
-        unit_amount: product.price_cents,
+        unit_amount: price_cents,
         product_data: {
-          name: size ? `${product.name} (${size})` : product.name,
+          name: label,
           description: product.description,
           metadata: {
             product_id: product.id,
             slug: product.slug,
             size: size ?? "",
+            color: color ?? "",
             sku,
           },
         },

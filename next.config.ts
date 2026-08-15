@@ -10,6 +10,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "*.supabase.co",
       },
+      {
+        protocol: "https",
+        hostname: "images-api.printify.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.printify.com",
+      },
     ],
   },
 };

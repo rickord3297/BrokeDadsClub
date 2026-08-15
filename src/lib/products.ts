@@ -1,13 +1,16 @@
+import {
+  isPrintifyConfigured,
+  listPrintifyCatalog,
+  printifyProductCopy,
+  printifyProductImage,
+  variantsFromPrintifyProduct,
+  type PrintifyVariant,
+} from "@/lib/printify";
 import { createPublicClient } from "@/lib/supabase/public";
 
 export type ProductArt = "tee" | "mug" | "cap" | "sticker" | "hoodie" | "patch";
 
-export const APPAREL_SIZES = ["S", "M", "L", "XL", "2XL"] as const;
-export type ApparelSize = (typeof APPAREL_SIZES)[number];
-
-export function productNeedsSize(product: { art: ProductArt }) {
-  return product.art === "tee" || product.art === "hoodie";
-}
+export const APPAREL_SIZES = ["S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL"] as const;
 
 export type Product = {
   id: string;
@@ -20,7 +23,73 @@ export type Product = {
   image?: string;
   image_fit?: "cover" | "contain";
   active: boolean;
+  variants?: PrintifyVariant[];
 };
+
+export function productNeedsSize(product: Product) {
+  if (product.variants?.length) {
+    return product.variants.some((variant) => Boolean(variant.size));
+  }
+  return product.art === "tee" || product.art === "hoodie";
+}
+
+export function productSizes(product: Product) {
+  const sizes = [
+    ...new Set(
+      (product.variants ?? [])
+        .map((variant) => variant.size)
+        .filter((size): size is string => Boolean(size)),
+    ),
+  ];
+  return sizes.sort(
+    (a, b) =>
+      APPAREL_SIZES.indexOf(a as (typeof APPAREL_SIZES)[number]) -
+      APPAREL_SIZES.indexOf(b as (typeof APPAREL_SIZES)[number]),
+  );
+}
+
+export function productColors(product: Product) {
+  return [
+    ...new Set(
+      (product.variants ?? [])
+        .map((variant) => variant.color)
+        .filter((color): color is string => Boolean(color)),
+    ),
+  ];
+}
+
+export function findVariant(
+  product: Product,
+  selection: { size?: string; color?: string },
+) {
+  const variants = product.variants ?? [];
+  return (
+    variants.find((variant) => {
+      const sizeOk = !selection.size || variant.size === selection.size;
+      const colorOk = !selection.color || variant.color === selection.color;
+      return sizeOk && colorOk;
+    }) ?? null
+  );
+}
+
+function slugify(value: string) {
+  return (
+    value
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "") || "product"
+  );
+}
+
+function artFromPrintify(title: string, tags: string[]): ProductArt {
+  const haystack = `${title} ${tags.join(" ")}`.toLowerCase();
+  if (haystack.includes("hoodie") || haystack.includes("sweatshirt")) return "hoodie";
+  if (haystack.includes("mug")) return "mug";
+  if (haystack.includes("cap") || haystack.includes("hat")) return "cap";
+  if (haystack.includes("sticker")) return "sticker";
+  if (haystack.includes("patch")) return "patch";
+  return "tee";
+}
 
 export const seedProducts: Product[] = [
   {
@@ -172,6 +241,38 @@ function isProduct(value: unknown): value is Product {
 }
 
 export async function getProducts(): Promise<Product[]> {
+  if (isPrintifyConfigured()) {
+    try {
+      const catalog = await listPrintifyCatalog();
+      const mapped = catalog
+        .map((row) => {
+          const variants = variantsFromPrintifyProduct(row);
+          const copy = printifyProductCopy(row);
+          const image = printifyProductImage(row);
+          if (!variants.length || !image) return null;
+          const art = artFromPrintify(copy.title, copy.tags);
+          return {
+            id: row.id,
+            slug: slugify(copy.title),
+            name: copy.title,
+            description: copy.description,
+            price_cents: Math.min(...variants.map((variant) => variant.price_cents)),
+            category: art === "tee" || art === "hoodie" || art === "cap" ? "Apparel" : "Gear",
+            art,
+            image,
+            image_fit: "contain" as const,
+            active: true,
+            variants,
+          };
+        })
+        .filter((product) => product !== null);
+
+      if (mapped.length) return mapped;
+    } catch (error) {
+      console.error("Printify catalog failed", error);
+    }
+  }
+
   const supabase = createPublicClient();
   if (supabase) {
     const { data, error } = await supabase

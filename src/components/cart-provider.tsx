@@ -18,15 +18,26 @@ export type CartItem = {
   art: string;
   quantity: number;
   size?: string;
+  color?: string;
+  sku?: string;
 };
+
+export function cartLineKey(item: {
+  id: string;
+  sku?: string;
+  size?: string;
+  color?: string;
+}) {
+  return item.sku ?? `${item.id}:${item.size ?? ""}:${item.color ?? ""}`;
+}
 
 type CartContextValue = {
   items: CartItem[];
   count: number;
   subtotal: number;
   addItem: (item: Omit<CartItem, "quantity">, quantity?: number) => void;
-  setQuantity: (id: string, quantity: number, size?: string) => void;
-  removeItem: (id: string, size?: string) => void;
+  setQuantity: (key: string, quantity: number) => void;
+  removeItem: (key: string) => void;
   clear: () => void;
 };
 
@@ -54,12 +65,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const addItem = useCallback((item: Omit<CartItem, "quantity">, quantity = 1) => {
     setItems((current) => {
-      const existing = current.find(
-        (row) => row.id === item.id && row.size === item.size,
-      );
+      const key = cartLineKey(item);
+      const existing = current.find((row) => cartLineKey(row) === key);
       if (existing) {
         return current.map((row) =>
-          row.id === item.id && row.size === item.size
+          cartLineKey(row) === key
             ? { ...row, quantity: row.quantity + quantity }
             : row,
         );
@@ -68,23 +78,18 @@ export function CartProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
-  const setQuantity = useCallback(
-    (id: string, quantity: number, size?: string) => {
-      setItems((current) =>
-        quantity <= 0
-          ? current.filter((row) => !(row.id === id && row.size === size))
-          : current.map((row) =>
-              row.id === id && row.size === size ? { ...row, quantity } : row,
-            ),
-      );
-    },
-    [],
-  );
-
-  const removeItem = useCallback((id: string, size?: string) => {
+  const setQuantity = useCallback((key: string, quantity: number) => {
     setItems((current) =>
-      current.filter((row) => !(row.id === id && row.size === size)),
+      quantity <= 0
+        ? current.filter((row) => cartLineKey(row) !== key)
+        : current.map((row) =>
+            cartLineKey(row) === key ? { ...row, quantity } : row,
+          ),
     );
+  }, []);
+
+  const removeItem = useCallback((key: string) => {
+    setItems((current) => current.filter((row) => cartLineKey(row) !== key));
   }, []);
 
   const clear = useCallback(() => setItems([]), []);
