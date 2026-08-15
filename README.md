@@ -96,8 +96,11 @@ Leave any leftover Amplify / S3 / placeholder records out of the way so the new 
 - Vercel → Analytics: enable Web Analytics + Speed Insights if the dashboard still prompts (code is already wired).
 
 ### Swag
-- Shop shows Castle patches plus live Printify products (Club Pup tee mockups, sizes, SKUs).
-- Print files on a dark square stay hidden. New Printify items appear automatically once they are published in Printify.
+- Shop shows Castle patches plus live Printify products (mockups, sizes, SKUs).
+- **Price:** BDC charges one retail price per product (page and cart match). Club Pup is $19.99. New Printify items use that product's lowest Printify variant price unless we set an override.
+- **Before you publish in Printify:** Variants → select all sizes/colors → set the same price. Then publish. The site refreshes about every 2 minutes.
+- Keep a product unpublished (or not visible) in Printify until that price is set, or it will show up on brokedadsclub.com as soon as it is public.
+- Printify's print cost is separate. The number you set is what dads pay. Make sure it covers the biggest size you offer.
 - Orders go to Printify after Stripe checkout when `PRINTIFY_API_TOKEN` and `PRINTIFY_SHOP_ID` are set.
 
 ### Optional later

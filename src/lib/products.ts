@@ -115,15 +115,24 @@ function artFromPrintify(title: string, tags: string[]): ProductArt {
 
 const printifyCopyOverrides: Record<
   string,
-  { slug: string; name: string; description: string }
+  { slug: string; name: string; description: string; price_cents?: number }
 > = {
   "6a7fcaa74f40ed8f8107ca0f": {
     slug: "club-pup-tee",
     name: "Club Pup Tee",
     description:
       "The club dog is on his back. The wrench is in the grass. BROKE DADS CLUB is on the chest so another dad in the pickup line might actually nod at you. Soft Gildan cotton, printed after you check out. White, graphite heather, or military green. For dads whose best coworker still has four paws.",
+    price_cents: 1999,
   },
 };
+
+function oneRetailPrice(
+  variants: PrintifyVariant[],
+  overridePrice?: number,
+) {
+  if (overridePrice && overridePrice > 0) return overridePrice;
+  return Math.min(...variants.map((variant) => variant.price_cents));
+}
 
 async function getPrintifyProducts(): Promise<Product[]> {
   if (!isPrintifyConfigured()) return [];
@@ -138,18 +147,19 @@ async function getPrintifyProducts(): Promise<Product[]> {
         if (!variants.length || !image) return null;
         const override = printifyCopyOverrides[row.id];
         const art = artFromPrintify(override?.name ?? copy.title, copy.tags);
+        const price_cents = oneRetailPrice(variants, override?.price_cents);
         return {
           id: row.id,
           slug: override?.slug ?? slugify(copy.title),
           name: override?.name ?? copy.title,
           description: override?.description ?? copy.description,
-          price_cents: Math.min(...variants.map((variant) => variant.price_cents)),
+          price_cents,
           category: art === "tee" || art === "hoodie" || art === "cap" ? "Apparel" : "Gear",
           art,
           image,
           images,
           active: true,
-          variants,
+          variants: variants.map((variant) => ({ ...variant, price_cents })),
         };
       })
       .filter((product) => product !== null);
