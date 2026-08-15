@@ -8,6 +8,7 @@
 
 | Idea | Status | Go live | Notes |
 |------|--------|---------|-------|
+| Which tool brand to buy (one battery, not a shrine) | draft | | [`which-tool-brand-to-buy.md`](guides/which-tool-brand-to-buy.md) |
 | Dad math: I can do that cheaper (then you need $200 of tools) | draft | | [`dad-math.md`](guides/dad-math.md) |
 | The second bill after school starts (fees, sports, fundraisers) | draft | | [`the-second-bill.md`](guides/the-second-bill.md) |
 | Gas station dinner that still counts as feeding your kids | scheduled | 2026-09-01 | [`gas-station-dinner.md`](guides/gas-station-dinner.md) |
