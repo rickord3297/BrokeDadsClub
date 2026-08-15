@@ -8,6 +8,7 @@ import { ProductMedia } from "@/components/product-media";
 import { formatMoney } from "@/lib/format";
 import {
   findVariant,
+  initialSize,
   productColors,
   productNeedsSize,
   productSizes,
@@ -26,9 +27,7 @@ export function ProductDetail({ product }: { product: Product }) {
   const [angle, setAngle] = useState("front");
   const sizes = productSizes(product, color || undefined);
   const needsSize = productNeedsSize(product) || sizes.length > 0;
-  const [size, setSize] = useState(
-    sizes.includes("L") ? "L" : (sizes[0] ?? ""),
-  );
+  const [size, setSize] = useState(initialSize(product, sizes));
 
   const selected = findVariant(product, {
     size: needsSize ? size || undefined : undefined,
@@ -38,7 +37,7 @@ export function ProductDetail({ product }: { product: Product }) {
   useEffect(() => {
     if (!sizes.length) return;
     if (!sizes.includes(size)) {
-      setSize(sizes.includes("L") ? "L" : sizes[0]);
+      setSize(initialSize(product, sizes) || sizes[0]);
     }
   }, [size, sizes]);
 

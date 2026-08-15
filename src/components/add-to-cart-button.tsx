@@ -5,6 +5,7 @@ import { useCart } from "@/components/cart-provider";
 import {
   APPAREL_SIZES,
   findVariant,
+  initialSize,
   productColors,
   productNeedsSize,
   productSizes,
@@ -33,7 +34,7 @@ export function AddToCartButton({
   const sizes = productSizes(product, color || undefined);
   const needsSize = productNeedsSize(product) || sizes.length > 0;
   const [internalSize, setInternalSize] = useState(
-    sizes.includes("L") ? "L" : (sizes[0] ?? APPAREL_SIZES[2]),
+    initialSize(product, sizes) || APPAREL_SIZES[2],
   );
   const size = controlledSize ?? internalSize;
   const [added, setAdded] = useState(false);
@@ -42,7 +43,7 @@ export function AddToCartButton({
   useEffect(() => {
     if (!sizes.length) return;
     if (!sizes.includes(size)) {
-      setSize(sizes.includes("L") ? "L" : sizes[0]);
+      setSize(initialSize(product, sizes) || sizes[0]);
     }
   }, [size, sizes]);
 

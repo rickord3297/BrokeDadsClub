@@ -26,6 +26,7 @@ export type Product = {
   image_fit?: "cover" | "contain";
   active: boolean;
   variants?: PrintifyVariant[];
+  defaultSize?: string;
 };
 
 export function productNeedsSize(product: Product) {
@@ -109,13 +110,19 @@ function artFromPrintify(title: string, tags: string[]): ProductArt {
   if (haystack.includes("mug")) return "mug";
   if (haystack.includes("cap") || haystack.includes("hat")) return "cap";
   if (haystack.includes("sticker")) return "sticker";
-  if (haystack.includes("patch")) return "patch";
+  if (haystack.includes("patch") || haystack.includes("pin")) return "patch";
   return "tee";
 }
 
 const printifyCopyOverrides: Record<
   string,
-  { slug: string; name: string; description: string; price_cents?: number }
+  {
+    slug: string;
+    name: string;
+    description: string;
+    price_cents?: number;
+    defaultSize?: string;
+  }
 > = {
   "6a7fcaa74f40ed8f8107ca0f": {
     slug: "club-pup-tee",
@@ -124,14 +131,41 @@ const printifyCopyOverrides: Record<
       "The club dog is on his back. The wrench is in the grass. BROKE DADS CLUB is on the chest so another dad in the pickup line might actually nod at you. Soft Gildan cotton, printed after you check out. White, graphite heather, or military green. For dads whose best coworker still has four paws.",
     price_cents: 1999,
   },
+  "6a7fd6ba2cde8b7dc1033d3f": {
+    slug: "castle-pin",
+    name: "Castle Pin",
+    description:
+      "The official club crest, in pin form. Navy, tan, and a castle you cannot actually afford. Stick it on the jacket that has seen every school drop-off.",
+    price_cents: 500,
+    defaultSize: "2.25\"",
+  },
 };
 
-function oneRetailPrice(
-  variants: PrintifyVariant[],
-  overridePrice?: number,
-) {
-  if (overridePrice && overridePrice > 0) return overridePrice;
-  return Math.min(...variants.map((variant) => variant.price_cents));
+function isRetailLooking(cents: number) {
+  const remainder = cents % 100;
+  return remainder === 0 || remainder === 50 || remainder === 95 || remainder === 99;
+}
+
+function catalogPricing(variants: PrintifyVariant[], overridePrice?: number) {
+  if (overridePrice && overridePrice > 0) {
+    return { price_cents: overridePrice, flatten: true };
+  }
+  const prices = variants.map((variant) => variant.price_cents).filter((price) => price > 0);
+  const retail = prices.filter(isRetailLooking);
+  const pool = retail.length ? retail : prices;
+  const unique = [...new Set(pool)];
+  if (unique.length === 1) {
+    return { price_cents: unique[0], flatten: true };
+  }
+  return { price_cents: Math.min(...pool), flatten: false };
+}
+
+export function initialSize(product: Product, sizes: string[]) {
+  if (product.defaultSize && sizes.includes(product.defaultSize)) {
+    return product.defaultSize;
+  }
+  if (sizes.includes("L")) return "L";
+  return sizes[0] ?? "";
 }
 
 async function getPrintifyProducts(): Promise<Product[]> {
@@ -147,19 +181,22 @@ async function getPrintifyProducts(): Promise<Product[]> {
         if (!variants.length || !image) return null;
         const override = printifyCopyOverrides[row.id];
         const art = artFromPrintify(override?.name ?? copy.title, copy.tags);
-        const price_cents = oneRetailPrice(variants, override?.price_cents);
+        const pricing = catalogPricing(variants, override?.price_cents);
         return {
           id: row.id,
           slug: override?.slug ?? slugify(copy.title),
           name: override?.name ?? copy.title,
           description: override?.description ?? copy.description,
-          price_cents,
+          price_cents: pricing.price_cents,
           category: art === "tee" || art === "hoodie" || art === "cap" ? "Apparel" : "Gear",
           art,
           image,
           images,
           active: true,
-          variants: variants.map((variant) => ({ ...variant, price_cents })),
+          defaultSize: override?.defaultSize,
+          variants: pricing.flatten
+            ? variants.map((variant) => ({ ...variant, price_cents: pricing.price_cents }))
+            : variants,
         };
       })
       .filter((product) => product !== null);
