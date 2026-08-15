@@ -28,6 +28,7 @@
 | Side hustles that don't steal bedtime | live | 2026-07-14 | `side-hustles-that-dont-steal-bedtime` |
 | Talking to kids about money without scaring them | live | 2026-07-07 | `talking-to-kids-about-money` |
 | Thrift without looking like a dare | live | 2026-06-30 | `thrift-without-looking-like-a-dare` |
+| My retirement can wait: $25/week in VTI for 30 years | draft | 2026-10-27 | [`retirement-can-wait.md`](guides/retirement-can-wait.md) |
 
 ### Status
 
