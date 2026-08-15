@@ -30,7 +30,8 @@ export default function AboutPage() {
         <p>
           The site does two jobs. The <Link href="/guides">guides</Link> are the
           reason to show up: groceries, money talks, cheap dates, work that
-          fits around bedtime. The <Link href="/shop">shop</Link> is how we
+          fits around bedtime. The <Link href="/resources">free printables</Link>{" "}
+          are the fridge-door versions. The <Link href="/shop">shop</Link> is how we
           keep those guides free and the lights on. The crest (castle, crowns,
           and a drawbridge) is the joke and the membership card: family magic
           costs a fortune, and we are still in the club.

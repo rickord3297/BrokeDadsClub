@@ -1,3 +1,4 @@
+import { cache } from "react";
 import {
   isPrintifyConfigured,
   listPrintifyCatalog,
@@ -229,13 +230,22 @@ async function getLocalPhotoProducts(): Promise<Product[]> {
   return seedProducts.filter((product) => product.active && hasProductPhoto(product));
 }
 
-export async function getProducts(): Promise<Product[]> {
+export const getProducts = cache(async (): Promise<Product[]> => {
   const [printify, local] = await Promise.all([
     getPrintifyProducts(),
     getLocalPhotoProducts(),
   ]);
   const slugs = new Set(printify.map((product) => product.slug));
   return [...printify, ...local.filter((product) => !slugs.has(product.slug))];
+});
+
+export async function getProductsBySlugs(slugs: string[]): Promise<Product[]> {
+  if (!slugs.length) return [];
+  const products = await getProducts();
+  return slugs.flatMap((slug) => {
+    const product = products.find((item) => item.slug === slug);
+    return product ? [product] : [];
+  });
 }
 
 export const seedProducts: Product[] = [

@@ -8,6 +8,7 @@ import { site } from "@/lib/site";
 
 const nav = [
   { href: "/guides", label: "Guides" },
+  { href: "/resources", label: "Tools" },
   { href: "/shop", label: "Shop" },
   { href: "/about", label: "About" },
 ];
@@ -17,7 +18,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-rule/80 bg-paper/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-rule/80 bg-paper/85 backdrop-blur-md print:hidden">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="flex items-center gap-3 text-ink">
           <ClubLogo size={64} priority className="shrink-0" />
@@ -31,7 +32,19 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 text-sm font-medium text-ink md:flex">
+        <nav className="hidden items-center gap-5 text-sm font-medium text-ink md:flex">
+          <form action="/guides" method="get" className="hidden lg:block">
+            <label className="sr-only" htmlFor="header-guide-search">
+              Search guides
+            </label>
+            <input
+              id="header-guide-search"
+              type="search"
+              name="q"
+              placeholder="Search guides"
+              className="h-9 w-44 rounded-full border border-rule bg-paper px-3 text-sm outline-none placeholder:text-ink-soft focus:border-pine"
+            />
+          </form>
           {nav.map((item) => (
             <Link key={item.href} href={item.href} className="hover:text-rust">
               {item.label}
@@ -63,6 +76,18 @@ export function SiteHeader() {
       {open ? (
         <nav className="border-t border-rule px-4 py-3 md:hidden">
           <div className="flex flex-col gap-3 text-base">
+            <form action="/guides" method="get">
+              <label className="sr-only" htmlFor="mobile-guide-search">
+                Search guides
+              </label>
+              <input
+                id="mobile-guide-search"
+                type="search"
+                name="q"
+                placeholder="Search guides"
+                className="h-10 w-full rounded-full border border-rule bg-paper px-3 text-sm outline-none placeholder:text-ink-soft focus:border-pine"
+              />
+            </form>
             {nav.map((item) => (
               <Link
                 key={item.href}

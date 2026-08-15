@@ -19,6 +19,7 @@ export function AddToCartButton({
   onColorChange,
   onSizeChange,
   hideColorSelect = false,
+  compact = false,
 }: {
   product: Product;
   color?: string;
@@ -26,6 +27,7 @@ export function AddToCartButton({
   onColorChange?: (color: string) => void;
   onSizeChange?: (size: string) => void;
   hideColorSelect?: boolean;
+  compact?: boolean;
 }) {
   const { addItem } = useCart();
   const colors = productColors(product);
@@ -68,7 +70,7 @@ export function AddToCartButton({
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-center gap-3">
+      <div className={`flex flex-wrap items-center ${compact ? "gap-2" : "gap-3"}`}>
         {colors.length > 1 && !hideColorSelect ? (
           <label className="text-sm text-ink-soft">
             Color
@@ -122,9 +124,13 @@ export function AddToCartButton({
             setAdded(true);
             window.setTimeout(() => setAdded(false), 1400);
           }}
-          className="rounded-full bg-rust px-5 py-3 text-sm font-semibold text-paper hover:bg-rust-2"
+          className={
+            compact
+              ? "rounded-full bg-rust px-4 py-2 text-sm font-semibold text-paper hover:bg-rust-2"
+              : "rounded-full bg-rust px-5 py-3 text-sm font-semibold text-paper hover:bg-rust-2"
+          }
         >
-          {added ? "Added to cart" : "Add to cart"}
+          {added ? "Added" : compact ? "Add to cart" : "Add to cart"}
         </button>
       </div>
       {message ? <p className="text-sm text-rust">{message}</p> : null}

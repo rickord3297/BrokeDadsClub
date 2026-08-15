@@ -121,6 +121,27 @@ export function getGuide(slug: string): Guide | null {
   return getGuides().find((guide) => guide.slug === slug) ?? null;
 }
 
+const CATEGORY_ORDER = ["Money", "Time", "Kids", "Work", "Gear"];
+
+export function getGuideCategories(guides: Guide[] = getGuides()): string[] {
+  const found = new Set(guides.map((guide) => guide.category));
+  return [
+    ...CATEGORY_ORDER.filter((category) => found.has(category)),
+    ...[...found].filter((category) => !CATEGORY_ORDER.includes(category)).sort(),
+  ];
+}
+
+export function matchesGuideQuery(guide: Guide, query: string): boolean {
+  const hay = query.trim().toLowerCase();
+  if (!hay) return true;
+  return (
+    guide.title.toLowerCase().includes(hay) ||
+    guide.excerpt.toLowerCase().includes(hay) ||
+    guide.category.toLowerCase().includes(hay) ||
+    guide.keywords.some((keyword) => keyword.toLowerCase().includes(hay))
+  );
+}
+
 export function guideKeywords(guide: Guide): string[] {
   const fallback = [
     "broke dads club",

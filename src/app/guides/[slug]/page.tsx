@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { GuideEmailCta } from "@/components/guide-email-cta";
+import { GuideShop } from "@/components/guide-shop";
 import { RelatedGuides } from "@/components/related-guides";
 import { formatDate } from "@/lib/format";
 import {
@@ -138,6 +139,7 @@ export default async function GuidePage({
       : null;
 
   return (
+    <>
     <article className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
       <script
         type="application/ld+json"
@@ -185,14 +187,16 @@ export default async function GuidePage({
           </dl>
         </section>
       ) : null}
-
+    </article>
+    <div className="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
+      <GuideShop slugs={guide.shop} />
       <RelatedGuides guides={related} />
-
       <p className="mt-12 border-t border-rule pt-6 text-sm">
         <Link href="/guides" className="text-pine hover:text-rust">
           ← All guides
         </Link>
       </p>
-    </article>
+    </div>
+    </>
   );
 }

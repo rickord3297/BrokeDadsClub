@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { ClubLogo } from "@/components/club-logo";
 import { NewsletterForm } from "@/components/newsletter-form";
+import { RecapTopics } from "@/components/recap-topics";
 import { site } from "@/lib/site";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-auto border-t border-rule bg-pine text-paper">
+    <footer className="mt-auto border-t border-rule bg-pine text-paper print:hidden">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[1.2fr_0.8fr]">
         <div>
           <div className="flex items-center gap-3">
@@ -29,13 +30,18 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <p className="font-display text-xl">
-            Get a weekly recap of new content.
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold">
+            Weekly recap
+          </p>
+          <p className="mt-2 font-display text-xl">
+            One email when a new guide goes up.
           </p>
           <p className="mt-2 text-sm leading-6 text-paper/90">
-            One email when a new guide goes up. Quiet weeks stay quiet.
-            Unsubscribe whenever.
+            Quiet weeks stay quiet. Unsubscribe whenever.
           </p>
+          <div className="mt-3">
+            <RecapTopics className="text-sm leading-6 text-paper/80 [&_a]:hover:text-gold" />
+          </div>
           <div className="mt-4">
             <NewsletterForm source="footer" submitLabel="Get the recap" />
           </div>
@@ -48,6 +54,9 @@ export function SiteFooter() {
           <div className="flex gap-4 font-medium">
             <Link href="/guides" className="hover:text-gold">
               Guides
+            </Link>
+            <Link href="/resources" className="hover:text-gold">
+              Tools
             </Link>
             <Link href="/shop" className="hover:text-gold">
               Shop

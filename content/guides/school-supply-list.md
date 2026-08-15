@@ -45,6 +45,8 @@ Make three columns on a scrap of paper:
 
 If the school truly requires something exotic, buy that. Everything else is negotiable until proven otherwise.
 
+Print the [school supply triage sheet](/resources/school-supply-triage) and fill the three columns before you walk into a store.
+
 ## Where to buy without bleeding
 
 - What you already have at home (inventory first, fifteen minutes saves forty dollars)

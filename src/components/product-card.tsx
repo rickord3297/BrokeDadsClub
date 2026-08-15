@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AddToCartButton } from "@/components/add-to-cart-button";
 import { ProductMedia } from "@/components/product-media";
 import { formatMoney } from "@/lib/format";
 import { productPriceRange, type Product } from "@/lib/products";
@@ -16,27 +17,29 @@ export function ProductCard({
       ? `From ${formatMoney(range.min)}`
       : formatMoney(product.price_cents);
   return (
-    <Link
-      href={`/shop/${product.slug}`}
-      className="group overflow-hidden rounded-2xl border border-rule bg-paper-2"
-    >
-      <div className="relative aspect-square overflow-hidden bg-paper">
-        {badge ? (
-          <span className="absolute left-3 top-3 z-10 rounded-full bg-pine px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-paper">
-            {badge}
-          </span>
-        ) : null}
-        <ProductMedia product={product} />
+    <article className="flex flex-col overflow-hidden rounded-2xl border border-rule bg-paper-2">
+      <Link href={`/shop/${product.slug}`} className="group">
+        <div className="relative aspect-square overflow-hidden bg-paper">
+          {badge ? (
+            <span className="absolute left-3 top-3 z-10 rounded-full bg-pine px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-paper">
+              {badge}
+            </span>
+          ) : null}
+          <ProductMedia product={product} />
+        </div>
+        <div className="space-y-1 px-4 pt-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-rust">
+            {product.category}
+          </p>
+          <h3 className="font-display text-xl group-hover:text-rust">
+            {product.name}
+          </h3>
+          <p className="text-sm font-semibold text-ink">{priceLabel}</p>
+        </div>
+      </Link>
+      <div className="mt-auto px-4 pb-4 pt-3">
+        <AddToCartButton product={product} compact hideColorSelect />
       </div>
-      <div className="space-y-1 p-4">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-rust">
-          {product.category}
-        </p>
-        <h3 className="font-display text-xl group-hover:text-rust">
-          {product.name}
-        </h3>
-        <p className="text-sm font-semibold text-ink">{priceLabel}</p>
-      </div>
-    </Link>
+    </article>
   );
 }

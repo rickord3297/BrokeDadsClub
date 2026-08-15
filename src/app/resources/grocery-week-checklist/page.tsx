@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { GuideEmailCta } from "@/components/guide-email-cta";
-import { PrintButton } from "@/components/print-button";
+import {
+  CheckRow,
+  ResourceLayout,
+} from "@/components/resource-layout";
+import { requireResource } from "@/lib/resources";
 import { site } from "@/lib/site";
 
+const resource = requireResource("grocery-week-checklist");
+
 export const metadata: Metadata = {
-  title: "Free $47 Grocery Week Checklist",
-  description:
-    "Printable grocery-week checklist for feeding a family on a tight budget: cart list, week shape, and the three rules that keep the plan from exploding.",
+  title: resource.seoTitle,
+  description: resource.description,
   alternates: {
-    canonical: `${site.url}/resources/grocery-week-checklist`,
+    canonical: `${site.url}/resources/${resource.slug}`,
   },
 };
 
@@ -40,30 +43,8 @@ const week = [
 
 export default function GroceryWeekChecklistPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
-      <p className="text-xs uppercase tracking-[0.18em] text-rust print:hidden">
-        Free resource
-      </p>
-      <h1 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">
-        The $47 grocery-week checklist
-      </h1>
-      <p className="mt-4 text-lg leading-8 text-ink-soft">
-        Fridge-door version of the plan. Shop once, cook once / eat twice, name
-        the snack. Full write-up:{" "}
-        <Link
-          href="/guides/the-47-dollar-grocery-week"
-          className="font-medium text-pine hover:text-rust"
-        >
-          the $47 grocery week
-        </Link>
-        .
-      </p>
-
-      <div className="mt-6 print:hidden">
-        <PrintButton />
-      </div>
-
-      <section id="checklist" className="mt-10 space-y-10">
+    <ResourceLayout resource={resource}>
+      <div className="space-y-10">
         <div>
           <h2 className="font-display text-3xl">The three rules</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5 text-base leading-7">
@@ -85,13 +66,7 @@ export default function GroceryWeekChecklistPage() {
           <h2 className="font-display text-3xl">The cart</h2>
           <ul className="mt-4 space-y-2">
             {cart.map((item) => (
-              <li key={item} className="flex gap-3 text-base leading-7">
-                <span
-                  className="mt-1 inline-block h-4 w-4 shrink-0 rounded border border-rule"
-                  aria-hidden
-                />
-                <span>{item}</span>
-              </li>
+              <CheckRow key={item}>{item}</CheckRow>
             ))}
           </ul>
           <p className="mt-4 text-sm text-ink-soft">
@@ -113,19 +88,7 @@ export default function GroceryWeekChecklistPage() {
             ))}
           </ul>
         </div>
-      </section>
-
-      <div className="mt-12 print:hidden">
-        <GuideEmailCta source="resource:grocery-week-checklist" />
-        <p className="mt-8 text-sm">
-          <Link
-            href="/guides/the-47-dollar-grocery-week"
-            className="text-pine hover:text-rust"
-          >
-            ← Back to the full guide
-          </Link>
-        </p>
       </div>
-    </div>
+    </ResourceLayout>
   );
 }

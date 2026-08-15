@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import { GuideCard } from "@/components/guide-card";
-import { getGuide, getGuides } from "@/lib/guides";
+import { GuideSearch } from "@/components/guide-search";
+import { TopicPills } from "@/components/topic-pills";
+import {
+  getGuide,
+  getGuideCategories,
+  getGuides,
+  matchesGuideQuery,
+} from "@/lib/guides";
 
 export const metadata: Metadata = {
   title: "Guides",
@@ -15,12 +23,25 @@ const startHereSlugs = [
   "talking-to-kids-about-money",
 ];
 
-export default function GuidesPage() {
+export default async function GuidesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ topic?: string; q?: string }>;
+}) {
+  const params = await searchParams;
+  const topic = params.topic?.trim() ?? "";
+  const query = params.q?.trim() ?? "";
   const guides = getGuides();
+  const categories = getGuideCategories(guides);
+  const filtered = guides.filter((guide) => {
+    const topicOk = !topic || guide.category === topic;
+    return topicOk && matchesGuideQuery(guide, query);
+  });
+  const browsing = Boolean(topic || query);
   const startHere = startHereSlugs
     .map((slug) => getGuide(slug))
     .filter((guide): guide is NonNullable<typeof guide> => guide != null);
-  const rest = guides.filter((guide) => !startHereSlugs.includes(guide.slug));
+  const rest = filtered.filter((guide) => !startHereSlugs.includes(guide.slug));
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
@@ -31,7 +52,18 @@ export default function GuidesPage() {
         talking about money, cheap dates, and work that doesn&apos;t steal bedtime.
       </p>
 
-      {startHere.length > 0 ? (
+      <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <TopicPills categories={categories} active={topic} query={query} />
+        <Suspense
+          fallback={
+            <div className="h-11 w-full max-w-md rounded-full border border-rule bg-paper" />
+          }
+        >
+          <GuideSearch />
+        </Suspense>
+      </div>
+
+      {!browsing && startHere.length > 0 ? (
         <section className="mt-12">
           <p className="text-xs uppercase tracking-[0.18em] text-rust">Start here</p>
           <h2 className="mt-2 font-display text-3xl">Three that pay rent</h2>
@@ -49,19 +81,30 @@ export default function GuidesPage() {
 
       <section className="mt-14">
         <div className="flex items-end justify-between gap-4">
-          <h2 className="font-display text-3xl">All guides</h2>
+          <h2 className="font-display text-3xl">
+            {browsing ? "Matching guides" : "All guides"}
+          </h2>
           <Link
-            href="/resources/grocery-week-checklist"
+            href="/resources"
             className="text-sm font-medium text-pine hover:text-rust"
           >
-            Free grocery checklist →
+            Free printables →
           </Link>
         </div>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          {rest.map((guide) => (
-            <GuideCard key={guide.slug} guide={guide} />
-          ))}
-        </div>
+        {filtered.length === 0 ? (
+          <p className="mt-6 text-base text-ink-soft">
+            Nothing matches that yet.{" "}
+            <Link href="/guides" className="font-medium text-pine hover:text-rust">
+              Show all guides
+            </Link>
+          </p>
+        ) : (
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {(browsing ? filtered : rest).map((guide) => (
+              <GuideCard key={guide.slug} guide={guide} />
+            ))}
+          </div>
+        )}
       </section>
     </div>
   );

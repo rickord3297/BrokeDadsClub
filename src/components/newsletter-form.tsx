@@ -1,17 +1,24 @@
 "use client";
 
+import Link from "next/link";
 import { useId, useState } from "react";
 
 type NewsletterFormProps = {
   variant?: "footer" | "article";
   submitLabel?: string;
   source?: string;
+  successMessage?: string;
+  successHref?: string;
+  successLinkLabel?: string;
 };
 
 export function NewsletterForm({
   variant = "footer",
   submitLabel = "Get the recap",
   source = "footer",
+  successMessage,
+  successHref,
+  successLinkLabel,
 }: NewsletterFormProps) {
   const inputId = useId();
   const [email, setEmail] = useState("");
@@ -43,7 +50,28 @@ export function NewsletterForm({
     setStatus("done");
     setEmail("");
     setMessage(
-      payload.message ?? "You're on the recap list. We'll send when there's something new.",
+      successMessage ??
+        payload.message ??
+        "You're on the recap list. We'll send when there's something new.",
+    );
+  }
+
+  if (status === "done") {
+    return (
+      <p className={`text-sm ${isArticle ? "text-pine" : "text-gold"}`}>
+        {message}
+        {successHref && successLinkLabel ? (
+          <>
+            {" "}
+            <Link
+              href={successHref}
+              className="font-semibold underline decoration-current underline-offset-2"
+            >
+              {successLinkLabel} →
+            </Link>
+          </>
+        ) : null}
+      </p>
     );
   }
 

@@ -85,3 +85,18 @@ body {
 .prose-guide strong {
   font-weight: 650;
 }
+
+@media print {
+  body {
+    background: #fff !important;
+  }
+
+  @page {
+    margin: 0.55in;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getGuides } from "@/lib/guides";
 import { getProducts } from "@/lib/products";
+import { resources } from "@/lib/resources";
 import { site } from "@/lib/site";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -12,10 +13,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${site.url}/guides`, lastModified: new Date() },
     { url: `${site.url}/shop`, lastModified: new Date() },
     { url: `${site.url}/about`, lastModified: new Date() },
-    {
-      url: `${site.url}/resources/grocery-week-checklist`,
+    { url: `${site.url}/resources`, lastModified: new Date() },
+    ...resources.map((resource) => ({
+      url: `${site.url}/resources/${resource.slug}`,
       lastModified: new Date(),
-    },
+    })),
     ...guides.map((guide) => ({
       url: `${site.url}/guides/${guide.slug}`,
       lastModified: new Date(guide.publishedAt),

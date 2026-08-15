@@ -36,6 +36,8 @@ Birthday party math is mostly about deciding the story before the invitations go
 
 Pick a **number** first: dollars and kids. Everything else fits inside that fence.
 
+Print the [birthday party budget sheet](/resources/birthday-party-budget) if you want the fence on paper.
+
 **Invite list:** smaller is kinder to your budget and your living room. "We're keeping it small this year" is a full sentence.
 
 Skip goodie bags if money is tight. Kids remember cake and attention more than plastic junk that breaks in the car.
