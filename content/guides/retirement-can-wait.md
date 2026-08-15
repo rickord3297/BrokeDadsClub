@@ -2,8 +2,8 @@
 title: "My retirement can wait (until the math says otherwise)"
 slug: retirement-can-wait
 seoTitle: "Cost of Waiting to Invest $25/Week | Broke Dads Club"
-description: "Model $25 a week in a total market fund for 30 years. See how a 1, 5, or 10 year delay shrinks the nest egg without a lecture."
-excerpt: Twenty-five bucks a week is not a flex. It is enough to show what "I'll start later" actually costs.
+description: "A plain illustration of $25 a week in a total market fund for 30 years, and what waiting might cost. Not financial advice."
+excerpt: Not advice. Just a clear picture of what "I'll start later" can look like at $25 a week.
 category: Money
 readTime: 7 min
 publishedAt: "2026-10-27"
@@ -25,7 +25,7 @@ shop:
 faq:
   - question: How much is $25 a week invested for 30 years?
     answer: >-
-      At a long-run total-market ballpark of about 10% a year, roughly $224,000 on $39,000 of deposits. At a quieter 8%, closer to $153,000. Past returns are not a promise.
+      In this made-up illustration (not advice), a long-run total-market ballpark of about 10% a year lands near $224,000 on $39,000 of deposits. At a quieter 8%, closer to $153,000. Past returns are not a promise.
   - question: What does waiting five years to invest cost?
     answer: >-
       Same $25 a week, five fewer years: about $90,000 less at that 10% ballpark, or about $54,000 less at 8%. You also put in less money, but most of the gap is lost compounding time.
@@ -36,13 +36,15 @@ faq:
 
 "My retirement can wait" is the sentence you say when the car needs brakes, the kid needs cleats, and the account that was supposed to be for later is already doing triage. Fair. Also incomplete.
 
-Here is a boring model: **$25 a week** into a total U.S. stock market fund (think something like **VTI**, not stock-picking homework), for **30 years**. No raise, no bonus dump, no crypto subplot. Just the weekly autopay you keep meaning to turn on.
+**This is not financial advice or guidance.** It is not a recommendation to buy any fund, open any account, or put any amount anywhere. It is a made-up picture of what one small weekly habit *might* look like over time, so the cost of waiting is easier to see. Your situation is yours. Talk to a real professional if you need advice.
 
-This is an illustration, not a forecast and not advice. Markets bounce. Fees and taxes nibble. Your life will interrupt the spreadsheet. The point is the shape of the delay, not a guarantee with a bow on it.
+Here is the boring model we are playing with: **$25 a week** into a total U.S. stock market fund (something in the spirit of **VTI**, named only as an example), for **30 years**. No raise, no bonus dump, no crypto subplot. Just a steady weekly transfer on paper.
 
-## The baseline: start this week
+Markets bounce. Fees and taxes nibble. Your life will interrupt the spreadsheet. The numbers below are a representation, not a forecast and not a promise.
 
-$25 × 52 = **$1,300 a year**. Over 30 years you put in **$39,000** of your own money.
+## The baseline: if the habit started this week
+
+$25 × 52 = **$1,300 a year**. Over 30 years that is **$39,000** of deposits in the model.
 
 Using a long-run total-market ballpark of about **10% a year** (rough historical vibe for broad U.S. stocks, not a promise), that weekly habit compounds to about **$224,000**.
 
@@ -77,15 +79,17 @@ Illustration at the 10% ballpark:
 
 Catch-up is possible. It is louder. It asks for money in the years when kids get more expensive, not less. See [the dad tax](/guides/the-dad-tax) if you need a reminder of why "later" keeps getting booked.
 
-## How to make $25 real without a personality transplant
+## Ideas for making a small weekly number feel real
 
-1. **Name the account like a bill.** "Retirement $25" next to phone and insurance. Autopay on payday, not on vibes.
+Again: ideas, not instructions. If any of this fits your house, fine. If not, ignore it.
+
+1. **Name a line item like a bill.** Something like "Later $25" next to phone and insurance, so it does not depend on vibes.
 2. **Steal it from a leak, not from dinner.** One delivery night a month, the unused streaming tier, the "I deserve this" gas-station run that is not gas. Pair with [the $47 grocery week](/guides/the-47-dollar-grocery-week) if the food budget is already the battlefield.
-3. **Skip the research rabbit hole.** Broad total-market fund, automatic buy, leave it alone. Complexity is how this dies in a browser tab.
-4. **Tell the house the plan in one sentence.** Not a TED Talk. Enough that a kid hearing money talk does not write a scare story. [Talking to kids about money](/guides/talking-to-kids-about-money) is the longer version.
+3. **Skip the research rabbit hole.** Complexity is how this dies in a browser tab. A simple, automatic habit beats a perfect plan you never start.
+4. **Tell the house the shape in one sentence.** Not a TED Talk. Enough that a kid hearing money talk does not write a scare story. [Talking to kids about money](/guides/talking-to-kids-about-money) is the longer version.
 
-If $25 is a stretch this month, do $10. The model scales. The delay still does not.
+If $25 is a stretch in this picture, try $10 in the same math. The model scales. The delay still does the damage.
 
 ## The point
 
-Broke does not mean you skip the future. It means you protect a small, boring line item while the present is loud. Twenty-five dollars a week will not make you the dad with the boat. It will make "retirement can wait" a sentence you stop saying, because the math already answered.
+Broke does not mean you skip the future. It means you can see what "later" might cost before the present talks you out of looking. Twenty-five dollars a week will not make you the dad with the boat. In this representation, it is enough to make "retirement can wait" a sentence worth double-checking.
