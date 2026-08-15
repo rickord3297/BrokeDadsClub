@@ -47,6 +47,12 @@ export default async function Home() {
                 Read the guides
               </Link>
               <Link
+                href="/resources"
+                className="rounded-full border border-ink px-5 py-3 text-sm font-semibold hover:bg-ink hover:text-paper"
+              >
+                Free printables
+              </Link>
+              <Link
                 href="/shop"
                 className="rounded-full border border-ink px-5 py-3 text-sm font-semibold hover:bg-ink hover:text-paper"
               >
@@ -113,7 +119,7 @@ export default async function Home() {
           <div className="flex items-end justify-between gap-4">
             <div>
               <p className="text-xs uppercase tracking-[0.18em] text-rust">
-                Free tools
+                Printables
               </p>
               <h2 className="mt-2 font-display text-4xl">Printables for the fridge</h2>
               <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
@@ -125,7 +131,7 @@ export default async function Home() {
               href="/resources"
               className="text-sm font-medium text-pine hover:text-rust"
             >
-              All tools →
+              All printables →
             </Link>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">

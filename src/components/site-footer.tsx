@@ -56,7 +56,7 @@ export function SiteFooter() {
               Guides
             </Link>
             <Link href="/resources" className="hover:text-gold">
-              Tools
+              Printables
             </Link>
             <Link href="/shop" className="hover:text-gold">
               Shop

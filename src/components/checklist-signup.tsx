@@ -25,8 +25,7 @@ export function ChecklistSignup({
         The $47 grocery-week plan
       </p>
       <p className="mt-2 text-sm leading-6 text-ink-soft">
-        Cart list, week shape, three rules. Drop your email and we will send it
-        with the recap. Quiet weeks stay quiet.
+        Cart list sized for about 3-4 people, a tired-night pasta, three rules.
       </p>
       <div className="mt-4">
         <NewsletterForm

@@ -15,9 +15,9 @@ export const resources: Resource[] = [
     title: "The $47 grocery-week checklist",
     seoTitle: "Free $47 Grocery Week Checklist",
     description:
-      "Printable grocery-week checklist for feeding a family on a tight budget: cart list, week shape, and the three rules that keep the plan from exploding.",
+      "Printable grocery-week checklist for feeding about 3-4 people on a tight budget. Realistic cart amounts, a tired-night pasta, and three rules that keep the second trip from happening.",
     excerpt:
-      "Fridge-door cart list, seven dinners, three rules. Shop once. Cook once, eat twice.",
+      "A week of dinners for about 3-4 people. Dozen eggs, a pack of thighs, pasta on the tired night. Shop once.",
     printLabel: "Print or save PDF",
     guideSlug: "the-47-dollar-grocery-week",
     guideLabel: "the $47 grocery week",

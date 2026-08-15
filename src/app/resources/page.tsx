@@ -32,7 +32,7 @@ export default function ResourcesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <p className="text-xs uppercase tracking-[0.18em] text-rust">Free tools</p>
+      <p className="text-xs uppercase tracking-[0.18em] text-rust">Printables</p>
       <h1 className="mt-3 font-display text-5xl">Printable tools you can use this week</h1>
       <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
         One-page sheets for the fridge, the backpack, or the party. No email
