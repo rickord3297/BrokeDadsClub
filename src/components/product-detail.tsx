@@ -2,11 +2,17 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AddToCartButton } from "@/components/add-to-cart-button";
 import { ProductMedia } from "@/components/product-media";
 import { formatMoney } from "@/lib/format";
-import { productColors, type Product } from "@/lib/products";
+import {
+  findVariant,
+  productColors,
+  productNeedsSize,
+  productSizes,
+  type Product,
+} from "@/lib/products";
 
 const ANGLE_LABELS: Record<string, string> = {
   front: "Front",
@@ -18,6 +24,23 @@ export function ProductDetail({ product }: { product: Product }) {
   const colors = productColors(product);
   const [color, setColor] = useState(colors[0] ?? "");
   const [angle, setAngle] = useState("front");
+  const sizes = productSizes(product, color || undefined);
+  const needsSize = productNeedsSize(product) || sizes.length > 0;
+  const [size, setSize] = useState(
+    sizes.includes("L") ? "L" : (sizes[0] ?? ""),
+  );
+
+  const selected = findVariant(product, {
+    size: needsSize ? size || undefined : undefined,
+    color: color || undefined,
+  });
+
+  useEffect(() => {
+    if (!sizes.length) return;
+    if (!sizes.includes(size)) {
+      setSize(sizes.includes("L") ? "L" : sizes[0]);
+    }
+  }, [size, sizes]);
 
   const colorPhotos = useMemo(() => {
     const photos = product.images ?? [];
@@ -86,7 +109,7 @@ export function ProductDetail({ product }: { product: Product }) {
         </p>
         <h1 className="mt-3 font-display text-5xl">{product.name}</h1>
         <p className="mt-4 font-display text-3xl">
-          {formatMoney(product.price_cents)}
+          {formatMoney(selected?.price_cents ?? product.price_cents)}
         </p>
         <p className="mt-6 max-w-lg text-lg leading-8 text-ink-soft">
           {product.description}
@@ -139,10 +162,12 @@ export function ProductDetail({ product }: { product: Product }) {
           <AddToCartButton
             product={product}
             color={color}
+            size={size}
             onColorChange={(next) => {
               setColor(next);
               setAngle("front");
             }}
+            onSizeChange={setSize}
             hideColorSelect
           />
           <Link href="/cart" className="text-sm font-medium text-pine hover:text-rust">

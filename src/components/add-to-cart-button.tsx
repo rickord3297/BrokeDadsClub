@@ -14,12 +14,16 @@ import {
 export function AddToCartButton({
   product,
   color: controlledColor,
+  size: controlledSize,
   onColorChange,
+  onSizeChange,
   hideColorSelect = false,
 }: {
   product: Product;
   color?: string;
+  size?: string;
   onColorChange?: (color: string) => void;
+  onSizeChange?: (size: string) => void;
   hideColorSelect?: boolean;
 }) {
   const { addItem } = useCart();
@@ -28,9 +32,10 @@ export function AddToCartButton({
   const color = controlledColor ?? internalColor;
   const sizes = productSizes(product, color || undefined);
   const needsSize = productNeedsSize(product) || sizes.length > 0;
-  const [size, setSize] = useState(
+  const [internalSize, setInternalSize] = useState(
     sizes.includes("L") ? "L" : (sizes[0] ?? APPAREL_SIZES[2]),
   );
+  const size = controlledSize ?? internalSize;
   const [added, setAdded] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -40,6 +45,11 @@ export function AddToCartButton({
       setSize(sizes.includes("L") ? "L" : sizes[0]);
     }
   }, [size, sizes]);
+
+  function setSize(next: string) {
+    if (onSizeChange) onSizeChange(next);
+    else setInternalSize(next);
+  }
 
   const selected = useMemo(
     () =>

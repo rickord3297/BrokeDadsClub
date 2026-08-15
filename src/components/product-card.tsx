@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ProductMedia } from "@/components/product-media";
 import { formatMoney } from "@/lib/format";
-import type { Product } from "@/lib/products";
+import { productPriceRange, type Product } from "@/lib/products";
 
 export function ProductCard({
   product,
@@ -10,6 +10,11 @@ export function ProductCard({
   product: Product;
   badge?: string;
 }) {
+  const range = productPriceRange(product);
+  const priceLabel =
+    range.max > range.min
+      ? `From ${formatMoney(range.min)}`
+      : formatMoney(product.price_cents);
   return (
     <Link
       href={`/shop/${product.slug}`}
@@ -30,9 +35,7 @@ export function ProductCard({
         <h3 className="font-display text-xl group-hover:text-rust">
           {product.name}
         </h3>
-        <p className="text-sm font-semibold text-ink">
-          {formatMoney(product.price_cents)}
-        </p>
+        <p className="text-sm font-semibold text-ink">{priceLabel}</p>
       </div>
     </Link>
   );

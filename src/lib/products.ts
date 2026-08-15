@@ -80,6 +80,20 @@ export function findVariant(
   );
 }
 
+export function productPriceRange(product: Product) {
+  const prices = [
+    ...new Set(
+      (product.variants ?? [])
+        .map((variant) => variant.price_cents)
+        .filter((price) => price > 0),
+    ),
+  ];
+  if (!prices.length) {
+    return { min: product.price_cents, max: product.price_cents };
+  }
+  return { min: Math.min(...prices), max: Math.max(...prices) };
+}
+
 function slugify(value: string) {
   return (
     value
