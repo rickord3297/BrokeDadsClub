@@ -8,12 +8,12 @@
 
 | Idea | Status | Go live | Notes |
 |------|--------|---------|-------|
-| Dad math: I can do that cheaper (then you need $200 of tools) | idea | | Pride vs the tool tax. DIY is cheaper until the first specialty bit. |
-| The second bill after school starts (fees, sports, fundraisers) | idea | | trend 2026-08-14: hidden costs after the supply list; NRF/Texas A&M "second bill" |
+| Dad math: I can do that cheaper (then you need $200 of tools) | draft | | [`dad-math.md`](guides/dad-math.md) |
+| The second bill after school starts (fees, sports, fundraisers) | draft | | [`the-second-bill.md`](guides/the-second-bill.md) |
 | Gas station dinner that still counts as feeding your kids | scheduled | 2026-09-01 | [`gas-station-dinner.md`](guides/gas-station-dinner.md) |
 | When the other dad’s vacation photos hit | scheduled | 2026-09-08 | [`when-the-other-dads-vacation-photos-hit.md`](guides/when-the-other-dads-vacation-photos-hit.md) |
 | Explaining “we can’t go” without making it a speech | live | 2026-08-12 | [`explaining-we-cant-go.md`](guides/explaining-we-cant-go.md) |
-| The school supply list that quietly wrecks August | scheduled | 2026-08-20 | [`school-supply-list.md`](guides/school-supply-list.md) |
+| The school supply list that quietly wrecks August | live | 2026-08-14 | [`school-supply-list.md`](guides/school-supply-list.md) |
 | Cheap weekend that isn’t just screen time | scheduled | 2026-09-22 | [`cheap-weekend-not-just-screens.md`](guides/cheap-weekend-not-just-screens.md) |
 | What to say when someone asks what you do for fun | scheduled | 2026-09-29 | [`what-do-you-do-for-fun.md`](guides/what-do-you-do-for-fun.md) |
 | Fixing the car vs paying for daycare: picking the lesser disaster | live | 2026-08-12 | [`car-vs-daycare.md`](guides/car-vs-daycare.md) |
