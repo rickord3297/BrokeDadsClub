@@ -10,8 +10,8 @@ export const site = {
   weekStart: {
     kicker: "Sunday email",
     title: "Start the week with one useful thing",
-    body: "One short note on Sunday. The guide worth using, a printable if we have one, and nothing else. Not a pile of everything you missed.",
+    body: "One short note every Sunday at 9am Central. The guide worth using, a printable if we have one, and nothing else. Not a pile of everything you missed.",
     button: "Send it Sundays",
-    success: "You're on the Sunday list. It goes out once a week.",
+    success: "You're on the Sunday list. It lands at 9am Central.",
   },
 } as const;

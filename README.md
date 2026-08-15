@@ -86,7 +86,7 @@ Leave any leftover Amplify / S3 / placeholder records out of the way so the new 
 - Verify `brokedadsclub.com` in AWS SES (DKIM + SPF). Request production access if you are still in the SES sandbox.
 - Create an IAM user that can `ses:SendEmail` / `ses:SendRawEmail`.
 - In Vercel, set `AWS_REGION`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `SES_FROM_EMAIL`, `CRON_SECRET`, and `SUPABASE_SERVICE_ROLE_KEY`.
-- Cron: Sundays 14:00 UTC (`/api/cron/weekly-recap`). Sends even in quiet weeks, with a fallback guide plus printables.
+- Cron: Sundays at 9:00 a.m. Central (`0 14 * * 0` UTC, which is 9am CDT / 8am in deep winter). Sends even in quiet weeks, with a fallback guide plus printables.
 
 ## What to do next
 
