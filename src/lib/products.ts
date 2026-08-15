@@ -104,6 +104,10 @@ function slugify(value: string) {
   );
 }
 
+export function printifyProductSlug(productId: string, title: string) {
+  return printifyCopyOverrides[productId]?.slug ?? slugify(title);
+}
+
 function artFromPrintify(title: string, tags: string[]): ProductArt {
   const haystack = `${title} ${tags.join(" ")}`.toLowerCase();
   if (haystack.includes("hoodie") || haystack.includes("sweatshirt")) return "hoodie";

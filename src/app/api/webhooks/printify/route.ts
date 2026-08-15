@@ -1,7 +1,12 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
-import { markPrintifyPublishSucceeded } from "@/lib/printify";
+import {
+  getPrintifyProduct,
+  markPrintifyPublishSucceeded,
+} from "@/lib/printify";
+import { printifyProductSlug } from "@/lib/products";
+import { site } from "@/lib/site";
 
 type PrintifyWebhook = {
   type?: string;
@@ -37,7 +42,11 @@ export async function POST(request: Request) {
   }
 
   if (event.type === "product:publish:started" && event.resource?.id) {
-    await markPrintifyPublishSucceeded(event.resource.id);
+    const productId = event.resource.id;
+    const product = await getPrintifyProduct(productId);
+    const origin = site.url.replace(/\/$/, "");
+    const handle = `${origin}/shop/${printifyProductSlug(productId, product.title)}`;
+    await markPrintifyPublishSucceeded(productId, handle);
     revalidateTag("printify-products", "max");
   }
 

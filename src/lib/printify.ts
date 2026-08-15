@@ -264,17 +264,42 @@ export async function createPrintifyOrder(input: {
   return { id: payload.id, status: payload.status ?? "pending" };
 }
 
-/** Completes a custom-store publish so Printify unlocks the product for editing. */
-export async function markPrintifyPublishSucceeded(productId: string) {
+export async function getPrintifyProduct(productId: string) {
   const token = process.env.PRINTIFY_API_TOKEN;
   const shopId = process.env.PRINTIFY_SHOP_ID;
   if (!token || !shopId) {
     throw new Error("Printify is not configured.");
   }
 
-  const origin = (
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://brokedadsclub.com"
-  ).replace(/\/$/, "");
+  const response = await fetch(
+    `${PRINTIFY_API}/shops/${shopId}/products/${productId}.json`,
+    {
+      cache: "no-store",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "User-Agent": "BrokeDadsClub/1.0 (https://brokedadsclub.com)",
+      },
+    },
+  );
+
+  if (!response.ok) {
+    throw new Error(`Printify product lookup failed (${response.status}).`);
+  }
+
+  return (await response.json()) as PrintifyCatalogProduct;
+}
+
+/** Completes a custom-store publish so Printify unlocks the product for editing. */
+export async function markPrintifyPublishSucceeded(
+  productId: string,
+  handle: string,
+) {
+  const token = process.env.PRINTIFY_API_TOKEN;
+  const shopId = process.env.PRINTIFY_SHOP_ID;
+  if (!token || !shopId) {
+    throw new Error("Printify is not configured.");
+  }
+
   const response = await fetch(
     `${PRINTIFY_API}/shops/${shopId}/products/${productId}/publishing_succeeded.json`,
     {
@@ -287,7 +312,7 @@ export async function markPrintifyPublishSucceeded(productId: string) {
       body: JSON.stringify({
         external: {
           id: productId,
-          handle: `${origin}/shop`,
+          handle,
         },
       }),
     },
