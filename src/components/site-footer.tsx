@@ -21,6 +21,11 @@ export function SiteFooter() {
           <p className="mt-6 text-xs uppercase tracking-[0.18em] text-gold">
             {site.tagline}
           </p>
+          <p className="mt-3 text-sm">
+            <a href={`mailto:${site.email}`} className="text-gold hover:text-paper">
+              {site.email}
+            </a>
+          </p>
         </div>
 
         <div>

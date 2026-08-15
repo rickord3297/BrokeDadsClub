@@ -1,0 +1,11 @@
+{
+  "name": "Broke Dads Club",
+  "install": "npm install",
+  "start": "npm run dev",
+  "ports": [
+    {
+      "name": "Next.js",
+      "port": 3000
+    }
+  ]
+}

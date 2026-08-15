@@ -6,5 +6,5 @@ export const site = {
   tagline: "Broke doesn't mean broken.",
   description:
     "Practical money tactics and dad-life guides for fathers stretching every dollar and still showing up.",
-  email: "hey@brokedadsclub.com",
+  email: "dad@brokedadsclub.com",
 } as const;
