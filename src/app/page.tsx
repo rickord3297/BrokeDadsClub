@@ -7,7 +7,7 @@ import { getGuides } from "@/lib/guides";
 import { getProducts } from "@/lib/products";
 import { site } from "@/lib/site";
 
-const productOrder = ["club-patch", "candy-stripe-patch"];
+const productOrder = ["club-pup-tee", "club-patch", "candy-stripe-patch"];
 
 export default async function Home() {
   const [guides, products] = await Promise.all([getGuides(), getProducts()]);

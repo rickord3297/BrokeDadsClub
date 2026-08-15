@@ -8,6 +8,7 @@
 
 | Idea | Status | Go live | Notes |
 |------|--------|---------|-------|
+| Dad math: I can do that cheaper (then you need $200 of tools) | idea | | Pride vs the tool tax. DIY is cheaper until the first specialty bit. |
 | The second bill after school starts (fees, sports, fundraisers) | idea | | trend 2026-08-14: hidden costs after the supply list; NRF/Texas A&M "second bill" |
 | Gas station dinner that still counts as feeding your kids | scheduled | 2026-09-01 | [`gas-station-dinner.md`](guides/gas-station-dinner.md) |
 | When the other dad’s vacation photos hit | scheduled | 2026-09-08 | [`when-the-other-dads-vacation-photos-hit.md`](guides/when-the-other-dads-vacation-photos-hit.md) |

@@ -96,10 +96,9 @@ Leave any leftover Amplify / S3 / placeholder records out of the way so the new 
 - Vercel → Analytics: enable Web Analytics + Speed Insights if the dashboard still prompts (code is already wired).
 
 ### Swag
-- Shop only shows real product photos. Print files on a dark square (tees) stay hidden until Printify mockups replace them.
-- Connect Printify now to generate on-garment mockups and map SKUs. Do not sell a tee until that mockup is the shop image.
-- Order wiring already exists (`src/lib/printify.ts` + Stripe webhook). It stays dark until `PRINTIFY_API_TOKEN`, `PRINTIFY_SHOP_ID`, and Stripe keys are set.
-- Add Stripe keys when ready to take real orders (`STRIPE_SECRET_KEY`, webhook secret, publishable key).
+- Shop shows Castle patches plus live Printify products (Club Pup tee mockups, sizes, SKUs).
+- Print files on a dark square stay hidden. New Printify items appear automatically once they are published in Printify.
+- Orders go to Printify after Stripe checkout when `PRINTIFY_API_TOKEN` and `PRINTIFY_SHOP_ID` are set.
 
 ### Optional later
 - Supabase Auth for a members area.

@@ -141,10 +141,19 @@ export function variantsFromPrintifyProduct(product: PrintifyCatalogProduct) {
 }
 
 export function printifyProductImage(product: PrintifyCatalogProduct) {
-  return (
-    product.images?.find((image) => image.is_default)?.src ??
-    product.images?.[0]?.src
-  );
+  const images = product.images ?? [];
+  const scored = images
+    .map((image) => {
+      const src = image.src ?? "";
+      let score = 0;
+      if (src.includes("camera_label=front")) score += 3;
+      if (src.includes("camera_label=lifestyle")) score += 2;
+      if (image.is_default) score += 1;
+      if (src.includes("camera_label=folded")) score -= 2;
+      return { src, score };
+    })
+    .sort((a, b) => b.score - a.score);
+  return scored[0]?.src;
 }
 
 export function printifyProductCopy(product: PrintifyCatalogProduct) {

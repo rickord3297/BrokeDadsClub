@@ -91,6 +91,78 @@ function artFromPrintify(title: string, tags: string[]): ProductArt {
   return "tee";
 }
 
+const printifyCopyOverrides: Record<
+  string,
+  { slug: string; name: string; description: string }
+> = {
+  "6a7fcaa74f40ed8f8107ca0f": {
+    slug: "club-pup-tee",
+    name: "Club Pup Tee",
+    description:
+      "Golden pup, blue wrench, grass stains implied. Soft cotton Gildan. For dads whose best coworker still has four paws.",
+  },
+};
+
+async function getPrintifyProducts(): Promise<Product[]> {
+  if (!isPrintifyConfigured()) return [];
+  try {
+    const catalog = await listPrintifyCatalog();
+    return catalog
+      .map((row) => {
+        const variants = variantsFromPrintifyProduct(row);
+        const copy = printifyProductCopy(row);
+        const image = printifyProductImage(row);
+        if (!variants.length || !image) return null;
+        const override = printifyCopyOverrides[row.id];
+        const art = artFromPrintify(override?.name ?? copy.title, copy.tags);
+        return {
+          id: row.id,
+          slug: override?.slug ?? slugify(copy.title),
+          name: override?.name ?? copy.title,
+          description: override?.description ?? copy.description,
+          price_cents: Math.min(...variants.map((variant) => variant.price_cents)),
+          category: art === "tee" || art === "hoodie" || art === "cap" ? "Apparel" : "Gear",
+          art,
+          image,
+          active: true,
+          variants,
+        };
+      })
+      .filter((product) => product !== null);
+  } catch (error) {
+    console.error("Printify catalog failed", error);
+    return [];
+  }
+}
+
+async function getLocalPhotoProducts(): Promise<Product[]> {
+  const supabase = createPublicClient();
+  if (supabase) {
+    const { data, error } = await supabase
+      .from("products")
+      .select(
+        "id, slug, name, description, price_cents, category, art, image, image_fit, active",
+      )
+      .eq("active", true)
+      .order("price_cents", { ascending: true });
+
+    if (!error && data?.length) {
+      return data.filter(isProduct).filter(hasProductPhoto);
+    }
+  }
+
+  return seedProducts.filter((product) => product.active && hasProductPhoto(product));
+}
+
+export async function getProducts(): Promise<Product[]> {
+  const [printify, local] = await Promise.all([
+    getPrintifyProducts(),
+    getLocalPhotoProducts(),
+  ]);
+  const slugs = new Set(printify.map((product) => product.slug));
+  return [...printify, ...local.filter((product) => !slugs.has(product.slug))];
+}
+
 export const seedProducts: Product[] = [
   {
     id: "prod_club_patch",
@@ -238,57 +310,6 @@ function isProduct(value: unknown): value is Product {
   if (row.image == null) delete row.image;
   if (row.image_fit == null) delete row.image_fit;
   return true;
-}
-
-export async function getProducts(): Promise<Product[]> {
-  if (isPrintifyConfigured()) {
-    try {
-      const catalog = await listPrintifyCatalog();
-      const mapped = catalog
-        .map((row) => {
-          const variants = variantsFromPrintifyProduct(row);
-          const copy = printifyProductCopy(row);
-          const image = printifyProductImage(row);
-          if (!variants.length || !image) return null;
-          const art = artFromPrintify(copy.title, copy.tags);
-          return {
-            id: row.id,
-            slug: slugify(copy.title),
-            name: copy.title,
-            description: copy.description,
-            price_cents: Math.min(...variants.map((variant) => variant.price_cents)),
-            category: art === "tee" || art === "hoodie" || art === "cap" ? "Apparel" : "Gear",
-            art,
-            image,
-            image_fit: "contain" as const,
-            active: true,
-            variants,
-          };
-        })
-        .filter((product) => product !== null);
-
-      if (mapped.length) return mapped;
-    } catch (error) {
-      console.error("Printify catalog failed", error);
-    }
-  }
-
-  const supabase = createPublicClient();
-  if (supabase) {
-    const { data, error } = await supabase
-      .from("products")
-      .select(
-        "id, slug, name, description, price_cents, category, art, image, image_fit, active",
-      )
-      .eq("active", true)
-      .order("price_cents", { ascending: true });
-
-    if (!error && data?.length) {
-      return data.filter(isProduct).filter(hasProductPhoto);
-    }
-  }
-
-  return seedProducts.filter((product) => product.active && hasProductPhoto(product));
 }
 
 export async function getProduct(slug: string): Promise<Product | null> {

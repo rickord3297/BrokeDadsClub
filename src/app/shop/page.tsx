@@ -4,7 +4,7 @@ import { getProducts } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Shop",
-  description: "Broke Dads Club merch with real product photos. Castle patches now; tees when the Printify mockups are ready.",
+  description: "Broke Dads Club merch: Castle patches and the Club Pup tee, printed after you check out.",
 };
 
 export default async function ShopPage() {
