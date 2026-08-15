@@ -263,3 +263,42 @@ export async function createPrintifyOrder(input: {
 
   return { id: payload.id, status: payload.status ?? "pending" };
 }
+
+/** Completes a custom-store publish so Printify unlocks the product for editing. */
+export async function markPrintifyPublishSucceeded(productId: string) {
+  const token = process.env.PRINTIFY_API_TOKEN;
+  const shopId = process.env.PRINTIFY_SHOP_ID;
+  if (!token || !shopId) {
+    throw new Error("Printify is not configured.");
+  }
+
+  const origin = (
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://brokedadsclub.com"
+  ).replace(/\/$/, "");
+  const response = await fetch(
+    `${PRINTIFY_API}/shops/${shopId}/products/${productId}/publishing_succeeded.json`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+        "User-Agent": "BrokeDadsClub/1.0 (https://brokedadsclub.com)",
+      },
+      body: JSON.stringify({
+        external: {
+          id: productId,
+          handle: `${origin}/shop`,
+        },
+      }),
+    },
+  );
+
+  if (!response.ok) {
+    const payload = (await response.json().catch(() => ({}))) as {
+      message?: string;
+    };
+    throw new Error(
+      payload.message ?? `Printify publish handshake failed (${response.status}).`,
+    );
+  }
+}
