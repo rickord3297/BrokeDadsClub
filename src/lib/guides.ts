@@ -71,33 +71,40 @@ function readAllGuides(): Guide[] {
   return fs
     .readdirSync(guidesDir)
     .filter((file) => file.endsWith(".md"))
-    .map((file) => {
-      const raw = fs.readFileSync(path.join(guidesDir, file), "utf8");
-      const { data, content } = matter(raw);
-      const title = data.title as string;
-      const excerpt = data.excerpt as string;
-      return {
-        slug: data.slug as string,
-        title,
-        seoTitle:
-          typeof data.seoTitle === "string" && data.seoTitle.length > 0
-            ? data.seoTitle
-            : `${title} | ${site.name}`,
-        excerpt,
-        description:
-          typeof data.description === "string" && data.description.length > 0
-            ? data.description
-            : excerpt.slice(0, 155),
-        category: data.category as string,
-        readTime: data.readTime as string,
-        publishedAt: data.publishedAt as string,
-        status: parseStatus(data.status),
-        keywords: parseKeywords(data.keywords),
-        faq: parseFaq(data.faq),
-        related: parseStringList(data.related),
-        shop: parseStringList(data.shop),
-        content,
-      };
+    .flatMap((file) => {
+      try {
+        const raw = fs.readFileSync(path.join(guidesDir, file), "utf8");
+        const { data, content } = matter(raw);
+        const title = data.title as string;
+        const excerpt = data.excerpt as string;
+        return [
+          {
+            slug: data.slug as string,
+            title,
+            seoTitle:
+              typeof data.seoTitle === "string" && data.seoTitle.length > 0
+                ? data.seoTitle
+                : `${title} | ${site.name}`,
+            excerpt,
+            description:
+              typeof data.description === "string" && data.description.length > 0
+                ? data.description
+                : excerpt.slice(0, 155),
+            category: data.category as string,
+            readTime: data.readTime as string,
+            publishedAt: data.publishedAt as string,
+            status: parseStatus(data.status),
+            keywords: parseKeywords(data.keywords),
+            faq: parseFaq(data.faq),
+            related: parseStringList(data.related),
+            shop: parseStringList(data.shop),
+            content,
+          },
+        ];
+      } catch (error) {
+        console.error(`Skipping invalid guide ${file}:`, error);
+        return [];
+      }
     })
     .sort(
       (a, b) =>

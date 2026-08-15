@@ -57,13 +57,14 @@ shop:
   - broke-mug
 faq:
   - question: Natural-language question people ask Google?
-    answer: Short plain answer for FAQ schema (1-2 sentences).
+    answer: >-
+      Short plain answer for FAQ schema (1-2 sentences). Quote dialogue inside the block, not as a half-quoted YAML string.
 ---
 ```
 
 3. Use the row’s **Go live** date for `publishedAt` when present; otherwise pick a sensible future Monday and note it in the table.
 4. Include 3-6 `keywords` people would actually search (cheap X, how to Y for dads, budget Z).
-5. Add `seoTitle`, `description`, 2-3 `faq` items, `related` (live slugs only), and optional `shop` product slugs.
+5. Add `seoTitle`, `description`, 2-3 `faq` items, `related` (live slugs only), and optional `shop` product slugs. FAQ answers with quotes or colons must use a `>-` block. A half-quoted line (`answer: "We're..." then more sentence`) breaks the production build.
 6. Body: short intro → practical sections → calm close. ~600-900 words. Add 1-2 internal links to other `/guides/...` where natural.
 7. Always use `status: draft` unless the user asks to schedule or publish now.
 8. Do not commit or push unless asked.

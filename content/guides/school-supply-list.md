@@ -27,7 +27,8 @@ faq:
   - question: Is generic okay for school supplies?
     answer: Almost always. Ask the teacher if you are unsure. Brand-name folders and the third set of markers are usually theater, not learning.
   - question: What do I say to my kid who wants the expensive version?
-    answer: "We're buying the list, not the whole aisle." Pair it with one reuse win so it does not feel like a no for sport.
+    answer: >-
+      "We're buying the list, not the whole aisle." Pair it with one reuse win so it does not feel like a no for sport.
 ---
 
 August has a special tax. It arrives as a cheerful PDF from the school and ends as a cart full of things you swear you already bought last year and somehow no longer own.

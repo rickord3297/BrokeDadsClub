@@ -25,7 +25,8 @@ faq:
   - question: When is DIY actually cheaper?
     answer: When you already own the tool, you will use it again this year, and a mistake will not cost more than the hire. Otherwise you are shopping, not saving.
   - question: What is the tool tax?
-    answer: The extra money (and Saturday) you spend so the project can start. Bits, blades, a "cheap" saw, the second trip to the store. Pride does not show up on the receipt.
+    answer: >-
+      The extra money (and Saturday) you spend so the project can start. Bits, blades, a "cheap" saw, the second trip to the store. Pride does not show up on the receipt.
   - question: How do I decide without feeling like I failed?
     answer: Run the two-trip rule and the reuse test. Paying someone is not giving up. It is refusing to buy a hobby you did not ask for.
 ---
