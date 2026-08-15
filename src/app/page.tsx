@@ -9,14 +9,18 @@ import { getProducts } from "@/lib/products";
 import { resources } from "@/lib/resources";
 import { site } from "@/lib/site";
 
-const productOrder = ["club-pup-tee", "club-patch", "candy-stripe-patch"];
+const productOrder = ["club-pup-tee"];
 
 export default async function Home() {
   const [guides, products] = await Promise.all([getGuides(), getProducts()]);
   const categories = getGuideCategories(guides);
-  const featuredProducts = productOrder
-    .map((slug) => products.find((product) => product.slug === slug))
-    .filter((product): product is NonNullable<typeof product> => product != null);
+  const featuredProducts = [
+    ...productOrder.flatMap((slug) => {
+      const product = products.find((item) => item.slug === slug);
+      return product ? [product] : [];
+    }),
+    ...products.filter((product) => !productOrder.includes(product.slug)),
+  ].slice(0, 3);
 
   return (
     <div>

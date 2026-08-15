@@ -53,7 +53,7 @@ related:
   - other-live-slug
   - another-live-slug
 shop:
-  - club-patch
+  - club-pup-tee
   - broke-mug
 faq:
   - question: Natural-language question people ask Google?

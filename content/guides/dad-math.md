@@ -19,7 +19,6 @@ related:
   - car-vs-daycare
   - thrift-without-looking-like-a-dare
 shop:
-  - club-patch
   - club-pup-tee
 faq:
   - question: When is DIY actually cheaper?

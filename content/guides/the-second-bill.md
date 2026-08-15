@@ -19,8 +19,7 @@ related:
   - the-dad-tax
   - explaining-we-cant-go
 shop:
-  - club-patch
-  - candy-stripe-patch
+  - club-pup-tee
 faq:
   - question: What is the second bill after school starts?
     answer: >-

@@ -19,8 +19,7 @@ related:
   - explaining-we-cant-go
   - birthday-party-math
 shop:
-  - club-patch
-  - candy-stripe-patch
+  - club-pup-tee
 faq:
   - question: How do I do the school supply list on a budget?
     answer: Triage into must, reuse, and skip. Buy the musts first from what you already own and store brand. Delay the optional extras until a teacher actually asks.

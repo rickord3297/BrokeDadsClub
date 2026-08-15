@@ -21,7 +21,7 @@ related:
   - car-vs-daycare
 shop:
   - broke-mug
-  - club-patch
+  - club-pup-tee
 faq:
   - question: Can you really feed a family for about $47 a week?
     answer: "For about 3-4 people, at store-brand prices, yes as a target. Shop once, cook extra on Monday, and buy one planned snack. Milk or teenagers will push it closer to $55."

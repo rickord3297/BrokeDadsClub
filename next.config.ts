@@ -20,6 +20,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      { source: "/shop/club-patch", destination: "/shop", permanent: false },
+      { source: "/shop/candy-stripe-patch", destination: "/shop", permanent: false },
+      { source: "/shop/castle-pin", destination: "/shop", permanent: false },
+    ];
+  },
 };
 
 export default nextConfig;

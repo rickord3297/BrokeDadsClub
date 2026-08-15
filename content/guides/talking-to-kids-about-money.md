@@ -20,7 +20,7 @@ related:
   - the-47-dollar-grocery-week
 shop:
   - sticker-pack
-  - club-patch
+  - club-pup-tee
 faq:
   - question: How do I talk to kids about money without scaring them?
     answer: Be honest in short, age-sized pieces. Share the plan shape, not adult debt horror. Offer one real choice when you can.

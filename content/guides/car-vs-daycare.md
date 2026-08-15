@@ -19,8 +19,8 @@ related:
   - the-47-dollar-grocery-week
   - side-hustles-that-dont-steal-bedtime
 shop:
-  - club-patch
   - broke-mug
+  - club-pup-tee
 faq:
   - question: Should I fix the car or pay daycare first?
     answer: Ask which bill stops income first. If the car gets you to the paycheck, fix the minimum viable car problem this week, then call daycare and negotiate a partial plus a date.

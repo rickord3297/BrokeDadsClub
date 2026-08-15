@@ -19,9 +19,8 @@ related:
   - the-47-dollar-grocery-week
   - cheap-date-night
 shop:
-  - club-patch
-  - candy-stripe-patch
   - dad-cap
+  - club-pup-tee
 faq:
   - question: How do you thrift without looking thrifted?
     answer: "Use three passes: fit, condition, and a tight color palette. A coherent pile of used clothes looks like a wardrobe; a rainbow of mascots looks like lost-and-found."

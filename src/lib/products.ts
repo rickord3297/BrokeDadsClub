@@ -119,6 +119,19 @@ function artFromPrintify(title: string, tags: string[]): ProductArt {
   return "tee";
 }
 
+/** Patches are off the shop until they are remade in Printify. */
+function isShopListed(product: Product) {
+  if (product.art === "patch") return false;
+  if (
+    product.slug === "club-patch" ||
+    product.slug === "candy-stripe-patch" ||
+    product.slug === "castle-pin"
+  ) {
+    return false;
+  }
+  return true;
+}
+
 const printifyCopyOverrides: Record<
   string,
   {
@@ -204,7 +217,8 @@ async function getPrintifyProducts(): Promise<Product[]> {
             : variants,
         };
       })
-      .filter((product) => product !== null);
+      .filter((product) => product !== null)
+      .filter(isShopListed);
   } catch (error) {
     console.error("Printify catalog failed", error);
     return [];
@@ -223,11 +237,13 @@ async function getLocalPhotoProducts(): Promise<Product[]> {
       .order("price_cents", { ascending: true });
 
     if (!error && data?.length) {
-      return data.filter(isProduct).filter(hasProductPhoto);
+      return data.filter(isProduct).filter(hasProductPhoto).filter(isShopListed);
     }
   }
 
-  return seedProducts.filter((product) => product.active && hasProductPhoto(product));
+  return seedProducts
+    .filter((product) => product.active && hasProductPhoto(product))
+    .filter(isShopListed);
 }
 
 export const getProducts = cache(async (): Promise<Product[]> => {
@@ -259,7 +275,7 @@ export const seedProducts: Product[] = [
     category: "Gear",
     art: "patch",
     image: "/brand/club-patch.png",
-    active: true,
+    active: false,
   },
   {
     id: "prod_stripe_patch",
@@ -271,7 +287,7 @@ export const seedProducts: Product[] = [
     category: "Gear",
     art: "patch",
     image: "/brand/club-patch-stripe.png",
-    active: true,
+    active: false,
   },
   {
     id: "prod_club_pup_tee",

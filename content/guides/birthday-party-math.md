@@ -20,7 +20,7 @@ related:
   - the-dad-tax
 shop:
   - sticker-pack
-  - club-patch
+  - club-pup-tee
 faq:
   - question: How do I throw a kids birthday party on a budget?
     answer: "Set a dollar and kid limit first, then pick fun that fits: park, backyard, or library themes beat venue rentals. Skip the bounce house if it breaks the fence."

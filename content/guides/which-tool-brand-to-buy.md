@@ -19,7 +19,6 @@ related:
   - thrift-without-looking-like-a-dare
   - school-supply-list
 shop:
-  - club-patch
   - club-pup-tee
 faq:
   - question: Which tool brand should a homeowner buy?

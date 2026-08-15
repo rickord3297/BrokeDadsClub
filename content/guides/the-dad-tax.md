@@ -19,8 +19,7 @@ related:
   - birthday-party-math
   - car-vs-daycare
 shop:
-  - club-patch
-  - candy-stripe-patch
+  - club-pup-tee
 faq:
   - question: "What is the dad tax?"
     answer: "It's the way every normal purchase grows a kid-shaped shadow: more food, more time, more convenience spending, and social pressure you didn't budget for."

@@ -19,8 +19,8 @@ related:
   - birthday-party-math
   - the-dad-tax
 shop:
-  - club-patch
   - sticker-pack
+  - club-pup-tee
 faq:
   - question: How do I tell my kid we can't go without shaming them?
     answer: Use a short script, the no, one-line reason, and an alternative. Skip blame, long lectures, and detailed adult debt talk.
