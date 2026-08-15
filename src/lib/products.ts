@@ -41,6 +41,19 @@ export const seedProducts: Product[] = [
     active: true,
   },
   {
+    id: "prod_club_pup_tee",
+    slug: "club-pup-tee",
+    name: "Club Pup Tee",
+    description:
+      "Golden pup, blue wrench, grass stains implied. Soft cotton. For dads whose best coworker still has four paws.",
+    price_cents: 2800,
+    category: "Apparel",
+    art: "tee",
+    image: "/brand/club-pup-tee.jpg",
+    image_fit: "contain",
+    active: true,
+  },
+  {
     id: "prod_club_tee",
     slug: "club-tee",
     name: "Official Club Tee",
