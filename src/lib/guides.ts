@@ -117,6 +117,11 @@ export function getGuides(): Guide[] {
   return readAllGuides().filter((guide) => isLive(guide));
 }
 
+/** Any guide by slug, including drafts (for internal preview only). */
+export function getAnyGuide(slug: string): Guide | null {
+  return readAllGuides().find((guide) => guide.slug === slug) ?? null;
+}
+
 export function getGuide(slug: string): Guide | null {
   return getGuides().find((guide) => guide.slug === slug) ?? null;
 }

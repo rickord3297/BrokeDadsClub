@@ -50,6 +50,8 @@ Using a long-run total-market ballpark of about **10% a year** (rough historical
 
 If you prefer a quieter assumption, **8%** lands closer to **$153,000**. Still real money. Still mostly time doing the heavy lifting after the first decade.
 
+Want a different weekly number? Use the **waiting-cost modeler** just below. Same made-up rules, your amount. Still not advice.
+
 ## What waiting actually costs
 
 Same $25 a week. Same return assumptions. You just start later and stop at the same finish line (30 years from "now," so fewer contributing years).
