@@ -8,6 +8,9 @@
 
 | Idea | Status | Go live | Notes |
 |------|--------|---------|-------|
+| Picture day without the $80 package | idea | | trend 2026-08-16: first-week picture days (many districts Aug 18-19). Most families skip the blind print bundle. Dignity, not a fundraiser lecture |
+| Packed lunch that costs more than the cafeteria | idea | | trend 2026-08-15: Deloitte $6.33 packed vs $3.15 cafeteria; Independent plus Florida lunch-price hikes. Recaptured 8/16 (not on main yet) |
+| School lets out at 2:30. Your job doesn't. | idea | | trend 2026-08-15: NH Bulletin and aftercare waitlists. The coverage gap after kindergarten, not infant daycare. Recaptured 8/16 (not on main yet) |
 | Which tool brand to buy (one battery, not a shrine) | draft | | [`which-tool-brand-to-buy.md`](guides/which-tool-brand-to-buy.md) |
 | Dad math: I can do that cheaper (then you need $200 of tools) | draft | | [`dad-math.md`](guides/dad-math.md) |
 | The second bill after school starts (fees, sports, fundraisers) | draft | | [`the-second-bill.md`](guides/the-second-bill.md) |
