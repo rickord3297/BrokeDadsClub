@@ -20,10 +20,10 @@ export function ResourceLayout({
       <p className="hidden font-stamp text-xs uppercase tracking-[0.16em] text-rust print:block">
         Broke Dads Club · brokedadsclub.com
       </p>
-      <h1 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">
+      <h1 className="mt-3 font-display text-4xl leading-tight sm:text-5xl print:text-2xl">
         {resource.title}
       </h1>
-      <p className="mt-4 text-lg leading-8 text-ink-soft">{resource.excerpt}</p>
+      <p className="mt-4 text-lg leading-8 text-ink-soft print:hidden">{resource.excerpt}</p>
       <p className="mt-3 text-base leading-7 text-ink-soft print:hidden">
         Full write-up:{" "}
         <Link
@@ -39,7 +39,7 @@ export function ResourceLayout({
         <PrintButton label={resource.printLabel} />
       </div>
 
-      <section className="mt-10">{children}</section>
+      <section className="print-sheet mt-10">{children}</section>
 
       <div className="mt-12 print:hidden">
         <GuideEmailCta source={`resource:${resource.slug}`} />
@@ -74,9 +74,9 @@ export function ResourceLayout({
 
 export function CheckRow({ children }: { children: React.ReactNode }) {
   return (
-    <li className="flex gap-3 text-base leading-7">
+    <li className="flex items-start gap-3 text-base leading-7">
       <span
-        className="mt-1 inline-block h-4 w-4 shrink-0 rounded border border-rule"
+        className="mt-0.5 inline-block h-5 w-5 shrink-0 rounded-[3px] border-2 border-ink print:border-black"
         aria-hidden
       />
       <span>{children}</span>
@@ -84,15 +84,23 @@ export function CheckRow({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function WriteLine({ label }: { label?: string }) {
+export function WriteLine({
+  label,
+  wide = false,
+}: {
+  label?: string;
+  wide?: boolean;
+}) {
   return (
-    <div className="flex min-h-10 items-end gap-3 border-b border-rule py-2">
+    <div className="flex min-h-11 items-end gap-3 border-b-2 border-ink/25 py-2 print:border-black/40">
       {label ? (
-        <span className="w-28 shrink-0 text-sm font-medium text-ink-soft">
+        <span
+          className={`shrink-0 text-sm font-medium text-ink ${wide ? "w-36" : "w-32"}`}
+        >
           {label}
         </span>
       ) : null}
-      <span className="min-h-6 flex-1" />
+      <span className="min-h-7 flex-1" />
     </div>
   );
 }

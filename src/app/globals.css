@@ -87,16 +87,37 @@ body {
 }
 
 @media print {
+  html,
   body {
     background: #fff !important;
+    color: #111 !important;
   }
 
   @page {
-    margin: 0.55in;
+    margin: 0.7in;
   }
 
   a {
     color: inherit !important;
     text-decoration: none !important;
+  }
+
+  .print-sheet,
+  .print-sheet h2,
+  .print-sheet h3,
+  .print-sheet p,
+  .print-sheet li,
+  .print-sheet span {
+    color: #111 !important;
+  }
+
+  .print-sheet h2 {
+    font-size: 1.15rem;
+    margin-top: 0.85rem;
+    break-after: avoid;
+  }
+
+  .print-sheet .break-inside-avoid {
+    break-inside: avoid;
   }
 }

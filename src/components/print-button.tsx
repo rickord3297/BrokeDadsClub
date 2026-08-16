@@ -14,7 +14,7 @@ export function PrintButton({ label = "Print this page" }: { label?: string }) {
       id="print"
       type="button"
       onClick={() => window.print()}
-      className="inline-flex h-11 items-center rounded-full bg-pine px-5 text-sm font-semibold text-paper hover:bg-pine-2 print:hidden"
+      className="inline-flex h-12 min-w-48 items-center justify-center rounded-full bg-pine px-6 text-base font-semibold text-paper hover:bg-pine-2 print:hidden"
     >
       {label}
     </button>

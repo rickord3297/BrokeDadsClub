@@ -18,13 +18,19 @@ export const metadata: Metadata = {
 };
 
 const cart = [
-  { group: "Protein", items: ["Dozen eggs", "2-3 lb chicken thighs (family pack)"] },
+  {
+    group: "Protein",
+    target: "about $12",
+    items: ["Dozen eggs", "2-3 lb chicken thighs (family pack)"],
+  },
   {
     group: "Starch (pick what is cheaper)",
+    target: "about $8",
     items: ["2 lb rice or a bag of potatoes", "1 loaf bread or 1 pack tortillas", "1 lb pasta"],
   },
   {
     group: "Produce",
+    target: "about $10",
     items: [
       "2 onions",
       "Frozen mixed vegetables (2 bags)",
@@ -34,6 +40,7 @@ const cart = [
   },
   {
     group: "Dairy and pantry",
+    target: "about $12",
     items: [
       "8 oz cheddar",
       "2 cans beans",
@@ -67,7 +74,7 @@ const week = [
 export default function GroceryWeekChecklistPage() {
   return (
     <ResourceLayout resource={resource}>
-      <div className="space-y-10">
+      <div className="space-y-10 print:space-y-5">
         <div>
           <h2 className="font-display text-3xl">Who this feeds</h2>
           <p className="mt-3 text-base leading-7">
@@ -117,11 +124,17 @@ export default function GroceryWeekChecklistPage() {
           <h2 className="font-display text-3xl">The cart</h2>
           <p className="mt-3 text-base leading-7 text-ink-soft">
             Store brand. This is a target of about $47 in most US stores, not a
-            dare. Skip anything you already have.
+            dare. Skip anything you already have. Write what you actually paid
+            next to the category target.
           </p>
           {cart.map((section) => (
-            <div key={section.group} className="mt-6">
-              <h3 className="font-display text-xl">{section.group}</h3>
+            <div key={section.group} className="mt-6 break-inside-avoid">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 className="font-display text-xl">{section.group}</h3>
+                <p className="text-sm font-medium">
+                  Target {section.target} · paid $ ______
+                </p>
+              </div>
               <ul className="mt-3 space-y-2">
                 {section.items.map((item) => (
                   <CheckRow key={item}>{item}</CheckRow>
@@ -129,25 +142,37 @@ export default function GroceryWeekChecklistPage() {
               </ul>
             </div>
           ))}
-          <div className="mt-6">
+          <div className="mt-6 break-inside-avoid">
             <h3 className="font-display text-xl">Only if you need it</h3>
             <ul className="mt-3 space-y-2">
               <CheckRow>Gallon of milk</CheckRow>
               <CheckRow>Butter or oil if the pantry is empty</CheckRow>
             </ul>
-            <p className="mt-3 text-sm text-ink-soft">
-              Chicken high this week? Swap the thighs for extra beans and a
-              second dozen eggs. Keep the shape.
-            </p>
           </div>
+        </div>
+
+        <div className="break-inside-avoid rounded-xl border-2 border-ink/30 p-4 print:border-black">
+          <h2 className="font-display text-3xl">Swap box</h2>
+          <p className="mt-3 text-base leading-7 text-ink-soft">
+            Markdowns are allowed. Keep the shape of the week. Do not add a
+            second trip.
+          </p>
+          <ul className="mt-4 space-y-2">
+            <CheckRow>
+              Thighs high: ground turkey, or extra beans plus a second dozen eggs
+            </CheckRow>
+            <CheckRow>Pasta night: extra beans if the sauce jar is pricey</CheckRow>
+            <CheckRow>Fruit: whatever is marked down that the kids will eat</CheckRow>
+            <CheckRow>This week&apos;s markdown: ____________________________</CheckRow>
+          </ul>
         </div>
 
         <div>
           <h2 className="font-display text-3xl">The week</h2>
           <ul className="mt-4 space-y-3">
             {week.map((row) => (
-              <li key={row.day} className="flex gap-3 border-b border-rule pb-3">
-                <span className="w-10 shrink-0 font-stamp text-sm uppercase tracking-wider text-rust">
+              <li key={row.day} className="flex gap-3 border-b border-ink/20 pb-3 print:border-black/30">
+                <span className="w-10 shrink-0 font-stamp text-sm uppercase tracking-wider">
                   {row.day}
                 </span>
                 <span className="text-base leading-7">{row.plan}</span>

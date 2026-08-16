@@ -26,25 +26,48 @@ const activities = [
   "Movie premiere at home",
 ];
 
+const freeLowCost = [
+  "Local park pavilion (often free or a small permit)",
+  "Backyard games / obstacle course",
+  "Library story room if they will have you",
+  "Walk-the-block scavenger hunt",
+  "Bake cupcakes together. That is the activity.",
+];
+
 export default function BirthdayPartyBudgetPage() {
   return (
     <ResourceLayout resource={resource}>
-      <div className="space-y-10">
+      <div className="space-y-10 print:space-y-5">
         <div>
-          <h2 className="font-display text-3xl">The fence</h2>
+          <h2 className="font-display text-3xl">The numbers first</h2>
           <p className="mt-3 text-base leading-7 text-ink-soft">
-            Pick the numbers first. Everything else fits inside.
+            Pick the spending limit and the headcount. Everything else fits
+            inside.
           </p>
-          <WriteLine label="Dollar limit" />
-          <WriteLine label="Kid count" />
+          <WriteLine label="Spending limit $" wide />
+          <WriteLine label="Guest count" />
           <WriteLine label="Date / time" />
           <WriteLine label="Place" />
           <div className="mt-4">
-            <p className="text-sm font-medium text-ink-soft">This party is</p>
+            <p className="text-sm font-medium">This party is</p>
             <ul className="mt-2 space-y-2">
               <CheckRow>Hosting</CheckRow>
               <CheckRow>Attending someone else&apos;s</CheckRow>
             </ul>
+          </div>
+        </div>
+
+        <div className="break-inside-avoid rounded-xl border-2 border-ink/30 p-4 print:border-black">
+          <h2 className="font-display text-3xl">Max spend per kid</h2>
+          <p className="mt-3 text-base leading-7 text-ink-soft">
+            Total budget divided by guest count. That is the ceiling for food,
+            favors, and the venue combined, per kid. Write it before you look at
+            bounce houses.
+          </p>
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            <WriteLine label="Limit $" />
+            <WriteLine label="÷ kids" />
+            <WriteLine label="= max each $" wide />
           </div>
         </div>
 
@@ -60,6 +83,19 @@ export default function BirthdayPartyBudgetPage() {
             Skip goodie bags if money is tight. Kids remember cake and attention
             more than plastic that breaks in the car.
           </p>
+        </div>
+
+        <div className="break-inside-avoid">
+          <h2 className="font-display text-3xl">Free / low-cost alternatives</h2>
+          <p className="mt-3 text-base leading-7 text-ink-soft">
+            If the venue quote is bigger than the max-per-kid number, pick from
+            here.
+          </p>
+          <ul className="mt-4 space-y-2">
+            {freeLowCost.map((item) => (
+              <CheckRow key={item}>{item}</CheckRow>
+            ))}
+          </ul>
         </div>
 
         <div>
