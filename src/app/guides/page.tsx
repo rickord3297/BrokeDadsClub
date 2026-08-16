@@ -5,6 +5,7 @@ import { GuideCard } from "@/components/guide-card";
 import { GuideSearch } from "@/components/guide-search";
 import { TopicPills } from "@/components/topic-pills";
 import {
+  START_HERE_SLUGS,
   getGuide,
   getGuideCategories,
   getGuides,
@@ -17,11 +18,7 @@ export const metadata: Metadata = {
     "Practical dad guides on money, time, kids, and gear, written for fathers stretching every dollar.",
 };
 
-const startHereSlugs = [
-  "the-dad-tax",
-  "the-47-dollar-grocery-week",
-  "talking-to-kids-about-money",
-];
+const startHereSlugs = START_HERE_SLUGS;
 
 export default async function GuidesPage({
   searchParams,
@@ -45,7 +42,7 @@ export default async function GuidesPage({
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-      <p className="text-xs uppercase tracking-[0.18em] text-rust">The desk</p>
+      <p className="text-xs uppercase tracking-[0.18em] text-rust">Guides</p>
       <h1 className="mt-3 font-display text-5xl">Guides for dads</h1>
       <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
         Not a lifestyle magazine. Tactics you can use this week: groceries,
@@ -73,7 +70,11 @@ export default async function GuidesPage({
           </p>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {startHere.map((guide) => (
-              <GuideCard key={guide.slug} guide={guide} />
+              <GuideCard
+                key={guide.slug}
+                guide={guide}
+                badge={guide.slug === "the-dad-tax" ? "Most popular" : "Start here"}
+              />
             ))}
           </div>
         </section>

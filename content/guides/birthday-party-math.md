@@ -23,20 +23,20 @@ shop:
   - club-pup-tee
 faq:
   - question: How do I throw a kids birthday party on a budget?
-    answer: "Set a dollar and kid limit first, then pick fun that fits: park, backyard, or library themes beat venue rentals. Skip the bounce house if it breaks the fence."
+    answer: "Set a dollar and kid limit first, then pick fun that fits: park, backyard, or library themes beat venue rentals. Skip the bounce house if it blows the limit."
   - question: What are cheap birthday party ideas that still feel fun?
     answer: "Park picnic with games, backyard obstacle course, indoor movie-and-pizza, library story party, or a themed scavenger hunt. Atmosphere beats spend."
 ---
 
 Kids notice. They notice the venue, the bag of candy at the door, and the fact that Jordan's party had a character in a full suit. You cannot stop them noticing. You can stop the noticing from becoming a referendum on your love. When the hard part is saying no to the expensive invite, see [explaining “we can’t go”](/guides/explaining-we-cant-go).
 
-Birthday party math is mostly about deciding the story before the invitations go out (another corner of [the dad tax](/guides/the-dad-tax)), then picking fun that fits the fence.
+Birthday party math is mostly about deciding the story before the invitations go out (another corner of [the dad tax](/guides/the-dad-tax)), then picking fun that fits the spending limit.
 
 ## If you are hosting
 
-Pick a **number** first: dollars and kids. Everything else fits inside that fence.
+Pick a **number** first: dollars and kids. Everything else fits inside that limit.
 
-Print the [birthday party budget sheet](/resources/birthday-party-budget) if you want the fence on paper.
+Print the [birthday party budget sheet](/resources/birthday-party-budget) if you want the limit on paper.
 
 **Invite list:** smaller is kinder to your budget and your living room. "We're keeping it small this year" is a full sentence.
 

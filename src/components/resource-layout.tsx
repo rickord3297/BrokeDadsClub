@@ -32,7 +32,7 @@ export function ResourceLayout({
         >
           {resource.guideLabel}
         </Link>
-        . Print it, or save it as a PDF from your browser.
+        . Print this page, or save it as a PDF from your browser. No email required.
       </p>
 
       <div className="mt-6 print:hidden">

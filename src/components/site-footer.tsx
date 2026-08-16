@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { ClubLogo } from "@/components/club-logo";
-import { NewsletterForm } from "@/components/newsletter-form";
-import { RecapTopics } from "@/components/recap-topics";
 import { site } from "@/lib/site";
 
 export function SiteFooter() {
@@ -17,7 +15,7 @@ export function SiteFooter() {
           </div>
           <p className="mt-4 max-w-md text-sm leading-6 text-paper/90">
             Guides for the money, the kids, and the long haul, plus merch that
-            funds the next article. No shame. No hustle-bro nonsense.
+            funds future free guides. No shame. No hustle-bro nonsense.
           </p>
           <p className="mt-6 text-xs uppercase tracking-[0.18em] text-gold">
             {site.tagline}
@@ -35,16 +33,14 @@ export function SiteFooter() {
           </p>
           <p className="mt-2 font-display text-xl">{site.weekStart.title}</p>
           <p className="mt-2 text-sm leading-6 text-paper/90">{site.weekStart.body}</p>
-          <div className="mt-3">
-            <RecapTopics className="text-sm leading-6 text-paper/80 [&_a]:hover:text-gold" />
-          </div>
-          <div className="mt-4">
-            <NewsletterForm
-              source="footer"
-              submitLabel={site.weekStart.button}
-              successMessage={site.weekStart.success}
-            />
-          </div>
+          <p className="mt-4">
+            <Link
+              href="/#sunday-email"
+              className="inline-flex h-11 items-center rounded-full bg-gold px-5 text-sm font-semibold text-ink hover:bg-paper"
+            >
+              {site.weekStart.button}
+            </Link>
+          </p>
         </div>
       </div>
 

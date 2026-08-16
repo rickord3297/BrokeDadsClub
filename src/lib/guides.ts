@@ -121,6 +121,12 @@ export function getGuide(slug: string): Guide | null {
   return getGuides().find((guide) => guide.slug === slug) ?? null;
 }
 
+export const START_HERE_SLUGS = [
+  "the-dad-tax",
+  "the-47-dollar-grocery-week",
+  "talking-to-kids-about-money",
+];
+
 const CATEGORY_ORDER = ["Money", "Time", "Kids", "Work", "Gear"];
 
 export function getGuideCategories(guides: Guide[] = getGuides()): string[] {

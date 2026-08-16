@@ -5,7 +5,7 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://brokedadsclub.com",
   tagline: "Broke doesn't mean broken.",
   description:
-    "Practical money tactics and dad-life guides for fathers stretching every dollar and still showing up.",
+    "Practical money guides for fathers stretching every dollar and still showing up.",
   email: "dad@brokedadsclub.com",
   weekStart: {
     kicker: "Sunday email",

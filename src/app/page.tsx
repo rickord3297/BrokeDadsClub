@@ -4,7 +4,7 @@ import { GuideCard } from "@/components/guide-card";
 import { ProductCard } from "@/components/product-card";
 import { ResourceCard } from "@/components/resource-card";
 import { TopicPills } from "@/components/topic-pills";
-import { getGuideCategories, getGuides } from "@/lib/guides";
+import { START_HERE_SLUGS, getGuide, getGuideCategories, getGuides } from "@/lib/guides";
 import { getProducts } from "@/lib/products";
 import { resources } from "@/lib/resources";
 import { site } from "@/lib/site";
@@ -14,6 +14,9 @@ const productOrder = ["club-pup-tee"];
 export default async function Home() {
   const [guides, products] = await Promise.all([getGuides(), getProducts()]);
   const categories = getGuideCategories(guides);
+  const startHere = START_HERE_SLUGS.map((slug) => getGuide(slug)).filter(
+    (guide): guide is NonNullable<typeof guide> => guide != null,
+  );
   const featuredProducts = [
     ...productOrder.flatMap((slug) => {
       const product = products.find((item) => item.slug === slug);
@@ -37,9 +40,8 @@ export default async function Home() {
             Still showing up.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-ink-soft">
-            {site.name} is a content desk for dads doing the math out loud.
-            Practical guides first. Club goods that fund the next one.{" "}
-            {site.tagline}
+            Practical guides for dads doing the math out loud. Merch that funds
+            future free guides. {site.tagline}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
@@ -54,15 +56,6 @@ export default async function Home() {
             >
               Free printables
             </Link>
-            <Link
-              href="/shop"
-              className="rounded-full border border-ink px-5 py-3 text-sm font-semibold hover:bg-ink hover:text-paper"
-            >
-              Shop the club
-            </Link>
-          </div>
-          <div className="mt-8 max-w-md">
-            <WeekStartSignup source="homepage-hero" compact />
           </div>
         </div>
       </section>
@@ -82,15 +75,19 @@ export default async function Home() {
         <div className="flex items-end justify-between gap-4">
           <div>
             <p className="text-xs uppercase tracking-[0.18em] text-rust">Guides</p>
-            <h2 className="mt-2 font-display text-4xl">Good information for dads</h2>
+            <h2 className="mt-2 font-display text-4xl">Start here</h2>
           </div>
           <Link href="/guides" className="text-sm font-medium text-pine hover:text-rust">
             All guides →
           </Link>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {guides.slice(0, 3).map((guide) => (
-            <GuideCard key={guide.slug} guide={guide} />
+          {startHere.map((guide) => (
+            <GuideCard
+              key={guide.slug}
+              guide={guide}
+              badge={guide.slug === "the-dad-tax" ? "Most popular" : "Start here"}
+            />
           ))}
         </div>
       </section>
@@ -104,8 +101,8 @@ export default async function Home() {
               </p>
               <h2 className="mt-2 font-display text-4xl">Printables for the fridge</h2>
               <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
-                Checklists and worksheets. No email wall. Print them, or save as
-                a PDF.
+                Checklists and worksheets. Free, no email wall. Preview a sheet,
+                or print it from your browser.
               </p>
             </div>
             <Link
@@ -123,6 +120,12 @@ export default async function Home() {
         </div>
       </section>
 
+      <section id="sunday-email" className="border-t border-rule bg-paper-2/60">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:grid lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:gap-10">
+          <WeekStartSignup source="homepage-sunday" />
+        </div>
+      </section>
+
       {featuredProducts.length > 0 ? (
         <section className="border-t border-rule">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
@@ -131,8 +134,8 @@ export default async function Home() {
                 <p className="text-xs uppercase tracking-[0.18em] text-rust">Shop</p>
                 <h2 className="mt-2 font-display text-4xl">Club goods</h2>
                 <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
-                  Proceeds fund independent tactics and guides for parents. Wear the
-                  club. Keep the desk open.
+                  The crest is the membership card. The pup and the penguin are
+                  the pickup-line jokes. Sales keep the guides free.
                 </p>
               </div>
               <Link href="/shop" className="text-sm font-medium text-pine hover:text-rust">

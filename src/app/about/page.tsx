@@ -24,7 +24,7 @@ export default function AboutPage() {
         <p>
           {site.name} is for dads who love their kids more than their bank
           account currently reflects. That is not a character flaw. It is a
-          season (sometimes a long one), and it goes better with tactics and
+          season (sometimes a long one), and it goes better with tips and
           company.
         </p>
         <p>

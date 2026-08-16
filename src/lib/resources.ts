@@ -18,7 +18,7 @@ export const resources: Resource[] = [
       "Printable grocery-week checklist for feeding about 3-4 people on a tight budget. Realistic cart amounts, a tired-night pasta, and three rules that keep the second trip from happening.",
     excerpt:
       "A week of dinners for about 3-4 people. Dozen eggs, a pack of thighs, pasta on the tired night. Shop once.",
-    printLabel: "Print or save PDF",
+    printLabel: "Print checklist",
     guideSlug: "the-47-dollar-grocery-week",
     guideLabel: "the $47 grocery week",
   },
@@ -30,7 +30,7 @@ export const resources: Resource[] = [
       "Printable back-to-school supply triage sheet: must, reuse, and skip columns, a hard number, and scripts so August does not wreck the grocery money.",
     excerpt:
       "Three columns for the school list. Must, reuse, skip. Write the number before you enter the store.",
-    printLabel: "Print or save PDF",
+    printLabel: "Print triage sheet",
     guideSlug: "school-supply-list",
     guideLabel: "the school supply list that quietly wrecks August",
   },
@@ -39,10 +39,10 @@ export const resources: Resource[] = [
     title: "Birthday party budget sheet",
     seoTitle: "Free Kids Birthday Party Budget Worksheet",
     description:
-      "Printable kids birthday party budget worksheet: dollar fence, kid count, hosting vs attending, and a short run-of-show so the day stays fun and solvent.",
+      "Printable kids birthday party budget worksheet: spending limit, kid count, hosting vs attending, and a short run-of-show so the day stays fun and solvent.",
     excerpt:
-      "Pick the dollar fence and the kid count first. Then cake, one activity, done.",
-    printLabel: "Print or save PDF",
+      "Pick the spending limit and the kid count first. Then cake, one activity, done.",
+    printLabel: "Print budget sheet",
     guideSlug: "birthday-party-math",
     guideLabel: "birthday party math",
   },

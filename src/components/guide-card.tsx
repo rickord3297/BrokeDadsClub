@@ -3,7 +3,13 @@ import { GuideMark } from "@/components/guide-mark";
 import { formatDate } from "@/lib/format";
 import type { Guide } from "@/lib/guides";
 
-export function GuideCard({ guide }: { guide: Guide }) {
+export function GuideCard({
+  guide,
+  badge,
+}: {
+  guide: Guide;
+  badge?: string;
+}) {
   return (
     <Link
       href={`/guides/${guide.slug}`}
@@ -19,7 +25,14 @@ export function GuideCard({ guide }: { guide: Guide }) {
         </span>
       </div>
       <div className="flex flex-1 flex-col p-5">
-        <h3 className="font-display text-2xl leading-tight group-hover:text-rust">
+        {badge ? (
+          <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-pine">
+            {badge}
+          </p>
+        ) : null}
+        <h3
+          className={`font-display text-2xl leading-tight group-hover:text-rust ${badge ? "mt-2" : ""}`}
+        >
           {guide.title}
         </h3>
         <p className="mt-3 flex-1 text-sm leading-6 text-ink-soft">{guide.excerpt}</p>
