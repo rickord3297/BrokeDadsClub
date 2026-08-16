@@ -25,7 +25,8 @@ export function WaitingCostModeler({
 
   return (
     <aside
-      className="my-10 rounded-2xl border border-rule bg-paper-2 px-5 py-6 sm:px-6"
+      data-waiting-cost-modeler
+      className="my-10 scroll-mt-28 rounded-2xl border border-rule bg-paper-2 px-5 py-6 sm:px-6"
       aria-labelledby={`${weeklyId}-heading`}
     >
       <h2
