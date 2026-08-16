@@ -153,7 +153,9 @@ function photoAngle(image: NonNullable<PrintifyCatalogProduct["images"]>[number]
   const src = image.src ?? "";
   if (image.position === "front" || src.includes("camera_label=front")) return "front";
   if (image.position === "back" || src.includes("camera_label=back")) return "back";
-  if (src.includes("camera_label=lifestyle")) return "lifestyle";
+  if (src.includes("camera_label=lifestyle") || src.includes("camera_label=context")) {
+    return "lifestyle";
+  }
   return "other";
 }
 

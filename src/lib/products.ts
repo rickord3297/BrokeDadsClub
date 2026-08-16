@@ -120,17 +120,9 @@ function artFromPrintify(title: string, tags: string[]): ProductArt {
   return "tee";
 }
 
-/** Patches are off the shop until they are remade in Printify. */
+/** Local iron-on patches stay off. Printify pins, caps, and tees can list. */
 function isShopListed(product: Product) {
-  if (product.art === "patch") return false;
-  if (
-    product.slug === "club-patch" ||
-    product.slug === "candy-stripe-patch" ||
-    product.slug === "castle-pin"
-  ) {
-    return false;
-  }
-  return true;
+  return product.slug !== "club-patch" && product.slug !== "candy-stripe-patch";
 }
 
 const printifyCopyOverrides: Record<

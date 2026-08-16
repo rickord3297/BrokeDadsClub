@@ -20,7 +20,7 @@ export default async function Home() {
       return product ? [product] : [];
     }),
     ...products.filter((product) => !productOrder.includes(product.slug)),
-  ].slice(0, 3);
+  ];
 
   return (
     <div>
