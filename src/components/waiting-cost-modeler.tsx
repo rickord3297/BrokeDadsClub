@@ -9,6 +9,7 @@ import {
 
 /** Same ~10% ballpark as the article table. Illustration only. */
 const ARTICLE_RETURN = 0.1;
+const PRESETS = [25, 35, 50] as const;
 
 export function WaitingCostModeler({
   defaultWeekly = 25,
@@ -16,8 +17,7 @@ export function WaitingCostModeler({
   defaultWeekly?: number;
 }) {
   const weeklyId = useId();
-  const [weeklyInput, setWeeklyInput] = useState(String(defaultWeekly));
-  const weekly = clampWeeklyAmount(Number(weeklyInput));
+  const [weekly, setWeekly] = useState(defaultWeekly);
   const rows = buildWaitingCostRows(weekly, ARTICLE_RETURN);
   const now = rows[0];
   const wait5 = rows[2];
@@ -35,13 +35,34 @@ export function WaitingCostModeler({
         Try a different weekly amount
       </h2>
       <p className="mt-2 text-sm leading-6 text-ink-soft">
-        Not advice. Same made-up ~10% picture as the article. Change $25 to
-        whatever fits, and see the gap.
+        Not advice. Same made-up ~10% picture as the article. Pick an amount
+        and see the gap.
       </p>
 
-      <label className="mt-5 flex max-w-xs flex-col gap-1.5" htmlFor={weeklyId}>
+      <div className="mt-5 flex flex-wrap gap-2" role="group" aria-label="Weekly amount">
+        {PRESETS.map((amount) => {
+          const selected = weekly === amount;
+          return (
+            <button
+              key={amount}
+              type="button"
+              onClick={() => setWeekly(amount)}
+              aria-pressed={selected}
+              className={`rounded-xl border px-4 py-2 text-base font-medium transition-colors ${
+                selected
+                  ? "border-pine bg-pine text-paper"
+                  : "border-rule bg-paper text-ink hover:border-pine"
+              }`}
+            >
+              ${amount}/week
+            </button>
+          );
+        })}
+      </div>
+
+      <label className="mt-4 flex max-w-xs flex-col gap-1.5" htmlFor={weeklyId}>
         <span className="text-xs font-bold uppercase tracking-[0.14em] text-ink-soft">
-          Dollars per week
+          Or type your own
         </span>
         <div className="flex items-center gap-2 rounded-xl border border-rule bg-paper px-3 py-2">
           <span className="text-ink-soft" aria-hidden>
@@ -49,16 +70,21 @@ export function WaitingCostModeler({
           </span>
           <input
             id={weeklyId}
-            type="number"
+            type="text"
             inputMode="numeric"
-            min={1}
-            max={1000}
-            step={1}
-            value={weeklyInput}
-            onChange={(event) => setWeeklyInput(event.target.value)}
-            onBlur={() => setWeeklyInput(String(weekly))}
+            pattern="[0-9]*"
+            value={String(weekly)}
+            onChange={(event) => {
+              const digits = event.target.value.replace(/\D/g, "");
+              if (digits === "") {
+                setWeekly(1);
+                return;
+              }
+              setWeekly(clampWeeklyAmount(Number(digits)));
+            }}
             className="w-full bg-transparent text-lg font-medium text-ink outline-none"
           />
+          <span className="shrink-0 text-sm text-ink-soft">/ week</span>
         </div>
       </label>
 
