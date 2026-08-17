@@ -31,6 +31,12 @@ export function ResourceCard({ resource }: { resource: Resource }) {
           >
             Preview first
           </Link>
+          <Link
+            href={`/guides/${resource.guideSlug}`}
+            className="pt-1 text-center text-sm font-medium text-pine hover:text-rust"
+          >
+            Read {resource.guideLabel} →
+          </Link>
         </div>
       </div>
     </article>

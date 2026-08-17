@@ -38,8 +38,8 @@ export function GuideCard({
         <p className="mt-3 flex-1 text-sm leading-6 text-ink-soft">{guide.excerpt}</p>
         <div className="mt-4 flex items-end justify-between gap-3">
           <p className="text-xs text-ink-soft">{formatDate(guide.publishedAt)}</p>
-          <span className="text-sm font-semibold text-pine group-hover:text-rust">
-            Read →
+          <span className="inline-flex h-10 items-center rounded-full bg-pine px-4 text-sm font-semibold text-paper group-hover:bg-pine-2">
+            Read the guide
           </span>
         </div>
       </div>

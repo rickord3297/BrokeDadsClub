@@ -33,7 +33,7 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-5 text-sm font-medium text-ink md:flex">
-          <form action="/guides" method="get" className="hidden lg:block">
+          <form action="/guides" method="get" className="hidden md:block">
             <label className="sr-only" htmlFor="header-guide-search">
               Search guides
             </label>

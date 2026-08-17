@@ -6,8 +6,8 @@ description: "DIY feels cheaper until you buy the tool. A calm rule for when dad
 excerpt: You can do it cheaper. Then you need a $40 bit, a $90 saw, and Saturday. Pride is real. So is the tool tax.
 category: Money
 readTime: 7 min
-publishedAt: "2026-08-25"
-status: draft
+publishedAt: "2026-08-16"
+status: published
 keywords:
   - dad math diy cheaper
   - is it cheaper to do it yourself

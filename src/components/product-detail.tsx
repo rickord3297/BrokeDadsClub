@@ -114,7 +114,11 @@ export function ProductDetail({ product }: { product: Product }) {
           {product.description}
         </p>
         <p className="mt-4 max-w-lg text-sm leading-6 text-ink-soft">
-          Proceeds fund the guides. Printify prints it after you check out.
+          Proceeds fund the{" "}
+          <Link href="/guides/the-dad-tax" className="font-medium text-pine hover:text-rust">
+            guides
+          </Link>
+          . Printify prints it after you check out.
         </p>
         {colors.length > 1 ? (
           <div className="mt-6">

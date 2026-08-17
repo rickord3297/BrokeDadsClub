@@ -10,10 +10,14 @@ import { resources } from "@/lib/resources";
 import { site } from "@/lib/site";
 
 const productOrder = ["club-pup-tee"];
+const HERO_GUIDE_SLUG = "the-second-bill";
 
 export default async function Home() {
   const [guides, products] = await Promise.all([getGuides(), getProducts()]);
   const categories = getGuideCategories(guides);
+  const heroGuide = getGuide(HERO_GUIDE_SLUG) ?? guides[0] ?? null;
+  const alsoNew =
+    guides.find((guide) => guide.slug !== heroGuide?.slug) ?? null;
   const startHere = START_HERE_SLUGS.map((slug) => getGuide(slug)).filter(
     (guide): guide is NonNullable<typeof guide> => guide != null,
   );
@@ -40,19 +44,33 @@ export default async function Home() {
             Still showing up.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-ink-soft">
-            Practical guides for dads doing the math out loud. Merch that funds
-            future free guides. {site.tagline}
+            Practical guides for dads doing the math out loud. {site.tagline}
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            {heroGuide ? (
+              <Link
+                href={`/guides/${heroGuide.slug}`}
+                className="rounded-full bg-pine px-5 py-3 text-sm font-semibold text-paper hover:bg-pine-2"
+              >
+                Read: The second bill
+              </Link>
+            ) : (
+              <Link
+                href="/guides"
+                className="rounded-full bg-pine px-5 py-3 text-sm font-semibold text-paper hover:bg-pine-2"
+              >
+                Read the guides
+              </Link>
+            )}
             <Link
               href="/guides"
-              className="rounded-full bg-pine px-5 py-3 text-sm font-semibold text-paper hover:bg-pine-2"
+              className="text-sm font-semibold text-pine hover:text-rust"
             >
-              Read the guides
+              All guides →
             </Link>
             <Link
               href="/resources"
-              className="rounded-full border border-ink px-5 py-3 text-sm font-semibold hover:bg-ink hover:text-paper"
+              className="text-sm font-medium text-ink-soft hover:text-rust"
             >
               Free printables
             </Link>
@@ -60,13 +78,21 @@ export default async function Home() {
         </div>
       </section>
 
-      {categories.length > 0 ? (
-        <section className="border-b border-rule">
-          <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-4 sm:px-6">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-pine">
-              Topics
-            </p>
-            <TopicPills categories={categories} />
+      {alsoNew ? (
+        <section className="border-b border-rule bg-paper-2/50">
+          <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-rust">
+                Also new
+              </p>
+              <p className="mt-1 font-display text-2xl leading-tight">{alsoNew.title}</p>
+            </div>
+            <Link
+              href={`/guides/${alsoNew.slug}`}
+              className="inline-flex h-11 shrink-0 items-center justify-center rounded-full bg-pine px-5 text-sm font-semibold text-paper hover:bg-pine-2"
+            >
+              Read the guide
+            </Link>
           </div>
         </section>
       ) : null}
@@ -76,6 +102,10 @@ export default async function Home() {
           <div>
             <p className="text-xs uppercase tracking-[0.18em] text-rust">Guides</p>
             <h2 className="mt-2 font-display text-4xl">Start here</h2>
+            <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
+              Why everything costs more, the August supply trap, and the fees that
+              hit after school starts.
+            </p>
           </div>
           <Link href="/guides" className="text-sm font-medium text-pine hover:text-rust">
             All guides →
@@ -86,11 +116,28 @@ export default async function Home() {
             <GuideCard
               key={guide.slug}
               guide={guide}
-              badge={guide.slug === "the-dad-tax" ? "Most popular" : "Start here"}
+              badge={
+                guide.slug === "the-dad-tax"
+                  ? "Most popular"
+                  : guide.slug === "the-second-bill"
+                    ? "New"
+                    : "Start here"
+              }
             />
           ))}
         </div>
       </section>
+
+      {categories.length > 0 ? (
+        <section className="border-t border-rule">
+          <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-5 sm:px-6">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-pine">
+              Browse by topic
+            </p>
+            <TopicPills categories={categories} />
+          </div>
+        </section>
+      ) : null}
 
       <section className="border-t border-rule">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
@@ -101,8 +148,7 @@ export default async function Home() {
               </p>
               <h2 className="mt-2 font-display text-4xl">Printables for the fridge</h2>
               <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
-                Checklists and worksheets. Free, no email wall. Preview a sheet,
-                or print it from your browser.
+                Checklists that pair with the guides. Free, no email wall.
               </p>
             </div>
             <Link
@@ -135,7 +181,11 @@ export default async function Home() {
                 <h2 className="mt-2 font-display text-4xl">Club goods</h2>
                 <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
                   The crest is the membership card. The pup and the penguin are
-                  the pickup-line jokes. Sales keep the guides free.
+                  the pickup-line jokes. Sales keep the{" "}
+                  <Link href="/guides" className="font-medium text-pine hover:text-rust">
+                    guides
+                  </Link>{" "}
+                  free.
                 </p>
               </div>
               <Link href="/shop" className="text-sm font-medium text-pine hover:text-rust">

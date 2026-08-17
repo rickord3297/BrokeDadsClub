@@ -15,9 +15,9 @@ keywords:
   - free date night for parents
   - budget date night for couples with kids
 related:
-  - cheap-weekend-not-just-screens
-  - what-do-you-do-for-fun
   - explaining-we-cant-go
+  - talking-to-kids-about-money
+  - cheap-date-night
 shop:
   - club-hoodie
   - broke-mug
@@ -30,7 +30,7 @@ faq:
 
 Date night dies in the logistics. The second you start pricing a sitter, parking, and a restaurant that takes adults seriously, the couch wins.
 
-Keep the kids. Change the rules. For a whole weekend version of this energy, see [cheap weekend that isn't just screens](/guides/cheap-weekend-not-just-screens).
+Keep the kids. Change the rules. Same calm energy as [explaining “we can’t go”](/guides/explaining-we-cant-go): one honest plan beats an expensive apology.
 
 ## The 90-minute home date
 

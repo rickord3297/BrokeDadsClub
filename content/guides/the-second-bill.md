@@ -6,8 +6,8 @@ description: "Supplies were only the first invoice. How to see sports fees, lab 
 excerpt: You survived the supply list. Then sports, lab fees, and a fundraiser hit the same month. That is the second bill. Here is how to see it early.
 category: Money
 readTime: 7 min
-publishedAt: "2026-08-25"
-status: draft
+publishedAt: "2026-08-16"
+status: published
 keywords:
   - school fees after school starts
   - hidden back to school costs

@@ -189,8 +189,8 @@ export default async function GuidePage({
       ) : null}
     </article>
     <div className="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
-      <GuideShop slugs={guide.shop} />
       <RelatedGuides guides={related} />
+      <GuideShop slugs={guide.shop} />
       <p className="mt-12 border-t border-rule pt-6 text-sm">
         <Link href="/guides" className="text-pine hover:text-rust">
           ← All guides

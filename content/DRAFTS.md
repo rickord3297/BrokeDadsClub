@@ -5,8 +5,6 @@ Open any file to edit. `status: scheduled` goes live automatically on `published
 | Title | Go live | File |
 |-------|---------|------|
 | Which tool brand to buy | draft | [which-tool-brand-to-buy.md](guides/which-tool-brand-to-buy.md) |
-| Dad math: I can do that cheaper | draft | [dad-math.md](guides/dad-math.md) |
-| The second bill after school starts | draft | [the-second-bill.md](guides/the-second-bill.md) |
 | Gas station dinner that still counts | 2026-09-01 | [gas-station-dinner.md](guides/gas-station-dinner.md) |
 | When the other dad’s vacation photos hit | 2026-09-08 | [when-the-other-dads-vacation-photos-hit.md](guides/when-the-other-dads-vacation-photos-hit.md) |
 | Cheap weekend that isn’t just screen time | 2026-09-22 | [cheap-weekend-not-just-screens.md](guides/cheap-weekend-not-just-screens.md) |

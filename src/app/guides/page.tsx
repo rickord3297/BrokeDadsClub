@@ -38,7 +38,12 @@ export default async function GuidesPage({
   const startHere = startHereSlugs
     .map((slug) => getGuide(slug))
     .filter((guide): guide is NonNullable<typeof guide> => guide != null);
-  const rest = filtered.filter((guide) => !startHereSlugs.includes(guide.slug));
+  const latest = filtered[0] ?? null;
+  const rest = filtered.filter(
+    (guide) =>
+      !startHereSlugs.includes(guide.slug) && guide.slug !== latest?.slug,
+  );
+  const browsingRest = filtered.filter((guide) => guide.slug !== latest?.slug);
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
@@ -46,7 +51,7 @@ export default async function GuidesPage({
       <h1 className="mt-3 font-display text-5xl">Guides for dads</h1>
       <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
         Not a lifestyle magazine. Tactics you can use this week: groceries,
-        talking about money, cheap dates, and work that doesn&apos;t steal bedtime.
+        school fees, talking about money, and work that doesn&apos;t steal bedtime.
       </p>
 
       <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -60,20 +65,46 @@ export default async function GuidesPage({
         </Suspense>
       </div>
 
+      {latest ? (
+        <section className="mt-12 rounded-2xl border border-pine/25 bg-paper-2/50 px-5 py-6 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:px-6">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-rust">
+              {browsing ? "Top match" : "Latest"}
+            </p>
+            <h2 className="mt-2 font-display text-3xl leading-tight">{latest.title}</h2>
+            <p className="mt-2 max-w-2xl text-base leading-7 text-ink-soft">
+              {latest.excerpt}
+            </p>
+          </div>
+          <Link
+            href={`/guides/${latest.slug}`}
+            className="mt-4 inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-pine px-5 text-sm font-semibold text-paper hover:bg-pine-2 sm:mt-0"
+          >
+            Read the guide
+          </Link>
+        </section>
+      ) : null}
+
       {!browsing && startHere.length > 0 ? (
         <section className="mt-12">
           <p className="text-xs uppercase tracking-[0.18em] text-rust">Start here</p>
           <h2 className="mt-2 font-display text-3xl">Three that pay rent</h2>
           <p className="mt-2 max-w-2xl text-base leading-7 text-ink-soft">
-            Read these first: why everything costs more, how to feed the week,
-            and how to talk about money without scaring the kids.
+            Read these first: why everything costs more, the August supply trap,
+            and the fees that land after school starts.
           </p>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {startHere.map((guide) => (
               <GuideCard
                 key={guide.slug}
                 guide={guide}
-                badge={guide.slug === "the-dad-tax" ? "Most popular" : "Start here"}
+                badge={
+                  guide.slug === "the-dad-tax"
+                    ? "Most popular"
+                    : guide.slug === "the-second-bill"
+                      ? "New"
+                      : "Start here"
+                }
               />
             ))}
           </div>
@@ -81,17 +112,9 @@ export default async function GuidesPage({
       ) : null}
 
       <section className="mt-14">
-        <div className="flex items-end justify-between gap-4">
-          <h2 className="font-display text-3xl">
-            {browsing ? "Matching guides" : "All guides"}
-          </h2>
-          <Link
-            href="/resources"
-            className="text-sm font-medium text-pine hover:text-rust"
-          >
-            Free printables →
-          </Link>
-        </div>
+        <h2 className="font-display text-3xl">
+          {browsing ? "Matching guides" : "More guides"}
+        </h2>
         {filtered.length === 0 ? (
           <p className="mt-6 text-base text-ink-soft">
             Nothing matches that yet.{" "}
@@ -101,7 +124,7 @@ export default async function GuidesPage({
           </p>
         ) : (
           <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {(browsing ? filtered : rest).map((guide) => (
+            {(browsing ? browsingRest : rest).map((guide) => (
               <GuideCard key={guide.slug} guide={guide} />
             ))}
           </div>

@@ -38,15 +38,24 @@ export function WeekStartSignup({
           source={source}
           submitLabel={site.weekStart.button}
           successMessage={site.weekStart.success}
+          successHref="/guides/the-second-bill"
+          successLinkLabel="Read this week’s guide"
         />
       </div>
       <p className="mt-3 text-sm text-ink-soft">
-        Want a sheet on the fridge now?{" "}
+        Or jump into a guide now:{" "}
+        <Link
+          href="/guides/the-dad-tax"
+          className="font-medium text-pine underline decoration-rule underline-offset-2 hover:text-rust"
+        >
+          The dad tax
+        </Link>
+        {" · "}
         <Link
           href="/resources"
           className="font-medium text-pine underline decoration-rule underline-offset-2 hover:text-rust"
         >
-          Open the printables
+          Free printables
         </Link>
       </p>
     </aside>

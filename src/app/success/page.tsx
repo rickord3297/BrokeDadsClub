@@ -18,10 +18,10 @@ export default function SuccessPage() {
       </p>
       <div className="mt-8 flex justify-center gap-3">
         <Link
-          href="/guides"
+          href="/guides/the-second-bill"
           className="rounded-full bg-pine px-5 py-3 text-sm font-semibold text-paper"
         >
-          Read a guide
+          Read this week’s guide
         </Link>
         <Link
           href="/shop"
