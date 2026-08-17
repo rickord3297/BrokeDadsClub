@@ -51,8 +51,10 @@ export function GuideArticle({
 }) {
   const url = `${site.url}/guides/${guide.slug}`;
   const keywords = guideKeywords(guide);
-  const [beforeCta, afterCta] = splitGuideContent(guide.content);
   const showWaitingCostModeler = guide.slug === "retirement-can-wait";
+  const [beforeModeler, afterModeler] = showWaitingCostModeler
+    ? splitGuideContent(guide.content)
+    : [guide.content, ""];
 
   const articleLd = {
     "@context": "https://schema.org",
@@ -129,16 +131,14 @@ export function GuideArticle({
         </p>
 
         <div className="prose-guide mt-10">
-          <Markdown content={beforeCta} />
+          <Markdown content={beforeModeler} />
         </div>
 
         {showWaitingCostModeler ? <WaitingCostModeler /> : null}
 
-        <GuideEmailCta source={`guide:${guide.slug}`} />
-
-        {afterCta ? (
+        {afterModeler ? (
           <div className="prose-guide">
-            <Markdown content={afterCta} />
+            <Markdown content={afterModeler} />
           </div>
         ) : null}
 
@@ -157,6 +157,8 @@ export function GuideArticle({
             </dl>
           </section>
         ) : null}
+
+        <GuideEmailCta source={`guide:${guide.slug}`} />
       </article>
       <div className="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
         <GuideShop slugs={guide.shop} />

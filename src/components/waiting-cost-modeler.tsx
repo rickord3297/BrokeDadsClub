@@ -36,8 +36,7 @@ export function WaitingCostModeler({
         Try a different weekly amount
       </h2>
       <p className="mt-2 text-sm leading-6 text-ink-soft">
-        Not advice. Same made-up ~10% picture as the article. Pick an amount
-        and see the gap.
+        Same ~10% picture as the article. Pick an amount and see the gap.
       </p>
 
       <div className="mt-5 flex flex-wrap gap-2" role="group" aria-label="Weekly amount">
