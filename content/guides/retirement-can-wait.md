@@ -6,8 +6,8 @@ description: "A plain illustration of $25 a week in a total market fund for 30 y
 excerpt: Not advice. Just a clear picture of what "I'll start later" can look like at $25 a week.
 category: Money
 readTime: 7 min
-publishedAt: "2026-10-27"
-status: scheduled
+publishedAt: "2026-08-17"
+status: published
 keywords:
   - cost of waiting to invest
   - $25 a week investing

@@ -4,7 +4,7 @@
 
 **Drop ideas in the table below** (Status `idea`). Then tell Cursor: **Draft new ideas:** every `idea` row becomes a guide file with `status: draft` (not on the live site).
 
-**Review drafts:** open files in [`content/guides/`](guides/), anything with `status: draft` in the top. Or browse [`DRAFTS.md`](DRAFTS.md).
+**Review drafts:** open files in [`content/guides/`](guides/), anything with `status: draft` in the top. Or browse [`DRAFTS.md`](DRAFTS.md). To see articles **as the website renders them**, use `/preview/guides` (index) or `/preview/guides/<slug>`.
 
 | Idea | Status | Go live | Notes |
 |------|--------|---------|-------|
@@ -28,7 +28,7 @@
 | Side hustles that don't steal bedtime | live | 2026-07-14 | `side-hustles-that-dont-steal-bedtime` |
 | Talking to kids about money without scaring them | live | 2026-07-07 | `talking-to-kids-about-money` |
 | Thrift without looking like a dare | live | 2026-06-30 | `thrift-without-looking-like-a-dare` |
-| My retirement can wait: $25/week in VTI for 30 years | scheduled | 2026-10-27 | [`retirement-can-wait.md`](guides/retirement-can-wait.md) |
+| My retirement can wait: $25/week in VTI for 30 years | live | 2026-08-17 | [`retirement-can-wait.md`](guides/retirement-can-wait.md) |
 | School clothes for two kids without a mall meltdown | idea | | trend 2026-08-17: r/Parenting / Yahoo: outfitting multiple kids for school |
 | What you cut so the kid can keep playing sports | idea | | trend 2026-08-17: KPMG: families cut dining/travel to protect sports |
 | The sports fee that is not on the registration form | idea | | trend 2026-08-17: AP/Ipsos + club fee guides: gate, gas, tournaments, kit |
