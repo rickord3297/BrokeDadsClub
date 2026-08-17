@@ -2,6 +2,8 @@
 
 Open any file to edit. `status: scheduled` goes live automatically on `publishedAt` after deploy. `status: draft` stays hidden.
 
+**Review as the website renders them:** open [`/preview/guides`](/preview/guides) (all statuses) or a single article at `/preview/guides/<slug>`.
+
 | Title | Go live | File |
 |-------|---------|------|
 | Which tool brand to buy | draft | [which-tool-brand-to-buy.md](guides/which-tool-brand-to-buy.md) |
