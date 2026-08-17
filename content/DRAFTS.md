@@ -14,4 +14,4 @@ Open any file to edit. `status: scheduled` goes live automatically on `published
 | The kid who won't sleep | 2026-10-06 | [the-kid-who-wont-sleep.md](guides/the-kid-who-wont-sleep.md) |
 | How to handle the early riser | 2026-10-13 | [how-to-handle-the-early-riser.md](guides/how-to-handle-the-early-riser.md) |
 | Kids who don't listen to Mom | 2026-10-20 | [kids-who-dont-listen-to-mom.md](guides/kids-who-dont-listen-to-mom.md) |
-| My retirement can wait ($25/week VTI) | draft | [retirement-can-wait.md](guides/retirement-can-wait.md) · [preview](/preview/guides/retirement-can-wait) |
+| My retirement can wait ($25/week VTI) | 2026-10-27 | [retirement-can-wait.md](guides/retirement-can-wait.md) · [preview](/preview/guides/retirement-can-wait) |

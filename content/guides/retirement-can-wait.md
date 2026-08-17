@@ -7,7 +7,7 @@ excerpt: Not advice. Just a clear picture of what "I'll start later" can look li
 category: Money
 readTime: 7 min
 publishedAt: "2026-10-27"
-status: draft
+status: scheduled
 keywords:
   - cost of waiting to invest
   - $25 a week investing
