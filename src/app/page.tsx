@@ -10,14 +10,11 @@ import { resources } from "@/lib/resources";
 import { site } from "@/lib/site";
 
 const productOrder = ["club-pup-tee"];
-const HERO_GUIDE_SLUG = "the-second-bill";
 
 export default async function Home() {
   const [guides, products] = await Promise.all([getGuides(), getProducts()]);
   const categories = getGuideCategories(guides);
-  const heroGuide = getGuide(HERO_GUIDE_SLUG) ?? guides[0] ?? null;
-  const alsoNew =
-    guides.find((guide) => guide.slug !== heroGuide?.slug) ?? null;
+  const latestGuide = guides[0] ?? null;
   const startHere = START_HERE_SLUGS.map((slug) => getGuide(slug)).filter(
     (guide): guide is NonNullable<typeof guide> => guide != null,
   );
@@ -46,28 +43,21 @@ export default async function Home() {
           <p className="mt-6 max-w-xl text-lg leading-8 text-ink-soft">
             Practical guides for dads doing the math out loud. {site.tagline}
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            {heroGuide ? (
-              <Link
-                href={`/guides/${heroGuide.slug}`}
-                className="rounded-full bg-pine px-5 py-3 text-sm font-semibold text-paper hover:bg-pine-2"
-              >
-                Read: The second bill
-              </Link>
-            ) : (
-              <Link
-                href="/guides"
-                className="rounded-full bg-pine px-5 py-3 text-sm font-semibold text-paper hover:bg-pine-2"
-              >
-                Read the guides
-              </Link>
-            )}
+          <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3">
             <Link
               href="/guides"
-              className="text-sm font-semibold text-pine hover:text-rust"
+              className="rounded-full bg-pine px-5 py-3 text-sm font-semibold text-paper hover:bg-pine-2"
             >
-              All guides →
+              Read the guides
             </Link>
+            {latestGuide ? (
+              <Link
+                href={`/guides/${latestGuide.slug}`}
+                className="text-sm font-semibold text-pine hover:text-rust"
+              >
+                Read the latest: {latestGuide.title} →
+              </Link>
+            ) : null}
             <Link
               href="/resources"
               className="text-sm font-medium text-ink-soft hover:text-rust"
@@ -77,25 +67,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
-      {alsoNew ? (
-        <section className="border-b border-rule bg-paper-2/50">
-          <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-rust">
-                Also new
-              </p>
-              <p className="mt-1 font-display text-2xl leading-tight">{alsoNew.title}</p>
-            </div>
-            <Link
-              href={`/guides/${alsoNew.slug}`}
-              className="inline-flex h-11 shrink-0 items-center justify-center rounded-full bg-pine px-5 text-sm font-semibold text-paper hover:bg-pine-2"
-            >
-              Read the guide
-            </Link>
-          </div>
-        </section>
-      ) : null}
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <div className="flex items-end justify-between gap-4">
