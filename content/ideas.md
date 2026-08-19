@@ -8,6 +8,11 @@
 
 | Idea | Status | Go live | Notes |
 |------|--------|---------|-------|
+| Spirit wear without the $40 hoodie | idea | | trend 2026-08-19: start-up and picture days this week (Mercer Island, Stanwood, Snohomish Aug 18-19) are selling spirit wear next to the photo line. Custom Ink treats back-to-school night as the densest sales moment. One $15-$28 tee is enough |
+| Back-to-school night is during dinner | idea | | trend 2026-08-19: parent nights this week (Wyatt PTA Parent Information Night Aug 20). Time and work, not a lecture. You can skip the volunteer clipboard and still be the dad |
+| Picture day without the $80 package | idea | | trend 2026-08-16: first-week picture days (many districts Aug 18-19). Most families skip the blind print bundle. Dignity, not a fundraiser lecture. Recaptured 8/19 (still not on main) |
+| Packed lunch that costs more than the cafeteria | idea | | trend 2026-08-15: Deloitte $6.33 packed vs $3.15 cafeteria; Independent plus Florida lunch-price hikes. Recaptured 8/16 and 8/19 (still not on main) |
+| School lets out at 2:30. Your job doesn't. | idea | | trend 2026-08-15: NH Bulletin and aftercare waitlists. The coverage gap after kindergarten, not infant daycare. Recaptured 8/16 and 8/19 (still not on main) |
 | Which tool brand to buy (one battery, not a shrine) | draft | | [`which-tool-brand-to-buy.md`](guides/which-tool-brand-to-buy.md) |
 | Dad math: I can do that cheaper (then you need $200 of tools) | live | 2026-08-16 | [`dad-math.md`](guides/dad-math.md) |
 | The second bill after school starts (fees, sports, fundraisers) | live | 2026-08-16 | [`the-second-bill.md`](guides/the-second-bill.md) |
