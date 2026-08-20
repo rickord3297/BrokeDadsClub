@@ -47,7 +47,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${figtree.variable} ${fraunces.variable} ${oswald.variable} h-full antialiased`}
+      className={`${figtree.variable} ${fraunces.variable} ${oswald.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col text-ink">
         <CartProvider>

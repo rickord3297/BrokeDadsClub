@@ -2,11 +2,17 @@ import Link from "next/link";
 import { ResourcePreview } from "@/components/resource-preview";
 import type { Resource } from "@/lib/resources";
 
-export function ResourceCard({ resource }: { resource: Resource }) {
+export function ResourceCard({
+  resource,
+  previewVariant = "sheet",
+}: {
+  resource: Resource;
+  previewVariant?: "sheet" | "fridge";
+}) {
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-rule bg-paper">
+    <article className="flex flex-col overflow-hidden rounded-2xl border border-rule bg-paper shadow-md shadow-ink/5 ring-1 ring-ink/5">
       <Link href={`/resources/${resource.slug}`} className="block px-4 pt-4">
-        <ResourcePreview slug={resource.slug} />
+        <ResourcePreview slug={resource.slug} variant={previewVariant} />
       </Link>
       <div className="flex flex-1 flex-col p-5 pt-4">
         <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-pine">

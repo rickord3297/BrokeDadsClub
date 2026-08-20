@@ -1,5 +1,11 @@
-export function ResourcePreview({ slug }: { slug: string }) {
-  return (
+export function ResourcePreview({
+  slug,
+  variant = "sheet",
+}: {
+  slug: string;
+  variant?: "sheet" | "fridge";
+}) {
+  const sheet = (
     <div
       className="aspect-[8.5/11] overflow-hidden rounded-lg border border-rule bg-white p-2.5 shadow-sm"
       aria-hidden
@@ -9,6 +15,27 @@ export function ResourcePreview({ slug }: { slug: string }) {
       {slug === "birthday-party-budget" ? <BirthdayMini /> : null}
     </div>
   );
+
+  if (variant === "fridge") {
+    return (
+      <div
+        className="relative overflow-hidden rounded-xl bg-gradient-to-b from-slate-300/90 to-slate-400/80 p-4 pt-10 shadow-inner"
+        aria-hidden
+      >
+        <div className="absolute left-0 top-0 h-full w-1 bg-white/40" />
+        <div className="absolute right-3 top-6 h-10 w-1.5 rounded-full bg-slate-500/50" />
+        <div className="absolute left-4 top-3 text-[9px] font-semibold uppercase tracking-wider text-slate-600/80">
+          Fridge
+        </div>
+        <div className="relative mx-auto max-w-[88%] rotate-[-1.5deg]">
+          <div className="absolute -top-1.5 left-1/2 z-10 h-2.5 w-5 -translate-x-1/2 rounded-sm bg-rust shadow-sm" />
+          <div className="shadow-lg shadow-ink/20">{sheet}</div>
+        </div>
+      </div>
+    );
+  }
+
+  return sheet;
 }
 
 function Line({ children }: { children?: string }) {

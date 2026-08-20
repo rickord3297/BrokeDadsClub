@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { WeekStartSignup } from "@/components/week-start-signup";
-import { GuideCard } from "@/components/guide-card";
+import { HomeGuidesSection } from "@/components/home-guides-section";
+import { InlineEmailBar } from "@/components/inline-email-bar";
 import { ProductCard } from "@/components/product-card";
 import { ResourceCard } from "@/components/resource-card";
-import { TopicPills } from "@/components/topic-pills";
-import { START_HERE_SLUGS, getGuide, getGuideCategories, getGuides } from "@/lib/guides";
+import { START_HERE_SLUGS, getGuideCategories, getGuides } from "@/lib/guides";
 import { getProducts } from "@/lib/products";
 import { resources } from "@/lib/resources";
 import { site } from "@/lib/site";
@@ -14,9 +13,14 @@ const productOrder = ["club-pup-tee"];
 export default async function Home() {
   const [guides, products] = await Promise.all([getGuides(), getProducts()]);
   const categories = getGuideCategories(guides);
-  const startHere = START_HERE_SLUGS.map((slug) => getGuide(slug)).filter(
-    (guide): guide is NonNullable<typeof guide> => guide != null,
-  );
+  const homeGuides = guides.map((guide) => ({
+    slug: guide.slug,
+    title: guide.title,
+    excerpt: guide.excerpt,
+    category: guide.category,
+    readTime: guide.readTime,
+    publishedAt: guide.publishedAt,
+  }));
   const featuredProducts = [
     ...productOrder.flatMap((slug) => {
       const product = products.find((item) => item.slug === slug);
@@ -39,62 +43,41 @@ export default async function Home() {
             <br />
             Still showing up.
           </h1>
+          <p className="mt-5 inline-flex items-center rounded-full border border-pine/30 bg-pine/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-pine">
+            No email wall · 100% free
+          </p>
           <p className="mt-6 max-w-xl text-lg leading-8 text-ink-soft">
             Practical guides for dads doing the math out loud.
           </p>
           <p className="mt-4 font-display text-2xl text-rust sm:text-3xl">
             {site.tagline}
           </p>
-        </div>
-      </section>
-
-      <section className="border-t border-rule">
-        {categories.length > 0 ? (
-          <div className="border-b border-rule bg-paper-2/50">
-            <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-7">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-pine">
-                Browse by topic
-              </p>
-              <div className="mt-4">
-                <TopicPills categories={categories} size="lg" />
-              </div>
-            </div>
-          </div>
-        ) : null}
-
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <div className="flex items-end justify-between gap-4">
-            <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-rust">Guides</p>
-              <h2 className="mt-2 font-display text-4xl">Start here</h2>
-              <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
-                Why everything costs more, the August supply trap, and the fees that
-                hit after school starts.
-              </p>
-            </div>
-            <Link href="/guides" className="text-sm font-medium text-pine hover:text-rust">
-              All guides →
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Link
+              href="#guides"
+              className="rounded-full bg-pine px-5 py-3 text-sm font-semibold text-paper hover:bg-pine-2"
+            >
+              Read guides
+            </Link>
+            <Link
+              href="#printables"
+              className="rounded-full border-2 border-ink px-5 py-3 text-sm font-semibold hover:bg-ink hover:text-paper"
+            >
+              Free printables
             </Link>
           </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {startHere.map((guide) => (
-              <GuideCard
-                key={guide.slug}
-                guide={guide}
-                badge={
-                  guide.slug === "the-dad-tax"
-                    ? "Most popular"
-                    : guide.slug === "the-second-bill"
-                      ? "New"
-                      : "Start here"
-                }
-              />
-            ))}
-          </div>
         </div>
       </section>
 
-      <section className="border-t border-rule">
+      <HomeGuidesSection
+        guides={homeGuides}
+        categories={categories}
+        startHereSlugs={START_HERE_SLUGS}
+      />
+
+      <InlineEmailBar source="homepage-inline" />
+
+      <section id="printables" className="border-t border-rule scroll-mt-20">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <div className="flex items-end justify-between gap-4">
             <div>
@@ -113,39 +96,44 @@ export default async function Home() {
               All printables →
             </Link>
           </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
             {resources.map((resource) => (
-              <ResourceCard key={resource.slug} resource={resource} />
+              <ResourceCard
+                key={resource.slug}
+                resource={resource}
+                previewVariant={
+                  resource.slug === "grocery-week-checklist" ||
+                  resource.slug === "school-supply-triage"
+                    ? "fridge"
+                    : "sheet"
+                }
+              />
             ))}
           </div>
         </div>
       </section>
 
-      <section id="sunday-email" className="border-t border-rule bg-paper-2/60">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:grid lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:gap-10">
-          <WeekStartSignup source="homepage-sunday" />
-        </div>
-      </section>
-
       {featuredProducts.length > 0 ? (
-        <section className="border-t border-rule">
+        <section id="shop" className="border-t border-rule scroll-mt-20">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
             <div className="flex items-end justify-between gap-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.18em] text-rust">Shop</p>
                 <h2 className="mt-2 font-display text-4xl">Club goods</h2>
-                <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
-                  The crest is the membership card. The pup and the penguin are
-                  the pickup-line jokes. Sales keep the{" "}
-                  <Link href="/guides" className="font-medium text-pine hover:text-rust">
-                    guides
-                  </Link>{" "}
-                  free.
-                </p>
               </div>
               <Link href="/shop" className="text-sm font-medium text-pine hover:text-rust">
                 Full shop →
               </Link>
+            </div>
+            <div className="mt-6 rounded-2xl border border-pine/30 bg-pine/5 px-5 py-5 text-center sm:px-8">
+              <p className="font-display text-2xl text-pine sm:text-3xl">
+                Sales fund free guides.
+              </p>
+              <p className="mt-2 text-sm leading-6 text-ink-soft sm:text-base">
+                The crest is the membership card. The pup and the penguin are the
+                pickup-line jokes. Every purchase keeps the tactics free for every
+                dad.
+              </p>
             </div>
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {featuredProducts.map((product) => (
