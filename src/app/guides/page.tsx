@@ -38,12 +38,7 @@ export default async function GuidesPage({
   const startHere = startHereSlugs
     .map((slug) => getGuide(slug))
     .filter((guide): guide is NonNullable<typeof guide> => guide != null);
-  const latest = filtered[0] ?? null;
-  const rest = filtered.filter(
-    (guide) =>
-      !startHereSlugs.includes(guide.slug) && guide.slug !== latest?.slug,
-  );
-  const browsingRest = filtered.filter((guide) => guide.slug !== latest?.slug);
+  const rest = filtered.filter((guide) => !startHereSlugs.includes(guide.slug));
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
@@ -64,26 +59,6 @@ export default async function GuidesPage({
           <GuideSearch />
         </Suspense>
       </div>
-
-      {latest ? (
-        <section className="mt-12 rounded-2xl border border-pine/25 bg-paper-2/50 px-5 py-6 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:px-6">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-rust">
-              {browsing ? "Top match" : "Latest"}
-            </p>
-            <h2 className="mt-2 font-display text-3xl leading-tight">{latest.title}</h2>
-            <p className="mt-2 max-w-2xl text-base leading-7 text-ink-soft">
-              {latest.excerpt}
-            </p>
-          </div>
-          <Link
-            href={`/guides/${latest.slug}`}
-            className="mt-4 inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-pine px-5 text-sm font-semibold text-paper hover:bg-pine-2 sm:mt-0"
-          >
-            Read the guide
-          </Link>
-        </section>
-      ) : null}
 
       {!browsing && startHere.length > 0 ? (
         <section className="mt-12">
@@ -122,9 +97,15 @@ export default async function GuidesPage({
               Show all guides
             </Link>
           </p>
+        ) : browsing ? (
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {filtered.map((guide) => (
+              <GuideCard key={guide.slug} guide={guide} />
+            ))}
+          </div>
         ) : (
           <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {(browsing ? browsingRest : rest).map((guide) => (
+            {rest.map((guide) => (
               <GuideCard key={guide.slug} guide={guide} />
             ))}
           </div>
