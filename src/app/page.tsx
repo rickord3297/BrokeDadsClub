@@ -3,7 +3,7 @@ import { HomeGuidesSection } from "@/components/home-guides-section";
 import { InlineEmailBar } from "@/components/inline-email-bar";
 import { ProductCard } from "@/components/product-card";
 import { ResourceCard } from "@/components/resource-card";
-import { START_HERE_SLUGS, getGuideCategories, getGuides } from "@/lib/guides";
+import { getGuideCategories, getGuides } from "@/lib/guides";
 import { getProducts } from "@/lib/products";
 import { resources } from "@/lib/resources";
 import { site } from "@/lib/site";
@@ -69,11 +69,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <HomeGuidesSection
-        guides={homeGuides}
-        categories={categories}
-        startHereSlugs={START_HERE_SLUGS}
-      />
+      <HomeGuidesSection guides={homeGuides} categories={categories} />
 
       <InlineEmailBar source="homepage-inline" />
 
