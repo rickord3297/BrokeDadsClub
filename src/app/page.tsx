@@ -14,7 +14,6 @@ const productOrder = ["club-pup-tee"];
 export default async function Home() {
   const [guides, products] = await Promise.all([getGuides(), getProducts()]);
   const categories = getGuideCategories(guides);
-  const latestGuide = guides[0] ?? null;
   const startHere = START_HERE_SLUGS.map((slug) => getGuide(slug)).filter(
     (guide): guide is NonNullable<typeof guide> => guide != null,
   );
@@ -41,30 +40,11 @@ export default async function Home() {
             Still showing up.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-ink-soft">
-            Practical guides for dads doing the math out loud. {site.tagline}
+            Practical guides for dads doing the math out loud.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3">
-            <Link
-              href="/guides"
-              className="rounded-full bg-pine px-5 py-3 text-sm font-semibold text-paper hover:bg-pine-2"
-            >
-              Read the guides
-            </Link>
-            {latestGuide ? (
-              <Link
-                href={`/guides/${latestGuide.slug}`}
-                className="text-sm font-semibold text-pine hover:text-rust"
-              >
-                Read the latest: {latestGuide.title} →
-              </Link>
-            ) : null}
-            <Link
-              href="/resources"
-              className="text-sm font-medium text-ink-soft hover:text-rust"
-            >
-              Free printables
-            </Link>
-          </div>
+          <p className="mt-4 font-display text-2xl text-rust sm:text-3xl">
+            {site.tagline}
+          </p>
         </div>
       </section>
 
