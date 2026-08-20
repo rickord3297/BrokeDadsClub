@@ -4,21 +4,13 @@ import { Suspense } from "react";
 import { GuideCard } from "@/components/guide-card";
 import { GuideSearch } from "@/components/guide-search";
 import { TopicPills } from "@/components/topic-pills";
-import {
-  START_HERE_SLUGS,
-  getGuide,
-  getGuideCategories,
-  getGuides,
-  matchesGuideQuery,
-} from "@/lib/guides";
+import { getGuideCategories, getGuides, matchesGuideQuery } from "@/lib/guides";
 
 export const metadata: Metadata = {
   title: "Guides",
   description:
     "Practical dad guides on money, time, kids, and gear, written for fathers stretching every dollar.",
 };
-
-const startHereSlugs = START_HERE_SLUGS;
 
 export default async function GuidesPage({
   searchParams,
@@ -34,11 +26,8 @@ export default async function GuidesPage({
     const topicOk = !topic || guide.category === topic;
     return topicOk && matchesGuideQuery(guide, query);
   });
-  const browsing = Boolean(topic || query);
-  const startHere = startHereSlugs
-    .map((slug) => getGuide(slug))
-    .filter((guide): guide is NonNullable<typeof guide> => guide != null);
-  const rest = filtered.filter((guide) => !startHereSlugs.includes(guide.slug));
+  const latest = filtered[0] ?? null;
+  const rest = latest ? filtered.filter((guide) => guide.slug !== latest.slug) : [];
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
@@ -49,7 +38,13 @@ export default async function GuidesPage({
         school fees, talking about money, and work that doesn&apos;t steal bedtime.
       </p>
 
-      <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      {latest ? (
+        <div className="mt-10 max-w-xl">
+          <GuideCard guide={latest} badge="New" />
+        </div>
+      ) : null}
+
+      <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <TopicPills categories={categories} active={topic} query={query} />
         <Suspense
           fallback={
@@ -60,57 +55,20 @@ export default async function GuidesPage({
         </Suspense>
       </div>
 
-      {!browsing && startHere.length > 0 ? (
-        <section className="mt-12">
-          <p className="text-xs uppercase tracking-[0.18em] text-rust">Start here</p>
-          <h2 className="mt-2 font-display text-3xl">Three that pay rent</h2>
-          <p className="mt-2 max-w-2xl text-base leading-7 text-ink-soft">
-            Read these first: why everything costs more, the August supply trap,
-            and the fees that land after school starts.
-          </p>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {startHere.map((guide) => (
-              <GuideCard
-                key={guide.slug}
-                guide={guide}
-                badge={
-                  guide.slug === "the-dad-tax"
-                    ? "Most popular"
-                    : guide.slug === "the-second-bill"
-                      ? "New"
-                      : "Start here"
-                }
-              />
-            ))}
-          </div>
-        </section>
-      ) : null}
-
-      <section className="mt-14">
-        <h2 className="font-display text-3xl">
-          {browsing ? "Matching guides" : "More guides"}
-        </h2>
-        {filtered.length === 0 ? (
-          <p className="mt-6 text-base text-ink-soft">
-            Nothing matches that yet.{" "}
-            <Link href="/guides" className="font-medium text-pine hover:text-rust">
-              Show all guides
-            </Link>
-          </p>
-        ) : browsing ? (
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {filtered.map((guide) => (
-              <GuideCard key={guide.slug} guide={guide} />
-            ))}
-          </div>
-        ) : (
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {rest.map((guide) => (
-              <GuideCard key={guide.slug} guide={guide} />
-            ))}
-          </div>
-        )}
-      </section>
+      {filtered.length === 0 ? (
+        <p className="mt-10 text-base text-ink-soft">
+          Nothing matches that yet.{" "}
+          <Link href="/guides" className="font-medium text-pine hover:text-rust">
+            Show all guides
+          </Link>
+        </p>
+      ) : (
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {rest.map((guide) => (
+            <GuideCard key={guide.slug} guide={guide} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
