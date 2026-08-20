@@ -12,17 +12,23 @@ export function TopicPills({
   categories,
   active = "",
   query = "",
+  size = "default",
 }: {
   categories: string[];
   active?: string;
   query?: string;
+  size?: "default" | "lg";
 }) {
   if (!categories.length) return null;
 
   const pills = ["", ...categories];
+  const pillClass =
+    size === "lg"
+      ? "px-4 py-2.5 text-sm sm:text-base"
+      : "px-3 py-1.5 text-sm";
 
   return (
-    <div className="flex flex-wrap gap-2" role="navigation" aria-label="Guide topics">
+    <div className="flex flex-wrap gap-2 sm:gap-3" role="navigation" aria-label="Guide topics">
       {pills.map((topic) => {
         const selected = topic === active;
         return (
@@ -32,8 +38,8 @@ export function TopicPills({
             scroll={false}
             className={
               selected
-                ? "rounded-full bg-pine px-3 py-1.5 text-sm font-semibold text-paper"
-                : "rounded-full border border-rule bg-paper px-3 py-1.5 text-sm font-medium text-ink hover:border-pine hover:text-pine"
+                ? `rounded-full bg-pine font-semibold text-paper ${pillClass}`
+                : `rounded-full border border-rule bg-paper font-medium text-ink hover:border-pine hover:text-pine ${pillClass}`
             }
           >
             {topic || "All"}

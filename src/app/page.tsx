@@ -48,47 +48,51 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <div className="flex items-end justify-between gap-4">
-          <div>
-            <p className="text-xs uppercase tracking-[0.18em] text-rust">Guides</p>
-            <h2 className="mt-2 font-display text-4xl">Start here</h2>
-            <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
-              Why everything costs more, the August supply trap, and the fees that
-              hit after school starts.
-            </p>
+      <section className="border-t border-rule">
+        {categories.length > 0 ? (
+          <div className="border-b border-rule bg-paper-2/50">
+            <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-7">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-pine">
+                Browse by topic
+              </p>
+              <div className="mt-4">
+                <TopicPills categories={categories} size="lg" />
+              </div>
+            </div>
           </div>
-          <Link href="/guides" className="text-sm font-medium text-pine hover:text-rust">
-            All guides →
-          </Link>
-        </div>
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {startHere.map((guide) => (
-            <GuideCard
-              key={guide.slug}
-              guide={guide}
-              badge={
-                guide.slug === "the-dad-tax"
-                  ? "Most popular"
-                  : guide.slug === "the-second-bill"
-                    ? "New"
-                    : "Start here"
-              }
-            />
-          ))}
+        ) : null}
+
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-rust">Guides</p>
+              <h2 className="mt-2 font-display text-4xl">Start here</h2>
+              <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
+                Why everything costs more, the August supply trap, and the fees that
+                hit after school starts.
+              </p>
+            </div>
+            <Link href="/guides" className="text-sm font-medium text-pine hover:text-rust">
+              All guides →
+            </Link>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {startHere.map((guide) => (
+              <GuideCard
+                key={guide.slug}
+                guide={guide}
+                badge={
+                  guide.slug === "the-dad-tax"
+                    ? "Most popular"
+                    : guide.slug === "the-second-bill"
+                      ? "New"
+                      : "Start here"
+                }
+              />
+            ))}
+          </div>
         </div>
       </section>
-
-      {categories.length > 0 ? (
-        <section className="border-t border-rule">
-          <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-5 sm:px-6">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-pine">
-              Browse by topic
-            </p>
-            <TopicPills categories={categories} />
-          </div>
-        </section>
-      ) : null}
 
       <section className="border-t border-rule">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
