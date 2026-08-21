@@ -8,6 +8,14 @@
 
 | Idea | Status | Go live | Notes |
 |------|--------|---------|-------|
+| The bus never came. Now you're the driver. | idea | | trend 2026-08-21: first-week bus driver shortages (Berkeley County, Caddo Parish, Northside ISD, Winston-Salem, all Aug 20). Last-minute texts, kids waiting an hour, dad leaves work and burns the commute twice. Time and work, not a transit rant |
+| First-week germs already ate your remaining PTO | idea | | trend 2026-08-21: pediatricians warning the first two weeks of school bring the usual sick wave (WAFB Aug 19, Kansas City Star Aug 18, Motherly Aug 18). The 24-hour fever rule vs a job that does not flex. Who stays home, not a Lysol lecture |
+| Grandma lives two states away | idea | | trend 2026-08-21: BMO Real Financial Progress Index (Aug 20). 82% of parents say kid costs are out of control. Local family help saves about $1,915 a year on childcare. The unpaid babysitter you do not have |
+| Spirit wear without the $40 hoodie | idea | | trend 2026-08-19: start-up and picture days this week (Mercer Island, Stanwood, Snohomish Aug 18-19) are selling spirit wear next to the photo line. Custom Ink treats back-to-school night as the densest sales moment. One $15-$28 tee is enough. Recaptured 8/21 (still not on main) |
+| Back-to-school night is during dinner | idea | | trend 2026-08-19: parent nights this week (Wyatt PTA Parent Information Night Aug 20). Time and work, not a lecture. You can skip the volunteer clipboard and still be the dad. Recaptured 8/21 (still not on main) |
+| Picture day without the $80 package | idea | | trend 2026-08-16: first-week picture days (many districts Aug 18-19). Most families skip the blind print bundle. Dignity, not a fundraiser lecture. Recaptured 8/19 and 8/21 (still not on main) |
+| Packed lunch that costs more than the cafeteria | idea | | trend 2026-08-15: Deloitte $6.33 packed vs $3.15 cafeteria; Independent plus Florida lunch-price hikes. Recaptured 8/16, 8/19, and 8/21 (still not on main) |
+| School lets out at 2:30. Your job doesn't. | idea | | trend 2026-08-15: NH Bulletin and aftercare waitlists. The coverage gap after kindergarten, not infant daycare. Recaptured 8/16, 8/19, and 8/21 (still not on main) |
 | Which tool brand to buy (one battery, not a shrine) | draft | | [`which-tool-brand-to-buy.md`](guides/which-tool-brand-to-buy.md) |
 | Dad math: I can do that cheaper (then you need $200 of tools) | live | 2026-08-16 | [`dad-math.md`](guides/dad-math.md) |
 | The second bill after school starts (fees, sports, fundraisers) | live | 2026-08-16 | [`the-second-bill.md`](guides/the-second-bill.md) |
