@@ -86,6 +86,20 @@ body {
   font-weight: 650;
 }
 
+.prose-guide blockquote {
+  margin: 1.5rem 0;
+  border-left: 3px solid var(--pine);
+  padding-left: 1rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.prose-guide hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
+
 @media print {
   html,
   body {

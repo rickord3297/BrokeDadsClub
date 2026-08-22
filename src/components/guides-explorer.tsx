@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 import { GuideCard } from "@/components/guide-card";
 import { GuideSearch } from "@/components/guide-search";
-import { filterGuidesList, splitLatestGuide } from "@/lib/guide-list";
+import { filterGuidesList } from "@/lib/guide-list";
 import type { HomeGuide } from "@/components/home-guides-section";
 
 export function GuidesExplorer({
@@ -24,8 +24,8 @@ export function GuidesExplorer({
     () => filterGuidesList(guides, topic, query),
     [guides, topic, query],
   );
-  const { latest, rest } = useMemo(() => splitLatestGuide(filtered), [filtered]);
 
+  const newestSlug = filtered[0]?.slug;
   const pillClass = "px-4 py-2.5 text-sm sm:text-base";
 
   function setTopic(next: string) {
@@ -38,12 +38,6 @@ export function GuidesExplorer({
 
   return (
     <>
-      {latest ? (
-        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          <GuideCard guide={latest} badge="New" />
-        </div>
-      ) : null}
-
       <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div
           className="flex flex-wrap gap-2 sm:gap-3"
@@ -81,8 +75,12 @@ export function GuidesExplorer({
         </p>
       ) : (
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {rest.map((guide) => (
-            <GuideCard key={guide.slug} guide={guide} />
+          {filtered.map((guide) => (
+            <GuideCard
+              key={guide.slug}
+              guide={guide}
+              badge={guide.slug === newestSlug ? "New" : undefined}
+            />
           ))}
         </div>
       )}

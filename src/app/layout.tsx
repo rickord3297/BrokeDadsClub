@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Figtree, Fraunces, Oswald } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { CartProvider } from "@/components/cart-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <SiteFooter />
         </CartProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

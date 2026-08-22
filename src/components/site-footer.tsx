@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ClubLogo } from "@/components/club-logo";
+import { NewsletterForm } from "@/components/newsletter-form";
 import { site } from "@/lib/site";
 
 export function SiteFooter() {
@@ -33,18 +34,22 @@ export function SiteFooter() {
           </p>
           <p className="mt-2 font-display text-xl">{site.weekStart.title}</p>
           <p className="mt-2 text-sm leading-6 text-paper/90">{site.weekStart.body}</p>
-          <p className="mt-4 flex flex-wrap gap-3">
+          <div className="mt-4">
+            <NewsletterForm
+              variant="footer"
+              source="footer"
+              submitLabel={site.weekStart.button}
+              successMessage={site.weekStart.success}
+              successHref="/guides"
+              successLinkLabel="Browse the guides"
+            />
+          </div>
+          <p className="mt-4">
             <Link
               href="/guides/the-dad-tax"
-              className="inline-flex h-11 items-center rounded-full border border-gold px-5 text-sm font-semibold text-gold hover:bg-gold hover:text-ink"
+              className="text-sm font-medium text-gold hover:text-paper"
             >
-              Read a guide
-            </Link>
-            <Link
-              href="/#sunday-email"
-              className="inline-flex h-11 items-center rounded-full bg-gold px-5 text-sm font-semibold text-ink hover:bg-paper"
-            >
-              {site.weekStart.button}
+              Or start with The dad tax →
             </Link>
           </p>
         </div>

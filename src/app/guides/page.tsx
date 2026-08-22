@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Guides",
   description:
     "Practical dad guides on money, time, kids, and gear, written for fathers stretching every dollar.",
+  alternates: { canonical: "/guides" },
 };
 
 export default async function GuidesPage() {
