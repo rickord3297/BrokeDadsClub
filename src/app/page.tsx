@@ -102,20 +102,13 @@ export default async function Home() {
               <div>
                 <p className="text-xs uppercase tracking-[0.18em] text-rust">Shop</p>
                 <h2 className="mt-2 font-display text-4xl">Club goods</h2>
+                <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
+                  The crest, the pup, the penguin. Wear it if you want. Optional.
+                </p>
               </div>
               <Link href="/shop" className="text-sm font-medium text-pine hover:text-rust">
                 Full shop →
               </Link>
-            </div>
-            <div className="mt-6 rounded-2xl border border-pine/30 bg-pine/5 px-5 py-5 text-center sm:px-8">
-              <p className="font-display text-2xl text-pine sm:text-3xl">
-                Sales fund free guides.
-              </p>
-              <p className="mt-2 text-sm leading-6 text-ink-soft sm:text-base">
-                The crest is the membership card. The pup and the penguin are the
-                pickup-line jokes. Every purchase keeps the tactics free for every
-                dad.
-              </p>
             </div>
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {featuredProducts.map((product) => (
