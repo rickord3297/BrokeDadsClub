@@ -6,8 +6,8 @@ description: "Skip the brand war. Stick with the battery you already own, buy wh
 excerpt: Ryobi, Milwaukee, DeWalt, whoever. If you already have a battery that works, stay there. Cream of the crop is a credit card bill with extra chargers.
 category: Gear
 readTime: 6 min
-publishedAt: "2026-09-01"
-status: draft
+publishedAt: "2026-08-22"
+status: published
 keywords:
   - ryobi vs milwaukee vs dewalt
   - which tool brand to buy
@@ -15,9 +15,9 @@ keywords:
   - cheap cordless tools for homeowners
   - do I need milwaukee tools
 related:
+  - dad-math
   - the-dad-tax
   - thrift-without-looking-like-a-dare
-  - school-supply-list
 shop:
   - club-pup-tee
 faq:
@@ -55,7 +55,7 @@ Pro lines exist because people swing a hammer for money. They get the warranty, 
 
 A mid-tier tool that is *done* beats a flagship that is still in the box because you were scared to scratch it. Same energy as [thrift without looking like a dare](/guides/thrift-without-looking-like-a-dare): cheap is a strategy when it still works. Costume is when the logo is doing the job instead of the motor.
 
-If a job is dangerous, structural, or will flood the house, that is not a brand question. That is a hire-vs-DIY question. Pay the person. Keep your one decent drill for the rest.
+If a job is dangerous, structural, or will flood the house, that is not a brand question. That is a hire-vs-DIY question from [dad math](/guides/dad-math). Pay the person. Keep your one decent drill for the rest.
 
 ## A simple stack
 
