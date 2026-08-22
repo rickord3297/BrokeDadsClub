@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { GuideEmailCta } from "@/components/guide-email-cta";
 import { PrintButton } from "@/components/print-button";
+import { ResourcePreview } from "@/components/resource-preview";
 import { otherResources, type Resource } from "@/lib/resources";
 
 export function ResourceLayout({
@@ -11,6 +12,9 @@ export function ResourceLayout({
   children: React.ReactNode;
 }) {
   const related = otherResources(resource.slug);
+  const fridgePreview =
+    resource.slug === "grocery-week-checklist" ||
+    resource.slug === "school-supply-triage";
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
@@ -23,7 +27,12 @@ export function ResourceLayout({
       <h1 className="mt-3 font-display text-4xl leading-tight sm:text-5xl print:text-2xl">
         {resource.title}
       </h1>
-      <p className="mt-4 text-lg leading-8 text-ink-soft print:hidden">{resource.excerpt}</p>
+      <p className="mt-4 text-lg leading-8 text-ink-soft print:hidden">
+        {resource.excerpt}
+      </p>
+      <p className="mt-3 text-base leading-7 text-ink-soft print:hidden">
+        {resource.intro}
+      </p>
       <p className="mt-3 text-base leading-7 text-ink-soft print:hidden">
         Full write-up:{" "}
         <Link
@@ -37,6 +46,13 @@ export function ResourceLayout({
 
       <div className="mt-6 print:hidden">
         <PrintButton label={resource.printLabel} />
+      </div>
+
+      <div className="mt-8 max-w-xs print:hidden">
+        <ResourcePreview
+          slug={resource.slug}
+          variant={fridgePreview ? "fridge" : "sheet"}
+        />
       </div>
 
       <section className="print-sheet mt-10">{children}</section>

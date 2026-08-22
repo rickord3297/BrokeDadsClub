@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ClubLogo } from "@/components/club-logo";
-import { NewsletterForm } from "@/components/newsletter-form";
 import { site } from "@/lib/site";
 
 export function SiteFooter() {
@@ -15,8 +14,8 @@ export function SiteFooter() {
             </p>
           </div>
           <p className="mt-4 max-w-md text-sm leading-6 text-paper/90">
-            Guides for the money, the kids, and the long haul, plus merch that
-            funds future free guides. No shame. No hustle-bro nonsense.
+            Guides for the money, the kids, and the long haul. No shame. No
+            hustle-bro nonsense.
           </p>
           <p className="mt-6 text-xs uppercase tracking-[0.18em] text-gold">
             {site.tagline}
@@ -34,22 +33,18 @@ export function SiteFooter() {
           </p>
           <p className="mt-2 font-display text-xl">{site.weekStart.title}</p>
           <p className="mt-2 text-sm leading-6 text-paper/90">{site.weekStart.body}</p>
-          <div className="mt-4">
-            <NewsletterForm
-              variant="footer"
-              source="footer"
-              submitLabel={site.weekStart.button}
-              successMessage={site.weekStart.success}
-              successHref="/guides"
-              successLinkLabel="Browse the guides"
-            />
-          </div>
-          <p className="mt-4">
+          <p className="mt-4 flex flex-wrap gap-3">
             <Link
-              href="/guides/the-dad-tax"
-              className="text-sm font-medium text-gold hover:text-paper"
+              href="/#sunday-email"
+              className="inline-flex h-11 items-center rounded-full bg-gold px-5 text-sm font-semibold text-ink hover:bg-paper"
             >
-              Or start with The dad tax →
+              {site.weekStart.button}
+            </Link>
+            <Link
+              href="/guides"
+              className="inline-flex h-11 items-center rounded-full border border-gold px-5 text-sm font-semibold text-gold hover:bg-gold hover:text-ink"
+            >
+              Browse guides
             </Link>
           </p>
         </div>

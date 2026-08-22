@@ -1,8 +1,8 @@
 ---
 title: "Dad math: I can do that cheaper"
 slug: dad-math
-seoTitle: "Dad Math: When DIY Is Cheaper (Until the Tools) | Broke Dads Club"
-description: "DIY feels cheaper until you buy the tool. A calm rule for when dad math is pride, when it saves money, and when you should just pay someone."
+seoTitle: "Cheap DIY Home Repair: When Dad Math Saves Money | Broke Dads Club"
+description: "How to do a cheap DIY repair without buying a new tool every time. Run the hire vs materials vs tool-tax math so pride does not wreck the budget."
 excerpt: You can do it cheaper. Then you need a $40 bit, a $90 saw, and Saturday. Pride is real. So is the tool tax.
 category: Money
 readTime: 7 min

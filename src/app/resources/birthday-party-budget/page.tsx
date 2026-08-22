@@ -10,8 +10,9 @@ import { site } from "@/lib/site";
 const resource = requireResource("birthday-party-budget");
 
 export const metadata: Metadata = {
-  title: resource.seoTitle,
+  title: { absolute: `${resource.seoTitle} | Broke Dads Club` },
   description: resource.description,
+  keywords: resource.keywords,
   alternates: {
     canonical: `${site.url}/resources/${resource.slug}`,
   },

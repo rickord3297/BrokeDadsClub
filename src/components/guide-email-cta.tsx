@@ -21,8 +21,8 @@ export function GuideEmailCta({ source }: { source: string }) {
           source={source}
           submitLabel={site.weekStart.button}
           successMessage={site.weekStart.success}
-          successHref="/guides/the-second-bill"
-          successLinkLabel="Read this week’s guide"
+          successHref="/resources/grocery-week-checklist"
+          successLinkLabel="Print the grocery checklist"
         />
       </div>
     </aside>

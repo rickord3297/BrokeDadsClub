@@ -1,33 +1,26 @@
 import Link from "next/link";
-import { HomeGuidesSection } from "@/components/home-guides-section";
+import { GuideCard } from "@/components/guide-card";
 import { InlineEmailBar } from "@/components/inline-email-bar";
-import { ProductCard } from "@/components/product-card";
 import { ResourceCard } from "@/components/resource-card";
-import { getGuideCategories, getGuides } from "@/lib/guides";
-import { getProducts } from "@/lib/products";
-import { resources } from "@/lib/resources";
+import { TopicPills } from "@/components/topic-pills";
+import {
+  START_HERE_SLUGS,
+  getGuide,
+  getGuideCategories,
+  getGuides,
+} from "@/lib/guides";
+import { getResource } from "@/lib/resources";
 import { site } from "@/lib/site";
 
-const productOrder = ["club-pup-tee"];
+const FEATURED_PRINTABLE = "grocery-week-checklist";
 
 export default async function Home() {
-  const [guides, products] = await Promise.all([getGuides(), getProducts()]);
+  const guides = getGuides();
   const categories = getGuideCategories(guides);
-  const homeGuides = guides.map((guide) => ({
-    slug: guide.slug,
-    title: guide.title,
-    excerpt: guide.excerpt,
-    category: guide.category,
-    readTime: guide.readTime,
-    publishedAt: guide.publishedAt,
-  }));
-  const featuredProducts = [
-    ...productOrder.flatMap((slug) => {
-      const product = products.find((item) => item.slug === slug);
-      return product ? [product] : [];
-    }),
-    ...products.filter((product) => !productOrder.includes(product.slug)),
-  ];
+  const startHere = START_HERE_SLUGS.map((slug) => getGuide(slug)).filter(
+    (guide): guide is NonNullable<typeof guide> => guide != null,
+  );
+  const featuredPrintable = getResource(FEATURED_PRINTABLE);
 
   return (
     <div>
@@ -52,42 +45,68 @@ export default async function Home() {
           <p className="mt-4 font-display text-2xl text-rust sm:text-3xl">
             {site.tagline}
           </p>
+          <div className="mt-8 max-w-xl rounded-2xl border border-rule bg-paper-2/60 px-5 py-5">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-pine">
+              New here?
+            </p>
+            <p className="mt-2 font-display text-2xl leading-snug">
+              Start with the 4 most essential dad guides
+            </p>
+            <p className="mt-2 text-sm leading-6 text-ink-soft">
+              Why everything costs more, how to feed the week, the school list,
+              and talking to kids about money.
+            </p>
+            <Link
+              href="#start-here"
+              className="mt-4 inline-flex h-11 items-center rounded-full bg-pine px-5 text-sm font-semibold text-paper hover:bg-pine-2"
+            >
+              Show me where to start
+            </Link>
+          </div>
         </div>
       </section>
 
-      <HomeGuidesSection guides={homeGuides} categories={categories} />
-
-      <InlineEmailBar source="homepage-inline" />
-
-      <section id="printables" className="border-t border-rule scroll-mt-20">
+      <section
+        id="start-here"
+        className="scroll-mt-20 border-t border-rule"
+      >
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <div className="flex items-end justify-between gap-4">
             <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-rust">
-                Printables
-              </p>
-              <h2 className="mt-2 font-display text-4xl">Printables for the fridge</h2>
+              <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-rust">
+                Guides
+              </h2>
+              <p className="mt-2 font-display text-3xl">Start here</p>
               <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
-                Checklists that pair with the guides. Free, no email wall.
+                Four that pay rent. Everything else lives on the guides page.
               </p>
             </div>
             <Link
-              href="/resources"
+              href="/guides"
               className="text-sm font-medium text-pine hover:text-rust"
             >
-              All printables →
+              All guides →
             </Link>
           </div>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {resources.map((resource) => (
-              <ResourceCard
-                key={resource.slug}
-                resource={resource}
-                previewVariant={
-                  resource.slug === "grocery-week-checklist" ||
-                  resource.slug === "school-supply-triage"
-                    ? "fridge"
-                    : "sheet"
+
+          {categories.length > 0 ? (
+            <div className="mt-6">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-pine">
+                Browse by topic
+              </p>
+              <div className="mt-3">
+                <TopicPills categories={categories} size="lg" />
+              </div>
+            </div>
+          ) : null}
+
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {startHere.map((guide) => (
+              <GuideCard
+                key={guide.slug}
+                guide={guide}
+                badge={
+                  guide.slug === "the-dad-tax" ? "Most popular" : "Start here"
                 }
               />
             ))}
@@ -95,29 +114,64 @@ export default async function Home() {
         </div>
       </section>
 
-      {featuredProducts.length > 0 ? (
-        <section id="shop" className="border-t border-rule scroll-mt-20">
+      <InlineEmailBar
+        source="homepage-inline"
+        successHref="/resources/grocery-week-checklist"
+        successLinkLabel="Print the grocery checklist"
+      />
+
+      {featuredPrintable ? (
+        <section id="printables" className="scroll-mt-20 border-t border-rule">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
             <div className="flex items-end justify-between gap-4">
               <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-rust">Shop</p>
-                <h2 className="mt-2 font-display text-4xl">Club goods</h2>
+                <p className="text-xs uppercase tracking-[0.18em] text-rust">
+                  Printables
+                </p>
+                <h2 className="mt-2 font-display text-4xl">
+                  One sheet for the fridge
+                </h2>
                 <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
-                  The crest, the pup, the penguin. Wear it if you want. Optional.
+                  Start with the grocery-week checklist. More sheets on the
+                  printables page.
                 </p>
               </div>
-              <Link href="/shop" className="text-sm font-medium text-pine hover:text-rust">
-                Full shop →
+              <Link
+                href="/resources"
+                className="text-sm font-medium text-pine hover:text-rust"
+              >
+                All printables →
               </Link>
             </div>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {featuredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
+            <div className="mt-8 max-w-md">
+              <ResourceCard
+                resource={featuredPrintable}
+                previewVariant="fridge"
+              />
             </div>
           </div>
         </section>
       ) : null}
+
+      <section id="shop" className="scroll-mt-20 border-t border-rule">
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-rust">Shop</p>
+              <p className="mt-2 font-display text-2xl">Club goods</p>
+              <p className="mt-1 text-sm leading-6 text-ink-soft">
+                Crest, pup, penguin. Optional.
+              </p>
+            </div>
+            <Link
+              href="/shop"
+              className="inline-flex h-11 items-center rounded-full border border-ink px-5 text-sm font-semibold hover:bg-ink hover:text-paper"
+            >
+              Browse the shop →
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
