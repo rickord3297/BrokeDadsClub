@@ -52,20 +52,6 @@ export default async function Home() {
           <p className="mt-4 font-display text-2xl text-rust sm:text-3xl">
             {site.tagline}
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link
-              href="#guides"
-              className="rounded-full bg-pine px-5 py-3 text-sm font-semibold text-paper hover:bg-pine-2"
-            >
-              Read guides
-            </Link>
-            <Link
-              href="#printables"
-              className="rounded-full border-2 border-ink px-5 py-3 text-sm font-semibold hover:bg-ink hover:text-paper"
-            >
-              Free printables
-            </Link>
-          </div>
         </div>
       </section>
 
