@@ -5,7 +5,6 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { GuideBreadcrumbs } from "@/components/guide-breadcrumbs";
 import { GuideEmailCta } from "@/components/guide-email-cta";
-import { GuideShop } from "@/components/guide-shop";
 import { ReadingProgress } from "@/components/reading-progress";
 import { RelatedGuides } from "@/components/related-guides";
 import { ShareGuide } from "@/components/share-guide";
@@ -241,7 +240,6 @@ export default async function GuidePage({
       </article>
       <div className="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
         <RelatedGuides guides={related} />
-        <GuideShop slugs={guide.shop} />
         <p className="mt-12 border-t border-rule pt-6 text-sm">
           <Link href="/guides" className="text-pine hover:text-rust">
             ← All guides
