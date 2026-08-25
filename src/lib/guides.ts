@@ -24,6 +24,7 @@ export type Guide = {
   faq: GuideFaq[];
   related: string[];
   shop: string[];
+  nextGuide?: string;
   content: string;
 };
 
@@ -98,6 +99,10 @@ function readAllGuides(): Guide[] {
             faq: parseFaq(data.faq),
             related: parseStringList(data.related),
             shop: parseStringList(data.shop),
+            nextGuide:
+              typeof data.nextGuide === "string" && data.nextGuide.length > 0
+                ? data.nextGuide
+                : undefined,
             content,
           },
         ];

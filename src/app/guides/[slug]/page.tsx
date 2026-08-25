@@ -95,6 +95,7 @@ export default async function GuidePage({
   const keywords = guideKeywords(guide);
   const related = getRelatedGuides(guide);
   const [beforeCta, afterCta] = splitGuideContent(guide.content);
+  const nextGuide = guide.nextGuide ? getGuide(guide.nextGuide) : null;
 
   const articleLd = {
     "@context": "https://schema.org",
@@ -164,7 +165,15 @@ export default async function GuidePage({
         <Markdown content={beforeCta} />
       </div>
 
-      <GuideEmailCta source={`guide:${guide.slug}`} />
+      <GuideEmailCta
+        source={`guide:${guide.slug}`}
+        successHref={
+          nextGuide ? `/guides/${nextGuide.slug}` : "/guides/the-second-bill"
+        }
+        successLinkLabel={
+          nextGuide ? `Read next: ${nextGuide.title}` : "Read this week's guide"
+        }
+      />
 
       {afterCta ? (
         <div className="prose-guide">

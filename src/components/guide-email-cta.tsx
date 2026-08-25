@@ -2,7 +2,15 @@ import { NewsletterForm } from "@/components/newsletter-form";
 import { RecapTopics } from "@/components/recap-topics";
 import { site } from "@/lib/site";
 
-export function GuideEmailCta({ source }: { source: string }) {
+export function GuideEmailCta({
+  source,
+  successHref = "/guides/the-second-bill",
+  successLinkLabel = "Read this week's guide",
+}: {
+  source: string;
+  successHref?: string;
+  successLinkLabel?: string;
+}) {
   return (
     <aside className="my-10 rounded-2xl border border-rule bg-paper-2 px-5 py-6 sm:px-6">
       <p className="text-xs font-bold uppercase tracking-[0.16em] text-pine">
@@ -21,8 +29,8 @@ export function GuideEmailCta({ source }: { source: string }) {
           source={source}
           submitLabel={site.weekStart.button}
           successMessage={site.weekStart.success}
-          successHref="/guides/the-second-bill"
-          successLinkLabel="Read this week’s guide"
+          successHref={successHref}
+          successLinkLabel={successLinkLabel}
         />
       </div>
     </aside>
