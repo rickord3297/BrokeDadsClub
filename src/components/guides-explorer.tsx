@@ -8,12 +8,19 @@ import { GuideSearch } from "@/components/guide-search";
 import { filterGuidesList } from "@/lib/guide-list";
 import type { HomeGuide } from "@/components/home-guides-section";
 
+const PROMOTED_BADGES: Record<string, string> = {
+  "school-clothes-for-two-kids": "Back-to-school pick",
+  "the-sports-fee-not-on-the-form": "Fall sports pick",
+};
+
 export function GuidesExplorer({
   guides,
   categories,
+  promotedSlugs = [],
 }: {
   guides: HomeGuide[];
   categories: string[];
+  promotedSlugs?: string[];
 }) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -25,7 +32,20 @@ export function GuidesExplorer({
     [guides, topic, query],
   );
 
-  const newestSlug = filtered[0]?.slug;
+  const browsing = Boolean(topic || query);
+  const promoted = useMemo(
+    () =>
+      promotedSlugs
+        .map((slug) => guides.find((guide) => guide.slug === slug))
+        .filter((guide): guide is HomeGuide => guide != null),
+    [guides, promotedSlugs],
+  );
+  const promotedSet = useMemo(() => new Set(promotedSlugs), [promotedSlugs]);
+  const rest = useMemo(
+    () => filtered.filter((guide) => !promotedSet.has(guide.slug)),
+    [filtered, promotedSet],
+  );
+  const newestSlug = rest[0]?.slug;
   const pillClass = "px-4 py-2.5 text-sm sm:text-base";
 
   function setTopic(next: string) {
@@ -74,15 +94,34 @@ export function GuidesExplorer({
           </Link>
         </p>
       ) : (
-        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((guide) => (
-            <GuideCard
-              key={guide.slug}
-              guide={guide}
-              badge={guide.slug === newestSlug ? "New" : undefined}
-            />
-          ))}
-        </div>
+        <>
+          {!browsing && promoted.length > 0 ? (
+            <section className="mt-10">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-rust">
+                Right now
+              </p>
+              <p className="mt-2 font-display text-2xl">Trending this week</p>
+              <div className="mt-6 grid gap-5 md:grid-cols-2">
+                {promoted.map((guide) => (
+                  <GuideCard
+                    key={guide.slug}
+                    guide={guide}
+                    badge={PROMOTED_BADGES[guide.slug] ?? "Trending"}
+                  />
+                ))}
+              </div>
+            </section>
+          ) : null}
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {(browsing ? filtered : rest).map((guide) => (
+              <GuideCard
+                key={guide.slug}
+                guide={guide}
+                badge={guide.slug === newestSlug ? "New" : undefined}
+              />
+            ))}
+          </div>
+        </>
       )}
     </>
   );

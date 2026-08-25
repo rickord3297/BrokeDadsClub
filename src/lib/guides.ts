@@ -128,6 +128,18 @@ export const START_HERE_SLUGS = [
   "talking-to-kids-about-money",
 ];
 
+/** Homepage + guides spotlight from the Aug 2026 traffic test (top 2 of 3). */
+export const PROMOTED_GUIDE_SLUGS = [
+  "school-clothes-for-two-kids",
+  "the-sports-fee-not-on-the-form",
+] as const;
+
+export function getPromotedGuides(): Guide[] {
+  return PROMOTED_GUIDE_SLUGS.map((slug) => getGuide(slug)).filter(
+    (guide): guide is Guide => guide != null,
+  );
+}
+
 const CATEGORY_ORDER = ["Money", "Time", "Kids", "Work", "Gear"];
 
 export function getGuideCategories(guides: Guide[] = getGuides()): string[] {

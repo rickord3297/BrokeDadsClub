@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { GuidesExplorer } from "@/components/guides-explorer";
 import type { HomeGuide } from "@/components/home-guides-section";
-import { getGuideCategories, getGuides } from "@/lib/guides";
+import {
+  PROMOTED_GUIDE_SLUGS,
+  getGuideCategories,
+  getGuides,
+} from "@/lib/guides";
 
 export const metadata: Metadata = {
   title: "Guides",
@@ -37,7 +41,11 @@ export default async function GuidesPage() {
           <div className="mt-10 h-40 animate-pulse rounded-2xl bg-paper-2" />
         }
       >
-        <GuidesExplorer guides={homeGuides} categories={categories} />
+        <GuidesExplorer
+          guides={homeGuides}
+          categories={categories}
+          promotedSlugs={[...PROMOTED_GUIDE_SLUGS]}
+        />
       </Suspense>
     </div>
   );

@@ -4,10 +4,12 @@ import { InlineEmailBar } from "@/components/inline-email-bar";
 import { ResourceCard } from "@/components/resource-card";
 import { TopicPills } from "@/components/topic-pills";
 import {
+  PROMOTED_GUIDE_SLUGS,
   START_HERE_SLUGS,
   getGuide,
   getGuideCategories,
   getGuides,
+  getPromotedGuides,
 } from "@/lib/guides";
 import { getResource } from "@/lib/resources";
 import { site } from "@/lib/site";
@@ -20,7 +22,12 @@ export default async function Home() {
   const startHere = START_HERE_SLUGS.map((slug) => getGuide(slug)).filter(
     (guide): guide is NonNullable<typeof guide> => guide != null,
   );
+  const promoted = getPromotedGuides();
   const featuredPrintable = getResource(FEATURED_PRINTABLE);
+  const promotedBadges: Record<(typeof PROMOTED_GUIDE_SLUGS)[number], string> = {
+    "school-clothes-for-two-kids": "Back-to-school pick",
+    "the-sports-fee-not-on-the-form": "Fall sports pick",
+  };
 
   return (
     <div>
@@ -65,6 +72,42 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {promoted.length > 0 ? (
+        <section id="right-now" className="scroll-mt-20 border-t border-rule bg-paper-2/40">
+          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+            <div className="flex items-end justify-between gap-4">
+              <div>
+                <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-rust">
+                  Right now
+                </h2>
+                <p className="mt-2 font-display text-3xl">What dads are searching for</p>
+                <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
+                  Two guides picked from this week&apos;s trend scan: school clothes
+                  and the sports bill nobody puts on the form.
+                </p>
+              </div>
+              <Link
+                href="/guides"
+                className="text-sm font-medium text-pine hover:text-rust"
+              >
+                All guides →
+              </Link>
+            </div>
+            <div className="mt-8 grid gap-5 md:grid-cols-2">
+              {promoted.map((guide) => (
+                <GuideCard
+                  key={guide.slug}
+                  guide={guide}
+                  badge={
+                    promotedBadges[guide.slug as (typeof PROMOTED_GUIDE_SLUGS)[number]]
+                  }
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section
         id="start-here"
