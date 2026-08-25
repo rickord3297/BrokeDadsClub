@@ -107,7 +107,7 @@ export function NewsletterForm({
           <button
             type="submit"
             disabled={status === "loading"}
-            className="shrink-0 bg-ink px-5 text-sm font-medium text-paper transition hover:bg-pine disabled:opacity-60 sm:px-6"
+            className="shrink-0 bg-pine px-5 text-sm font-medium text-paper transition hover:bg-pine-2 disabled:opacity-60 sm:px-6"
           >
             {status === "loading" ? "Sending…" : submitLabel}
           </button>

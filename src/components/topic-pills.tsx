@@ -35,7 +35,7 @@ export function TopicPills({
   if (variant === "tabs") {
     return (
       <div
-        className="inline-flex max-w-full flex-wrap gap-1 rounded-lg border border-rule bg-paper-2/40 p-1"
+        className="inline-flex max-w-full flex-wrap gap-1 rounded-lg border border-rule bg-paper p-1"
         role="navigation"
         aria-label="Guide topics"
       >
@@ -49,8 +49,8 @@ export function TopicPills({
               onClick={() => trackTopicFilter(topic, placement)}
               className={
                 selected
-                  ? `rounded-md bg-paper font-medium text-ink shadow-sm ${pillClass}`
-                  : `rounded-md font-medium text-ink-soft transition hover:text-ink ${pillClass}`
+                  ? `rounded-md bg-pine font-medium text-paper ${pillClass}`
+                  : `rounded-md font-medium text-ink-soft transition hover:bg-paper-2 hover:text-ink ${pillClass}`
               }
             >
               {topic || "All"}

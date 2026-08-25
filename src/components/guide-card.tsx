@@ -32,30 +32,30 @@ export function GuideCard({
       }}
       className={
         featured
-          ? "group flex h-full min-h-[18rem] flex-col border border-rule bg-paper p-5 transition hover:border-pine/60"
+          ? "group flex h-full min-h-[15rem] flex-col border border-rule bg-paper p-5 transition hover:border-pine hover:bg-pine/[0.03]"
           : "group flex flex-col overflow-hidden rounded-2xl border border-rule bg-paper shadow-md shadow-ink/5 ring-1 ring-ink/5 transition hover:border-pine hover:shadow-lg hover:shadow-pine/10"
       }
     >
       {featured ? (
         <>
-          <div className="flex items-center justify-between gap-3 text-xs text-ink-soft">
-            <span>{guide.category}</span>
-            <span>{guide.readTime}</span>
+          <div className="flex items-center justify-between gap-3 text-xs">
+            <span className="font-medium text-rust">{guide.category}</span>
+            <span className="text-ink-soft">{guide.readTime}</span>
           </div>
           {badge ? (
-            <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.16em] text-pine">
+            <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.16em] text-pine">
               {badge}
             </p>
           ) : null}
           <h3
-            className={`font-display text-xl leading-snug transition group-hover:text-rust sm:text-2xl ${badge ? "mt-2" : "mt-3"}`}
+            className={`font-display text-xl leading-snug transition group-hover:text-rust sm:text-2xl ${badge ? "mt-1.5" : "mt-2"}`}
           >
             {guide.title}
           </h3>
-          <p className="mt-3 flex-1 text-sm leading-6 text-ink-soft">
+          <p className="mt-2 flex-1 text-sm leading-6 text-ink-soft">
             {guide.excerpt}
           </p>
-          <p className="mt-5 border-t border-rule pt-4 text-sm font-medium text-pine transition group-hover:text-rust">
+          <p className="mt-4 border-t border-rule pt-3 text-sm font-medium text-pine transition group-hover:text-rust">
             Read guide →
           </p>
         </>

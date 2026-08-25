@@ -13,20 +13,20 @@ export function InlineEmailBar({
   return (
     <section
       id="sunday-email"
-      className="scroll-mt-20 border-t border-rule bg-paper-2/30"
+      className="scroll-mt-20 border-y border-rule bg-rust/[0.06]"
     >
-      <div className="mx-auto max-w-6xl px-4 section-pad sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 section-pad-sm sm:px-6">
         <div className="mx-auto max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-pine">
             {site.weekStart.kicker}
           </p>
-          <h2 className="mt-3 font-display text-3xl leading-snug sm:text-4xl">
+          <h2 className="mt-2 font-display text-3xl leading-snug sm:text-[2rem]">
             {site.weekStart.title}
           </h2>
-          <p className="mt-3 text-base leading-7 text-ink-soft">
+          <p className="mt-2 text-sm leading-6 text-ink-soft">
             {site.weekStart.body}
           </p>
-          <div className="mt-8">
+          <div className="mt-5">
             <NewsletterForm
               variant="inline"
               source={source}
