@@ -69,13 +69,12 @@ export default async function Home() {
               </div>
             ) : null}
 
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="mt-6 grid gap-5 sm:grid-cols-2">
               {startHere.map((guide) => (
                 <GuideCard
                   key={guide.slug}
                   guide={guide}
                   placement="start_here"
-                  variant="home"
                 />
               ))}
             </div>
