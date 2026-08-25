@@ -16,27 +16,28 @@ export function ResourceCard({
   if (featured) {
     return (
       <article className="overflow-hidden border border-rule bg-paper">
-        <Link href={`/resources/${resource.slug}`} className="block">
+        <Link
+          href={`/resources/${resource.slug}`}
+          className="block cursor-pointer transition hover:opacity-95"
+        >
           <ResourcePreview slug={resource.slug} variant={previewVariant} />
         </Link>
         <div className="border-t border-rule p-5 sm:p-6">
           <p className="text-xs text-ink-soft">Free printable · no email</p>
           <h3 className="mt-2 font-display text-2xl leading-tight">
-            <Link href={`/resources/${resource.slug}`} className="hover:text-rust">
-              {resource.title}
-            </Link>
+            {resource.title}
           </h3>
           <p className="mt-2 text-sm leading-6 text-ink-soft">{resource.excerpt}</p>
-          <div className="mt-5 flex flex-wrap gap-4 text-sm font-medium">
+          <div className="mt-5 flex flex-col gap-3">
             <Link
               href={`/resources/${resource.slug}#print`}
-              className="text-pine transition hover:text-rust"
+              className="inline-flex h-11 items-center justify-center rounded-md bg-pine px-5 text-sm font-semibold text-paper transition hover:bg-pine-2"
             >
-              {resource.printLabel} →
+              {resource.printLabel}
             </Link>
             <Link
               href={`/guides/${resource.guideSlug}`}
-              className="text-ink-soft transition hover:text-ink"
+              className="text-sm text-ink-soft transition hover:text-pine"
             >
               Read {resource.guideLabel} →
             </Link>

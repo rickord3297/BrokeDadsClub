@@ -132,7 +132,11 @@ export const START_HERE_SLUGS = [
 const CATEGORY_ORDER = ["Money", "Time", "Kids", "Work", "Gear"];
 
 export function getGuideCategories(guides: Guide[] = getGuides()): string[] {
-  const found = new Set(guides.map((guide) => guide.category));
+  const found = new Set(
+    guides
+      .map((guide) => guide.category)
+      .filter((category): category is string => Boolean(category?.trim())),
+  );
   return [
     ...CATEGORY_ORDER.filter((category) => found.has(category)),
     ...[...found].filter((category) => !CATEGORY_ORDER.includes(category)).sort(),

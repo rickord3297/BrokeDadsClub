@@ -32,8 +32,8 @@ export function GuideCard({
       }}
       className={
         featured
-          ? "group flex h-full min-h-[15rem] flex-col border border-rule bg-paper p-5 transition hover:border-pine hover:bg-pine/[0.03]"
-          : "group flex flex-col overflow-hidden rounded-2xl border border-rule bg-paper shadow-md shadow-ink/5 ring-1 ring-ink/5 transition hover:border-pine hover:shadow-lg hover:shadow-pine/10"
+          ? "group flex h-full min-h-[15rem] cursor-pointer flex-col border border-rule bg-paper p-5 transition hover:-translate-y-0.5 hover:border-pine hover:bg-pine/[0.03] hover:shadow-md hover:shadow-pine/10"
+          : "group flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-rule bg-paper shadow-md shadow-ink/5 ring-1 ring-ink/5 transition hover:-translate-y-0.5 hover:border-pine hover:shadow-lg hover:shadow-pine/10"
       }
     >
       {featured ? (
@@ -55,9 +55,9 @@ export function GuideCard({
           <p className="mt-2 flex-1 text-sm leading-6 text-ink-soft">
             {guide.excerpt}
           </p>
-          <p className="mt-4 border-t border-rule pt-3 text-sm font-medium text-pine transition group-hover:text-rust">
+          <span className="mt-4 border-t border-rule pt-3 text-sm font-medium text-pine transition group-hover:text-rust">
             Read guide →
-          </p>
+          </span>
         </>
       ) : (
         <>
@@ -85,7 +85,7 @@ export function GuideCard({
             </p>
             <div className="mt-4 flex items-end justify-between gap-3 border-t border-rule/80 pt-4">
               <p className="text-xs text-ink-soft">{formatDate(guide.publishedAt)}</p>
-              <span className="inline-flex h-10 items-center rounded-full bg-pine px-4 text-sm font-semibold text-paper group-hover:bg-pine-2">
+              <span className="inline-flex h-10 items-center rounded-full bg-pine px-4 text-sm font-semibold text-paper transition group-hover:bg-pine-2">
                 Read the guide
               </span>
             </div>

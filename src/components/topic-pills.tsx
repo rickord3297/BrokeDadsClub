@@ -11,6 +11,16 @@ function guidesHref(topic: string, query = "") {
   return search ? `/guides?${search}` : "/guides";
 }
 
+function normalizeCategories(categories: string[]) {
+  return [
+    ...new Set(
+      categories.filter(
+        (category) => Boolean(category?.trim()) && category.trim() !== "All",
+      ),
+    ),
+  ];
+}
+
 export function TopicPills({
   categories,
   active = "",
@@ -26,9 +36,13 @@ export function TopicPills({
   placement?: string;
   variant?: "pills" | "tabs";
 }) {
-  if (!categories.length) return null;
+  const topics = normalizeCategories(categories);
+  if (!topics.length) return null;
 
-  const pills = ["", ...categories];
+  const pills: { value: string; label: string }[] = [
+    { value: "", label: "All" },
+    ...topics.map((topic) => ({ value: topic, label: topic })),
+  ];
   const pillClass =
     size === "lg" ? "px-4 py-2 text-sm" : "px-3 py-1.5 text-sm";
 
@@ -39,21 +53,21 @@ export function TopicPills({
         role="navigation"
         aria-label="Guide topics"
       >
-        {pills.map((topic) => {
-          const selected = topic === active;
+        {pills.map(({ value, label }) => {
+          const selected = value === active;
           return (
             <Link
-              key={topic || "all"}
-              href={guidesHref(topic, query)}
+              key={value || "all-topics"}
+              href={guidesHref(value, query)}
               scroll={false}
-              onClick={() => trackTopicFilter(topic, placement)}
+              onClick={() => trackTopicFilter(value, placement)}
               className={
                 selected
                   ? `rounded-md bg-pine font-medium text-paper ${pillClass}`
                   : `rounded-md font-medium text-ink-soft transition hover:bg-paper-2 hover:text-ink ${pillClass}`
               }
             >
-              {topic || "All"}
+              {label}
             </Link>
           );
         })}
@@ -63,21 +77,21 @@ export function TopicPills({
 
   return (
     <div className="flex flex-wrap gap-2 sm:gap-3" role="navigation" aria-label="Guide topics">
-      {pills.map((topic) => {
-        const selected = topic === active;
+      {pills.map(({ value, label }) => {
+        const selected = value === active;
         return (
           <Link
-            key={topic || "all"}
-            href={guidesHref(topic, query)}
+            key={value || "all-topics"}
+            href={guidesHref(value, query)}
             scroll={false}
-            onClick={() => trackTopicFilter(topic, placement)}
+            onClick={() => trackTopicFilter(value, placement)}
             className={
               selected
                 ? `rounded-full bg-pine font-semibold text-paper ${pillClass}`
                 : `rounded-full border border-rule bg-paper font-medium text-ink hover:border-pine hover:text-pine ${pillClass}`
             }
           >
-            {topic || "All"}
+            {label}
           </Link>
         );
       })}

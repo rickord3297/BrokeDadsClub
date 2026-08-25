@@ -113,16 +113,15 @@ export default async function Home() {
                   One sheet for the fridge
                 </h2>
                 <p className="mt-2 max-w-xl text-sm leading-6 text-ink-soft">
-                  Start with the grocery-week checklist. More sheets on the
-                  printables page.
+                  Start with the grocery-week checklist.{" "}
+                  <Link
+                    href="/resources"
+                    className="font-medium text-ink-soft underline decoration-rule underline-offset-2 hover:text-pine"
+                  >
+                    More printables
+                  </Link>
                 </p>
               </div>
-              <Link
-                href="/resources"
-                className="shrink-0 text-sm font-medium text-pine transition hover:text-rust"
-              >
-                All printables →
-              </Link>
             </div>
             <div className="mt-6 max-w-lg">
               <ResourceCard

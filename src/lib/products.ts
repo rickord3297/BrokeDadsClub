@@ -97,6 +97,24 @@ export function productPriceRange(product: Product) {
   return { min: Math.min(...prices), max: Math.max(...prices) };
 }
 
+/** Short label for size/color availability on product cards. */
+export function productVariantSummary(product: Product): string {
+  const sizes = productSizes(product);
+  const colors = productColors(product);
+  const parts: string[] = [];
+
+  if (productNeedsSize(product)) {
+    parts.push(sizes.length ? `${sizes.length} sizes` : "Pick a size");
+  }
+  if (colors.length > 1) {
+    parts.push(`${colors.length} colors`);
+  } else if (colors.length === 1) {
+    parts.push(colors[0]);
+  }
+
+  return parts.length ? parts.join(" · ") : "In stock";
+}
+
 function slugify(value: string) {
   return (
     value
@@ -161,6 +179,13 @@ const printifyCopyOverrides: Record<
     name: "Castle Crest Tee",
     description:
       "The official Broke Dads Club crest. Castle you cannot actually afford, printed on soft Gildan cotton after you check out. White, sand, navy, black, and the rest of the dad palette.",
+    price_cents: 1999,
+  },
+  "6a8cf223f45d501226044bf7": {
+    slug: "castle-patch-tee",
+    name: "Castle Patch Tee",
+    description:
+      "Workwear patch energy. Broke Dads Club crest in cream on charcoal. Castle you cannot actually afford. Soft Gildan cotton, printed after you check out.",
     price_cents: 1999,
   },
 

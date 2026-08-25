@@ -28,6 +28,16 @@ export function GuidesExplorer({
 
   const newestSlug = filtered[0]?.slug;
   const pillClass = "px-4 py-2.5 text-sm sm:text-base";
+  const topics = [
+    "",
+    ...[
+      ...new Set(
+        categories.filter(
+          (category) => Boolean(category?.trim()) && category.trim() !== "All",
+        ),
+      ),
+    ],
+  ];
 
   function setTopic(next: string) {
     trackTopicFilter(next, "guides_index");
@@ -46,11 +56,11 @@ export function GuidesExplorer({
           role="group"
           aria-label="Filter guides by topic"
         >
-          {["", ...categories].map((value) => {
+          {topics.map((value) => {
             const selected = value === topic;
             return (
               <button
-                key={value || "all"}
+                key={value || "all-topics"}
                 type="button"
                 aria-pressed={selected}
                 onClick={() => setTopic(value)}
