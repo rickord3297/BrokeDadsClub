@@ -41,9 +41,6 @@ export default async function Home() {
               Still showing up.
             </h1>
             <SiteTagline size="hero" className="mt-5 max-w-xl" />
-            <p className="mt-4 max-w-xl text-lg leading-8 text-ink-soft">
-              Practical guides for dads doing the math out loud.
-            </p>
           </div>
         </div>
 
