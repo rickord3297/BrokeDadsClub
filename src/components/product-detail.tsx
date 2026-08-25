@@ -56,7 +56,16 @@ export function ProductDetail({ product }: { product: Product }) {
   }, [colorPhotos, angle]);
 
   return (
-    <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2">
+    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:py-14">
+      <p className="mb-6">
+        <Link
+          href="/shop"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-pine transition hover:text-rust"
+        >
+          ← Back to shop
+        </Link>
+      </p>
+      <div className="grid gap-10 lg:grid-cols-2">
       <div className="space-y-3">
         <div className="overflow-hidden rounded-3xl border border-rule bg-paper">
           {activePhoto ? (
@@ -177,6 +186,7 @@ export function ProductDetail({ product }: { product: Product }) {
             View cart →
           </Link>
         </div>
+      </div>
       </div>
     </div>
   );

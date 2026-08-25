@@ -49,6 +49,9 @@ export function GuideCard({
           <h3 className="mt-2 font-display text-xl leading-snug transition group-hover:text-rust sm:text-2xl">
             {guide.title}
           </h3>
+          <p className="mt-2 flex-1 text-sm leading-6 text-ink-soft">
+            {guide.excerpt}
+          </p>
         </>
       ) : featured ? (
         <>

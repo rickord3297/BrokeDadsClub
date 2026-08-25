@@ -35,8 +35,7 @@ export default async function Home() {
               The Dad Operating System
             </p>
             <p className="mt-3 max-w-2xl text-base leading-7 text-ink-soft sm:text-lg sm:leading-8">
-              Guides for the home, finances, health, and family life. Start here
-              to lock down the fundamentals.
+              Guides for the home, finances, health, and family life.
             </p>
           </div>
         </div>
@@ -46,18 +45,13 @@ export default async function Home() {
           className="scroll-mt-20 border-t border-pine/15 bg-pine/[0.04]"
         >
           <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:py-10">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rust">
-                  Fundamentals
-                </p>
-                <h2 className="mt-1 font-display text-2xl sm:text-3xl">
-                  Start with these four
-                </h2>
-              </div>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <h2 className="font-display text-3xl text-pine sm:text-[2rem]">
+                The Guides
+              </h2>
               <Link
                 href="/guides"
-                className="shrink-0 text-sm font-medium text-pine transition hover:text-rust"
+                className="shrink-0 text-sm font-medium text-pine underline decoration-pine/30 underline-offset-4 transition hover:text-rust hover:decoration-rust/40"
               >
                 All guides →
               </Link>
@@ -65,7 +59,13 @@ export default async function Home() {
 
             {categories.length > 0 ? (
               <div className="mt-5">
-                <TopicPills categories={categories} size="lg" variant="tabs" />
+                <TopicPills
+                  categories={categories}
+                  size="lg"
+                  variant="tabs"
+                  placement="homepage"
+                  highlightActive={false}
+                />
               </div>
             ) : null}
 

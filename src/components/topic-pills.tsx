@@ -28,6 +28,7 @@ export function TopicPills({
   size = "default",
   placement = "homepage",
   variant = "pills",
+  highlightActive = true,
 }: {
   categories: string[];
   active?: string;
@@ -35,6 +36,8 @@ export function TopicPills({
   size?: "default" | "lg";
   placement?: string;
   variant?: "pills" | "tabs";
+  /** On the homepage, leave pills unselected so they clearly jump to /guides. */
+  highlightActive?: boolean;
 }) {
   const topics = normalizeCategories(categories);
   if (!topics.length) return null;
@@ -51,15 +54,14 @@ export function TopicPills({
       <div
         className="inline-flex max-w-full flex-wrap gap-1 rounded-lg border border-rule bg-paper p-1"
         role="navigation"
-        aria-label="Guide topics"
+        aria-label="Browse guides by topic"
       >
         {pills.map(({ value, label }) => {
-          const selected = value === active;
+          const selected = highlightActive && value === active;
           return (
             <Link
               key={value || "all-topics"}
               href={guidesHref(value, query)}
-              scroll={false}
               onClick={() => trackTopicFilter(value, placement)}
               className={
                 selected
@@ -76,14 +78,13 @@ export function TopicPills({
   }
 
   return (
-    <div className="flex flex-wrap gap-2 sm:gap-3" role="navigation" aria-label="Guide topics">
+    <div className="flex flex-wrap gap-2 sm:gap-3" role="navigation" aria-label="Browse guides by topic">
       {pills.map(({ value, label }) => {
-        const selected = value === active;
+        const selected = highlightActive && value === active;
         return (
           <Link
             key={value || "all-topics"}
             href={guidesHref(value, query)}
-            scroll={false}
             onClick={() => trackTopicFilter(value, placement)}
             className={
               selected
