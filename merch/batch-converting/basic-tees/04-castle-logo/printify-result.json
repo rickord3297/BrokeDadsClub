@@ -1,0 +1,30 @@
+{
+  "id": "6a8cf0c0302c505a980a6b0f",
+  "title": "Castle Crest Tee",
+  "handle": "https://brokedadsclub.com/shop/castle-crest-tee",
+  "colors": [
+    "Navy",
+    "Sport Grey",
+    "White",
+    "Black",
+    "Military Green",
+    "Dark Heather",
+    "Natural",
+    "Graphite Heather",
+    "Sand",
+    "Sage"
+  ],
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL",
+    "4XL",
+    "5XL"
+  ],
+  "price_cents": 1999,
+  "mockupCount": 150,
+  "firstMockup": "https://images-api.printify.com/mockup/6a8cf0c0302c505a980a6b0f/38191/97992/castle-crest-tee.jpg?camera_label=front"
+}

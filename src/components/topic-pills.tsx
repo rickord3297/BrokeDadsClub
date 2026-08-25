@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { trackTopicFilter } from "@/lib/analytics";
 
 function guidesHref(topic: string, query = "") {
   const params = new URLSearchParams();
@@ -13,11 +16,13 @@ export function TopicPills({
   active = "",
   query = "",
   size = "default",
+  placement = "homepage",
 }: {
   categories: string[];
   active?: string;
   query?: string;
   size?: "default" | "lg";
+  placement?: string;
 }) {
   if (!categories.length) return null;
 
@@ -36,6 +41,7 @@ export function TopicPills({
             key={topic || "all"}
             href={guidesHref(topic, query)}
             scroll={false}
+            onClick={() => trackTopicFilter(topic, placement)}
             className={
               selected
                 ? `rounded-full bg-pine font-semibold text-paper ${pillClass}`

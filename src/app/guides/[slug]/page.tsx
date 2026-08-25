@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { GuideBreadcrumbs } from "@/components/guide-breadcrumbs";
 import { GuideEmailCta } from "@/components/guide-email-cta";
+import { GuideViewTracker } from "@/components/guide-view-tracker";
 import { ReadingProgress } from "@/components/reading-progress";
 import { RelatedGuides } from "@/components/related-guides";
 import { ShareGuide } from "@/components/share-guide";
@@ -173,7 +174,8 @@ export default async function GuidePage({
 
   return (
     <>
-      <ReadingProgress />
+      <GuideViewTracker slug={guide.slug} category={guide.category} />
+      <ReadingProgress slug={guide.slug} />
       <article
         data-reading-progress
         className="mx-auto max-w-3xl px-4 py-14 sm:px-6"
@@ -207,7 +209,7 @@ export default async function GuidePage({
             <span className="mx-2 text-rule">·</span>
             {formatDate(guide.publishedAt)}
           </p>
-          <ShareGuide title={guide.title} url={url} />
+          <ShareGuide title={guide.title} url={url} slug={guide.slug} />
         </div>
 
         <div className="prose-guide mt-10">

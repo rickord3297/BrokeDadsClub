@@ -2,6 +2,7 @@ import Link from "next/link";
 import { GuideEmailCta } from "@/components/guide-email-cta";
 import { PrintButton } from "@/components/print-button";
 import { ResourcePreview } from "@/components/resource-preview";
+import { ResourceViewTracker } from "@/components/resource-view-tracker";
 import { otherResources, type Resource } from "@/lib/resources";
 
 export function ResourceLayout({
@@ -18,6 +19,7 @@ export function ResourceLayout({
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
+      <ResourceViewTracker slug={resource.slug} />
       <p className="text-xs uppercase tracking-[0.18em] text-rust print:hidden">
         Free printable
       </p>
@@ -45,7 +47,7 @@ export function ResourceLayout({
       </p>
 
       <div className="mt-6 print:hidden">
-        <PrintButton label={resource.printLabel} />
+        <PrintButton label={resource.printLabel} resourceSlug={resource.slug} />
       </div>
 
       <div className="mt-8 max-w-xs print:hidden">

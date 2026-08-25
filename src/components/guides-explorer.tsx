@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 import { GuideCard } from "@/components/guide-card";
 import { GuideSearch } from "@/components/guide-search";
+import { trackTopicFilter } from "@/lib/analytics";
 import { filterGuidesList } from "@/lib/guide-list";
 import type { HomeGuide } from "@/components/home-guides-section";
 
@@ -29,6 +30,7 @@ export function GuidesExplorer({
   const pillClass = "px-4 py-2.5 text-sm sm:text-base";
 
   function setTopic(next: string) {
+    trackTopicFilter(next, "guides_index");
     const params = new URLSearchParams(searchParams.toString());
     if (next) params.set("topic", next);
     else params.delete("topic");
@@ -80,6 +82,7 @@ export function GuidesExplorer({
               key={guide.slug}
               guide={guide}
               badge={guide.slug === newestSlug ? "New" : undefined}
+              placement="guides_index"
             />
           ))}
         </div>

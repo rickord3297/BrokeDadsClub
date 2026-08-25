@@ -1,18 +1,20 @@
 import Link from "next/link";
-import { getGuides } from "@/lib/guides";
+import { START_HERE_SLUGS, getGuide } from "@/lib/guides";
 
 export function RecapTopics({
   className = "text-sm leading-6 text-ink-soft",
 }: {
   className?: string;
 }) {
-  const recent = getGuides().slice(0, 3);
-  if (recent.length === 0) return null;
+  const picks = START_HERE_SLUGS.map((slug) => getGuide(slug)).filter(
+    (guide): guide is NonNullable<typeof guide> => guide != null,
+  );
+  if (picks.length === 0) return null;
 
   return (
     <p className={className}>
       Worth using this week:{" "}
-      {recent.map((guide, index) => (
+      {picks.map((guide, index) => (
         <span key={guide.slug}>
           {index > 0 ? ", " : null}
           <Link

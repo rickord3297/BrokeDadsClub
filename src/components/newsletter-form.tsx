@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useId, useState } from "react";
+import { trackEmailSignup } from "@/lib/analytics";
 import { site } from "@/lib/site";
 
 type NewsletterFormProps = {
@@ -48,6 +49,7 @@ export function NewsletterForm({
       return;
     }
 
+    trackEmailSignup(source);
     setStatus("done");
     setEmail("");
     setMessage(

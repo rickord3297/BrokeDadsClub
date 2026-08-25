@@ -2,6 +2,7 @@ import Link from "next/link";
 import { GuideCard } from "@/components/guide-card";
 import { InlineEmailBar } from "@/components/inline-email-bar";
 import { ResourceCard } from "@/components/resource-card";
+import { StartHereLink } from "@/components/start-here-link";
 import { TopicPills } from "@/components/topic-pills";
 import {
   START_HERE_SLUGS,
@@ -56,12 +57,12 @@ export default async function Home() {
               Why everything costs more, how to feed the week, the school list,
               and talking to kids about money.
             </p>
-            <Link
+            <StartHereLink
               href="#start-here"
               className="mt-4 inline-flex h-11 items-center rounded-full bg-pine px-5 text-sm font-semibold text-paper hover:bg-pine-2"
             >
               Show me where to start
-            </Link>
+            </StartHereLink>
           </div>
         </div>
       </section>
@@ -105,6 +106,7 @@ export default async function Home() {
               <GuideCard
                 key={guide.slug}
                 guide={guide}
+                placement="start_here"
                 badge={
                   guide.slug === "the-dad-tax" ? "Most popular" : "Start here"
                 }

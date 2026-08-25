@@ -76,7 +76,8 @@ function readAllGuides(): Guide[] {
         const raw = fs.readFileSync(path.join(guidesDir, file), "utf8");
         const { data, content } = matter(raw);
         const title = data.title as string;
-        const excerpt = data.excerpt as string;
+        const excerpt =
+          typeof data.excerpt === "string" ? data.excerpt : "";
         return [
           {
             slug: data.slug as string,

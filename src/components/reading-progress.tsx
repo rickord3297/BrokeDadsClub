@@ -1,9 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { trackReadingMilestone } from "@/lib/analytics";
 
-export function ReadingProgress() {
+const MILESTONES = [25, 50, 75, 100] as const;
+
+export function ReadingProgress({
+  slug,
+}: {
+  slug?: string;
+}) {
   const [progress, setProgress] = useState(0);
+  const reached = useRef(new Set<number>());
 
   useEffect(() => {
     function onScroll() {
@@ -16,7 +24,16 @@ export function ReadingProgress() {
         return;
       }
       const scrolled = Math.min(Math.max(-rect.top, 0), total);
-      setProgress(Math.round((scrolled / total) * 100));
+      const next = Math.round((scrolled / total) * 100);
+      setProgress(next);
+
+      if (!slug) return;
+      for (const milestone of MILESTONES) {
+        if (next >= milestone && !reached.current.has(milestone)) {
+          reached.current.add(milestone);
+          trackReadingMilestone(slug, milestone);
+        }
+      }
     }
 
     onScroll();
@@ -26,7 +43,7 @@ export function ReadingProgress() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, []);
+  }, [slug]);
 
   return (
     <div

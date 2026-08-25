@@ -142,6 +142,28 @@ const printifyCopyOverrides: Record<
       "The club dog is on his back. The wrench is in the grass. BROKE DADS CLUB is on the chest so another dad in the pickup line might actually nod at you. Soft Gildan cotton, printed after you check out. White, graphite heather, or military green. For dads whose best coworker still has four paws.",
     price_cents: 1999,
   },
+  "6a811a3803218922dd0a8389": {
+    slug: "club-dog-tee",
+    name: "Club Dog Tee",
+    description:
+      "The club dog is sitting. BROKE DADS CLUB is under his paws so another dad in the pickup line might actually nod at you. Soft Gildan cotton, printed after you check out. White, sand, navy, black, and the rest of the dad palette. For dads whose best coworker still has four paws.",
+    price_cents: 1999,
+  },
+  "6a826ed4aaef37be24051e48": {
+    slug: "broke-not-broken-tee",
+    name: "Broke Not Broken Tee",
+    description:
+      "Broke. NOT. Broken. Soft Gildan cotton, printed after you check out. For dads who are stretched thin and still in the game.",
+    price_cents: 1999,
+  },
+  "6a8cf0c0302c505a980a6b0f": {
+    slug: "castle-crest-tee",
+    name: "Castle Crest Tee",
+    description:
+      "The official Broke Dads Club crest. Castle you cannot actually afford, printed on soft Gildan cotton after you check out. White, sand, navy, black, and the rest of the dad palette.",
+    price_cents: 1999,
+  },
+
   "6a7fd6ba2cde8b7dc1033d3f": {
     slug: "castle-pin",
     name: "Castle Pin",

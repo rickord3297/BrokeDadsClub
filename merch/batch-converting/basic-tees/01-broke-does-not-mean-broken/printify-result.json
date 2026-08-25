@@ -1,0 +1,30 @@
+{
+  "id": "6a826ed4aaef37be24051e48",
+  "title": "Broke Not Broken Tee",
+  "handle": "https://brokedadsclub.com/shop/broke-not-broken-tee",
+  "colors": [
+    "Navy",
+    "Sport Grey",
+    "White",
+    "Black",
+    "Military Green",
+    "Dark Heather",
+    "Natural",
+    "Graphite Heather",
+    "Sand",
+    "Sage"
+  ],
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL",
+    "4XL",
+    "5XL"
+  ],
+  "price_cents": 1999,
+  "mockupCount": 150,
+  "firstMockup": "https://images-api.printify.com/mockup/6a826ed4aaef37be24051e48/38191/97992/broke-not-broken-tee.jpg?camera_label=front"
+}

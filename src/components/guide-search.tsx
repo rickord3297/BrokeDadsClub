@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
+import { trackGuideSearch } from "@/lib/analytics";
 
 export function GuideSearch() {
   const inputId = useId();
@@ -18,6 +19,7 @@ export function GuideSearch() {
   function go(next: string) {
     const query = new URLSearchParams(params.toString());
     const trimmed = next.trim();
+    if (trimmed.length >= 2) trackGuideSearch(trimmed.length);
     if (trimmed) query.set("q", trimmed);
     else query.delete("q");
     const search = query.toString();

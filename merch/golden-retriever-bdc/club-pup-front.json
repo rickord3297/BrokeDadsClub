@@ -1,0 +1,154 @@
+{
+  "front": {
+    "position": "front",
+    "images": [
+      {
+        "id": "6a7fca722aa602724dc4d2e5",
+        "name": "Gemini_Generated_Image_bmcor5bmcor5bmco.png",
+        "type": "image/png",
+        "height": 998.4000000000001,
+        "width": 1830.3999999999996,
+        "x": 0.5,
+        "y": 0.32884255172656207,
+        "flipX": false,
+        "flipY": false,
+        "scale": 1.1964146538313774,
+        "angle": 0,
+        "src": "https://pfy-prod-image-storage.s3.us-east-2.amazonaws.com/28161379/37db4fff-c9fc-4f61-a35d-fbf7564fefcd",
+        "layerType": "image",
+        "imageId": "6a7fca722aa602724dc4d2e5_d5a64452-d74c-e58c-f795-abba688534dd"
+      }
+    ],
+    "decoration_method": "dtg"
+  },
+  "catalogVariantSample": [
+    {
+      "id": 38153,
+      "title": "Charcoal / S",
+      "options": {
+        "size": "S",
+        "color": "Charcoal"
+      },
+      "placeholders": [
+        {
+          "position": "neck",
+          "decoration_method": "dtf",
+          "width": 750,
+          "height": 750
+        },
+        {
+          "position": "back",
+          "decoration_method": "dtg",
+          "width": 3185,
+          "height": 3636
+        },
+        {
+          "position": "front",
+          "decoration_method": "dtg",
+          "width": 3185,
+          "height": 3636
+        }
+      ],
+      "decoration_methods": [
+        "dtg"
+      ]
+    },
+    {
+      "id": 38154,
+      "title": "Daisy / S",
+      "options": {
+        "size": "S",
+        "color": "Daisy"
+      },
+      "placeholders": [
+        {
+          "position": "neck",
+          "decoration_method": "dtf",
+          "width": 750,
+          "height": 750
+        },
+        {
+          "position": "back",
+          "decoration_method": "dtg",
+          "width": 3185,
+          "height": 3636
+        },
+        {
+          "position": "front",
+          "decoration_method": "dtg",
+          "width": 3185,
+          "height": 3636
+        }
+      ],
+      "decoration_methods": [
+        "dtg"
+      ]
+    }
+  ],
+  "colors": [
+    "Charcoal",
+    "Daisy",
+    "Dark Chocolate",
+    "Irish Green",
+    "Light Blue",
+    "Navy",
+    "Purple",
+    "Red",
+    "Royal",
+    "Sport Grey",
+    "White",
+    "Black",
+    "Forest Green",
+    "Military Green",
+    "Cornsilk",
+    "Azalea",
+    "Antique Sapphire",
+    "Antique Heliconia",
+    "Orange",
+    "Cardinal Red",
+    "Heather Navy",
+    "Heather Purple",
+    "Heather Red",
+    "Sapphire",
+    "Heather Irish Green",
+    "Heather Royal",
+    "Dark Heather",
+    "Kelly Green",
+    "Maroon",
+    "Natural",
+    "Gold",
+    "Carolina Blue",
+    "Heather Indigo",
+    "Heather Military Green",
+    "Heather Sapphire",
+    "Jade Dome",
+    "Graphite Heather",
+    "Heather Orange",
+    "Ice Grey",
+    "Lime",
+    "Tropical Blue",
+    "Antique Cherry Red",
+    "Sand",
+    "Cherry Red",
+    "Indigo Blue",
+    "Kiwi",
+    "Coral Silk",
+    "Iris",
+    "Metro Blue",
+    "Mint Green",
+    "Heather Radiant Orchid",
+    "Heather Cardinal",
+    "Dark Heather Grey",
+    "Pistachio",
+    "Sky",
+    "Light Pink",
+    "Stone Blue",
+    "Heather Berry",
+    "Heather Galapagos Blue",
+    "Heather Heliconia",
+    "Heather Maroon",
+    "Paragon",
+    "Sage"
+  ],
+  "catalogCount": 419
+}

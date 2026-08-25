@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { trackGuideClick } from "@/lib/analytics";
 import { formatDate } from "@/lib/format";
 import type { Guide } from "@/lib/guides";
 import type { HomeGuide } from "@/components/home-guides-section";
@@ -11,13 +14,18 @@ type GuideCardGuide = Pick<
 export function GuideCard({
   guide,
   badge,
+  placement,
 }: {
   guide: GuideCardGuide;
   badge?: string;
+  placement?: string;
 }) {
   return (
     <Link
       href={`/guides/${guide.slug}`}
+      onClick={() => {
+        if (placement) trackGuideClick(guide.slug, placement);
+      }}
       className="group flex flex-col overflow-hidden rounded-2xl border border-rule bg-paper shadow-md shadow-ink/5 ring-1 ring-ink/5 transition hover:border-pine hover:shadow-lg hover:shadow-pine/10"
     >
       <div className="flex flex-wrap items-center gap-2 border-b border-rule bg-paper-2/80 px-5 py-3">

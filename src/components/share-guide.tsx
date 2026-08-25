@@ -1,14 +1,24 @@
 "use client";
 
 import { useState } from "react";
+import { trackGuideShare } from "@/lib/analytics";
 
-export function ShareGuide({ title, url }: { title: string; url: string }) {
+export function ShareGuide({
+  title,
+  url,
+  slug,
+}: {
+  title: string;
+  url: string;
+  slug: string;
+}) {
   const [copied, setCopied] = useState(false);
 
   async function share() {
     if (typeof navigator !== "undefined" && typeof navigator.share === "function") {
       try {
         await navigator.share({ title, url, text: title });
+        trackGuideShare(slug, "native");
         return;
       } catch {
         // User cancelled or share failed; fall through to copy.
@@ -17,6 +27,7 @@ export function ShareGuide({ title, url }: { title: string; url: string }) {
 
     try {
       await navigator.clipboard.writeText(url);
+      trackGuideShare(slug, "copy");
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
     } catch {

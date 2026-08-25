@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { cartLineKey, useCart } from "@/components/cart-provider";
+import { trackCheckoutStart } from "@/lib/analytics";
 import { formatMoney } from "@/lib/format";
 
 export function CartView() {
@@ -13,6 +14,10 @@ export function CartView() {
   async function checkout() {
     setStatus("loading");
     setMessage("");
+    trackCheckoutStart(
+      items.reduce((count, item) => count + item.quantity, 0),
+      subtotal,
+    );
     const response = await fetch("/api/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
