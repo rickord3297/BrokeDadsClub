@@ -28,6 +28,9 @@
 | Side hustles that don't steal bedtime | live | 2026-07-14 | `side-hustles-that-dont-steal-bedtime` |
 | Talking to kids about money without scaring them | live | 2026-07-07 | `talking-to-kids-about-money` |
 | Thrift without looking like a dare | live | 2026-06-30 | `thrift-without-looking-like-a-dare` |
+| School clothes for two kids without a mall meltdown | live | 2026-08-25 | [`school-clothes-for-two-kids.md`](guides/school-clothes-for-two-kids.md) |
+| The sports fee that is not on the registration form | live | 2026-08-25 | [`the-sports-fee-not-on-the-form.md`](guides/the-sports-fee-not-on-the-form.md) |
+| Chores aren't a paycheck (the hybrid allowance) | live | 2026-08-25 | [`chores-arent-a-paycheck.md`](guides/chores-arent-a-paycheck.md) |
 
 ### Status
 
