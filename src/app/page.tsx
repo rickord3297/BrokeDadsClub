@@ -28,39 +28,25 @@ export default async function Home() {
   return (
     <div>
       <section className="border-b border-rule">
-        <div className="mx-auto max-w-6xl px-4 pt-10 pb-8 sm:px-6 lg:pt-12">
+        <div className="mx-auto max-w-6xl px-4 pt-10 pb-6 sm:px-6 lg:pt-12">
           <div className="max-w-3xl">
-            <p className="inline-flex rounded-full border border-rust/30 bg-rust/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-rust-2">
-              Guides for stretched-thin dads
-            </p>
-            <h1 className="mt-4 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
-              Raising kids.
-              <br />
-              Stretching dollars.
-              <br />
-              Still showing up.
+            <SiteTagline size="compact" className="mb-4" />
+            <h1 className="font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+              The Dad Operating System
             </h1>
-            <SiteTagline size="hero" className="mt-5 max-w-xl" />
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
+              Guides for the home, finances, health, and family life. Start here
+              to lock down the fundamentals.
+            </p>
           </div>
         </div>
 
-        <div
-          id="start-here"
-          className="scroll-mt-20 border-t border-pine/15 bg-pine/[0.05]"
-        >
-          <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:py-10">
-            <div className="flex items-end justify-between gap-4">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rust">
-                  Start here
-                </p>
-                <h2 className="mt-1 font-display text-3xl sm:text-[2rem]">
-                  Four guides that pay rent
-                </h2>
-                <p className="mt-2 max-w-xl text-sm leading-6 text-ink-soft">
-                  Everything else lives on the guides page.
-                </p>
-              </div>
+        <div id="start-here" className="scroll-mt-20 border-t border-rule/80">
+          <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              {categories.length > 0 ? (
+                <TopicPills categories={categories} size="lg" variant="tabs" />
+              ) : null}
               <Link
                 href="/guides"
                 className="shrink-0 text-sm font-medium text-pine transition hover:text-rust"
@@ -69,22 +55,13 @@ export default async function Home() {
               </Link>
             </div>
 
-            {categories.length > 0 ? (
-              <div className="mt-5">
-                <TopicPills categories={categories} size="lg" variant="tabs" />
-              </div>
-            ) : null}
-
-            <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {startHere.map((guide) => (
                 <GuideCard
                   key={guide.slug}
                   guide={guide}
                   placement="start_here"
-                  variant="featured"
-                  badge={
-                    guide.slug === "the-dad-tax" ? "Most popular" : undefined
-                  }
+                  variant="home"
                 />
               ))}
             </div>

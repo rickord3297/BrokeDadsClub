@@ -20,9 +20,10 @@ export function GuideCard({
   guide: GuideCardGuide;
   badge?: string;
   placement?: string;
-  variant?: "default" | "featured";
+  variant?: "default" | "featured" | "home";
 }) {
   const featured = variant === "featured";
+  const home = variant === "home";
 
   return (
     <Link
@@ -31,12 +32,25 @@ export function GuideCard({
         if (placement) trackGuideClick(guide.slug, placement);
       }}
       className={
-        featured
-          ? "group flex h-full min-h-[15rem] cursor-pointer flex-col border border-rule bg-paper p-5 transition hover:-translate-y-0.5 hover:border-pine hover:bg-pine/[0.03] hover:shadow-md hover:shadow-pine/10"
-          : "group flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-rule bg-paper shadow-md shadow-ink/5 ring-1 ring-ink/5 transition hover:-translate-y-0.5 hover:border-pine hover:shadow-lg hover:shadow-pine/10"
+        home
+          ? "group flex cursor-pointer flex-col border border-rule bg-paper p-5 transition hover:border-pine hover:bg-pine/[0.03]"
+          : featured
+            ? "group flex h-full min-h-[15rem] cursor-pointer flex-col border border-rule bg-paper p-5 transition hover:-translate-y-0.5 hover:border-pine hover:bg-pine/[0.03] hover:shadow-md hover:shadow-pine/10"
+            : "group flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-rule bg-paper shadow-md shadow-ink/5 ring-1 ring-ink/5 transition hover:-translate-y-0.5 hover:border-pine hover:shadow-lg hover:shadow-pine/10"
       }
     >
-      {featured ? (
+      {home ? (
+        <>
+          <p className="text-xs text-ink-soft">
+            <span className="font-medium text-rust">{guide.category}</span>
+            <span className="mx-2 text-rule">·</span>
+            {guide.readTime}
+          </p>
+          <h3 className="mt-2 font-display text-xl leading-snug transition group-hover:text-rust sm:text-2xl">
+            {guide.title}
+          </h3>
+        </>
+      ) : featured ? (
         <>
           <div className="flex items-center justify-between gap-3 text-xs">
             <span className="font-medium text-rust">{guide.category}</span>
