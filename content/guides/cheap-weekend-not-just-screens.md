@@ -22,7 +22,7 @@ shop:
   - club-pup-tee
 faq:
   - question: How do I plan a cheap weekend that is not only screens?
-    answer: Pick three anchors before Saturday: one out, one make, one rest. Write them on a sticky note. Screens get a fence after the plan, not instead of it.
+    answer: "Pick three anchors before Saturday: one out, one make, one rest. Write them on a sticky note. Screens get a fence after the plan, not instead of it."
   - question: What are free weekend activities with kids?
     answer: Library, park with a ball you own, hardware store as a museum, the same pond or tree as tradition, a blanket fort, restaurant night with food you already have.
   - question: What do I say when kids complain we are broke this weekend?
