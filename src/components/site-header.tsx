@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ClubLogo } from "@/components/club-logo";
-import { SiteTagline } from "@/components/site-tagline";
 import { useCart } from "@/components/cart-provider";
 
 const nav = [
@@ -26,7 +25,9 @@ export function SiteHeader() {
             <span className="block font-stamp text-xl uppercase tracking-[0.12em] sm:text-[1.35rem]">
               Broke Dads Club
             </span>
-            <SiteTagline size="compact" className="mt-1 hidden sm:block" />
+            <span className="mt-0.5 hidden font-display text-sm text-rust sm:block">
+              Broke doesn&apos;t mean broken.
+            </span>
           </span>
         </Link>
 

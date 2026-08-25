@@ -28,25 +28,33 @@ export default async function Home() {
   return (
     <div>
       <section className="border-b border-rule">
-        <div className="mx-auto max-w-6xl px-4 pt-10 pb-6 sm:px-6 lg:pt-12">
-          <div className="max-w-3xl">
-            <SiteTagline size="compact" className="mb-4" />
-            <h1 className="font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+        <div className="mx-auto max-w-6xl px-4 pt-12 pb-10 sm:px-6 lg:pt-16 lg:pb-12">
+          <div className="max-w-4xl">
+            <SiteTagline as="h1" size="hero" />
+            <p className="mt-6 font-display text-2xl leading-snug text-ink sm:text-3xl">
               The Dad Operating System
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
+            </p>
+            <p className="mt-3 max-w-2xl text-base leading-7 text-ink-soft sm:text-lg sm:leading-8">
               Guides for the home, finances, health, and family life. Start here
               to lock down the fundamentals.
             </p>
           </div>
         </div>
 
-        <div id="start-here" className="scroll-mt-20 border-t border-rule/80">
-          <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              {categories.length > 0 ? (
-                <TopicPills categories={categories} size="lg" variant="tabs" />
-              ) : null}
+        <div
+          id="start-here"
+          className="scroll-mt-20 border-t border-pine/15 bg-pine/[0.04]"
+        >
+          <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:py-10">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rust">
+                  Fundamentals
+                </p>
+                <h2 className="mt-1 font-display text-2xl sm:text-3xl">
+                  Start with these four
+                </h2>
+              </div>
               <Link
                 href="/guides"
                 className="shrink-0 text-sm font-medium text-pine transition hover:text-rust"
@@ -54,6 +62,12 @@ export default async function Home() {
                 All guides →
               </Link>
             </div>
+
+            {categories.length > 0 ? (
+              <div className="mt-5">
+                <TopicPills categories={categories} size="lg" variant="tabs" />
+              </div>
+            ) : null}
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {startHere.map((guide) => (
@@ -76,9 +90,12 @@ export default async function Home() {
       />
 
       {featuredPrintable ? (
-        <section id="printables" className="scroll-mt-20 border-t border-rule bg-paper-2/40">
+        <section
+          id="printables"
+          className="scroll-mt-20 border-t border-rule bg-paper-2/40"
+        >
           <div className="mx-auto max-w-6xl px-4 section-pad-sm sm:px-6">
-            <div className="flex items-end justify-between gap-4">
+            <div className="grid gap-8 lg:grid-cols-[1fr_minmax(0,22rem)] lg:items-start">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rust">
                   Printables
@@ -87,17 +104,18 @@ export default async function Home() {
                   One sheet for the fridge
                 </h2>
                 <p className="mt-2 max-w-xl text-sm leading-6 text-ink-soft">
-                  Start with the grocery-week checklist.{" "}
+                  Start with the grocery-week checklist. Print it, stick it,
+                  shop once.
+                </p>
+                <p className="mt-4">
                   <Link
                     href="/resources"
-                    className="font-medium text-ink-soft underline decoration-rule underline-offset-2 hover:text-pine"
+                    className="text-sm font-medium text-ink-soft transition hover:text-pine"
                   >
-                    More printables
+                    More printables →
                   </Link>
                 </p>
               </div>
-            </div>
-            <div className="mt-6 max-w-lg">
               <ResourceCard
                 resource={featuredPrintable}
                 previewVariant="card"
@@ -119,7 +137,8 @@ export default async function Home() {
                 Club goods
               </h2>
               <p className="mt-2 max-w-xl text-sm leading-6 text-ink-soft">
-                Crest, pup, and the rest. Optional. Printed after you check out.
+                Wear the slogan if you want. Optional. Printed after you check
+                out.
               </p>
             </div>
             <Link
@@ -132,13 +151,20 @@ export default async function Home() {
           {shopPicks.length > 0 ? (
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {shopPicks.map((product) => (
-                <ProductCard key={product.id} product={product} variant="featured" />
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  variant="featured"
+                />
               ))}
             </div>
           ) : (
             <p className="mt-6 text-sm text-ink-soft">
               Shop is warming up.{" "}
-              <Link href="/shop" className="font-medium text-pine hover:text-rust">
+              <Link
+                href="/shop"
+                className="font-medium text-pine hover:text-rust"
+              >
                 Check back soon →
               </Link>
             </p>

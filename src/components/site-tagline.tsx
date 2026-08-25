@@ -3,15 +3,17 @@ import { site } from "@/lib/site";
 export function SiteTagline({
   size = "default",
   theme = "light",
+  as: Tag = "p",
   className = "",
 }: {
   size?: "hero" | "default" | "compact";
   theme?: "light" | "dark";
+  as?: "p" | "h1" | "span";
   className?: string;
 }) {
   const sizeClass =
     size === "hero"
-      ? "text-[1.75rem] sm:text-[2.35rem]"
+      ? "text-4xl sm:text-5xl lg:text-6xl"
       : size === "compact"
         ? "text-sm sm:text-base"
         : "text-xl sm:text-2xl";
@@ -21,13 +23,13 @@ export function SiteTagline({
   const brokenClass = theme === "dark" ? "text-paper" : "text-pine";
 
   return (
-    <p
-      className={`font-display leading-tight tracking-tight ${sizeClass} ${className}`}
+    <Tag
+      className={`font-display leading-[1.1] tracking-tight ${sizeClass} ${className}`}
       aria-label={site.tagline}
     >
       <span className={brokeClass}>Broke</span>
       <span className={middleClass}> doesn&apos;t mean </span>
       <span className={brokenClass}>broken.</span>
-    </p>
+    </Tag>
   );
 }
