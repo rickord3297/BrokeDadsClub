@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { GuideCard } from "@/components/guide-card";
 import { InlineEmailBar } from "@/components/inline-email-bar";
+import { ProductCard } from "@/components/product-card";
 import { ResourceCard } from "@/components/resource-card";
 import { StartHereLink } from "@/components/start-here-link";
 import { TopicPills } from "@/components/topic-pills";
@@ -10,6 +11,7 @@ import {
   getGuideCategories,
   getGuides,
 } from "@/lib/guides";
+import { getHomeShopProducts } from "@/lib/products";
 import { getResource } from "@/lib/resources";
 import { site } from "@/lib/site";
 
@@ -22,44 +24,29 @@ export default async function Home() {
     (guide): guide is NonNullable<typeof guide> => guide != null,
   );
   const featuredPrintable = getResource(FEATURED_PRINTABLE);
+  const shopPicks = await getHomeShopProducts();
 
   return (
     <div>
       <section className="border-b border-rule">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-24">
-          <p className="text-sm font-bold uppercase tracking-[0.16em] text-pine">
-            A place for the stretched-thin dads doing their best
-          </p>
-          <h1 className="mt-4 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
-            Raising kids.
-            <br />
-            Stretching dollars.
-            <br />
-            Still showing up.
-          </h1>
-          <p className="mt-5 inline-flex items-center rounded-full border border-pine/30 bg-pine/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-pine">
-            No email wall · 100% free
-          </p>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-ink-soft">
-            Practical guides for dads doing the math out loud.
-          </p>
-          <p className="mt-4 font-display text-2xl text-rust sm:text-3xl">
-            {site.tagline}
-          </p>
-          <div className="mt-8 max-w-xl rounded-2xl border border-rule bg-paper-2/60 px-5 py-5">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-pine">
-              New here?
+        <div className="mx-auto max-w-6xl px-4 section-pad sm:px-6">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-pine">
+              Guides for stretched-thin dads
             </p>
-            <p className="mt-2 font-display text-2xl leading-snug">
-              Start with the 4 most essential dad guides
-            </p>
-            <p className="mt-2 text-sm leading-6 text-ink-soft">
-              Why everything costs more, how to feed the week, the school list,
-              and talking to kids about money.
+            <h1 className="mt-5 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.25rem]">
+              Raising kids.
+              <br />
+              Stretching dollars.
+              <br />
+              Still showing up.
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-ink-soft">
+              Practical guides for dads doing the math out loud. {site.tagline}
             </p>
             <StartHereLink
               href="#start-here"
-              className="mt-4 inline-flex h-11 items-center rounded-full bg-pine px-5 text-sm font-semibold text-paper hover:bg-pine-2"
+              className="mt-8 inline-flex h-12 items-center rounded-md bg-ink px-6 text-sm font-medium text-paper transition hover:bg-pine"
             >
               Show me where to start
             </StartHereLink>
@@ -67,48 +54,39 @@ export default async function Home() {
         </div>
       </section>
 
-      <section
-        id="start-here"
-        className="scroll-mt-20 border-t border-rule"
-      >
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <section id="start-here" className="scroll-mt-20 border-t border-rule">
+        <div className="mx-auto max-w-6xl px-4 section-pad sm:px-6">
           <div className="flex items-end justify-between gap-4">
             <div>
-              <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-rust">
-                Guides
-              </h2>
-              <p className="mt-2 font-display text-3xl">Start here</p>
+              <h2 className="font-display text-3xl sm:text-4xl">Start here</h2>
               <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
-                Four that pay rent. Everything else lives on the guides page.
+                Four guides that pay rent. Everything else lives on the guides
+                page.
               </p>
             </div>
             <Link
               href="/guides"
-              className="text-sm font-medium text-pine hover:text-rust"
+              className="shrink-0 text-sm font-medium text-ink-soft transition hover:text-pine"
             >
               All guides →
             </Link>
           </div>
 
           {categories.length > 0 ? (
-            <div className="mt-6">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-pine">
-                Browse by topic
-              </p>
-              <div className="mt-3">
-                <TopicPills categories={categories} size="lg" />
-              </div>
+            <div className="mt-10">
+              <TopicPills categories={categories} size="lg" variant="tabs" />
             </div>
           ) : null}
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {startHere.map((guide) => (
               <GuideCard
                 key={guide.slug}
                 guide={guide}
                 placement="start_here"
+                variant="featured"
                 badge={
-                  guide.slug === "the-dad-tax" ? "Most popular" : "Start here"
+                  guide.slug === "the-dad-tax" ? "Most popular" : undefined
                 }
               />
             ))}
@@ -124,13 +102,13 @@ export default async function Home() {
 
       {featuredPrintable ? (
         <section id="printables" className="scroll-mt-20 border-t border-rule">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+          <div className="mx-auto max-w-6xl px-4 section-pad sm:px-6">
             <div className="flex items-end justify-between gap-4">
               <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-rust">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rust">
                   Printables
                 </p>
-                <h2 className="mt-2 font-display text-4xl">
+                <h2 className="mt-3 font-display text-3xl sm:text-4xl">
                   One sheet for the fridge
                 </h2>
                 <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
@@ -140,15 +118,16 @@ export default async function Home() {
               </div>
               <Link
                 href="/resources"
-                className="text-sm font-medium text-pine hover:text-rust"
+                className="shrink-0 text-sm font-medium text-ink-soft transition hover:text-pine"
               >
                 All printables →
               </Link>
             </div>
-            <div className="mt-8 max-w-md">
+            <div className="mt-10 max-w-lg">
               <ResourceCard
                 resource={featuredPrintable}
-                previewVariant="fridge"
+                previewVariant="card"
+                variant="featured"
               />
             </div>
           </div>
@@ -156,22 +135,40 @@ export default async function Home() {
       ) : null}
 
       <section id="shop" className="scroll-mt-20 border-t border-rule">
-        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-          <div className="flex flex-wrap items-center justify-between gap-4">
+        <div className="mx-auto max-w-6xl px-4 section-pad sm:px-6">
+          <div className="flex items-end justify-between gap-4">
             <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-rust">Shop</p>
-              <p className="mt-2 font-display text-2xl">Club goods</p>
-              <p className="mt-1 text-sm leading-6 text-ink-soft">
-                Crest, pup, penguin. Optional.
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rust">
+                Shop
+              </p>
+              <h2 className="mt-3 font-display text-3xl sm:text-4xl">
+                Club goods
+              </h2>
+              <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
+                Crest, pup, and the rest. Optional. Printed after you check out.
               </p>
             </div>
             <Link
               href="/shop"
-              className="inline-flex h-11 items-center rounded-full border border-ink px-5 text-sm font-semibold hover:bg-ink hover:text-paper"
+              className="shrink-0 text-sm font-medium text-ink-soft transition hover:text-pine"
             >
-              Browse the shop →
+              Browse all →
             </Link>
           </div>
+          {shopPicks.length > 0 ? (
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {shopPicks.map((product) => (
+                <ProductCard key={product.id} product={product} variant="featured" />
+              ))}
+            </div>
+          ) : (
+            <p className="mt-8 text-sm text-ink-soft">
+              Shop is warming up.{" "}
+              <Link href="/shop" className="font-medium text-pine hover:text-rust">
+                Check back soon →
+              </Link>
+            </p>
+          )}
         </div>
       </section>
     </div>

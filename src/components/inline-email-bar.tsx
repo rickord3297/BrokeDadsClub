@@ -13,24 +13,22 @@ export function InlineEmailBar({
   return (
     <section
       id="sunday-email"
-      className="scroll-mt-20 border-t border-rule bg-pine/5"
+      className="scroll-mt-20 border-t border-rule bg-paper-2/30"
     >
-      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-        <div className="rounded-2xl border border-pine/25 bg-paper px-5 py-5 shadow-sm shadow-ink/5 sm:flex sm:items-center sm:gap-6 sm:px-6">
-          <div className="sm:max-w-sm sm:shrink-0">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-pine">
-              {site.weekStart.kicker}
-            </p>
-            <p className="mt-1 font-display text-xl leading-snug">
-              {site.weekStart.title}
-            </p>
-            <p className="mt-1 text-sm leading-6 text-ink-soft">
-              {site.weekStart.body}
-            </p>
-          </div>
-          <div className="mt-4 flex-1 sm:mt-0">
+      <div className="mx-auto max-w-6xl px-4 section-pad sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-pine">
+            {site.weekStart.kicker}
+          </p>
+          <h2 className="mt-3 font-display text-3xl leading-snug sm:text-4xl">
+            {site.weekStart.title}
+          </h2>
+          <p className="mt-3 text-base leading-7 text-ink-soft">
+            {site.weekStart.body}
+          </p>
+          <div className="mt-8">
             <NewsletterForm
-              variant="article"
+              variant="inline"
               source={source}
               submitLabel={site.weekStart.button}
               successMessage={site.weekStart.success}

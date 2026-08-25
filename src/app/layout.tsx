@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Figtree, Fraunces, Oswald } from "next/font/google";
+import { Fraunces, Inter, Oswald } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { CartProvider } from "@/components/cart-provider";
@@ -8,8 +8,8 @@ import { SiteHeader } from "@/components/site-header";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const figtree = Figtree({
-  variable: "--font-figtree",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -48,7 +48,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${figtree.variable} ${fraunces.variable} ${oswald.variable} h-full scroll-smooth antialiased`}
+      className={`${inter.variable} ${fraunces.variable} ${oswald.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col text-ink">
         <CartProvider>

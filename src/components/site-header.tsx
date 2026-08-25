@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { ClubLogo } from "@/components/club-logo";
 import { useCart } from "@/components/cart-provider";
-import { site } from "@/lib/site";
 
 const nav = [
   { href: "/guides", label: "Guides" },
@@ -18,53 +17,40 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-rule/80 bg-paper/85 backdrop-blur-md print:hidden">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <header className="sticky top-0 z-40 border-b border-rule/70 bg-paper/90 backdrop-blur-sm print:hidden">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4 sm:px-6">
         <Link href="/" className="flex items-center gap-3 text-ink">
-          <ClubLogo size={64} priority className="shrink-0" />
-          <span className="leading-tight">
-            <span className="block font-stamp text-[1.35rem] uppercase tracking-[0.12em]">
-              Broke Dads Club
-            </span>
-            <span className="hidden text-xs font-medium tracking-wide text-rust sm:block">
-              {site.tagline}
-            </span>
+          <ClubLogo size={52} priority className="shrink-0" />
+          <span className="font-stamp text-xl uppercase tracking-[0.12em] sm:text-[1.35rem]">
+            Broke Dads Club
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-5 text-sm font-medium text-ink md:flex">
-          <form action="/guides" method="get" className="hidden md:block">
-            <label className="sr-only" htmlFor="header-guide-search">
-              Search guides
-            </label>
-            <input
-              id="header-guide-search"
-              type="search"
-              name="q"
-              placeholder="Search guides"
-              className="h-9 w-44 rounded-full border border-rule bg-paper px-3 text-sm outline-none placeholder:text-ink-soft focus:border-pine"
-            />
-          </form>
+        <nav className="hidden items-center gap-6 text-sm text-ink-soft md:flex">
           {nav.map((item) => (
-            <Link key={item.href} href={item.href} className="hover:text-rust">
+            <Link
+              key={item.href}
+              href={item.href}
+              className="transition hover:text-ink"
+            >
               {item.label}
             </Link>
           ))}
           <Link
             href="/cart"
-            className="rounded-full border border-ink px-3 py-1.5 hover:bg-ink hover:text-paper"
+            className="transition hover:text-ink"
           >
             Cart{count > 0 ? ` (${count})` : ""}
           </Link>
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
-          <Link href="/cart" className="rounded-full border border-ink px-3 py-1 text-sm">
+        <div className="flex items-center gap-4 text-sm text-ink-soft md:hidden">
+          <Link href="/cart" className="transition hover:text-ink">
             Cart{count > 0 ? ` (${count})` : ""}
           </Link>
           <button
             type="button"
-            className="rounded-full border border-rule px-3 py-1 text-sm"
+            className="transition hover:text-ink"
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
           >
@@ -74,24 +60,13 @@ export function SiteHeader() {
       </div>
 
       {open ? (
-        <nav className="border-t border-rule px-4 py-3 md:hidden">
-          <div className="flex flex-col gap-3 text-base">
-            <form action="/guides" method="get">
-              <label className="sr-only" htmlFor="mobile-guide-search">
-                Search guides
-              </label>
-              <input
-                id="mobile-guide-search"
-                type="search"
-                name="q"
-                placeholder="Search guides"
-                className="h-10 w-full rounded-full border border-rule bg-paper px-3 text-sm outline-none placeholder:text-ink-soft focus:border-pine"
-              />
-            </form>
+        <nav className="border-t border-rule px-4 py-4 md:hidden">
+          <div className="flex flex-col gap-4 text-base text-ink-soft">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
+                className="transition hover:text-ink"
                 onClick={() => setOpen(false)}
               >
                 {item.label}

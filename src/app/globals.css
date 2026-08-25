@@ -24,9 +24,21 @@
   --color-rust-2: var(--rust-2);
   --color-gold: var(--gold);
   --color-rule: var(--rule);
-  --font-sans: var(--font-figtree);
+  --font-sans: var(--font-inter);
   --font-display: var(--font-fraunces);
   --font-stamp: var(--font-oswald);
+}
+
+.section-pad {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .section-pad {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
 }
 
 html {
@@ -35,7 +47,7 @@ html {
 }
 
 body {
-  font-family: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   background:
     radial-gradient(1200px 500px at 10% -10%, rgba(217, 123, 81, 0.16), transparent 55%),
     radial-gradient(900px 420px at 100% 0%, rgba(44, 95, 99, 0.12), transparent 50%),

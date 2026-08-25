@@ -17,20 +17,49 @@ export function TopicPills({
   query = "",
   size = "default",
   placement = "homepage",
+  variant = "pills",
 }: {
   categories: string[];
   active?: string;
   query?: string;
   size?: "default" | "lg";
   placement?: string;
+  variant?: "pills" | "tabs";
 }) {
   if (!categories.length) return null;
 
   const pills = ["", ...categories];
   const pillClass =
-    size === "lg"
-      ? "px-4 py-2.5 text-sm sm:text-base"
-      : "px-3 py-1.5 text-sm";
+    size === "lg" ? "px-4 py-2 text-sm" : "px-3 py-1.5 text-sm";
+
+  if (variant === "tabs") {
+    return (
+      <div
+        className="inline-flex max-w-full flex-wrap gap-1 rounded-lg border border-rule bg-paper-2/40 p-1"
+        role="navigation"
+        aria-label="Guide topics"
+      >
+        {pills.map((topic) => {
+          const selected = topic === active;
+          return (
+            <Link
+              key={topic || "all"}
+              href={guidesHref(topic, query)}
+              scroll={false}
+              onClick={() => trackTopicFilter(topic, placement)}
+              className={
+                selected
+                  ? `rounded-md bg-paper font-medium text-ink shadow-sm ${pillClass}`
+                  : `rounded-md font-medium text-ink-soft transition hover:text-ink ${pillClass}`
+              }
+            >
+              {topic || "All"}
+            </Link>
+          );
+        })}
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-wrap gap-2 sm:gap-3" role="navigation" aria-label="Guide topics">

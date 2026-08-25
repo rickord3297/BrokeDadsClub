@@ -284,6 +284,20 @@ export async function getProductsBySlugs(slugs: string[]): Promise<Product[]> {
   });
 }
 
+/** Homepage shop preview: curated picks, falls back to first live products. */
+export const HOME_SHOP_SLUGS = [
+  "club-pup-tee",
+  "castle-pin",
+  "broke-not-broken-tee",
+] as const;
+
+export async function getHomeShopProducts(): Promise<Product[]> {
+  const curated = await getProductsBySlugs([...HOME_SHOP_SLUGS]);
+  if (curated.length >= 2) return curated.slice(0, 3);
+  const products = await getProducts();
+  return products.slice(0, 3);
+}
+
 export const seedProducts: Product[] = [
   {
     id: "prod_club_patch",

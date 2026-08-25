@@ -6,7 +6,7 @@ import { trackEmailSignup } from "@/lib/analytics";
 import { site } from "@/lib/site";
 
 type NewsletterFormProps = {
-  variant?: "footer" | "article";
+  variant?: "footer" | "article" | "inline";
   submitLabel?: string;
   source?: string;
   successMessage?: string;
@@ -30,6 +30,7 @@ export function NewsletterForm({
   const [message, setMessage] = useState("");
 
   const isArticle = variant === "article";
+  const isInline = variant === "inline";
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -61,7 +62,9 @@ export function NewsletterForm({
 
   if (status === "done") {
     return (
-      <p className={`text-sm ${isArticle ? "text-pine" : "text-gold"}`}>
+      <p
+        className={`text-sm ${isInline || isArticle ? "text-pine" : "text-gold"}`}
+      >
         {message}
         {successHref && successLinkLabel ? (
           <>
@@ -79,37 +82,67 @@ export function NewsletterForm({
   }
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+    <form
+      onSubmit={onSubmit}
+      className={
+        isInline
+          ? "flex flex-col gap-3 sm:flex-row sm:items-stretch"
+          : "flex flex-col gap-2 sm:flex-row sm:flex-wrap"
+      }
+    >
       <label className="sr-only" htmlFor={inputId}>
         Email
       </label>
-      <input
-        id={inputId}
-        type="email"
-        required
-        value={email}
-        onChange={(event) => setEmail(event.target.value)}
-        placeholder="dad@email.com"
-        className={
-          isArticle
-            ? "h-11 flex-1 rounded-full border border-rule bg-paper px-4 text-sm text-ink outline-none placeholder:text-ink-soft focus:border-pine"
-            : "h-11 flex-1 rounded-full border border-white/20 bg-white/10 px-4 text-sm text-paper outline-none placeholder:text-paper/50 focus:border-gold"
-        }
-      />
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className={
-          isArticle
-            ? "h-11 rounded-full bg-pine px-5 text-sm font-semibold text-paper hover:bg-pine-2 disabled:opacity-60"
-            : "h-11 rounded-full bg-gold px-5 text-sm font-semibold text-ink hover:bg-paper disabled:opacity-60"
-        }
-      >
-        {status === "loading" ? "Sending…" : submitLabel}
-      </button>
+      {isInline ? (
+        <div className="flex min-h-12 flex-1 items-stretch overflow-hidden rounded-md border border-rule bg-paper">
+          <input
+            id={inputId}
+            type="email"
+            required
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            placeholder="dad@email.com"
+            className="min-w-0 flex-1 border-0 bg-transparent px-4 text-sm text-ink outline-none placeholder:text-ink-soft"
+          />
+          <button
+            type="submit"
+            disabled={status === "loading"}
+            className="shrink-0 bg-ink px-5 text-sm font-medium text-paper transition hover:bg-pine disabled:opacity-60 sm:px-6"
+          >
+            {status === "loading" ? "Sending…" : submitLabel}
+          </button>
+        </div>
+      ) : (
+        <>
+          <input
+            id={inputId}
+            type="email"
+            required
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            placeholder="dad@email.com"
+            className={
+              isArticle
+                ? "h-11 flex-1 rounded-full border border-rule bg-paper px-4 text-sm text-ink outline-none placeholder:text-ink-soft focus:border-pine"
+                : "h-11 flex-1 rounded-full border border-white/20 bg-white/10 px-4 text-sm text-paper outline-none placeholder:text-paper/50 focus:border-gold"
+            }
+          />
+          <button
+            type="submit"
+            disabled={status === "loading"}
+            className={
+              isArticle
+                ? "h-11 rounded-full bg-pine px-5 text-sm font-semibold text-paper hover:bg-pine-2 disabled:opacity-60"
+                : "h-11 rounded-full bg-gold px-5 text-sm font-semibold text-ink hover:bg-paper disabled:opacity-60"
+            }
+          >
+            {status === "loading" ? "Sending…" : submitLabel}
+          </button>
+        </>
+      )}
       {message ? (
         <p
-          className={`basis-full text-sm ${isArticle ? "text-pine" : "text-gold"}`}
+          className={`basis-full text-sm ${isInline || isArticle ? "text-pine" : "text-gold"}`}
         >
           {message}
         </p>
