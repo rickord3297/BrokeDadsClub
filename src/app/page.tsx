@@ -95,27 +95,19 @@ export default async function Home() {
           className="scroll-mt-20 border-t border-rule bg-paper-2/40"
         >
           <div className="mx-auto max-w-6xl px-4 section-pad-sm sm:px-6">
-            <div className="grid gap-8 lg:grid-cols-[1fr_minmax(0,22rem)] lg:items-start">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rust">
-                  Printables
-                </p>
-                <h2 className="mt-1 font-display text-3xl sm:text-[2rem]">
-                  One sheet for the fridge
-                </h2>
-                <p className="mt-2 max-w-xl text-sm leading-6 text-ink-soft">
-                  Start with the grocery-week checklist. Print it, stick it,
-                  shop once.
-                </p>
-                <p className="mt-4">
-                  <Link
-                    href="/resources"
-                    className="text-sm font-medium text-ink-soft transition hover:text-pine"
-                  >
-                    More printables →
-                  </Link>
-                </p>
-              </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rust">
+                Printables
+              </p>
+              <h2 className="mt-1 font-display text-3xl sm:text-[2rem]">
+                One sheet for the fridge
+              </h2>
+              <p className="mt-2 max-w-xl text-sm leading-6 text-ink-soft">
+                Start with the grocery-week checklist. Print it, stick it, shop
+                once.
+              </p>
+            </div>
+            <div className="mt-6">
               <ResourceCard
                 resource={featuredPrintable}
                 previewVariant="card"

@@ -1,3 +1,33 @@
+function PaperClipIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 32"
+      className="absolute -right-0.5 top-4 z-10 h-9 w-6 text-ink/35 drop-shadow-sm"
+      aria-hidden
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        d="M16 4v16a4 4 0 1 1-8 0V6a2 2 0 1 1 4 0v14a2 2 0 0 1-4 0V8"
+      />
+    </svg>
+  );
+}
+
+function CornerFold() {
+  return (
+    <div
+      className="pointer-events-none absolute right-0 bottom-0 h-10 w-10"
+      aria-hidden
+    >
+      <div className="absolute right-0 bottom-0 h-0 w-0 border-b-[2.5rem] border-l-[2.5rem] border-b-paper-2 border-l-transparent" />
+      <div className="absolute right-0 bottom-0 h-0 w-0 border-b-[2.35rem] border-l-[2.35rem] border-b-ink/10 border-l-transparent" />
+    </div>
+  );
+}
+
 export function ResourcePreview({
   slug,
   variant = "sheet",
@@ -7,13 +37,17 @@ export function ResourcePreview({
 }) {
   if (variant === "card") {
     return (
-      <div
-        className="overflow-hidden rounded-lg border border-rule bg-white shadow-[0_12px_40px_-12px_rgba(28,25,21,0.18)]"
-        aria-hidden
-      >
-        {slug === "grocery-week-checklist" ? <GroceryCardPreview /> : null}
-        {slug === "school-supply-triage" ? <SchoolCardPreview /> : null}
-        {slug === "birthday-party-budget" ? <BirthdayCardPreview /> : null}
+      <div className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:mx-0 lg:max-w-none">
+        <PaperClipIcon />
+        <div
+          className="relative overflow-hidden rounded-sm border border-ink/12 bg-white shadow-[0_2px_8px_rgba(28,25,21,0.06),0_12px_32px_-8px_rgba(28,25,21,0.18)]"
+          aria-hidden
+        >
+          {slug === "grocery-week-checklist" ? <GroceryCardPreview /> : null}
+          {slug === "school-supply-triage" ? <SchoolCardPreview /> : null}
+          {slug === "birthday-party-budget" ? <BirthdayCardPreview /> : null}
+          <CornerFold />
+        </div>
       </div>
     );
   }
