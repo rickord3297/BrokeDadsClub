@@ -1,11 +1,33 @@
 ---
 title: Gas station dinner that still counts
 slug: gas-station-dinner
+seoTitle: "Gas Station Dinner for Kids (Without the Guilt) | Broke Dads Club"
+description: "Hot dogs, rotisserie, and apples on the road. How to feed kids from a gas station without calling it failure or turning it into a habit."
 excerpt: Hot dogs, rotisserie, and a bag of apples. How to feed kids on the road without calling it failure.
 category: Money
 readTime: 6 min
 publishedAt: "2026-09-01"
 status: scheduled
+keywords:
+  - gas station dinner for kids
+  - feeding kids on the road
+  - quick dinner from gas station
+  - road trip food for kids
+  - dad dinner on the go
+related:
+  - the-47-dollar-grocery-week
+  - the-dad-tax
+  - side-hustles-that-dont-steal-bedtime
+faq:
+  - question: Is gas station food okay for kids dinner sometimes?
+    answer: >-
+      Yes, when the day ran out of runway. Aim for protein plus something that is not only chips, and treat it as a bridge meal, not the new normal.
+  - question: What should I buy at a gas station for kids?
+    answer: >-
+      Rotisserie chicken, bananas, string cheese, yogurt, or a hot dog with fruit beats candy and energy drinks alone.
+  - question: How do I talk to kids about gas station dinner?
+    answer: >-
+      Keep it logistics, not shame. "This is dinner tonight. Tomorrow we cook." Tone matters more than the menu.
 ---
 
 You are not a bad father because dinner came from a pump. You are a father who kept moving when the day ran out of runway.
