@@ -3,6 +3,7 @@ import { GuideCard } from "@/components/guide-card";
 import { InlineEmailBar } from "@/components/inline-email-bar";
 import { ProductCard } from "@/components/product-card";
 import { ResourceCard } from "@/components/resource-card";
+import { SiteTagline } from "@/components/site-tagline";
 import { TopicPills } from "@/components/topic-pills";
 import {
   START_HERE_SLUGS,
@@ -12,7 +13,6 @@ import {
 } from "@/lib/guides";
 import { getHomeShopProducts } from "@/lib/products";
 import { getResource } from "@/lib/resources";
-import { site } from "@/lib/site";
 
 const FEATURED_PRINTABLE = "grocery-week-checklist";
 
@@ -40,9 +40,9 @@ export default async function Home() {
               <br />
               Still showing up.
             </h1>
+            <SiteTagline size="hero" className="mt-5 max-w-xl" />
             <p className="mt-4 max-w-xl text-lg leading-8 text-ink-soft">
-              Practical guides for dads doing the math out loud.{" "}
-              <span className="font-display text-rust">{site.tagline}</span>
+              Practical guides for dads doing the math out loud.
             </p>
           </div>
         </div>

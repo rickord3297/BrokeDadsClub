@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ClubLogo } from "@/components/club-logo";
+import { SiteTagline } from "@/components/site-tagline";
 import { site } from "@/lib/site";
 
 export function SiteFooter() {
@@ -10,16 +11,16 @@ export function SiteFooter() {
           <div className="max-w-md">
             <div className="flex items-center gap-3">
               <ClubLogo size={56} className="shrink-0 bg-paper" />
-              <p className="font-stamp text-xl uppercase tracking-[0.14em]">
-                {site.name}
-              </p>
+              <div>
+                <p className="font-stamp text-xl uppercase tracking-[0.14em]">
+                  {site.name}
+                </p>
+                <SiteTagline size="compact" theme="dark" className="mt-2" />
+              </div>
             </div>
             <p className="mt-4 text-sm leading-6 text-paper/85">
               Guides for the money, the kids, and the long haul. No shame. No
               hustle-bro nonsense.
-            </p>
-            <p className="mt-4 text-xs uppercase tracking-[0.18em] text-gold">
-              {site.tagline}
             </p>
             <p className="mt-3 text-sm">
               <a

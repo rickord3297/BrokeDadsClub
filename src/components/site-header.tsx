@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ClubLogo } from "@/components/club-logo";
+import { SiteTagline } from "@/components/site-tagline";
 import { useCart } from "@/components/cart-provider";
 
 const nav = [
@@ -21,8 +22,11 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4 sm:px-6">
         <Link href="/" className="flex items-center gap-3 text-ink">
           <ClubLogo size={52} priority className="shrink-0" />
-          <span className="font-stamp text-xl uppercase tracking-[0.12em] sm:text-[1.35rem]">
-            Broke Dads Club
+          <span className="leading-tight">
+            <span className="block font-stamp text-xl uppercase tracking-[0.12em] sm:text-[1.35rem]">
+              Broke Dads Club
+            </span>
+            <SiteTagline size="compact" className="mt-1 hidden sm:block" />
           </span>
         </Link>
 
