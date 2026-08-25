@@ -3,7 +3,6 @@ import { GuideCard } from "@/components/guide-card";
 import { InlineEmailBar } from "@/components/inline-email-bar";
 import { ProductCard } from "@/components/product-card";
 import { ResourceCard } from "@/components/resource-card";
-import { StartHereLink } from "@/components/start-here-link";
 import { TopicPills } from "@/components/topic-pills";
 import {
   START_HERE_SLUGS,
@@ -45,12 +44,6 @@ export default async function Home() {
               Practical guides for dads doing the math out loud.{" "}
               <span className="font-display text-rust">{site.tagline}</span>
             </p>
-            <StartHereLink
-              href="#start-here"
-              className="mt-6 inline-flex h-11 items-center rounded-md bg-pine px-5 text-sm font-medium text-paper transition hover:bg-pine-2"
-            >
-              Show me where to start
-            </StartHereLink>
           </div>
         </div>
 
