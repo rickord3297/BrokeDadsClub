@@ -1,8 +1,8 @@
 ---
 title: The school supply list that quietly wrecks August
 slug: school-supply-list
-seoTitle: "School Supply List on a Budget for Dads | Broke Dads Club"
-description: "Survive the back-to-school supply list without a second mortgage. Triage musts vs optional extras, where to buy, and scripts that keep August intact."
+seoTitle: "Back to School Supply List on a Budget (Dad Triage Guide) | Broke Dads Club"
+description: "Back to school supply list on a budget: must vs reuse vs skip, where to buy, and scripts so August does not wreck the grocery money."
 excerpt: Glue sticks, headphones, and a thousand “optional” extras. How to survive back-to-school without a second mortgage.
 category: Money
 readTime: 6 min

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useCart } from "@/components/cart-provider";
+import { trackShopAddToCart } from "@/lib/analytics";
 import {
   APPAREL_SIZES,
   findVariant,
@@ -111,6 +112,7 @@ export function AddToCartButton({
               return;
             }
             setMessage("");
+            trackShopAddToCart(product.slug);
             addItem({
               id: product.id,
               slug: product.slug,

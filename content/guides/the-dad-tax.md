@@ -1,8 +1,8 @@
 ---
 title: "The dad tax: why everything costs more"
 slug: the-dad-tax
-seoTitle: "The Dad Tax: Hidden Costs of Raising Kids | Broke Dads Club"
-description: "Kids multiply every purchase. Here's how to see the dad tax clearly (food, time, convenience, social pressure) without becoming a miser."
+seoTitle: "Hidden Costs of Raising Kids: The Dad Tax Explained | Broke Dads Club"
+description: "Hidden costs of raising kids: food, time, convenience, and social pressure. How to see the dad tax clearly without becoming a miser."
 excerpt: Kids are not a lifestyle brand. They are a line item that multiplies. Here is how to see it clearly without turning into a miser.
 category: Money
 readTime: 6 min

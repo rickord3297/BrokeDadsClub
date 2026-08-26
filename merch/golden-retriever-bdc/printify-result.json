@@ -1,0 +1,30 @@
+{
+  "id": "6a811a3803218922dd0a8389",
+  "title": "Club Dog Tee",
+  "handle": "https://brokedadsclub.com/shop/club-dog-tee",
+  "colors": [
+    "Navy",
+    "Sport Grey",
+    "White",
+    "Black",
+    "Military Green",
+    "Dark Heather",
+    "Natural",
+    "Graphite Heather",
+    "Sand",
+    "Sage"
+  ],
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL",
+    "4XL",
+    "5XL"
+  ],
+  "price_cents": 1999,
+  "mockupCount": 150,
+  "firstMockup": "https://images-api.printify.com/mockup/6a811a3803218922dd0a8389/38191/127670/club-dog-tee.jpg?camera_label=folded-2"
+}

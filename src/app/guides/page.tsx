@@ -1,49 +1,27 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Suspense } from "react";
-import { GuideCard } from "@/components/guide-card";
-import { GuideSearch } from "@/components/guide-search";
-import { TopicPills } from "@/components/topic-pills";
-import {
-  START_HERE_SLUGS,
-  getGuide,
-  getGuideCategories,
-  getGuides,
-  matchesGuideQuery,
-} from "@/lib/guides";
+import { GuidesExplorer } from "@/components/guides-explorer";
+import type { HomeGuide } from "@/components/home-guides-section";
+import { getGuideCategories, getGuides } from "@/lib/guides";
 
 export const metadata: Metadata = {
   title: "Guides",
   description:
     "Practical dad guides on money, time, kids, and gear, written for fathers stretching every dollar.",
+  alternates: { canonical: "/guides" },
 };
 
-const startHereSlugs = START_HERE_SLUGS;
-
-export default async function GuidesPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ topic?: string; q?: string }>;
-}) {
-  const params = await searchParams;
-  const topic = params.topic?.trim() ?? "";
-  const query = params.q?.trim() ?? "";
+export default async function GuidesPage() {
   const guides = getGuides();
   const categories = getGuideCategories(guides);
-  const filtered = guides.filter((guide) => {
-    const topicOk = !topic || guide.category === topic;
-    return topicOk && matchesGuideQuery(guide, query);
-  });
-  const browsing = Boolean(topic || query);
-  const startHere = startHereSlugs
-    .map((slug) => getGuide(slug))
-    .filter((guide): guide is NonNullable<typeof guide> => guide != null);
-  const latest = filtered[0] ?? null;
-  const rest = filtered.filter(
-    (guide) =>
-      !startHereSlugs.includes(guide.slug) && guide.slug !== latest?.slug,
-  );
-  const browsingRest = filtered.filter((guide) => guide.slug !== latest?.slug);
+  const homeGuides: HomeGuide[] = guides.map((guide) => ({
+    slug: guide.slug,
+    title: guide.title,
+    excerpt: guide.excerpt,
+    category: guide.category,
+    readTime: guide.readTime,
+    publishedAt: guide.publishedAt,
+  }));
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
@@ -54,82 +32,13 @@ export default async function GuidesPage({
         school fees, talking about money, and work that doesn&apos;t steal bedtime.
       </p>
 
-      <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <TopicPills categories={categories} active={topic} query={query} />
-        <Suspense
-          fallback={
-            <div className="h-11 w-full max-w-md rounded-full border border-rule bg-paper" />
-          }
-        >
-          <GuideSearch />
-        </Suspense>
-      </div>
-
-      {latest ? (
-        <section className="mt-12 rounded-2xl border border-pine/25 bg-paper-2/50 px-5 py-6 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:px-6">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-rust">
-              {browsing ? "Top match" : "Latest"}
-            </p>
-            <h2 className="mt-2 font-display text-3xl leading-tight">{latest.title}</h2>
-            <p className="mt-2 max-w-2xl text-base leading-7 text-ink-soft">
-              {latest.excerpt}
-            </p>
-          </div>
-          <Link
-            href={`/guides/${latest.slug}`}
-            className="mt-4 inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-pine px-5 text-sm font-semibold text-paper hover:bg-pine-2 sm:mt-0"
-          >
-            Read the guide
-          </Link>
-        </section>
-      ) : null}
-
-      {!browsing && startHere.length > 0 ? (
-        <section className="mt-12">
-          <p className="text-xs uppercase tracking-[0.18em] text-rust">Start here</p>
-          <h2 className="mt-2 font-display text-3xl">Three that pay rent</h2>
-          <p className="mt-2 max-w-2xl text-base leading-7 text-ink-soft">
-            Read these first: why everything costs more, the August supply trap,
-            and the fees that land after school starts.
-          </p>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {startHere.map((guide) => (
-              <GuideCard
-                key={guide.slug}
-                guide={guide}
-                badge={
-                  guide.slug === "the-dad-tax"
-                    ? "Most popular"
-                    : guide.slug === "the-second-bill"
-                      ? "New"
-                      : "Start here"
-                }
-              />
-            ))}
-          </div>
-        </section>
-      ) : null}
-
-      <section className="mt-14">
-        <h2 className="font-display text-3xl">
-          {browsing ? "Matching guides" : "More guides"}
-        </h2>
-        {filtered.length === 0 ? (
-          <p className="mt-6 text-base text-ink-soft">
-            Nothing matches that yet.{" "}
-            <Link href="/guides" className="font-medium text-pine hover:text-rust">
-              Show all guides
-            </Link>
-          </p>
-        ) : (
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {(browsing ? browsingRest : rest).map((guide) => (
-              <GuideCard key={guide.slug} guide={guide} />
-            ))}
-          </div>
-        )}
-      </section>
+      <Suspense
+        fallback={
+          <div className="mt-10 h-40 animate-pulse rounded-2xl bg-paper-2" />
+        }
+      >
+        <GuidesExplorer guides={homeGuides} categories={categories} />
+      </Suspense>
     </div>
   );
 }

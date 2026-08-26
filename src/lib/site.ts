@@ -9,9 +9,9 @@ export const site = {
   email: "dad@brokedadsclub.com",
   weekStart: {
     kicker: "Sunday email",
-    title: "Start the week with one useful thing",
-    body: "One short note every Sunday at 9am Central. The guide worth using, a printable if we have one, and nothing else. Not a pile of everything you missed.",
+    title: "The $47 grocery checklist + one weekly tactic",
+    body: "Get the free grocery-week checklist, then one short dad tactic every Sunday at 9am Central. No daily spam pile.",
     button: "Send it Sundays",
-    success: "You're on the Sunday list. It lands at 9am Central.",
+    success: "You're on the Sunday list. Grab the grocery checklist while you wait.",
   },
 } as const;

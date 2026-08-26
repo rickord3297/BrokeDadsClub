@@ -1,176 +1,167 @@
 import Link from "next/link";
-import { WeekStartSignup } from "@/components/week-start-signup";
 import { GuideCard } from "@/components/guide-card";
+import { InlineEmailBar } from "@/components/inline-email-bar";
 import { ProductCard } from "@/components/product-card";
 import { ResourceCard } from "@/components/resource-card";
+import { SiteTagline } from "@/components/site-tagline";
 import { TopicPills } from "@/components/topic-pills";
-import { START_HERE_SLUGS, getGuide, getGuideCategories, getGuides } from "@/lib/guides";
-import { getProducts } from "@/lib/products";
-import { resources } from "@/lib/resources";
-import { site } from "@/lib/site";
+import {
+  START_HERE_SLUGS,
+  getGuide,
+  getGuideCategories,
+  getGuides,
+} from "@/lib/guides";
+import { getHomeShopProducts } from "@/lib/products";
+import { getResource } from "@/lib/resources";
 
-const productOrder = ["club-pup-tee"];
+const FEATURED_PRINTABLE = "grocery-week-checklist";
 
 export default async function Home() {
-  const [guides, products] = await Promise.all([getGuides(), getProducts()]);
+  const guides = getGuides();
   const categories = getGuideCategories(guides);
-  const latestGuide = guides[0] ?? null;
   const startHere = START_HERE_SLUGS.map((slug) => getGuide(slug)).filter(
     (guide): guide is NonNullable<typeof guide> => guide != null,
   );
-  const featuredProducts = [
-    ...productOrder.flatMap((slug) => {
-      const product = products.find((item) => item.slug === slug);
-      return product ? [product] : [];
-    }),
-    ...products.filter((product) => !productOrder.includes(product.slug)),
-  ];
+  const featuredPrintable = getResource(FEATURED_PRINTABLE);
+  const shopPicks = await getHomeShopProducts();
 
   return (
     <div>
       <section className="border-b border-rule">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-24">
-          <p className="text-sm font-bold uppercase tracking-[0.16em] text-pine">
-            A place for the stretched-thin dads doing their best
-          </p>
-          <h1 className="mt-4 font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
-            Raising kids.
-            <br />
-            Stretching dollars.
-            <br />
-            Still showing up.
-          </h1>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-ink-soft">
-            Practical guides for dads doing the math out loud. {site.tagline}
-          </p>
-          <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3">
-            <Link
-              href="/guides"
-              className="rounded-full bg-pine px-5 py-3 text-sm font-semibold text-paper hover:bg-pine-2"
-            >
-              Read the guides
-            </Link>
-            {latestGuide ? (
+        <div className="mx-auto max-w-6xl px-4 pt-12 pb-10 sm:px-6 lg:pt-16 lg:pb-12">
+          <div className="max-w-4xl">
+            <SiteTagline as="h1" size="hero" />
+            <p className="mt-6 font-display text-2xl leading-snug text-ink sm:text-3xl">
+              The Dad Operating System
+            </p>
+            <p className="mt-3 max-w-2xl text-base leading-7 text-ink-soft sm:text-lg sm:leading-8">
+              Guides for the home, finances, health, and family life.
+            </p>
+          </div>
+        </div>
+
+        <div
+          id="start-here"
+          className="scroll-mt-20 border-t border-pine/15 bg-pine/[0.04]"
+        >
+          <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:py-10">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <h2 className="font-display text-3xl text-pine sm:text-[2rem]">
+                The Guides
+              </h2>
               <Link
-                href={`/guides/${latestGuide.slug}`}
-                className="text-sm font-semibold text-pine hover:text-rust"
+                href="/guides"
+                className="shrink-0 text-sm font-medium text-pine underline decoration-pine/30 underline-offset-4 transition hover:text-rust hover:decoration-rust/40"
               >
-                Read the latest: {latestGuide.title} →
+                All guides →
               </Link>
-            ) : null}
-            <Link
-              href="/resources"
-              className="text-sm font-medium text-ink-soft hover:text-rust"
-            >
-              Free printables
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <div className="flex items-end justify-between gap-4">
-          <div>
-            <p className="text-xs uppercase tracking-[0.18em] text-rust">Guides</p>
-            <h2 className="mt-2 font-display text-4xl">Start here</h2>
-            <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
-              Why everything costs more, the August supply trap, and the fees that
-              hit after school starts.
-            </p>
-          </div>
-          <Link href="/guides" className="text-sm font-medium text-pine hover:text-rust">
-            All guides →
-          </Link>
-        </div>
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {startHere.map((guide) => (
-            <GuideCard
-              key={guide.slug}
-              guide={guide}
-              badge={
-                guide.slug === "the-dad-tax"
-                  ? "Most popular"
-                  : guide.slug === "the-second-bill"
-                    ? "New"
-                    : "Start here"
-              }
-            />
-          ))}
-        </div>
-      </section>
-
-      {categories.length > 0 ? (
-        <section className="border-t border-rule">
-          <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-5 sm:px-6">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-pine">
-              Browse by topic
-            </p>
-            <TopicPills categories={categories} />
-          </div>
-        </section>
-      ) : null}
-
-      <section className="border-t border-rule">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <div className="flex items-end justify-between gap-4">
-            <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-rust">
-                Printables
-              </p>
-              <h2 className="mt-2 font-display text-4xl">Printables for the fridge</h2>
-              <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
-                Checklists that pair with the guides. Free, no email wall.
-              </p>
             </div>
-            <Link
-              href="/resources"
-              className="text-sm font-medium text-pine hover:text-rust"
-            >
-              All printables →
-            </Link>
-          </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {resources.map((resource) => (
-              <ResourceCard key={resource.slug} resource={resource} />
-            ))}
-          </div>
-        </div>
-      </section>
 
-      <section id="sunday-email" className="border-t border-rule bg-paper-2/60">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:grid lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:gap-10">
-          <WeekStartSignup source="homepage-sunday" />
-        </div>
-      </section>
-
-      {featuredProducts.length > 0 ? (
-        <section className="border-t border-rule">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-            <div className="flex items-end justify-between gap-4">
-              <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-rust">Shop</p>
-                <h2 className="mt-2 font-display text-4xl">Club goods</h2>
-                <p className="mt-3 max-w-xl text-base leading-7 text-ink-soft">
-                  The crest is the membership card. The pup and the penguin are
-                  the pickup-line jokes. Sales keep the{" "}
-                  <Link href="/guides" className="font-medium text-pine hover:text-rust">
-                    guides
-                  </Link>{" "}
-                  free.
-                </p>
+            {categories.length > 0 ? (
+              <div className="mt-5">
+                <TopicPills
+                  categories={categories}
+                  size="lg"
+                  variant="tabs"
+                  placement="homepage"
+                  highlightActive={false}
+                />
               </div>
-              <Link href="/shop" className="text-sm font-medium text-pine hover:text-rust">
-                Full shop →
-              </Link>
-            </div>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {featuredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
+            ) : null}
+
+            <div className="mt-6 grid gap-5 sm:grid-cols-2">
+              {startHere.map((guide) => (
+                <GuideCard
+                  key={guide.slug}
+                  guide={guide}
+                  placement="start_here"
+                />
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      <InlineEmailBar
+        source="homepage-inline"
+        successHref="/resources/grocery-week-checklist"
+        successLinkLabel="Print the grocery checklist"
+      />
+
+      {featuredPrintable ? (
+        <section
+          id="printables"
+          className="scroll-mt-20 border-t border-rule bg-paper-2/40"
+        >
+          <div className="mx-auto max-w-6xl px-4 section-pad-sm sm:px-6">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rust">
+                Printables
+              </p>
+              <h2 className="mt-1 font-display text-3xl sm:text-[2rem]">
+                One sheet for the fridge
+              </h2>
+              <p className="mt-2 max-w-xl text-sm leading-6 text-ink-soft">
+                Start with the grocery-week checklist. Print it, stick it, shop
+                once.
+              </p>
+            </div>
+            <div className="mt-6">
+              <ResourceCard
+                resource={featuredPrintable}
+                previewVariant="card"
+                variant="featured"
+              />
+            </div>
+          </div>
         </section>
       ) : null}
+
+      <section id="shop" className="scroll-mt-20 border-t border-rule">
+        <div className="mx-auto max-w-6xl px-4 section-pad-sm sm:px-6">
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rust">
+                Shop
+              </p>
+              <h2 className="mt-1 font-display text-3xl sm:text-[2rem]">
+                Club goods
+              </h2>
+              <p className="mt-2 max-w-xl text-sm leading-6 text-ink-soft">
+                Wear the slogan if you want. Optional. Printed after you check
+                out.
+              </p>
+            </div>
+            <Link
+              href="/shop"
+              className="shrink-0 text-sm font-medium text-pine transition hover:text-rust"
+            >
+              Browse all →
+            </Link>
+          </div>
+          {shopPicks.length > 0 ? (
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {shopPicks.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  variant="featured"
+                />
+              ))}
+            </div>
+          ) : (
+            <p className="mt-6 text-sm text-ink-soft">
+              Shop is warming up.{" "}
+              <Link
+                href="/shop"
+                className="font-medium text-pine hover:text-rust"
+              >
+                Check back soon →
+              </Link>
+            </p>
+          )}
+        </div>
+      </section>
     </div>
   );
 }

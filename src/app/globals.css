@@ -24,9 +24,33 @@
   --color-rust-2: var(--rust-2);
   --color-gold: var(--gold);
   --color-rule: var(--rule);
-  --font-sans: var(--font-figtree);
+  --font-sans: var(--font-inter);
   --font-display: var(--font-fraunces);
   --font-stamp: var(--font-oswald);
+}
+
+.section-pad {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .section-pad {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.section-pad-sm {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .section-pad-sm {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
 }
 
 html {
@@ -35,7 +59,7 @@ html {
 }
 
 body {
-  font-family: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   background:
     radial-gradient(1200px 500px at 10% -10%, rgba(217, 123, 81, 0.16), transparent 55%),
     radial-gradient(900px 420px at 100% 0%, rgba(44, 95, 99, 0.12), transparent 50%),
@@ -84,6 +108,20 @@ body {
 
 .prose-guide strong {
   font-weight: 650;
+}
+
+.prose-guide blockquote {
+  margin: 1.5rem 0;
+  border-left: 3px solid var(--pine);
+  padding-left: 1rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.prose-guide hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
 }
 
 @media print {

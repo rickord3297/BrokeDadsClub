@@ -1,5 +1,58 @@
-export function ResourcePreview({ slug }: { slug: string }) {
+function PaperClipIcon() {
   return (
+    <svg
+      viewBox="0 0 24 32"
+      className="absolute -right-0.5 top-4 z-10 h-9 w-6 text-ink/35 drop-shadow-sm"
+      aria-hidden
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        d="M16 4v16a4 4 0 1 1-8 0V6a2 2 0 1 1 4 0v14a2 2 0 0 1-4 0V8"
+      />
+    </svg>
+  );
+}
+
+function CornerFold() {
+  return (
+    <div
+      className="pointer-events-none absolute right-0 bottom-0 h-10 w-10"
+      aria-hidden
+    >
+      <div className="absolute right-0 bottom-0 h-0 w-0 border-b-[2.5rem] border-l-[2.5rem] border-b-paper-2 border-l-transparent" />
+      <div className="absolute right-0 bottom-0 h-0 w-0 border-b-[2.35rem] border-l-[2.35rem] border-b-ink/10 border-l-transparent" />
+    </div>
+  );
+}
+
+export function ResourcePreview({
+  slug,
+  variant = "sheet",
+}: {
+  slug: string;
+  variant?: "sheet" | "fridge" | "card";
+}) {
+  if (variant === "card") {
+    return (
+      <div className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:mx-0 lg:max-w-none">
+        <PaperClipIcon />
+        <div
+          className="relative overflow-hidden rounded-sm border border-ink/12 bg-white shadow-[0_2px_8px_rgba(28,25,21,0.06),0_12px_32px_-8px_rgba(28,25,21,0.18)]"
+          aria-hidden
+        >
+          {slug === "grocery-week-checklist" ? <GroceryCardPreview /> : null}
+          {slug === "school-supply-triage" ? <SchoolCardPreview /> : null}
+          {slug === "birthday-party-budget" ? <BirthdayCardPreview /> : null}
+          <CornerFold />
+        </div>
+      </div>
+    );
+  }
+
+  const sheet = (
     <div
       className="aspect-[8.5/11] overflow-hidden rounded-lg border border-rule bg-white p-2.5 shadow-sm"
       aria-hidden
@@ -7,6 +60,152 @@ export function ResourcePreview({ slug }: { slug: string }) {
       {slug === "grocery-week-checklist" ? <GroceryMini /> : null}
       {slug === "school-supply-triage" ? <SchoolMini /> : null}
       {slug === "birthday-party-budget" ? <BirthdayMini /> : null}
+    </div>
+  );
+
+  if (variant === "fridge") {
+    return (
+      <div
+        className="relative overflow-hidden rounded-xl bg-gradient-to-b from-slate-300/90 to-slate-400/80 p-4 pt-10 shadow-inner"
+        aria-hidden
+      >
+        <div className="absolute left-0 top-0 h-full w-1 bg-white/40" />
+        <div className="absolute right-3 top-6 h-10 w-1.5 rounded-full bg-slate-500/50" />
+        <div className="absolute left-4 top-3 text-[9px] font-semibold uppercase tracking-wider text-slate-600/80">
+          Fridge
+        </div>
+        <div className="relative mx-auto max-w-[88%] rotate-[-1.5deg]">
+          <div className="absolute -top-1.5 left-1/2 z-10 h-2.5 w-5 -translate-x-1/2 rounded-sm bg-rust shadow-sm" />
+          <div className="shadow-lg shadow-ink/20">{sheet}</div>
+        </div>
+      </div>
+    );
+  }
+
+  return sheet;
+}
+
+function CheckSvg() {
+  return (
+    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 shrink-0" aria-hidden>
+      <rect
+        x="1.5"
+        y="1.5"
+        width="13"
+        height="13"
+        rx="1.5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+    </svg>
+  );
+}
+
+function GroceryCardPreview() {
+  return (
+    <div className="aspect-[4/5] bg-white p-6 text-ink sm:p-8">
+      <div className="flex items-start justify-between gap-4 border-b-2 border-ink pb-4">
+        <div>
+          <p className="font-stamp text-[10px] uppercase tracking-[0.22em] text-pine">
+            Broke Dads Club
+          </p>
+          <h3 className="mt-2 font-display text-2xl leading-tight">
+            Grocery week
+          </h3>
+          <p className="mt-1 text-sm text-ink-soft">$47 cart · 3–4 people</p>
+        </div>
+        <div className="rounded-md border border-ink px-2 py-1 text-[10px] font-semibold uppercase tracking-wider">
+          Print
+        </div>
+      </div>
+      <div className="mt-5 space-y-4 text-sm">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-soft">
+            Protein · $12
+          </p>
+          <ul className="mt-2 space-y-2">
+            {["Dozen eggs", "Chicken thighs", "Canned beans"].map((item) => (
+              <li key={item} className="flex items-center gap-2.5">
+                <CheckSvg />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-soft">
+            Starch · $8
+          </p>
+          <ul className="mt-2 space-y-2">
+            {["Rice or potatoes", "Pasta"].map((item) => (
+              <li key={item} className="flex items-center gap-2.5">
+                <CheckSvg />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="rounded-md border border-ink/20 bg-paper-2/40 p-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em]">
+            Swap box
+          </p>
+          <p className="mt-1 text-sm text-ink-soft">
+            Turkey or extra beans if chicken is up
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SchoolCardPreview() {
+  return (
+    <div className="aspect-[4/5] bg-white p-6 text-ink sm:p-8">
+      <p className="font-stamp text-[10px] uppercase tracking-[0.22em] text-pine">
+        Broke Dads Club
+      </p>
+      <h3 className="mt-2 font-display text-2xl leading-tight">
+        School supply triage
+      </h3>
+      <div className="mt-5 grid grid-cols-3 gap-2 text-center text-xs">
+        {["Must buy", "Reuse", "Skip"].map((col) => (
+          <div key={col} className="rounded-md border border-ink/20 p-2">
+            <p className="font-semibold">{col}</p>
+            <div className="mt-2 space-y-1.5">
+              <span className="block h-1 rounded bg-ink/15" />
+              <span className="block h-1 rounded bg-ink/15" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function BirthdayCardPreview() {
+  return (
+    <div className="aspect-[4/5] bg-white p-6 text-ink sm:p-8">
+      <p className="font-stamp text-[10px] uppercase tracking-[0.22em] text-pine">
+        Broke Dads Club
+      </p>
+      <h3 className="mt-2 font-display text-2xl leading-tight">
+        Birthday party budget
+      </h3>
+      <div className="mt-5 grid grid-cols-3 gap-2 rounded-md border border-ink/20 p-3 text-center text-sm">
+        <div>
+          <p className="text-xs text-ink-soft">Limit</p>
+          <p className="mt-1 font-display text-xl">$___</p>
+        </div>
+        <div>
+          <p className="text-xs text-ink-soft">Kids</p>
+          <p className="mt-1 font-display text-xl">___</p>
+        </div>
+        <div>
+          <p className="text-xs text-ink-soft">Each</p>
+          <p className="mt-1 font-display text-xl">$___</p>
+        </div>
+      </div>
     </div>
   );
 }

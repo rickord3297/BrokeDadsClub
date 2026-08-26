@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { GuideCard } from "@/components/guide-card";
+import { trackGuideClick } from "@/lib/analytics";
 import type { Guide } from "@/lib/guides";
 
 export function RelatedGuides({ guides }: { guides: Guide[] }) {
@@ -24,6 +27,7 @@ export function RelatedGuides({ guides }: { guides: Guide[] }) {
           </div>
           <Link
             href={`/guides/${next.slug}`}
+            onClick={() => trackGuideClick(next.slug, "related_next")}
             className="mt-4 inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-pine px-5 text-sm font-semibold text-paper hover:bg-pine-2 sm:mt-0"
           >
             Read the guide
@@ -32,7 +36,7 @@ export function RelatedGuides({ guides }: { guides: Guide[] }) {
       ) : null}
       <div className="mt-5 grid gap-4 md:grid-cols-3">
         {rest.map((guide) => (
-          <GuideCard key={guide.slug} guide={guide} />
+          <GuideCard key={guide.slug} guide={guide} placement="related" />
         ))}
       </div>
     </section>

@@ -94,6 +94,7 @@ Leave any leftover Amplify / S3 / placeholder records out of the way so the new 
 - Keep the weekly cadence in [`content/ideas.md`](content/ideas.md) / [`content/DRAFTS.md`](content/DRAFTS.md).
 - Google Search Console: add `https://brokedadsclub.com` → URL prefix or domain property → submit `https://brokedadsclub.com/sitemap.xml`.
 - Vercel → Analytics: enable Web Analytics + Speed Insights if the dashboard still prompts (code is already wired).
+- **Custom events** (Vercel → Analytics → Events): the site tracks guide views, scroll depth (25/50/75/100%), topic filters, search, shares, email signups (with `source`), printable views/prints, and shop cart/checkout. Use these to see which guides get read and which CTAs convert before changing homepage order.
 
 ### Swag
 - **Copy:** Printify's AI titles and descriptions never hit the shop as-is. The site rewrites them into Broke Dads Club voice (short, dry, no souvenir-shop captions). Hand-written overrides in `src/lib/products.ts` still win when we have them.

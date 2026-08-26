@@ -4,8 +4,8 @@ import { site } from "@/lib/site";
 
 export function GuideEmailCta({
   source,
-  successHref = "/guides/the-second-bill",
-  successLinkLabel = "Read this week's guide",
+  successHref = "/resources/grocery-week-checklist",
+  successLinkLabel = "Print the grocery checklist",
 }: {
   source: string;
   successHref?: string;

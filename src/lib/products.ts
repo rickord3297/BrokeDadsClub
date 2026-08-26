@@ -97,6 +97,24 @@ export function productPriceRange(product: Product) {
   return { min: Math.min(...prices), max: Math.max(...prices) };
 }
 
+/** Short label for size/color availability on product cards. */
+export function productVariantSummary(product: Product): string {
+  const sizes = productSizes(product);
+  const colors = productColors(product);
+  const parts: string[] = [];
+
+  if (productNeedsSize(product)) {
+    parts.push(sizes.length ? `${sizes.length} sizes` : "Pick a size");
+  }
+  if (colors.length > 1) {
+    parts.push(`${colors.length} colors`);
+  } else if (colors.length === 1) {
+    parts.push(colors[0]);
+  }
+
+  return parts.length ? parts.join(" · ") : "In stock";
+}
+
 function slugify(value: string) {
   return (
     value
@@ -142,6 +160,35 @@ const printifyCopyOverrides: Record<
       "The club dog is on his back. The wrench is in the grass. BROKE DADS CLUB is on the chest so another dad in the pickup line might actually nod at you. Soft Gildan cotton, printed after you check out. White, graphite heather, or military green. For dads whose best coworker still has four paws.",
     price_cents: 1999,
   },
+  "6a811a3803218922dd0a8389": {
+    slug: "club-dog-tee",
+    name: "Club Dog Tee",
+    description:
+      "The club dog is sitting. BROKE DADS CLUB is under his paws so another dad in the pickup line might actually nod at you. Soft Gildan cotton, printed after you check out. White, sand, navy, black, and the rest of the dad palette. For dads whose best coworker still has four paws.",
+    price_cents: 1999,
+  },
+  "6a826ed4aaef37be24051e48": {
+    slug: "broke-not-broken-tee",
+    name: "Broke Not Broken Tee",
+    description:
+      "Broke. NOT. Broken. Soft Gildan cotton, printed after you check out. For dads who are stretched thin and still in the game.",
+    price_cents: 1999,
+  },
+  "6a8cf0c0302c505a980a6b0f": {
+    slug: "castle-crest-tee",
+    name: "Castle Crest Tee",
+    description:
+      "The official Broke Dads Club crest. Castle you cannot actually afford, printed on soft Gildan cotton after you check out. White, sand, navy, black, and the rest of the dad palette.",
+    price_cents: 1999,
+  },
+  "6a8cf223f45d501226044bf7": {
+    slug: "castle-patch-tee",
+    name: "Castle Patch Tee",
+    description:
+      "Workwear patch energy. Broke Dads Club crest in cream on charcoal. Castle you cannot actually afford. Soft Gildan cotton, printed after you check out.",
+    price_cents: 1999,
+  },
+
   "6a7fd6ba2cde8b7dc1033d3f": {
     slug: "castle-pin",
     name: "Castle Pin",
@@ -260,6 +307,20 @@ export async function getProductsBySlugs(slugs: string[]): Promise<Product[]> {
     const product = products.find((item) => item.slug === slug);
     return product ? [product] : [];
   });
+}
+
+/** Homepage shop preview: curated picks, falls back to first live products. */
+export const HOME_SHOP_SLUGS = [
+  "club-pup-tee",
+  "castle-pin",
+  "broke-not-broken-tee",
+] as const;
+
+export async function getHomeShopProducts(): Promise<Product[]> {
+  const curated = await getProductsBySlugs([...HOME_SHOP_SLUGS]);
+  if (curated.length >= 2) return curated.slice(0, 3);
+  const products = await getProducts();
+  return products.slice(0, 3);
 }
 
 export const seedProducts: Product[] = [

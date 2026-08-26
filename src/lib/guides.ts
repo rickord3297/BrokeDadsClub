@@ -66,6 +66,24 @@ function isLive(guide: Guide, now = new Date()): boolean {
   return !Number.isNaN(goLive.getTime()) && now.getTime() >= goLive.getTime();
 }
 
+function isValidGuideData(data: Record<string, unknown>, file: string): boolean {
+  const required: Array<[string, unknown]> = [
+    ["slug", data.slug],
+    ["title", data.title],
+    ["category", data.category],
+    ["publishedAt", data.publishedAt],
+  ];
+
+  for (const [field, value] of required) {
+    if (typeof value !== "string" || !value.trim()) {
+      console.error(`Skipping invalid guide ${file}: missing ${field}`);
+      return false;
+    }
+  }
+
+  return true;
+}
+
 function readAllGuides(): Guide[] {
   if (!fs.existsSync(guidesDir)) return [];
 
@@ -76,8 +94,13 @@ function readAllGuides(): Guide[] {
       try {
         const raw = fs.readFileSync(path.join(guidesDir, file), "utf8");
         const { data, content } = matter(raw);
+        if (!isValidGuideData(data as Record<string, unknown>, file)) {
+          return [];
+        }
+
         const title = data.title as string;
-        const excerpt = data.excerpt as string;
+        const excerpt =
+          typeof data.excerpt === "string" ? data.excerpt : "";
         return [
           {
             slug: data.slug as string,
@@ -119,7 +142,13 @@ function readAllGuides(): Guide[] {
 
 /** Public guides only (hides drafts; respects schedule dates). */
 export function getGuides(): Guide[] {
-  return readAllGuides().filter((guide) => isLive(guide));
+  return readAllGuides().filter(
+    (guide) =>
+      isLive(guide) &&
+      Boolean(guide.slug?.trim()) &&
+      Boolean(guide.title?.trim()) &&
+      Boolean(guide.category?.trim()),
+  );
 }
 
 export function getGuide(slug: string): Guide | null {
@@ -128,14 +157,19 @@ export function getGuide(slug: string): Guide | null {
 
 export const START_HERE_SLUGS = [
   "the-dad-tax",
+  "the-47-dollar-grocery-week",
   "school-supply-list",
-  "the-second-bill",
+  "talking-to-kids-about-money",
 ];
 
 const CATEGORY_ORDER = ["Money", "Time", "Kids", "Work", "Gear"];
 
 export function getGuideCategories(guides: Guide[] = getGuides()): string[] {
-  const found = new Set(guides.map((guide) => guide.category));
+  const found = new Set(
+    guides
+      .map((guide) => guide.category)
+      .filter((category): category is string => Boolean(category?.trim())),
+  );
   return [
     ...CATEGORY_ORDER.filter((category) => found.has(category)),
     ...[...found].filter((category) => !CATEGORY_ORDER.includes(category)).sort(),
