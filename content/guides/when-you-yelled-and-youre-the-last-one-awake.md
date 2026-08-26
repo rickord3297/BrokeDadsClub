@@ -3,7 +3,8 @@ title: When you yelled and you are the last one awake
 slug: when-you-yelled-and-youre-the-last-one-awake
 seoTitle: "Yelled at Your Kid? What to Do Tonight & Tomorrow | Broke Dads Club"
 description: "Dad guilt after yelling: what to do tonight without a midnight speech, the 4-step morning repair, and when it is more than one bad night."
-excerpt: You snapped. The house is quiet and you are replaying it. Tonight: do not wake them. Tomorrow: four sentences. Here is the repair script.
+excerpt: >-
+  You snapped. The house is quiet and you are replaying it. Tonight: do not wake them. Tomorrow: four sentences. Here is the repair script.
 category: Kids
 readTime: 6 min
 publishedAt: "2026-08-28"
