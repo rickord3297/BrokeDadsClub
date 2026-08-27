@@ -110,14 +110,14 @@ body {
   font-weight: 650;
 }
 
-.prose-guide blockquote,
 .prose-guide .guide-script-callout,
 .prose-guide .guide-pull-quote {
-  margin: 1.35rem 0;
+  display: block;
+  margin: 1.5rem 0;
   border-left: 3px solid var(--pine);
   border-radius: 0 0.75rem 0.75rem 0;
   background: color-mix(in srgb, var(--pine) 6%, var(--paper));
-  padding: 0.95rem 1.1rem 1rem;
+  padding: 0.9rem 1.05rem 1rem;
   color: var(--ink);
   font-style: normal;
 }
@@ -131,39 +131,61 @@ body {
   color: var(--rust-2);
 }
 
-.prose-guide .guide-script-callout p,
-.prose-guide .guide-pull-quote p {
-  margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.55;
-}
-
-.prose-guide .guide-script-callout > div + p,
-.prose-guide .guide-pull-quote > div + p,
-.prose-guide .guide-script-callout > div + *,
-.prose-guide .guide-pull-quote > div + * {
-  margin-top: 0;
-}
-
-.prose-guide .guide-pull-quote p:last-child {
-  font-family: var(--font-fraunces), Georgia, serif;
-  font-size: 1.2rem;
-  line-height: 1.45;
+.prose-guide .guide-callout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.45rem;
 }
 
 .prose-guide .guide-script-label {
-  margin: 0 !important;
+  margin: 0;
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  font-size: 0.7rem !important;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--pine);
 }
 
-.prose-guide .guide-script-callout > div,
-.prose-guide .guide-pull-quote > div {
-  margin-bottom: 0.4rem;
+.prose-guide .guide-callout-copy {
+  flex-shrink: 0;
+  border: 1px solid color-mix(in srgb, var(--pine) 25%, transparent);
+  border-radius: 0.375rem;
+  background: var(--paper);
+  padding: 0.15rem 0.5rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pine);
+}
+
+.prose-guide .guide-callout-copy:hover {
+  border-color: color-mix(in srgb, var(--pine) 45%, transparent);
+  color: var(--rust);
+}
+
+.prose-guide .guide-callout-body > :first-child {
+  margin-top: 0;
+}
+
+.prose-guide .guide-callout-body > :last-child {
+  margin-bottom: 0;
+}
+
+.prose-guide .guide-script-callout .guide-callout-body p,
+.prose-guide .guide-pull-quote .guide-callout-body p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.prose-guide .guide-pull-quote .guide-callout-body p {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.45;
 }
 
 .prose-guide li strong:first-child {

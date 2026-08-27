@@ -6,7 +6,6 @@ type ScriptCalloutProps = {
   label?: string;
   kind?: "script" | "truth";
   children: ReactNode;
-  /** Plain text used for clipboard; falls back to stripping children. */
   copyText?: string;
   className?: string;
 };
@@ -22,9 +21,9 @@ function collectText(node: ReactNode): string {
   return "";
 }
 
-/** Dialogue / practical-line callout with optional copy-to-clipboard. */
+/** Dialogue / truth callout for markdown blockquotes only. */
 export function ScriptCallout({
-  label = "Try this line",
+  label,
   kind = "script",
   children,
   copyText,
@@ -32,12 +31,18 @@ export function ScriptCallout({
 }: ScriptCalloutProps) {
   const [copied, setCopied] = useState(false);
   const isTruth = kind === "truth";
+  const heading = label ?? (isTruth ? "Keep this" : "Try this line");
   const text = (copyText ?? collectText(children)).trim();
 
   async function onCopy() {
     if (!text || !navigator.clipboard?.writeText) return;
     try {
-      await navigator.clipboard.writeText(text.replace(/^["“]|["”]$/g, "").trim());
+      await navigator.clipboard.writeText(
+        text
+          .replace(/^(truth|remember|note|mindset):\s*/i, "")
+          .replace(/^["“]|["”]$/g, "")
+          .trim(),
+      );
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1600);
     } catch {
@@ -46,23 +51,24 @@ export function ScriptCallout({
   }
 
   return (
-    <blockquote
-      className={`${isTruth ? "guide-pull-quote" : "guide-script-callout"} relative ${className}`}
+    <aside
+      className={`${isTruth ? "guide-pull-quote" : "guide-script-callout"} ${className}`}
+      aria-label={heading}
     >
-      <div className="flex items-start justify-between gap-3">
-        <p className="guide-script-label">{isTruth ? "Keep this" : label}</p>
+      <div className="guide-callout-header">
+        <span className="guide-script-label">{heading}</span>
         {kind === "script" && text ? (
           <button
             type="button"
             onClick={onCopy}
-            className="shrink-0 rounded-md border border-pine/20 bg-paper px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-pine transition hover:border-pine/40 hover:text-rust"
+            className="guide-callout-copy"
             aria-label={copied ? "Copied" : "Copy script"}
           >
             {copied ? "Copied" : "Copy"}
           </button>
         ) : null}
       </div>
-      {children}
-    </blockquote>
+      <div className="guide-callout-body">{children}</div>
+    </aside>
   );
 }

@@ -16,7 +16,6 @@ import { GuideViewTracker } from "@/components/guide-view-tracker";
 import { ReadingProgress } from "@/components/reading-progress";
 import { ShareGuide } from "@/components/share-guide";
 import { StickyShareGuide } from "@/components/sticky-share-guide";
-import { relatedGuideHook } from "@/lib/guide-catalog";
 import { formatDate } from "@/lib/format";
 import {
   extractGuideHeadings,
@@ -80,26 +79,10 @@ export default async function GuidePage({
 
   const url = `${site.url}/guides/${guide.slug}`;
   const keywords = guideKeywords(guide);
-  const relatedGuides = getRelatedGuides(guide, 4);
-  const related = relatedGuides.map((item) => toGuideListItem(item));
-  const nextRead = relatedGuides[0]
-    ? {
-        slug: relatedGuides[0].slug,
-        title: relatedGuides[0].title,
-        hook: relatedGuideHook(
-          relatedGuides[0].slug,
-          relatedGuides[0].category,
-        ),
-      }
-    : null;
-  const actionSteps = [
-    guide.action,
-    ...guide.takeaways,
-  ].filter((step, index, all) => {
-    const key = step.trim().toLowerCase();
-    if (!key) return false;
-    return all.findIndex((item) => item.trim().toLowerCase() === key) === index;
-  });
+  const related = getRelatedGuides(guide, 4).map((item) =>
+    toGuideListItem(item),
+  );
+  const actionSteps = [guide.action].filter((step) => step.trim());
   const [intro, body] = splitGuideIntro(guide.content);
   const headings = extractGuideHeadings(guide.content);
   const headingCounts = new Map<string, number>();
@@ -239,22 +222,13 @@ export default async function GuidePage({
               <GuideMarkdown content={intro} headingCounts={headingCounts} />
             </div>
 
-            <ActionBox steps={actionSteps} nextRead={nextRead} />
-
-            {companionPrintable ? (
-              <GuidePrintableEmbed
-                resource={companionPrintable}
-                placement="inline"
-              />
-            ) : null}
+            <ActionBox steps={actionSteps} />
 
             {body ? (
               <div className="prose-guide mt-8">
                 <GuideMarkdown content={body} headingCounts={headingCounts} />
               </div>
             ) : null}
-
-            <GuideEmailCta source={`guide:${guide.slug}`} />
 
             {guide.faq.length > 0 ? (
               <GuideFaqAccordion items={guide.faq} />
@@ -277,7 +251,9 @@ export default async function GuidePage({
 
             <GuideKeepGoing guides={related} />
 
-            <p className="mt-12 border-t border-rule pt-6 text-sm">
+            <GuideEmailCta source={`guide:${guide.slug}`} />
+
+            <p className="mt-10 border-t border-rule pt-6 text-sm">
               <Link href="/guides" className="text-pine hover:text-rust">
                 ← All guides
               </Link>

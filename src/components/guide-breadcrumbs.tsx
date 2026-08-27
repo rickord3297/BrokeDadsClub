@@ -10,7 +10,7 @@ export function GuideBreadcrumbs({
   return (
     <nav
       aria-label="Breadcrumb"
-      className="rounded-lg border border-rule/80 bg-paper-2/50 px-3 py-2.5 text-sm text-ink-soft"
+      className="text-sm text-ink-soft"
     >
       <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
         <li>

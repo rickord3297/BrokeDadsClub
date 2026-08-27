@@ -16,19 +16,17 @@ function plainText(node: ReactNode): string {
   return "";
 }
 
-function looksLikeScriptLine(text: string) {
+/** Only markdown blockquotes (`>`) become callouts. Body paragraphs stay body. */
+function blockquoteKind(text: string): "script" | "truth" {
   const trimmed = text.trim();
-  if (trimmed.length < 8 || trimmed.length > 220) return false;
-  return (
+  if (/^(truth|remember|note|mindset)\b/i.test(trimmed)) return "truth";
+  if (
     /^["“']/.test(trimmed) ||
     /^(try|say|tell them|to your kid|to yourself)\b/i.test(trimmed)
-  );
-}
-
-function blockquoteKind(text: string): "script" | "truth" {
-  if (/^(truth|remember|note|mindset)\b/i.test(text.trim())) return "truth";
-  if (looksLikeScriptLine(text)) return "script";
-  if (text.length < 120 && !text.includes("\n")) return "truth";
+  ) {
+    return "script";
+  }
+  if (trimmed.length < 140 && !trimmed.includes("\n")) return "truth";
   return "script";
 }
 
@@ -85,36 +83,11 @@ export function GuideMarkdown({
         },
         blockquote: ({ children }) => {
           const text = plainText(children);
-          const kind = blockquoteKind(text);
           return (
-            <ScriptCallout kind={kind} copyText={text}>
+            <ScriptCallout kind={blockquoteKind(text)} copyText={text}>
               {children}
             </ScriptCallout>
           );
-        },
-        p: ({ children }) => {
-          const text = plainText(children);
-          if (looksLikeScriptLine(text)) {
-            return (
-              <ScriptCallout kind="script" copyText={text}>
-                <p>{children}</p>
-              </ScriptCallout>
-            );
-          }
-          return <p>{children}</p>;
-        },
-        li: ({ children }) => {
-          const text = plainText(children);
-          if (looksLikeScriptLine(text)) {
-            return (
-              <li className="list-none">
-                <ScriptCallout kind="script" copyText={text} className="my-2">
-                  <p>{children}</p>
-                </ScriptCallout>
-              </li>
-            );
-          }
-          return <li>{children}</li>;
         },
       }}
     >
