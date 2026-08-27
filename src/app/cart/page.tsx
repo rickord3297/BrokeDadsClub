@@ -1,17 +1,21 @@
 import type { Metadata } from "next";
 import { CartView } from "@/components/cart-view";
+import { CASTLE_PIN_SLUG } from "@/lib/product-display";
+import { getProduct } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Cart",
 };
 
-export default function CartPage() {
+export default async function CartPage() {
+  const upsellProduct = await getProduct(CASTLE_PIN_SLUG);
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
       <p className="text-xs uppercase tracking-[0.18em] text-rust">Checkout</p>
       <h1 className="mt-3 font-display text-5xl">Your cart</h1>
       <div className="mt-8">
-        <CartView />
+        <CartView upsellProduct={upsellProduct} />
       </div>
     </div>
   );

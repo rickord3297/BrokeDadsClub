@@ -1,7 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { ColorSwatches } from "@/components/color-swatches";
 import { useCart } from "@/components/cart-provider";
+import { SizeGuideLink } from "@/components/size-guide";
 import { trackShopAddToCart } from "@/lib/analytics";
 import {
   APPAREL_SIZES,
@@ -21,6 +24,7 @@ export function AddToCartButton({
   onSizeChange,
   hideColorSelect = false,
   compact = false,
+  showSizeGuide = false,
 }: {
   product: Product;
   color?: string;
@@ -29,6 +33,7 @@ export function AddToCartButton({
   onSizeChange?: (size: string) => void;
   hideColorSelect?: boolean;
   compact?: boolean;
+  showSizeGuide?: boolean;
 }) {
   const { addItem } = useCart();
   const colors = productColors(product);
@@ -36,21 +41,26 @@ export function AddToCartButton({
   const color = controlledColor ?? internalColor;
   const sizes = productSizes(product, color || undefined);
   const needsSize = productNeedsSize(product) || sizes.length > 0;
+  const sizeOptions = sizes.length ? sizes : needsSize ? [...APPAREL_SIZES] : [];
   const [internalSize, setInternalSize] = useState(
-    initialSize(product, sizes) || APPAREL_SIZES[2],
+    () => initialSize(product, sizeOptions) || "",
   );
+  const [sizeTouched, setSizeTouched] = useState(false);
   const size = controlledSize ?? internalSize;
   const [added, setAdded] = useState(false);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    if (!sizes.length) return;
-    if (!sizes.includes(size)) {
-      setSize(initialSize(product, sizes) || sizes[0]);
+    if (!sizeOptions.length) return;
+    if (!sizeOptions.includes(size)) {
+      setSize(initialSize(product, sizeOptions) || sizeOptions[0]);
     }
-  }, [size, sizes]);
+    // Re-sync when color changes available sizes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [color, product.id, sizeOptions.join("|")]);
 
   function setSize(next: string) {
+    setSizeTouched(true);
     if (onSizeChange) onSizeChange(next);
     else setInternalSize(next);
   }
@@ -69,44 +79,82 @@ export function AddToCartButton({
     else setInternalColor(next);
   }
 
+  const sizeReady = !needsSize || Boolean(size);
+  const canAdd = sizeReady && (!product.variants?.length || Boolean(selected));
+
+  const buttonLabel = (() => {
+    if (added) return "Added to cart";
+    if (needsSize && !size) return "Pick a size";
+    if (needsSize && size && color) return `Add ${size} · ${color}`;
+    if (needsSize && size) return `Add size ${size}`;
+    return compact ? "Add to cart" : "Add to cart";
+  })();
+
   return (
-    <div className="space-y-3">
-      <div className={`flex flex-wrap items-center ${compact ? "gap-2" : "gap-3"}`}>
-        {colors.length > 1 && !hideColorSelect ? (
-          <label className="text-sm text-ink-soft">
-            Color
-            <select
-              value={color}
-              onChange={(event) => setColor(event.target.value)}
-              className="ml-2 rounded-md border border-rule bg-paper px-2 py-2"
-            >
-              {colors.map((option) => (
-                <option key={option} value={option}>
+    <div className={compact ? "space-y-2.5" : "space-y-4"}>
+      {colors.length > 1 && !hideColorSelect ? (
+        <div>
+          <p className="mb-1.5 text-xs font-medium text-ink-soft">
+            Color{color ? `: ${color}` : ""}
+          </p>
+          <ColorSwatches
+            colors={colors}
+            selected={color}
+            onSelect={setColor}
+            size={compact ? "sm" : "md"}
+          />
+        </div>
+      ) : null}
+
+      {needsSize ? (
+        <div>
+          <div className="mb-1.5 flex items-center justify-between gap-3">
+            <p className="text-xs font-medium text-ink-soft">
+              Size{size ? `: ${size}` : " (required)"}
+            </p>
+            {showSizeGuide || product.art === "tee" || product.art === "hoodie" ? (
+              <SizeGuideLink />
+            ) : null}
+          </div>
+          <div
+            className="flex flex-wrap gap-1.5"
+            role="group"
+            aria-label="Select size"
+          >
+            {sizeOptions.map((option) => {
+              const active = option === size;
+              return (
+                <button
+                  key={option}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() => setSize(option)}
+                  className={
+                    active
+                      ? "min-w-10 rounded-full bg-ink px-3 py-1.5 text-sm font-semibold text-paper ring-2 ring-ink ring-offset-1 ring-offset-paper"
+                      : "min-w-10 rounded-full border border-rule bg-paper px-3 py-1.5 text-sm font-medium text-ink transition hover:border-pine hover:text-pine"
+                  }
+                >
                   {option}
-                </option>
-              ))}
-            </select>
-          </label>
-        ) : null}
-        {needsSize ? (
-          <label className="text-sm text-ink-soft">
-            Size
-            <select
-              value={size}
-              onChange={(event) => setSize(event.target.value)}
-              className="ml-2 rounded-md border border-rule bg-paper px-2 py-2"
-            >
-              {(sizes.length ? sizes : [...APPAREL_SIZES]).map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-          </label>
-        ) : null}
+                </button>
+              );
+            })}
+          </div>
+          {needsSize && !sizeTouched && !size ? (
+            <p className="mt-1.5 text-xs text-ink-soft">Select a size to add.</p>
+          ) : null}
+        </div>
+      ) : null}
+
+      <div className="flex flex-wrap items-center gap-2">
         <button
           type="button"
+          disabled={!canAdd && !added}
           onClick={() => {
+            if (needsSize && !size) {
+              setMessage("Pick a size first.");
+              return;
+            }
             if (product.variants?.length && !selected) {
               setMessage("That size and color is not in stock.");
               return;
@@ -124,16 +172,32 @@ export function AddToCartButton({
               sku: selected?.sku,
             });
             setAdded(true);
-            window.setTimeout(() => setAdded(false), 1400);
+            window.setTimeout(() => setAdded(false), 1800);
           }}
           className={
-            compact
-              ? "rounded-full bg-rust px-4 py-2 text-sm font-semibold text-paper hover:bg-rust-2"
-              : "rounded-full bg-rust px-5 py-3 text-sm font-semibold text-paper hover:bg-rust-2"
+            added
+              ? compact
+                ? "rounded-full bg-pine px-4 py-2 text-sm font-semibold text-paper"
+                : "rounded-full bg-pine px-5 py-3 text-sm font-semibold text-paper"
+              : canAdd
+                ? compact
+                  ? "rounded-full bg-rust px-4 py-2 text-sm font-semibold text-paper hover:bg-rust-2"
+                  : "rounded-full bg-rust px-5 py-3 text-sm font-semibold text-paper hover:bg-rust-2"
+                : compact
+                  ? "rounded-full bg-ink/15 px-4 py-2 text-sm font-semibold text-ink-soft"
+                  : "rounded-full bg-ink/15 px-5 py-3 text-sm font-semibold text-ink-soft"
           }
         >
-          {added ? "Added" : compact ? "Add to cart" : "Add to cart"}
+          {buttonLabel}
         </button>
+        {added ? (
+          <Link
+            href="/cart"
+            className="text-sm font-medium text-pine hover:text-rust"
+          >
+            View cart →
+          </Link>
+        ) : null}
       </div>
       {message ? <p className="text-sm text-rust">{message}</p> : null}
     </div>
