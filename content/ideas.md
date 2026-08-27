@@ -34,6 +34,9 @@
 | Side hustles that don't steal bedtime | live | 2026-07-14 | `side-hustles-that-dont-steal-bedtime` |
 | Talking to kids about money without scaring them | live | 2026-07-07 | `talking-to-kids-about-money` |
 | Thrift without looking like a dare | live | 2026-06-30 | `thrift-without-looking-like-a-dare` |
+| The after-school collapse is not a bad kid | idea | | trend 2026-08-27: restraint-collapse coverage (Today's Parent, Understood) as school weeks start; snack-first / no car interrogation |
+| Packing school lunch without a $12 guilt spiral | idea | | trend 2026-08-27: first-week lunch packing vs cafeteria pressure; pairs with grocery week, not supplies |
+| Dropping one activity so the week can breathe | idea | | trend 2026-08-27: overscheduled-kids backlash (Macaroni KID / Bump 2026); distinct from sports-fee and "we can't go" |
 
 ### Status
 
