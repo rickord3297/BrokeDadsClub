@@ -1,12 +1,16 @@
 ---
 title: Explaining “we can’t go” without making it a speech
 slug: explaining-we-cant-go
-seoTitle: "How to Tell Kids We Can't Afford It (Without a Speech) | Broke Dads Club"
-description: "Short, calm scripts for saying no to the trip, party, or thing, honest with kids about money without making them the CFO."
-excerpt: A short, calm way to say no to the trip, the party, or the thing, without turning money into a monologue.
+seoTitle: How to Tell Kids We Can't Afford It (Without a Speech) | Broke Dads Club
+description: >-
+  Short, calm scripts for saying no to the trip, party, or thing, honest with
+  kids about money without making them the CFO.
+excerpt: >-
+  A short, calm way to say no to the trip, the party, or the thing, without
+  turning money into a monologue.
 category: Kids
 readTime: 5 min
-publishedAt: "2026-08-12"
+publishedAt: '2026-08-12'
 status: published
 keywords:
   - how to tell kids we can't afford it
@@ -23,9 +27,16 @@ shop:
   - club-pup-tee
 faq:
   - question: How do I tell my kid we can't go without shaming them?
-    answer: Use a short script, the no, one-line reason, and an alternative. Skip blame, long lectures, and detailed adult debt talk.
+    answer: >-
+      Use a short script, the no, one-line reason, and an alternative. Skip
+      blame, long lectures, and detailed adult debt talk.
   - question: What should I say instead of "we're broke"?
-    answer: Try "It's not in our plan this month" or "We buy food and home first, then fun." Calm limits beat fear language.
+    answer: >-
+      Try "It's not in our plan this month" or "We buy food and home first, then
+      fun." Calm limits beat fear language.
+takeaways:
+  - A short no beats a money monologue
+  - Calm and clear; do not make them manage the budget
 ---
 
 "We can't go" is a complete sentence. Kids will ask why. You do not owe a board meeting.
@@ -34,25 +45,39 @@ The goal is honesty without horror, enough truth that they trust you, not so muc
 
 ## The short script
 
-1. **The no:** "We're not going to that one."
-2. **The reason (one line):** "It's not in our plan this month." / "We're saving for home stuff first."
-3. **The door:** "Want to help pick something we *can* do instead?"
+> "We're not going to that one."
+
+Then one line of reason:
+
+> "It's not in our plan this month."
+
+Then open a door:
+
+> "Want to help pick something we *can* do instead?"
 
 That is the whole speech. Stop talking.
 
 ## Age-size the why
 
-**Little kids:** "We buy food and our house first. Then fun. This is a food-and-house week."
+**Little kids:** food and home first, then fun.
 
-**School age:** "We have a money plan. The plan says yes to the park and the library. It says not this month to the big ticket thing."
+> "We buy food and our house first. Then fun. This is a food-and-house week."
 
-**Teens:** "Here's the shape: rent, food, gas, then leftover. Leftover isn't there for this. You're not the problem. The calendar is."
+**School age:** name the plan without a lecture.
+
+> "We have a money plan. The plan says yes to the park and the library. It says not this month to the big ticket thing."
+
+**Teens:** share the shape, not the shame.
+
+> "Here's the shape: rent, food, gas, then leftover. Leftover isn't there for this. You're not the problem. The calendar is."
 
 ## Phrases that help
 
-- "Not this time" (leaves room for later without promising)
-- "That's a want. We're covering needs first."
-- "I wish we could. We can't this round."
+> "Not this time"
+
+> "That's a want. We're covering needs first."
+
+> "I wish we could. We can't this round."
 
 ## Phrases that hurt
 
@@ -62,6 +87,8 @@ That is the whole speech. Stop talking.
 - "Don't tell anyone"
 
 Fear and secrecy are not money education. Calm limits are.
+
+> Truth: A short, kind no is one of the most expensive-looking skills a dad can have for free.
 
 ## Offer a real alternative
 

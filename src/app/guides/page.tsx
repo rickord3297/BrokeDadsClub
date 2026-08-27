@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { GuidesExplorer } from "@/components/guides-explorer";
-import type { HomeGuide } from "@/components/home-guides-section";
-import { getGuideCategories, getGuides } from "@/lib/guides";
+import { resourceTieInForGuide } from "@/lib/guide-catalog";
+import {
+  getGuideCategories,
+  getGuides,
+  toGuideListItem,
+} from "@/lib/guides";
 
 export const metadata: Metadata = {
   title: "Guides",
@@ -14,22 +18,21 @@ export const metadata: Metadata = {
 export default async function GuidesPage() {
   const guides = getGuides();
   const categories = getGuideCategories(guides);
-  const homeGuides: HomeGuide[] = guides.map((guide) => ({
-    slug: guide.slug,
-    title: guide.title,
-    excerpt: guide.excerpt,
-    category: guide.category,
-    readTime: guide.readTime,
-    publishedAt: guide.publishedAt,
-  }));
+  const list = guides.map((guide) => {
+    const tieIn = resourceTieInForGuide(guide.slug);
+    return toGuideListItem(
+      guide,
+      tieIn ? { href: tieIn.href, label: tieIn.label } : null,
+    );
+  });
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
       <p className="text-xs uppercase tracking-[0.18em] text-rust">Guides</p>
       <h1 className="mt-3 font-display text-5xl">Guides for dads</h1>
       <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
-        Not a lifestyle magazine. Tactics you can use this week: groceries,
-        school fees, talking about money, and work that doesn&apos;t steal bedtime.
+        Filter by topic, skim the takeaways, then open what you need this week:
+        groceries, school fees, money talks, and work that does not steal bedtime.
       </p>
 
       <Suspense
@@ -37,7 +40,7 @@ export default async function GuidesPage() {
           <div className="mt-10 h-40 animate-pulse rounded-2xl bg-paper-2" />
         }
       >
-        <GuidesExplorer guides={homeGuides} categories={categories} />
+        <GuidesExplorer guides={list} categories={categories} />
       </Suspense>
     </div>
   );

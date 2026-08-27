@@ -1,12 +1,16 @@
 ---
 title: How to handle the early riser
 slug: how-to-handle-the-early-riser
-seoTitle: "How to Handle Early Rising Kids (Without Rage) | Broke Dads Club"
-description: "When your kid wakes at 5 a.m., use a clock, a morning box, and clear rules so the early riser does not own the whole house."
-excerpt: 5:12 a.m. is not a personality. It is a schedule problem. Here is how to keep the house from waking with them.
+seoTitle: How to Handle Early Rising Kids (Without Rage) | Broke Dads Club
+description: >-
+  When your kid wakes at 5 a.m., use a clock, a morning box, and clear rules so
+  the early riser does not own the whole house.
+excerpt: >-
+  5:12 a.m. is not a personality. It is a schedule problem. Here is how to keep
+  the house from waking with them.
 category: Time
 readTime: 6 min
-publishedAt: "2026-10-13"
+publishedAt: '2026-10-13'
 status: scheduled
 keywords:
   - early riser toddler
@@ -20,11 +24,22 @@ related:
   - talking-to-kids-about-money
 faq:
   - question: How do I stop my kid from waking everyone at 5 a.m.?
-    answer: Give them a clock rule and a quiet morning kit. They can be awake in their room until the okay color or time. The house does not have to open with them.
+    answer: >-
+      Give them a clock rule and a quiet morning kit. They can be awake in their
+      room until the okay color or time. The house does not have to open with
+      them.
   - question: Is an early wake-up always a bedtime problem?
-    answer: Often yes. Too-late bedtimes and too-late naps create overtired early mornings. Fix the night first, then train the morning boundary.
-  - question: "What belongs in a morning box?"
-    answer: "Quiet stuff only: books, stickers, a puzzle, a soft toy, maybe a snack you put out the night before. No screens unless that is a rule you can live with."
+    answer: >-
+      Often yes. Too-late bedtimes and too-late naps create overtired early
+      mornings. Fix the night first, then train the morning boundary.
+  - question: What belongs in a morning box?
+    answer: >-
+      Quiet stuff only: books, stickers, a puzzle, a soft toy, maybe a snack you
+      put out the night before. No screens unless that is a rule you can live
+      with.
+takeaways:
+  - 'Treat early wake-ups as a schedule problem, not a personality'
+  - A clock and a morning box keep the house from waking with them
 ---
 
 Some kids greet the sun like it owes them money. You hear the door. You hear the questions. You hear your own soul leave through the HVAC.

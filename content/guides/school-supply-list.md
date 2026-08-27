@@ -1,12 +1,16 @@
 ---
 title: The school supply list that quietly wrecks August
 slug: school-supply-list
-seoTitle: "Back to School Supply List on a Budget (Dad Triage Guide) | Broke Dads Club"
-description: "Back to school supply list on a budget: must vs reuse vs skip, where to buy, and scripts so August does not wreck the grocery money."
-excerpt: Glue sticks, headphones, and a thousand “optional” extras. How to survive back-to-school without a second mortgage.
+seoTitle: Back to School Supply List on a Budget (Dad Triage Guide) | Broke Dads Club
+description: >-
+  Back to school supply list on a budget: must vs reuse vs skip, where to buy,
+  and scripts so August does not wreck the grocery money.
+excerpt: >-
+  Glue sticks, headphones, and a thousand “optional” extras. How to survive
+  back-to-school without a second mortgage.
 category: Money
 readTime: 6 min
-publishedAt: "2026-08-14"
+publishedAt: '2026-08-14'
 status: published
 keywords:
   - school supply list on a budget
@@ -22,12 +26,21 @@ shop:
   - club-pup-tee
 faq:
   - question: How do I do the school supply list on a budget?
-    answer: Triage into must, reuse, and skip. Buy the musts first from what you already own and store brand. Delay the optional extras until a teacher actually asks.
+    answer: >-
+      Triage into must, reuse, and skip. Buy the musts first from what you
+      already own and store brand. Delay the optional extras until a teacher
+      actually asks.
   - question: Is generic okay for school supplies?
-    answer: Almost always. Ask the teacher if you are unsure. Brand-name folders and the third set of markers are usually theater, not learning.
+    answer: >-
+      Almost always. Ask the teacher if you are unsure. Brand-name folders and
+      the third set of markers are usually theater, not learning.
   - question: What do I say to my kid who wants the expensive version?
     answer: >-
-      "We're buying the list, not the whole aisle." Pair it with one reuse win so it does not feel like a no for sport.
+      "We're buying the list, not the whole aisle." Pair it with one reuse win
+      so it does not feel like a no for sport.
+takeaways:
+  - Triage must / reuse / skip before you enter the store
+  - Write a hard cap so August does not eat September
 ---
 
 August has a special tax. It arrives as a cheerful PDF from the school and ends as a cart full of things you swear you already bought last year and somehow no longer own.

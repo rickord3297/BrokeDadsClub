@@ -181,14 +181,27 @@ const printifyCopyOverrides: Record<
       "The official Broke Dads Club crest. Castle you cannot actually afford, printed on soft Gildan cotton after you check out. White, sand, navy, black, and the rest of the dad palette.",
     price_cents: 1999,
   },
-  "6a8cf223f45d501226044bf7": {
-    slug: "castle-patch-tee",
-    name: "Castle Patch Tee",
+  "6a8cf686dcfffff79a00cac4": {
+    slug: "club-crest-tee",
+    name: "Club Crest Tee",
     description:
-      "Workwear patch energy. Broke Dads Club crest in cream on charcoal. Castle you cannot actually afford. Soft Gildan cotton, printed after you check out.",
+      "The new Broke Dads Club crest on soft Gildan cotton, printed after you check out. Castle you cannot actually afford. White, sand, navy, black, and the rest of the dad palette.",
     price_cents: 1999,
   },
-
+  "6a8cf69ccef0457f720f277e": {
+    slug: "club-crest-cap",
+    name: "Club Crest Cap",
+    description:
+      "Sunwashed rope cap with the official Broke Dads Club crest up front. Five-panel, curved bill, braided rope. Tip it at the pickup line.",
+    price_cents: 2500,
+  },
+  "6a8f5ce06177c5df1f08f6bc": {
+    slug: "dad-of-all-trades-tee",
+    name: "Dad of All Trades Tee",
+    description:
+      "Plumber. Driver. Carpenter. Husband. Dad of all trades. Soft Gildan cotton, printed after you check out. For the guy who still fixes it himself.",
+    price_cents: 1999,
+  },
   "6a7fd6ba2cde8b7dc1033d3f": {
     slug: "castle-pin",
     name: "Castle Pin",

@@ -1,12 +1,16 @@
 ---
 title: The $47 grocery week
 slug: the-47-dollar-grocery-week
-seoTitle: "Family Grocery Budget $50 a Week: The $47 Meal Plan | Broke Dads Club"
-description: "Family grocery budget under $50 a week for about 3-4 people: a realistic cart, leftover tacos, pasta on the tired night. Not a stunt list."
-excerpt: Feed about 3-4 people for a week without a second store trip. A practical cart and dinners, not a stunt list.
+seoTitle: 'Family Grocery Budget $50 a Week: The $47 Meal Plan | Broke Dads Club'
+description: >-
+  Family grocery budget under $50 a week for about 3-4 people: a realistic cart,
+  leftover tacos, pasta on the tired night. Not a stunt list.
+excerpt: >-
+  Feed about 3-4 people for a week without a second store trip. A practical cart
+  and dinners, not a stunt list.
 category: Money
 readTime: 7 min
-publishedAt: "2026-08-04"
+publishedAt: '2026-08-04'
 status: published
 keywords:
   - cheap grocery list for family
@@ -24,11 +28,21 @@ shop:
   - club-pup-tee
 faq:
   - question: Can you really feed a family for about $47 a week?
-    answer: "For about 3-4 people, at store-brand prices, yes as a target. Shop once, cook extra on Monday, and buy one planned snack. Milk or teenagers will push it closer to $55."
+    answer: >-
+      For about 3-4 people, at store-brand prices, yes as a target. Shop once,
+      cook extra on Monday, and buy one planned snack. Milk or teenagers will
+      push it closer to $55.
   - question: What if chicken is expensive this week?
-    answer: "Swap the thighs for extra beans and a second dozen eggs. The plan is the structure. The protein is flexible."
+    answer: >-
+      Swap the thighs for extra beans and a second dozen eggs. The plan is the
+      structure. The protein is flexible.
   - question: Do I really need 18 eggs?
-    answer: "No. A dozen is enough for this week: breakfast, one egg-sandwich night, and a little leftover. Eighteen was a stunt quantity."
+    answer: >-
+      No. A dozen is enough for this week: breakfast, one egg-sandwich night,
+      and a little leftover. Eighteen was a stunt quantity.
+takeaways:
+  - Shop once; second trips blow the week
+  - Cook extra Monday so leftover nights stay cheap
 ---
 
 You do not need a 37-step meal-prep Sunday. You need food that shows up on a Tuesday when the leftover plan has already failed.

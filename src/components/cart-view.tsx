@@ -1,15 +1,31 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { AddToCartButton } from "@/components/add-to-cart-button";
 import { cartLineKey, useCart } from "@/components/cart-provider";
 import { trackCheckoutStart } from "@/lib/analytics";
 import { formatMoney } from "@/lib/format";
+import { CASTLE_PIN_SLUG } from "@/lib/product-display";
+import type { Product } from "@/lib/products";
 
-export function CartView() {
+export function CartView({
+  upsellProduct = null,
+}: {
+  upsellProduct?: Product | null;
+}) {
   const { items, subtotal, setQuantity, removeItem } = useCart();
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [message, setMessage] = useState("");
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    setReady(true);
+  }, []);
+
+  const hasPin = items.some((item) => item.slug === CASTLE_PIN_SLUG);
+  const showUpsell = Boolean(upsellProduct && ready && items.length > 0 && !hasPin);
 
   async function checkout() {
     setStatus("loading");
@@ -43,8 +59,13 @@ export function CartView() {
   if (items.length === 0) {
     return (
       <div className="rounded-2xl border border-rule bg-paper-2 p-8">
-        <p className="text-lg">Cart&apos;s empty. The grocery list probably isn&apos;t.</p>
-        <Link href="/shop" className="mt-4 inline-block text-sm font-medium text-pine hover:text-rust">
+        <p className="text-lg">
+          Cart&apos;s empty. The grocery list probably isn&apos;t.
+        </p>
+        <Link
+          href="/shop"
+          className="mt-4 inline-block text-sm font-medium text-pine hover:text-rust"
+        >
           Browse the shop →
         </Link>
       </div>
@@ -60,7 +81,10 @@ export function CartView() {
             className="flex flex-wrap items-center justify-between gap-4 p-4"
           >
             <div>
-              <Link href={`/shop/${item.slug}`} className="font-display text-xl hover:text-rust">
+              <Link
+                href={`/shop/${item.slug}`}
+                className="font-display text-xl hover:text-rust"
+              >
                 {item.name}
               </Link>
               <p className="text-sm text-ink-soft">
@@ -94,6 +118,10 @@ export function CartView() {
         ))}
       </ul>
 
+      {showUpsell && upsellProduct ? (
+        <CartPinUpsell product={upsellProduct} />
+      ) : null}
+
       <div className="flex flex-wrap items-center justify-between gap-4">
         <p className="font-display text-2xl">Subtotal {formatMoney(subtotal)}</p>
         <button
@@ -106,6 +134,40 @@ export function CartView() {
         </button>
       </div>
       {message ? <p className="text-sm text-rust">{message}</p> : null}
+    </div>
+  );
+}
+
+function CartPinUpsell({ product }: { product: Product }) {
+  const image = product.images?.[0]?.src ?? product.image;
+
+  return (
+    <div className="rounded-2xl border border-gold/30 bg-gold/[0.08] p-4 sm:p-5">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+        {image ? (
+          <div className="h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-rule bg-paper">
+            <Image
+              src={image}
+              alt=""
+              width={128}
+              height={128}
+              className="h-full w-full object-cover"
+            />
+          </div>
+        ) : null}
+        <div className="min-w-0 flex-1">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-pine">
+            Add for {formatMoney(product.price_cents)}
+          </p>
+          <p className="mt-1 font-display text-xl">{product.name}</p>
+          <p className="mt-1 text-sm text-ink-soft">
+            Easy club crest for the jacket pocket.
+          </p>
+        </div>
+        <div className="shrink-0">
+          <AddToCartButton product={product} compact />
+        </div>
+      </div>
     </div>
   );
 }

@@ -6,7 +6,7 @@ description: "Feed kids from a gas station without the shame spiral: the 3-part 
 excerpt: Rotisserie, hot dogs, one fruit. The 3-part rule, what to grab in each aisle, and scripts so the back seat hears logistics, not failure.
 category: Money
 readTime: 6 min
-publishedAt: "2026-08-22"
+publishedAt: '2026-08-22'
 status: published
 keywords:
   - gas station dinner for kids
@@ -27,16 +27,26 @@ nextGuide: the-47-dollar-grocery-week
 faq:
   - question: Is gas station food okay for kids dinner sometimes?
     answer: >-
-      Yes, when the day ran out of runway. Aim for protein plus something that is not only chips, and treat it as a bridge meal, not the new normal.
+      Yes, when the day ran out of runway. Aim for protein plus something that is
+      not only chips, and treat it as a bridge meal, not the new normal.
   - question: What should I buy at a gas station for kids dinner?
     answer: >-
-      Best: rotisserie chicken, bananas, string cheese, water. Fine: hot dog plus fruit cup. Emergency: peanut butter crackers, banana, milk. Skip energy drinks as dinner.
+      Best: rotisserie chicken, bananas, string cheese, water. Fine: hot dog plus
+      fruit cup. Emergency: peanut butter crackers, banana, milk. Skip energy
+      drinks as dinner.
   - question: What do I say to kids about gas station dinner?
     answer: >-
-      "This is dinner tonight. Tomorrow we cook." Tone matters more than menu. Do not apologize for fifteen minutes or they learn dinner is a referendum on your worth.
+      "This is dinner tonight. Tomorrow we cook." Tone matters more than menu. Do
+      not apologize for fifteen minutes or they learn dinner is a referendum on
+      your worth.
   - question: How do I avoid gas station dinner becoming every night?
     answer: >-
-      Put one real meal on the calendar tomorrow before you leave the pump. Bridge tonight, plan tomorrow. Pair with the $47 grocery week guide for the home stretch.
+      Put one real meal on the calendar tomorrow before you leave the pump. Bridge
+      tonight, plan tomorrow. Pair with the $47 grocery week guide for the home
+      stretch.
+takeaways:
+  - Hot food plus fruit still counts as feeding them
+  - Plan the stop so it is not an apology
 ---
 
 You are not a bad father because dinner came from a pump. You are a father who kept moving when the day ran out of runway.
@@ -81,16 +91,6 @@ Do not turn it into a TED Talk about processed food. Do not buy three impulse de
 
 Eat. Wipe hands. Get home. Put one real meal on the calendar for tomorrow so tonight does not become the new normal by accident.
 
-## Keep going
-
-| Next read | Why |
-|-----------|-----|
-| [The $47 grocery week](/guides/the-47-dollar-grocery-week) | Reset tomorrow's cart |
-| [The dad tax](/guides/the-dad-tax) | When everything costs more |
-| [The lonely dad](/guides/the-lonely-dad) | If the parking lot scroll is comparison, not hunger |
-
-[All guides](/guides) · [Free printables](/resources)
-
 ## The point
 
-Broke does not mean you stop feeding people. It means you use the tools in front of you, including the fluorescent aisle next to the fuel pumps, and you keep the story straight: this was a bridge, not a personality. Sign up for the Sunday email in this article for one practical note each week so thin nights do not pile up without a plan.
+Broke does not mean you stop feeding people. It means you use the tools in front of you, including the fluorescent aisle next to the fuel pumps, and you keep the story straight: this was a bridge, not a personality.

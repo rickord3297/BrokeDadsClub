@@ -1,12 +1,16 @@
 ---
 title: Cheap weekend that isn’t just screen time
 slug: cheap-weekend-not-just-screens
-seoTitle: "Cheap Weekend Ideas Without Only Screen Time | Broke Dads Club"
-description: "When the budget says stay home and the kids say they’re bored, a weekend plan that costs almost nothing and still feels like a plan."
-excerpt: "When the budget says stay home and the kids say they're bored, a weekend plan that costs almost nothing and still feels like a plan."
+seoTitle: Cheap Weekend Ideas Without Only Screen Time | Broke Dads Club
+description: >-
+  When the budget says stay home and the kids say they’re bored, a weekend plan
+  that costs almost nothing and still feels like a plan.
+excerpt: >-
+  When the budget says stay home and the kids say they're bored, a weekend plan
+  that costs almost nothing and still feels like a plan.
 category: Time
 readTime: 6 min
-publishedAt: "2026-08-22"
+publishedAt: '2026-08-22'
 status: published
 keywords:
   - cheap weekend ideas with kids
@@ -22,12 +26,22 @@ shop:
   - club-pup-tee
 faq:
   - question: How do I plan a cheap weekend that is not only screens?
-    answer: "Pick three anchors before Saturday: one out, one make, one rest. Write them on a sticky note. Screens get a fence after the plan, not instead of it."
+    answer: >-
+      Pick three anchors before Saturday: one out, one make, one rest. Write
+      them on a sticky note. Screens get a fence after the plan, not instead of
+      it.
   - question: What are free weekend activities with kids?
-    answer: Library, park with a ball you own, hardware store as a museum, the same pond or tree as tradition, a blanket fort, restaurant night with food you already have.
+    answer: >-
+      Library, park with a ball you own, hardware store as a museum, the same
+      pond or tree as tradition, a blanket fort, restaurant night with food you
+      already have.
   - question: What do I say when kids complain we are broke this weekend?
     answer: >-
-      "We're home this weekend on purpose. Here's the plan." Bored is allowed for ten minutes. Then they pick from the sticky note.
+      "We're home this weekend on purpose. Here's the plan." Bored is allowed
+      for ten minutes. Then they pick from the sticky note.
+takeaways:
+  - 'Pick three anchors before Saturday: out, make, rest'
+  - A plan costs almost nothing and still feels like a plan
 ---
 
 "We're broke this weekend" often becomes "everyone dissolve into tablets." Screens are a tool. They are a terrible only plan. Kids can smell when the weekend had no shape.

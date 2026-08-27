@@ -8,10 +8,13 @@ export function GuideBreadcrumbs({
   title: string;
 }) {
   return (
-    <nav aria-label="Breadcrumb" className="text-sm text-ink-soft">
+    <nav
+      aria-label="Breadcrumb"
+      className="text-sm text-ink-soft"
+    >
       <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
         <li>
-          <Link href="/" className="hover:text-pine">
+          <Link href="/" className="font-medium hover:text-pine">
             Home
           </Link>
         </li>
@@ -19,7 +22,7 @@ export function GuideBreadcrumbs({
           /
         </li>
         <li>
-          <Link href="/guides" className="hover:text-pine">
+          <Link href="/guides" className="font-medium hover:text-pine">
             Guides
           </Link>
         </li>
@@ -29,7 +32,7 @@ export function GuideBreadcrumbs({
         <li>
           <Link
             href={`/guides?topic=${encodeURIComponent(category)}`}
-            className="hover:text-pine"
+            className="font-medium text-pine hover:text-rust"
           >
             {category}
           </Link>
@@ -37,7 +40,10 @@ export function GuideBreadcrumbs({
         <li aria-hidden className="text-rule">
           /
         </li>
-        <li className="max-w-[14rem] truncate text-ink sm:max-w-md" aria-current="page">
+        <li
+          className="max-w-[12rem] truncate font-medium text-ink sm:max-w-md"
+          aria-current="page"
+        >
           {title}
         </li>
       </ol>

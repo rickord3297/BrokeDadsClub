@@ -1,22 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import { ActionBox } from "@/components/guide-action-box";
 import { GuideBreadcrumbs } from "@/components/guide-breadcrumbs";
+import {
+  GuideCompanionPrintables,
+  GuidePrintableEmbed,
+} from "@/components/guide-companion-tools";
 import { GuideEmailCta } from "@/components/guide-email-cta";
+import { GuideFaqAccordion } from "@/components/guide-faq";
+import { GuideKeepGoing } from "@/components/guide-keep-going";
+import { GuideMarkdown } from "@/components/guide-markdown";
+import { GuideTableOfContents } from "@/components/guide-toc";
 import { GuideViewTracker } from "@/components/guide-view-tracker";
 import { ReadingProgress } from "@/components/reading-progress";
-import { RelatedGuides } from "@/components/related-guides";
 import { ShareGuide } from "@/components/share-guide";
+import { StickyShareGuide } from "@/components/sticky-share-guide";
 import { formatDate } from "@/lib/format";
 import {
+  extractGuideHeadings,
   getGuide,
   getGuides,
   getRelatedGuides,
   guideKeywords,
-  splitGuideContent,
+  splitGuideIntro,
+  toGuideListItem,
 } from "@/lib/guides";
+import { getResourceByGuideSlug, otherResources } from "@/lib/resources";
 import { site } from "@/lib/site";
 
 export const revalidate = 3600;
@@ -60,33 +70,6 @@ export async function generateMetadata({
   };
 }
 
-function Markdown({ content }: { content: string }) {
-  return (
-    <ReactMarkdown
-      remarkPlugins={[remarkGfm]}
-      components={{
-        a: ({ href, children }) => {
-          if (!href) return <span>{children}</span>;
-          const external = href.startsWith("http");
-          return (
-            <Link
-              href={href}
-              className="font-medium text-pine underline decoration-rule underline-offset-2 hover:text-rust"
-              {...(external
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
-            >
-              {children}
-            </Link>
-          );
-        },
-      }}
-    >
-      {content}
-    </ReactMarkdown>
-  );
-}
-
 export default async function GuidePage({
   params,
 }: PageProps<"/guides/[slug]">) {
@@ -96,9 +79,16 @@ export default async function GuidePage({
 
   const url = `${site.url}/guides/${guide.slug}`;
   const keywords = guideKeywords(guide);
-  const related = getRelatedGuides(guide);
-  const [beforeCta, afterCta] = splitGuideContent(guide.content);
+  const related = getRelatedGuides(guide, 4).map((item) =>
+    toGuideListItem(item),
+  );
   const nextGuide = guide.nextGuide ? getGuide(guide.nextGuide) : null;
+  const actionSteps = [guide.action].filter((step) => step.trim());
+  const [intro, body] = splitGuideIntro(guide.content);
+  const headings = extractGuideHeadings(guide.content);
+  const headingCounts = new Map<string, number>();
+  const companionPrintable = getResourceByGuideSlug(guide.slug);
+  const showToc = headings.length >= 2;
 
   const articleLd = {
     "@context": "https://schema.org",
@@ -177,10 +167,9 @@ export default async function GuidePage({
     <>
       <GuideViewTracker slug={guide.slug} category={guide.category} />
       <ReadingProgress slug={guide.slug} />
-      <article
-        data-reading-progress
-        className="mx-auto max-w-3xl px-4 py-14 sm:px-6"
-      >
+      <StickyShareGuide title={guide.title} url={url} slug={guide.slug} />
+
+      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
@@ -198,66 +187,110 @@ export default async function GuidePage({
 
         <GuideBreadcrumbs category={guide.category} title={guide.title} />
 
-        <p className="mt-6 text-xs font-bold uppercase tracking-[0.18em] text-rust">
-          {guide.category} · {guide.readTime}
-        </p>
-        <h1 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">
-          {guide.title}
-        </h1>
-        <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-b border-rule pb-5">
-          <p className="text-sm text-ink-soft">
-            <span className="font-medium text-ink">{site.name}</span>
-            <span className="mx-2 text-rule">·</span>
-            {formatDate(guide.publishedAt)}
-          </p>
-          <ShareGuide title={guide.title} url={url} slug={guide.slug} />
-        </div>
-
-        <div className="prose-guide mt-10">
-          <Markdown content={beforeCta} />
-        </div>
-
-        <GuideEmailCta
-          source={`guide:${guide.slug}`}
-          successHref={
-            nextGuide
-              ? `/guides/${nextGuide.slug}`
-              : "/resources/grocery-week-checklist"
+        <div
+          className={
+            showToc
+              ? "mt-8 lg:grid lg:grid-cols-[minmax(0,42rem)_13rem] lg:items-start lg:justify-between lg:gap-12"
+              : "mt-8"
           }
-          successLinkLabel={
-            nextGuide ? `Read next: ${nextGuide.title}` : "Print the grocery checklist"
-          }
-        />
+        >
+          <article data-reading-progress className="min-w-0 max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-rust">
+              {guide.category} · {guide.readTime}
+            </p>
+            <h1 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">
+              {guide.title}
+            </h1>
+            <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-b border-rule pb-5">
+              <p className="text-sm text-ink-soft">
+                <span className="font-medium text-ink">{site.name}</span>
+                <span className="mx-2 text-rule">·</span>
+                {formatDate(guide.publishedAt)}
+              </p>
+              <ShareGuide title={guide.title} url={url} slug={guide.slug} />
+            </div>
 
-        {afterCta ? (
-          <div className="prose-guide">
-            <Markdown content={afterCta} />
-          </div>
-        ) : null}
+            {showToc ? (
+              <GuideTableOfContents
+                headings={headings}
+                includeFaq={guide.faq.length > 0}
+                includeKeepGoing={related.length > 0}
+                variant="mobile"
+              />
+            ) : null}
 
-        {guide.faq.length > 0 ? (
-          <section className="mt-12 border-t border-rule pt-8">
-            <h2 className="font-display text-3xl">Quick answers</h2>
-            <dl className="mt-6 space-y-5">
-              {guide.faq.map((item) => (
-                <div key={item.question}>
-                  <dt className="font-display text-xl">{item.question}</dt>
-                  <dd className="mt-2 text-base leading-7 text-ink-soft">
-                    {item.answer}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </section>
-        ) : null}
-      </article>
-      <div className="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
-        <RelatedGuides guides={related} />
-        <p className="mt-12 border-t border-rule pt-6 text-sm">
-          <Link href="/guides" className="text-pine hover:text-rust">
-            ← All guides
-          </Link>
-        </p>
+            <div className="prose-guide mt-8">
+              <GuideMarkdown content={intro} headingCounts={headingCounts} />
+            </div>
+
+            <ActionBox steps={actionSteps} />
+
+            {body ? (
+              <div className="prose-guide mt-8">
+                <GuideMarkdown content={body} headingCounts={headingCounts} />
+              </div>
+            ) : null}
+
+            {guide.faq.length > 0 ? (
+              <GuideFaqAccordion items={guide.faq} />
+            ) : null}
+
+            {companionPrintable ? (
+              <GuidePrintableEmbed
+                resource={companionPrintable}
+                placement="bottom"
+              />
+            ) : null}
+
+            <GuideCompanionPrintables
+              printables={
+                companionPrintable
+                  ? otherResources(companionPrintable.slug)
+                  : []
+              }
+            />
+
+            <GuideKeepGoing guides={related} />
+
+            <GuideEmailCta
+              source={`guide:${guide.slug}`}
+              successHref={
+                nextGuide
+                  ? `/guides/${nextGuide.slug}`
+                  : "/resources/grocery-week-checklist"
+              }
+              successLinkLabel={
+                nextGuide
+                  ? `Read next: ${nextGuide.title}`
+                  : "Print the grocery checklist"
+              }
+            />
+
+            <p className="mt-10 border-t border-rule pt-6 text-sm">
+              <Link href="/guides" className="text-pine hover:text-rust">
+                ← All guides
+              </Link>
+              <span className="mx-2 text-rule">·</span>
+              <Link
+                href={`/guides?topic=${encodeURIComponent(guide.category)}`}
+                className="text-pine hover:text-rust"
+              >
+                More in {guide.category}
+              </Link>
+            </p>
+          </article>
+
+          {showToc ? (
+            <aside className="hidden min-w-0 lg:block">
+              <GuideTableOfContents
+                headings={headings}
+                includeFaq={guide.faq.length > 0}
+                includeKeepGoing={related.length > 0}
+                variant="desktop"
+              />
+            </aside>
+          ) : null}
+        </div>
       </div>
     </>
   );

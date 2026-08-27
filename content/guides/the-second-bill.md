@@ -1,12 +1,16 @@
 ---
 title: The second bill after school starts
 slug: the-second-bill
-seoTitle: "School Fees After Supplies: The Hidden Second Bill | Broke Dads Club"
-description: "Supplies were only the first invoice. How to see sports fees, lab fees, fundraisers, and field trips coming, and pay them without a scramble."
-excerpt: You survived the supply list. Then sports, lab fees, and a fundraiser hit the same month. That is the second bill. Here is how to see it early.
+seoTitle: 'School Fees After Supplies: The Hidden Second Bill | Broke Dads Club'
+description: >-
+  Supplies were only the first invoice. How to see sports fees, lab fees,
+  fundraisers, and field trips coming, and pay them without a scramble.
+excerpt: >-
+  You survived the supply list. Then sports, lab fees, and a fundraiser hit the
+  same month. That is the second bill. Here is how to see it early.
 category: Money
 readTime: 7 min
-publishedAt: "2026-08-16"
+publishedAt: '2026-08-16'
 status: published
 keywords:
   - school fees after school starts
@@ -23,12 +27,21 @@ shop:
 faq:
   - question: What is the second bill after school starts?
     answer: >-
-      The costs that show up after supplies: activity fees, sports, lab or tech fees, field trips, and fundraisers. They are easy to miss because they are not on the August PDF.
+      The costs that show up after supplies: activity fees, sports, lab or tech
+      fees, field trips, and fundraisers. They are easy to miss because they are
+      not on the August PDF.
   - question: How do I budget for school fees I do not know yet?
-    answer: Call or email the school and the sport for last year's numbers. Park a small sinking fund labeled school chaos. Say no to the first optional ask until the musts are paid.
+    answer: >-
+      Call or email the school and the sport for last year's numbers. Park a
+      small sinking fund labeled school chaos. Say no to the first optional ask
+      until the musts are paid.
   - question: How do I say no to a fundraiser without feeling like a bad parent?
     answer: >-
-      "We're covering fees first this month." One item you can actually give is plenty. Presence at the game still counts.
+      "We're covering fees first this month." One item you can actually give is
+      plenty. Presence at the game still counts.
+takeaways:
+  - 'Sports, fees, and fundraisers hit after the supply list'
+  - Spot the second bill early so it does not ambush you
 ---
 
 You did the [school supply list](/guides/school-supply-list). Glue sticks, a plain folder, a number on your phone before you walked into the store. You thought August was handled.

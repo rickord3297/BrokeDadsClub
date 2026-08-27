@@ -2,31 +2,23 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { site } from "@/lib/site";
+import type { Guide, GuideFaq, GuideListItem, GuideStatus } from "@/lib/guide-model";
 
-export type GuideStatus = "draft" | "scheduled" | "published";
-
-export type GuideFaq = {
-  question: string;
-  answer: string;
-};
-
-export type Guide = {
-  slug: string;
-  title: string;
-  seoTitle: string;
-  excerpt: string;
-  description: string;
-  category: string;
-  readTime: string;
-  publishedAt: string;
-  status: GuideStatus;
-  keywords: string[];
-  faq: GuideFaq[];
-  related: string[];
-  shop: string[];
-  nextGuide?: string;
-  content: string;
-};
+export type {
+  Guide,
+  GuideFaq,
+  GuideHeading,
+  GuideListItem,
+  GuideStatus,
+} from "@/lib/guide-model";
+export {
+  extractGuideHeadings,
+  parseReadMinutes,
+  slugifyHeading,
+  splitGuideIntro,
+  toGuideListItem,
+} from "@/lib/guide-model";
+export { filterGuidesList, matchesGuideQuery } from "@/lib/guide-query";
 
 const guidesDir = path.join(process.cwd(), "content/guides");
 
@@ -115,12 +107,22 @@ function readAllGuides(): Guide[] {
                 ? data.description
                 : excerpt.slice(0, 155),
             category: data.category as string,
-            readTime: data.readTime as string,
+            readTime:
+              typeof data.readTime === "string" && data.readTime.trim()
+                ? data.readTime
+                : "5 min",
             publishedAt: data.publishedAt as string,
             status: parseStatus(data.status),
             keywords: parseKeywords(data.keywords),
+            takeaways: parseStringList(data.takeaways).slice(0, 2),
+            action:
+              typeof data.action === "string" && data.action.trim()
+                ? data.action.trim()
+                : parseStringList(data.takeaways)[0] ?? "",
             faq: parseFaq(data.faq),
-            related: parseStringList(data.related),
+            related: parseStringList(data.related).filter(
+              (item) => item !== (data.slug as string),
+            ),
             shop: parseStringList(data.shop),
             nextGuide:
               typeof data.nextGuide === "string" && data.nextGuide.length > 0
@@ -160,7 +162,7 @@ export const START_HERE_SLUGS = [
   "the-47-dollar-grocery-week",
   "school-supply-list",
   "talking-to-kids-about-money",
-];
+] as const;
 
 const CATEGORY_ORDER = ["Money", "Time", "Kids", "Work", "Gear"];
 
@@ -174,17 +176,6 @@ export function getGuideCategories(guides: Guide[] = getGuides()): string[] {
     ...CATEGORY_ORDER.filter((category) => found.has(category)),
     ...[...found].filter((category) => !CATEGORY_ORDER.includes(category)).sort(),
   ];
-}
-
-export function matchesGuideQuery(guide: Guide, query: string): boolean {
-  const hay = query.trim().toLowerCase();
-  if (!hay) return true;
-  return (
-    guide.title.toLowerCase().includes(hay) ||
-    guide.excerpt.toLowerCase().includes(hay) ||
-    guide.category.toLowerCase().includes(hay) ||
-    guide.keywords.some((keyword) => keyword.toLowerCase().includes(hay))
-  );
 }
 
 export function guideKeywords(guide: Guide): string[] {
@@ -219,17 +210,4 @@ export function getRelatedGuides(guide: Guide, limit = 3): Guide[] {
       !preferred.some((picked) => picked.slug === item.slug),
   );
   return [...preferred, ...sameCategory, ...all].slice(0, limit);
-}
-
-/** Split markdown after the first section so we can inject a mid-article CTA. */
-export function splitGuideContent(content: string): [string, string] {
-  const matches = [...content.matchAll(/^## /gm)];
-  if (matches.length >= 2 && matches[1].index != null) {
-    const idx = matches[1].index;
-    return [content.slice(0, idx).trimEnd(), content.slice(idx).trimStart()];
-  }
-  const mid = Math.floor(content.length / 2);
-  const breakAt = content.indexOf("\n\n", mid);
-  if (breakAt === -1) return [content, ""];
-  return [content.slice(0, breakAt).trimEnd(), content.slice(breakAt).trimStart()];
 }

@@ -1,12 +1,16 @@
 ---
-title: "The dad tax: why everything costs more"
+title: 'The dad tax: why everything costs more'
 slug: the-dad-tax
-seoTitle: "Hidden Costs of Raising Kids: The Dad Tax Explained | Broke Dads Club"
-description: "Hidden costs of raising kids: food, time, convenience, and social pressure. How to see the dad tax clearly without becoming a miser."
-excerpt: Kids are not a lifestyle brand. They are a line item that multiplies. Here is how to see it clearly without turning into a miser.
+seoTitle: 'Hidden Costs of Raising Kids: The Dad Tax Explained | Broke Dads Club'
+description: >-
+  Hidden costs of raising kids: food, time, convenience, and social pressure.
+  How to see the dad tax clearly without becoming a miser.
+excerpt: >-
+  Kids are not a lifestyle brand. They are a line item that multiplies. Here is
+  how to see it clearly without turning into a miser.
 category: Money
 readTime: 6 min
-publishedAt: "2026-07-21"
+publishedAt: '2026-07-21'
 status: published
 keywords:
   - cost of raising kids
@@ -21,10 +25,18 @@ related:
 shop:
   - club-pup-tee
 faq:
-  - question: "What is the dad tax?"
-    answer: "It's the way every normal purchase grows a kid-shaped shadow: more food, more time, more convenience spending, and social pressure you didn't budget for."
-  - question: "How do you fight it without being cheap?"
-    answer: "Use a yes-list, a small sinking fund for kid chaos, and a calm script: That's not in our plan this month."
+  - question: What is the dad tax?
+    answer: >-
+      It's the way every normal purchase grows a kid-shaped shadow: more food,
+      more time, more convenience spending, and social pressure you didn't
+      budget for.
+  - question: How do you fight it without being cheap?
+    answer: >-
+      Use a yes-list, a small sinking fund for kid chaos, and a calm script:
+      That's not in our plan this month.
+takeaways:
+  - Kids multiply costs in ways that do not show on one receipt
+  - 'Name the tax so you can plan for it, not just feel it'
 ---
 
 The dad tax is not one bill. It is the way every normal purchase grows a kid-shaped shadow: the bigger car, the extra chicken, the birthday party that "isn't a big deal" until it is $86 of paper plates and a bounce house you did not want.

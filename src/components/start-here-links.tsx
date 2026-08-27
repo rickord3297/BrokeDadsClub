@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { START_HERE_SLUGS, getGuide } from "@/lib/guides";
 
-export function RecapTopics({
+/** Compact links to the curated start-here guides. */
+export function StartHereLinks({
   className = "text-sm leading-6 text-ink-soft",
 }: {
   className?: string;
@@ -13,7 +14,7 @@ export function RecapTopics({
 
   return (
     <p className={className}>
-      Worth using this week:{" "}
+      Start here:{" "}
       {picks.map((guide, index) => (
         <span key={guide.slug}>
           {index > 0 ? ", " : null}

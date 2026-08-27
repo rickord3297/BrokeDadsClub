@@ -1,12 +1,16 @@
 ---
 title: Cheap date night that still feels like a date
 slug: cheap-date-night
-seoTitle: "Affordable Date Night Ideas at Home (With Kids) | Broke Dads Club"
-description: "Skip the sitter and the second mortgage. A 90-minute at-home date night that still feels like you picked each other."
-excerpt: You do not need a sitter and a second mortgage. You need a closed kitchen, a plan, and 90 minutes that are not about logistics.
+seoTitle: Affordable Date Night Ideas at Home (With Kids) | Broke Dads Club
+description: >-
+  Skip the sitter and the second mortgage. A 90-minute at-home date night that
+  still feels like you picked each other.
+excerpt: >-
+  You do not need a sitter and a second mortgage. You need a closed kitchen, a
+  plan, and 90 minutes that are not about logistics.
 category: Time
 readTime: 5 min
-publishedAt: "2026-07-28"
+publishedAt: '2026-07-28'
 status: published
 keywords:
   - cheap date night ideas with kids
@@ -17,15 +21,21 @@ keywords:
 related:
   - explaining-we-cant-go
   - talking-to-kids-about-money
-  - cheap-date-night
 shop:
   - club-hoodie
   - broke-mug
 faq:
   - question: Can you have a real date night without a babysitter?
-    answer: Yes. Close the kitchen, put phones away, and give the kids a simple plan so the adults get 90 focused minutes.
+    answer: >-
+      Yes. Close the kitchen, put phones away, and give the kids a simple plan
+      so the adults get 90 focused minutes.
   - question: What if we only have $20?
-    answer: Split a bakery item, walk, or sit in the car at sunset. The venue matters less than uninterrupted attention.
+    answer: >-
+      Split a bakery item, walk, or sit in the car at sunset. The venue matters
+      less than uninterrupted attention.
+takeaways:
+  - 'Closed kitchen, a plan, and 90 minutes off logistics'
+  - You do not need a sitter and a second mortgage
 ---
 
 Date night dies in the logistics. The second you start pricing a sitter, parking, and a restaurant that takes adults seriously, the couch wins.

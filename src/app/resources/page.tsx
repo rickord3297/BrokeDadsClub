@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Free Printable Tools for Dads",
   description:
-    "Free printable checklists and worksheets for stretched dads: grocery week, school supply triage, and birthday party budget. Print or save as PDF.",
+    "Free fillable and printable checklists for stretched dads: grocery week, school supply triage, and birthday party budget. Type on your phone or save as PDF.",
   alternates: {
     canonical: `${site.url}/resources`,
   },
@@ -33,14 +33,16 @@ export default function ResourcesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <p className="text-xs uppercase tracking-[0.18em] text-rust">Printables</p>
-      <h1 className="mt-3 font-display text-5xl">Printable tools you can use this week</h1>
+      <h1 className="mt-3 font-display text-5xl">
+        Printable tools you can use this week
+      </h1>
       <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
-        One-page sheets for the fridge, the backpack, or the party. No email
-        wall. Print them, or save as a PDF from your browser. The guides explain
-        the thinking. These are the working copies.
+        One-page sheets for the fridge, the backpack, or the party. Fill the
+        numbers on your phone, print them, or save as a PDF. No email wall. The
+        guides explain the thinking. These are the working copies.
       </p>
 
-      <div className="mt-10 grid gap-4 md:grid-cols-3">
+      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {resources.map((resource) => (
           <ResourceCard key={resource.slug} resource={resource} />
         ))}
