@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { GuidesExplorer } from "@/components/guides-explorer";
-import type { HomeGuide } from "@/components/home-guides-section";
+import type { GuideListItem } from "@/lib/guide-list";
+import { takeawaysFromFaq } from "@/lib/guide-display";
 import { getGuideCategories, getGuides } from "@/lib/guides";
+import {
+  getResourceForGuide,
+  SHOP_CALLOUT_LABELS,
+} from "@/lib/resources";
 
 export const metadata: Metadata = {
   title: "Guides",
@@ -14,14 +19,24 @@ export const metadata: Metadata = {
 export default async function GuidesPage() {
   const guides = getGuides();
   const categories = getGuideCategories(guides);
-  const homeGuides: HomeGuide[] = guides.map((guide) => ({
-    slug: guide.slug,
-    title: guide.title,
-    excerpt: guide.excerpt,
-    category: guide.category,
-    readTime: guide.readTime,
-    publishedAt: guide.publishedAt,
-  }));
+
+  const guideItems: GuideListItem[] = guides.map((guide) => {
+    const resource = getResourceForGuide(guide.slug);
+    const shopSlug = guide.shop[0];
+    return {
+      slug: guide.slug,
+      title: guide.title,
+      excerpt: guide.excerpt,
+      category: guide.category,
+      readTime: guide.readTime,
+      publishedAt: guide.publishedAt,
+      takeaways: takeawaysFromFaq(guide.faq),
+      resourceSlug: resource?.slug,
+      resourceTitle: resource?.title,
+      shopSlug,
+      shopLabel: shopSlug ? SHOP_CALLOUT_LABELS[shopSlug] : undefined,
+    };
+  });
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
@@ -37,7 +52,7 @@ export default async function GuidesPage() {
           <div className="mt-10 h-40 animate-pulse rounded-2xl bg-paper-2" />
         }
       >
-        <GuidesExplorer guides={homeGuides} categories={categories} />
+        <GuidesExplorer guides={guideItems} categories={categories} />
       </Suspense>
     </div>
   );

@@ -89,3 +89,14 @@ export function requireResource(slug: string) {
 export function otherResources(slug: string) {
   return resources.filter((resource) => resource.slug !== slug);
 }
+
+export function getResourceForGuide(guideSlug: string) {
+  return resources.find((resource) => resource.guideSlug === guideSlug) ?? null;
+}
+
+/** Short shop labels for inline guide card callouts. */
+export const SHOP_CALLOUT_LABELS: Record<string, string> = {
+  "club-pup-tee": "Club pup tee",
+  "broke-mug": "Broke mug",
+  "sticker-pack": "Sticker pack",
+};
