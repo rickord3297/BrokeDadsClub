@@ -7,7 +7,6 @@ import { GuideCard } from "@/components/guide-card";
 import { GuideSearch } from "@/components/guide-search";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { trackTopicFilter } from "@/lib/analytics";
-import { GUIDE_BUNDLES } from "@/lib/guide-catalog";
 import { filterGuidesList } from "@/lib/guide-query";
 import type { GuideListItem } from "@/lib/guide-model";
 import { site } from "@/lib/site";
@@ -40,13 +39,8 @@ export function GuidesExplorer({
     [guides, topic, query],
   );
 
-  const guideBySlug = useMemo(() => {
-    const map = new Map(guides.map((guide) => [guide.slug, guide]));
-    return map;
-  }, [guides]);
-
-  const showBundles = !hasFilters;
-  const hero = showBundles ? filtered[0] : null;
+  const showHero = !hasFilters;
+  const hero = showHero ? filtered[0] : null;
   const list = hero
     ? filtered.filter((guide) => guide.slug !== hero.slug)
     : filtered;
@@ -137,59 +131,6 @@ export function GuidesExplorer({
           <GuideSearch />
         </div>
       </div>
-
-      {showBundles ? (
-        <section className="mt-10" aria-label="Curated guide paths">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-rust">
-                Start here
-              </p>
-              <h2 className="mt-1 font-display text-2xl sm:text-[1.75rem]">
-                Curated paths
-              </h2>
-            </div>
-          </div>
-          <div className="mt-5 grid gap-4 md:grid-cols-2">
-            {GUIDE_BUNDLES.map((bundle) => {
-              const picks = bundle.slugs
-                .map((slug) => guideBySlug.get(slug))
-                .filter((guide): guide is GuideListItem => guide != null);
-              if (!picks.length) return null;
-              return (
-                <div
-                  key={bundle.id}
-                  className="rounded-2xl border border-rule bg-paper-2/50 p-5"
-                >
-                  <h3 className="font-display text-xl leading-snug">
-                    {bundle.title}
-                  </h3>
-                  <p className="mt-1 text-sm leading-6 text-ink-soft">
-                    {bundle.description}
-                  </p>
-                  <ol className="mt-4 space-y-2">
-                    {picks.map((guide, index) => (
-                      <li key={guide.slug}>
-                        <Link
-                          href={`/guides/${guide.slug}`}
-                          className="group flex items-start gap-3 text-sm leading-6"
-                        >
-                          <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-pine/10 text-xs font-bold text-pine">
-                            {index + 1}
-                          </span>
-                          <span className="font-medium text-ink group-hover:text-rust">
-                            {guide.title}
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      ) : null}
 
       {filtered.length === 0 ? (
         <p className="mt-10 text-base text-ink-soft">

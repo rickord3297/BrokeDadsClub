@@ -44,36 +44,6 @@ export function categoryAccent(category: string): CategoryAccent {
   );
 }
 
-export type GuideBundle = {
-  id: string;
-  title: string;
-  description: string;
-  slugs: string[];
-};
-
-export const GUIDE_BUNDLES: GuideBundle[] = [
-  {
-    id: "tight-months",
-    title: "Top 3 for tight months",
-    description: "When the wallet is loud and the calendar is louder.",
-    slugs: [
-      "the-dad-tax",
-      "the-47-dollar-grocery-week",
-      "car-vs-daycare",
-    ],
-  },
-  {
-    id: "back-to-school",
-    title: "Back-to-school survival",
-    description: "Supply lists, the second bill, and money talks that stay calm.",
-    slugs: [
-      "school-supply-list",
-      "the-second-bill",
-      "talking-to-kids-about-money",
-    ],
-  },
-];
-
 export type GuideResourceTieIn = {
   href: string;
   label: string;
