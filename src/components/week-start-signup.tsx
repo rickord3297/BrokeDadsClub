@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { NewsletterForm } from "@/components/newsletter-form";
-import { RecapTopics } from "@/components/recap-topics";
+import { StartHereLinks } from "@/components/start-here-links";
 import { site } from "@/lib/site";
 
 export function WeekStartSignup({
@@ -29,7 +29,7 @@ export function WeekStartSignup({
       <p className="mt-2 text-sm leading-6 text-ink-soft">{site.weekStart.body}</p>
       {compact ? null : (
         <div className="mt-3">
-          <RecapTopics />
+          <StartHereLinks />
         </div>
       )}
       <div className="mt-4">
@@ -39,7 +39,7 @@ export function WeekStartSignup({
           submitLabel={site.weekStart.button}
           successMessage={site.weekStart.success}
           successHref="/guides/the-second-bill"
-          successLinkLabel="Read this week’s guide"
+          successLinkLabel="Read this week's guide"
         />
       </div>
       <p className="mt-3 text-sm text-ink-soft">

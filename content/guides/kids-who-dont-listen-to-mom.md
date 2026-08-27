@@ -1,12 +1,16 @@
 ---
 title: Kids who don't listen to Mom
 slug: kids-who-dont-listen-to-mom
-seoTitle: "When Kids Don't Listen to Mom (Dad Backup Plan) | Broke Dads Club"
-description: "When kids ignore Mom and only listen to Dad, fix the split. Same rules, same follow-through, no good-cop theater that makes her job harder."
-excerpt: They hear her. They are testing which adult is optional. Here is how to stop being the fun override button.
+seoTitle: When Kids Don't Listen to Mom (Dad Backup Plan) | Broke Dads Club
+description: >-
+  When kids ignore Mom and only listen to Dad, fix the split. Same rules, same
+  follow-through, no good-cop theater that makes her job harder.
+excerpt: >-
+  They hear her. They are testing which adult is optional. Here is how to stop
+  being the fun override button.
 category: Kids
 readTime: 7 min
-publishedAt: "2026-10-20"
+publishedAt: '2026-10-20'
 status: scheduled
 keywords:
   - kids don't listen to mom
@@ -20,11 +24,20 @@ related:
   - the-dad-tax
 faq:
   - question: Why do kids listen to Dad but not Mom?
-    answer: Often because Dad becomes the amplifier or the escape hatch. Kids follow the adult who is consistent, not the adult who talks more.
+    answer: >-
+      Often because Dad becomes the amplifier or the escape hatch. Kids follow
+      the adult who is consistent, not the adult who talks more.
   - question: How can Dad help without taking over?
-    answer: Back her rule in public, same consequence, few words. Do not re-judge the case on appeal unless safety is involved.
+    answer: >-
+      Back her rule in public, same consequence, few words. Do not re-judge the
+      case on appeal unless safety is involved.
   - question: What if Mom and Dad disagree on the rule?
-    answer: Disagree in private. In front of the kids, one plan. Two policies is how kids learn Mom is optional.
+    answer: >-
+      Disagree in private. In front of the kids, one plan. Two policies is how
+      kids learn Mom is optional.
+takeaways:
+  - Kids test which adult is optional; make both count
+  - 'Same rules and follow-through, no good-cop override'
 ---
 
 If the kids treat Mom's voice like background TV and your voice like a fire alarm, that is not a compliment. That is a split in the house.

@@ -1,11 +1,16 @@
 ---
 title: When the other dad’s vacation photos hit
 slug: when-the-other-dads-vacation-photos-hit
-excerpt: Their kids are on a beach. Yours are in the living room. Here is how to feel it without letting it run the house.
+excerpt: >-
+  Their kids are on a beach. Yours are in the living room. Here is how to feel
+  it without letting it run the house.
 category: Time
 readTime: 5 min
-publishedAt: "2026-09-08"
+publishedAt: '2026-09-08'
 status: scheduled
+takeaways:
+  - Their highlight reel is not your Tuesday
+  - 'Feel it, then pick your version of a trip this month'
 ---
 
 The photos arrive on a Tuesday. Blue water. Matching shirts. A caption about "making memories." Your kid asks when you are going to *that* place. You feel the familiar drop in your stomach, the one that says you are behind on a race you never agreed to run.

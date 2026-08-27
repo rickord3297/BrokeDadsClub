@@ -1,12 +1,16 @@
 ---
 title: Fixing the car vs paying for daycare
 slug: car-vs-daycare
-seoTitle: "Car Repair vs Daycare: How to Choose When Both Are Due | Broke Dads Club"
-description: "Two bills, one wallet. A calm triage for when car repair and daycare hit the same paycheck, minimum viable fixes, who to call, and what to defer."
-excerpt: Two bills, one wallet. How to choose the lesser disaster without pretending either choice is free.
+seoTitle: 'Car Repair vs Daycare: How to Choose When Both Are Due | Broke Dads Club'
+description: >-
+  Two bills, one wallet. A calm triage for when car repair and daycare hit the
+  same paycheck, minimum viable fixes, who to call, and what to defer.
+excerpt: >-
+  Two bills, one wallet. How to choose the lesser disaster without pretending
+  either choice is free.
 category: Money
 readTime: 7 min
-publishedAt: "2026-08-12"
+publishedAt: '2026-08-12'
 status: published
 keywords:
   - car repair vs daycare cost
@@ -23,11 +27,22 @@ shop:
   - club-pup-tee
 faq:
   - question: Should I fix the car or pay daycare first?
-    answer: Ask which bill stops income first. If the car gets you to the paycheck, fix the minimum viable car problem this week, then call daycare and negotiate a partial plus a date.
+    answer: >-
+      Ask which bill stops income first. If the car gets you to the paycheck,
+      fix the minimum viable car problem this week, then call daycare and
+      negotiate a partial plus a date.
   - question: What if I cannot pay either in full?
-    answer: Call both humans. Directors and shops sometimes accept staged payments. Silence helps no one. Pick the least toxic short-term debt only if you have a payoff plan by Friday.
+    answer: >-
+      Call both humans. Directors and shops sometimes accept staged payments.
+      Silence helps no one. Pick the least toxic short-term debt only if you
+      have a payoff plan by Friday.
   - question: How do I stop this from happening every month?
-    answer: Build a small sinking fund for kid and car chaos, and name the dad tax multipliers early, see the dad tax guide for the longer play.
+    answer: >-
+      Build a small sinking fund for kid and car chaos, and name the dad tax
+      multipliers early, see the dad tax guide for the longer play.
+takeaways:
+  - 'Two bills, one wallet; pick the lesser disaster'
+  - Neither choice is free; run the real numbers
 ---
 
 Some months the universe schedules two emergencies for the same paycheck. The car makes a noise. Daycare is due. Both feel non-negotiable. Only one can be paid in full today.

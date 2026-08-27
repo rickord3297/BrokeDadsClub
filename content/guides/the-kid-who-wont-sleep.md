@@ -1,12 +1,16 @@
 ---
 title: The kid who won't sleep
 slug: the-kid-who-wont-sleep
-seoTitle: "What to Do When Your Kid Won't Sleep | Broke Dads Club"
-description: "A practical bedtime plan for the kid who won't sleep: fewer negotiations, a boring routine, and scripts that end the night without a war."
-excerpt: Another water cup. Another monster check. Another 40 minutes. Here is how to end the night without becoming the entertainment.
+seoTitle: What to Do When Your Kid Won't Sleep | Broke Dads Club
+description: >-
+  A practical bedtime plan for the kid who won't sleep: fewer negotiations, a
+  boring routine, and scripts that end the night without a war.
+excerpt: >-
+  Another water cup. Another monster check. Another 40 minutes. Here is how to
+  end the night without becoming the entertainment.
 category: Kids
 readTime: 7 min
-publishedAt: "2026-10-06"
+publishedAt: '2026-10-06'
 status: scheduled
 keywords:
   - kid won't sleep
@@ -20,11 +24,22 @@ related:
   - explaining-we-cant-go
 faq:
   - question: What do I do when my kid won't sleep?
-    answer: Make bedtime boring and predictable. Same order every night, one last check, then leave. Extra water and monster tours are negotiations, not needs.
+    answer: >-
+      Make bedtime boring and predictable. Same order every night, one last
+      check, then leave. Extra water and monster tours are negotiations, not
+      needs.
   - question: Should I stay until they fall asleep?
-    answer: Only if that is the plan you can keep forever. If you need your evenings back, coach them through falling asleep in their own bed with short, calm check-ins.
+    answer: >-
+      Only if that is the plan you can keep forever. If you need your evenings
+      back, coach them through falling asleep in their own bed with short, calm
+      check-ins.
   - question: What if they keep coming out?
-    answer: Walk them back with almost no words. Same phrase every time. Do not restart the whole routine or you train a longer night.
+    answer: >-
+      Walk them back with almost no words. Same phrase every time. Do not
+      restart the whole routine or you train a longer night.
+takeaways:
+  - Fewer negotiations beat another water-cup debate
+  - A boring routine ends the night without a war
 ---
 
 Bedtime is not a personality test. It is a system that either works or gets rewritten by a four-year-old with excellent stamina.

@@ -1,11 +1,16 @@
 ---
 title: What to say when someone asks what you do for fun
 slug: what-do-you-do-for-fun
-excerpt: Adult small talk hits different when your hobbies are nap, dishes, and second shift. Here is an honest answer that doesn’t shame you.
+excerpt: >-
+  Adult small talk hits different when your hobbies are nap, dishes, and second
+  shift. Here is an honest answer that doesn’t shame you.
 category: Time
 readTime: 5 min
-publishedAt: "2026-09-29"
+publishedAt: '2026-09-29'
 status: scheduled
+takeaways:
+  - 'Fun got reorganized, not cancelled'
+  - A repeatable twenty minutes beats a fake jet-ski lifestyle
 ---
 
 "So what do you do for fun?" is a normal question. It can feel like a trap when your calendar is school, work, leftover chicken, and falling asleep sitting up.

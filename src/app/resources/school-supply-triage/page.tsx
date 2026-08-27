@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import {
-  CheckRow,
-  ResourceLayout,
-  WriteLine,
-} from "@/components/resource-layout";
+import { FillCheck, FillLine } from "@/components/fillable-fields";
+import { ResourceLayout } from "@/components/resource-layout";
 import { requireResource } from "@/lib/resources";
 import { site } from "@/lib/site";
 
@@ -19,13 +16,13 @@ export const metadata: Metadata = {
 };
 
 const alreadyOwn = [
-  "Backpack (still zips)",
-  "Scissors",
-  "Leftover binders / folders",
-  "Headphones that still work",
-  "Pencil box or pouch",
-  "Water bottle",
-  "Ruler / leftover crayons",
+  { name: "own-backpack", label: "Backpack (still zips)" },
+  { name: "own-scissors", label: "Scissors" },
+  { name: "own-binders", label: "Leftover binders / folders" },
+  { name: "own-headphones", label: "Headphones that still work" },
+  { name: "own-pencilbox", label: "Pencil box or pouch" },
+  { name: "own-bottle", label: "Water bottle" },
+  { name: "own-ruler", label: "Ruler / leftover crayons" },
 ];
 
 const blankRows = Array.from({ length: 8 }, (_, index) => index);
@@ -42,20 +39,27 @@ export default function SchoolSupplyTriagePage() {
           </p>
           <ul className="mt-4 space-y-2">
             {alreadyOwn.map((item) => (
-              <CheckRow key={item}>{item}</CheckRow>
+              <FillCheck key={item.name} name={item.name}>
+                {item.label}
+              </FillCheck>
             ))}
-            <CheckRow>Other: ____________________________</CheckRow>
           </ul>
+          <FillLine name="own-other" label="Other" placeholder="Anything else" />
         </div>
 
         <div>
           <h2 className="font-display text-3xl">Before the store</h2>
           <div className="mt-2 grid gap-x-6 sm:grid-cols-2">
-            <WriteLine label="Store" />
-            <WriteLine label="Budget cap $" wide />
+            <FillLine name="store" label="Store" placeholder="Target / Walmart" />
+            <FillLine
+              name="budget-cap"
+              label="Budget cap $"
+              placeholder="40"
+              wide
+            />
           </div>
-          <WriteLine label="Kid / grade" />
-          <WriteLine label="Teacher" />
+          <FillLine name="kid-grade" label="Kid / grade" />
+          <FillLine name="teacher" label="Teacher" />
         </div>
 
         <div>
@@ -66,11 +70,25 @@ export default function SchoolSupplyTriagePage() {
             donations dressed as requirements, the third set of markers.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            {[
-              { title: "Must", hint: "Kid cannot function without it" },
-              { title: "Reuse", hint: "Already own, still works" },
-              { title: "Skip / delay", hint: "Until a teacher actually asks" },
-            ].map((column) => (
+            {(
+              [
+                {
+                  title: "Must",
+                  hint: "Kid cannot function without it",
+                  key: "must",
+                },
+                {
+                  title: "Reuse",
+                  hint: "Already own, still works",
+                  key: "reuse",
+                },
+                {
+                  title: "Skip / delay",
+                  hint: "Until a teacher actually asks",
+                  key: "skip",
+                },
+              ] as const
+            ).map((column) => (
               <div
                 key={column.title}
                 className="break-inside-avoid rounded-xl border-2 border-ink/25 p-4 print:border-black"
@@ -81,7 +99,11 @@ export default function SchoolSupplyTriagePage() {
                 </p>
                 <div className="mt-3">
                   {blankRows.map((row) => (
-                    <WriteLine key={row} />
+                    <FillLine
+                      key={row}
+                      name={`${column.key}-${row}`}
+                      placeholder="Item"
+                    />
                   ))}
                 </div>
               </div>

@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import {
-  CheckRow,
-  ResourceLayout,
-  WriteLine,
-} from "@/components/resource-layout";
+import { FillCheck, FillLine } from "@/components/fillable-fields";
+import { ResourceLayout } from "@/components/resource-layout";
 import { requireResource } from "@/lib/resources";
 import { site } from "@/lib/site";
 
@@ -22,33 +19,44 @@ const cart = [
   {
     group: "Protein",
     target: "about $12",
-    items: ["Dozen eggs", "2-3 lb chicken thighs (family pack)"],
+    paidName: "paid-protein",
+    items: [
+      { name: "check-eggs", label: "Dozen eggs" },
+      { name: "check-thighs", label: "2-3 lb chicken thighs (family pack)" },
+    ],
   },
   {
     group: "Starch (pick what is cheaper)",
     target: "about $8",
-    items: ["2 lb rice or a bag of potatoes", "1 loaf bread or 1 pack tortillas", "1 lb pasta"],
+    paidName: "paid-starch",
+    items: [
+      { name: "check-rice", label: "2 lb rice or a bag of potatoes" },
+      { name: "check-bread", label: "1 loaf bread or 1 pack tortillas" },
+      { name: "check-pasta", label: "1 lb pasta" },
+    ],
   },
   {
     group: "Produce",
     target: "about $10",
+    paidName: "paid-produce",
     items: [
-      "2 onions",
-      "Frozen mixed vegetables (2 bags)",
-      "1 bunch bananas",
-      "1 other fruit the kids will actually eat",
+      { name: "check-onions", label: "2 onions" },
+      { name: "check-frozen", label: "Frozen mixed vegetables (2 bags)" },
+      { name: "check-bananas", label: "1 bunch bananas" },
+      { name: "check-fruit", label: "1 other fruit the kids will actually eat" },
     ],
   },
   {
     group: "Dairy and pantry",
     target: "about $12",
+    paidName: "paid-pantry",
     items: [
-      "8 oz cheddar",
-      "2 cans beans",
-      "Peanut butter",
-      "1 jar salsa or pasta sauce",
-      "Oats",
-      "1 planned snack (store-brand cookies or popcorn)",
+      { name: "check-cheddar", label: "8 oz cheddar" },
+      { name: "check-beans", label: "2 cans beans" },
+      { name: "check-pb", label: "Peanut butter" },
+      { name: "check-sauce", label: "1 jar salsa or pasta sauce" },
+      { name: "check-oats", label: "Oats" },
+      { name: "check-snack", label: "1 planned snack (store-brand cookies or popcorn)" },
     ],
   },
 ];
@@ -88,8 +96,8 @@ export default function GroceryWeekChecklistPage() {
             drinks milk, write it in. That is usually the first thing that
             pushes the ticket past $47.
           </p>
-          <WriteLine label="Family size" />
-          <WriteLine label="Hard number" />
+          <FillLine name="family-size" label="Family size" placeholder="3-4" />
+          <FillLine name="hard-number" label="Hard number" placeholder="$47" />
         </div>
 
         <div>
@@ -116,7 +124,7 @@ export default function GroceryWeekChecklistPage() {
           </p>
           <div className="mt-3">
             {Array.from({ length: 5 }, (_, index) => (
-              <WriteLine key={index} />
+              <FillLine key={index} name={`already-home-${index}`} />
             ))}
           </div>
         </div>
@@ -125,20 +133,25 @@ export default function GroceryWeekChecklistPage() {
           <h2 className="font-display text-3xl">The cart</h2>
           <p className="mt-3 text-base leading-7 text-ink-soft">
             Store brand. This is a target of about $47 in most US stores, not a
-            dare. Skip anything you already have. Write what you actually paid
+            dare. Skip anything you already have. Type what you actually paid
             next to the category target.
           </p>
           {cart.map((section) => (
             <div key={section.group} className="mt-6 break-inside-avoid">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <h3 className="font-display text-xl">{section.group}</h3>
-                <p className="text-sm font-medium">
-                  Target {section.target} · paid $ ______
-                </p>
+                <p className="text-sm font-medium">Target {section.target}</p>
               </div>
+              <FillLine
+                name={section.paidName}
+                label="Paid $"
+                placeholder="0.00"
+              />
               <ul className="mt-3 space-y-2">
                 {section.items.map((item) => (
-                  <CheckRow key={item}>{item}</CheckRow>
+                  <FillCheck key={item.name} name={item.name}>
+                    {item.label}
+                  </FillCheck>
                 ))}
               </ul>
             </div>
@@ -146,8 +159,10 @@ export default function GroceryWeekChecklistPage() {
           <div className="mt-6 break-inside-avoid">
             <h3 className="font-display text-xl">Only if you need it</h3>
             <ul className="mt-3 space-y-2">
-              <CheckRow>Gallon of milk</CheckRow>
-              <CheckRow>Butter or oil if the pantry is empty</CheckRow>
+              <FillCheck name="check-milk">Gallon of milk</FillCheck>
+              <FillCheck name="check-oil">
+                Butter or oil if the pantry is empty
+              </FillCheck>
             </ul>
           </div>
         </div>
@@ -159,20 +174,32 @@ export default function GroceryWeekChecklistPage() {
             second trip.
           </p>
           <ul className="mt-4 space-y-2">
-            <CheckRow>
+            <FillCheck name="swap-thighs">
               Thighs high: ground turkey, or extra beans plus a second dozen eggs
-            </CheckRow>
-            <CheckRow>Pasta night: extra beans if the sauce jar is pricey</CheckRow>
-            <CheckRow>Fruit: whatever is marked down that the kids will eat</CheckRow>
-            <CheckRow>This week&apos;s markdown: ____________________________</CheckRow>
+            </FillCheck>
+            <FillCheck name="swap-pasta">
+              Pasta night: extra beans if the sauce jar is pricey
+            </FillCheck>
+            <FillCheck name="swap-fruit">
+              Fruit: whatever is marked down that the kids will eat
+            </FillCheck>
           </ul>
+          <FillLine
+            name="markdown-note"
+            label="Markdown"
+            placeholder="What you swapped"
+            wide
+          />
         </div>
 
         <div>
           <h2 className="font-display text-3xl">The week</h2>
           <ul className="mt-4 space-y-3">
             {week.map((row) => (
-              <li key={row.day} className="flex gap-3 border-b border-ink/20 pb-3 print:border-black/30">
+              <li
+                key={row.day}
+                className="flex gap-3 border-b border-ink/20 pb-3 print:border-black/30"
+              >
                 <span className="w-10 shrink-0 font-stamp text-sm uppercase tracking-wider">
                   {row.day}
                 </span>

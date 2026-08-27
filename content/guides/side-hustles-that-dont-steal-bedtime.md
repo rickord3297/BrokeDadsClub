@@ -1,12 +1,16 @@
 ---
 title: Side hustles that don't steal bedtime
 slug: side-hustles-that-dont-steal-bedtime
-seoTitle: "Side Hustles for Dads That Don't Steal Bedtime | Broke Dads Club"
-description: "Extra cash without a second life. Filter gigs like a dad: clear end times, skills you already have, first dollar in 14 days."
-excerpt: Extra money is useful. A second life that makes you a ghost at 7:30 p.m. is not. Filter gigs like a dad, not like a podcast.
+seoTitle: Side Hustles for Dads That Don't Steal Bedtime | Broke Dads Club
+description: >-
+  Extra cash without a second life. Filter gigs like a dad: clear end times,
+  skills you already have, first dollar in 14 days.
+excerpt: >-
+  Extra money is useful. A second life that makes you a ghost at 7:30 p.m. is
+  not. Filter gigs like a dad, not like a podcast.
 category: Work
 readTime: 6 min
-publishedAt: "2026-07-14"
+publishedAt: '2026-07-14'
 status: published
 keywords:
   - side hustles for dads
@@ -23,9 +27,17 @@ shop:
   - dad-cap
 faq:
   - question: What side hustles work for dads with kids?
-    answer: "Ones that stop at bedtime: odd jobs with a clear end, selling what you already own, shift-shaped work, or one skill with one offer and a Saturday."
+    answer: >-
+      Ones that stop at bedtime: odd jobs with a clear end, selling what you
+      already own, shift-shaped work, or one skill with one offer and a
+      Saturday.
   - question: How much should a dad side hustle aim for?
-    answer: "Pick a monthly number that changes something real ($150-$200 toward a fund or groceries), then stop stacking hustles once you hit it."
+    answer: >-
+      Pick a monthly number that changes something real ($150-$200 toward a fund
+      or groceries), then stop stacking hustles once you hit it.
+takeaways:
+  - 'Filter gigs like a dad, not like a podcast'
+  - 'Extra money is useless if you are a ghost at 7:30'
 ---
 
 If a side hustle requires you to become a morning person, a content creator, and a limited-liability corporation before Friday, it is not a side hustle. It is a second job with worse health insurance.

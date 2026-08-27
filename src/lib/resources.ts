@@ -1,3 +1,12 @@
+import { site } from "@/lib/site";
+
+export type ResourceTag =
+  | "5-Min Prep"
+  | "Single-Page"
+  | "Seasonal"
+  | "Ink-Friendly"
+  | "Fillable";
+
 export type Resource = {
   slug: string;
   title: string;
@@ -9,6 +18,8 @@ export type Resource = {
   guideSlug: string;
   guideLabel: string;
   keywords: string[];
+  tags: ResourceTag[];
+  companionGuideSlugs: string[];
 };
 
 export const resources: Resource[] = [
@@ -21,7 +32,7 @@ export const resources: Resource[] = [
     excerpt:
       "A week of dinners for about 3-4 people. Dozen eggs, a pack of thighs, pasta on the tired night. Shop once.",
     intro:
-      "Print this before you walk into the store. Category targets keep the cart honest. The swap box lets you take a markdown without blowing the week. Pair it with the full $47 grocery week write-up if you want the meal logic behind the list.",
+      "Print this before you walk into the store, or type your numbers on your phone first. Category targets keep the cart honest. The swap box lets you take a markdown without blowing the week.",
     printLabel: "Print checklist",
     guideSlug: "the-47-dollar-grocery-week",
     guideLabel: "the $47 grocery week",
@@ -31,6 +42,8 @@ export const resources: Resource[] = [
       "cheap grocery list for family of 4",
       "printable grocery budget worksheet",
     ],
+    tags: ["5-Min Prep", "Single-Page", "Ink-Friendly", "Fillable"],
+    companionGuideSlugs: ["the-dad-tax", "gas-station-dinner", "dad-math"],
   },
   {
     slug: "school-supply-triage",
@@ -41,7 +54,7 @@ export const resources: Resource[] = [
     excerpt:
       "Three columns for the school list. Must, reuse, skip. Write the number before you enter the store.",
     intro:
-      "Fill the Already Own box first. Then sort the teacher list into Must, Reuse, and Skip. Write the budget cap next to the store name before you walk in. Built for the dad who does not want August to eat September.",
+      "Fill the Already Own box first. Then sort the teacher list into Must, Reuse, and Skip. Write the budget cap next to the store name before you walk in.",
     printLabel: "Print triage sheet",
     guideSlug: "school-supply-list",
     guideLabel: "the school supply list that quietly wrecks August",
@@ -50,6 +63,12 @@ export const resources: Resource[] = [
       "back to school supply checklist printable",
       "cheap school supplies triage",
       "school supply budget worksheet",
+    ],
+    tags: ["5-Min Prep", "Single-Page", "Seasonal", "Fillable"],
+    companionGuideSlugs: [
+      "the-second-bill",
+      "the-dad-tax",
+      "talking-to-kids-about-money",
     ],
   },
   {
@@ -71,6 +90,12 @@ export const resources: Resource[] = [
       "birthday party budget printable",
       "low cost kids birthday ideas worksheet",
     ],
+    tags: ["5-Min Prep", "Single-Page", "Fillable"],
+    companionGuideSlugs: [
+      "explaining-we-cant-go",
+      "talking-to-kids-about-money",
+      "cheap-weekend-not-just-screens",
+    ],
   },
 ];
 
@@ -89,3 +114,11 @@ export function requireResource(slug: string) {
 export function otherResources(slug: string) {
   return resources.filter((resource) => resource.slug !== slug);
 }
+
+export function getResourceByGuideSlug(guideSlug: string) {
+  return resources.find((resource) => resource.guideSlug === guideSlug) ?? null;
+}
+
+export const resourceIdeaMailto = `mailto:${site.email}?subject=${encodeURIComponent(
+  "Printable idea for Broke Dads Club",
+)}`;

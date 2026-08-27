@@ -1,12 +1,16 @@
 ---
 title: Birthday party math for kids who notice everything
 slug: birthday-party-math
-seoTitle: "Cheap Kids Birthday Party Ideas on a Budget | Broke Dads Club"
-description: "Budget birthday party ideas that still feel fun: park parties, backyard themes, goodie-bag math, and scripts for kids who notice everything."
-excerpt: Goodie bags, bounce houses, and fun party ideas that still fit the budget. How to throw (or attend) without losing the plot.
+seoTitle: Cheap Kids Birthday Party Ideas on a Budget | Broke Dads Club
+description: >-
+  Budget birthday party ideas that still feel fun: park parties, backyard
+  themes, goodie-bag math, and scripts for kids who notice everything.
+excerpt: >-
+  Goodie bags, bounce houses, and fun party ideas that still fit the budget. How
+  to throw (or attend) without losing the plot.
 category: Kids
 readTime: 8 min
-publishedAt: "2026-08-12"
+publishedAt: '2026-08-12'
 status: published
 keywords:
   - cheap kids birthday party ideas
@@ -23,9 +27,17 @@ shop:
   - club-pup-tee
 faq:
   - question: How do I throw a kids birthday party on a budget?
-    answer: "Set a dollar and kid limit first, then pick fun that fits: park, backyard, or library themes beat venue rentals. Skip the bounce house if it blows the limit."
+    answer: >-
+      Set a dollar and kid limit first, then pick fun that fits: park, backyard,
+      or library themes beat venue rentals. Skip the bounce house if it blows
+      the limit.
   - question: What are cheap birthday party ideas that still feel fun?
-    answer: "Park picnic with games, backyard obstacle course, indoor movie-and-pizza, library story party, or a themed scavenger hunt. Atmosphere beats spend."
+    answer: >-
+      Park picnic with games, backyard obstacle course, indoor movie-and-pizza,
+      library story party, or a themed scavenger hunt. Atmosphere beats spend.
+takeaways:
+  - Set the spending limit and kid count first
+  - One activity beats a pile of goodie-bag clutter
 ---
 
 Kids notice. They notice the venue, the bag of candy at the door, and the fact that Jordan's party had a character in a full suit. You cannot stop them noticing. You can stop the noticing from becoming a referendum on your love. When the hard part is saying no to the expensive invite, see [explaining “we can’t go”](/guides/explaining-we-cant-go).

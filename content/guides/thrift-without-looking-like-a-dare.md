@@ -1,12 +1,16 @@
 ---
 title: Thrift without looking like a dare
 slug: thrift-without-looking-like-a-dare
-seoTitle: "How to Thrift Clothes for Your Family (and Still Look Sharp) | Broke Dads Club"
-description: "Hand-me-downs and thrift as strategy, not costume: fit, condition, palette, and a dad wardrobe that looks like you meant it."
-excerpt: Hand-me-downs and thrift are a strategy, not a costume. How to dress a family so it looks like you meant it.
+seoTitle: How to Thrift Clothes for Your Family (and Still Look Sharp) | Broke Dads Club
+description: >-
+  Hand-me-downs and thrift as strategy, not costume: fit, condition, palette,
+  and a dad wardrobe that looks like you meant it.
+excerpt: >-
+  Hand-me-downs and thrift are a strategy, not a costume. How to dress a family
+  so it looks like you meant it.
 category: Gear
 readTime: 5 min
-publishedAt: "2026-06-30"
+publishedAt: '2026-06-30'
 status: published
 keywords:
   - thrift shopping for families
@@ -23,9 +27,17 @@ shop:
   - club-pup-tee
 faq:
   - question: How do you thrift without looking thrifted?
-    answer: "Use three passes: fit, condition, and a tight color palette. A coherent pile of used clothes looks like a wardrobe; a rainbow of mascots looks like lost-and-found."
+    answer: >-
+      Use three passes: fit, condition, and a tight color palette. A coherent
+      pile of used clothes looks like a wardrobe; a rainbow of mascots looks
+      like lost-and-found.
   - question: Where should busy dads thrift?
-    answer: "School lost-and-found (ask), Buy Nothing, one monthly thrift trip with a list, and end-of-season sales on jeans and a hoodie."
+    answer: >-
+      School lost-and-found (ask), Buy Nothing, one monthly thrift trip with a
+      list, and end-of-season sales on jeans and a hoodie.
+takeaways:
+  - 'Hand-me-downs are a strategy, not a costume'
+  - Dress the family like you meant it
 ---
 
 Thrift is not a personality. It is a supply chain. The goal is clothes that fit, last, and do not announce that you lost a bet. Same season energy as [the dad tax](/guides/the-dad-tax), stretch the dollar without making it a costume.

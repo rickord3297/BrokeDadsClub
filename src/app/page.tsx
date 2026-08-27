@@ -5,11 +5,13 @@ import { ProductCard } from "@/components/product-card";
 import { ResourceCard } from "@/components/resource-card";
 import { SiteTagline } from "@/components/site-tagline";
 import { TopicPills } from "@/components/topic-pills";
+import { resourceTieInForGuide } from "@/lib/guide-catalog";
 import {
   START_HERE_SLUGS,
   getGuide,
   getGuideCategories,
   getGuides,
+  toGuideListItem,
 } from "@/lib/guides";
 import { getHomeShopProducts } from "@/lib/products";
 import { getResource } from "@/lib/resources";
@@ -70,13 +72,19 @@ export default async function Home() {
             ) : null}
 
             <div className="mt-6 grid gap-5 sm:grid-cols-2">
-              {startHere.map((guide) => (
-                <GuideCard
-                  key={guide.slug}
-                  guide={guide}
-                  placement="start_here"
-                />
-              ))}
+              {startHere.map((guide) => {
+                const tieIn = resourceTieInForGuide(guide.slug);
+                return (
+                  <GuideCard
+                    key={guide.slug}
+                    guide={toGuideListItem(
+                      guide,
+                      tieIn ? { href: tieIn.href, label: tieIn.label } : null,
+                    )}
+                    placement="start_here"
+                  />
+                );
+              })}
             </div>
           </div>
         </div>

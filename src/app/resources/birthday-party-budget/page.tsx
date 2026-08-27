@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import {
-  CheckRow,
-  ResourceLayout,
-  WriteLine,
-} from "@/components/resource-layout";
+import { FillCheck, FillLine } from "@/components/fillable-fields";
+import { ResourceLayout } from "@/components/resource-layout";
 import { requireResource } from "@/lib/resources";
 import { site } from "@/lib/site";
 
@@ -19,20 +16,20 @@ export const metadata: Metadata = {
 };
 
 const activities = [
-  "Park picnic + one game",
-  "Backyard obstacle course",
-  "Fort HQ / blanket fort",
-  "Bake and decorate cupcakes",
-  "Scavenger hunt",
-  "Movie premiere at home",
+  { name: "act-park", label: "Park picnic + one game" },
+  { name: "act-obstacle", label: "Backyard obstacle course" },
+  { name: "act-fort", label: "Fort HQ / blanket fort" },
+  { name: "act-bake", label: "Bake and decorate cupcakes" },
+  { name: "act-scavenger", label: "Scavenger hunt" },
+  { name: "act-movie", label: "Movie premiere at home" },
 ];
 
 const freeLowCost = [
-  "Local park pavilion (often free or a small permit)",
-  "Backyard games / obstacle course",
-  "Library story room if they will have you",
-  "Walk-the-block scavenger hunt",
-  "Bake cupcakes together. That is the activity.",
+  { name: "free-park", label: "Local park pavilion (often free or a small permit)" },
+  { name: "free-yard", label: "Backyard games / obstacle course" },
+  { name: "free-library", label: "Library story room if they will have you" },
+  { name: "free-walk", label: "Walk-the-block scavenger hunt" },
+  { name: "free-bake", label: "Bake cupcakes together. That is the activity." },
 ];
 
 export default function BirthdayPartyBudgetPage() {
@@ -45,15 +42,22 @@ export default function BirthdayPartyBudgetPage() {
             Pick the spending limit and the headcount. Everything else fits
             inside.
           </p>
-          <WriteLine label="Spending limit $" wide />
-          <WriteLine label="Guest count" />
-          <WriteLine label="Date / time" />
-          <WriteLine label="Place" />
+          <FillLine
+            name="spend-limit"
+            label="Spending limit $"
+            placeholder="80"
+            wide
+          />
+          <FillLine name="guest-count" label="Guest count" placeholder="8" />
+          <FillLine name="date-time" label="Date / time" />
+          <FillLine name="place" label="Place" />
           <div className="mt-4">
             <p className="text-sm font-medium">This party is</p>
             <ul className="mt-2 space-y-2">
-              <CheckRow>Hosting</CheckRow>
-              <CheckRow>Attending someone else&apos;s</CheckRow>
+              <FillCheck name="party-hosting">Hosting</FillCheck>
+              <FillCheck name="party-attending">
+                Attending someone else&apos;s
+              </FillCheck>
             </ul>
           </div>
         </div>
@@ -66,20 +70,25 @@ export default function BirthdayPartyBudgetPage() {
             bounce houses.
           </p>
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
-            <WriteLine label="Limit $" />
-            <WriteLine label="÷ kids" />
-            <WriteLine label="= max each $" wide />
+            <FillLine name="max-limit" label="Limit $" placeholder="80" />
+            <FillLine name="max-kids" label="÷ kids" placeholder="8" />
+            <FillLine
+              name="max-each"
+              label="= max each $"
+              placeholder="10"
+              wide
+            />
           </div>
         </div>
 
         <div>
           <h2 className="font-display text-3xl">Spend lines</h2>
-          <WriteLine label="Food" />
-          <WriteLine label="Cake" />
-          <WriteLine label="Activity" />
-          <WriteLine label="Invites" />
-          <WriteLine label="Gifts / bags" />
-          <WriteLine label="Total" />
+          <FillLine name="line-food" label="Food" />
+          <FillLine name="line-cake" label="Cake" />
+          <FillLine name="line-activity" label="Activity" />
+          <FillLine name="line-invites" label="Invites" />
+          <FillLine name="line-bags" label="Gifts / bags" />
+          <FillLine name="line-total" label="Total" />
           <p className="mt-3 text-sm text-ink-soft">
             Skip goodie bags if money is tight. Kids remember cake and attention
             more than plastic that breaks in the car.
@@ -94,7 +103,9 @@ export default function BirthdayPartyBudgetPage() {
           </p>
           <ul className="mt-4 space-y-2">
             {freeLowCost.map((item) => (
-              <CheckRow key={item}>{item}</CheckRow>
+              <FillCheck key={item.name} name={item.name}>
+                {item.label}
+              </FillCheck>
             ))}
           </ul>
         </div>
@@ -103,10 +114,12 @@ export default function BirthdayPartyBudgetPage() {
           <h2 className="font-display text-3xl">Pick one activity</h2>
           <ul className="mt-4 space-y-2">
             {activities.map((item) => (
-              <CheckRow key={item}>{item}</CheckRow>
+              <FillCheck key={item.name} name={item.name}>
+                {item.label}
+              </FillCheck>
             ))}
-            <CheckRow>Other: ____________________________</CheckRow>
           </ul>
+          <FillLine name="act-other" label="Other" />
           <p className="mt-3 text-sm text-ink-soft">
             One theme, one main activity, cake. That is a party. Everything else
             is garnish.

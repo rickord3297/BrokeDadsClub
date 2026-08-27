@@ -52,6 +52,10 @@ keywords:
 related:
   - other-live-slug
   - another-live-slug
+takeaways:
+  - One skim bullet a dad can use this week
+  - Second skim bullet (optional)
+action: One concrete 5-minute move for today
 shop:
   - club-pup-tee
   - broke-mug
@@ -64,8 +68,8 @@ faq:
 
 3. Use the row’s **Go live** date for `publishedAt` when present; otherwise pick a sensible future Monday and note it in the table.
 4. Include 3-6 `keywords` people would actually search (cheap X, how to Y for dads, budget Z).
-5. Add `seoTitle`, `description`, 2-3 `faq` items, `related` (live slugs only), and optional `shop` product slugs. FAQ answers with quotes or colons must use a `>-` block. A half-quoted line (`answer: "We're..." then more sentence`) breaks the production build.
-6. Body: short intro → practical sections → calm close. ~600-900 words. Add 1-2 internal links to other `/guides/...` where natural.
+5. Add `seoTitle`, `description`, 2-3 `faq` items, `related` (live slugs only, never self), 1-2 `takeaways` for cards, an `action` line for the "Do this today (5 minutes)" box (falls back to the first takeaway), and optional `shop` product slugs. FAQ answers with quotes or colons must use a `>-` block. A half-quoted line (`answer: "We're..." then more sentence`) breaks the production build.
+6. Body: short intro → practical sections → calm close. ~600-900 words. Use markdown blockquotes for scripts (`> "line"`) and short truth lines (`> Truth: ...`). Add 1-2 internal links to other `/guides/...` where natural.
 7. Always use `status: draft` unless the user asks to schedule or publish now.
 8. Do not commit or push unless asked.
 

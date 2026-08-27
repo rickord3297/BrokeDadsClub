@@ -1,12 +1,16 @@
 ---
 title: Gas station dinner that still counts
 slug: gas-station-dinner
-seoTitle: "Gas Station Dinner That Still Counts as Feeding Kids | Broke Dads Club"
-description: "Hot dogs, rotisserie, and a bag of apples. How to feed kids on the road without calling it failure or turning dinner into a guilt speech."
-excerpt: Hot dogs, rotisserie, and a bag of apples. How to feed kids on the road without calling it failure.
+seoTitle: Gas Station Dinner That Still Counts as Feeding Kids | Broke Dads Club
+description: >-
+  Hot dogs, rotisserie, and a bag of apples. How to feed kids on the road
+  without calling it failure or turning dinner into a guilt speech.
+excerpt: >-
+  Hot dogs, rotisserie, and a bag of apples. How to feed kids on the road
+  without calling it failure.
 category: Money
 readTime: 6 min
-publishedAt: "2026-08-22"
+publishedAt: '2026-08-22'
 status: published
 keywords:
   - gas station dinner with kids
@@ -23,12 +27,19 @@ shop:
 faq:
   - question: Does a gas station dinner count as feeding your kids?
     answer: >-
-      Yes, if you hit protein, something that is not only chips, and a drink that is not a second dessert. It is a bridge meal, not a character flaw.
+      Yes, if you hit protein, something that is not only chips, and a drink
+      that is not a second dessert. It is a bridge meal, not a character flaw.
   - question: What should I buy at a gas station for kids?
-    answer: Rotisserie or a hot dog, fruit or cheese, and water or milk. Skip the energy drinks dressed up as dinner.
+    answer: >-
+      Rotisserie or a hot dog, fruit or cheese, and water or milk. Skip the
+      energy drinks dressed up as dinner.
   - question: How do I explain it without sounding apologetic?
     answer: >-
-      "This is dinner tonight. Tomorrow we cook." Keep the tone calm. Kids hear logistics, not a referendum on your worth.
+      "This is dinner tonight. Tomorrow we cook." Keep the tone calm. Kids hear
+      logistics, not a referendum on your worth.
+takeaways:
+  - Hot food plus fruit still counts as feeding them
+  - Plan the stop so it is not an apology
 ---
 
 You are not a bad father because dinner came from a pump. You are a father who kept moving when the day ran out of runway.

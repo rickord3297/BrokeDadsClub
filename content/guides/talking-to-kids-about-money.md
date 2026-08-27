@@ -1,12 +1,16 @@
 ---
 title: Talking to kids about money without scaring them
 slug: talking-to-kids-about-money
-seoTitle: "How to Talk to Kids About Money Without Scaring Them | Broke Dads Club"
-description: "Age-sized scripts for honest money talks with kids, calm, practical, and not their job to fix the household budget."
-excerpt: They already know something is tight. Give them a story that is honest, calm, and not their job to fix.
+seoTitle: How to Talk to Kids About Money Without Scaring Them | Broke Dads Club
+description: >-
+  Age-sized scripts for honest money talks with kids, calm, practical, and not
+  their job to fix the household budget.
+excerpt: >-
+  They already know something is tight. Give them a story that is honest, calm,
+  and not their job to fix.
 category: Kids
 readTime: 6 min
-publishedAt: "2026-07-07"
+publishedAt: '2026-07-07'
 status: published
 keywords:
   - talking to kids about money
@@ -23,9 +27,16 @@ shop:
   - club-pup-tee
 faq:
   - question: How do I talk to kids about money without scaring them?
-    answer: Be honest in short, age-sized pieces. Share the plan shape, not adult debt horror. Offer one real choice when you can.
+    answer: >-
+      Be honest in short, age-sized pieces. Share the plan shape, not adult debt
+      horror. Offer one real choice when you can.
   - question: What should I not say about money to kids?
-    answer: Don't blame them, don't make secrecy the rule, and don't dump adult debt details they can't act on. Fear is not a money class.
+    answer: >-
+      Don't blame them, don't make secrecy the rule, and don't dump adult debt
+      details they can't act on. Fear is not a money class.
+takeaways:
+  - They already sense the squeeze; honesty beats secrecy
+  - Keep it calm and short; it is not their job to fix
 ---
 
 Kids hear the sigh when the card is declined. They hear the fight that was "about dishes" and was not about dishes. Silence does not protect them. It just leaves them to write their own, worse script.
@@ -34,11 +45,19 @@ You can be honest without making them the CFO. For the short "we can't go" versi
 
 ## What to say (by age)
 
-**Little kids:** "We buy food and our home first. Then fun. Some days are food-and-home days." That is enough.
+**Little kids:** keep it to weather, not debt.
 
-**School age:** "We have a plan for money. The plan says yes to the library and the park. It says not this month to the $40 plastic thing." Invite one choice: "Do you want the movie night or the special cereal? Not both this week."
+> "We buy food and our home first. Then fun. Some days are food-and-home days."
 
-**Teens:** Share a simple picture: rent, food, gas, leftover. Not the password to the bank app. Not the credit-card balance as a guilt trip. A picture. Then: "This is why I work. This is why we wait. You are not the problem."
+**School age:** name the plan and offer one real choice.
+
+> "We have a plan for money. The plan says yes to the library and the park. It says not this month to the $40 plastic thing."
+
+Invite one choice: "Do you want the movie night or the special cereal? Not both this week."
+
+**Teens:** share a simple picture. Not the bank password. Not a guilt trip.
+
+> "Rent, food, gas, leftover. This is why I work. This is why we wait. You are not the problem."
 
 ## What not to say
 

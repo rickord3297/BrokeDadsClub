@@ -1,12 +1,16 @@
 ---
-title: "Dad math: I can do that cheaper"
+title: 'Dad math: I can do that cheaper'
 slug: dad-math
-seoTitle: "Cheap DIY Home Repair: When Dad Math Saves Money | Broke Dads Club"
-description: "How to do a cheap DIY repair without buying a new tool every time. Run the hire vs materials vs tool-tax math so pride does not wreck the budget."
-excerpt: You can do it cheaper. Then you need a $40 bit, a $90 saw, and Saturday. Pride is real. So is the tool tax.
+seoTitle: 'Cheap DIY Home Repair: When Dad Math Saves Money | Broke Dads Club'
+description: >-
+  How to do a cheap DIY repair without buying a new tool every time. Run the
+  hire vs materials vs tool-tax math so pride does not wreck the budget.
+excerpt: >-
+  You can do it cheaper. Then you need a $40 bit, a $90 saw, and Saturday. Pride
+  is real. So is the tool tax.
 category: Money
 readTime: 7 min
-publishedAt: "2026-08-16"
+publishedAt: '2026-08-16'
 status: published
 keywords:
   - dad math diy cheaper
@@ -22,12 +26,22 @@ shop:
   - club-pup-tee
 faq:
   - question: When is DIY actually cheaper?
-    answer: When you already own the tool, you will use it again this year, and a mistake will not cost more than the hire. Otherwise you are shopping, not saving.
+    answer: >-
+      When you already own the tool, you will use it again this year, and a
+      mistake will not cost more than the hire. Otherwise you are shopping, not
+      saving.
   - question: What is the tool tax?
     answer: >-
-      The extra money (and Saturday) you spend so the project can start. Bits, blades, a "cheap" saw, the second trip to the store. Pride does not show up on the receipt.
+      The extra money (and Saturday) you spend so the project can start. Bits,
+      blades, a "cheap" saw, the second trip to the store. Pride does not show
+      up on the receipt.
   - question: How do I decide without feeling like I failed?
-    answer: Run the two-trip rule and the reuse test. Paying someone is not giving up. It is refusing to buy a hobby you did not ask for.
+    answer: >-
+      Run the two-trip rule and the reuse test. Paying someone is not giving up.
+      It is refusing to buy a hobby you did not ask for.
+takeaways:
+  - Cheaper often means tool tax plus a lost Saturday
+  - Pride is real; so is the bill after the bit set
 ---
 
 Dad math starts as a flex. Someone quotes $180 to hang a door, fix a leak, assemble the thing, or "just replace that part." You hear yourself say it before you have even looked in the garage:

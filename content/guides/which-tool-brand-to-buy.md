@@ -1,12 +1,16 @@
 ---
 title: Which tool brand to buy
 slug: which-tool-brand-to-buy
-seoTitle: "Ryobi vs Milwaukee vs DeWalt: Which Tool Brand to Buy | Broke Dads Club"
-description: "Skip the brand war. Stick with the battery you already own, buy what you will use, and stop collecting chargers you cannot afford."
-excerpt: Ryobi, Milwaukee, DeWalt, whoever. If you already have a battery that works, stay there. Cream of the crop is a credit card bill with extra chargers.
+seoTitle: 'Ryobi vs Milwaukee vs DeWalt: Which Tool Brand to Buy | Broke Dads Club'
+description: >-
+  Skip the brand war. Stick with the battery you already own, buy what you will
+  use, and stop collecting chargers you cannot afford.
+excerpt: >-
+  Ryobi, Milwaukee, DeWalt, whoever. If you already have a battery that works,
+  stay there. Cream of the crop is a credit card bill with extra chargers.
 category: Gear
 readTime: 6 min
-publishedAt: "2026-08-22"
+publishedAt: '2026-08-22'
 status: published
 keywords:
   - ryobi vs milwaukee vs dewalt
@@ -22,11 +26,22 @@ shop:
   - club-pup-tee
 faq:
   - question: Which tool brand should a homeowner buy?
-    answer: The one whose battery you already own, if it still holds a charge. If you are starting from zero, pick the cheapest complete platform you can find on sale and stay there.
+    answer: >-
+      The one whose battery you already own, if it still holds a charge. If you
+      are starting from zero, pick the cheapest complete platform you can find
+      on sale and stay there.
   - question: Are Milwaukee or DeWalt worth it for DIY?
-    answer: For a contractor, maybe. For a dad hanging shelves and fixing a deck board, a mid-tier pack that shares one battery will outlast your pride in a red or yellow logo.
+    answer: >-
+      For a contractor, maybe. For a dad hanging shelves and fixing a deck
+      board, a mid-tier pack that shares one battery will outlast your pride in
+      a red or yellow logo.
   - question: Should I mix brands?
-    answer: Only if you like owning three chargers and none of the right batteries. One family of tools. One charger on the shelf.
+    answer: >-
+      Only if you like owning three chargers and none of the right batteries.
+      One family of tools. One charger on the shelf.
+takeaways:
+  - Stay on the battery system you already own
+  - Cream of the crop is often just extra chargers
 ---
 
 The tool aisle wants you in a fight. Ryobi. Milwaukee. DeWalt. Makita. The green one. The red one. The yellow one. A guy on a lunch break will tell you that you are not a real dad until the pack matches.

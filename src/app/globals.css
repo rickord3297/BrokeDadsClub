@@ -110,12 +110,64 @@ body {
   font-weight: 650;
 }
 
-.prose-guide blockquote {
-  margin: 1.5rem 0;
+.prose-guide blockquote,
+.prose-guide .guide-script-callout,
+.prose-guide .guide-pull-quote {
+  margin: 1.35rem 0;
   border-left: 3px solid var(--pine);
-  padding-left: 1rem;
-  color: var(--ink-soft);
-  font-style: italic;
+  border-radius: 0 0.75rem 0.75rem 0;
+  background: color-mix(in srgb, var(--pine) 6%, var(--paper));
+  padding: 0.95rem 1.1rem 1rem;
+  color: var(--ink);
+  font-style: normal;
+}
+
+.prose-guide .guide-pull-quote {
+  border-left-color: var(--rust);
+  background: color-mix(in srgb, var(--rust) 8%, var(--paper));
+}
+
+.prose-guide .guide-pull-quote .guide-script-label {
+  color: var(--rust-2);
+}
+
+.prose-guide .guide-script-callout p,
+.prose-guide .guide-pull-quote p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.prose-guide .guide-script-callout > div + p,
+.prose-guide .guide-pull-quote > div + p,
+.prose-guide .guide-script-callout > div + *,
+.prose-guide .guide-pull-quote > div + * {
+  margin-top: 0;
+}
+
+.prose-guide .guide-pull-quote p:last-child {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.45;
+}
+
+.prose-guide .guide-script-label {
+  margin: 0 !important;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.7rem !important;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pine);
+}
+
+.prose-guide .guide-script-callout > div,
+.prose-guide .guide-pull-quote > div {
+  margin-bottom: 0.4rem;
+}
+
+.prose-guide li strong:first-child {
+  color: var(--ink);
 }
 
 .prose-guide hr {
@@ -157,5 +209,17 @@ body {
 
   .print-sheet .break-inside-avoid {
     break-inside: avoid;
+  }
+
+  .print-sheet input[type="text"],
+  .print-sheet input:not([type]),
+  .print-sheet input[type="checkbox"] {
+    color: #111 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .print-sheet input[type="checkbox"] {
+    appearance: auto;
   }
 }
