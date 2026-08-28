@@ -22,6 +22,7 @@ export function GuideSearch() {
     if (trimmed.length >= 2) trackGuideSearch(trimmed.length);
     if (trimmed) query.set("q", trimmed);
     else query.delete("q");
+    query.delete("page");
     const search = query.toString();
     router.replace(search ? `/guides?${search}` : "/guides", { scroll: false });
   }

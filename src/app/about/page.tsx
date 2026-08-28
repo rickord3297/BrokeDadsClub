@@ -52,6 +52,26 @@ export default function AboutPage() {
           dues are optional and the door is open.
         </p>
       </div>
+
+      <aside className="mt-12 border-t border-rule pt-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-rust">
+          Contact us
+        </p>
+        <h2 className="mt-2 font-display text-3xl">Questions, ideas, or a typo?</h2>
+        <p className="mt-3 text-base leading-7 text-ink-soft">
+          We read every note. Guides, printables, shop, or just a dad story that
+          belongs on the site, send it over.
+        </p>
+        <p className="mt-4">
+          <a
+            href={`mailto:${site.email}?subject=${encodeURIComponent("Broke Dads Club")}`}
+            className="inline-flex items-center gap-2 rounded-full border border-pine/25 bg-pine/[0.06] px-4 py-2 text-sm font-semibold text-pine transition hover:border-pine hover:text-rust"
+          >
+            {site.email}
+            <span aria-hidden>→</span>
+          </a>
+        </p>
+      </aside>
     </div>
   );
 }

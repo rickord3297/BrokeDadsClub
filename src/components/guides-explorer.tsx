@@ -10,7 +10,7 @@ import { filterGuidesList } from "@/lib/guide-query";
 import type { GuideListItem } from "@/lib/guide-model";
 import { site } from "@/lib/site";
 
-const NEWSLETTER_AFTER_INDEX = 2;
+const PAGE_SIZE = 9;
 
 export function GuidesExplorer({
   guides,
@@ -24,6 +24,7 @@ export function GuidesExplorer({
   const topic = searchParams.get("topic")?.trim() ?? "";
   const query = searchParams.get("q")?.trim() ?? "";
   const hasFilters = Boolean(topic || query);
+  const page = Math.max(1, Number(searchParams.get("page") ?? "1") || 1);
 
   const counts = useMemo(() => {
     const map = new Map<string, number>();
@@ -38,11 +39,13 @@ export function GuidesExplorer({
     [guides, topic, query],
   );
 
-  const showHero = !hasFilters;
-  const hero = showHero ? filtered[0] : null;
-  const list = hero
-    ? filtered.filter((guide) => guide.slug !== hero.slug)
-    : filtered;
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  const pageStart = (safePage - 1) * PAGE_SIZE;
+  const pageSlice = filtered.slice(pageStart, pageStart + PAGE_SIZE);
+  const showHero = !hasFilters && safePage === 1 && pageSlice.length > 0;
+  const hero = showHero ? pageSlice[0] : null;
+  const gridGuides = showHero ? pageSlice.slice(1) : pageSlice;
 
   const topics = [
     "",
@@ -55,20 +58,36 @@ export function GuidesExplorer({
     ],
   ];
 
+  function pushParams(next: URLSearchParams) {
+    const search = next.toString();
+    router.push(search ? `/guides?${search}` : "/guides", { scroll: false });
+  }
+
   function setTopic(next: string) {
     const value = next === topic ? "" : next;
     trackTopicFilter(value, "guides_index");
     const params = new URLSearchParams(searchParams.toString());
     if (value) params.set("topic", value);
     else params.delete("topic");
-    const search = params.toString();
-    router.push(search ? `/guides?${search}` : "/guides", { scroll: false });
+    params.delete("page");
+    pushParams(params);
   }
 
   function clearFilters() {
     trackTopicFilter("", "guides_index_clear");
     router.push("/guides", { scroll: false });
   }
+
+  function setPage(next: number) {
+    const params = new URLSearchParams(searchParams.toString());
+    if (next <= 1) params.delete("page");
+    else params.set("page", String(next));
+    pushParams(params);
+    document.getElementById("guides-list")?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  const rangeStart = filtered.length ? pageStart + 1 : 0;
+  const rangeEnd = Math.min(pageStart + PAGE_SIZE, filtered.length);
 
   return (
     <>
@@ -109,20 +128,24 @@ export function GuidesExplorer({
               );
             })}
           </div>
-          {hasFilters ? (
+          {hasFilters || totalPages > 1 ? (
             <div className="mt-3 flex flex-wrap items-center gap-3 text-sm">
               <p className="text-ink-soft">
-                Showing {filtered.length} of {guides.length}
+                {filtered.length
+                  ? `Showing ${rangeStart}–${rangeEnd} of ${filtered.length}`
+                  : "No guides match"}
                 {topic ? ` in ${topic}` : ""}
                 {query ? ` for "${query}"` : ""}
               </p>
-              <button
-                type="button"
-                onClick={clearFilters}
-                className="font-semibold text-pine underline decoration-pine/30 underline-offset-2 hover:text-rust"
-              >
-                Clear filters
-              </button>
+              {hasFilters ? (
+                <button
+                  type="button"
+                  onClick={clearFilters}
+                  className="font-semibold text-pine underline decoration-pine/30 underline-offset-2 hover:text-rust"
+                >
+                  Clear filters
+                </button>
+              ) : null}
             </div>
           ) : null}
         </div>
@@ -143,11 +166,11 @@ export function GuidesExplorer({
           </button>
         </p>
       ) : (
-        <div className="mt-10 space-y-8">
+        <div id="guides-list" className="mt-10 scroll-mt-24 space-y-8">
           {hero ? (
             <div>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pine">
-                Newest
+                Latest
               </p>
               <GuideCard
                 guide={hero}
@@ -158,7 +181,7 @@ export function GuidesExplorer({
             </div>
           ) : null}
 
-          {list.length > 0 ? (
+          {gridGuides.length > 0 ? (
             <div>
               {hero ? (
                 <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-ink-soft">
@@ -166,59 +189,88 @@ export function GuidesExplorer({
                 </p>
               ) : null}
               <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-                {list.flatMap((guide, index) => {
-                  const card = (
-                    <GuideCard
-                      key={guide.slug}
-                      guide={guide}
-                      placement="guides_index"
-                    />
-                  );
-                  if (index !== NEWSLETTER_AFTER_INDEX) return [card];
-                  return [
-                    card,
-                    <div
-                      key="guides-inline-signup"
-                      className="md:col-span-2 lg:col-span-3"
-                    >
-                      <GuidesInlineSignup />
-                    </div>,
-                  ];
-                })}
+                {gridGuides.map((guide) => (
+                  <GuideCard
+                    key={guide.slug}
+                    guide={guide}
+                    placement="guides_index"
+                  />
+                ))}
               </div>
-              {list.length <= NEWSLETTER_AFTER_INDEX ? (
-                <div className="mt-5">
-                  <GuidesInlineSignup />
-                </div>
-              ) : null}
             </div>
           ) : null}
+
+          {totalPages > 1 ? (
+            <nav
+              className="flex flex-wrap items-center justify-center gap-2 pt-2"
+              aria-label="Guide pages"
+            >
+              <button
+                type="button"
+                onClick={() => setPage(safePage - 1)}
+                disabled={safePage <= 1}
+                className="rounded-full border border-rule px-3 py-1.5 text-sm font-medium text-ink transition hover:border-pine hover:text-pine disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                Previous
+              </button>
+              {Array.from({ length: totalPages }, (_, index) => {
+                const pageNumber = index + 1;
+                const current = pageNumber === safePage;
+                return (
+                  <button
+                    key={pageNumber}
+                    type="button"
+                    aria-current={current ? "page" : undefined}
+                    onClick={() => setPage(pageNumber)}
+                    className={
+                      current
+                        ? "flex h-9 min-w-9 items-center justify-center rounded-full bg-ink px-3 text-sm font-semibold text-paper"
+                        : "flex h-9 min-w-9 items-center justify-center rounded-full border border-rule px-3 text-sm font-medium text-ink transition hover:border-pine hover:text-pine"
+                    }
+                  >
+                    {pageNumber}
+                  </button>
+                );
+              })}
+              <button
+                type="button"
+                onClick={() => setPage(safePage + 1)}
+                disabled={safePage >= totalPages}
+                className="rounded-full border border-rule px-3 py-1.5 text-sm font-medium text-ink transition hover:border-pine hover:text-pine disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                Next
+              </button>
+            </nav>
+          ) : null}
+
+          <GuidesStayInformedSignup />
         </div>
       )}
     </>
   );
 }
 
-function GuidesInlineSignup() {
+function GuidesStayInformedSignup() {
   return (
-    <aside className="rounded-2xl border border-rust/25 bg-rust/[0.06] px-5 py-6 sm:px-7">
-      <div className="mx-auto flex max-w-3xl flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+    <aside className="rounded-2xl border border-pine/20 border-l-[3px] border-l-pine bg-pine/[0.06] px-5 py-6 sm:px-7">
+      <div className="mx-auto flex max-w-3xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0 flex-1">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-pine">
-            New guide alert
+            New guides
           </p>
           <h3 className="mt-1 font-display text-2xl leading-snug">
-            Get the next one on Sunday
+            Sign up to stay informed
           </h3>
           <p className="mt-1 text-sm leading-6 text-ink-soft">
-            One short dad tactic a week. No daily spam pile.
+            One email on Sunday when a new guide drops, plus the free grocery
+            checklist to start the week.
           </p>
         </div>
         <div className="w-full sm:max-w-sm">
           <NewsletterForm
             variant="inline"
-            source="guides_index_inline"
-            submitLabel={site.weekStart.button}
+            source="guides_index"
+            submitLabel="Keep me posted"
             successMessage={site.weekStart.success}
             successHref="/resources/grocery-week-checklist"
             successLinkLabel="Print the grocery checklist"
