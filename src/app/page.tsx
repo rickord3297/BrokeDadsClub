@@ -5,7 +5,6 @@ import { HomeHero } from "@/components/home-hero";
 import { ProductCard } from "@/components/product-card";
 import { resourceTieInForGuide } from "@/lib/guide-catalog";
 import {
-  getGuideCategories,
   getGuides,
   toGuideListItem,
 } from "@/lib/guides";
@@ -16,7 +15,6 @@ const FEATURED_PRINTABLE = "grocery-week-checklist";
 
 export default async function Home() {
   const guides = getGuides();
-  const categories = getGuideCategories(guides);
   const list = guides.map((guide) => {
     const tieIn = resourceTieInForGuide(guide.slug);
     return toGuideListItem(
@@ -31,7 +29,7 @@ export default async function Home() {
     <div>
       <HomeHero />
 
-      <HomeGuidesSection guides={list} categories={categories} />
+      <HomeGuidesSection guides={list} />
 
       {featuredPrintable ? (
         <section
