@@ -10,7 +10,7 @@ export const CATEGORY_ACCENTS: Record<string, CategoryAccent> = {
   Money: {
     bar: "bg-pine",
     soft: "bg-pine/10 text-pine",
-    label: "$",
+    label: "",
   },
   Time: {
     bar: "bg-rust",

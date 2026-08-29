@@ -36,16 +36,18 @@ export function GuideCard({
         <Link
           href={href}
           onClick={track}
-          className="group flex cursor-pointer flex-col sm:flex-row"
+          className={`group flex cursor-pointer flex-col ${accent.label ? "sm:flex-row" : ""}`}
         >
-          <div
-            className={`flex w-full shrink-0 items-center justify-center border-b border-rule sm:w-40 sm:border-b-0 sm:border-r ${accent.soft}`}
-            aria-hidden
-          >
-            <span className="py-8 font-display text-5xl font-semibold opacity-80 sm:py-0">
-              {accent.label}
-            </span>
-          </div>
+          {accent.label ? (
+            <div
+              className={`flex w-full shrink-0 items-center justify-center border-b border-rule sm:w-40 sm:border-b-0 sm:border-r ${accent.soft}`}
+              aria-hidden
+            >
+              <span className="py-8 font-display text-5xl font-semibold opacity-80 sm:py-0">
+                {accent.label}
+              </span>
+            </div>
+          ) : null}
           <div className="flex flex-1 flex-col p-5 sm:p-7">
             <div className="flex flex-wrap items-center gap-2">
               {badge ? (
@@ -102,12 +104,14 @@ export function GuideCard({
         className="flex flex-1 cursor-pointer flex-col"
       >
         <div className="flex items-stretch gap-3 border-b border-rule bg-paper-2/80 px-5 py-3 pl-6">
-          <span
-            className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg font-display text-sm font-semibold ${accent.soft}`}
-            aria-hidden
-          >
-            {accent.label}
-          </span>
+          {accent.label ? (
+            <span
+              className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg font-display text-sm font-semibold ${accent.soft}`}
+              aria-hidden
+            >
+              {accent.label}
+            </span>
+          ) : null}
           <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-1">
             <span className="rounded-full bg-rust/15 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-rust-2">
               {guide.category}
