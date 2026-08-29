@@ -34,7 +34,7 @@ export function ProductCard({
     return (
       <Link
         href={`/shop/${product.slug}`}
-        className={`group flex h-full cursor-pointer flex-col border border-rule bg-paper ${hoverClass}`}
+        className={`group flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-rule bg-paper ${hoverClass}`}
       >
         <div className="relative aspect-[4/5] overflow-hidden bg-paper-2/50">
           {badge ? (
@@ -45,15 +45,21 @@ export function ProductCard({
           <ProductMedia product={product} />
         </div>
         <div className="flex flex-1 flex-col p-5">
-          <p className="text-xs text-ink-soft">{product.category}</p>
-          <h3 className="mt-1 font-display text-xl leading-snug transition group-hover:text-rust">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-rust">
+            {product.category}
+          </p>
+          <h3 className="mt-1 min-h-[3.5rem] font-display text-xl leading-snug transition group-hover:text-rust">
             {product.name}
           </h3>
           <p className="mt-1 text-sm font-medium text-ink">{priceLabel}</p>
           {material ? (
-            <p className="mt-1 text-xs leading-5 text-ink-soft">{material}</p>
-          ) : null}
-          <span className="mt-auto pt-4 text-sm font-medium text-pine transition group-hover:text-rust">
+            <p className="mt-1 line-clamp-2 text-xs leading-5 text-ink-soft">
+              {material}
+            </p>
+          ) : (
+            <p className="mt-1 min-h-[2.5rem]" aria-hidden />
+          )}
+          <span className="mt-auto pt-4 text-sm font-semibold text-pine transition group-hover:text-rust">
             View product →
           </span>
         </div>

@@ -46,6 +46,12 @@ export function SiteFooter() {
             <Link href="/cart" className="transition hover:text-gold">
               Cart
             </Link>
+            <Link href="/privacy" className="transition hover:text-gold">
+              Privacy
+            </Link>
+            <Link href="/terms" className="transition hover:text-gold">
+              Terms
+            </Link>
           </nav>
         </div>
       </div>

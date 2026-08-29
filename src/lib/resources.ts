@@ -28,7 +28,7 @@ export const resources: Resource[] = [
     title: "The $47 grocery-week checklist",
     seoTitle: "Free $47 Family Grocery Budget Checklist (Printable)",
     description:
-      "Free printable family grocery budget checklist for about $47 a week: protein, starch, produce, pantry targets, and a swap box for store markdowns. No email required.",
+      "Printable family grocery budget checklist for about $47 a week: protein, starch, produce, pantry targets, and a swap box. Full fillable PDF with Sunday email signup.",
     excerpt:
       "A week of dinners for about 3-4 people. Dozen eggs, a pack of thighs, pasta on the tired night. Shop once.",
     intro:

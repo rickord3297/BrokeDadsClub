@@ -12,6 +12,7 @@ type NewsletterFormProps = {
   successMessage?: string;
   successHref?: string;
   successLinkLabel?: string;
+  trustLine?: string;
 };
 
 function validateEmail(value: string) {
@@ -30,6 +31,7 @@ export function NewsletterForm({
   successMessage,
   successHref,
   successLinkLabel,
+  trustLine,
 }: NewsletterFormProps) {
   const inputId = useId();
   const feedbackId = useId();
@@ -196,6 +198,8 @@ export function NewsletterForm({
         >
           {message}
         </p>
+      ) : trustLine ? (
+        <p className="text-xs leading-5 text-ink-soft">{trustLine}</p>
       ) : null}
     </form>
   );
