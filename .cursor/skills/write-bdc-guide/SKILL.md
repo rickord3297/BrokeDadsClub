@@ -69,7 +69,7 @@ faq:
 3. Use the row’s **Go live** date for `publishedAt` when present; otherwise pick a sensible future Monday and note it in the table.
 4. Include 3-6 `keywords` people would actually search (cheap X, how to Y for dads, budget Z).
 5. Add `seoTitle`, `description`, 2-3 `faq` items, `related` (live slugs only, never self), 1-2 `takeaways` for cards, an `action` line for the "Do this today (5 minutes)" box (falls back to the first takeaway), and optional `shop` product slugs. FAQ answers with quotes or colons must use a `>-` block. A half-quoted line (`answer: "We're..." then more sentence`) breaks the production build.
-6. Body: short intro → practical sections → calm close. ~600-900 words. Use markdown blockquotes for scripts (`> "line"`) and short truth lines (`> Truth: ...`). Add 1-2 internal links to other `/guides/...` where natural.
+6. Body: short intro → practical sections → calm close. ~600-900 words. Follow **Impact** (below) for scripts and punchlines. Add 1-2 internal links to other `/guides/...` where natural.
 7. Always use `status: draft` unless the user asks to schedule or publish now.
 8. Do not commit or push unless asked.
 
@@ -80,3 +80,54 @@ faq:
 - Dry, practical, specific. No hustle-bro, no 4 a.m. grind, no “just budget better.”
 - Soft shop links only if the user asks. Do not insert product callouts into guides.
 - **Never use em dashes or en dashes.** They read as fake/AI. Prefer a period, comma, colon, parentheses, or a plain hyphen in ranges (`15-45`, `$150-$200`). For labeled lists write `**Label:** rest` (colon), not a long dash.
+
+## Impact (skim weight + scripts)
+
+Articles render markdown blockquotes (`>`) as styled callout boxes on the site. Use them on purpose.
+
+### Punchlines get their own box
+
+Lines that explain **why it matters** ("Kids notice who watches," "Friendly is not the same as included") must not hide inside bullet lists or numbered steps. A tired dad skimming H2s and callouts will miss them.
+
+- Put each punchline on its own blockquote with a `Remember:`, `Truth:`, or `Note:` prefix.
+- One idea per box. No stacking two truths in one quote.
+- Place the box **right after** the section it lands, not only in `## The point`.
+
+```markdown
+> Remember: Kids notice who watches.
+```
+
+That renders as a rust-accent pull quote (serif, standalone). Plain body text and list items do not.
+
+### Scripts stay short and unpolished
+
+The best lines are ones a tired dad can mutter without feeling like he rehearsed. Casual beats clever.
+
+- **Use blockquotes, not bullet lists**, for anything he might say out loud.
+- Keep each script under ~15 words when you can. One line, one box.
+- Write how people actually talk: contractions, half-sentences, "hey" not "hello."
+- Avoid stage directions, multiple clauses, or therapist voice.
+- Label with a plain prefix when helpful: `> To your kid: "..."` or `> Say: "..."`
+
+**Good:**
+
+```markdown
+> "Good to see you. We gotta run."
+
+> To your kid: "I'm here to watch you. Tell me one thing to look for."
+```
+
+**Avoid:**
+
+```markdown
+- **The exit line:** "It was wonderful to see you; we must depart promptly."
+```
+
+Or burying the script three bullets deep with the punchline as an afterthought in body text.
+
+### Checklist before `status: draft`
+
+- [ ] At least one `Remember:` / `Truth:` pull quote for the article's emotional center
+- [ ] Every speakable script is a blockquote, not a list item
+- [ ] No script sounds like marketing copy or a TED talk
+- [ ] Punchlines are not duplicated only in FAQ or `## The point` (those are supplements, not substitutes)
