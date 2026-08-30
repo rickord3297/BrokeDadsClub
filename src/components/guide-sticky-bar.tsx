@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { ShareGuide } from "@/components/share-guide";
 
-export function StickyShareGuide({
+/** Compact share bar below site header once the reader scrolls past the title. */
+export function GuideStickyBar({
   title,
   url,
   slug,
@@ -34,8 +35,11 @@ export function StickyShareGuide({
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-5 right-4 z-40 print:hidden sm:bottom-6 sm:right-6">
-      <div className="rounded-full border border-rule bg-paper/95 px-1 py-1 shadow-lg shadow-ink/15 backdrop-blur">
+    <div className="fixed inset-x-0 top-[57px] z-30 border-b border-rule bg-paper/95 shadow-sm backdrop-blur-sm print:hidden sm:top-[65px]">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2 sm:px-6">
+        <p className="min-w-0 truncate text-sm font-medium text-ink-soft">
+          {title}
+        </p>
         <ShareGuide title={title} url={url} slug={slug} />
       </div>
     </div>

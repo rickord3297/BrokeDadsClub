@@ -9,13 +9,15 @@ import {
 } from "@/components/guide-companion-tools";
 import { GuideEmailCta } from "@/components/guide-email-cta";
 import { GuideFaqAccordion } from "@/components/guide-faq";
+import { GuideFeedback } from "@/components/guide-feedback";
 import { GuideKeepGoing } from "@/components/guide-keep-going";
 import { GuideMarkdown } from "@/components/guide-markdown";
+import { GuideReaderSignal } from "@/components/guide-reader-signal";
+import { GuideStickyBar } from "@/components/guide-sticky-bar";
 import { GuideTableOfContents } from "@/components/guide-toc";
 import { GuideViewTracker } from "@/components/guide-view-tracker";
 import { ReadingProgress } from "@/components/reading-progress";
 import { ShareGuide } from "@/components/share-guide";
-import { StickyShareGuide } from "@/components/sticky-share-guide";
 import { formatDate } from "@/lib/format";
 import {
   extractGuideHeadings,
@@ -167,7 +169,7 @@ export default async function GuidePage({
     <>
       <GuideViewTracker slug={guide.slug} category={guide.category} />
       <ReadingProgress slug={guide.slug} />
-      <StickyShareGuide title={guide.title} url={url} slug={guide.slug} />
+      <GuideStickyBar title={guide.title} url={url} slug={guide.slug} />
 
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <script
@@ -194,10 +196,14 @@ export default async function GuidePage({
               : "mt-8"
           }
         >
-          <article data-reading-progress className="min-w-0 max-w-3xl">
+          <article data-reading-progress className="min-w-0 max-w-3xl pb-6">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-rust">
               {guide.category} · {guide.readTime}
             </p>
+            <GuideReaderSignal
+              slug={guide.slug}
+              publishedAt={guide.publishedAt}
+            />
             <h1 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">
               {guide.title}
             </h1>
@@ -220,14 +226,22 @@ export default async function GuidePage({
             ) : null}
 
             <div className="prose-guide mt-8">
-              <GuideMarkdown content={intro} headingCounts={headingCounts} />
+              <GuideMarkdown
+                content={intro}
+                headingCounts={headingCounts}
+                currentSlug={guide.slug}
+              />
             </div>
 
             <ActionBox steps={actionSteps} />
 
             {body ? (
               <div className="prose-guide mt-8">
-                <GuideMarkdown content={body} headingCounts={headingCounts} />
+                <GuideMarkdown
+                  content={body}
+                  headingCounts={headingCounts}
+                  currentSlug={guide.slug}
+                />
               </div>
             ) : null}
 
@@ -265,6 +279,8 @@ export default async function GuidePage({
                   : "Print the grocery checklist"
               }
             />
+
+            <GuideFeedback slug={guide.slug} />
 
             <p className="mt-10 border-t border-rule pt-6 text-sm">
               <Link href="/guides" className="text-pine hover:text-rust">
