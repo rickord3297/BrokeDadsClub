@@ -74,11 +74,13 @@ Rotating jobs week to week keeps you from burning out on snack duty forever.
 
 ## Scripts when you feel extra
 
-- To your partner: "Point me at one person I should know by name."
-- To another parent: "I'm still learning the cast. Who runs this circus?"
-- To your kid: "I'm here to watch you. Tell me one thing to look for."
+> To your partner: "Point me at one person I should know by name."
 
-That last line matters. Kids notice who watches.
+> "I'm still learning the cast. Who runs this circus?"
+
+> To your kid: "I'm here to watch you. Tell me one thing to look for."
+
+> Remember: Kids notice who watches.
 
 ## Phone rules
 

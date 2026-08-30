@@ -57,7 +57,9 @@ Small moves stack. You are not building a friend group by Friday.
 
 Kid activities are built for repeat contact. Same field, same bleachers, same Tuesday. Whoever handles most of the schedule gets the reps. Often that is Mom, or the parent who already knows the school office by voice.
 
-When you tag along, you are physically there and socially one step back. People are friendly. "Hey!" at drop-off. A nod at halftime. Then everyone drifts back to the people they already know. **Friendly is not the same as included.**
+When you tag along, you are physically there and socially one step back. People are friendly. "Hey!" at drop-off. A nod at halftime. Then everyone drifts back to the people they already know.
+
+> Remember: Friendly is not the same as included.
 
 Men also get fewer practice runs at this. A lot of us built friendships through work, teams, or a bar that closed. Parent world runs on quick chats, logistics, and remembering which kid has the nut allergy. Nobody handed you a script.
 
