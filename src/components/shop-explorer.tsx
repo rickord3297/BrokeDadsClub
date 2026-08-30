@@ -8,7 +8,6 @@ import { ProductCard } from "@/components/product-card";
 import { formatMoney } from "@/lib/format";
 import {
   CASTLE_PIN_SLUG,
-  POD_SHIPPING_COPY,
   SHOP_FILTERS,
   filterShopProducts,
   shopFilterCounts,
@@ -82,8 +81,6 @@ export function ShopExplorer({ products }: { products: Product[] }) {
       )}
 
       {pin && filter === "all" ? <CastlePinUpsell product={pin} /> : null}
-
-      <p className="mt-8 text-sm text-ink-soft">{POD_SHIPPING_COPY}</p>
     </>
   );
 }

@@ -104,8 +104,30 @@ export function productMaterialNote(product: Product): string {
   }
 }
 
-export const POD_SHIPPING_COPY =
-  "Printed after you check out. Ships in 3-5 business days.";
+export const POD_SHIPPING_COPY = "Ships in 3-5 business days.";
+
+export const SHOP_FAQ = [
+  {
+    question: "How long does shipping take?",
+    answer:
+      "Most orders ship in 3-5 business days. You will get an email with tracking when it leaves the warehouse.",
+  },
+  {
+    question: "When is my order made?",
+    answer:
+      "Each item is made to order when you buy it. That keeps waste down and lets us run the shop without a garage full of boxes.",
+  },
+  {
+    question: "What if something arrives wrong?",
+    answer:
+      "Email us through the About page contact form with your order details and a photo. We will make it right.",
+  },
+  {
+    question: "Where does the money go?",
+    answer:
+      "Shop sales help keep the guides and printables free. Wear it if you want. Skip it if the grocery list wins this week.",
+  },
+] as const;
 
 export const TEE_SIZE_CHART = [
   { size: "S", chest: "34–37", length: "28" },
