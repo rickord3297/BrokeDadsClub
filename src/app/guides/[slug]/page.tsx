@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ActionBox } from "@/components/guide-action-box";
+import { FieldChecklist } from "@/components/field-checklist";
 import { GuideBreadcrumbs } from "@/components/guide-breadcrumbs";
 import {
   GuideCompanionPrintables,
@@ -91,7 +92,7 @@ export default async function GuidePage({
   const nextGuide = guide.nextGuide ? getGuide(guide.nextGuide) : null;
   const actionSteps = [guide.action].filter((step) => step.trim());
   const [intro, body] = splitGuideIntro(guide.content);
-  const { main, thePoint } = partitionGuideBody(body);
+  const { fieldProtocol, main, thePoint } = partitionGuideBody(body);
   const headings = extractTocHeadings(main);
   const headingCounts = new Map<string, number>();
   const companionPrintable = getResourceByGuideSlug(guide.slug);
@@ -221,15 +222,6 @@ export default async function GuidePage({
               <ShareGuide title={guide.title} url={url} slug={guide.slug} />
             </div>
 
-            {showToc ? (
-              <GuideTableOfContents
-                headings={headings}
-                includeFaq={guide.faq.length > 0}
-                includeKeepGoing={related.length > 0}
-                variant="mobile"
-              />
-            ) : null}
-
             <div className="prose-guide mt-8">
               <GuideMarkdown
                 content={intro}
@@ -238,7 +230,20 @@ export default async function GuidePage({
               />
             </div>
 
-            <ActionBox steps={actionSteps} />
+            {fieldProtocol ? (
+              <FieldChecklist protocol={fieldProtocol} />
+            ) : (
+              <ActionBox steps={actionSteps} />
+            )}
+
+            {showToc ? (
+              <GuideTableOfContents
+                headings={headings}
+                includeFaq={guide.faq.length > 0}
+                includeKeepGoing={related.length > 0}
+                variant="mobile"
+              />
+            ) : null}
 
             {main ? (
               <div className="prose-guide mt-8">
@@ -250,7 +255,11 @@ export default async function GuidePage({
               </div>
             ) : null}
 
-            <GuideThePoint content={thePoint} headingCounts={headingCounts} />
+            <GuideThePoint
+              content={thePoint}
+              headingCounts={headingCounts}
+              currentSlug={guide.slug}
+            />
 
             {guide.faq.length > 0 ? (
               <GuideFaqAccordion items={guide.faq} />

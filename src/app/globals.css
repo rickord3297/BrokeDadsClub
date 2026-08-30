@@ -130,6 +130,44 @@ body {
   font-weight: 650;
 }
 
+.prose-guide ul.guide-script-list {
+  margin: 0 0 1.5rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.prose-guide li.guide-script-list-item {
+  margin-bottom: 0.75rem;
+  list-style: none;
+}
+
+.prose-guide .guide-script-pill {
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--pine) 22%, transparent);
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--pine) 5%, var(--paper));
+  padding: 0.65rem 0.85rem;
+}
+
+.prose-guide .guide-script-pill .guide-callout-copy {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.prose-guide .guide-script-pill:hover .guide-callout-copy,
+.prose-guide .guide-script-pill:focus-within .guide-callout-copy {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (hover: none) {
+  .prose-guide .guide-script-pill .guide-callout-copy {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
 .prose-guide .guide-script-callout,
 .prose-guide .guide-pull-quote {
   display: block;
