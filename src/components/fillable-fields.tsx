@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useId, useState } from "react";
 
-type SheetMode = "blank" | "sample";
+export type SheetMode = "blank" | "sample";
 
 const SheetModeContext = createContext<SheetMode>("blank");
 
