@@ -10,7 +10,10 @@ Open any file to edit. `status: scheduled` goes live automatically on `published
 | The sports signup fee you did not budget for | 2026-08-29 | [the-sports-signup-fee-you-didnt-budget-for.md](guides/the-sports-signup-fee-you-didnt-budget-for.md) |
 | Tagging along without becoming furniture | 2026-08-30 | [tagging-along-without-becoming-furniture.md](guides/tagging-along-without-becoming-furniture.md) |
 | One dad coffee, not a friend group | 2026-08-31 | [one-dad-coffee-not-a-friend-group.md](guides/one-dad-coffee-not-a-friend-group.md) |
+| The after-school collapse is not a bad kid | 2026-09-01 | [the-after-school-collapse-is-not-a-bad-kid.md](guides/the-after-school-collapse-is-not-a-bad-kid.md) *(draft)* |
 | When the other dad’s vacation photos hit | 2026-09-08 | [when-the-other-dads-vacation-photos-hit.md](guides/when-the-other-dads-vacation-photos-hit.md) |
+| Packing school lunch without a $12 guilt spiral | 2026-09-15 | [packing-school-lunch-without-a-guilt-spiral.md](guides/packing-school-lunch-without-a-guilt-spiral.md) *(draft)* |
+| Dropping one activity so the week can breathe | 2026-09-22 | [dropping-one-activity-so-the-week-can-breathe.md](guides/dropping-one-activity-so-the-week-can-breathe.md) *(draft)* |
 | What to say when someone asks what you do for fun | 2026-09-29 | [what-do-you-do-for-fun.md](guides/what-do-you-do-for-fun.md) |
 | The kid who won't sleep | 2026-10-06 | [the-kid-who-wont-sleep.md](guides/the-kid-who-wont-sleep.md) |
 | How to handle the early riser | 2026-10-13 | [how-to-handle-the-early-riser.md](guides/how-to-handle-the-early-riser.md) |
