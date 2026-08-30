@@ -12,13 +12,17 @@ import { GuideFaqAccordion } from "@/components/guide-faq";
 import { GuideKeepGoing } from "@/components/guide-keep-going";
 import { GuideMarkdown } from "@/components/guide-markdown";
 import { GuideTableOfContents } from "@/components/guide-toc";
+import { GuideThePoint } from "@/components/guide-the-point";
 import { GuideViewTracker } from "@/components/guide-view-tracker";
 import { ReadingProgress } from "@/components/reading-progress";
 import { ShareGuide } from "@/components/share-guide";
 import { StickyShareGuide } from "@/components/sticky-share-guide";
 import { formatDate } from "@/lib/format";
 import {
-  extractGuideHeadings,
+  extractTocHeadings,
+  partitionGuideBody,
+} from "@/lib/guide-content";
+import {
   getGuide,
   getGuides,
   getRelatedGuides,
@@ -85,7 +89,8 @@ export default async function GuidePage({
   const nextGuide = guide.nextGuide ? getGuide(guide.nextGuide) : null;
   const actionSteps = [guide.action].filter((step) => step.trim());
   const [intro, body] = splitGuideIntro(guide.content);
-  const headings = extractGuideHeadings(guide.content);
+  const { main, thePoint } = partitionGuideBody(body);
+  const headings = extractTocHeadings(main);
   const headingCounts = new Map<string, number>();
   const companionPrintable = getResourceByGuideSlug(guide.slug);
   const showToc = headings.length >= 2;
@@ -225,11 +230,13 @@ export default async function GuidePage({
 
             <ActionBox steps={actionSteps} />
 
-            {body ? (
+            {main ? (
               <div className="prose-guide mt-8">
-                <GuideMarkdown content={body} headingCounts={headingCounts} />
+                <GuideMarkdown content={main} headingCounts={headingCounts} />
               </div>
             ) : null}
+
+            <GuideThePoint content={thePoint} headingCounts={headingCounts} />
 
             {guide.faq.length > 0 ? (
               <GuideFaqAccordion items={guide.faq} />
