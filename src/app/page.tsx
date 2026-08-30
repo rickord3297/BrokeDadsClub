@@ -64,7 +64,7 @@ export default async function Home() {
                 Shop
               </p>
               <h2 className="mt-1 font-display text-3xl sm:text-[2rem]">
-                Club goods
+                Club wear
               </h2>
               <p className="mt-2 max-w-xl text-sm leading-6 text-ink-soft">
                 Wear the badge. All apparel sales fund new free guides and open
