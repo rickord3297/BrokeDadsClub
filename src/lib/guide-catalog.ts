@@ -3,34 +3,28 @@ import { resources } from "@/lib/resources";
 export type CategoryAccent = {
   bar: string;
   soft: string;
-  label: string;
 };
 
 export const CATEGORY_ACCENTS: Record<string, CategoryAccent> = {
   Money: {
     bar: "bg-pine",
     soft: "bg-pine/10 text-pine",
-    label: "",
   },
   Time: {
     bar: "bg-rust",
     soft: "bg-rust/15 text-rust-2",
-    label: "T",
   },
   Kids: {
     bar: "bg-gold",
     soft: "bg-gold/20 text-ink",
-    label: "K",
   },
   Work: {
     bar: "bg-ink",
     soft: "bg-ink/10 text-ink",
-    label: "W",
   },
   Gear: {
     bar: "bg-pine-2",
     soft: "bg-pine-2/15 text-pine",
-    label: "G",
   },
 };
 
@@ -39,7 +33,6 @@ export function categoryAccent(category: string): CategoryAccent {
     CATEGORY_ACCENTS[category] ?? {
       bar: "bg-pine",
       soft: "bg-pine/10 text-pine",
-      label: "·",
     }
   );
 }
