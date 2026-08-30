@@ -4,4 +4,5 @@ Each scan notes the date, what was checked, what became an idea, and what was sk
 
 | Date | Kept | Skipped | Notes |
 |------|------|---------|-------|
+| 2026-08-30 | The parent portal in five minutes a week; When the school only texts Mom; One motion when the meltdown is happening now | Generic "dad tax" money panic; unemployed-dad morning fight drama (weaponized incompetence bait); celebrity/back-to-school influencer lists | Late-August scan: Dad Day/principal portal advice, Reddit single-dad teacher bias, Kirk Martin meltdown "motion before words," Disney budget headlines. Also drafted Disney World without debt per desk request. |
 | 2026-08-14 | The second bill after school starts | Brand-backpack / wish-list pressure (too close to school-supply-list, live 8/20); millennial-dad money fixation (too close to the dad tax); BNPL/payday-loan headlines (shame-adjacent, not a tactic) | Back-to-school cost is the loud parent story this week (NerdWallet, Beyond Finance, GMA/Ipsos, Texas A&M). Supply-list piece already scheduled. The unused angle is the fees that hit *after* class starts. |
