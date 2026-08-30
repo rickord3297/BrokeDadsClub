@@ -3,6 +3,7 @@ import { Fraunces, Inter, Oswald } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { CartProvider } from "@/components/cart-provider";
+import { MetaPixel } from "@/components/meta-pixel";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/lib/site";
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${fraunces.variable} ${oswald.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col text-ink">
+        <MetaPixel />
         <CartProvider>
           <SiteHeader />
           <main className="flex-1">{children}</main>

@@ -160,7 +160,10 @@ export function AddToCartButton({
               return;
             }
             setMessage("");
-            trackShopAddToCart(product.slug);
+            trackShopAddToCart(
+              product.slug,
+              selected?.price_cents ?? product.price_cents,
+            );
             addItem({
               id: product.id,
               slug: product.slug,

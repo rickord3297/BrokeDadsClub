@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ClearCartOnSuccess } from "@/components/clear-cart-on-success";
+import { PurchaseTracker } from "@/components/purchase-tracker";
 
 export const metadata: Metadata = {
   title: "Order received",
@@ -10,6 +11,7 @@ export default function SuccessPage() {
   return (
     <div className="mx-auto max-w-2xl px-4 py-20 text-center sm:px-6">
       <ClearCartOnSuccess />
+      <PurchaseTracker />
       <p className="text-xs uppercase tracking-[0.18em] text-rust">Thank you</p>
       <h1 className="mt-3 font-display text-5xl">You&apos;re in the club.</h1>
       <p className="mt-5 text-lg leading-8 text-ink-soft">

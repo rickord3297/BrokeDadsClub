@@ -1,6 +1,10 @@
 "use client";
 
 import { track } from "@vercel/analytics/react";
+import {
+  trackMetaAddToCart,
+  trackMetaInitiateCheckout,
+} from "@/lib/meta-pixel";
 
 type AnalyticsProps = Record<string, string | number | boolean | null | undefined>;
 
@@ -51,12 +55,14 @@ export function trackPrintablePrint(slug: string) {
   send("printable_print", { slug });
 }
 
-export function trackShopAddToCart(slug: string) {
+export function trackShopAddToCart(slug: string, priceCents?: number) {
   send("shop_add_to_cart", { slug });
+  trackMetaAddToCart({ slug, priceCents });
 }
 
 export function trackCheckoutStart(itemCount: number, subtotalCents: number) {
   send("checkout_start", { item_count: itemCount, subtotal_cents: subtotalCents });
+  trackMetaInitiateCheckout({ valueCents: subtotalCents, itemCount });
 }
 
 export function trackStartHereClick(target: string) {
