@@ -1,0 +1,26 @@
+{
+  "id": "6a948335edbb57ccf007d487",
+  "title": "Club Crest Heavy Tee",
+  "handle": "https://brokedadsclub.com/shop/club-crest-heavy-tee",
+  "slug": "club-crest-heavy-tee",
+  "blueprint_id": 3035,
+  "print_provider_id": 74,
+  "colors": [
+    "Hunter Green",
+    "Dust",
+    "Cocoa",
+    "Vintage Navy",
+    "Asphalt"
+  ],
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+  ],
+  "price_cents": 3299,
+  "mockupCount": 10,
+  "firstMockup": "https://images-api.printify.com/mockup/6a948335edbb57ccf007d487/171720/120272/club-crest-heavy-tee.jpg?camera_label=front"
+}

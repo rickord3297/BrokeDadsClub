@@ -95,6 +95,22 @@ export function ProductArt({
     );
   }
 
+  if (art === "tote") {
+    return (
+      <svg viewBox="0 0 200 200" className={className || common} aria-hidden>
+        <rect width="200" height="200" fill="#c4a574" />
+        <path d="M58 72h84v86H58z" fill="#f3ede3" />
+        <path
+          d="M72 72c0-18 12-28 28-28s28 10 28 28"
+          stroke="#1c1915"
+          strokeWidth="8"
+          fill="none"
+        />
+        <circle cx="100" cy="108" r="14" fill="#2c5f63" />
+      </svg>
+    );
+  }
+
   return (
     <svg viewBox="0 0 200 200" className={className || common} aria-hidden>
       <rect width="200" height="200" fill="#1c1915" />

@@ -17,7 +17,8 @@ export default async function ShopPage() {
       <p className="text-xs uppercase tracking-[0.18em] text-rust">Club goods</p>
       <h1 className="mt-3 font-display text-5xl">The shop</h1>
       <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
-        Crest, pup, penguin, and the rest. Wear the badge.
+        Crest, fleece, totes, and the rest. Garment-dyed earth tones on the
+        premium line.
       </p>
       <ShopExplorer products={products} />
       <ShopFaq />

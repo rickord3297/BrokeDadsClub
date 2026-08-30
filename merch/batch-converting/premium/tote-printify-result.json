@@ -1,0 +1,20 @@
+{
+  "id": "6a9483465e1051b47605442e",
+  "title": "Club Crest Tote",
+  "handle": "https://brokedadsclub.com/shop/club-crest-tote",
+  "slug": "club-crest-tote",
+  "blueprint_id": 553,
+  "print_provider_id": 217,
+  "colors": [
+    "Black",
+    "Camel",
+    "Coal",
+    "Khaki"
+  ],
+  "sizes": [
+    "One size"
+  ],
+  "price_cents": 2499,
+  "mockupCount": 20,
+  "firstMockup": "https://images-api.printify.com/mockup/6a9483465e1051b47605442e/70603/128043/club-crest-tote.jpg?camera_label=front"
+}

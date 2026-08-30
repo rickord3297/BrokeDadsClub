@@ -1,0 +1,27 @@
+{
+  "id": "6a94833ae46b0ca415066dd7",
+  "title": "Club Crest Hoodie",
+  "handle": "https://brokedadsclub.com/shop/club-crest-hoodie",
+  "slug": "club-crest-hoodie",
+  "blueprint_id": 1298,
+  "print_provider_id": 39,
+  "colors": [
+    "Blue Jean",
+    "Denim",
+    "Grey",
+    "Pepper",
+    "True Navy",
+    "Blue Spruce"
+  ],
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+  ],
+  "price_cents": 5499,
+  "mockupCount": 60,
+  "firstMockup": "https://images-api.printify.com/mockup/6a94833ae46b0ca415066dd7/98499/101143/club-crest-hoodie.jpg?camera_label=front"
+}

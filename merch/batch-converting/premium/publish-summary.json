@@ -1,0 +1,136 @@
+{
+  "vintage-tee": {
+    "id": "6a94832bedbb57ccf007d479",
+    "title": "Club Crest Vintage Tee",
+    "handle": "https://brokedadsclub.com/shop/club-crest-vintage-tee",
+    "slug": "club-crest-vintage-tee",
+    "blueprint_id": 706,
+    "print_provider_id": 99,
+    "colors": [
+      "Bay",
+      "Blue Spruce",
+      "Chambray",
+      "Denim",
+      "Graphite",
+      "Ivory",
+      "Moss",
+      "Pepper",
+      "Terracotta",
+      "True Navy"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL",
+      "4XL"
+    ],
+    "price_cents": 2999,
+    "mockupCount": 180,
+    "firstMockup": "https://images-api.printify.com/mockup/6a94832bedbb57ccf007d479/79073/98445/club-crest-vintage-tee.jpg?camera_label=front"
+  },
+  "heavy-tee": {
+    "id": "6a948335edbb57ccf007d487",
+    "title": "Club Crest Heavy Tee",
+    "handle": "https://brokedadsclub.com/shop/club-crest-heavy-tee",
+    "slug": "club-crest-heavy-tee",
+    "blueprint_id": 3035,
+    "print_provider_id": 74,
+    "colors": [
+      "Hunter Green",
+      "Dust",
+      "Cocoa",
+      "Vintage Navy",
+      "Asphalt"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "price_cents": 3299,
+    "mockupCount": 10,
+    "firstMockup": "https://images-api.printify.com/mockup/6a948335edbb57ccf007d487/171720/120272/club-crest-heavy-tee.jpg?camera_label=front"
+  },
+  "hoodie": {
+    "id": "6a94833ae46b0ca415066dd7",
+    "title": "Club Crest Hoodie",
+    "handle": "https://brokedadsclub.com/shop/club-crest-hoodie",
+    "slug": "club-crest-hoodie",
+    "blueprint_id": 1298,
+    "print_provider_id": 39,
+    "colors": [
+      "Blue Jean",
+      "Denim",
+      "Grey",
+      "Pepper",
+      "True Navy",
+      "Blue Spruce"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "price_cents": 5499,
+    "mockupCount": 60,
+    "firstMockup": "https://images-api.printify.com/mockup/6a94833ae46b0ca415066dd7/98499/101143/club-crest-hoodie.jpg?camera_label=front"
+  },
+  "crewneck": {
+    "id": "6a94834082d71bf6f808ed2d",
+    "title": "Club Crest Crewneck",
+    "handle": "https://brokedadsclub.com/shop/club-crest-crewneck",
+    "slug": "club-crest-crewneck",
+    "blueprint_id": 1296,
+    "print_provider_id": 99,
+    "colors": [
+      "Blue Jean",
+      "Blue Spruce",
+      "Chambray",
+      "Denim",
+      "Grey",
+      "Pepper",
+      "True Navy",
+      "Terracotta"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "price_cents": 4799,
+    "mockupCount": 72,
+    "firstMockup": "https://images-api.printify.com/mockup/6a94834082d71bf6f808ed2d/102429/99007/club-crest-crewneck.jpg?camera_label=front"
+  },
+  "tote": {
+    "id": "6a9483465e1051b47605442e",
+    "title": "Club Crest Tote",
+    "handle": "https://brokedadsclub.com/shop/club-crest-tote",
+    "slug": "club-crest-tote",
+    "blueprint_id": 553,
+    "print_provider_id": 217,
+    "colors": [
+      "Black",
+      "Camel",
+      "Coal",
+      "Khaki"
+    ],
+    "sizes": [
+      "One size"
+    ],
+    "price_cents": 2499,
+    "mockupCount": 20,
+    "firstMockup": "https://images-api.printify.com/mockup/6a9483465e1051b47605442e/70603/128043/club-crest-tote.jpg?camera_label=front"
+  }
+}

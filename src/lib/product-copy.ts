@@ -1,4 +1,4 @@
-type ProductArt = "tee" | "mug" | "cap" | "sticker" | "hoodie" | "patch";
+type ProductArt = "tee" | "mug" | "cap" | "sticker" | "hoodie" | "patch" | "tote";
 
 const GARMENT_WORD =
   /\b(t-?shirts?|tee shirts?|tees?|hoodies?|sweatshirts?|crewnecks?|caps?|hats?|mugs?|stickers?|patches?|pins?)\b/gi;
@@ -18,6 +18,8 @@ function artLabel(art: ProductArt) {
       return "Sticker";
     case "patch":
       return "Patch";
+    case "tote":
+      return "Tote";
     default:
       return "Tee";
   }
@@ -100,6 +102,8 @@ function wearLine(art: ProductArt): string {
       return "Put it on the dented bottle or the work laptop.";
     case "patch":
       return "Iron-on or sew it to the jacket that has seen every school drop-off.";
+    case "tote":
+      return "Groceries, library books, and the stuff your pockets gave up on.";
     default:
       return "Pickup-line readable. No hustle slogan.";
   }

@@ -3,15 +3,19 @@ import type { Product, ProductArt } from "@/lib/products";
 export const SHOP_FILTERS = [
   { id: "all", label: "All" },
   { id: "tees", label: "Tees" },
+  { id: "fleece", label: "Fleece" },
   { id: "hats", label: "Hats" },
+  { id: "bags", label: "Bags" },
   { id: "gear", label: "Gear / Pins" },
 ] as const;
 
 export type ShopFilterId = (typeof SHOP_FILTERS)[number]["id"];
 
 export function shopFilterForArt(art: ProductArt): Exclude<ShopFilterId, "all"> {
-  if (art === "tee" || art === "hoodie") return "tees";
+  if (art === "tee") return "tees";
+  if (art === "hoodie") return "fleece";
   if (art === "cap") return "hats";
+  if (art === "tote") return "bags";
   return "gear";
 }
 
@@ -24,7 +28,9 @@ export function shopFilterCounts(products: Product[]) {
   const counts: Record<ShopFilterId, number> = {
     all: products.length,
     tees: 0,
+    fleece: 0,
     hats: 0,
+    bags: 0,
     gear: 0,
   };
   for (const product of products) {
@@ -72,6 +78,22 @@ const COLOR_HEX: Record<string, string> = {
   "dark chocolate": "#3b2416",
   "heather navy": "#3d4f6f",
   "heather red": "#a85a5a",
+  pepper: "#3d4035",
+  moss: "#6b6f4a",
+  bay: "#6b7f8f",
+  "blue spruce": "#4a6670",
+  terracotta: "#b56a4a",
+  denim: "#5a6f8a",
+  chambray: "#8fa3b8",
+  "true navy": "#2a3444",
+  "blue jean": "#6a7f96",
+  camel: "#c4a574",
+  coal: "#3a3a38",
+  cocoa: "#6b4f3f",
+  dust: "#9a9088",
+  "vintage navy": "#3d4a5c",
+  "hunter green": "#3d4f3a",
+  asphalt: "#4a4a48",
 };
 
 export function colorSwatchHex(color: string): string {
@@ -84,13 +106,23 @@ export function colorSwatchHex(color: string): string {
 }
 
 export function productMaterialNote(product: Product): string {
+  if (product.slug.includes("vintage-tee")) {
+    return "Garment-dyed cotton · 6.1 oz · Pre-shrunk";
+  }
+  if (product.slug.includes("heavy-tee")) {
+    return "Heavyweight cotton · 7.5 oz · Boxy fit";
+  }
   switch (product.art) {
     case "tee":
       return "100% ring-spun cotton · Pre-shrunk";
     case "hoodie":
-      return "Heavy fleece blend · Kangaroo pocket";
+      return product.slug.includes("crewneck")
+        ? "Garment-dyed fleece · Crewneck"
+        : "Garment-dyed fleece · Kangaroo pocket";
     case "cap":
       return "Cotton crown · Adjustable fit";
+    case "tote":
+      return "Canvas · One size";
     case "mug":
       return "Ceramic · Dishwasher-safe";
     case "sticker":
@@ -121,6 +153,11 @@ export const SHOP_FAQ = [
     question: "What if something arrives wrong?",
     answer:
       "Email us through the About page contact form with your order details and a photo. We will make it right.",
+  },
+  {
+    question: "What blanks do you use?",
+    answer:
+      "Premium crest tees use garment-dyed Comfort Colors and heavyweight cotton. Fleece is Comfort Colors too. Standard designs stay on soft Gildan cotton at a lower price point.",
   },
   {
     question: "Where does the money go?",

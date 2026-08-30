@@ -11,7 +11,7 @@ import {
 } from "@/lib/printify";
 import { createPublicClient } from "@/lib/supabase/public";
 
-export type ProductArt = "tee" | "mug" | "cap" | "sticker" | "hoodie" | "patch";
+export type ProductArt = "tee" | "mug" | "cap" | "sticker" | "hoodie" | "patch" | "tote";
 
 export const APPAREL_SIZES = ["S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL"] as const;
 
@@ -130,7 +130,9 @@ export function printifyProductSlug(productId: string, title: string) {
 
 function artFromPrintify(title: string, tags: string[]): ProductArt {
   const haystack = `${title} ${tags.join(" ")}`.toLowerCase();
-  if (haystack.includes("hoodie") || haystack.includes("sweatshirt")) return "hoodie";
+  if (haystack.includes("tote")) return "tote";
+  if (haystack.includes("hoodie") || haystack.includes("sweatshirt") || haystack.includes("crewneck"))
+    return "hoodie";
   if (haystack.includes("mug")) return "mug";
   if (haystack.includes("cap") || haystack.includes("hat")) return "cap";
   if (haystack.includes("sticker")) return "sticker";
@@ -217,6 +219,42 @@ const printifyCopyOverrides: Record<
     price_cents: 500,
     defaultSize: "2.25\"",
   },
+  "6a94832bedbb57ccf007d479": {
+    slug: "club-crest-vintage-tee",
+    name: "Club Crest Vintage Tee",
+    description:
+      "The official Broke Dads Club crest on a garment-dyed Comfort Colors tee. Washed earth tones, soft 6.1 oz cotton, and a fit that already looks broken in.",
+    price_cents: 2999,
+  },
+  "6a948335edbb57ccf007d487": {
+    slug: "club-crest-heavy-tee",
+    name: "Club Crest Heavy Tee",
+    description:
+      "The official crest on a 7.5 oz heavyweight tee with a boxy drape. Vintage navy, hunter green, cocoa, and washed heather tones.",
+    price_cents: 3299,
+  },
+  "6a94833ae46b0ca415066dd7": {
+    slug: "club-crest-hoodie",
+    name: "Club Crest Hoodie",
+    description:
+      "Garment-dyed Comfort Colors hoodie with the official crest up front. Heavy fleece, kangaroo pocket for snacks, and washed earth tones.",
+    price_cents: 5499,
+  },
+  "6a94834082d71bf6f808ed2d": {
+    slug: "club-crest-crewneck",
+    name: "Club Crest Crewneck",
+    description:
+      "Garment-dyed Comfort Colors crewneck with the official crest. Lighter than a hoodie, still fleece-lined enough for the school run.",
+    price_cents: 4799,
+  },
+  "6a9483465e1051b47605442e": {
+    slug: "club-crest-tote",
+    name: "Club Crest Tote",
+    description:
+      "Canvas tote with the official crest. Camel, khaki, and coal earth tones for groceries, library books, and the stuff your pockets gave up on.",
+    price_cents: 2499,
+    defaultSize: "One size",
+  },
 };
 
 function isRetailLooking(cents: number) {
@@ -271,7 +309,12 @@ async function getPrintifyProducts(): Promise<Product[]> {
           name: override?.name ?? clubCopy.name,
           description: override?.description ?? clubCopy.description,
           price_cents: pricing.price_cents,
-          category: art === "tee" || art === "hoodie" || art === "cap" ? "Apparel" : "Gear",
+          category:
+            art === "tee" || art === "hoodie" || art === "cap"
+              ? "Apparel"
+              : art === "tote"
+                ? "Bags"
+                : "Gear",
           art,
           image,
           images,
@@ -331,9 +374,9 @@ export async function getProductsBySlugs(slugs: string[]): Promise<Product[]> {
 
 /** Homepage shop preview: best sellers and brand anchors. */
 export const HOME_SHOP_SLUGS = [
-  "club-crest-cap",
-  "club-pup-tee",
-  "castle-crest-tee",
+  "club-crest-vintage-tee",
+  "club-crest-hoodie",
+  "club-crest-tote",
 ] as const;
 
 export async function getHomeShopProducts(): Promise<Product[]> {

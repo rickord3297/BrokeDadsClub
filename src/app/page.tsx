@@ -67,8 +67,8 @@ export default async function Home() {
                 Club wear
               </h2>
               <p className="mt-2 max-w-xl text-sm leading-6 text-ink-soft">
-                Wear the badge. All apparel sales fund new free guides and open
-                tools.
+                Garment-dyed tees, fleece, and totes in washed earth tones.
+                Sales fund new free guides and open tools.
               </p>
             </div>
             <Link

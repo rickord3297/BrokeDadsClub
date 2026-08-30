@@ -1,0 +1,29 @@
+{
+  "id": "6a94834082d71bf6f808ed2d",
+  "title": "Club Crest Crewneck",
+  "handle": "https://brokedadsclub.com/shop/club-crest-crewneck",
+  "slug": "club-crest-crewneck",
+  "blueprint_id": 1296,
+  "print_provider_id": 99,
+  "colors": [
+    "Blue Jean",
+    "Blue Spruce",
+    "Chambray",
+    "Denim",
+    "Grey",
+    "Pepper",
+    "True Navy",
+    "Terracotta"
+  ],
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+  ],
+  "price_cents": 4799,
+  "mockupCount": 72,
+  "firstMockup": "https://images-api.printify.com/mockup/6a94834082d71bf6f808ed2d/102429/99007/club-crest-crewneck.jpg?camera_label=front"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "6a94832bedbb57ccf007d479",
+  "title": "Club Crest Vintage Tee",
+  "handle": "https://brokedadsclub.com/shop/club-crest-vintage-tee",
+  "slug": "club-crest-vintage-tee",
+  "blueprint_id": 706,
+  "print_provider_id": 99,
+  "colors": [
+    "Bay",
+    "Blue Spruce",
+    "Chambray",
+    "Denim",
+    "Graphite",
+    "Ivory",
+    "Moss",
+    "Pepper",
+    "Terracotta",
+    "True Navy"
+  ],
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL",
+    "4XL"
+  ],
+  "price_cents": 2999,
+  "mockupCount": 180,
+  "firstMockup": "https://images-api.printify.com/mockup/6a94832bedbb57ccf007d479/79073/98445/club-crest-vintage-tee.jpg?camera_label=front"
+}
