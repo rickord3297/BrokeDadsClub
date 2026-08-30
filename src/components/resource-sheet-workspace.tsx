@@ -3,10 +3,9 @@
 import { useEffect } from "react";
 import {
   SheetModeProvider,
-  SheetModeToggle,
   useLocalSheetMode,
 } from "@/components/fillable-fields";
-import { ResourceActionButtons } from "@/components/resource-actions";
+import { ResourceSheetToolbar } from "@/components/resource-sheet-toolbar";
 import { ResourceSample } from "@/components/resource-sample";
 import { trackPrintablePrint } from "@/lib/analytics";
 
@@ -31,22 +30,16 @@ export function ResourceSheetWorkspace({
   }, [resourceSlug]);
 
   return (
-    <div className="mt-8">
-      <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between print:hidden">
-        <SheetModeToggle mode={mode} onChange={setMode} />
-        <ResourceActionButtons
-          resourceSlug={resourceSlug}
-          printLabel={printLabel}
-          mode="page"
-        />
-      </div>
-      <p className="mt-3 text-sm text-ink-soft print:hidden">
-        Type on your phone before the store, or switch to the filled sample to
-        see how another dad allocated the numbers. Print keeps what you typed.
-      </p>
+    <div className="mt-8 print:mt-0">
+      <ResourceSheetToolbar
+        resourceSlug={resourceSlug}
+        printLabel={printLabel}
+        mode={mode}
+        onModeChange={setMode}
+      />
 
       <SheetModeProvider mode={mode}>
-        <section className="print-sheet mt-8">
+        <section className="print-sheet mt-6 rounded-2xl border border-rule bg-white p-5 shadow-sm shadow-ink/5 sm:p-8 print:mt-0 print:rounded-none print:border-0 print:p-0 print:shadow-none">
           {mode === "sample" ? (
             <ResourceSample slug={resourceSlug} />
           ) : (
@@ -55,16 +48,9 @@ export function ResourceSheetWorkspace({
         </section>
       </SheetModeProvider>
 
-      <div className="mt-8 flex flex-col gap-3 border-t border-rule pt-6 print:hidden sm:flex-row sm:items-center sm:justify-between">
-        <ResourceActionButtons
-          resourceSlug={resourceSlug}
-          printLabel={printLabel}
-          mode="page"
-        />
-        <p className="text-sm text-ink-soft">
-          Tip: on mobile, tap Download PDF, then choose Save as PDF.
-        </p>
-      </div>
+      <p className="mt-4 text-center text-xs text-ink-soft print:hidden sm:text-sm">
+        Tip: on mobile, tap Download PDF, then choose Save as PDF.
+      </p>
     </div>
   );
 }
