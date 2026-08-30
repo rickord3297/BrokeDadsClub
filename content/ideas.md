@@ -8,12 +8,15 @@
 
 | Idea | Status | Go live | Notes |
 |------|--------|---------|-------|
-| The lonely dad at practice | scheduled | 2026-08-26 | [`the-lonely-dad.md`](guides/the-lonely-dad.md) |
-| The pickup line is not a networking event | scheduled | 2026-08-27 | [`the-pickup-line-is-not-a-networking-event.md`](guides/the-pickup-line-is-not-a-networking-event.md) |
-| When you yelled and you are the last one awake | scheduled | 2026-08-28 | [`when-you-yelled-and-youre-the-last-one-awake.md`](guides/when-you-yelled-and-youre-the-last-one-awake.md) |
-| The sports signup fee you did not budget for | scheduled | 2026-08-29 | [`the-sports-signup-fee-you-didnt-budget-for.md`](guides/the-sports-signup-fee-you-didnt-budget-for.md) |
-| Tagging along without becoming furniture | scheduled | 2026-08-30 | [`tagging-along-without-becoming-furniture.md`](guides/tagging-along-without-becoming-furniture.md) |
-| One dad coffee, not a friend group | scheduled | 2026-08-31 | [`one-dad-coffee-not-a-friend-group.md`](guides/one-dad-coffee-not-a-friend-group.md) |
+| The lonely dad at practice | live | 2026-08-26 | [`the-lonely-dad.md`](guides/the-lonely-dad.md) |
+| The pickup line is not a networking event | live | 2026-08-27 | [`the-pickup-line-is-not-a-networking-event.md`](guides/the-pickup-line-is-not-a-networking-event.md) |
+| When you yelled and you are the last one awake | live | 2026-08-28 | [`when-you-yelled-and-youre-the-last-one-awake.md`](guides/when-you-yelled-and-youre-the-last-one-awake.md) |
+| The sports signup fee you did not budget for | live | 2026-08-29 | [`the-sports-signup-fee-you-didnt-budget-for.md`](guides/the-sports-signup-fee-you-didnt-budget-for.md) |
+| Tagging along without becoming furniture | live | 2026-08-30 | [`tagging-along-without-becoming-furniture.md`](guides/tagging-along-without-becoming-furniture.md) |
+| One dad coffee, not a friend group | live | 2026-08-30 | [`one-dad-coffee-not-a-friend-group.md`](guides/one-dad-coffee-not-a-friend-group.md) |
+| The after-school collapse is not a bad kid | live | 2026-08-30 | [`the-after-school-collapse-is-not-a-bad-kid.md`](guides/the-after-school-collapse-is-not-a-bad-kid.md) |
+| Packing school lunch without a $12 guilt spiral | scheduled | 2026-08-31 | [`packing-school-lunch-without-a-guilt-spiral.md`](guides/packing-school-lunch-without-a-guilt-spiral.md) |
+| Dropping one activity so the week can breathe | scheduled | 2026-08-31 | [`dropping-one-activity-so-the-week-can-breathe.md`](guides/dropping-one-activity-so-the-week-can-breathe.md) |
 | Which tool brand to buy (one battery, not a shrine) | live | 2026-08-22 | [`which-tool-brand-to-buy.md`](guides/which-tool-brand-to-buy.md) |
 | Dad math: I can do that cheaper (then you need $200 of tools) | live | 2026-08-16 | [`dad-math.md`](guides/dad-math.md) |
 | The second bill after school starts (fees, sports, fundraisers) | live | 2026-08-16 | [`the-second-bill.md`](guides/the-second-bill.md) |
