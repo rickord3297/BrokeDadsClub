@@ -202,6 +202,13 @@ const printifyCopyOverrides: Record<
       "Plumber. Driver. Carpenter. Husband. Dad of all trades. Soft Gildan cotton, printed after you check out. For the guy who still fixes it himself.",
     price_cents: 1999,
   },
+  "6a938cdb838a5c7b9a0d7f8e": {
+    slug: "distressed-dad-tee",
+    name: "Distressed DAD Tee",
+    description:
+      "DAD in distressed cream type on soft Gildan cotton. Vintage worn-in look, no joke caption. Dark colors only: black, navy, dark heather, graphite heather, military green, and sport grey.",
+    price_cents: 1999,
+  },
   "6a7fd6ba2cde8b7dc1033d3f": {
     slug: "castle-pin",
     name: "Castle Pin",
@@ -322,11 +329,11 @@ export async function getProductsBySlugs(slugs: string[]): Promise<Product[]> {
   });
 }
 
-/** Homepage shop preview: curated picks, falls back to first live products. */
+/** Homepage shop preview: best sellers and brand anchors. */
 export const HOME_SHOP_SLUGS = [
+  "club-crest-cap",
   "club-pup-tee",
-  "castle-pin",
-  "broke-not-broken-tee",
+  "castle-crest-tee",
 ] as const;
 
 export async function getHomeShopProducts(): Promise<Product[]> {
