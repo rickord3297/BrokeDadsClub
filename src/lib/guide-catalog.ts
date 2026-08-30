@@ -89,6 +89,10 @@ const RELATED_HOOKS: Record<string, string> = {
   "tagging-along-without-becoming-furniture": "If you keep ending up as furniture",
   "one-dad-coffee-not-a-friend-group": "If you want one coffee, not a crew",
   "the-sports-signup-fee-you-didnt-budget-for": "If the signup fee was not the real bill",
+  "the-parent-portal-in-five-minutes-a-week": "If you need a school portal habit that fits",
+  "when-the-school-only-texts-mom": "If school alerts never reach you",
+  "one-motion-when-the-meltdown-is-happening-now": "If the meltdown is happening right now",
+  "disney-world-without-debt": "If Disney is on the list but debt is not",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {
