@@ -116,22 +116,30 @@ export function GuideTableOfContents({
   }
 
   return (
-    <details className="mt-6 rounded-xl border border-rule bg-paper-2/70 px-4 py-3 lg:hidden">
-      <summary className="cursor-pointer text-xs font-semibold uppercase tracking-[0.16em] text-rust">
-        Jump to a section
-        {activeId ? (
-          <span className="ml-2 font-medium normal-case tracking-normal text-ink-soft">
-            · {items.find((item) => item.id === activeId)?.text}
-          </span>
-        ) : null}
+    <details className="guide-toc-mobile group mt-6 rounded-xl border border-rule bg-paper-2/70 open:border-pine/25 open:bg-paper-2 lg:hidden">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 marker:content-none [&::-webkit-details-marker]:hidden">
+        <span className="text-xs font-semibold uppercase tracking-[0.16em] text-rust">
+          Jump to a section
+        </span>
+        <span
+          aria-hidden
+          className="shrink-0 text-pine transition group-open:rotate-180"
+        >
+          ▾
+        </span>
       </summary>
-      <div className="mt-3 border-t border-rule/80 pt-3">
+      <div className="border-t border-rule/80 px-4 pb-4 pt-3">
+        {activeId ? (
+          <p className="mb-3 text-xs font-medium text-ink-soft">
+            Reading: {items.find((item) => item.id === activeId)?.text}
+          </p>
+        ) : null}
         <TocList
           items={items}
           activeId={activeId}
           onNavigate={() => {
             const details = document.querySelector(
-              'details[class*="lg:hidden"]',
+              "details.guide-toc-mobile",
             ) as HTMLDetailsElement | null;
             if (details) details.open = false;
           }}

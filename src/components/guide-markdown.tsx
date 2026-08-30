@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { withGuideGlossary } from "@/components/guide-glossary-text";
 import { ScriptCallout } from "@/components/script-callout";
+import { parseScriptListItem } from "@/lib/guide-content";
 import { slugifyHeading } from "@/lib/guide-model";
 
 function plainText(node: ReactNode): string {
@@ -88,6 +89,28 @@ export function GuideMarkdown({
             </h3>
           );
         },
+        ul: ({ children }) => (
+          <ul className="guide-script-list">{children}</ul>
+        ),
+        li: ({ children }) => {
+          const text = plainText(children).trim();
+          const script = parseScriptListItem(text);
+          if (script) {
+            return (
+              <li className="guide-script-list-item">
+                <ScriptCallout
+                  label={script.label}
+                  copyText={script.script}
+                  kind="script"
+                  className="guide-script-pill"
+                >
+                  <p>{script.script}</p>
+                </ScriptCallout>
+              </li>
+            );
+          }
+          return <li>{gloss(children)}</li>;
+        },
         blockquote: ({ children }) => {
           const text = plainText(children);
           return (
@@ -97,7 +120,7 @@ export function GuideMarkdown({
           );
         },
         p: ({ children }) => <p>{gloss(children)}</p>,
-        li: ({ children }) => <li>{gloss(children)}</li>,
+        table: () => null,
       }}
     >
       {content}

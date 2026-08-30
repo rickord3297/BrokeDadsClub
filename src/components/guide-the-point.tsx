@@ -4,9 +4,11 @@ import { GuideMarkdown } from "@/components/guide-markdown";
 export function GuideThePoint({
   content,
   headingCounts,
+  currentSlug,
 }: {
   content: string;
   headingCounts?: Map<string, number>;
+  currentSlug?: string;
 }) {
   if (!content.trim()) return null;
 
@@ -17,7 +19,11 @@ export function GuideThePoint({
     >
       <h2 className="font-display text-3xl">The point</h2>
       <div className="prose-guide mt-6">
-        <GuideMarkdown content={content} headingCounts={headingCounts} />
+        <GuideMarkdown
+          content={content}
+          headingCounts={headingCounts}
+          currentSlug={currentSlug}
+        />
       </div>
     </section>
   );
