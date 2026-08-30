@@ -20,6 +20,10 @@ export function trackGuideShare(slug: string, method: "native" | "copy") {
   send("guide_share", { slug, method });
 }
 
+export function trackGuideFeedback(slug: string, vote: "up" | "down") {
+  send("guide_feedback", { slug, vote });
+}
+
 export function trackGuideSearch(queryLength: number) {
   send("guide_search", { query_length: queryLength });
 }

@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { withGuideGlossary } from "@/components/guide-glossary-text";
 import { ScriptCallout } from "@/components/script-callout";
 import { slugifyHeading } from "@/lib/guide-model";
 
@@ -33,11 +34,17 @@ function blockquoteKind(text: string): "script" | "truth" {
 export function GuideMarkdown({
   content,
   headingCounts,
+  currentSlug,
 }: {
   content: string;
   headingCounts?: Map<string, number>;
+  currentSlug?: string;
 }) {
   const counts = headingCounts ?? new Map<string, number>();
+
+  function gloss(children: ReactNode) {
+    return withGuideGlossary(children, currentSlug);
+  }
 
   function headingId(text: string) {
     const base = slugifyHeading(text) || "section";
@@ -89,6 +96,8 @@ export function GuideMarkdown({
             </ScriptCallout>
           );
         },
+        p: ({ children }) => <p>{gloss(children)}</p>,
+        li: ({ children }) => <li>{gloss(children)}</li>,
       }}
     >
       {content}

@@ -79,6 +79,26 @@ body {
   margin: 2.25rem 0 0.75rem;
 }
 
+@media (max-width: 639px) {
+  .prose-guide h2 {
+    margin: 1.35rem 0 0.45rem;
+    font-size: 1.5rem;
+  }
+
+  .prose-guide h3 {
+    margin: 1.1rem 0 0.35rem;
+  }
+
+  .prose-guide p {
+    margin: 0 0 0.85rem;
+  }
+
+  .prose-guide .guide-script-callout,
+  .prose-guide .guide-pull-quote {
+    margin: 1.1rem 0;
+  }
+}
+
 .prose-guide h3 {
   font-family: var(--font-fraunces), Georgia, serif;
   font-size: 1.25rem;
@@ -196,6 +216,77 @@ body {
   margin: 2rem 0;
   border: 0;
   border-top: 1px solid var(--rule);
+}
+
+.prose-guide .guide-glossary-pill {
+  position: relative;
+  display: inline;
+  margin: 0 0.05em;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--pine) 28%, transparent);
+  background: color-mix(in srgb, var(--pine) 7%, var(--paper));
+  padding: 0.05em 0.45em 0.1em;
+  font-size: 0.95em;
+  font-weight: 600;
+  color: var(--pine);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.prose-guide .guide-glossary-pill:hover,
+.prose-guide .guide-glossary-pill:focus-visible {
+  border-color: color-mix(in srgb, var(--pine) 45%, transparent);
+  color: var(--rust);
+  outline: none;
+}
+
+.prose-guide .guide-glossary-pill-label {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--pine) 35%, transparent);
+  text-underline-offset: 2px;
+}
+
+.prose-guide .guide-glossary-pill-hint {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.45rem);
+  z-index: 20;
+  width: max-content;
+  max-width: 14rem;
+  translate: -50% 0;
+  border-radius: 0.5rem;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 0.35rem 0.55rem;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  opacity: 0;
+  box-shadow: 0 8px 24px rgba(28, 25, 21, 0.08);
+  transition: opacity 0.15s ease;
+}
+
+.prose-guide .guide-glossary-pill:hover .guide-glossary-pill-hint,
+.prose-guide .guide-glossary-pill:focus-visible .guide-glossary-pill-hint {
+  opacity: 1;
+}
+
+.guide-feedback-btn {
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--paper);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.guide-feedback-btn:hover {
+  border-color: color-mix(in srgb, var(--pine) 35%, transparent);
+  color: var(--pine);
 }
 
 @media print {
