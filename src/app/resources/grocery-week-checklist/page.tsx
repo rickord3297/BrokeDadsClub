@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { FillCheck, FillLine } from "@/components/fillable-fields";
 import { ResourceLayout } from "@/components/resource-layout";
+import { WeekMealPlan } from "@/components/week-meal-plan";
 import { requireResource } from "@/lib/resources";
 import { site } from "@/lib/site";
 
@@ -136,27 +137,29 @@ export default function GroceryWeekChecklistPage() {
             dare. Skip anything you already have. Type what you actually paid
             next to the category target.
           </p>
-          {cart.map((section) => (
-            <div key={section.group} className="mt-6 break-inside-avoid">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="font-display text-xl">{section.group}</h3>
-                <p className="text-sm font-medium">Target {section.target}</p>
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            {cart.map((section) => (
+              <div key={section.group} className="break-inside-avoid rounded-xl border border-rule/80 bg-paper-2/30 p-4 print:border-black/20 print:bg-white">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="font-display text-xl">{section.group}</h3>
+                  <p className="text-sm font-medium">Target {section.target}</p>
+                </div>
+                <FillLine
+                  name={section.paidName}
+                  label="Paid $"
+                  placeholder="0.00"
+                />
+                <ul className="mt-3 space-y-2">
+                  {section.items.map((item) => (
+                    <FillCheck key={item.name} name={item.name}>
+                      {item.label}
+                    </FillCheck>
+                  ))}
+                </ul>
               </div>
-              <FillLine
-                name={section.paidName}
-                label="Paid $"
-                placeholder="0.00"
-              />
-              <ul className="mt-3 space-y-2">
-                {section.items.map((item) => (
-                  <FillCheck key={item.name} name={item.name}>
-                    {item.label}
-                  </FillCheck>
-                ))}
-              </ul>
-            </div>
-          ))}
-          <div className="mt-6 break-inside-avoid">
+            ))}
+          </div>
+          <div className="mt-6 break-inside-avoid rounded-xl border border-rule/80 bg-paper-2/30 p-4 md:max-w-[calc(50%-0.75rem)] print:border-black/20 print:bg-white">
             <h3 className="font-display text-xl">Only if you need it</h3>
             <ul className="mt-3 space-y-2">
               <FillCheck name="check-milk">Gallon of milk</FillCheck>
@@ -194,19 +197,10 @@ export default function GroceryWeekChecklistPage() {
 
         <div>
           <h2 className="font-display text-3xl">The week</h2>
-          <ul className="mt-4 space-y-3">
-            {week.map((row) => (
-              <li
-                key={row.day}
-                className="flex gap-3 border-b border-ink/20 pb-3 print:border-black/30"
-              >
-                <span className="w-10 shrink-0 font-stamp text-sm uppercase tracking-wider">
-                  {row.day}
-                </span>
-                <span className="text-base leading-7">{row.plan}</span>
-              </li>
-            ))}
-          </ul>
+          <p className="mt-2 text-sm text-ink-soft">
+            Dinner plan at a glance. Cook extra Monday for leftover nights.
+          </p>
+          <WeekMealPlan days={week} />
         </div>
       </div>
     </ResourceLayout>

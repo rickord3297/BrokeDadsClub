@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { GuideEmailCta } from "@/components/guide-email-cta";
-import { ResourceActionButtons } from "@/components/resource-actions";
-import { ResourcePreview } from "@/components/resource-preview";
 import { ResourceSheetWorkspace } from "@/components/resource-sheet-workspace";
 import { ResourceViewTracker } from "@/components/resource-view-tracker";
 import {
@@ -18,12 +16,9 @@ export function ResourceLayout({
   children: React.ReactNode;
 }) {
   const related = otherResources(resource.slug);
-  const fridgePreview =
-    resource.slug === "grocery-week-checklist" ||
-    resource.slug === "school-supply-triage";
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
+    <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6">
       <ResourceViewTracker slug={resource.slug} />
       <p className="text-xs uppercase tracking-[0.18em] text-rust print:hidden">
         Free printable
@@ -63,21 +58,6 @@ export function ResourceLayout({
         . Fill on your phone, print this page, or save as a PDF. No email
         required.
       </p>
-
-      <div className="mt-6 print:hidden">
-        <ResourceActionButtons
-          resourceSlug={resource.slug}
-          printLabel={resource.printLabel}
-          mode="page"
-        />
-      </div>
-
-      <div className="mt-8 max-w-xs print:hidden">
-        <ResourcePreview
-          slug={resource.slug}
-          variant={fridgePreview ? "fridge" : "sheet"}
-        />
-      </div>
 
       <ResourceSheetWorkspace
         resourceSlug={resource.slug}
