@@ -6,8 +6,8 @@ description: "You do not need six dads and a fantasy league. One repeat face, on
 excerpt: Skip the deck-beer ad fantasy. One face, one invite, thirty minutes. The smallest version of dad friendship that still counts as a win.
 category: Time
 readTime: 5 min
-publishedAt: "2026-08-31"
-status: scheduled
+publishedAt: "2026-08-30"
+status: published
 keywords:
   - how to make one dad friend
   - dad friendship advice
