@@ -3,6 +3,7 @@ import { GatedResourceCard } from "@/components/gated-resource-card";
 import { HomeGuidesSection } from "@/components/home-guides-section";
 import { HomeHero } from "@/components/home-hero";
 import { ProductCard } from "@/components/product-card";
+import { isPremiumProduct } from "@/lib/product-display";
 import { resourceTieInForGuide } from "@/lib/guide-catalog";
 import {
   getGuides,
@@ -85,6 +86,7 @@ export default async function Home() {
                   key={product.id}
                   product={product}
                   variant="featured"
+                  badge={isPremiumProduct(product) ? "Premium" : undefined}
                 />
               ))}
             </div>

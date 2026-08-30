@@ -11,6 +11,21 @@ import {
 } from "@/lib/printify";
 import { createPublicClient } from "@/lib/supabase/public";
 
+export const SHOP_HIDDEN_SLUGS = new Set([
+  "castle-crest-tee",
+  "club-crest-tee",
+  "club-patch",
+  "candy-stripe-patch",
+]);
+
+export const PREMIUM_PRODUCT_SLUGS = [
+  "club-crest-vintage-tee",
+  "club-crest-heavy-tee",
+  "club-crest-hoodie",
+  "club-crest-crewneck",
+  "club-crest-tote",
+] as const;
+
 export type ProductArt = "tee" | "mug" | "cap" | "sticker" | "hoodie" | "patch" | "tote";
 
 export const APPAREL_SIZES = ["S", "M", "L", "XL", "2XL", "3XL", "4XL", "5XL"] as const;
@@ -140,9 +155,22 @@ function artFromPrintify(title: string, tags: string[]): ProductArt {
   return "tee";
 }
 
-/** Local iron-on patches stay off. Printify pins, caps, and tees can list. */
+/** Local iron-on patches stay off. Duplicate crest tees hidden when premium line is live. */
 function isShopListed(product: Product) {
-  return product.slug !== "club-patch" && product.slug !== "candy-stripe-patch";
+  return !SHOP_HIDDEN_SLUGS.has(product.slug);
+}
+
+const PREMIUM_SORT_ORDER = [...PREMIUM_PRODUCT_SLUGS];
+
+function sortShopProducts(products: Product[]) {
+  return [...products].sort((a, b) => {
+    const rankA = PREMIUM_SORT_ORDER.indexOf(a.slug as (typeof PREMIUM_SORT_ORDER)[number]);
+    const rankB = PREMIUM_SORT_ORDER.indexOf(b.slug as (typeof PREMIUM_SORT_ORDER)[number]);
+    const aRank = rankA === -1 ? 100 : rankA;
+    const bRank = rankB === -1 ? 100 : rankB;
+    if (aRank !== bRank) return aRank - bRank;
+    return b.price_cents - a.price_cents;
+  });
 }
 
 const printifyCopyOverrides: Record<
@@ -159,21 +187,21 @@ const printifyCopyOverrides: Record<
     slug: "club-pup-tee",
     name: "Club Pup Tee",
     description:
-      "The club dog is on his back. The wrench is in the grass. BROKE DADS CLUB is on the chest so another dad in the pickup line might actually nod at you. Soft Gildan cotton, printed after you check out. White, graphite heather, or military green. For dads whose best coworker still has four paws.",
+      "The club dog is on his back. The wrench is in the grass. BROKE DADS CLUB is on the chest so another dad in the pickup line might actually nod at you. Soft Gildan cotton in white, graphite heather, or military green. For dads whose best coworker still has four paws.",
     price_cents: 1999,
   },
   "6a811a3803218922dd0a8389": {
     slug: "club-dog-tee",
     name: "Club Dog Tee",
     description:
-      "The club dog is sitting. BROKE DADS CLUB is under his paws so another dad in the pickup line might actually nod at you. Soft Gildan cotton, printed after you check out. White, sand, navy, black, and the rest of the dad palette. For dads whose best coworker still has four paws.",
+      "The club dog is sitting. BROKE DADS CLUB is under his paws so another dad in the pickup line might actually nod at you. Soft Gildan cotton in sand, navy, black, and the rest of the dad palette.",
     price_cents: 1999,
   },
   "6a826ed4aaef37be24051e48": {
     slug: "broke-not-broken-tee",
     name: "Broke Not Broken Tee",
     description:
-      "Broke. NOT. Broken. Soft Gildan cotton, printed after you check out. For dads who are stretched thin and still in the game.",
+      "Broke. NOT. Broken. Soft Gildan cotton for dads who are stretched thin and still in the game.",
     price_cents: 1999,
   },
   "6a8cf0c0302c505a980a6b0f": {
@@ -201,7 +229,7 @@ const printifyCopyOverrides: Record<
     slug: "dad-of-all-trades-tee",
     name: "Dad of All Trades Tee",
     description:
-      "Plumber. Driver. Carpenter. Husband. Dad of all trades. Soft Gildan cotton, printed after you check out. For the guy who still fixes it himself.",
+      "Plumber. Driver. Carpenter. Husband. Dad of all trades. Soft Gildan cotton for the guy who still fixes it himself.",
     price_cents: 1999,
   },
   "6a938cdb838a5c7b9a0d7f8e": {
@@ -360,7 +388,10 @@ export const getProducts = cache(async (): Promise<Product[]> => {
     getLocalPhotoProducts(),
   ]);
   const slugs = new Set(printify.map((product) => product.slug));
-  return [...printify, ...local.filter((product) => !slugs.has(product.slug))];
+  return sortShopProducts([
+    ...printify,
+    ...local.filter((product) => !slugs.has(product.slug)),
+  ]);
 });
 
 export async function getProductsBySlugs(slugs: string[]): Promise<Product[]> {

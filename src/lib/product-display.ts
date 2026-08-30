@@ -1,4 +1,4 @@
-import type { Product, ProductArt } from "@/lib/products";
+import { PREMIUM_PRODUCT_SLUGS, type Product, type ProductArt } from "@/lib/products";
 
 export const SHOP_FILTERS = [
   { id: "all", label: "All" },
@@ -176,3 +176,7 @@ export const TEE_SIZE_CHART = [
 ] as const;
 
 export const CASTLE_PIN_SLUG = "castle-pin";
+
+export function isPremiumProduct(product: Product) {
+  return (PREMIUM_PRODUCT_SLUGS as readonly string[]).includes(product.slug);
+}

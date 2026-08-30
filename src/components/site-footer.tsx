@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ClubLogo } from "@/components/club-logo";
+import { SocialLinks } from "@/components/social-links";
 import { SiteTagline } from "@/components/site-tagline";
 import { site } from "@/lib/site";
 
@@ -28,6 +29,7 @@ export function SiteFooter() {
                 {site.email}
               </a>
             </p>
+            <SocialLinks className="mt-4" />
           </div>
 
           <nav className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-paper/90">

@@ -10,6 +10,7 @@ import {
   CASTLE_PIN_SLUG,
   SHOP_FILTERS,
   filterShopProducts,
+  isPremiumProduct,
   shopFilterCounts,
   type ShopFilterId,
 } from "@/lib/product-display";
@@ -75,7 +76,11 @@ export function ShopExplorer({ products }: { products: Product[] }) {
       ) : (
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              badge={isPremiumProduct(product) ? "Premium" : undefined}
+            />
           ))}
         </div>
       )}
