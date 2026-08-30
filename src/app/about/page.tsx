@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ContactForm } from "@/components/contact-form";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -60,17 +61,9 @@ export default function AboutPage() {
         <h2 className="mt-2 font-display text-3xl">Questions, ideas, or a typo?</h2>
         <p className="mt-3 text-base leading-7 text-ink-soft">
           We read every note. Guides, printables, shop, or just a dad story that
-          belongs on the site, send it over.
+          belongs on the site, send it below.
         </p>
-        <p className="mt-4">
-          <a
-            href={`mailto:${site.email}?subject=${encodeURIComponent("Broke Dads Club")}`}
-            className="inline-flex items-center gap-2 rounded-full border border-pine/25 bg-pine/[0.06] px-4 py-2 text-sm font-semibold text-pine transition hover:border-pine hover:text-rust"
-          >
-            {site.email}
-            <span aria-hidden>→</span>
-          </a>
-        </p>
+        <ContactForm />
       </aside>
     </div>
   );

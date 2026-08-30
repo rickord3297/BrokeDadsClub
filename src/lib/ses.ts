@@ -25,6 +25,7 @@ export async function sendSesEmail(input: {
   subject: string;
   html: string;
   text: string;
+  replyTo?: string;
   unsubscribeUrl?: string;
 }): Promise<void> {
   const client = getSesClient();
@@ -36,6 +37,7 @@ export async function sendSesEmail(input: {
   await client.send(
     new SendEmailCommand({
       FromEmailAddress: from,
+      ReplyToAddresses: input.replyTo ? [input.replyTo] : undefined,
       Destination: { ToAddresses: [input.to] },
       Content: {
         Simple: {
