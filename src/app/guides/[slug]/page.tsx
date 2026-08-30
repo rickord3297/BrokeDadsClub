@@ -2,23 +2,24 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ActionBox } from "@/components/guide-action-box";
+import { FieldChecklist } from "@/components/field-checklist";
 import { GuideBreadcrumbs } from "@/components/guide-breadcrumbs";
-import {
-  GuideCompanionPrintables,
-  GuidePrintableEmbed,
-} from "@/components/guide-companion-tools";
 import { GuideEmailCta } from "@/components/guide-email-cta";
 import { GuideFaqAccordion } from "@/components/guide-faq";
 import { GuideKeepGoing } from "@/components/guide-keep-going";
 import { GuideMarkdown } from "@/components/guide-markdown";
 import { GuideTableOfContents } from "@/components/guide-toc";
+import { GuideThePoint } from "@/components/guide-the-point";
 import { GuideViewTracker } from "@/components/guide-view-tracker";
 import { ReadingProgress } from "@/components/reading-progress";
 import { ShareGuide } from "@/components/share-guide";
 import { StickyShareGuide } from "@/components/sticky-share-guide";
 import { formatDate } from "@/lib/format";
 import {
-  extractGuideHeadings,
+  extractTocHeadings,
+  partitionGuideBody,
+} from "@/lib/guide-content";
+import {
   getGuide,
   getGuides,
   getRelatedGuides,
@@ -26,7 +27,6 @@ import {
   splitGuideIntro,
   toGuideListItem,
 } from "@/lib/guides";
-import { getResourceByGuideSlug, otherResources } from "@/lib/resources";
 import { site } from "@/lib/site";
 
 export const revalidate = 3600;
@@ -85,9 +85,9 @@ export default async function GuidePage({
   const nextGuide = guide.nextGuide ? getGuide(guide.nextGuide) : null;
   const actionSteps = [guide.action].filter((step) => step.trim());
   const [intro, body] = splitGuideIntro(guide.content);
-  const headings = extractGuideHeadings(guide.content);
+  const { fieldProtocol, main, thePoint } = partitionGuideBody(body);
+  const headings = extractTocHeadings(main);
   const headingCounts = new Map<string, number>();
-  const companionPrintable = getResourceByGuideSlug(guide.slug);
   const showToc = headings.length >= 2;
 
   const articleLd = {
@@ -210,45 +210,31 @@ export default async function GuidePage({
               <ShareGuide title={guide.title} url={url} slug={guide.slug} />
             </div>
 
-            {showToc ? (
-              <GuideTableOfContents
-                headings={headings}
-                includeFaq={guide.faq.length > 0}
-                includeKeepGoing={related.length > 0}
-                variant="mobile"
-              />
-            ) : null}
-
             <div className="prose-guide mt-8">
               <GuideMarkdown content={intro} headingCounts={headingCounts} />
             </div>
 
-            <ActionBox steps={actionSteps} />
+            {fieldProtocol ? (
+              <FieldChecklist protocol={fieldProtocol} />
+            ) : (
+              <ActionBox steps={actionSteps} />
+            )}
 
-            {body ? (
+            {showToc ? (
+              <GuideTableOfContents headings={headings} variant="mobile" />
+            ) : null}
+
+            {main ? (
               <div className="prose-guide mt-8">
-                <GuideMarkdown content={body} headingCounts={headingCounts} />
+                <GuideMarkdown content={main} headingCounts={headingCounts} />
               </div>
             ) : null}
+
+            <GuideThePoint content={thePoint} headingCounts={headingCounts} />
 
             {guide.faq.length > 0 ? (
               <GuideFaqAccordion items={guide.faq} />
             ) : null}
-
-            {companionPrintable ? (
-              <GuidePrintableEmbed
-                resource={companionPrintable}
-                placement="bottom"
-              />
-            ) : null}
-
-            <GuideCompanionPrintables
-              printables={
-                companionPrintable
-                  ? otherResources(companionPrintable.slug)
-                  : []
-              }
-            />
 
             <GuideKeepGoing guides={related} />
 
@@ -282,12 +268,7 @@ export default async function GuidePage({
 
           {showToc ? (
             <aside className="hidden min-w-0 lg:block">
-              <GuideTableOfContents
-                headings={headings}
-                includeFaq={guide.faq.length > 0}
-                includeKeepGoing={related.length > 0}
-                variant="desktop"
-              />
+              <GuideTableOfContents headings={headings} variant="desktop" />
             </aside>
           ) : null}
         </div>

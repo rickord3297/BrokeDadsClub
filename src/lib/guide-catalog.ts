@@ -84,6 +84,11 @@ const RELATED_HOOKS: Record<string, string> = {
   "the-kid-who-wont-sleep": "If bedtime is another negotiation",
   "what-do-you-do-for-fun": "If small talk asks about hobbies you lost",
   "when-the-other-dads-vacation-photos-hit": "If their beach photos hit on a Tuesday",
+  "the-lonely-dad": "If practice feels like a solo shift",
+  "the-pickup-line-is-not-a-networking-event": "If pickup needs one normal line",
+  "tagging-along-without-becoming-furniture": "If you keep ending up as furniture",
+  "one-dad-coffee-not-a-friend-group": "If you want one coffee, not a crew",
+  "the-sports-signup-fee-you-didnt-budget-for": "If the signup fee was not the real bill",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {

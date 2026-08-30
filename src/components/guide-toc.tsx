@@ -3,14 +3,12 @@
 import { useEffect, useMemo, useState } from "react";
 import type { GuideHeading } from "@/lib/guide-model";
 
-type TocItem = { id: string; text: string };
-
 function TocList({
   items,
   activeId,
   onNavigate,
 }: {
-  items: TocItem[];
+  items: GuideHeading[];
   activeId?: string;
   onNavigate?: () => void;
 }) {
@@ -79,23 +77,12 @@ function useActiveHeading(ids: string[]) {
 
 export function GuideTableOfContents({
   headings,
-  includeFaq = false,
-  includeKeepGoing = false,
   variant = "mobile",
 }: {
   headings: GuideHeading[];
-  includeFaq?: boolean;
-  includeKeepGoing?: boolean;
   variant?: "mobile" | "desktop";
 }) {
-  const items = useMemo(() => {
-    const extra: TocItem[] = [];
-    if (includeFaq) extra.push({ id: "quick-answers", text: "Quick answers" });
-    if (includeKeepGoing) extra.push({ id: "keep-going", text: "Keep going" });
-    return [...headings, ...extra];
-  }, [headings, includeFaq, includeKeepGoing]);
-
-  const ids = useMemo(() => items.map((item) => item.id), [items]);
+  const ids = useMemo(() => headings.map((item) => item.id), [headings]);
   const activeId = useActiveHeading(ids);
 
   if (headings.length < 2) return null;
@@ -108,7 +95,7 @@ export function GuideTableOfContents({
             On this page
           </p>
           <div className="mt-3">
-            <TocList items={items} activeId={activeId} />
+            <TocList items={headings} activeId={activeId} />
           </div>
         </div>
       </nav>
@@ -116,22 +103,30 @@ export function GuideTableOfContents({
   }
 
   return (
-    <details className="mt-6 rounded-xl border border-rule bg-paper-2/70 px-4 py-3 lg:hidden">
-      <summary className="cursor-pointer text-xs font-semibold uppercase tracking-[0.16em] text-rust">
-        Jump to a section
-        {activeId ? (
-          <span className="ml-2 font-medium normal-case tracking-normal text-ink-soft">
-            · {items.find((item) => item.id === activeId)?.text}
-          </span>
-        ) : null}
+    <details className="guide-toc-mobile group mt-6 rounded-xl border border-rule bg-paper-2/70 open:border-pine/25 open:bg-paper-2">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 marker:content-none [&::-webkit-details-marker]:hidden">
+        <span className="text-xs font-semibold uppercase tracking-[0.16em] text-rust">
+          Jump to a section
+        </span>
+        <span
+          aria-hidden
+          className="shrink-0 text-pine transition group-open:rotate-180"
+        >
+          ▾
+        </span>
       </summary>
-      <div className="mt-3 border-t border-rule/80 pt-3">
+      <div className="border-t border-rule/80 px-4 pb-4 pt-3">
+        {activeId ? (
+          <p className="mb-3 text-xs font-medium text-ink-soft">
+            Reading: {headings.find((item) => item.id === activeId)?.text}
+          </p>
+        ) : null}
         <TocList
-          items={items}
+          items={headings}
           activeId={activeId}
           onNavigate={() => {
             const details = document.querySelector(
-              'details[class*="lg:hidden"]',
+              "details.guide-toc-mobile",
             ) as HTMLDetailsElement | null;
             if (details) details.open = false;
           }}

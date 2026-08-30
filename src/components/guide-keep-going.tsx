@@ -5,49 +5,48 @@ import { trackGuideClick } from "@/lib/analytics";
 import { relatedGuideHook } from "@/lib/guide-catalog";
 import type { GuideListItem } from "@/lib/guide-model";
 
-/** Responsive next-step hub: stacked cards on mobile, row list on larger screens. */
+/** Four-card "what to read next" grid with intent hooks. */
 export function GuideKeepGoing({ guides }: { guides: GuideListItem[] }) {
   if (!guides.length) return null;
 
   const picks = guides.slice(0, 4);
 
   return (
-    <section className="mt-12 border-t border-rule pt-8" id="keep-going">
-      <p className="text-xs uppercase tracking-[0.18em] text-rust">Keep going</p>
-      <h2 className="mt-2 font-display text-3xl">What to read next</h2>
+    <section
+      className="mt-12 border-t border-rule pt-8"
+      id="what-to-read-next"
+    >
+      <p className="text-xs font-bold uppercase tracking-[0.18em] text-rust">
+        What to read next
+      </p>
+      <h2 className="mt-2 font-display text-3xl">Pick the next problem</h2>
       <p className="mt-2 max-w-2xl text-sm leading-6 text-ink-soft">
-        Pick the next problem, not another tab.
+        Not another tab. One guide that matches what broke this week.
       </p>
 
-      <ul className="mt-6 grid gap-3 sm:gap-0 sm:divide-y sm:overflow-hidden sm:rounded-2xl sm:border sm:border-rule sm:bg-paper">
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
         {picks.map((guide) => {
           const hook = relatedGuideHook(guide.slug, guide.category);
           return (
-            <li
+            <Link
               key={guide.slug}
-              className="rounded-xl border border-rule bg-paper sm:rounded-none sm:border-0"
+              href={`/guides/${guide.slug}`}
+              onClick={() => trackGuideClick(guide.slug, "keep_going")}
+              className="group flex min-h-[11rem] flex-col rounded-2xl border border-rule bg-paper p-5 shadow-sm shadow-ink/5 ring-1 ring-ink/5 transition hover:border-pine hover:shadow-md hover:shadow-pine/10"
             >
-              <Link
-                href={`/guides/${guide.slug}`}
-                onClick={() => trackGuideClick(guide.slug, "keep_going")}
-                className="group flex flex-col gap-1.5 px-4 py-3.5 transition hover:bg-paper-2/70 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 sm:px-5 sm:py-4"
-              >
-                <div className="min-w-0">
-                  <p className="text-sm font-bold leading-snug text-ink sm:text-xs sm:font-semibold sm:uppercase sm:tracking-[0.12em] sm:text-pine">
-                    {hook}
-                  </p>
-                  <p className="mt-1 font-display text-lg leading-snug text-pine group-hover:text-rust sm:text-xl sm:text-ink">
-                    {guide.title}
-                  </p>
-                </div>
-                <span className="shrink-0 text-sm font-medium text-ink-soft group-hover:text-pine">
-                  {guide.readTime} →
-                </span>
-              </Link>
-            </li>
+              <p className="text-[11px] font-bold uppercase leading-snug tracking-[0.12em] text-pine">
+                {hook}
+              </p>
+              <h3 className="mt-3 flex-1 font-display text-xl leading-snug text-ink group-hover:text-rust">
+                {guide.title}
+              </h3>
+              <p className="mt-4 text-sm font-medium text-ink-soft group-hover:text-pine">
+                {guide.readTime} · Read the guide
+              </p>
+            </Link>
           );
         })}
-      </ul>
+      </div>
     </section>
   );
 }
