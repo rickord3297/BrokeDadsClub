@@ -15,11 +15,10 @@ export default async function ShopPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-      <p className="text-xs uppercase tracking-[0.18em] text-rust">Club goods</p>
-      <h1 className="mt-3 font-display text-5xl">The shop</h1>
+      <h1 className="font-display text-5xl">The Shop</h1>
       <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
-        Crest, fleece, totes, and the rest. Garment-dyed earth tones on the
-        premium line. Standard Gildan tees stay for the entry tier.
+        Soft tees for tough weeks. Grab a shirt, support other dads, or skip it
+        if the grocery budget comes first.
       </p>
       {site.social.find((item) => item.label === "Etsy") ? (
         <p className="mt-3 text-sm text-ink-soft">
