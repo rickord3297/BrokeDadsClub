@@ -4,6 +4,9 @@ Open any file to edit. `status: scheduled` goes live automatically on `published
 
 | Title | Go live | File |
 |-------|---------|------|
+| The daycare savings that never showed up | 2026-09-09 | [the-daycare-savings-that-never-showed-up.md](guides/the-daycare-savings-that-never-showed-up.md) |
+| Last year's shoes in a new hallway | 2026-09-16 | [last-years-shoes-in-a-new-hallway.md](guides/last-years-shoes-in-a-new-hallway.md) |
+| Picture day without the upsell | 2026-09-23 | [picture-day-without-the-upsell.md](guides/picture-day-without-the-upsell.md) |
 | Packing school lunch without a $12 guilt spiral | 2026-08-31 | [packing-school-lunch-without-a-guilt-spiral.md](guides/packing-school-lunch-without-a-guilt-spiral.md) |
 | Dropping one activity so the week can breathe | 2026-08-31 | [dropping-one-activity-so-the-week-can-breathe.md](guides/dropping-one-activity-so-the-week-can-breathe.md) |
 | When the other dad’s vacation photos hit | 2026-09-08 | [when-the-other-dads-vacation-photos-hit.md](guides/when-the-other-dads-vacation-photos-hit.md) |

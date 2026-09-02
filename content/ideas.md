@@ -37,6 +37,9 @@
 | Side hustles that don't steal bedtime | live | 2026-07-14 | `side-hustles-that-dont-steal-bedtime` |
 | Talking to kids about money without scaring them | live | 2026-07-07 | `talking-to-kids-about-money` |
 | Thrift without looking like a dare | live | 2026-06-30 | `thrift-without-looking-like-a-dare` |
+| The daycare savings that never showed up | draft | 2026-09-09 | [`the-daycare-savings-that-never-showed-up.md`](guides/the-daycare-savings-that-never-showed-up.md) |
+| Last year's shoes in a new hallway | draft | 2026-09-16 | [`last-years-shoes-in-a-new-hallway.md`](guides/last-years-shoes-in-a-new-hallway.md) |
+| Picture day without the upsell | draft | 2026-09-23 | [`picture-day-without-the-upsell.md`](guides/picture-day-without-the-upsell.md) |
 
 ### Status
 
