@@ -10,7 +10,7 @@ excerpt: >-
   being the fun override button.
 category: Kids
 readTime: 7 min
-publishedAt: '2026-10-20'
+publishedAt: '2026-09-23'
 status: scheduled
 keywords:
   - kids don't listen to mom

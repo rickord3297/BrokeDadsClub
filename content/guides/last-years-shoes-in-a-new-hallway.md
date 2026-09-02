@@ -11,8 +11,8 @@ excerpt: >-
   you make it theirs. How to reuse gear without the hallway shame spiral.
 category: Kids
 readTime: 6 min
-publishedAt: "2026-09-16"
-status: draft
+publishedAt: "2026-09-11"
+status: scheduled
 keywords:
   - reuse school supplies and clothes
   - back to school on a budget no shame
@@ -109,6 +109,8 @@ Most teachers want:
 They are not running a brand audit. If something on the list is truly required and you cannot swing it, email early. Schools have closets. Pride keeps parents quiet until October when the kid is already behind.
 
 Read [the school supply list](/guides/school-supply-list) for the buy-once list. Reuse is not failure. It is the second pass of that same plan.
+
+When you actually need the item and last year's will not work, try [Marketplace before the mall](/guides/marketplace-before-the-mall) before the retail run.
 
 ## Scripts
 

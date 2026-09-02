@@ -6,7 +6,7 @@ description: "Pack school lunch without Pinterest shame or a $12 daily bill. A t
 excerpt: Protein, a carb, one fruit. A lunch rotation that survives Tuesday morning, not a bento contest.
 category: Money
 readTime: 6 min
-publishedAt: "2026-08-31"
+publishedAt: "2026-09-03"
 status: scheduled
 keywords:
   - cheap school lunch ideas

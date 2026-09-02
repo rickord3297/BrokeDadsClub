@@ -6,7 +6,7 @@ description: "Cut one kids activity so evenings stop breaking. A simple keep/cut
 excerpt: One less practice. One more dinner that is not eaten in the car. How to cut a commitment without a family referendum.
 category: Time
 readTime: 6 min
-publishedAt: "2026-08-31"
+publishedAt: "2026-09-05"
 status: scheduled
 keywords:
   - how to drop a kids activity

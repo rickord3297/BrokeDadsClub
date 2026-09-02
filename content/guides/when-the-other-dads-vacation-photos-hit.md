@@ -6,7 +6,7 @@ excerpt: >-
   it without letting it run the house.
 category: Time
 readTime: 5 min
-publishedAt: '2026-09-08'
+publishedAt: '2026-09-07'
 status: scheduled
 takeaways:
   - Their highlight reel is not your Tuesday

@@ -12,7 +12,7 @@ excerpt: >-
 category: Money
 readTime: 7 min
 publishedAt: "2026-09-09"
-status: draft
+status: scheduled
 keywords:
   - after school care cost vs daycare
   - school age childcare costs

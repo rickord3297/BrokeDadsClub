@@ -10,8 +10,8 @@ excerpt: >-
   for picture day, spirit wear, and the packages you do not need.
 category: Money
 readTime: 6 min
-publishedAt: "2026-09-23"
-status: draft
+publishedAt: "2026-09-15"
+status: scheduled
 keywords:
   - school picture day cost
   - school photo packages budget

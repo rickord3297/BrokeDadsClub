@@ -10,7 +10,7 @@ excerpt: >-
   end the night without becoming the entertainment.
 category: Kids
 readTime: 7 min
-publishedAt: '2026-10-06'
+publishedAt: '2026-09-19'
 status: scheduled
 keywords:
   - kid won't sleep

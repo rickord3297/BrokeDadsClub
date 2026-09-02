@@ -6,7 +6,7 @@ excerpt: >-
   shift. Here is an honest answer that doesn’t shame you.
 category: Time
 readTime: 5 min
-publishedAt: '2026-09-29'
+publishedAt: '2026-09-17'
 status: scheduled
 takeaways:
   - 'Fun got reorganized, not cancelled'
