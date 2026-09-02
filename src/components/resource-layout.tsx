@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { GuideEmailCta } from "@/components/guide-email-cta";
+import { JsonLd } from "@/components/json-ld";
 import { ResourceSheetWorkspace } from "@/components/resource-sheet-workspace";
 import { ResourceViewTracker } from "@/components/resource-view-tracker";
+import { resourceWebPageJsonLd } from "@/lib/seo";
 import {
   otherResources,
   resourceIdeaMailto,
@@ -19,6 +21,7 @@ export function ResourceLayout({
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6">
+      <JsonLd data={resourceWebPageJsonLd(resource)} />
       <ResourceViewTracker slug={resource.slug} />
       <p className="text-xs uppercase tracking-[0.18em] text-rust print:hidden">
         Free printable

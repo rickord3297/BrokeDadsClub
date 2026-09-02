@@ -7,13 +7,21 @@ import {
   getGuides,
   toGuideListItem,
 } from "@/lib/guides";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Guides",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Family Budget Guides for Dads",
   description:
-    "Practical dad guides on money, time, kids, and gear, written for fathers stretching every dollar.",
-  alternates: { canonical: "/guides" },
-};
+    "Practical dad guides on money, groceries, school costs, kids, and gear. Written for fathers stretching every dollar without the shame spiral.",
+  path: "/guides",
+  keywords: [
+    "dad guides",
+    "family budget guides",
+    "parenting on a budget",
+    "frugal dad tips",
+    "grocery budget guide",
+  ],
+});
 
 export default async function GuidesPage() {
   const guides = getGuides();

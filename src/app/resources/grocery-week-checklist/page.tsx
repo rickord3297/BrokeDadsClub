@@ -3,18 +3,11 @@ import { FillCheck, FillLine } from "@/components/fillable-fields";
 import { ResourceLayout } from "@/components/resource-layout";
 import { WeekMealPlan } from "@/components/week-meal-plan";
 import { requireResource } from "@/lib/resources";
-import { site } from "@/lib/site";
+import { resourcePageMetadata } from "@/lib/seo";
 
 const resource = requireResource("grocery-week-checklist");
 
-export const metadata: Metadata = {
-  title: { absolute: `${resource.seoTitle} | Broke Dads Club` },
-  description: resource.description,
-  keywords: resource.keywords,
-  alternates: {
-    canonical: `${site.url}/resources/${resource.slug}`,
-  },
-};
+export const metadata: Metadata = resourcePageMetadata(resource);
 
 const cart = [
   {

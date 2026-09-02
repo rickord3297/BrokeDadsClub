@@ -34,6 +34,7 @@ import {
   toGuideListItem,
 } from "@/lib/guides";
 import { getResourceByGuideSlug, otherResources } from "@/lib/resources";
+import { OG_IMAGE } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const revalidate = 3600;
@@ -66,13 +67,13 @@ export async function generateMetadata({
       siteName: site.name,
       publishedTime: guide.publishedAt,
       tags: keywords,
-      images: ["/brand/club-logo.png"],
+      images: [OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
       title: guide.seoTitle,
       description: guide.description,
-      images: ["/brand/club-logo.png"],
+      images: [OG_IMAGE.url],
     },
   };
 }
@@ -119,6 +120,7 @@ export default async function GuidePage({
         url: `${site.url}/brand/club-logo.png`,
       },
     },
+    image: `${site.url}${OG_IMAGE.url}`,
     mainEntityOfPage: url,
     keywords: keywords.join(", "),
     articleSection: guide.category,

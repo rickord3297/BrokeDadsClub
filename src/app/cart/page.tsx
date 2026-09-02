@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { CartView } from "@/components/cart-view";
 import { CASTLE_PIN_SLUG } from "@/lib/product-display";
 import { getProduct } from "@/lib/products";
+import { NOINDEX } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Cart",
+  ...NOINDEX,
 };
 
 export default async function CartPage() {

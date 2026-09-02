@@ -6,6 +6,8 @@ import { CartProvider } from "@/components/cart-provider";
 import { MetaPixelHead } from "@/components/meta-pixel";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { SiteJsonLd } from "@/components/site-json-ld";
+import { OG_IMAGE } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -27,17 +29,45 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.tagline} · ${site.name}`,
+    default: site.seoTitle,
     template: `%s · ${site.name}`,
   },
   description: site.description,
+  keywords: [...site.keywords],
+  authors: [{ name: site.name, url: site.url }],
+  creator: site.name,
+  publisher: site.name,
+  category: "Personal Finance",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: site.url,
+    types: {
+      "application/rss+xml": [{ url: "/feed.xml", title: `${site.name} guides` }],
+    },
+  },
   openGraph: {
-    title: `${site.tagline} · ${site.name}`,
-    description: site.description,
+    title: site.shareTitle,
+    description: site.shareDescription,
     url: site.url,
     siteName: site.name,
     type: "website",
-    images: ["/brand/club-logo.png"],
+    locale: "en_US",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.shareTitle,
+    description: site.shareDescription,
+    images: [OG_IMAGE.url],
   },
   icons: {
     icon: "/brand/club-logo.png",
@@ -55,6 +85,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <MetaPixelHead />
       </head>
       <body className="min-h-full flex flex-col text-ink">
+        <SiteJsonLd />
         <CartProvider>
           <SiteHeader />
           <main className="flex-1">{children}</main>

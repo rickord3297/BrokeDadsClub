@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/json-ld";
 import { ProductDetail } from "@/components/product-detail";
 import { getProduct, getProducts } from "@/lib/products";
+import { buildPageMetadata, productJsonLd } from "@/lib/seo";
+import { site } from "@/lib/site";
 
 export async function generateStaticParams() {
   const products = await getProducts();
@@ -14,7 +17,19 @@ export async function generateMetadata({
   const { slug } = await params;
   const product = await getProduct(slug);
   if (!product) return { title: "Product" };
-  return { title: product.name, description: product.description };
+
+  return buildPageMetadata({
+    title: `${product.name} | ${site.name}`,
+    description: product.description,
+    path: `/shop/${product.slug}`,
+    keywords: [
+      product.name.toLowerCase(),
+      "broke dads club merch",
+      product.category.toLowerCase(),
+    ],
+    absoluteTitle: true,
+    images: product.image ? [product.image] : undefined,
+  });
 }
 
 export default async function ProductPage({
@@ -24,5 +39,10 @@ export default async function ProductPage({
   const product = await getProduct(slug);
   if (!product) notFound();
 
-  return <ProductDetail product={product} />;
+  return (
+    <>
+      <JsonLd data={productJsonLd(product)} />
+      <ProductDetail product={product} />
+    </>
+  );
 }

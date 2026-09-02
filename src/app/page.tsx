@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { GatedResourceCard } from "@/components/gated-resource-card";
+import { HomeFollowSection } from "@/components/home-follow-section";
 import { HomeGuidesSection } from "@/components/home-guides-section";
 import { HomeHero } from "@/components/home-hero";
 import { ProductCard } from "@/components/product-card";
@@ -11,8 +13,18 @@ import {
 } from "@/lib/guides";
 import { getHomeShopProducts } from "@/lib/products";
 import { getResource } from "@/lib/resources";
+import { buildPageMetadata } from "@/lib/seo";
+import { site } from "@/lib/site";
 
 const FEATURED_PRINTABLE = "grocery-week-checklist";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: site.seoTitle,
+  description: site.shareDescription,
+  path: "/",
+  keywords: site.keywords,
+  absoluteTitle: true,
+});
 
 export default async function Home() {
   const guides = getGuides();
@@ -103,6 +115,8 @@ export default async function Home() {
           )}
         </div>
       </section>
+
+      <HomeFollowSection />
     </div>
   );
 }

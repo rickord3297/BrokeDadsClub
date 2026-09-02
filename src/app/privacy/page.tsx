@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Privacy Policy",
-  description: `How ${site.name} handles email signups and basic site data.`,
-};
+  description: `How ${site.name} handles email signups, orders, and basic site data.`,
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

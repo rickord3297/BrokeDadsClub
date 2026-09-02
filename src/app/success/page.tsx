@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ClearCartOnSuccess } from "@/components/clear-cart-on-success";
 import { PurchaseTracker } from "@/components/purchase-tracker";
+import { NOINDEX } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Order received",
+  ...NOINDEX,
 };
 
 export default function SuccessPage() {
