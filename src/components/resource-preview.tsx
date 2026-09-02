@@ -2,7 +2,7 @@ function PaperClipIcon() {
   return (
     <svg
       viewBox="0 0 24 32"
-      className="absolute -right-0.5 top-4 z-10 h-9 w-6 text-ink/35 drop-shadow-sm"
+      className="absolute -right-0.5 top-3 z-10 h-7 w-5 text-ink/35 drop-shadow-sm"
       aria-hidden
     >
       <path
@@ -37,7 +37,7 @@ export function ResourcePreview({
 }) {
   if (variant === "card") {
     return (
-      <div className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:mx-0 lg:max-w-none">
+      <div className="relative mx-auto w-full max-w-[11rem] sm:max-w-[13rem] lg:mx-0 lg:max-w-[15rem]">
         <PaperClipIcon />
         <div
           className="relative overflow-hidden rounded-sm border border-ink/12 bg-white shadow-[0_2px_8px_rgba(28,25,21,0.06),0_12px_32px_-8px_rgba(28,25,21,0.18)]"
@@ -104,29 +104,29 @@ function CheckSvg() {
 
 function GroceryCardPreview() {
   return (
-    <div className="aspect-[4/5] bg-white p-6 text-ink sm:p-8">
-      <div className="flex items-start justify-between gap-4 border-b-2 border-ink pb-4">
+    <div className="aspect-[4/5] bg-white p-4 text-ink sm:p-5">
+      <div className="flex items-start justify-between gap-3 border-b-2 border-ink pb-3">
         <div>
-          <p className="font-stamp text-[10px] uppercase tracking-[0.22em] text-pine">
+          <p className="font-stamp text-[8px] uppercase tracking-[0.22em] text-pine">
             Broke Dads Club
           </p>
-          <h3 className="mt-2 font-display text-2xl leading-tight">
+          <h3 className="mt-1.5 font-display text-lg leading-tight sm:text-xl">
             Grocery week
           </h3>
-          <p className="mt-1 text-sm text-ink-soft">$47 cart · 3–4 people</p>
+          <p className="mt-0.5 text-[11px] text-ink-soft">$47 cart · 3–4 people</p>
         </div>
-        <div className="rounded-md border border-ink px-2 py-1 text-[10px] font-semibold uppercase tracking-wider">
+        <div className="rounded-md border border-ink px-1.5 py-0.5 text-[8px] font-semibold uppercase tracking-wider">
           Print
         </div>
       </div>
-      <div className="mt-5 space-y-4 text-sm">
+      <div className="mt-3 space-y-3 text-[11px] sm:text-xs">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-soft">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-ink-soft">
             Protein · $12
           </p>
-          <ul className="mt-2 space-y-2">
+          <ul className="mt-1.5 space-y-1.5">
             {["Dozen eggs", "Chicken thighs", "Canned beans"].map((item) => (
-              <li key={item} className="flex items-center gap-2.5">
+              <li key={item} className="flex items-center gap-2">
                 <CheckSvg />
                 <span>{item}</span>
               </li>
@@ -134,23 +134,23 @@ function GroceryCardPreview() {
           </ul>
         </div>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-soft">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-ink-soft">
             Starch · $8
           </p>
-          <ul className="mt-2 space-y-2">
+          <ul className="mt-1.5 space-y-1.5">
             {["Rice or potatoes", "Pasta"].map((item) => (
-              <li key={item} className="flex items-center gap-2.5">
+              <li key={item} className="flex items-center gap-2">
                 <CheckSvg />
                 <span>{item}</span>
               </li>
             ))}
           </ul>
         </div>
-        <div className="rounded-md border border-ink/20 bg-paper-2/40 p-3">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em]">
+        <div className="rounded-md border border-ink/20 bg-paper-2/40 p-2">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em]">
             Swap box
           </p>
-          <p className="mt-1 text-sm text-ink-soft">
+          <p className="mt-0.5 text-[11px] text-ink-soft">
             Turkey or extra beans if chicken is up
           </p>
         </div>
@@ -161,14 +161,14 @@ function GroceryCardPreview() {
 
 function SchoolCardPreview() {
   return (
-    <div className="aspect-[4/5] bg-white p-6 text-ink sm:p-8">
-      <p className="font-stamp text-[10px] uppercase tracking-[0.22em] text-pine">
+    <div className="aspect-[4/5] bg-white p-4 text-ink sm:p-5">
+      <p className="font-stamp text-[8px] uppercase tracking-[0.22em] text-pine">
         Broke Dads Club
       </p>
-      <h3 className="mt-2 font-display text-2xl leading-tight">
+      <h3 className="mt-1.5 font-display text-lg leading-tight sm:text-xl">
         School supply triage
       </h3>
-      <div className="mt-5 grid grid-cols-3 gap-2 text-center text-xs">
+      <div className="mt-3 grid grid-cols-3 gap-1.5 text-center text-[10px]">
         {["Must buy", "Reuse", "Skip"].map((col) => (
           <div key={col} className="rounded-md border border-ink/20 p-2">
             <p className="font-semibold">{col}</p>
@@ -185,25 +185,25 @@ function SchoolCardPreview() {
 
 function BirthdayCardPreview() {
   return (
-    <div className="aspect-[4/5] bg-white p-6 text-ink sm:p-8">
-      <p className="font-stamp text-[10px] uppercase tracking-[0.22em] text-pine">
+    <div className="aspect-[4/5] bg-white p-4 text-ink sm:p-5">
+      <p className="font-stamp text-[8px] uppercase tracking-[0.22em] text-pine">
         Broke Dads Club
       </p>
-      <h3 className="mt-2 font-display text-2xl leading-tight">
+      <h3 className="mt-1.5 font-display text-lg leading-tight sm:text-xl">
         Birthday party budget
       </h3>
-      <div className="mt-5 grid grid-cols-3 gap-2 rounded-md border border-ink/20 p-3 text-center text-sm">
+      <div className="mt-3 grid grid-cols-3 gap-1.5 rounded-md border border-ink/20 p-2 text-center text-[11px] sm:text-xs">
         <div>
-          <p className="text-xs text-ink-soft">Limit</p>
-          <p className="mt-1 font-display text-xl">$___</p>
+          <p className="text-[10px] text-ink-soft">Limit</p>
+          <p className="mt-0.5 font-display text-lg">$___</p>
         </div>
         <div>
-          <p className="text-xs text-ink-soft">Kids</p>
-          <p className="mt-1 font-display text-xl">___</p>
+          <p className="text-[10px] text-ink-soft">Kids</p>
+          <p className="mt-0.5 font-display text-lg">___</p>
         </div>
         <div>
-          <p className="text-xs text-ink-soft">Each</p>
-          <p className="mt-1 font-display text-xl">$___</p>
+          <p className="text-[10px] text-ink-soft">Each</p>
+          <p className="mt-0.5 font-display text-lg">$___</p>
         </div>
       </div>
     </div>

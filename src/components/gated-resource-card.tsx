@@ -17,11 +17,11 @@ const PREVIEW_POINTS = [
 export function GatedResourceCard({ resource }: { resource: Resource }) {
   return (
     <article className="overflow-hidden rounded-2xl border border-rule bg-paper shadow-sm shadow-ink/5">
-      <div className="grid lg:grid-cols-2">
-        <div className="flex items-center justify-center bg-paper-2/50 p-6 sm:p-8 lg:p-10">
+      <div className="grid lg:grid-cols-[minmax(0,17rem)_1fr]">
+        <div className="flex items-center justify-center bg-paper-2/50 p-5 sm:p-6 lg:p-8">
           <ResourcePreview slug={resource.slug} variant="card" />
         </div>
-        <div className="flex flex-col justify-center border-t border-rule p-6 sm:p-8 lg:border-t-0 lg:border-l lg:p-10">
+        <div className="flex flex-col justify-center border-t border-rule p-6 sm:p-8 lg:border-t-0 lg:border-l lg:p-8">
           <div className="flex flex-wrap gap-2">
             {resource.tags.slice(0, 3).map((tag) => (
               <span
