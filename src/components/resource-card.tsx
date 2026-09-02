@@ -17,8 +17,8 @@ export function ResourceCard({
   if (featured) {
     return (
       <article className="overflow-hidden border border-rule bg-paper shadow-sm shadow-ink/5">
-        <div className="grid lg:grid-cols-[minmax(0,17rem)_1fr]">
-          <div className="flex items-center justify-center bg-paper-2/50 p-5 sm:p-6 lg:p-8">
+        <div className="grid lg:grid-cols-[minmax(0,10.5rem)_1fr]">
+          <div className="flex items-center justify-center bg-paper-2/50 p-4 sm:p-5 lg:p-6">
             <ResourcePreview slug={resource.slug} variant={previewVariant} />
           </div>
           <div className="flex flex-col justify-center border-t border-rule p-6 sm:p-8 lg:border-t-0 lg:border-l lg:p-8">
