@@ -91,8 +91,8 @@ export function ResourceCard({
   }
 
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-rule bg-paper shadow-md shadow-ink/5 ring-1 ring-ink/5">
-      <div className="flex flex-1 flex-col p-5">
+    <article className="flex flex-col rounded-2xl border border-rule bg-paper shadow-md shadow-ink/5 ring-1 ring-ink/5">
+      <div className="p-5">
         <h3 className="font-display text-2xl leading-tight">
           <Link href={`/resources/${resource.slug}`} className="hover:text-rust">
             {resource.title}
@@ -104,7 +104,9 @@ export function ResourceCard({
             <p className="text-sm leading-6 text-ink-soft">{resource.excerpt}</p>
           </ResourceCardSection>
           <ResourceCardSection label="Details">
-            <p className="text-sm leading-6 text-ink-soft">{resource.intro}</p>
+            <p className="line-clamp-3 text-sm leading-6 text-ink-soft">
+              {resource.intro}
+            </p>
             <div className="mt-3">
               <ResourceCardTags tags={resource.tags} />
             </div>
@@ -114,12 +116,14 @@ export function ResourceCard({
 
       <Link
         href={`/resources/${resource.slug}`}
-        className="block px-4 pb-4 pt-2"
+        className="block px-5 pb-5"
       >
-        <ResourcePreview slug={resource.slug} variant={previewVariant} />
+        <div className="rounded-xl bg-paper-2/60 p-3">
+          <ResourcePreview slug={resource.slug} variant={previewVariant} />
+        </div>
       </Link>
 
-      <div className="flex flex-col gap-3 p-5 pt-0">
+      <div className="flex flex-col gap-3 px-5 pb-5">
         <ResourceActionButtons
           resourceSlug={resource.slug}
           printLabel="Print"

@@ -16,17 +16,6 @@ function PaperClipIcon() {
   );
 }
 
-function CornerFold() {
-  return (
-    <div
-      className="pointer-events-none absolute right-0 bottom-0 h-10 w-10"
-      aria-hidden
-    >
-      <div className="absolute right-0 bottom-0 h-0 w-0 border-b-[2.5rem] border-l-[2.5rem] border-b-paper-2 border-l-transparent" />
-      <div className="absolute right-0 bottom-0 h-0 w-0 border-b-[2.35rem] border-l-[2.35rem] border-b-ink/10 border-l-transparent" />
-    </div>
-  );
-}
 
 export function ResourcePreview({
   slug,
@@ -37,7 +26,7 @@ export function ResourcePreview({
 }) {
   if (variant === "card") {
     return (
-      <div className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:mx-0 lg:max-w-none">
+      <div className="relative mx-auto w-full max-w-[15rem]">
         <PaperClipIcon />
         <div
           className="relative overflow-hidden rounded-sm border border-ink/12 bg-white shadow-[0_2px_8px_rgba(28,25,21,0.06),0_12px_32px_-8px_rgba(28,25,21,0.18)]"
@@ -46,7 +35,6 @@ export function ResourcePreview({
           {slug === "grocery-week-checklist" ? <GroceryCardPreview /> : null}
           {slug === "school-supply-triage" ? <SchoolCardPreview /> : null}
           {slug === "birthday-party-budget" ? <BirthdayCardPreview /> : null}
-          <CornerFold />
         </div>
       </div>
     );
@@ -54,7 +42,7 @@ export function ResourcePreview({
 
   const sheet = (
     <div
-      className="aspect-[8.5/11] overflow-hidden rounded-lg border border-rule bg-white p-2.5 shadow-sm"
+      className="mx-auto aspect-[8.5/11] w-full max-w-[11rem] overflow-hidden rounded-lg border border-rule bg-white p-2.5 shadow-sm"
       aria-hidden
     >
       {slug === "grocery-week-checklist" ? <GroceryMini /> : null}

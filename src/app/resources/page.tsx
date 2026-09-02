@@ -47,9 +47,9 @@ export default function ResourcesPage() {
         guides explain the thinking. These are the working copies.
       </p>
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {resources.map((resource) => (
-          <ResourceCard key={resource.slug} resource={resource} previewVariant="card" />
+          <ResourceCard key={resource.slug} resource={resource} />
         ))}
       </div>
     </div>
