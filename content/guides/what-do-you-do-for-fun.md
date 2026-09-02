@@ -6,8 +6,8 @@ excerpt: >-
   shift. Here is an honest answer that doesn’t shame you.
 category: Time
 readTime: 5 min
-publishedAt: '2026-09-17'
-status: scheduled
+publishedAt: '2026-09-02'
+status: published
 takeaways:
   - 'Fun got reorganized, not cancelled'
   - A repeatable twenty minutes beats a fake jet-ski lifestyle

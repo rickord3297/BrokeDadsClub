@@ -1,7 +1,7 @@
 ---
 title: Marketplace before the mall
 slug: marketplace-before-the-mall
-seoTitle: "Facebook Marketplace for Parents: Buy Used Without Shame | Broke Dads Club"
+seoTitle: 'Facebook Marketplace for Parents: Buy Used Without Shame | Broke Dads Club'
 description: >-
   Re-use shame is mostly in your head. Facebook Marketplace is where neighbors
   dump barely used cleats and bikes. A dad checklist for local pickup without
@@ -11,8 +11,8 @@ excerpt: >-
   need in six months. How to buy without the shame spiral or the scam story.
 category: Gear
 readTime: 7 min
-publishedAt: "2026-09-13"
-status: scheduled
+publishedAt: '2026-09-02'
+status: published
 keywords:
   - facebook marketplace for parents
   - buy used kids gear locally
@@ -26,9 +26,11 @@ related:
 shop:
   - club-pup-tee
 takeaways:
-  - Marketplace is for gear with six months of life left, not a virtue badge
-  - Meet in daylight, inspect like a skeptic, walk if it is junk
-action: Search Marketplace for one thing on your list tonight. Save three listings, message one seller.
+  - 'Marketplace is for gear with six months of life left, not a virtue badge'
+  - 'Meet in daylight, inspect like a skeptic, walk if it is junk'
+action: >-
+  Search Marketplace for one thing on your list tonight. Save three listings,
+  message one seller.
 faq:
   - question: Is Facebook Marketplace safe for buying kids stuff?
     answer: >-

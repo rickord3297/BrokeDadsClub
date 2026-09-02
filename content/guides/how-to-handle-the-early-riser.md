@@ -10,8 +10,8 @@ excerpt: >-
   the house from waking with them.
 category: Time
 readTime: 6 min
-publishedAt: '2026-09-21'
-status: scheduled
+publishedAt: '2026-09-02'
+status: published
 keywords:
   - early riser toddler
   - kid wakes up too early

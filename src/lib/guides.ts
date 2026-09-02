@@ -158,10 +158,10 @@ export function getGuide(slug: string): Guide | null {
 }
 
 export const START_HERE_SLUGS = [
-  "the-dad-tax",
+  "marketplace-before-the-mall",
+  "packing-school-lunch-without-a-guilt-spiral",
   "the-47-dollar-grocery-week",
   "school-supply-list",
-  "talking-to-kids-about-money",
 ] as const;
 
 const CATEGORY_ORDER = ["Money", "Time", "Kids", "Work", "Gear"];

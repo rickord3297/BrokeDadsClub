@@ -6,8 +6,8 @@ excerpt: >-
   it without letting it run the house.
 category: Time
 readTime: 5 min
-publishedAt: '2026-09-07'
-status: scheduled
+publishedAt: '2026-09-02'
+status: published
 takeaways:
   - Their highlight reel is not your Tuesday
   - 'Feel it, then pick your version of a trip this month'

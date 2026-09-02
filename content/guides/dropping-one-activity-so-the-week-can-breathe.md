@@ -1,13 +1,17 @@
 ---
-title: "Dropping one activity so the week can breathe"
+title: Dropping one activity so the week can breathe
 slug: dropping-one-activity-so-the-week-can-breathe
-seoTitle: "How to Drop a Kids Activity Without Guilt | Broke Dads Club"
-description: "Cut one kids activity so evenings stop breaking. A simple keep/cut test, short scripts for the kid and the coach, and what to protect instead."
-excerpt: One less practice. One more dinner that is not eaten in the car. How to cut a commitment without a family referendum.
+seoTitle: How to Drop a Kids Activity Without Guilt | Broke Dads Club
+description: >-
+  Cut one kids activity so evenings stop breaking. A simple keep/cut test, short
+  scripts for the kid and the coach, and what to protect instead.
+excerpt: >-
+  One less practice. One more dinner that is not eaten in the car. How to cut a
+  commitment without a family referendum.
 category: Time
 readTime: 6 min
-publishedAt: "2026-09-05"
-status: scheduled
+publishedAt: '2026-09-02'
+status: published
 keywords:
   - how to drop a kids activity
   - overscheduled kids
@@ -22,9 +26,13 @@ shop:
   - club-pup-tee
   - broke-mug
 takeaways:
-  - Cut the activity that costs the most calm, not the one that looks worst online
+  - >-
+    Cut the activity that costs the most calm, not the one that looks worst
+    online
   - A short script beats a family debate
-action: Circle one activity on this week's calendar you could drop for four weeks and still sleep.
+action: >-
+  Circle one activity on this week's calendar you could drop for four weeks and
+  still sleep.
 faq:
   - question: How do I know which kids activity to drop?
     answer: >-
@@ -36,8 +44,8 @@ faq:
       Skip the long money lecture and the guilt apology.
   - question: Will dropping an activity hurt my kid long term?
     answer: >-
-      One less club for a season rarely ruins a childhood. Chronic exhaustion and
-      car dinners do more damage. You can revisit next season.
+      One less club for a season rarely ruins a childhood. Chronic exhaustion
+      and car dinners do more damage. You can revisit next season.
 ---
 
 The calendar filled up like it had a personal vendetta. Practice, club, "just one more," and suddenly dinner is a granola bar between parking lots.

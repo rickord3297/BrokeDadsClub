@@ -1,7 +1,7 @@
 ---
 title: Picture day without the upsell
 slug: picture-day-without-the-upsell
-seoTitle: "School Picture Day on a Budget: Skip the Upsell | Broke Dads Club"
+seoTitle: 'School Picture Day on a Budget: Skip the Upsell | Broke Dads Club'
 description: >-
   School photos, spirit wear, and the class package pitch hit the same month as
   fees. How to get a keepsake you can afford without the deluxe sheet guilt.
@@ -10,8 +10,8 @@ excerpt: >-
   for picture day, spirit wear, and the packages you do not need.
 category: Money
 readTime: 6 min
-publishedAt: "2026-09-15"
-status: scheduled
+publishedAt: '2026-09-02'
+status: published
 keywords:
   - school picture day cost
   - school photo packages budget
@@ -35,9 +35,9 @@ faq:
       entirely, or take your own portrait at home or at a store you choose.
   - question: What school picture package is worth it on a budget?
     answer: >-
-      Usually the smallest digital or single-print option. Skip add-ons,
-      retakes you do not need, and class composites unless you actually want
-      them on a wall.
+      Usually the smallest digital or single-print option. Skip add-ons, retakes
+      you do not need, and class composites unless you actually want them on a
+      wall.
   - question: How do I handle spirit wear pressure?
     answer: >-
       One shirt if it matters for a game day, or zero if the closet already has

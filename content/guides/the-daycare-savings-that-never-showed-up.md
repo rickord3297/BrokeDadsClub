@@ -1,7 +1,7 @@
 ---
 title: The daycare savings that never showed up
 slug: the-daycare-savings-that-never-showed-up
-seoTitle: "After-School Care Costs vs Daycare: The Real Math | Broke Dads Club"
+seoTitle: 'After-School Care Costs vs Daycare: The Real Math | Broke Dads Club'
 description: >-
   Kindergarten ends the daycare bill, then after-school care, summer camp, and
   random days off show up. How to budget the school-age gap without pretending
@@ -11,8 +11,8 @@ excerpt: >-
   Here is the school-age care math nobody puts on the brochure.
 category: Money
 readTime: 7 min
-publishedAt: "2026-09-09"
-status: scheduled
+publishedAt: '2026-09-02'
+status: published
 keywords:
   - after school care cost vs daycare
   - school age childcare costs
@@ -29,7 +29,9 @@ shop:
 takeaways:
   - School-year care is only part of the year; summer and breaks are the rest
   - Run the 52-week number before you celebrate the daycare drop
-action: Add up after-school, summer camp, and three teacher workdays. Write the total on your phone tonight.
+action: >-
+  Add up after-school, summer camp, and three teacher workdays. Write the total
+  on your phone tonight.
 faq:
   - question: Is after-school care cheaper than daycare?
     answer: >-

@@ -1,13 +1,19 @@
 ---
 title: The lonely dad at practice
 slug: the-lonely-dad
-seoTitle: "Lonely Dad? How to Make Friends at Practice & Pickup | Broke Dads Club"
-description: "Feel like the plus-one dad at practice? Why moms make friends faster, what friendly is not, and 5 low-pressure ways to connect without forcing a friend group."
-excerpt: She knows three parents by name. You know one guy who checks his phone. Not everyone is alone, but a lot of dads are stuck at the fence. Here is how to try.
+seoTitle: Lonely Dad? How to Make Friends at Practice & Pickup | Broke Dads Club
+description: >-
+  Feel like the plus-one dad at practice? Why moms make friends faster, what
+  friendly is not, and 5 low-pressure ways to connect without forcing a friend
+  group.
+excerpt: >-
+  She knows three parents by name. You know one guy who checks his phone. Not
+  everyone is alone, but a lot of dads are stuck at the fence. Here is how to
+  try.
 category: Time
 readTime: 7 min
-publishedAt: "2026-08-26"
-status: scheduled
+publishedAt: '2026-09-02'
+status: published
 keywords:
   - lonely dad
   - dad feels alone at practice
@@ -27,16 +33,22 @@ nextGuide: the-pickup-line-is-not-a-networking-event
 faq:
   - question: Why is it harder for dads to make friends at kid activities?
     answer: >-
-      The parent who runs the schedule gets repeat contact at the same practices and events. Dads who tag along are often present but not in the same social lane, and many men were never taught low-stakes small talk.
+      The parent who runs the schedule gets repeat contact at the same practices
+      and events. Dads who tag along are often present but not in the same
+      social lane, and many men were never taught low-stakes small talk.
   - question: How do I make dad friends without being awkward?
     answer: >-
-      Pick one repeat face, use one honest line, and ask a logistics question. A two-minute chat at pickup beats trying to join a whole crew on week one.
+      Pick one repeat face, use one honest line, and ask a logistics question. A
+      two-minute chat at pickup beats trying to join a whole crew on week one.
   - question: Is it normal to feel lonely as a dad?
     answer: >-
-      Yes. A lot of fathers feel it and do not say it. Not everyone is isolated, but the feeling is common enough that you are not broken for having it.
+      Yes. A lot of fathers feel it and do not say it. Not everyone is isolated,
+      but the feeling is common enough that you are not broken for having it.
   - question: What should a lonely dad do this week?
     answer: >-
-      Stand in the same spot twice, say hello to one parent both times, and read the pickup small-talk guide next. One connection attempt beats another silent drive home.
+      Stand in the same spot twice, say hello to one parent both times, and read
+      the pickup small-talk guide next. One connection attempt beats another
+      silent drive home.
 ---
 
 You showed up. You drove there. You are standing by the fence while someone else's kid takes a shot. Your partner knows three parents by name already. You know one guy from last season, and he keeps checking his phone.

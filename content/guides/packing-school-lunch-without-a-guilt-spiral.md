@@ -1,13 +1,17 @@
 ---
-title: "Packing school lunch without a $12 guilt spiral"
+title: Packing school lunch without a $12 guilt spiral
 slug: packing-school-lunch-without-a-guilt-spiral
-seoTitle: "Cheap School Lunch Ideas for Kids (No Guilt) | Broke Dads Club"
-description: "Pack school lunch without Pinterest shame or a $12 daily bill. A three-part box, a boring rotation, and when cafeteria is the smarter call."
-excerpt: Protein, a carb, one fruit. A lunch rotation that survives Tuesday morning, not a bento contest.
+seoTitle: Cheap School Lunch Ideas for Kids (No Guilt) | Broke Dads Club
+description: >-
+  Pack school lunch without Pinterest shame or a $12 daily bill. A three-part
+  box, a boring rotation, and when cafeteria is the smarter call.
+excerpt: >-
+  Protein, a carb, one fruit. A lunch rotation that survives Tuesday morning,
+  not a bento contest.
 category: Money
 readTime: 6 min
-publishedAt: "2026-09-03"
-status: scheduled
+publishedAt: '2026-09-02'
+status: published
 keywords:
   - cheap school lunch ideas
   - packing school lunch on a budget
@@ -22,19 +26,20 @@ shop:
   - broke-mug
   - club-pup-tee
 takeaways:
-  - Hit protein, carb, fruit. Skip the bento contest
+  - 'Hit protein, carb, fruit. Skip the bento contest'
   - One boring rotation beats seven clever failures
 action: Write a 5-lunch rotation on a sticky note and stick it on the fridge tonight.
 faq:
   - question: What should I pack for school lunch on a budget?
     answer: >-
-      Aim for protein, a carb, and fruit or veg. Leftovers, peanut butter, cheese,
-      tortillas, and bananas beat fancy kits. Shop the lunch items with the
-      grocery week, not as a second trip.
+      Aim for protein, a carb, and fruit or veg. Leftovers, peanut butter,
+      cheese, tortillas, and bananas beat fancy kits. Shop the lunch items with
+      the grocery week, not as a second trip.
   - question: Is cafeteria lunch cheaper than packing?
     answer: >-
-      Sometimes. Compare your real packed cost to the cafeteria price for a week.
-      If packing turns into gas-station add-ons every morning, cafeteria may win.
+      Sometimes. Compare your real packed cost to the cafeteria price for a
+      week. If packing turns into gas-station add-ons every morning, cafeteria
+      may win.
   - question: How do I stop lunch packing guilt?
     answer: >-
       Feed them something they will eat. A plain sandwich that comes home empty

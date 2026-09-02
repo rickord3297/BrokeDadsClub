@@ -1,18 +1,18 @@
 ---
 title: Last year's shoes in a new hallway
 slug: last-years-shoes-in-a-new-hallway
-seoTitle: "Reuse School Clothes Without Shame: Dad's Guide | Broke Dads Club"
+seoTitle: 'Reuse School Clothes Without Shame: Dad''s Guide | Broke Dads Club'
 description: >-
   Your kid's backpack still works. Surveys say half of parents worry about
   judgment for reused gear. How to send them in clean, proud, and without a
   second Target run.
 excerpt: >-
-  The shoes fit. The lunchbox closes. The worry is yours, not theirs, until
-  you make it theirs. How to reuse gear without the hallway shame spiral.
+  The shoes fit. The lunchbox closes. The worry is yours, not theirs, until you
+  make it theirs. How to reuse gear without the hallway shame spiral.
 category: Kids
 readTime: 6 min
-publishedAt: "2026-09-11"
-status: scheduled
+publishedAt: '2026-09-02'
+status: published
 keywords:
   - reuse school supplies and clothes
   - back to school on a budget no shame
@@ -28,12 +28,15 @@ shop:
 takeaways:
   - Clean and fit beats new and stressed
   - Your tone about reuse teaches them whether to feel ashamed
-action: Pick one item to reuse this week. Clean it tonight. Say nothing apologetic about it tomorrow.
+action: >-
+  Pick one item to reuse this week. Clean it tonight. Say nothing apologetic
+  about it tomorrow.
 faq:
   - question: Is it okay to reuse last year's school supplies?
     answer: >-
       Yes. Scissors, rulers, and backpacks do not expire. Replace what is broken
-      or unsafe. Keep what works. Most teachers prefer function over fresh plastic.
+      or unsafe. Keep what works. Most teachers prefer function over fresh
+      plastic.
   - question: How do I talk to my kid about wearing last year's shoes?
     answer: >-
       Matter-of-fact. "They still fit. We're using them." Apology teaches shame.
