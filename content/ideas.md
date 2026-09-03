@@ -8,6 +8,8 @@
 
 | Idea | Status | Go live | Notes |
 |------|--------|---------|-------|
+| You already do split shifts. Nobody called it that. | idea | | trend 2026-09-03: split-shift parenting is the breakout 2026 parenting trend (Pairently, Elle Canada, The Bump); BDC angle is the dad who works nights or early so the daycare bill disappears -- time/money/dignity, $1,500/mo savings, not a label, just the schedule you fell into |
+| The dad who does the mornings | idea | | trend 2026-09-03: Pinterest "slow fatherhood" + Pairently research showing dads now spend 3x more hours on childcare than 1960s dads; the invisible shift that starts at 6 a.m. before anyone is watching -- dignity angle for the dad nobody thanks |
 | The lonely dad at practice | live | 2026-08-26 | [`the-lonely-dad.md`](guides/the-lonely-dad.md) |
 | The pickup line is not a networking event | live | 2026-08-27 | [`the-pickup-line-is-not-a-networking-event.md`](guides/the-pickup-line-is-not-a-networking-event.md) |
 | When you yelled and you are the last one awake | live | 2026-08-28 | [`when-you-yelled-and-youre-the-last-one-awake.md`](guides/when-you-yelled-and-youre-the-last-one-awake.md) |
