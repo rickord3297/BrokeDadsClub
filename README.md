@@ -101,7 +101,7 @@ What actually takes a site down is billing, DNS, or a paused backend, not a quie
 
 - Public health: `https://brokedadsclub.com/api/health` (JSON; `HEAD` works for cheap pings).
 - Daily Vercel cron (`/api/cron/keepalive`, 8:15 a.m. Central) pings this site, every URL in [`content/uptime-sites.json`](content/uptime-sites.json), and Supabase. If a check fails and SES is configured, it emails `dad@brokedadsclub.com`.
-- GitHub Action [Uptime](.github/workflows/uptime.yml) hits the same watch list about every 30 minutes. Enable **Watching** on the repo (or Actions failure emails) so a red run reaches you even if you did not open the dashboard.
+- GitHub Action [Uptime](.github/workflows/uptime.yml) hits the same watch list about every 30 minutes. Enable **Watching** on the repo (or Actions failure emails) so a red run reaches you even if you did not open the dashboard. GitHub can pause scheduled workflows after ~60 days with no commits, so do not treat this as the only alarm.
 
 Add another website by appending a `{ "name", "url" }` row to [`content/uptime-sites.json`](content/uptime-sites.json) and pushing. Use that site's own `/api/health` if it has one, otherwise the homepage.
 

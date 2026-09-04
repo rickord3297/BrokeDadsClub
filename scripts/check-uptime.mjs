@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const root = join(dirname(fileURLToPath(import.meta.url)), "../..");
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const watchFile = join(root, "content/uptime-sites.json");
 const parsed = JSON.parse(readFileSync(watchFile, "utf8"));
 const sites = Array.isArray(parsed.sites) ? parsed.sites : [];
@@ -27,16 +27,13 @@ for (const site of sites) {
       headers: { "user-agent": "BrokeDadsClub-uptime/1.0" },
     });
     const ms = Date.now() - started;
-    if (!response.ok) {
-      failed += 1;
-      console.error(`DOWN  ${name} ${url} HTTP ${response.status} (${ms}ms)`);
-      continue;
-    }
-    console.log(`OK    ${name} ${url} HTTP ${response.status} (${ms}ms)`);
+    const line = `${response.ok ? "OK  " : "DOWN"} ${name} ${url} HTTP ${response.status} (${ms}ms)`;
+    console.log(line);
+    if (!response.ok) failed += 1;
   } catch (error) {
     failed += 1;
     const detail = error instanceof Error ? error.message : "request failed";
-    console.error(`DOWN  ${name} ${url} ${detail}`);
+    console.log(`DOWN ${name} ${url} ${detail}`);
   }
 }
 
