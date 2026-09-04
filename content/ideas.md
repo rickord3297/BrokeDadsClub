@@ -6,7 +6,7 @@
 
 **Review drafts:** open files in [`content/guides/`](guides/), anything with `status: draft` in the top. Or browse [`DRAFTS.md`](DRAFTS.md).
 
-**Cadence:** default ~2 days when building a queue. For traffic pushes, set `status: published` and deploy immediately.
+**Cadence:** stagger **Go live** dates every **2-3 days**. Next open slot is the day after the last row in [`DRAFTS.md`](DRAFTS.md). For traffic pushes, set `status: published` and deploy immediately.
 
 | Idea | Status | Go live | Notes |
 |------|--------|---------|-------|
@@ -43,6 +43,9 @@
 | Last year's shoes in a new hallway | live | 2026-09-02 | [`last-years-shoes-in-a-new-hallway.md`](guides/last-years-shoes-in-a-new-hallway.md) |
 | Marketplace before the mall | live | 2026-09-02 | [`marketplace-before-the-mall.md`](guides/marketplace-before-the-mall.md) |
 | Picture day without the upsell | live | 2026-09-02 | [`picture-day-without-the-upsell.md`](guides/picture-day-without-the-upsell.md) |
+| Spirit week without five new outfits | scheduled | 2026-09-06 | [`spirit-week-without-five-new-outfits.md`](guides/spirit-week-without-five-new-outfits.md) |
+| Whose science project is it anyway | scheduled | 2026-09-09 | [`whose-science-project-is-it.md`](guides/whose-science-project-is-it.md) |
+| The school group chat at 9 p.m. | scheduled | 2026-09-12 | [`the-school-group-chat-at-9-pm.md`](guides/the-school-group-chat-at-9-pm.md) |
 
 ### Status
 
