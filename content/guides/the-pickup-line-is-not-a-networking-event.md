@@ -1,13 +1,17 @@
 ---
 title: The pickup line is not a networking event
 slug: the-pickup-line-is-not-a-networking-event
-seoTitle: "School Pickup Small Talk for Dads (Scripts That Work) | Broke Dads Club"
-description: "Awkward at school pickup? Copy-paste small talk for dads: 5 lines that work, 5 that backfire, and the two-week rule for turning nods into actual connection."
-excerpt: Pickup is not LinkedIn. Five lines you can steal, five that make it worse, and a two-week rule that turns nods into something real.
+seoTitle: School Pickup Small Talk for Dads (Scripts That Work) | Broke Dads Club
+description: >-
+  Awkward at school pickup? Copy-paste small talk for dads: 5 lines that work, 5
+  that backfire, and the two-week rule for turning nods into actual connection.
+excerpt: >-
+  Pickup is not LinkedIn. Five lines you can steal, five that make it worse, and
+  a two-week rule that turns nods into something real.
 category: Time
 readTime: 5 min
-publishedAt: "2026-08-27"
-status: scheduled
+publishedAt: '2026-09-02'
+status: published
 keywords:
   - school pickup small talk
   - dad small talk at school
@@ -26,16 +30,23 @@ nextGuide: tagging-along-without-becoming-furniture
 faq:
   - question: What do I say to other parents at school pickup?
     answer: >-
-      Keep it short and situational. Comment on the line, the weather, or a kid's backpack. Or ask a logistics question like "Do we need to bring anything tomorrow?"
+      Keep it short and situational. Comment on the line, the weather, or a
+      kid's backpack. Or ask a logistics question like "Do we need to bring
+      anything tomorrow?"
   - question: How do I stop feeling awkward at pickup?
     answer: >-
-      Pick one repeat face, say hello every time, and accept that some chats will die in thirty seconds. Consistency beats charisma.
+      Pick one repeat face, say hello every time, and accept that some chats
+      will die in thirty seconds. Consistency beats charisma.
   - question: How long until pickup small talk becomes friendship?
     answer: >-
-      Often two to three weeks of the same hello with one person. Week one: "Hey." Week two: "How's your week?" Week three: a real conversation if they engage.
+      Often two to three weeks of the same hello with one person. Week one:
+      "Hey." Week two: "How's your week?" Week three: a real conversation if
+      they engage.
   - question: What should dads avoid saying at pickup?
     answer: >-
-      Skip unprompted job talk, money on day two, vague "we should hang" invites, and oversharing because you are tired. Save heavy stuff for people who already know your kid's teacher.
+      Skip unprompted job talk, money on day two, vague "we should hang"
+      invites, and oversharing because you are tired. Save heavy stuff for
+      people who already know your kid's teacher.
 ---
 
 Pickup is ten minutes of standing still while your brain runs a spreadsheet of everything you still owe the day. Then someone smiles and you forget every word you know.

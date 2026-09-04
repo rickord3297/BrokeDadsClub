@@ -1,14 +1,17 @@
 ---
 title: When you yelled and you are the last one awake
 slug: when-you-yelled-and-youre-the-last-one-awake
-seoTitle: "Yelled at Your Kid? What to Do Tonight & Tomorrow | Broke Dads Club"
-description: "Dad guilt after yelling: what to do tonight without a midnight speech, the 4-step morning repair, and when it is more than one bad night."
+seoTitle: Yelled at Your Kid? What to Do Tonight & Tomorrow | Broke Dads Club
+description: >-
+  Dad guilt after yelling: what to do tonight without a midnight speech, the
+  4-step morning repair, and when it is more than one bad night.
 excerpt: >-
-  You snapped. The house is quiet and you are replaying it. Tonight: do not wake them. Tomorrow: four sentences. Here is the repair script.
+  You snapped. The house is quiet and you are replaying it. Tonight: do not wake
+  them. Tomorrow: four sentences. Here is the repair script.
 category: Kids
 readTime: 6 min
-publishedAt: "2026-08-28"
-status: scheduled
+publishedAt: '2026-09-02'
+status: published
 keywords:
   - dad guilt after yelling
   - yelled at my kid feel guilty
@@ -27,16 +30,22 @@ nextGuide: explaining-we-cant-go
 faq:
   - question: What should I do after yelling at my kid tonight?
     answer: >-
-      Do not wake them for a guilt tour. Drink water, put the phone down, and write one note for tomorrow: apologize, lower voice, fix one lever like sleep or transitions.
+      Do not wake them for a guilt tour. Drink water, put the phone down, and
+      write one note for tomorrow: apologize, lower voice, fix one lever like
+      sleep or transitions.
   - question: How do I apologize to my child after losing my temper?
     answer: >-
-      Keep it short. "I yelled. That was too loud and not okay. I am working on staying calmer. I love you." Then let them respond without a lecture.
+      Keep it short. "I yelled. That was too loud and not okay. I am working on
+      staying calmer. I love you." Then let them respond without a lecture.
   - question: Is it normal for dads to feel guilty after yelling?
     answer: >-
-      Yes. Guilt means you care. Use it to change the next moment, not to punish yourself all night or doom-scroll perfect dads online.
+      Yes. Guilt means you care. Use it to change the next moment, not to punish
+      yourself all night or doom-scroll perfect dads online.
   - question: When is yelling a sign I need help?
     answer: >-
-      If it is frequent, if you scare yourself, or if kids flinch when you walk in, talk to a therapist, doctor, or someone you trust. One bad night and a pattern are different problems.
+      If it is frequent, if you scare yourself, or if kids flinch when you walk
+      in, talk to a therapist, doctor, or someone you trust. One bad night and a
+      pattern are different problems.
 ---
 
 The house is finally quiet. You are sitting on the couch with the replay running: the volume you used, the face they made, the thing you said that was true but delivered like a weapon.

@@ -10,8 +10,8 @@ excerpt: >-
   end the night without becoming the entertainment.
 category: Kids
 readTime: 7 min
-publishedAt: '2026-10-06'
-status: scheduled
+publishedAt: '2026-09-02'
+status: published
 keywords:
   - kid won't sleep
   - toddler won't go to bed

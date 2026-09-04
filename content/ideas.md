@@ -6,6 +6,8 @@
 
 **Review drafts:** open files in [`content/guides/`](guides/), anything with `status: draft` in the top. Or browse [`DRAFTS.md`](DRAFTS.md).
 
+**Cadence:** stagger **Go live** dates every **2-3 days**. Next open slot is the day after the last row in [`DRAFTS.md`](DRAFTS.md). For traffic pushes, set `status: published` and deploy immediately.
+
 | Idea | Status | Go live | Notes |
 |------|--------|---------|-------|
 | The lonely dad at practice | live | 2026-08-26 | [`the-lonely-dad.md`](guides/the-lonely-dad.md) |
@@ -15,28 +17,38 @@
 | Tagging along without becoming furniture | live | 2026-08-30 | [`tagging-along-without-becoming-furniture.md`](guides/tagging-along-without-becoming-furniture.md) |
 | One dad coffee, not a friend group | live | 2026-08-30 | [`one-dad-coffee-not-a-friend-group.md`](guides/one-dad-coffee-not-a-friend-group.md) |
 | The after-school collapse is not a bad kid | live | 2026-08-30 | [`the-after-school-collapse-is-not-a-bad-kid.md`](guides/the-after-school-collapse-is-not-a-bad-kid.md) |
-| Packing school lunch without a $12 guilt spiral | scheduled | 2026-08-31 | [`packing-school-lunch-without-a-guilt-spiral.md`](guides/packing-school-lunch-without-a-guilt-spiral.md) |
-| Dropping one activity so the week can breathe | scheduled | 2026-08-31 | [`dropping-one-activity-so-the-week-can-breathe.md`](guides/dropping-one-activity-so-the-week-can-breathe.md) |
+| Packing school lunch without a $12 guilt spiral | live | 2026-09-02 | [`packing-school-lunch-without-a-guilt-spiral.md`](guides/packing-school-lunch-without-a-guilt-spiral.md) |
+| Dropping one activity so the week can breathe | live | 2026-09-02 | [`dropping-one-activity-so-the-week-can-breathe.md`](guides/dropping-one-activity-so-the-week-can-breathe.md) |
 | Which tool brand to buy (one battery, not a shrine) | live | 2026-08-22 | [`which-tool-brand-to-buy.md`](guides/which-tool-brand-to-buy.md) |
 | Dad math: I can do that cheaper (then you need $200 of tools) | live | 2026-08-16 | [`dad-math.md`](guides/dad-math.md) |
 | The second bill after school starts (fees, sports, fundraisers) | live | 2026-08-16 | [`the-second-bill.md`](guides/the-second-bill.md) |
 | Gas station dinner that still counts as feeding your kids | live | 2026-08-22 | [`gas-station-dinner.md`](guides/gas-station-dinner.md) |
-| When the other dad’s vacation photos hit | scheduled | 2026-09-08 | [`when-the-other-dads-vacation-photos-hit.md`](guides/when-the-other-dads-vacation-photos-hit.md) |
+| When the other dad’s vacation photos hit | live | 2026-09-02 | [`when-the-other-dads-vacation-photos-hit.md`](guides/when-the-other-dads-vacation-photos-hit.md) |
 | Explaining “we can’t go” without making it a speech | live | 2026-08-12 | [`explaining-we-cant-go.md`](guides/explaining-we-cant-go.md) |
 | The school supply list that quietly wrecks August | live | 2026-08-14 | [`school-supply-list.md`](guides/school-supply-list.md) |
 | Cheap weekend that isn’t just screen time | live | 2026-08-22 | [`cheap-weekend-not-just-screens.md`](guides/cheap-weekend-not-just-screens.md) |
-| What to say when someone asks what you do for fun | scheduled | 2026-09-29 | [`what-do-you-do-for-fun.md`](guides/what-do-you-do-for-fun.md) |
+| What to say when someone asks what you do for fun | live | 2026-09-02 | [`what-do-you-do-for-fun.md`](guides/what-do-you-do-for-fun.md) |
 | Fixing the car vs paying for daycare: picking the lesser disaster | live | 2026-08-12 | [`car-vs-daycare.md`](guides/car-vs-daycare.md) |
 | Birthday party math for kids who notice everything | live | 2026-08-12 | [`birthday-party-math.md`](guides/birthday-party-math.md) |
-| The kid who won't sleep | scheduled | 2026-10-06 | [`the-kid-who-wont-sleep.md`](guides/the-kid-who-wont-sleep.md) |
-| How to handle the early riser | scheduled | 2026-10-13 | [`how-to-handle-the-early-riser.md`](guides/how-to-handle-the-early-riser.md) |
-| Kids who don't listen to Mom | scheduled | 2026-10-20 | [`kids-who-dont-listen-to-mom.md`](guides/kids-who-dont-listen-to-mom.md) |
+| The kid who won't sleep | live | 2026-09-02 | [`the-kid-who-wont-sleep.md`](guides/the-kid-who-wont-sleep.md) |
+| How to handle the early riser | live | 2026-09-02 | [`how-to-handle-the-early-riser.md`](guides/how-to-handle-the-early-riser.md) |
+| Kids who don't listen to Mom | live | 2026-09-02 | [`kids-who-dont-listen-to-mom.md`](guides/kids-who-dont-listen-to-mom.md) |
 | The $47 grocery week | live | 2026-08-04 | `the-47-dollar-grocery-week` |
 | Cheap date night that still feels like a date | live | 2026-07-28 | `cheap-date-night` |
 | The dad tax: why everything costs more | live | 2026-07-21 | `the-dad-tax` |
 | Side hustles that don't steal bedtime | live | 2026-07-14 | `side-hustles-that-dont-steal-bedtime` |
 | Talking to kids about money without scaring them | live | 2026-07-07 | `talking-to-kids-about-money` |
 | Thrift without looking like a dare | live | 2026-06-30 | `thrift-without-looking-like-a-dare` |
+| The daycare savings that never showed up | live | 2026-09-02 | [`the-daycare-savings-that-never-showed-up.md`](guides/the-daycare-savings-that-never-showed-up.md) |
+| Last year's shoes in a new hallway | live | 2026-09-02 | [`last-years-shoes-in-a-new-hallway.md`](guides/last-years-shoes-in-a-new-hallway.md) |
+| Marketplace before the mall | live | 2026-09-02 | [`marketplace-before-the-mall.md`](guides/marketplace-before-the-mall.md) |
+| Picture day without the upsell | live | 2026-09-02 | [`picture-day-without-the-upsell.md`](guides/picture-day-without-the-upsell.md) |
+| Spirit week without five new outfits | scheduled | 2026-09-06 | [`spirit-week-without-five-new-outfits.md`](guides/spirit-week-without-five-new-outfits.md) |
+| Whose science project is it anyway | scheduled | 2026-09-09 | [`whose-science-project-is-it.md`](guides/whose-science-project-is-it.md) |
+| The school group chat at 9 p.m. | scheduled | 2026-09-12 | [`the-school-group-chat-at-9-pm.md`](guides/the-school-group-chat-at-9-pm.md) |
+| The teacher workday on Tuesday | scheduled | 2026-09-15 | [`the-teacher-workday-on-tuesday.md`](guides/the-teacher-workday-on-tuesday.md) |
+| Snack duty without the Costco run | scheduled | 2026-09-18 | [`snack-duty-without-the-costco-run.md`](guides/snack-duty-without-the-costco-run.md) |
+| When homework and practice collide | scheduled | 2026-09-21 | [`when-homework-and-practice-collide.md`](guides/when-homework-and-practice-collide.md) |
 
 ### Status
 

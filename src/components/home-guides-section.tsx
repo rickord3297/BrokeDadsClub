@@ -2,7 +2,7 @@ import Link from "next/link";
 import { GuideCard } from "@/components/guide-card";
 import type { GuideListItem } from "@/lib/guide-model";
 
-const LATEST_COUNT = 6;
+const LATEST_COUNT = 9;
 
 export function HomeGuidesSection({ guides }: { guides: GuideListItem[] }) {
   const latest = guides.slice(0, LATEST_COUNT);

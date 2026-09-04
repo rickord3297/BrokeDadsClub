@@ -10,8 +10,8 @@ excerpt: >-
   being the fun override button.
 category: Kids
 readTime: 7 min
-publishedAt: '2026-10-20'
-status: scheduled
+publishedAt: '2026-09-02'
+status: published
 keywords:
   - kids don't listen to mom
   - child only listens to dad

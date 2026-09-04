@@ -1,13 +1,19 @@
 ---
 title: The sports signup fee you did not budget for
 slug: the-sports-signup-fee-you-didnt-budget-for
-seoTitle: "Youth Sports Hidden Fees: What Signup Really Costs | Broke Dads Club"
-description: "The flyer said $85. The total didn't. Uniforms, photos, travel, volunteer buyouts: the real youth sports bill, plus scripts to say yes, no, or not this season."
-excerpt: Signup is the down payment, not the movie. The hidden fees that hit in September, three questions to ask before you pay, and scripts when the answer is not this year.
+seoTitle: 'Youth Sports Hidden Fees: What Signup Really Costs | Broke Dads Club'
+description: >-
+  The flyer said $85. The total didn't. Uniforms, photos, travel, volunteer
+  buyouts: the real youth sports bill, plus scripts to say yes, no, or not this
+  season.
+excerpt: >-
+  Signup is the down payment, not the movie. The hidden fees that hit in
+  September, three questions to ask before you pay, and scripts when the answer
+  is not this year.
 category: Money
 readTime: 6 min
-publishedAt: "2026-08-29"
-status: scheduled
+publishedAt: '2026-09-02'
+status: published
 keywords:
   - youth sports costs
   - hidden kids sports fees
@@ -27,16 +33,23 @@ nextGuide: the-second-bill
 faq:
   - question: How much do kids sports really cost beyond signup?
     answer: >-
-      Plan for uniform gear, team photos, tournament travel, volunteer buyouts, and mid-season asks. Most families spend well above the registration line on the flyer.
+      Plan for uniform gear, team photos, tournament travel, volunteer buyouts,
+      and mid-season asks. Most families spend well above the registration line
+      on the flyer.
   - question: What questions should I ask before signing up for youth sports?
     answer: >-
-      Ask the all-in total from last season, what is required vs optional, and whether scholarships, loaner gear, or payment plans exist. Get answers in writing if you can.
+      Ask the all-in total from last season, what is required vs optional, and
+      whether scholarships, loaner gear, or payment plans exist. Get answers in
+      writing if you can.
   - question: What if we cannot afford the sports fee?
     answer: >-
-      Ask about help first. If it still does not fit, a calm "not this season" with one alternative beats putting it on a card you are still paying off.
+      Ask about help first. If it still does not fit, a calm "not this season"
+      with one alternative beats putting it on a card you are still paying off.
   - question: How do I tell my kid we cannot do the sport?
     answer: >-
-      Short script: not this season, here is what we are covering instead, one alternative if you can. Skip the adult budget lecture. See the explaining we can't go guide for more.
+      Short script: not this season, here is what we are covering instead, one
+      alternative if you can. Skip the adult budget lecture. See the explaining
+      we can't go guide for more.
 ---
 
 The email subject line said "Welcome to the team!" The attachment said $85 registration, $40 uniform deposit, $25 volunteer buyout, and "spirit pack strongly encouraged."
