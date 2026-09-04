@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { isCronAuthorized } from "@/lib/cron";
 import { getGuides, getGuidesSince } from "@/lib/guides";
 import { buildRecapEmail, recapWindowStart } from "@/lib/recap";
 import { isSesConfigured, sendSesEmail } from "@/lib/ses";
@@ -8,15 +9,8 @@ import { createAdminClient } from "@/lib/supabase/admin";
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
-function isAuthorized(request: Request): boolean {
-  const secret = process.env.CRON_SECRET;
-  if (!secret) return false;
-  const header = request.headers.get("authorization");
-  return header === `Bearer ${secret}`;
-}
-
 export async function GET(request: Request) {
-  if (!isAuthorized(request)) {
+  if (!isCronAuthorized(request)) {
     return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
   }
 
