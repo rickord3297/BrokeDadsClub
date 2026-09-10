@@ -39,6 +39,7 @@
 | Thrift without looking like a dare | live | 2026-06-30 | `thrift-without-looking-like-a-dare` |
 | Your student debt and how to keep them out of it | draft | 2026-09-15 | [`student-debt-dads-breaking-the-cycle.md`](guides/student-debt-dads-breaking-the-cycle.md) |
 | Creative ways out of debt (pay the expensive stuff first) | draft | 2026-09-22 | [`creative-ways-out-of-debt-high-interest-first.md`](guides/creative-ways-out-of-debt-high-interest-first.md) |
+| How to make small talk with other parents | draft | 2026-09-29 | [`how-to-make-small-talk-with-other-parents.md`](guides/how-to-make-small-talk-with-other-parents.md) |
 
 ### Status
 
