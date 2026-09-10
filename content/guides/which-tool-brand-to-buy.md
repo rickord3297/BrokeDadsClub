@@ -11,6 +11,7 @@ excerpt: >-
 category: Gear
 readTime: 6 min
 publishedAt: '2026-08-22'
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - ryobi vs milwaukee vs dewalt

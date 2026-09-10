@@ -8,6 +8,7 @@ excerpt: >-
 category: Kids
 readTime: 7 min
 publishedAt: "2026-08-28"
+updatedAt: '2026-09-09'
 status: scheduled
 keywords:
   - dad guilt after yelling

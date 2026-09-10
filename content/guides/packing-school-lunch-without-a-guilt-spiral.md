@@ -7,6 +7,7 @@ excerpt: Protein, a carb, one fruit. A lunch rotation that survives Tuesday morn
 category: Money
 readTime: 6 min
 publishedAt: "2026-08-31"
+updatedAt: '2026-09-09'
 status: scheduled
 keywords:
   - cheap school lunch ideas

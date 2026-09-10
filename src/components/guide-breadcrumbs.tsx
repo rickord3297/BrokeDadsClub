@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { guideCategoryPath } from "@/lib/guide-pillars";
 
 export function GuideBreadcrumbs({
   category,
@@ -8,10 +9,7 @@ export function GuideBreadcrumbs({
   title: string;
 }) {
   return (
-    <nav
-      aria-label="Breadcrumb"
-      className="text-sm text-ink-soft"
-    >
+    <nav aria-label="Breadcrumb" className="text-sm text-ink-soft">
       <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
         <li>
           <Link href="/" className="font-medium hover:text-pine">
@@ -31,7 +29,7 @@ export function GuideBreadcrumbs({
         </li>
         <li>
           <Link
-            href={`/guides?topic=${encodeURIComponent(category)}`}
+            href={guideCategoryPath(category)}
             className="font-medium text-pine hover:text-rust"
           >
             {category}

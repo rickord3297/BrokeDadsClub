@@ -7,6 +7,7 @@ excerpt: Pickup is not LinkedIn. Five lines you can steal, five that make it wor
 category: Time
 readTime: 6 min
 publishedAt: "2026-08-27"
+updatedAt: '2026-09-09'
 status: scheduled
 keywords:
   - school pickup small talk

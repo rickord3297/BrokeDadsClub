@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ActionBox } from "@/components/guide-action-box";
 import { FieldChecklist } from "@/components/field-checklist";
+import { GuideByline } from "@/components/guide-byline";
 import { GuideBreadcrumbs } from "@/components/guide-breadcrumbs";
 import {
   GuideCompanionPrintables,
@@ -20,7 +21,6 @@ import { GuideThePoint } from "@/components/guide-the-point";
 import { GuideViewTracker } from "@/components/guide-view-tracker";
 import { ReadingProgress } from "@/components/reading-progress";
 import { ShareGuide } from "@/components/share-guide";
-import { formatDate } from "@/lib/format";
 import {
   extractTocHeadings,
   partitionGuideBody,
@@ -34,6 +34,7 @@ import {
   toGuideListItem,
 } from "@/lib/guides";
 import { getResourceByGuideSlug, otherResources } from "@/lib/resources";
+import { guideCategoryPath } from "@/lib/guide-pillars";
 import { OG_IMAGE } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -66,6 +67,7 @@ export async function generateMetadata({
       url,
       siteName: site.name,
       publishedTime: guide.publishedAt,
+      modifiedTime: guide.updatedAt,
       tags: keywords,
       images: [OG_IMAGE],
     },
@@ -105,7 +107,7 @@ export default async function GuidePage({
     headline: guide.title,
     description: guide.description,
     datePublished: guide.publishedAt,
-    dateModified: guide.publishedAt,
+    dateModified: guide.updatedAt,
     author: {
       "@type": "Organization",
       name: site.name,
@@ -120,8 +122,18 @@ export default async function GuidePage({
         url: `${site.url}/brand/club-logo.png`,
       },
     },
-    image: `${site.url}${OG_IMAGE.url}`,
-    mainEntityOfPage: url,
+    image: [
+      {
+        "@type": "ImageObject",
+        url: `${site.url}${OG_IMAGE.url}`,
+        width: OG_IMAGE.width,
+        height: OG_IMAGE.height,
+      },
+    ],
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
     keywords: keywords.join(", "),
     articleSection: guide.category,
   };
@@ -146,7 +158,7 @@ export default async function GuidePage({
         "@type": "ListItem",
         position: 3,
         name: guide.category,
-        item: `${site.url}/guides?topic=${encodeURIComponent(guide.category)}`,
+        item: `${site.url}${guideCategoryPath(guide.category)}`,
       },
       {
         "@type": "ListItem",
@@ -215,12 +227,11 @@ export default async function GuidePage({
             <h1 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">
               {guide.title}
             </h1>
-            <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-b border-rule pb-5">
-              <p className="text-sm text-ink-soft">
-                <span className="font-medium text-ink">{site.name}</span>
-                <span className="mx-2 text-rule">·</span>
-                {formatDate(guide.publishedAt)}
-              </p>
+            <div className="mt-5 flex flex-wrap items-start justify-between gap-4 border-b border-rule pb-5">
+              <GuideByline
+                publishedAt={guide.publishedAt}
+                updatedAt={guide.updatedAt}
+              />
               <ShareGuide title={guide.title} url={url} slug={guide.slug} />
             </div>
 
@@ -306,7 +317,7 @@ export default async function GuidePage({
               </Link>
               <span className="mx-2 text-rule">·</span>
               <Link
-                href={`/guides?topic=${encodeURIComponent(guide.category)}`}
+                href={guideCategoryPath(guide.category)}
                 className="text-pine hover:text-rust"
               >
                 More in {guide.category}

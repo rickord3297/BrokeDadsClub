@@ -11,6 +11,7 @@ excerpt: >-
 category: Money
 readTime: 7 min
 publishedAt: '2026-08-16'
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - school fees after school starts

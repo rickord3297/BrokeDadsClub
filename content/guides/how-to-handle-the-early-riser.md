@@ -11,6 +11,7 @@ excerpt: >-
 category: Time
 readTime: 7 min
 publishedAt: '2026-10-13'
+updatedAt: '2026-10-13'
 status: scheduled
 keywords:
   - early riser toddler

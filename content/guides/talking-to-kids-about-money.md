@@ -11,6 +11,7 @@ excerpt: >-
 category: Kids
 readTime: 6 min
 publishedAt: '2026-07-07'
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - talking to kids about money

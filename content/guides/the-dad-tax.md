@@ -11,6 +11,7 @@ excerpt: >-
 category: Money
 readTime: 5 min
 publishedAt: '2026-07-21'
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - cost of raising kids

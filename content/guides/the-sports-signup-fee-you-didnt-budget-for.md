@@ -7,6 +7,7 @@ excerpt: Signup is the down payment, not the movie. The hidden fees that hit in 
 category: Money
 readTime: 6 min
 publishedAt: "2026-08-29"
+updatedAt: '2026-09-09'
 status: scheduled
 keywords:
   - youth sports costs

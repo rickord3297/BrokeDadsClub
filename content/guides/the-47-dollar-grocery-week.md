@@ -11,6 +11,7 @@ excerpt: >-
 category: Money
 readTime: 6 min
 publishedAt: '2026-08-04'
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - cheap grocery list for family

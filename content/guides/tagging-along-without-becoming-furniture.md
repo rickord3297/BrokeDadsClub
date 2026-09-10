@@ -7,6 +7,7 @@ excerpt: You came to support and ended up holding the cooler staring at the fenc
 category: Time
 readTime: 6 min
 publishedAt: "2026-08-30"
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - dad at kids sports practice

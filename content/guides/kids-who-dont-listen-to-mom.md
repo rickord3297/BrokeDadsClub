@@ -11,6 +11,7 @@ excerpt: >-
 category: Kids
 readTime: 6 min
 publishedAt: '2026-10-20'
+updatedAt: '2026-10-20'
 status: scheduled
 keywords:
   - kids don't listen to mom

@@ -11,6 +11,7 @@ excerpt: >-
 category: Time
 readTime: 5 min
 publishedAt: '2026-08-22'
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - cheap weekend ideas with kids

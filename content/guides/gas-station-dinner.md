@@ -7,6 +7,7 @@ excerpt: Rotisserie, hot dogs, one fruit. The 3-part rule, what to grab in each 
 category: Money
 readTime: 6 min
 publishedAt: '2026-08-22'
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - gas station dinner for kids

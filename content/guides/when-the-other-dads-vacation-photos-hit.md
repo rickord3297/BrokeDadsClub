@@ -7,7 +7,34 @@ excerpt: >-
 category: Time
 readTime: 6 min
 publishedAt: '2026-09-08'
+updatedAt: '2026-09-09'
 status: scheduled
+seoTitle: "When Other Dads Post Vacation Photos | Broke Dads Club"
+description: >-
+  Other dads posting beach trips while you are home? Scripts for your kid,
+  how to handle envy without a shame spiral, and a free version of a trip this month.
+keywords:
+  - dad vacation envy
+  - comparing family vacations
+  - talking to kids about vacations we cannot afford
+  - cheap family trip ideas
+related:
+  - explaining-we-cant-go
+  - talking-to-kids-about-money
+  - cheap-weekend-not-just-screens
+faq:
+  - question: What do I tell my kid when another family posts a big vacation?
+    answer: >-
+      Keep it short and true. That looks fun, we are doing our kind of fun this
+      year. Do not trash the other family or invent a trip you cannot book.
+  - question: How do I stop vacation photos from wrecking my mood?
+    answer: >-
+      Feel it once, then mute or scroll past. Turn the envy into one concrete
+      free or cheap outing this month instead of an overnight pricing spiral.
+  - question: What if my kid keeps asking why we cannot go?
+    answer: >-
+      Repeat the same short answer. If they ask a third time in a month, they
+      usually want time with you. Name the next real thing you will do together.
 takeaways:
   - Their highlight reel is not your Tuesday
   - 'Feel it, then pick your version of a trip this month'

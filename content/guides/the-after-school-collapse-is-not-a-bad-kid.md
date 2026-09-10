@@ -7,6 +7,7 @@ excerpt: They were an angel at school. Then the car door closed. A simple after-
 category: Kids
 readTime: 6 min
 publishedAt: "2026-08-30"
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - after school meltdown kids

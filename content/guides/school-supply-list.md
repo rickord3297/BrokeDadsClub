@@ -11,6 +11,7 @@ excerpt: >-
 category: Money
 readTime: 5 min
 publishedAt: '2026-08-14'
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - school supply list on a budget

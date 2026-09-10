@@ -11,6 +11,7 @@ excerpt: >-
 category: Time
 readTime: 5 min
 publishedAt: '2026-07-28'
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - cheap date night ideas with kids

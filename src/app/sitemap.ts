@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { GUIDE_PILLARS } from "@/lib/guide-pillars";
 import { getGuides } from "@/lib/guides";
 import { getProducts } from "@/lib/products";
 import { resources } from "@/lib/resources";
@@ -29,6 +30,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency,
       priority,
     })),
+    ...GUIDE_PILLARS.map((pillar) => ({
+      url: `${site.url}/guides/${pillar.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.88,
+    })),
     ...resources.map((resource) => ({
       url: `${site.url}/resources/${resource.slug}`,
       lastModified: new Date(),
@@ -37,7 +44,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
     ...guides.map((guide) => ({
       url: `${site.url}/guides/${guide.slug}`,
-      lastModified: new Date(guide.publishedAt),
+      lastModified: new Date(guide.updatedAt || guide.publishedAt),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),

@@ -7,6 +7,7 @@ excerpt: Skip the deck-beer ad fantasy. One face, one invite, thirty minutes. Th
 category: Time
 readTime: 6 min
 publishedAt: "2026-08-30"
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - how to make one dad friend

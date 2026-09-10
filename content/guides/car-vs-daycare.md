@@ -11,6 +11,7 @@ excerpt: >-
 category: Money
 readTime: 6 min
 publishedAt: '2026-08-12'
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - car repair vs daycare cost

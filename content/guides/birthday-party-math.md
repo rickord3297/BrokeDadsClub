@@ -11,6 +11,7 @@ excerpt: >-
 category: Kids
 readTime: 7 min
 publishedAt: '2026-08-12'
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - cheap kids birthday party ideas

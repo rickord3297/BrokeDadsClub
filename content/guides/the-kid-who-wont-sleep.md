@@ -11,6 +11,7 @@ excerpt: >-
 category: Kids
 readTime: 6 min
 publishedAt: '2026-10-06'
+updatedAt: '2026-10-06'
 status: scheduled
 keywords:
   - kid won't sleep

@@ -7,6 +7,7 @@ excerpt: One less practice. One more dinner that is not eaten in the car. How to
 category: Time
 readTime: 7 min
 publishedAt: "2026-08-31"
+updatedAt: '2026-09-09'
 status: scheduled
 keywords:
   - how to drop a kids activity

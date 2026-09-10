@@ -11,6 +11,7 @@ excerpt: >-
 category: Kids
 readTime: 6 min
 publishedAt: '2026-08-12'
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - how to tell kids we can't afford it

@@ -7,7 +7,34 @@ excerpt: >-
 category: Time
 readTime: 5 min
 publishedAt: '2026-09-29'
+updatedAt: '2026-09-29'
 status: scheduled
+seoTitle: "What Do You Do for Fun? Honest Dad Answers | Broke Dads Club"
+description: >-
+  Honest answers when someone asks what you do for fun as a dad. Short scripts,
+  how to handle the follow-up, and how to reclaim twenty minutes without a fake lifestyle.
+keywords:
+  - what do you do for fun dad
+  - dad hobbies after kids
+  - honest answer dad small talk
+  - reclaiming free time as a father
+related:
+  - cheap-date-night
+  - one-dad-coffee-not-a-friend-group
+  - dropping-one-activity-so-the-week-can-breathe
+faq:
+  - question: What should a dad say when asked what he does for fun?
+    answer: >-
+      Keep it honest and light. Parks, library, cooking with kids, or ten quiet
+      minutes after bedtime all count. Humor beats a fake jet-ski lifestyle.
+  - question: How do I reclaim fun with almost no free time?
+    answer: >-
+      Attach twenty minutes to a fixed slot you already have, like after bedtime
+      or Saturday morning. A repeatable pocket beats a big plan that never starts.
+  - question: What if people pity my answer?
+    answer: >-
+      Say it is a season and change the subject. Do not argue with pity and do
+      not upgrade your answer into a performance.
 takeaways:
   - 'Fun got reorganized, not cancelled'
   - A repeatable twenty minutes beats a fake jet-ski lifestyle

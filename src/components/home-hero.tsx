@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { SiteTagline } from "@/components/site-tagline";
+import { StartHereGuideLinks } from "@/components/start-here-guide-links";
 import { site } from "@/lib/site";
 
 const TRUST_LINE =
@@ -39,6 +40,8 @@ export function HomeHero() {
               Browse guides
             </Link>
           </div>
+
+          <StartHereGuideLinks heading="Start here" source="home" />
         </div>
       </div>
     </section>

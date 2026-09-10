@@ -11,6 +11,7 @@ excerpt: >-
 category: Gear
 readTime: 5 min
 publishedAt: '2026-06-30'
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - thrift shopping for families

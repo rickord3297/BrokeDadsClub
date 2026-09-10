@@ -45,6 +45,7 @@ excerpt: One or two sentences (card/teaser copy).
 category: Money | Time | Kids | Work | Gear
 readTime: N min
 publishedAt: "YYYY-MM-DD"
+updatedAt: "YYYY-MM-DD"
 status: draft
 keywords:
   - search phrase people would type

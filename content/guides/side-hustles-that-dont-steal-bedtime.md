@@ -11,6 +11,7 @@ excerpt: >-
 category: Work
 readTime: 5 min
 publishedAt: '2026-07-14'
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - side hustles for dads
