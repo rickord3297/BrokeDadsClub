@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
-import { StartHereGuideLinks } from "@/components/start-here-guide-links";
 import { buildPageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -95,8 +94,6 @@ export default function AboutPage() {
           The dues are optional, no judgment attached, and the door is open.
         </p>
       </div>
-
-      <StartHereGuideLinks heading="Start with these guides" source="about" />
 
       <aside className="mt-12 border-t border-rule pt-8">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-rust">
