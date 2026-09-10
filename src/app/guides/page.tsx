@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import Link from "next/link";
 import { GuidesCrawlIndex } from "@/components/guides-crawl-index";
 import { GuidesExplorer } from "@/components/guides-explorer";
 import { JsonLd } from "@/components/json-ld";
 import { resourceTieInForGuide } from "@/lib/guide-catalog";
-import { GUIDE_PILLARS } from "@/lib/guide-pillars";
 import {
   getGuideCategories,
   getGuides,
@@ -61,18 +59,7 @@ export default async function GuidesPage() {
         groceries, school fees, money talks, and work that does not steal bedtime.
       </p>
 
-      <div className="mt-6 flex flex-wrap gap-2">
-        {GUIDE_PILLARS.map((pillar) => (
-          <Link
-            key={pillar.slug}
-            href={`/guides/${pillar.slug}`}
-            className="rounded-full border border-pine/25 bg-pine/[0.06] px-4 py-2 text-sm font-semibold text-pine transition hover:border-pine hover:bg-pine/10"
-          >
-            {pillar.category} hub
-          </Link>
-        ))}
-      </div>
-
+      {/* Crawlable link list for bots; visually hidden so the card grid stays the UI */}
       <GuidesCrawlIndex guides={list} />
 
       <Suspense

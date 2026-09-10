@@ -36,15 +36,6 @@ export function SiteFooter() {
             <Link href="/guides" className="transition hover:text-gold">
               Guides
             </Link>
-            <Link href="/guides/money" className="transition hover:text-gold">
-              Money
-            </Link>
-            <Link href="/guides/time" className="transition hover:text-gold">
-              Time
-            </Link>
-            <Link href="/guides/kids" className="transition hover:text-gold">
-              Kids
-            </Link>
             <Link href="/resources" className="transition hover:text-gold">
               Printables
             </Link>
