@@ -37,6 +37,9 @@
 | Side hustles that don't steal bedtime | live | 2026-07-14 | `side-hustles-that-dont-steal-bedtime` |
 | Talking to kids about money without scaring them | live | 2026-07-07 | `talking-to-kids-about-money` |
 | Thrift without looking like a dare | live | 2026-06-30 | `thrift-without-looking-like-a-dare` |
+| NFL Sunday without a $1,000 streaming bill | live | 2026-09-10 | trend 2026-09-10 NFL weekend: [`nfl-sunday-without-a-thousand-dollar-stream.md`](guides/nfl-sunday-without-a-thousand-dollar-stream.md) |
+| One NFL game for four is a second vacation | live | 2026-09-10 | trend 2026-09-10: Action Network ~$1,475 family game day [`one-nfl-game-for-four-is-a-second-vacation.md`](guides/one-nfl-game-for-four-is-a-second-vacation.md) |
+| Fantasy Sunday with your kid (no betting app) | live | 2026-09-10 | trend 2026-09-10: fantasy + betting ads [`fantasy-sunday-with-your-kid-no-betting-app.md`](guides/fantasy-sunday-with-your-kid-no-betting-app.md) |
 
 ### Status
 

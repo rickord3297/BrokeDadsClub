@@ -82,6 +82,9 @@ const RELATED_HOOKS: Record<string, string> = {
   "tagging-along-without-becoming-furniture": "If you keep ending up as furniture",
   "one-dad-coffee-not-a-friend-group": "If you want one coffee, not a crew",
   "the-sports-signup-fee-you-didnt-budget-for": "If the signup fee was not the real bill",
+  "nfl-sunday-without-a-thousand-dollar-stream": "If football season is eating the streaming budget",
+  "one-nfl-game-for-four-is-a-second-vacation": "If one NFL game looks like a vacation bill",
+  "fantasy-sunday-with-your-kid-no-betting-app": "If you want fantasy with your kid, not a sportsbook",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {
