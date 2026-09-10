@@ -66,31 +66,29 @@ export function GuidePillarPage({ slug }: { slug: GuidePillar["slug"] }) {
       <p className="text-xs uppercase tracking-[0.18em] text-rust">
         Guides · {pillar.category}
       </p>
-      <h1 className="mt-3 max-w-3xl font-display text-4xl leading-tight sm:text-5xl">
-        {pillar.headline}
-      </h1>
-      <div className="prose-guide mt-6 max-w-3xl">
-        {pillar.intro.map((paragraph) => (
-          <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-        ))}
-      </div>
+      <h1 className="mt-3 font-display text-5xl">{pillar.title}</h1>
+      <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
+        {pillar.description}
+      </p>
 
-      <div className="mt-8 flex flex-wrap gap-3 text-sm">
+      <p className="mt-6 text-sm">
         <Link href="/guides" className="font-medium text-pine hover:text-rust">
           ← All guides
         </Link>
         {GUIDE_PILLARS.filter((item) => item.slug !== pillar.slug).map(
           (item) => (
-            <Link
-              key={item.slug}
-              href={`/guides/${item.slug}`}
-              className="font-medium text-ink-soft hover:text-pine"
-            >
-              {item.category}
-            </Link>
+            <span key={item.slug}>
+              <span className="mx-2 text-ink-soft/40">·</span>
+              <Link
+                href={`/guides/${item.slug}`}
+                className="font-medium text-ink-soft hover:text-pine"
+              >
+                {item.category}
+              </Link>
+            </span>
           ),
         )}
-      </div>
+      </p>
 
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {guides.map((guide) => (
