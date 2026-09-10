@@ -56,6 +56,19 @@ If yes, that is your brand. Buy the next tool that takes that battery. Do not st
 
 If the old pack is swollen, dead, or missing, you are allowed to leave. You are not required to replace it with the same logo at today's prices. You *are* required to pick **one** new family and stay there.
 
+## When one platform is actually worth paying for
+
+Loyalty to a battery system pays off under specific conditions, not as a philosophy. It is worth it when:
+
+- You own or will own three or more cordless tools. At one or two, the platform barely matters.
+- You use them at least monthly. Batteries that sit for six months at a time die of neglect, not brand.
+- The bare-tool versions (no battery, no charger) are actually on shelves near you. That is where the savings live, and it is the whole reason platforms matter.
+- Your packs still run a full task. A drill that dies halfway through a deck rail is a battery problem, not a motor problem.
+
+It is not worth it when you own one drill and a box of hand tools. In that case, buy whatever kit is cheapest this month and skip the sermon.
+
+> Truth: You are not buying a brand. You are buying the right to not buy another charger.
+
 ## If you are starting from zero
 
 Buy the cheapest **kit** (drill plus battery plus charger) from a brand you can still find on a shelf in your town. Not the prettiest. The one you can get a driver for next year without a special order.
@@ -81,9 +94,17 @@ If a job is dangerous, structural, or will flood the house, that is not a brand 
 
 ## Scripts
 
-- To yourself in the aisle: "Does this take the battery I already have?"
-- To the guy at work: "I'm on [whatever you own]. I'm not starting a second religion."
-- To your kid, if they ask why the neighbor's drill is redder: "His does the same holes. Ours is paid for."
+> To yourself in the aisle: "Does this take the battery I already have?"
+
+> To the guy at work: "I'm on [whatever you own]. I'm not starting a second religion."
+
+> To your kid, if they ask why the neighbor's drill is redder: "His does the same holes. Ours is paid for."
+
+## When this breaks
+
+**Your batteries died and replacements cost more than a new kit.** This is normal around year three to five, and it is the moment platform loyalty stops being free. Do the arithmetic out loud: two replacement packs often run $80-$120, while a complete kit with a new drill, battery, and charger goes on sale for less. If the kit is cheaper, buy the kit, even if it means switching logos, and sell or hand off the old bare tools to someone still on that platform. Before you spend anything, try the cheap fix first: clean the contacts, charge it overnight in a warm room, and confirm it is the pack and not the charger. A pack that will not take a charge in a cold garage sometimes wakes up inside the house.
+
+**You inherited a garage full of mixed brands.** A father-in-law's estate, a neighbor moving, a lot from an auction. The rule about one platform is for buying, not for what already exists. Keep every tool that works and costs you nothing to own. Then pick one platform going forward: whichever has the most working batteries and a charger that still lives on the shelf. Put the orphan tools and their chargers in one labeled bin. When a battery from a losing platform dies, that tool leaves the house instead of getting a $60 transfusion. You are not converting the garage this weekend. You are just refusing to feed three systems.
 
 ## The point
 

@@ -80,6 +80,25 @@ Rule: if you cannot finish with what is in the house plus one planned purchase, 
 
 This is the same triage energy as [car vs daycare](/guides/car-vs-daycare). Minimum viable fix. Not a fantasy workshop.
 
+## When the DIY bill passes the quote
+
+Halfway in, you are at $140 on a $180 job with the wall open. Sunk cost will tell you to keep going because you have already spent it. Sunk cost is not a number. It is a feeling with a wallet.
+
+Set the stop rule before you start: **if the running total hits 80 percent of the quote and the job is not close to done, you stop and call.** Write the number on the box of the part so you cannot renegotiate with yourself at hour four.
+
+Stopping well matters more than stopping early:
+
+- **Make it safe overnight.** Water off at the valve, breaker off and labeled, no bare wire, no open hole a kid can reach. Safe beats finished.
+- **Do not undo your work.** Leave the demo done, the old part out, the access open. That is real labor a pro will not have to bill you for.
+- **Photograph everything before you close anything up.** What you found behind the wall is worth money to the next person holding the wrench.
+- **Say the actual words when you call.** No performance:
+
+> "I got partway and hit a wall. Here's what's done, here's what's left."
+
+- **Ask what you can still do.** Most trades will knock something off if you handle demo, haul-off, or the paint after.
+
+> Truth: The bill for quitting at hour three is always smaller than the bill for finishing wrong at hour nine.
+
 ## When pride is doing the talking
 
 Pride is not the enemy. Pride is why you still try. It becomes expensive when:
@@ -103,9 +122,17 @@ Use this on the hood of the car, out loud if you have to:
 
 ## Scripts
 
-- To yourself: "Am I saving money, or am I buying a tool?"
-- To the quote: "I can do the easy half. What does that do to the number?"
-- To your kid, if they ask why you hired it: "Some jobs need a person who already has the gear. We still did the part we could."
+> To yourself: "Am I saving money, or am I buying a tool?"
+
+> To the quote: "I can do the easy half. What does that do to the number?"
+
+> To your kid, if they ask why you hired it: "Some jobs need a person who already has the gear. We still did the part we could."
+
+## When this breaks
+
+**Nobody will come out for a job this small.** Plenty of trades carry a minimum service call of $100-$150, and some will not schedule a twenty-minute repair at all. Now the hire number is fake, and DIY is the only real option. Change the math: your ceiling is no longer the quote, it is what a mistake costs. If the worst case is a wasted part, go. If the worst case is water in a wall, keep calling. Try the one-man operators before the companies with a dispatcher, ask the hardware store desk who they send people to, and bundle the small job with another so it clears the minimum.
+
+**The quote is fair and you still cannot pay it this month.** This is not a math problem, it is a cash flow problem, and dad math will not solve it. Sort by consequence instead. If it is getting worse every day (a leak, a roof, brakes), do the cheapest containment now: a bucket and a shutoff valve, a tarp, a bus pass. Then put the real repair on the calendar for the month you can cover it. Many trades will take half now and half in thirty days if you ask directly and early. Asking for terms is not begging. It is how every business in town operates.
 
 ## The point
 

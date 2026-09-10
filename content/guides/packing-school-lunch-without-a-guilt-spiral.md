@@ -84,6 +84,24 @@ Rough math for one kid, store brand:
 
 If cafeteria is $3-$5 and your packed lunch keeps failing into convenience-store add-ons, cafeteria can be the cheaper honest choice for a stretch. Run the numbers for *your* week, not a stranger's blog.
 
+Count it honestly for one week before you decide. Total the lunch line on the receipt, add every mid-week gas station or corner store grab that happened because the bread ran out, then divide by five and by the number of kids. That is your real per-lunch number. Compare it to the cafeteria price times five. If packing wins by under a dollar a day, you are paying yourself very little for twenty minutes of nightly prep, and cafeteria two days a week is a legitimate answer.
+
+Also check whether your district's free or reduced application is open. It is a form, not a verdict. Plenty of families who think they earn too much qualify, and applying costs nothing but ten minutes.
+
+## When the lunch comes home uneaten
+
+One full box is noise. Three in a row is data. Do not respond by spending more money. Respond by finding which of five things went wrong.
+
+- **No time.** Ask what happens between the bell and eating. A lot of schools give twenty minutes, and half of it is the line and the bathroom. Fix: fewer components, nothing that needs assembly, and cut the sandwich in half so it starts faster.
+- **It would not open.** Stiff containers, tight zip bags, a thermos lid a nine-year-old cannot break the seal on. Test it at the kitchen table with them, cold hands, no help.
+- **It got warm or soggy.** Mayo in a hot backpack, sliced apple gone brown, a wet sandwich. Fix: dry components packed separately, a frozen water bottle as the ice pack.
+- **Social.** They are talking, trading, or eating what a friend has. Sometimes the fix is one recognizable item in the box so they are not the only kid with nothing normal.
+- **They just do not like it.** Say so plainly and swap it out of the rotation. This is not a character issue.
+
+Ask one question, not an interrogation: "What did you eat first, and what did you not get to?" That answer tells you more than "how was lunch."
+
+> Truth: A plain lunch that comes home empty beats a beautiful one that comes home full.
+
 ## Scripts for the morning
 
 Kid: "Everyone else has the cool pouch."
@@ -99,6 +117,12 @@ You:
 > "We can do cafeteria on Friday. Mon through Thu we pack. That is the plan."
 
 No speech about inflation. No apology tour.
+
+## When this breaks
+
+**The school bans nuts and your cheapest protein is gone.** Peanut butter is the budget backbone, and losing it can add real money if you replace it with deli meat. Do not. Move the protein lane to beans, eggs, and cheese: a bean and cheese tortilla, hard-boiled eggs done six at a time on Sunday, cottage cheese if they will eat it. Sunflower seed butter works and tastes close, but check the price per ounce before you commit, and confirm your school allows it. Many that ban nuts still flag the jar because it looks like peanut butter, so a note or a labeled container saves a confiscation.
+
+**Two kids on opposite ends of picky.** Running two custom menus is how the rotation dies by Wednesday. Keep one rotation and vary a single slot. Same carb, same fruit lane, different protein: one gets PB, one gets cheese. Let each kid own one veto for the week, no explanation required, and everything else is what got packed. A veto is cheaper than a negotiation every morning at 7:10.
 
 ## What not to do
 

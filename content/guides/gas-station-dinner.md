@@ -55,6 +55,18 @@ Gas station food has a reputation it earned. It also has a quiet useful job: cal
 
 **The 3-part standard below.** Hit two of three and you fed them. Then plan tomorrow before you leave the lot.
 
+## Stop now or push through?
+
+Getting this wrong costs more than the food. Push through with a hungry kid and you arrive to a meltdown at 8:10, then cook anyway while somebody screams.
+
+Stop if two of these are true: home is more than 25 minutes out, the last real food was over four hours ago, or the youngest has crossed into the noise that is not negotiable anymore (repeating the same complaint, kicking the seat, crying at a normal answer). That kid is not being difficult. That kid is out of fuel.
+
+Push through if home is under fifteen minutes and there is actual food in the fridge you can put on a plate in five. Not food you would need to cook. Food you can hand over.
+
+Middle case: buy a banana and a cheese stick at the pump, hand them back in the car, and cook the real thing at home. A four dollar bridge beats a forty dollar drive-through.
+
+> Remember: Hungry kids are not misbehaving. They are out of fuel and honest about it.
+
 ## The 3-part standard
 
 A gas station dinner **counts** if it includes three things:
@@ -77,13 +89,32 @@ Print the [free grocery-week checklist](/resources/grocery-week-checklist) when 
 
 Skip the energy drinks dressed up as dinner. Those are for a different kind of crisis. If you still have a real cart later this week, keep the [grocery week](/guides/the-47-dollar-grocery-week) spine. Tonight is triage.
 
+Two habits that keep the bill from doubling: decide the number before you walk in ("we're spending twelve"), and let each kid pick one item inside your three-part frame. A kid who picked something argues less about the rest of the cart.
+
 ## Scripts for the back seat
 
-- "This is dinner tonight. Tomorrow we cook."
-- "You can pick the fruit or the cheese. Not both candy aisles."
-- "We're not failing. We're in transit."
+> "This is dinner tonight. Tomorrow we cook."
+
+> "You can pick the fruit or the cheese. Not both candy aisles."
+
+> "We're not failing. We're in transit."
 
 Kids hear tone more than menu. If you apologize for fifteen minutes, they learn dinner is a referendum on your worth. If you treat it like a logistics stop, they learn adults solve problems. Same calm energy as [explaining we can't go](/guides/explaining-we-cant-go).
+
+## When tomorrow's cook night does not happen
+
+It happens. You promised a real meal and Wednesday ran you over the same way Tuesday did. The failure mode is not one more bridge meal. It is losing count.
+
+- **Track the streak, not the guilt.** Two bridge nights in a week is a busy week. Four is a supply problem, and no amount of resolve fixes an empty fridge.
+- **Fix supply, not willpower.** Keep three no-cook home dinners stocked at all times: eggs, tortillas and cheese, a bag of frozen chicken nuggets and a bag of frozen vegetables. Ten minutes, no plan, no store.
+- **Shrink the promise.** "Tomorrow we cook" is what you said. Make it true with the smallest version: eggs and toast counts as cooking. Do not let the good version of tomorrow beat the possible one.
+- **Move the grocery run before the next collapse.** If the week keeps ending at a pump, the trip you skipped Sunday is the actual bill.
+
+## When this breaks
+
+**The only station is a bare pump with a candy wall.** No hot case, no cooler beyond soda, nothing green. Work the shelf you have: peanut butter crackers, beef jerky or a meat stick, nuts, a milk if the cooler has one, plain water. That is protein plus a carb, which is two of three. Then look at your map for the nearest dollar store or pharmacy instead of the next station. Both usually stock bread, peanut butter, bananas, and milk for less, and they are open later than you think.
+
+**You are down to seven dollars and the card is tight.** Buy calories that split, not single-serve. One loaf of bread and one jar of peanut butter feeds three kids tonight and covers lunch tomorrow, for less than three hot dogs and a fountain drink. Skip your own dinner if it comes to that, and do it quietly. Then, before you drive off, look up the nearest food pantry hours or text the person who has offered before. Taking help once is cheaper than eating the fee on an overdraft, and your kids will never know which one you chose.
 
 ## What not to do
 

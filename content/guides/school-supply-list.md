@@ -9,7 +9,7 @@ excerpt: >-
   Glue sticks, headphones, and a thousand “optional” extras. How to survive
   back-to-school without a second mortgage.
 category: Money
-readTime: 6 min
+readTime: 5 min
 publishedAt: '2026-08-14'
 status: published
 keywords:
@@ -59,6 +59,25 @@ If the school truly requires something exotic, buy that. Everything else is nego
 
 Print the [school supply triage sheet](/resources/school-supply-triage) and fill the three columns before you walk into a store.
 
+## The lines that explode first
+
+A typical list runs 18-22 items. Four of them do most of the damage.
+
+- **Headphones or earbuds.** Written on the list like a $10 item, sold on the endcap as a $40 one. The cheap wired pair works and gets lost either way. Buy the cheap one twice instead of the good one once.
+- **The backpack.** The biggest brand-pressure item on the list and the one thing that lasts a full year if it zips. Check the zippers on last year's before you shop, not after.
+- **Consumables in multiples.** Twelve glue sticks, four boxes of pencils, the expo markers. Those quantities are for the whole class, pooled in a bin.
+- **The donation section.** Tissues, wipes, paper towels, ziplocs. Real needs, and an unbounded ask.
+
+## What actually gets noticed
+
+Split the list by who touches the item.
+
+**Pooled** goes in a class bin: pencils, glue, tissues, markers. Nobody sees the brand, including your kid. Store brand every time, no exceptions, no guilt.
+
+**Personal** stays with your kid all day and other kids see it: folder, backpack, water bottle, headphones, pencil case. This is the only place a plain version can sting. If you have $10 of flex in the whole August number, spend it here, on one item they picked.
+
+> Truth: Cheap where it is invisible, one deliberate win where it is not.
+
 ## Where to buy without bleeding
 
 - What you already have at home (inventory first, fifteen minutes saves forty dollars)
@@ -72,11 +91,23 @@ Do not shop hungry, angry, or with a kid who has veto power over pencil grip aes
 
 Classroom "wish lists" are real needs and also an open faucet. Pick one item you can actually give. Skip the rest without a speech. You are not a bad community member for protecting August's grocery money.
 
+## When this breaks
+
+**Week two, the real list arrives.** The summer PDF said one composition notebook. The actual teacher wants three specific notebooks, a $25 calculator, or a folder in a color you did not buy. This is normal, and it is why you do not buy the whole list in July. Hold back about a quarter of your August number for the week-two list, then buy exactly what came home on paper. If the ask is a real expense, send one email with two questions: is there a school loaner, and is there a deadline. Both answers exist. Neither one is on the PDF. Expect more of these once class starts, which is [the second bill](/guides/the-second-bill).
+
+**Your kid is humiliated by the plain folder.** Sometimes the cheap version is a genuine problem, usually somewhere between nine and thirteen, and usually about one specific item rather than the whole bag. Do not argue with the feeling and do not fund the entire aisle to fix it. Ask which one thing matters, then trade for it: the plain folder stays and the backpack gets replaced, or last year's scissors come back and they pick the pencil case. One chosen item does more for a kid than four random upgrades, and it teaches the trade instead of the tantrum.
+
+## January is the second supply list
+
+Everything is gone by mid-year. The pencils, the glue, the folder is confetti. Nobody sends a PDF for this one. Put $15-$20 aside in December so February is not a scramble, and check the clearance aisle in September when the August displays get cut 70%. Same items, next semester, a third of the price.
+
 ## Scripts
 
-- To your kid: "We're buying the list, not the whole aisle."
-- To another parent: "We're keeping it lean this year."
-- To yourself: "This is a season. It is not a referendum on my love."
+> To your kid: "We're buying the list, not the whole aisle."
+
+> To another parent: "We're keeping it lean this year."
+
+> To yourself: "This is a season. It is not a referendum on my love."
 
 If the hard part is the field trip or the brand backpack they saw on a bus, use [explaining “we can’t go”](/guides/explaining-we-cant-go). Short no. No TED Talk.
 

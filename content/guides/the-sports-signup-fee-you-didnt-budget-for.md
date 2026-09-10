@@ -73,6 +73,26 @@ Use the [school supply triage printable](/resources/school-supply-triage) if you
 
 None of this makes you a bad parent for noticing. It makes you the CFO the league forgot to cc.
 
+## Telling a real fee from a trap
+
+Signs the number on the flyer is close to the truth:
+
+- The invoice is itemized and the total appears on it.
+- Gear is included, or there is a loaner bin and somebody can point at it.
+- Practices are at one field, on a schedule that exists before you pay.
+- The treasurer answers a cost question in writing within a couple of days.
+- A parent from last season confirms the "optional" items were actually optional.
+
+Signs to slow down:
+
+- The fee is listed as "starting at" or "approximately."
+- Uniforms are ordered through a separate vendor with its own website. That is a second invoice you have not seen yet.
+- The tournament schedule is TBD. TBD means you are agreeing to travel nobody will price for you.
+- The volunteer buyout goes up if you do not claim shifts by a certain date. That is a fee with a clock on it.
+- Nobody will give you last season's all-in total. A league that has run three seasons knows that number.
+
+> Truth: A fee nobody will put in writing is not a fee. It is a range.
+
 ## If it fits (barely)
 
 - Pay registration first, spread gear over two paychecks if allowed.
@@ -87,17 +107,27 @@ You are allowed to say no to a season. Not no to your kid forever. No to this bi
 
 Script:
 
-- "We are not doing travel team this year. We are doing rec at the park."
-- "One sport this fall. You pick."
-- "Not this season. Here is what we can do instead: [free practice, different league, gym with us on Saturdays]."
+> "We are not doing travel team this year. We are doing rec at the park."
+
+> "One sport this fall. You pick."
+
+> "Not this season. Here is what we can do instead: [free practice, different league, gym with us on Saturdays]."
 
 More on the kid conversation in [explaining we can't go](/guides/explaining-we-cant-go).
 
 ## When you already said yes and the next fee hits
 
-Pause before auto-pay. Text the coach or treasurer: "What is this for and is it required?"
+Pause before auto-pay. Text the coach or treasurer:
+
+> "What is this for and is it required?"
 
 Sometimes "strongly encouraged" means skip. Sometimes it means your kid cannot play without it. You need the truth, not the vibe.
+
+## When this breaks
+
+**Week five, the season grows.** An "optional" tournament three hours away appears in the team chat, $60 entry plus a hotel, and everyone is talking like it is settled. You did not agree to a cost that showed up after you paid. Say no early rather than the night before, once, plainly, and without a budget explanation. In a rec league, missing one tournament does not cost your kid his spot; if a coach implies otherwise, ask whether it was part of the original commitment. If the trip really is required, two questions save most of the money: can we carpool, and does anyone have a hotel room to split. Both usually get a yes, because half those parents are running the same math.
+
+**Week three, your kid wants out.** You paid $150 and he hates it. These are two different problems with two different answers. If he wants out because it is hard, or because he is not good at it yet, the answer is that he finishes the season, and the reason is the commitment, not the money. If he wants out because of a coach, another kid, or something that happens at practice, the fee stops mattering and your job is to find out what is going on. Either way, do not argue with "we paid for this." That teaches a kid his compliance is purchasable, and it will come back at you when he is fifteen. Ask about a partial refund or a credit toward next season anyway. Small leagues sometimes have one and nobody volunteers it. If there is no refund, sell the cleats to a parent one grade down and get part of it back that way.
 
 ## Keep going
 

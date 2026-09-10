@@ -87,6 +87,16 @@ You do not need a dad friend group by October. You need one or two people who do
 
 **Do not compete with her network.** Your partner's friends are not your failure. Different lanes. You can still build yours without copying hers.
 
+## How to tell polite from interested
+
+You are not reading minds. You are reading behavior, and the tells are boring:
+
+- **He stands near you again.** Nobody fakes where they choose to stand. Repeat proximity is the clearest yes at a field.
+- **He answers bigger than you asked.** You ask about the coach and get three sentences and a complaint. Open door. A clean one-liner is a closed one.
+- **He remembers your kid's number or name by week three.** People remember what they are invested in.
+- **He goes first with something unflattering.** The guy who admits he forgot the uniform is inviting you to be human too.
+- **Polite and empty:** warm face, full eye contact, zero questions back, drifts within a minute. A decent man at capacity, not a rejection.
+
 ## When money stress makes it worse
 
 Lonely hits harder when you are also doing [the dad tax](/guides/the-dad-tax) math in your head at practice: travel team you cannot afford, uniforms, the second wave of school fees. You are not less worthy of friends because the budget is tight. [Cheap date night](/guides/cheap-date-night) energy applies here too: small, honest, no performance required.
@@ -95,7 +105,19 @@ Lonely hits harder when you are also doing [the dad tax](/guides/the-dad-tax) ma
 
 Some weeks you will try and it will go nowhere. Someone will be polite and empty. That is not a verdict on you.
 
+Give any one person about three attempts across a few weeks, then move the effort elsewhere and keep the hello. Three tries rules out a bad day without costing you anything to walk away from.
+
 If you are deeply isolated, past a rough season, talk to someone outside the bleachers: a therapist, a clergy person, a friend who knew you before kids. Trying your best includes getting help when the quiet gets heavy.
+
+## When this breaks
+
+**The season ends and the friendship ends with it.** You finally had a guy to stand next to, then the last game happened and he vanished. Field friendships run on the schedule, so they die when the schedule does. One move before the final game fixes it: get a number and a reason to use it.
+
+> You doing spring ball? Give me your number, I'll text you when signups open.
+
+Then send something specific inside two weeks, while the season is still a thing you both share. Wait a month and you are a stranger texting a stranger.
+
+**Nothing is wrong with your social skills, your calendar is just full.** Every attempt goes fine and then goes nowhere, because there is no thirty-minute block anywhere in your week to put it in. A friendship added as a new appointment loses to logistics every time. Stack instead of add: talk during warmups, walk a lap while they run drills, park next to the same guy, take the same volunteer shift. Friendship that rides on obligations you already have is the only kind that survives this stretch.
 
 ## Keep going
 

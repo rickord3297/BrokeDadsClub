@@ -66,6 +66,16 @@ Protect the first half hour after pickup like it is part of the school day.
 
 If you need a weekend that is not only screens while everyone recovers, keep [cheap weekend that isn't just screen time](/guides/cheap-weekend-not-just-screens) nearby.
 
+## Read the signal before you pick the fix
+
+Three collapses look identical from the driver's seat and need three different moves. The tell is in the body, not the words.
+
+**Hunger.** The complaint is about objects, not people: the wrong cup, the seam in the sock, the seat they always sit in. Body is floppy rather than tight. They eat fast without being asked twice. Mood turns about 10 to 15 minutes after food hits, not the second it does. If you are still fighting at minute 20, it was not hunger.
+
+**Sensory overload.** Hood up, hands near ears, squinting, "turn it off," flinching away from a hug they normally want. Food makes it worse for the first few minutes because chewing is one more input. What they need is fewer channels: dark car, no music, no questions, maybe heavy pressure like a blanket or a tight hug if they ask for it.
+
+**Something happened.** They check your face, then look away. Answers get shorter and meaner, and the meanness gets aimed at a sibling or the dog instead of you. Snacks do nothing. This one surfaces later and sideways, usually in the bath or with the light off at bedtime. Do not chase it at 3:15. Be available at 8:00.
+
 ## Scripts for the car
 
 Skip the rapid-fire:
@@ -95,8 +105,24 @@ If they say nothing, that is still a successful pickup.
 
 Same season as [explaining "we can't go"](/guides/explaining-we-cant-go): short, calm, no board meeting.
 
+## When the reset does not land
+
+Sometimes you do everything right and it still goes up. Have a next move ready so you are not improvising while someone screams.
+
+**Still escalating at minute 30.** Stop running the clock. Homework is off for tonight. Write the teacher one line: "Rough evening, we stopped at 30 minutes, he can finish at recess or tomorrow." Teachers deal with this constantly and almost never make it a problem. What creates the problem is a parent forcing a worksheet through a shutdown at 7 p.m.
+
+**It turns physical.** Throwing, hitting, slamming. Move instead of talking. Get the sibling out of the room, put yourself between the kid and anything breakable, and say almost nothing. Words are input, and input is the thing they are drowning in. Talk about it the next morning when their brain is back online, and keep the consequence small and real.
+
+**Two or three days in a row.** That is a schedule problem, not a mood. Look at bedtime first, then at what got added to the week. Cutting one activity usually does more than any script here.
+
+## When this breaks
+
+**Aftercare until 6 and there is no 30 minutes.** You get them at six, everyone is starving, and dinner, bath, and bed are a single unbroken sprint. Move the reset instead of skipping it. The snack happens in the car on the way home, not at the table, so eating is not competing with sitting down. Dinner gets simpler on those nights, and it is fine if it is the same four meals. Then bump bedtime 15 minutes earlier rather than trying to buy back quiet time you do not have. Kids on a long day need the night short, not the evening perfect.
+
+**They save it all for one parent.** They are sunshine at pickup with you and detonate the second the other parent walks in, or the reverse. That is not a ranking of who is the better parent. It is about who feels safest to fall apart on, which is usually whoever handles the most ordinary daily maintenance. The fix is logistics, not feelings: whoever is not on the receiving end takes the first 20 minutes of that handoff, so the trigger parent gets to walk in after the crash instead of into it. Trade it back once the season settles.
+
 ## When to dig deeper
 
-Most kids settle after a couple of weeks of school. If mornings and evenings stay just as long and just as loud for weeks, talk to the teacher. Catching a pattern early is not panicking. It is refusing to wait until November.
+Most kids settle after a couple of weeks of school. If mornings and evenings stay just as long and just as loud for weeks, talk to the teacher. Ask a specific question: is she holding it together in class, or is she struggling there too? Two very different answers, two very different plans. Catching a pattern early is not panicking. It is refusing to wait until November.
 
 You are not failing because pickup is loud. You are the place they finally stop performing. Feed them. Lower the noise. Try again in thirty minutes.

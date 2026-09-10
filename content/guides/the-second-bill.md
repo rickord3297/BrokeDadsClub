@@ -61,6 +61,17 @@ It is usually not one line. It is a pile:
 
 Write last year's versions if you have them. If you do not, send one email: "What fees should I expect in the first six weeks besides supplies?" Schools have this list. They just do not always put it on the cheerful PDF.
 
+## The lines that explode first
+
+Four categories account for most of the damage, and they are predictable:
+
+- **Anything with a device attached.** Chromebook insurance, a required calculator, a tech fee. Usually $25-$60, usually non-negotiable, almost never on the supply PDF.
+- **Uniform pieces sold separately.** The jersey is included. Socks, shorts, warmups, and the bag are not. Ask for the list of pieces and a price on each one, in writing.
+- **Anything with the word "package" in it.** Photos, spirit, banquet. Packages exist because the individual prices would look ridiculous listed out.
+- **Travel.** One overnight tournament can cost more than the season fee. Gas, a room, and eating out for two days runs $150-$300 before anybody buys a snow cone.
+
+Quick read on whether the printed number is honest: if the fee is under $100, gear comes from the league, and everything happens at one location, the printed number is probably close to true. If there is travel or a uniform ordered through an outside vendor, plan on two to three times the printed number.
+
 ## What hits first
 
 Order the month like triage, not like guilt:
@@ -100,11 +111,25 @@ Pick a rule before the first clipboard:
 
 You are not a worse community member for protecting groceries. If someone pushes, try: "We're covering fees first this month." That is the same spine as [explaining “we can’t go”](/guides/explaining-we-cant-go), just aimed at an adult with a brochure.
 
+When the second clipboard shows up three weeks later, the rule is what saves you. You already gave your one yes, and you can say so out loud without apologizing. Rules travel better than moods, and the parent running the table has heard it before.
+
+## When this breaks
+
+**The fee is due on the 12th and you get paid on the 15th.** Do not put a three-day gap on a credit card. Email the office and ask two specific questions: is there a late fee, and does an unpaid fee change my kid's schedule or access to anything. Most school fees have no penalty and no consequence for a two-week delay, because the due date is an accounting convenience for the front office. League fees are different: if the treasurer has already placed the jersey order, that cutoff is real. Get whichever answer you get in writing so you are not depending on a hallway conversation.
+
+> Note: A due date on a school invoice is usually bookkeeping. A due date on a league invoice is usually an order deadline. Ask which one you are holding.
+
+**Two kids, same week, and you can only cover one.** The third grader owes a $40 activity fee, the middle schooler owes $95 for band, and you have $80. Split by consequence, not by fairness: pay the one where missing it pulls the kid out of something already started, and give the other a partial with a date. Then say the plan out loud with both kids in the room, because the one who got paid for will decide he is the favorite and the one who did not will decide he is the problem. One sentence prevents six months of that:
+
+> "Band is due first. Yours is due next paycheck. Both are getting paid."
+
 ## Scripts
 
-- To the school: "I can do X this week and the rest by DATE. I want them in the class."
-- To your kid: "School has two bills. We paid the pencils. This is the other one. We're doing the musts."
-- To snack duty: "I can send oranges. I can't do the sheet cake this round."
+> To the school: "I can do X this week and the rest by DATE. I want them in the class."
+
+> To your kid: "School has two bills. We paid the pencils. This is the other one. We're doing the musts."
+
+> To snack duty: "I can send oranges. I can't do the sheet cake this round."
 
 ## The point
 

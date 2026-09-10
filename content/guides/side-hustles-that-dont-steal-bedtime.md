@@ -9,7 +9,7 @@ excerpt: >-
   Extra money is useful. A second life that makes you a ghost at 7:30 p.m. is
   not. Filter gigs like a dad, not like a podcast.
 category: Work
-readTime: 6 min
+readTime: 5 min
 publishedAt: '2026-07-14'
 status: published
 keywords:
@@ -62,6 +62,31 @@ Filter every idea through bedtime. If the cash is for an emergency triangle like
 
 Anything that needs a personal brand, a daily post, a course funnel, or "just 20 minutes of grinding" that somehow eats the night. Those businesses are real. They are also built for people whose children are theoretical.
 
+## Run the real hourly, not the gross
+
+The number a hustle pays and the number you keep are different, and the gap is where dads get fooled. Four things to subtract before you decide:
+
+- **Taxes.** 1099 work owes self-employment tax on top of income tax. Set aside 25-30% of every dollar or April takes it out of a month you needed.
+- **Mileage.** Gas, tires, brakes. The federal rate sits around 70 cents a mile for a reason. Forty miles of driving is roughly $28 of car, whether you feel it that day or not.
+- **Coverage.** If your partner takes four hours so you can work, that is four hours you owe back. It is not free, it is a loan in a different currency.
+- **Recovery.** This is the one every hustle post skips. Six hours of yard work on Saturday costs you Saturday and half of Sunday, because your back keeps a ledger. Price the job across the hours it actually consumes, not the hours you invoice.
+
+Run one: $180 for a Saturday moving furniture reads like $30 an hour. Six hours on site, an hour of driving, 40 miles of car, 27% to taxes, and Sunday afternoon gone. It is closer to $14 an hour and one lost weekend. Sometimes $14 is worth it. You should know it is $14 before you say yes.
+
+> Truth: Any hustle math that does not include Sunday is marketing.
+
+## When this breaks
+
+**The hustle ate Sunday.** It starts as one Saturday block. Then a customer needs a Sunday, then invoicing takes an evening, then you are answering messages at dinner. The fix is a shape, not more willpower. Put the work in a fixed window (two Saturdays a month, 8 to 1) and treat it like a shift somebody else scheduled: you are not available outside it because you are not available outside it. When you have to move a customer, do not explain the family logistics. A time is enough.
+
+> "I'm booked until Saturday the 14th. Want that slot?"
+
+If the window leaks two weeks running, the hustle is too big for this season. Cut it to one Saturday a month, or drop the one customer generating the leak. There is almost always exactly one.
+
+**It worked, and now it wants to grow.** Referrals come in. Someone asks for four houses instead of one. This is where a side hustle quietly turns into a small business with insurance questions and a phone that rings at 8 p.m. Neither answer is wrong. Choosing on purpose is the whole thing. If you want it to grow, name what you are trading and say it out loud to the other adult in your house before the first big job, not after. If you do not want it to grow, raise your price 20-30% and keep the same hours. You will lose some customers and keep the ones who pay best, and Saturday stays Saturday. Being booked at a higher rate is not selling out, it is the only version of this that survives a school year.
+
 ## A number to aim at
 
 Pick a monthly number that changes something: $150 toward the sinking fund, $200 off the grocery stress, one car repair. Hit it. Stop adding hustles. Extra money that costs you bedtime is just a more expensive way to be tired, another face of [the dad tax](/guides/the-dad-tax).
+
+Write the number down and check it monthly. Hitting it four months running means you can stop, not that you should double it. A hustle with no finish line becomes a job you never applied for.

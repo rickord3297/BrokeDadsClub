@@ -9,7 +9,7 @@ excerpt: >-
   Feed about 3-4 people for a week without a second store trip. A practical cart
   and dinners, not a stunt list.
 category: Money
-readTime: 7 min
+readTime: 6 min
 publishedAt: '2026-08-04'
 status: published
 keywords:
@@ -55,6 +55,8 @@ This is a week of dinners for about 3-4 people, plus breakfast and lunch that do
 2. **Cook extra on Monday.** Tuesday and Thursday are leftovers with a different name.
 3. **Name one snack.** If you do not buy a planned snack, you will buy three unplanned ones.
 
+These are not discipline rules, they are load-bearing. Break the first one and the other two stop mattering.
+
 ## The cart
 
 Protein:
@@ -82,6 +84,27 @@ Dairy and pantry:
 
 Milk only if someone drinks it. That is usually the first add that pushes you past $47. If chicken is high, swap the thighs for extra beans and a second dozen eggs. The shape of the week matters more than the mascot protein.
 
+## Where the money actually leaks
+
+Four line items move the total. Everything else is noise.
+
+- **Protein per pound.** Thighs at $1.49/lb versus $2.99/lb is a $4 swing on one package. Read the small per-pound number, not the sticker price. Family packs are usually cheaper per pound, but check, because sometimes they are not.
+- **Produce sold by the container.** Berries, grapes, pre-cut melon. One clamshell can eat a third of the produce budget and be gone in a day.
+- **Anything in a cup, pouch, or single serving.** Yogurt cups, applesauce pouches, snack packs. Same food, two to three times the price, and you are paying for plastic.
+- **The impulse shelf at the register.** It is at kid eye level on purpose.
+
+The fastest signal that something went wrong: count items, not dollars. This list is roughly 20 items. If you are unloading 28 onto the belt, eight things got in without a plan, and they are the reason the total surprises you.
+
+## Swaps when a price spikes
+
+- Chicken over about $2.50/lb: skip it, buy a second dozen eggs and a third can of beans.
+- Eggs over about $4 a dozen: oats carry breakfast, peanut butter carries lunch.
+- Fresh vegetables high or already wilting: frozen wins on price and does not rot by Thursday.
+- Bread over $3: tortillas stretch further and cover both taco night and quesadilla lunches.
+- Rice and potatoes both up: pasta is the floor. Two pounds covers two dinners.
+
+Make the swap standing in the aisle. The plan is the shape of the week. The specific animal is negotiable.
+
 ## The week
 
 Breakfast all week: oats or peanut-butter toast plus a banana. Lunch: leftovers or another PB sandwich.
@@ -102,8 +125,20 @@ Breakfast all week: oats or peanut-butter toast plus a banana. Lunch: leftovers 
 
 Teenagers: add a second pack of thighs and more rice. The $47 is a target at store-brand prices, not a dare.
 
+## When this breaks
+
+**The register says $61.** Do not freeze and do not abandon the cart. Put things back in this order: the second fruit, the milk if nobody actually drinks a glass a day, one bag of frozen veg, then a smaller block of cheese. If you are still over, cut the chicken pack in half rather than dropping it. Protein, starch, beans, eggs, and the named snack are the week; those five ride home. A half pack of thighs still covers Monday, and Tuesday becomes bean tacos, which nobody complains about as long as the cheese and salsa are there.
+
+**Monday never happened.** You got home at 7:40, nobody cooked, and now Tuesday has no leftovers to reheat. The week does not restart, it slides. Move the pasta night up to tonight (one pot, twenty minutes), then cook the thighs tomorrow with double rice. Thursday's bowls move to Friday, and Saturday's eggs come a night early. The plan absorbs one slide. It does not absorb two, so if a second night falls apart, cook the entire chicken pack that night and eat it three ways instead of trying to save the original order.
+
+## The second trip you could not avoid
+
+Sometimes you have to go back. The milk really did run out, or somebody got sick. Cap it before you walk in: a dollar number said out loud, the items written down, and no cart. A cart is permission. Carry what you came for in your hands and the trip stays a trip instead of becoming a second shop.
+
 ## If it still blows up
 
 It will. Someone will want "real" snacks. Buy one planned treat in the original trip, a box of store-brand cookies, and put it on the counter like you meant it. The goal is not purity. The goal is dinner, most nights, without a speech.
+
+> Remember: The plan is the shape of the week, not the receipt. One slid night is not a failed week.
 
 When the week still feels tight, read [the dad tax](/guides/the-dad-tax) and [talking to kids about money](/guides/talking-to-kids-about-money), same season, different tools.
