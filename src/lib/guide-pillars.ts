@@ -95,8 +95,14 @@ export function guideCategoryPath(category: string): string {
 
 export function authorBio() {
   return {
-    name: site.name,
+    name: "Dad at Broke Dads Club",
     line: "Practical guides for dads stretching every dollar and still showing up.",
     aboutHref: "/about",
   };
+}
+
+/** Schema.org ISO-8601 datetime with timezone from a YYYY-MM-DD guide date. */
+export function guideSchemaDate(isoDate: string): string {
+  const day = isoDate.trim().slice(0, 10);
+  return `${day}T00:00:00.000Z`;
 }

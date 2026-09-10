@@ -34,7 +34,7 @@ import {
   toGuideListItem,
 } from "@/lib/guides";
 import { getResourceByGuideSlug, otherResources } from "@/lib/resources";
-import { guideCategoryPath } from "@/lib/guide-pillars";
+import { guideCategoryPath, authorBio, guideSchemaDate } from "@/lib/guide-pillars";
 import { OG_IMAGE } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -66,8 +66,8 @@ export async function generateMetadata({
       description: guide.description,
       url,
       siteName: site.name,
-      publishedTime: guide.publishedAt,
-      modifiedTime: guide.updatedAt,
+      publishedTime: guideSchemaDate(guide.publishedAt),
+      modifiedTime: guideSchemaDate(guide.updatedAt),
       tags: keywords,
       images: [OG_IMAGE],
     },
@@ -101,17 +101,18 @@ export default async function GuidePage({
   const companionPrintable = getResourceByGuideSlug(guide.slug);
   const showToc = headings.length >= 2;
 
+  const author = authorBio();
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: guide.title,
     description: guide.description,
-    datePublished: guide.publishedAt,
-    dateModified: guide.updatedAt,
+    datePublished: guideSchemaDate(guide.publishedAt),
+    dateModified: guideSchemaDate(guide.updatedAt),
     author: {
-      "@type": "Organization",
-      name: site.name,
-      url: site.url,
+      "@type": "Person",
+      name: author.name,
+      url: `${site.url}${author.aboutHref}`,
     },
     publisher: {
       "@type": "Organization",
