@@ -17,6 +17,10 @@
 | The after-school collapse is not a bad kid | live | 2026-08-30 | [`the-after-school-collapse-is-not-a-bad-kid.md`](guides/the-after-school-collapse-is-not-a-bad-kid.md) |
 | Packing school lunch without a $12 guilt spiral | scheduled | 2026-08-31 | [`packing-school-lunch-without-a-guilt-spiral.md`](guides/packing-school-lunch-without-a-guilt-spiral.md) |
 | Dropping one activity so the week can breathe | scheduled | 2026-08-31 | [`dropping-one-activity-so-the-week-can-breathe.md`](guides/dropping-one-activity-so-the-week-can-breathe.md) |
+| The parent portal in five minutes a week | draft | 2026-09-07 | [`the-parent-portal-in-five-minutes-a-week.md`](guides/the-parent-portal-in-five-minutes-a-week.md) |
+| When the school only texts Mom | draft | 2026-09-14 | [`when-the-school-only-texts-mom.md`](guides/when-the-school-only-texts-mom.md) |
+| One motion when the meltdown is happening now | draft | 2026-09-21 | [`one-motion-when-the-meltdown-is-happening-now.md`](guides/one-motion-when-the-meltdown-is-happening-now.md) |
+| Disney World without debt | draft | 2026-09-28 | [`disney-world-without-debt.md`](guides/disney-world-without-debt.md) |
 | Which tool brand to buy (one battery, not a shrine) | live | 2026-08-22 | [`which-tool-brand-to-buy.md`](guides/which-tool-brand-to-buy.md) |
 | Dad math: I can do that cheaper (then you need $200 of tools) | live | 2026-08-16 | [`dad-math.md`](guides/dad-math.md) |
 | The second bill after school starts (fees, sports, fundraisers) | live | 2026-08-16 | [`the-second-bill.md`](guides/the-second-bill.md) |
