@@ -51,11 +51,39 @@ function parseFaq(value: unknown): GuideFaq[] {
   });
 }
 
+export type GuidePreviewState = "draft" | "scheduled" | "live" | "published";
+
 function isLive(guide: Guide, now = new Date()): boolean {
   if (guide.status === "draft") return false;
   if (guide.status === "published") return true;
   const goLive = new Date(`${guide.publishedAt}T00:00:00.000Z`);
   return !Number.isNaN(goLive.getTime()) && now.getTime() >= goLive.getTime();
+}
+
+/** Classify a guide for the internal preview UI. */
+export function guidePreviewState(
+  guide: Guide,
+  now = new Date(),
+): GuidePreviewState {
+  if (guide.status === "draft") return "draft";
+  if (guide.status === "published") return "published";
+  if (!isLive(guide, now)) return "scheduled";
+  return "live";
+}
+
+/** Every guide on disk, including drafts and future scheduled posts. */
+export function getAllGuides(): Guide[] {
+  return readAllGuides().filter(
+    (guide) =>
+      Boolean(guide.slug?.trim()) &&
+      Boolean(guide.title?.trim()) &&
+      Boolean(guide.category?.trim()),
+  );
+}
+
+/** Lookup any guide by slug for internal preview (ignores live filter). */
+export function getGuideForPreview(slug: string): Guide | null {
+  return getAllGuides().find((guide) => guide.slug === slug) ?? null;
 }
 
 function isValidGuideData(data: Record<string, unknown>, file: string): boolean {
@@ -197,8 +225,12 @@ export function getGuidesSince(sinceIsoDate: string): Guide[] {
   });
 }
 
-export function getRelatedGuides(guide: Guide, limit = 3): Guide[] {
-  const all = getGuides().filter((item) => item.slug !== guide.slug);
+function pickRelatedGuides(
+  guide: Guide,
+  pool: Guide[],
+  limit: number,
+): Guide[] {
+  const all = pool.filter((item) => item.slug !== guide.slug);
   const preferred = guide.related
     .map((slug) => all.find((item) => item.slug === slug))
     .filter((item): item is Guide => item != null);
@@ -210,4 +242,13 @@ export function getRelatedGuides(guide: Guide, limit = 3): Guide[] {
       !preferred.some((picked) => picked.slug === item.slug),
   );
   return [...preferred, ...sameCategory, ...all].slice(0, limit);
+}
+
+export function getRelatedGuides(guide: Guide, limit = 3): Guide[] {
+  return pickRelatedGuides(guide, getGuides(), limit);
+}
+
+/** Related guides for preview pages (includes drafts and scheduled). */
+export function getRelatedGuidesForPreview(guide: Guide, limit = 3): Guide[] {
+  return pickRelatedGuides(guide, getAllGuides(), limit);
 }
