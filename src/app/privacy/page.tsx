@@ -26,6 +26,12 @@ export default function PrivacyPage() {
           inbox.
         </p>
         <p>
+          We may connect a Pinterest business account to publish pins that link
+          back to our guides and printables. That connection uses Pinterest&apos;s
+          OAuth tokens stored for our own publishing tools. We do not post on
+          your personal Pinterest account or sell Pinterest data.
+        </p>
+        <p>
           Every Sunday email includes an unsubscribe link. You can also email{" "}
           <a href={`mailto:${site.email}`} className="text-pine hover:text-rust">
             {site.email}
