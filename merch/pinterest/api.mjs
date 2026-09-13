@@ -6,8 +6,17 @@ import {
   PINTEREST_SCOPES,
 } from "./env.mjs";
 
-const API = "https://api.pinterest.com/v5";
 const TOKEN_URL = "https://api.pinterest.com/v5/oauth/token";
+
+function apiBase() {
+  const env = loadEnv();
+  const useSandbox =
+    env.PINTEREST_USE_SANDBOX === "1" ||
+    env.PINTEREST_USE_SANDBOX === "true";
+  return useSandbox
+    ? "https://api-sandbox.pinterest.com/v5"
+    : "https://api.pinterest.com/v5";
+}
 
 export function readTokens() {
   if (!existsSync(tokensPath)) return null;
@@ -112,7 +121,8 @@ export async function getAccessToken() {
 
 export async function pinterest(path, { method = "GET", body } = {}) {
   const token = await getAccessToken();
-  const response = await fetch(`${API}${path}`, {
+  const base = apiBase();
+  const response = await fetch(`${base}${path}`, {
     method,
     headers: {
       Authorization: `Bearer ${token}`,
@@ -129,8 +139,22 @@ export async function pinterest(path, { method = "GET", body } = {}) {
     data = { raw: text.slice(0, 800) };
   }
   if (!response.ok) {
+    const trialBlocked =
+      data?.code === 29 ||
+      String(data?.message || "").includes("Trial access may not create Pins");
+    if (trialBlocked) {
+      throw new Error(
+        [
+          "Pinterest app is on Trial access, so production pin create is blocked.",
+          "Fix: developers.pinterest.com → your app → Upgrade to Standard access",
+          "(upload a short screen recording of OAuth + this publish script).",
+          "Meanwhile you can test with: PINTEREST_USE_SANDBOX=1 npm run pinterest:publish -- --limit=1",
+          `Raw: ${JSON.stringify(data)}`,
+        ].join(" "),
+      );
+    }
     throw new Error(
-      `Pinterest ${method} ${path} → ${response.status}: ${JSON.stringify(data)}`,
+      `Pinterest ${method} ${base}${path} → ${response.status}: ${JSON.stringify(data)}`,
     );
   }
   return data;
