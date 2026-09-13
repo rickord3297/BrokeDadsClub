@@ -35,7 +35,6 @@ export async function exchangeCode(code) {
     grant_type: "authorization_code",
     code,
     redirect_uri: redirectUri,
-    continuous_refresh: "true",
   });
   const response = await fetch(TOKEN_URL, {
     method: "POST",
@@ -65,7 +64,7 @@ export async function refreshAccessToken(tokens = readTokens()) {
   const body = new URLSearchParams({
     grant_type: "refresh_token",
     refresh_token: tokens.refresh_token,
-    continuous_refresh: "true",
+    refresh_on: "true",
   });
   const response = await fetch(TOKEN_URL, {
     method: "POST",
