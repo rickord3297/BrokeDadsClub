@@ -6,9 +6,9 @@ excerpt: >-
   shift. Here is an honest answer that doesn’t shame you.
 category: Time
 readTime: 5 min
-publishedAt: '2026-09-29'
-updatedAt: '2026-09-29'
-status: scheduled
+publishedAt: '2026-09-12'
+updatedAt: '2026-09-17'
+status: published
 seoTitle: "What Do You Do for Fun? Honest Dad Answers | Broke Dads Club"
 description: >-
   Honest answers when someone asks what you do for fun as a dad. Short scripts,
@@ -43,6 +43,8 @@ takeaways:
 "So what do you do for fun?" is a normal question. It can feel like a trap when your calendar is school, work, leftover chicken, and falling asleep sitting up.
 
 You are not boring. You are in a season where fun got reorganized.
+
+> Remember: Fun got reorganized, not cancelled.
 
 ## Honest answers that still work
 
