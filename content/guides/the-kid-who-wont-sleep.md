@@ -10,9 +10,9 @@ excerpt: >-
   end the night without becoming the entertainment.
 category: Kids
 readTime: 6 min
-publishedAt: '2026-10-06'
-updatedAt: '2026-10-06'
-status: scheduled
+publishedAt: '2026-09-17'
+updatedAt: '2026-09-17'
+status: published
 keywords:
   - kid won't sleep
   - toddler won't go to bed
@@ -45,11 +45,13 @@ takeaways:
 
 Bedtime is not a personality test. It is a system that either works or gets rewritten by a four-year-old with excellent stamina.
 
-If your nights feel like hostage negotiations, you are not failing. You are over-negotiating. The goal is a boring ending, not a perfect one. Pair this with [how to handle the early riser](/guides/how-to-handle-the-early-riser) if mornings are the other half of the problem.
+If your nights feel like hostage negotiations, you are not failing. You are over-negotiating. The goal is a boring ending, not a perfect one. If mornings are the other half of the problem, pair this with [the after-school collapse](/guides/the-after-school-collapse-is-not-a-bad-kid): same kid, different hour, same need for a boring system.
 
 ## Why it keeps going
 
 Kids delay sleep for the same reasons adults scroll: the day is over, the dark is weird, and you are the most interesting object in the house. Every extra cup of water teaches them the night is still open for business.
+
+> Remember: Extra water cups are not hydration. They are open for business.
 
 You do not need a new personality. You need fewer doors.
 
@@ -121,6 +123,8 @@ If they only sleep when a parent is in the bed, decide as a team whether that is
 
 Your job is not to entertain them to sleep. Your job is to make the dark feel ordinary. That is love with a spine.
 
-For the daytime version of "they only listen to one parent," see [kids who don't listen to Mom](/guides/kids-who-dont-listen-to-mom). Same club: calm, repeatable, no shame spiral.
+> Remember: Your job is not to entertain them to sleep.
+
+If bedtime keeps bleeding into the next argument about money or plans, keep [explaining "we can't go"](/guides/explaining-we-cant-go) nearby. Same club: calm, repeatable, no shame spiral.
 
 Broke does not mean broken. A kid who fights bedtime is still a kid. A dad who ends the night the same way twice is already winning.
