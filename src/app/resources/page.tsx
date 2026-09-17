@@ -7,11 +7,12 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = buildPageMetadata({
   title: "Free Printable Tools for Dads",
   description:
-    "Free fillable and printable checklists for stretched dads: grocery week, school supply triage, and birthday party budget. Type on your phone or save as PDF.",
+    "Free fillable and printable checklists for stretched dads: grocery week, bedtime night card, school supply triage, and birthday party budget. Type on your phone or save as PDF.",
   path: "/resources",
   keywords: [
     "free printable budget worksheets",
     "grocery budget checklist printable",
+    "kids bedtime routine checklist printable",
     "school supply budget sheet",
     "birthday party budget printable",
   ],
