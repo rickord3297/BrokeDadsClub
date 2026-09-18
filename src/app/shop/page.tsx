@@ -7,9 +7,9 @@ import { getProducts } from "@/lib/products";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Shop Dad Merch and Club Apparel",
+  title: "Shop: Tees, Hoodies, and Club Gear",
   description:
-    "Broke Dads Club tees, hoodies, totes, and pins. Garment-dyed club wear that helps fund free guides and printables.",
+    "Buy Broke Dads Club tees, hoodies, totes, and pins. Merch sales help keep the free dad guides and printables free.",
   path: "/shop",
   keywords: [
     "dad merch",

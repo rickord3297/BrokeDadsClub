@@ -6,9 +6,9 @@ import { buildPageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "About Broke Dads Club",
+  title: "About the Club and Who It's For",
   description:
-    "Broke Dads Club is for dads stretching every dollar: direct guides, fridge-door printables, and optional club gear. No hustle talk. No shame.",
+    "Who Broke Dads Club is for, what we publish, and how to reach us. Direct guides and printables for dads stretching every dollar. No hustle talk.",
   path: "/about",
   keywords: ["about broke dads club", "dad budget community", "family finance for dads"],
 });

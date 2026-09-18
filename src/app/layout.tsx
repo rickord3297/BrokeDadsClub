@@ -48,8 +48,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  // Do not set a sitewide canonical here. Each page sets its own via
+  // buildPageMetadata so Google does not inherit the homepage URL.
   alternates: {
-    canonical: site.url,
     types: {
       "application/rss+xml": [{ url: "/feed.xml", title: `${site.name} guides` }],
     },
@@ -57,7 +58,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: site.shareTitle,
     description: site.shareDescription,
-    url: site.url,
     siteName: site.name,
     type: "website",
     locale: "en_US",

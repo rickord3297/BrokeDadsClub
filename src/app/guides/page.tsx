@@ -13,9 +13,9 @@ import { buildPageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Family Budget Guides for Dads",
+  title: "All Guides: Money, Time, and Kids for Dads",
   description:
-    "Practical dad guides on money, groceries, school costs, kids, and gear. Written for fathers stretching every dollar without the shame spiral.",
+    "Browse every Broke Dads Club guide in one place: grocery weeks, school fees, after-school meltdowns, bedtime, and work that does not steal bedtime.",
   path: "/guides",
   keywords: [
     "dad guides",
