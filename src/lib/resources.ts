@@ -99,21 +99,22 @@ export const resources: Resource[] = [
   },
   {
     slug: "birthday-party-budget",
-    title: "Birthday party budget sheet",
-    seoTitle: "Free Kids Birthday Party Budget Worksheet (Printable)",
+    title: "Birthday party budget template",
+    seoTitle: "Birthday Party Budget Template (Free Printable Worksheet)",
     description:
-      "Free printable kids birthday party budget worksheet: spending limit, guest count, per-kid max, and free or low-cost alternatives so the day stays fun and solvent.",
+      "Free birthday party budget template for kids: spending limit, guest count, per-kid max, spend lines, and free or low-cost alternatives. Printable worksheet for parents.",
     excerpt:
       "Pick the spending limit and the kid count first. Then cake, one activity, done.",
     intro:
       "Set the spending limit and the kid count first. The sheet does the per-kid math so venue and favor limits stay obvious. Use the free and low-cost list when the bounce house quote is a joke.",
-    printLabel: "Print budget sheet",
+    printLabel: "Print budget template",
     guideSlug: "birthday-party-math",
     guideLabel: "birthday party math",
     keywords: [
+      "birthday party budget template",
       "kids birthday party budget worksheet",
-      "cheap birthday party planning sheet",
       "birthday party budget printable",
+      "cheap birthday party planning sheet",
       "low cost kids birthday ideas worksheet",
     ],
     tags: ["5-Min Prep", "Single-Page", "Fillable"],

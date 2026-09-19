@@ -1,11 +1,20 @@
 import Link from "next/link";
 import { GuideCard } from "@/components/guide-card";
 import type { GuideListItem } from "@/lib/guide-model";
+import { START_HERE_SLUGS } from "@/lib/guides";
 
 const LATEST_COUNT = 6;
 
 export function HomeGuidesSection({ guides }: { guides: GuideListItem[] }) {
-  const latest = guides.slice(0, LATEST_COUNT);
+  const bySlug = new Map(guides.map((guide) => [guide.slug, guide]));
+  const featured = START_HERE_SLUGS.map((slug) => bySlug.get(slug)).filter(
+    (guide): guide is GuideListItem => Boolean(guide),
+  );
+  const featuredSlugs = new Set(featured.map((guide) => guide.slug));
+  const latest = guides
+    .filter((guide) => !featuredSlugs.has(guide.slug))
+    .slice(0, Math.max(0, LATEST_COUNT - featured.length));
+  const shown = [...featured, ...latest].slice(0, LATEST_COUNT);
 
   return (
     <section
@@ -25,9 +34,9 @@ export function HomeGuidesSection({ guides }: { guides: GuideListItem[] }) {
           </Link>
         </div>
 
-        {latest.length > 0 ? (
+        {shown.length > 0 ? (
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {latest.map((guide) => (
+            {shown.map((guide) => (
               <GuideCard
                 key={guide.slug}
                 guide={guide}

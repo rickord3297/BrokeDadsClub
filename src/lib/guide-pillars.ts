@@ -22,6 +22,7 @@ export const GUIDE_PILLARS: GuidePillar[] = [
     keywords: [
       "budgeting for dads",
       "family budget for fathers",
+      "dad tax meaning",
       "dad money guides",
       "parenting on a budget",
       "cheap family groceries",

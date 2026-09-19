@@ -1,19 +1,21 @@
 ---
 title: Birthday party math for kids who notice everything
 slug: birthday-party-math
-seoTitle: Cheap Kids Birthday Party Ideas on a Budget | Broke Dads Club
+seoTitle: Birthday Party Budget Template + Cheap Kids Party Ideas
 description: >-
-  Budget birthday party ideas that still feel fun: park parties, backyard
-  themes, goodie-bag math, and scripts for kids who notice everything.
+  Free birthday party budget template thinking plus cheap kids party ideas:
+  park parties, backyard themes, goodie-bag math, and scripts for kids who
+  notice everything.
 excerpt: >-
   Goodie bags, bounce houses, and fun party ideas that still fit the budget. How
   to throw (or attend) without losing the plot.
 category: Kids
 readTime: 7 min
 publishedAt: '2026-08-12'
-updatedAt: '2026-09-09'
+updatedAt: '2026-09-19'
 status: published
 keywords:
+  - birthday party budget template
   - cheap kids birthday party ideas
   - budget birthday party for kids
   - low cost birthday party at home
@@ -27,6 +29,10 @@ shop:
   - sticker-pack
   - club-pup-tee
 faq:
+  - question: Where can I get a birthday party budget template?
+    answer: >-
+      Use our free printable birthday party budget template: set the spending
+      limit, guest count, and per-kid max before you pick a venue or favors.
   - question: How do I throw a kids birthday party on a budget?
     answer: >-
       Set a dollar and kid limit first, then pick fun that fits: park, backyard,
@@ -49,7 +55,7 @@ Birthday party math is mostly about deciding the story before the invitations go
 
 Pick a **number** first: dollars and kids. Everything else fits inside that limit.
 
-Print the [birthday party budget sheet](/resources/birthday-party-budget) if you want the limit on paper.
+Print the [birthday party budget template](/resources/birthday-party-budget) if you want the limit on paper.
 
 **Invite list:** smaller is kinder to your budget and your living room. "We're keeping it small this year" is a full sentence.
 
