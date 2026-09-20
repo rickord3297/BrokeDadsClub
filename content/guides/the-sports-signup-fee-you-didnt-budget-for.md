@@ -21,6 +21,7 @@ related:
   - the-second-bill
   - school-supply-list
   - explaining-we-cant-go
+  - youth-sports-all-in-cost-checklist
 shop:
   - broke-mug
   - club-pup-tee

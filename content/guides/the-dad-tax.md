@@ -27,6 +27,7 @@ related:
   - the-47-dollar-grocery-week
   - birthday-party-math
   - car-vs-daycare
+  - dad-tax-examples-the-small-asks-that-stack
 shop:
   - club-pup-tee
 faq:

@@ -21,6 +21,7 @@ related:
   - the-dad-tax
   - explaining-we-cant-go
   - one-nfl-game-for-four-is-a-second-vacation
+  - nfl-home-watch-party-on-a-budget
 shop:
   - broke-mug
   - club-pup-tee

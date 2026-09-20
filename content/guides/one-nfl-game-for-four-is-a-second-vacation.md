@@ -21,6 +21,7 @@ related:
   - birthday-party-math
   - nfl-sunday-without-a-thousand-dollar-stream
   - the-dad-tax
+  - nfl-home-watch-party-on-a-budget
 shop:
   - broke-mug
   - club-pup-tee

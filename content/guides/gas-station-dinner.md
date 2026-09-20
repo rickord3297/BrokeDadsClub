@@ -22,6 +22,7 @@ related:
   - the-47-dollar-grocery-week
   - explaining-we-cant-go
   - the-dad-tax
+  - trunk-dinner-kit-beat-gas-station-panic
 shop:
   - broke-mug
   - club-pup-tee

@@ -40,6 +40,11 @@
 | NFL Sunday without a $1,000 streaming bill | live | 2026-09-10 | trend 2026-09-10 NFL weekend: [`nfl-sunday-without-a-thousand-dollar-stream.md`](guides/nfl-sunday-without-a-thousand-dollar-stream.md) |
 | One NFL game for four is a second vacation | live | 2026-09-10 | trend 2026-09-10: Action Network ~$1,475 family game day [`one-nfl-game-for-four-is-a-second-vacation.md`](guides/one-nfl-game-for-four-is-a-second-vacation.md) |
 | Fantasy Sunday with your kid (no betting app) | live | 2026-09-10 | trend 2026-09-10: fantasy + betting ads [`fantasy-sunday-with-your-kid-no-betting-app.md`](guides/fantasy-sunday-with-your-kid-no-betting-app.md) |
+| Dad tax examples: the $25-$40 asks that stack | live | 2026-09-19 | SEO cluster for dad tax GSC: [`dad-tax-examples-the-small-asks-that-stack.md`](guides/dad-tax-examples-the-small-asks-that-stack.md) |
+| The second grocery trip is how $47 becomes $90 | live | 2026-09-19 | SEO cluster for grocery week: [`second-grocery-trip-blows-the-week.md`](guides/second-grocery-trip-blows-the-week.md) |
+| Trunk dinner kit: beat gas station panic | live | 2026-09-19 | SEO cluster for gas station dinner: [`trunk-dinner-kit-beat-gas-station-panic.md`](guides/trunk-dinner-kit-beat-gas-station-panic.md) |
+| NFL home watch party on a budget | live | 2026-09-19 | SEO cluster for NFL cost/streaming: [`nfl-home-watch-party-on-a-budget.md`](guides/nfl-home-watch-party-on-a-budget.md) |
+| Youth sports all-in cost checklist | live | 2026-09-19 | SEO cluster for sports signup: [`youth-sports-all-in-cost-checklist.md`](guides/youth-sports-all-in-cost-checklist.md) |
 | What you cut so the kid can keep playing sports | idea | | trend 2026-09-17: Accredited Debt Relief 44% delayed/skipped sports; AP/Ipsos time+fees; pair with dropping-one-activity |
 | Don't say yes to team parent in the first-game huddle | idea | | trend 2026-09-12: AYSO first meeting snack/Spond/picture day; take one snack, not the clipboard |
 

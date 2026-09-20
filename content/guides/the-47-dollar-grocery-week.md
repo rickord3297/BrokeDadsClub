@@ -26,6 +26,7 @@ related:
   - talking-to-kids-about-money
   - the-dad-tax
   - gas-station-dinner
+  - second-grocery-trip-blows-the-week
 shop:
   - broke-mug
   - club-pup-tee
