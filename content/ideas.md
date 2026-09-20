@@ -45,6 +45,7 @@
 | Trunk dinner kit: beat gas station panic | live | 2026-09-19 | SEO cluster for gas station dinner: [`trunk-dinner-kit-beat-gas-station-panic.md`](guides/trunk-dinner-kit-beat-gas-station-panic.md) |
 | NFL home watch party on a budget | live | 2026-09-19 | SEO cluster for NFL cost/streaming: [`nfl-home-watch-party-on-a-budget.md`](guides/nfl-home-watch-party-on-a-budget.md) |
 | Youth sports all-in cost checklist | live | 2026-09-19 | SEO cluster for sports signup: [`youth-sports-all-in-cost-checklist.md`](guides/youth-sports-all-in-cost-checklist.md) |
+| Disney World: us against the kids | live | 2026-09-20 | Partner team + magic through their eyes: [`disney-world-us-against-the-kids.md`](guides/disney-world-us-against-the-kids.md) |
 | What you cut so the kid can keep playing sports | idea | | trend 2026-09-17: Accredited Debt Relief 44% delayed/skipped sports; AP/Ipsos time+fees; pair with dropping-one-activity |
 | Don't say yes to team parent in the first-game huddle | idea | | trend 2026-09-12: AYSO first meeting snack/Spond/picture day; take one snack, not the clipboard |
 
