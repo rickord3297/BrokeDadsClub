@@ -22,6 +22,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.brokedadsclub.com" }],
+        destination: "https://brokedadsclub.com/:path*",
+        permanent: true,
+      },
       { source: "/shop/club-patch", destination: "/shop", permanent: false },
       { source: "/shop/candy-stripe-patch", destination: "/shop", permanent: false },
     ];

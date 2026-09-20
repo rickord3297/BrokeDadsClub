@@ -11,19 +11,21 @@ excerpt: >-
 category: Money
 readTime: 6 min
 publishedAt: '2026-08-04'
-updatedAt: '2026-09-09'
+updatedAt: '2026-09-19'
 status: published
 keywords:
   - cheap grocery list for family
   - feed family on a budget
+  - family grocery budget $50 a week
   - how to eat cheap with toddlers
   - $50 grocery week
+  - $47 grocery week
   - budget meal plan for dads
   - frugal family dinners
 related:
   - talking-to-kids-about-money
   - the-dad-tax
-  - car-vs-daycare
+  - gas-station-dinner
 shop:
   - broke-mug
   - club-pup-tee
@@ -41,6 +43,10 @@ faq:
     answer: >-
       No. A dozen is enough for this week: breakfast, one egg-sandwich night,
       and a little leftover. Eighteen was a stunt quantity.
+  - question: Is there a printable grocery checklist?
+    answer: >-
+      Yes. Use the free $47 grocery-week checklist printable, then come back to
+      this meal plan for the dinners.
 takeaways:
   - Shop once; second trips blow the week
   - Cook extra Monday so leftover nights stay cheap

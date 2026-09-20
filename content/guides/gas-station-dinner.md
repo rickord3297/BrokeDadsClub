@@ -7,11 +7,12 @@ excerpt: Rotisserie, hot dogs, one fruit. The 3-part rule, what to grab in each 
 category: Money
 readTime: 6 min
 publishedAt: '2026-08-22'
-updatedAt: '2026-09-09'
+updatedAt: '2026-09-19'
 status: published
 keywords:
   - gas station dinner for kids
   - gas station dinner with kids
+  - gas station dinner
   - feeding kids on the road
   - what to buy at gas station for kids
   - quick dinner from gas station
@@ -45,6 +46,10 @@ faq:
       Put one real meal on the calendar tomorrow before you leave the pump. Bridge
       tonight, plan tomorrow. Pair with the $47 grocery week guide for the home
       stretch.
+  - question: What is gas station dinner?
+    answer: >-
+      It is when dinner happens at a pump stop because the day beat the meal plan.
+      Protein, one fruit, water if you can. Not a personality. A bridge meal.
 takeaways:
   - Hot food plus fruit still counts as feeding them
   - Plan the stop so it is not an apology

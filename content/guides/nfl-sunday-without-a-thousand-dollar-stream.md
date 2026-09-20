@@ -7,6 +7,7 @@ excerpt: Your team is free on an antenna. The rest of the apps are optional. A S
 category: Money
 readTime: 6 min
 publishedAt: "2026-09-10"
+updatedAt: "2026-09-19"
 status: published
 keywords:
   - watch NFL without cable 2026
@@ -14,6 +15,7 @@ keywords:
   - cheap way to watch football
   - NFL streaming cost family
   - antenna NFL games
+  - watch NFL without cable
 related:
   - cheap-weekend-not-just-screens
   - the-dad-tax
