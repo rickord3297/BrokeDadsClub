@@ -85,6 +85,7 @@ const RELATED_HOOKS: Record<string, string> = {
   "nfl-sunday-without-a-thousand-dollar-stream": "If football season is eating the streaming budget",
   "one-nfl-game-for-four-is-a-second-vacation": "If one NFL game looks like a vacation bill",
   "fantasy-sunday-with-your-kid-no-betting-app": "If you want fantasy with your kid, not a sportsbook",
+  "disney-world-us-against-the-kids": "If Disney is turning into you vs your partner",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {
