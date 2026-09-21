@@ -6,10 +6,18 @@ import { relatedGuideHook } from "@/lib/guide-catalog";
 import type { GuideListItem } from "@/lib/guide-model";
 
 /** Four-card "what to read next" grid with intent hooks. */
-export function GuideKeepGoing({ guides }: { guides: GuideListItem[] }) {
+export function GuideKeepGoing({
+  guides,
+  linkBase = "/guides",
+}: {
+  guides: GuideListItem[];
+  /** Base path for card links (use `/preview/guides` on internal preview). */
+  linkBase?: string;
+}) {
   if (!guides.length) return null;
 
   const picks = guides.slice(0, 4);
+  const base = linkBase.replace(/\/$/, "");
 
   return (
     <section className="mt-12 border-t border-rule pt-8" id="keep-going">
@@ -27,7 +35,7 @@ export function GuideKeepGoing({ guides }: { guides: GuideListItem[] }) {
           return (
             <Link
               key={guide.slug}
-              href={`/guides/${guide.slug}`}
+              href={`${base}/${guide.slug}`}
               onClick={() => trackGuideClick(guide.slug, "keep_going")}
               className="group flex min-h-[11rem] flex-col rounded-2xl border border-rule bg-paper p-5 shadow-sm shadow-ink/5 ring-1 ring-ink/5 transition hover:border-pine hover:shadow-md hover:shadow-pine/10"
             >

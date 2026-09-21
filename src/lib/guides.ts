@@ -146,15 +146,35 @@ function readAllGuides(): Guide[] {
     );
 }
 
-/** Public guides only (hides drafts; respects schedule dates). */
-export function getGuides(): Guide[] {
+export type GuidePreviewState = "draft" | "scheduled" | "live" | "published";
+
+/** Preview label for desk tooling: draft / not-yet-live scheduled / live-by-date / published. */
+export function guidePreviewState(
+  guide: Guide,
+  now = new Date(),
+): GuidePreviewState {
+  if (guide.status === "draft") return "draft";
+  if (guide.status === "published") return "published";
+  return isLive(guide, now) ? "live" : "scheduled";
+}
+
+/** Every guide file on disk (drafts + scheduled + published). */
+export function getAllGuides(): Guide[] {
   return readAllGuides().filter(
     (guide) =>
-      isLive(guide) &&
       Boolean(guide.slug?.trim()) &&
       Boolean(guide.title?.trim()) &&
       Boolean(guide.category?.trim()),
   );
+}
+
+export function getGuideForPreview(slug: string): Guide | null {
+  return getAllGuides().find((guide) => guide.slug === slug) ?? null;
+}
+
+/** Public guides only (hides drafts; respects schedule dates). */
+export function getGuides(): Guide[] {
+  return getAllGuides().filter((guide) => isLive(guide));
 }
 
 export function getGuide(slug: string): Guide | null {
@@ -201,8 +221,12 @@ export function getGuidesSince(sinceIsoDate: string): Guide[] {
   });
 }
 
-export function getRelatedGuides(guide: Guide, limit = 3): Guide[] {
-  const all = getGuides().filter((item) => item.slug !== guide.slug);
+function pickRelatedGuides(
+  guide: Guide,
+  pool: Guide[],
+  limit: number,
+): Guide[] {
+  const all = pool.filter((item) => item.slug !== guide.slug);
   const preferred = guide.related
     .map((slug) => all.find((item) => item.slug === slug))
     .filter((item): item is Guide => item != null);
@@ -214,4 +238,12 @@ export function getRelatedGuides(guide: Guide, limit = 3): Guide[] {
       !preferred.some((picked) => picked.slug === item.slug),
   );
   return [...preferred, ...sameCategory, ...all].slice(0, limit);
+}
+
+export function getRelatedGuides(guide: Guide, limit = 3): Guide[] {
+  return pickRelatedGuides(guide, getGuides(), limit);
+}
+
+export function getRelatedGuidesForPreview(guide: Guide, limit = 3): Guide[] {
+  return pickRelatedGuides(guide, getAllGuides(), limit);
 }
