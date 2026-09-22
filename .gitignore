@@ -27,6 +27,7 @@
 # Pinterest local tokens + generated pin images
 /merch/pinterest/.tokens.json
 /merch/pinterest/output/
+/merch/tiktok/output/
 
 # debug
 npm-debug.log*
