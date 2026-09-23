@@ -1,0 +1,12 @@
+{
+  "sites": [
+    {
+      "name": "Broke Dads Club",
+      "url": "https://brokedadsclub.com/api/health"
+    },
+    {
+      "name": "Broke Dads Club homepage",
+      "url": "https://brokedadsclub.com/"
+    }
+  ]
+}
