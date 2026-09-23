@@ -1,7 +1,7 @@
 ---
 title: Birthday party math for kids who notice everything
 slug: birthday-party-math
-seoTitle: Birthday Party Math: Budget Template + Cheap Ideas
+seoTitle: 'Birthday Party Math: Budget Template + Cheap Ideas'
 description: >-
   Using math to make party plans: set the dollar limit and kid count first, then
   pick cheap kids birthday ideas that still feel fun. Free budget template.
