@@ -1,21 +1,22 @@
 ---
 title: Birthday party math for kids who notice everything
 slug: birthday-party-math
-seoTitle: Birthday Party Budget Template + Cheap Kids Party Ideas
+seoTitle: Birthday Party Math: Budget Template + Cheap Ideas
 description: >-
-  Free birthday party budget template thinking plus cheap kids party ideas:
-  park parties, backyard themes, goodie-bag math, and scripts for kids who
-  notice everything.
+  Using math to make party plans: set the dollar limit and kid count first, then
+  pick cheap kids birthday ideas that still feel fun. Free budget template.
 excerpt: >-
   Goodie bags, bounce houses, and fun party ideas that still fit the budget. How
   to throw (or attend) without losing the plot.
 category: Kids
 readTime: 7 min
 publishedAt: '2026-08-12'
-updatedAt: '2026-09-19'
+updatedAt: '2026-09-23'
 status: published
 keywords:
+  - using math to make party plans
   - birthday party budget template
+  - birthday party math
   - cheap kids birthday party ideas
   - budget birthday party for kids
   - low cost birthday party at home
@@ -29,6 +30,11 @@ shop:
   - sticker-pack
   - club-pup-tee
 faq:
+  - question: How do you use math to make party plans?
+    answer: >-
+      Set a dollar limit and a kid count first. Divide budget by guests for a
+      per-kid max. That number decides park vs venue, favors vs skip, and cake
+      size before any theme Pinterest board takes over.
   - question: Where can I get a birthday party budget template?
     answer: >-
       Use our free printable birthday party budget template: set the spending
@@ -50,6 +56,16 @@ takeaways:
 Kids notice. They notice the venue, the bag of candy at the door, and the fact that Jordan's party had a character in a full suit. You cannot stop them noticing. You can stop the noticing from becoming a referendum on your love. When the hard part is saying no to the expensive invite, see [explaining “we can’t go”](/guides/explaining-we-cant-go).
 
 Birthday party math is mostly about deciding the story before the invitations go out (another corner of [the dad tax](/guides/the-dad-tax)), then picking fun that fits the spending limit.
+
+## Using math to make party plans
+
+Before themes, do three numbers:
+
+1. **Total spend limit**
+2. **Guest count**
+3. **Max per kid** (limit divided by guests)
+
+Under about $8 a kid usually means park or backyard. Closer to $20 a kid and the venue starts talking. Write the numbers first so the party plan cannot invent a second mortgage. Print the [birthday party budget template](/resources/birthday-party-budget) if you want it on paper.
 
 ## If you are hosting
 
