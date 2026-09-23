@@ -86,6 +86,9 @@ const RELATED_HOOKS: Record<string, string> = {
   "one-nfl-game-for-four-is-a-second-vacation": "If one NFL game looks like a vacation bill",
   "fantasy-sunday-with-your-kid-no-betting-app": "If you want fantasy with your kid, not a sportsbook",
   "disney-world-us-against-the-kids": "If Disney is turning into you vs your partner",
+  "kids-first-injury-support": "If the first real injury just hit your house",
+  "what-you-cut-so-the-kid-can-keep-playing-sports": "If sports stay and something else has to go",
+  "dont-say-yes-to-team-parent-first-huddle": "If the first huddle wants your whole season",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {
