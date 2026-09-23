@@ -10,8 +10,8 @@ excerpt: >-
   the house from waking with them.
 category: Time
 readTime: 7 min
-publishedAt: '2026-10-13'
-updatedAt: '2026-10-13'
+publishedAt: '2026-10-02'
+updatedAt: '2026-09-23'
 status: scheduled
 keywords:
   - early riser toddler

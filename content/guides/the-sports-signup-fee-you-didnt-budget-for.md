@@ -8,7 +8,7 @@ category: Money
 readTime: 6 min
 publishedAt: "2026-08-29"
 updatedAt: '2026-09-09'
-status: scheduled
+status: published
 keywords:
   - youth sports costs
   - hidden kids sports fees

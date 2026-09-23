@@ -9,7 +9,7 @@ category: Kids
 readTime: 7 min
 publishedAt: "2026-08-28"
 updatedAt: '2026-09-09'
-status: scheduled
+status: published
 keywords:
   - dad guilt after yelling
   - yelled at my kid feel guilty
