@@ -8,7 +8,7 @@ category: Time
 readTime: 7 min
 publishedAt: "2026-08-31"
 updatedAt: '2026-09-09'
-status: scheduled
+status: published
 keywords:
   - how to drop a kids activity
   - overscheduled kids

@@ -2,6 +2,8 @@
 
 **Daily:** tell Cursor **Scan trends** (or let the morning automation run). That searches what dads and parents are talking about, logs the pass in [`trends.md`](trends.md), and adds only BDC-shaped hooks here as Status `idea`. It does not publish.
 
+**Publish cadence:** one new guide about **every 3 days**. Set `publishedAt` on that rhythm when you schedule. Do not stack five go-lives on one weekend unless it is a deliberate cluster.
+
 **Drop ideas in the table below** (Status `idea`). Then tell Cursor: **Draft new ideas:** every `idea` row becomes a guide file with `status: draft` (not on the live site).
 
 **Review drafts:** open files in [`content/guides/`](guides/), anything with `status: draft` in the top. Or browse [`DRAFTS.md`](DRAFTS.md). To see articles **as the website renders them**, use `/preview/guides` (index) or `/preview/guides/<slug>`.
@@ -15,13 +17,13 @@
 | Tagging along without becoming furniture | live | 2026-08-30 | [`tagging-along-without-becoming-furniture.md`](guides/tagging-along-without-becoming-furniture.md) |
 | One dad coffee, not a friend group | live | 2026-08-30 | [`one-dad-coffee-not-a-friend-group.md`](guides/one-dad-coffee-not-a-friend-group.md) |
 | The after-school collapse is not a bad kid | live | 2026-08-30 | [`the-after-school-collapse-is-not-a-bad-kid.md`](guides/the-after-school-collapse-is-not-a-bad-kid.md) |
-| Packing school lunch without a $12 guilt spiral | scheduled | 2026-08-31 | [`packing-school-lunch-without-a-guilt-spiral.md`](guides/packing-school-lunch-without-a-guilt-spiral.md) |
-| Dropping one activity so the week can breathe | scheduled | 2026-08-31 | [`dropping-one-activity-so-the-week-can-breathe.md`](guides/dropping-one-activity-so-the-week-can-breathe.md) |
+| Packing school lunch without a $12 guilt spiral | live | 2026-08-31 | [`packing-school-lunch-without-a-guilt-spiral.md`](guides/packing-school-lunch-without-a-guilt-spiral.md) |
+| Dropping one activity so the week can breathe | live | 2026-08-31 | [`dropping-one-activity-so-the-week-can-breathe.md`](guides/dropping-one-activity-so-the-week-can-breathe.md) |
 | Which tool brand to buy (one battery, not a shrine) | live | 2026-08-22 | [`which-tool-brand-to-buy.md`](guides/which-tool-brand-to-buy.md) |
 | Dad math: I can do that cheaper (then you need $200 of tools) | live | 2026-08-16 | [`dad-math.md`](guides/dad-math.md) |
 | The second bill after school starts (fees, sports, fundraisers) | live | 2026-08-16 | [`the-second-bill.md`](guides/the-second-bill.md) |
 | Gas station dinner that still counts as feeding your kids | live | 2026-08-22 | [`gas-station-dinner.md`](guides/gas-station-dinner.md) |
-| When the other dad’s vacation photos hit | scheduled | 2026-09-08 | [`when-the-other-dads-vacation-photos-hit.md`](guides/when-the-other-dads-vacation-photos-hit.md) |
+| When the other dad’s vacation photos hit | live | 2026-09-08 | [`when-the-other-dads-vacation-photos-hit.md`](guides/when-the-other-dads-vacation-photos-hit.md) |
 | Explaining “we can’t go” without making it a speech | live | 2026-08-12 | [`explaining-we-cant-go.md`](guides/explaining-we-cant-go.md) |
 | The school supply list that quietly wrecks August | live | 2026-08-14 | [`school-supply-list.md`](guides/school-supply-list.md) |
 | Cheap weekend that isn’t just screen time | live | 2026-08-22 | [`cheap-weekend-not-just-screens.md`](guides/cheap-weekend-not-just-screens.md) |
@@ -29,8 +31,8 @@
 | Fixing the car vs paying for daycare: picking the lesser disaster | live | 2026-08-12 | [`car-vs-daycare.md`](guides/car-vs-daycare.md) |
 | Birthday party math for kids who notice everything | live | 2026-08-12 | [`birthday-party-math.md`](guides/birthday-party-math.md) |
 | The kid who won't sleep | live | 2026-09-17 | [`the-kid-who-wont-sleep.md`](guides/the-kid-who-wont-sleep.md) |
-| How to handle the early riser | scheduled | 2026-10-13 | [`how-to-handle-the-early-riser.md`](guides/how-to-handle-the-early-riser.md) |
-| Kids who don't listen to Mom | scheduled | 2026-10-20 | [`kids-who-dont-listen-to-mom.md`](guides/kids-who-dont-listen-to-mom.md) |
+| How to handle the early riser | scheduled | 2026-10-02 | [`how-to-handle-the-early-riser.md`](guides/how-to-handle-the-early-riser.md) |
+| Kids who don't listen to Mom | scheduled | 2026-10-05 | [`kids-who-dont-listen-to-mom.md`](guides/kids-who-dont-listen-to-mom.md) |
 | The $47 grocery week | live | 2026-08-04 | `the-47-dollar-grocery-week` |
 | Cheap date night that still feels like a date | live | 2026-07-28 | `cheap-date-night` |
 | The dad tax: why everything costs more | live | 2026-07-21 | `the-dad-tax` |
@@ -46,8 +48,9 @@
 | NFL home watch party on a budget | live | 2026-09-19 | SEO cluster for NFL cost/streaming: [`nfl-home-watch-party-on-a-budget.md`](guides/nfl-home-watch-party-on-a-budget.md) |
 | Youth sports all-in cost checklist | live | 2026-09-19 | SEO cluster for sports signup: [`youth-sports-all-in-cost-checklist.md`](guides/youth-sports-all-in-cost-checklist.md) |
 | Disney World: us against the kids | live | 2026-09-20 | Partner team + magic through their eyes: [`disney-world-us-against-the-kids.md`](guides/disney-world-us-against-the-kids.md) |
-| What you cut so the kid can keep playing sports | idea | | trend 2026-09-17: Accredited Debt Relief 44% delayed/skipped sports; AP/Ipsos time+fees; pair with dropping-one-activity |
-| Don't say yes to team parent in the first-game huddle | idea | | trend 2026-09-12: AYSO first meeting snack/Spond/picture day; take one snack, not the clipboard |
+| Your kid's first real injury | scheduled | 2026-09-23 | Support kid + partner; [`kids-first-injury-support.md`](guides/kids-first-injury-support.md) |
+| What you cut so the kid can keep playing sports | scheduled | 2026-09-26 | [`what-you-cut-so-the-kid-can-keep-playing-sports.md`](guides/what-you-cut-so-the-kid-can-keep-playing-sports.md) |
+| Don't say yes to team parent in the first-game huddle | scheduled | 2026-09-29 | [`dont-say-yes-to-team-parent-first-huddle.md`](guides/dont-say-yes-to-team-parent-first-huddle.md) |
 
 ### Status
 

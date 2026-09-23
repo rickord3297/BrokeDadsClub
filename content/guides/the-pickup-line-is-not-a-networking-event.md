@@ -8,7 +8,7 @@ category: Time
 readTime: 6 min
 publishedAt: "2026-08-27"
 updatedAt: '2026-09-09'
-status: scheduled
+status: published
 keywords:
   - school pickup small talk
   - dad small talk at school
