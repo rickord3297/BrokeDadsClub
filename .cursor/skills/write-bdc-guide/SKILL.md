@@ -67,7 +67,7 @@ faq:
 ---
 ```
 
-3. Use the row’s **Go live** date for `publishedAt` when present; otherwise pick a sensible future Monday and note it in the table.
+3. Use the row’s **Go live** date for `publishedAt` when present; otherwise schedule about **every 3 days** from the latest live/scheduled `publishedAt` and note it in the table.
 4. Include 3-6 `keywords` people would actually search (cheap X, how to Y for dads, budget Z).
 5. Add `seoTitle`, `description`, 2-3 `faq` items, `related` (live slugs only, never self), 1-2 `takeaways` for cards, an `action` line for the "Do this today (5 minutes)" box (falls back to the first takeaway), and optional `shop` product slugs. FAQ answers with quotes or colons must use a `>-` block. A half-quoted line (`answer: "We're..." then more sentence`) breaks the production build.
 6. Body: short intro → practical sections → calm close. ~600-900 words. Follow **Impact** (below) for scripts and punchlines. Add 1-2 internal links to other `/guides/...` where natural.
