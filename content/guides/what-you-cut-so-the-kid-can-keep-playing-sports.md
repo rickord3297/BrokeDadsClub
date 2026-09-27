@@ -11,8 +11,8 @@ excerpt: >-
 category: Money
 readTime: 6 min
 publishedAt: "2026-09-26"
-updatedAt: "2026-09-23"
-status: scheduled
+updatedAt: "2026-09-27"
+status: published
 keywords:
   - cannot afford kids sports
   - cutting costs for youth sports

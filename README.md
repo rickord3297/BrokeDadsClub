@@ -14,7 +14,7 @@ The site runs without Supabase or Stripe. Connect them when you are ready to tak
 ## Guides
 
 - **Daily scan:** say **Scan trends** (or run the morning automation). It logs the pass in [`content/trends.md`](content/trends.md) and adds only BDC-shaped hooks to [`content/ideas.md`](content/ideas.md). It does not publish.
-- **Publish cadence:** about **one new guide every 3 days**. Set `publishedAt` on that rhythm when scheduling.
+- **Publish cadence:** about **one new guide every 3 days**. Set `publishedAt` on that rhythm when scheduling. See [`content/AUTOMATIONS.md`](content/AUTOMATIONS.md) for the Cursor automation prompt + GitHub Action that auto-merges `Publish guide:` PRs.
 - **Desk:** [`content/ideas.md`](content/ideas.md) — log ideas, set **Go live** dates, track status.
 - **Draft:** in Cursor say **Write a BDC guide from …** (skill: `.cursor/skills/write-bdc-guide`).
 - **Files:** `content/guides/*.md` — use frontmatter `status: draft | scheduled | published` and `publishedAt`.

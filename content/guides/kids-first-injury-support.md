@@ -11,8 +11,8 @@ excerpt: >-
 category: Kids
 readTime: 7 min
 publishedAt: "2026-09-23"
-updatedAt: "2026-09-23"
-status: scheduled
+updatedAt: "2026-09-27"
+status: published
 keywords:
   - kids first injury
   - child broke arm what to do

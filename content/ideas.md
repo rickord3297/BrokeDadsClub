@@ -2,7 +2,7 @@
 
 **Daily:** tell Cursor **Scan trends** (or let the morning automation run). That searches what dads and parents are talking about, logs the pass in [`trends.md`](trends.md), and adds only BDC-shaped hooks here as Status `idea`. It does not publish.
 
-**Publish cadence:** one new guide about **every 3 days**. Set `publishedAt` on that rhythm when you schedule. Do not stack five go-lives on one weekend unless it is a deliberate cluster.
+**Publish cadence:** one new guide about **every 3 days**. Set `publishedAt` on that rhythm when you schedule. Do not stack five go-lives on one weekend unless it is a deliberate cluster. Auto-publish wiring: [`AUTOMATIONS.md`](AUTOMATIONS.md).
 
 **Drop ideas in the table below** (Status `idea`). Then tell Cursor: **Draft new ideas:** every `idea` row becomes a guide file with `status: draft` (not on the live site).
 
@@ -48,8 +48,8 @@
 | NFL home watch party on a budget | live | 2026-09-19 | SEO cluster for NFL cost/streaming: [`nfl-home-watch-party-on-a-budget.md`](guides/nfl-home-watch-party-on-a-budget.md) |
 | Youth sports all-in cost checklist | live | 2026-09-19 | SEO cluster for sports signup: [`youth-sports-all-in-cost-checklist.md`](guides/youth-sports-all-in-cost-checklist.md) |
 | Disney World: us against the kids | live | 2026-09-20 | Partner team + magic through their eyes: [`disney-world-us-against-the-kids.md`](guides/disney-world-us-against-the-kids.md) |
-| Your kid's first real injury | scheduled | 2026-09-23 | Support kid + partner; [`kids-first-injury-support.md`](guides/kids-first-injury-support.md) |
-| What you cut so the kid can keep playing sports | scheduled | 2026-09-26 | [`what-you-cut-so-the-kid-can-keep-playing-sports.md`](guides/what-you-cut-so-the-kid-can-keep-playing-sports.md) |
+| Your kid's first real injury | live | 2026-09-23 | Support kid + partner; [`kids-first-injury-support.md`](guides/kids-first-injury-support.md) |
+| What you cut so the kid can keep playing sports | live | 2026-09-26 | [`what-you-cut-so-the-kid-can-keep-playing-sports.md`](guides/what-you-cut-so-the-kid-can-keep-playing-sports.md) |
 | Don't say yes to team parent in the first-game huddle | scheduled | 2026-09-29 | [`dont-say-yes-to-team-parent-first-huddle.md`](guides/dont-say-yes-to-team-parent-first-huddle.md) |
 
 ### Status
