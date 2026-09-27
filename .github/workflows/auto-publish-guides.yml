@@ -1,8 +1,7 @@
-# Guide auto-publish
+# Merges open "Publish guide:" PRs so the every-3-day cadence lands on main.
+# Trend-scan idea PRs are ignored on purpose.
 
-Merges open "Publish guide:" PRs so the every-3-day cadence lands on main without waiting on a manual merge.
-
-Trend-scan idea PRs are ignored on purpose. Only publish PRs.
+name: Auto-publish guides
 
 on:
   schedule:
@@ -48,8 +47,6 @@ jobs:
               if (actionable.some((run) => ['failure', 'timed_out', 'cancelled'].includes(run.conclusion))) {
                 return false;
               }
-              // Allow merge when checks are success/neutral/skipped or still pending with only Vercel-style non-blocking states.
-              // If any check is explicitly queued/in_progress, wait for a later run unless the PR is older than 45 minutes.
               const pending = actionable.filter((run) => run.status !== 'completed');
               if (pending.length) {
                 const ageMin = (Date.now() - new Date(pull.created_at).getTime()) / 60000;
@@ -69,7 +66,6 @@ jobs:
                 return;
               }
               if (pull.draft) {
-                // Undraft via GraphQL so auto-merge can proceed
                 try {
                   await github.graphql(
                     `mutation($id: ID!) {
