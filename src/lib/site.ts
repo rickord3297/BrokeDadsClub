@@ -9,7 +9,7 @@ export const site = {
   shareTitle: "Broke Dads Club | Practical Family Budget Systems",
   shareDescription:
     "Simple, tactical systems to run your family budget, time, and home.",
-  seoTitle: "Family Budget Guides for Dads | Broke Dads Club",
+  seoTitle: "Broke Dads Club: Budget Guides for Broke Dads",
   keywords: [
     "broke dad",
     "broke dads club",
