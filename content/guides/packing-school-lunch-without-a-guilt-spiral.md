@@ -8,7 +8,7 @@ category: Money
 readTime: 6 min
 publishedAt: "2026-08-31"
 updatedAt: '2026-09-09'
-status: scheduled
+status: published
 keywords:
   - cheap school lunch ideas
   - packing school lunch on a budget

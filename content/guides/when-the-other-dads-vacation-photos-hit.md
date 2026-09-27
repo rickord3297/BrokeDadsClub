@@ -8,7 +8,7 @@ category: Time
 readTime: 6 min
 publishedAt: '2026-09-08'
 updatedAt: '2026-09-09'
-status: scheduled
+status: published
 seoTitle: "When Other Dads Post Vacation Photos | Broke Dads Club"
 description: >-
   Other dads posting beach trips while you are home? Scripts for your kid,

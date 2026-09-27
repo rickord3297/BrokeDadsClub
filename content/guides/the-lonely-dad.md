@@ -8,7 +8,7 @@ category: Time
 readTime: 7 min
 publishedAt: "2026-08-26"
 updatedAt: '2026-09-09'
-status: scheduled
+status: published
 keywords:
   - lonely dad
   - dad feels alone at practice

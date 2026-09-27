@@ -3,7 +3,8 @@ name: write-bdc-guide
 description: >-
   Drafts Broke Dads Club guides from content/ideas.md into content/guides/*.md.
   Use when the user drops ideas, asks to draft new ideas, write a guide, schedule
-  a post, scan trends, or turn backlog rows into articles.
+  a post, scan trends, run the every-3-day publish cadence, or turn backlog rows
+  into articles.
 ---
 
 # Write a BDC guide
@@ -20,6 +21,22 @@ When the user says **Scan trends**, **daily scan**, or a scheduled agent runs th
 6. Stop there unless the user (or the automation prompt) also says to draft. Never set `published` from a trend scan. Never stuff product callouts into a trend piece.
 
 A daily scan is for relevance, not volume. One honest dad-angle idea beats five generic parenting listicles.
+
+## Every 3 days publish pass
+
+When the user says **publish cadence**, **every 3 days**, or a scheduled **Publish guide** automation runs:
+
+1. Start from latest `origin/main`. Branch `cursor/publish-<slug>-XXXX`.
+2. Catch up overdue `status: scheduled` guides (`publishedAt <= today`): set `status: published`. Update `content/ideas.md` and `content/DRAFTS.md`.
+3. If the newest **live** `publishedAt` is **3+ days ago** (or nothing is live for today):
+   - Prefer the soonest future scheduled guide: set `publishedAt` to today and `status: published`.
+   - Else draft the oldest `idea` row (full draft steps below) with `publishedAt: today` and `status: published`.
+   - Else do a short trend keep of **one** idea, draft it, publish today.
+4. Leave at least **two future** scheduled guides on an every-3-day rhythm (`today+3`, `today+6`, …). Draft if the pipeline is thin.
+5. Add new slugs to `src/lib/guide-catalog.ts` Keep Going hooks.
+6. Commit, push, and open/update a PR whose title **starts with** `Publish guide:` (required for `.github/workflows/auto-publish-guides.yml` to auto-merge).
+
+Do not use this pass for idea-only trend dumps. Never stack five go-lives on one day unless catching up a broken pipeline.
 
 ## Default workflow
 
@@ -67,7 +84,7 @@ faq:
 ---
 ```
 
-3. Use the row’s **Go live** date for `publishedAt` when present; otherwise pick a sensible future Monday and note it in the table.
+3. Use the row’s **Go live** date for `publishedAt` when present; otherwise schedule about **every 3 days** from the latest live/scheduled `publishedAt` and note it in the table.
 4. Include 3-6 `keywords` people would actually search (cheap X, how to Y for dads, budget Z).
 5. Add `seoTitle`, `description`, 2-3 `faq` items, `related` (live slugs only, never self), 1-2 `takeaways` for cards, an `action` line for the "Do this today (5 minutes)" box (falls back to the first takeaway), and optional `shop` product slugs. FAQ answers with quotes or colons must use a `>-` block. A half-quoted line (`answer: "We're..." then more sentence`) breaks the production build.
 6. Body: short intro → practical sections → calm close. ~600-900 words. Follow **Impact** (below) for scripts and punchlines. Add 1-2 internal links to other `/guides/...` where natural.
