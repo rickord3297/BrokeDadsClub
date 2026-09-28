@@ -10,9 +10,9 @@ excerpt: >-
   donating your whole season.
 category: Time
 readTime: 6 min
-publishedAt: "2026-09-29"
-updatedAt: "2026-09-23"
-status: scheduled
+publishedAt: "2026-09-28"
+updatedAt: "2026-09-28"
+status: published
 keywords:
   - team parent volunteer
   - youth sports team parent duties
