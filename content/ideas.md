@@ -31,8 +31,9 @@
 | Fixing the car vs paying for daycare: picking the lesser disaster | live | 2026-08-12 | [`car-vs-daycare.md`](guides/car-vs-daycare.md) |
 | Birthday party math for kids who notice everything | live | 2026-08-12 | [`birthday-party-math.md`](guides/birthday-party-math.md) |
 | The kid who won't sleep | live | 2026-09-17 | [`the-kid-who-wont-sleep.md`](guides/the-kid-who-wont-sleep.md) |
-| How to handle the early riser | scheduled | 2026-10-01 | [`how-to-handle-the-early-riser.md`](guides/how-to-handle-the-early-riser.md) |
+| How to handle the early riser | live | 2026-10-01 | [`how-to-handle-the-early-riser.md`](guides/how-to-handle-the-early-riser.md) |
 | Kids who don't listen to Mom | scheduled | 2026-10-04 | [`kids-who-dont-listen-to-mom.md`](guides/kids-who-dont-listen-to-mom.md) |
+| One Halloween costume, not three events | scheduled | 2026-10-07 | trend 2026-10-01: NRF ~$115/person plus daddit multi-event costumes: [`one-halloween-costume-not-three-events.md`](guides/one-halloween-costume-not-three-events.md) |
 | The $47 grocery week | live | 2026-08-04 | `the-47-dollar-grocery-week` |
 | Cheap date night that still feels like a date | live | 2026-07-28 | `cheap-date-night` |
 | The dad tax: why everything costs more | live | 2026-07-21 | `the-dad-tax` |
