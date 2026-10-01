@@ -8,5 +8,5 @@ Open any file to edit. `status: scheduled` goes live automatically on `published
 
 | Title | Go live | File |
 |-------|---------|------|
-| How to handle the early riser | 2026-10-01 | [how-to-handle-the-early-riser.md](guides/how-to-handle-the-early-riser.md) |
 | Kids who don't listen to Mom | 2026-10-04 | [kids-who-dont-listen-to-mom.md](guides/kids-who-dont-listen-to-mom.md) |
+| One Halloween costume, not three events | 2026-10-07 | [one-halloween-costume-not-three-events.md](guides/one-halloween-costume-not-three-events.md) |

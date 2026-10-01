@@ -89,6 +89,7 @@ const RELATED_HOOKS: Record<string, string> = {
   "kids-first-injury-support": "If the first real injury just hit your house",
   "what-you-cut-so-the-kid-can-keep-playing-sports": "If sports stay and something else has to go",
   "dont-say-yes-to-team-parent-first-huddle": "If the first huddle wants your whole season",
+  "one-halloween-costume-not-three-events": "If Halloween is turning into three costumes",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {
