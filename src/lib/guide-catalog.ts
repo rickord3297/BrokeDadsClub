@@ -90,6 +90,7 @@ const RELATED_HOOKS: Record<string, string> = {
   "what-you-cut-so-the-kid-can-keep-playing-sports": "If sports stay and something else has to go",
   "dont-say-yes-to-team-parent-first-huddle": "If the first huddle wants your whole season",
   "one-halloween-costume-not-three-events": "If Halloween is turning into three costumes",
+  "the-heat-bill-before-it-gets-cold": "If the first cold week is about to bill you",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {

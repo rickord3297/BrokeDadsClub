@@ -11,8 +11,8 @@ excerpt: >-
 category: Kids
 readTime: 6 min
 publishedAt: '2026-10-04'
-updatedAt: '2026-09-28'
-status: scheduled
+updatedAt: '2026-10-04'
+status: published
 keywords:
   - kids don't listen to mom
   - child only listens to dad
