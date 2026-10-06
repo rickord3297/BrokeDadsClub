@@ -39,8 +39,8 @@ export default async function ShopPage() {
       <JsonLd data={itemListLd} />
       <h1 className="font-display text-5xl">The Shop</h1>
       <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
-        Soft tees for tough weeks. Grab a shirt, support other dads, or skip it
-        if the grocery budget comes first.
+        Heavyweight blanks, vintage cuts, and gear built for the daily grind.
+        Every piece supports free tools and guides for dads.
       </p>
       {site.social.find((item) => item.label === "Etsy") ? (
         <p className="mt-3 text-sm text-ink-soft">
