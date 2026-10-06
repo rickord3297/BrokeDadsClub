@@ -112,6 +112,10 @@ function readAllGuides(): Guide[] {
                 ? data.readTime
                 : "5 min",
             publishedAt: data.publishedAt as string,
+            updatedAt:
+              typeof data.updatedAt === "string" && data.updatedAt.trim()
+                ? data.updatedAt.trim()
+                : (data.publishedAt as string),
             status: parseStatus(data.status),
             keywords: parseKeywords(data.keywords),
             takeaways: parseStringList(data.takeaways).slice(0, 2),

@@ -82,6 +82,15 @@ const RELATED_HOOKS: Record<string, string> = {
   "tagging-along-without-becoming-furniture": "If you keep ending up as furniture",
   "one-dad-coffee-not-a-friend-group": "If you want one coffee, not a crew",
   "the-sports-signup-fee-you-didnt-budget-for": "If the signup fee was not the real bill",
+  "nfl-sunday-without-a-thousand-dollar-stream": "If football season is eating the streaming budget",
+  "one-nfl-game-for-four-is-a-second-vacation": "If one NFL game looks like a vacation bill",
+  "fantasy-sunday-with-your-kid-no-betting-app": "If you want fantasy with your kid, not a sportsbook",
+  "disney-world-us-against-the-kids": "If Disney is turning into you vs your partner",
+  "kids-first-injury-support": "If the first real injury just hit your house",
+  "what-you-cut-so-the-kid-can-keep-playing-sports": "If sports stay and something else has to go",
+  "dont-say-yes-to-team-parent-first-huddle": "If the first huddle wants your whole season",
+  "one-halloween-costume-not-three-events": "If Halloween is turning into three costumes",
+  "the-heat-bill-before-it-gets-cold": "If the first cold week is about to bill you",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {

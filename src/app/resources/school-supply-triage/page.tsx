@@ -2,18 +2,11 @@ import type { Metadata } from "next";
 import { FillCheck, FillLine } from "@/components/fillable-fields";
 import { ResourceLayout } from "@/components/resource-layout";
 import { requireResource } from "@/lib/resources";
-import { site } from "@/lib/site";
+import { resourcePageMetadata } from "@/lib/seo";
 
 const resource = requireResource("school-supply-triage");
 
-export const metadata: Metadata = {
-  title: { absolute: `${resource.seoTitle} | Broke Dads Club` },
-  description: resource.description,
-  keywords: resource.keywords,
-  alternates: {
-    canonical: `${site.url}/resources/${resource.slug}`,
-  },
-};
+export const metadata: Metadata = resourcePageMetadata(resource);
 
 const alreadyOwn = [
   { name: "own-backpack", label: "Backpack (still zips)" },

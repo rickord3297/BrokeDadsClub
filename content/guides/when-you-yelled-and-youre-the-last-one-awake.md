@@ -1,16 +1,14 @@
 ---
 title: When you yelled and you are the last one awake
 slug: when-you-yelled-and-youre-the-last-one-awake
-seoTitle: Yelled at Your Kid? What to Do Tonight & Tomorrow | Broke Dads Club
-description: >-
-  Dad guilt after yelling: what to do tonight without a midnight speech, the
-  4-step morning repair, and when it is more than one bad night.
+seoTitle: "Yelled at Your Kid? What to Do Tonight & Tomorrow | Broke Dads Club"
+description: "Dad guilt after yelling: what to do tonight without a midnight speech, the 4-step morning repair, and when it is more than one bad night."
 excerpt: >-
-  You snapped. The house is quiet and you are replaying it. Tonight: do not wake
-  them. Tomorrow: four sentences. Here is the repair script.
+  You snapped. The house is quiet and you are replaying it. Tonight: do not wake them. Tomorrow: four sentences. Here is the repair script.
 category: Kids
-readTime: 6 min
-publishedAt: '2026-09-02'
+readTime: 7 min
+publishedAt: "2026-08-28"
+updatedAt: '2026-09-09'
 status: published
 keywords:
   - dad guilt after yelling
@@ -30,22 +28,16 @@ nextGuide: explaining-we-cant-go
 faq:
   - question: What should I do after yelling at my kid tonight?
     answer: >-
-      Do not wake them for a guilt tour. Drink water, put the phone down, and
-      write one note for tomorrow: apologize, lower voice, fix one lever like
-      sleep or transitions.
+      Do not wake them for a guilt tour. Drink water, put the phone down, and write one note for tomorrow: apologize, lower voice, fix one lever like sleep or transitions.
   - question: How do I apologize to my child after losing my temper?
     answer: >-
-      Keep it short. "I yelled. That was too loud and not okay. I am working on
-      staying calmer. I love you." Then let them respond without a lecture.
+      Keep it short. "I yelled. That was too loud and not okay. I am working on staying calmer. I love you." Then let them respond without a lecture.
   - question: Is it normal for dads to feel guilty after yelling?
     answer: >-
-      Yes. Guilt means you care. Use it to change the next moment, not to punish
-      yourself all night or doom-scroll perfect dads online.
+      Yes. Guilt means you care. Use it to change the next moment, not to punish yourself all night or doom-scroll perfect dads online.
   - question: When is yelling a sign I need help?
     answer: >-
-      If it is frequent, if you scare yourself, or if kids flinch when you walk
-      in, talk to a therapist, doctor, or someone you trust. One bad night and a
-      pattern are different problems.
+      If it is frequent, if you scare yourself, or if kids flinch when you walk in, talk to a therapist, doctor, or someone you trust. One bad night and a pattern are different problems.
 ---
 
 The house is finally quiet. You are sitting on the couch with the replay running: the volume you used, the face they made, the thing you said that was true but delivered like a weapon.
@@ -85,6 +77,24 @@ Then stop. Let them nod, shrug, or cry. Match their speed.
 
 If they are little, a hug and a normal breakfast beats a therapy session at 7 a.m.
 
+## Read how it lands
+
+You get about ten seconds of real information after step four. Watch the body, not the words.
+
+**Accepted.** They make eye contact, then go back to normal fast: asking about breakfast, telling you something unrelated, leaning into you. Kids move on quicker than adults think is appropriate. That speed is the sign it worked, not a sign they are hiding something. Let it be over.
+
+**Shut down.** Flat face, "it's fine," turning toward a screen, physically angling away, one-word answers with no follow-up. That is not forgiveness, and pushing harder makes it worse. Say one more line and leave: "Okay. I meant it. You don't have to say anything back." Then be around and useful for the next hour. Do a normal task near them. Repair with a kid who has closed lands through proximity, not more talking.
+
+**Cracked open.** They cry harder than the moment seems to justify, or bring up something from three weeks ago. The apology gave them permission, and now other stuff is coming out. Do not defend yourself against the three-week-old thing, even if their version is wrong. Say you heard it and come back to the facts later, on a day nobody is crying.
+
+## When the repair goes sideways
+
+**It becomes leverage.** "You yelled at me, so I don't have to." Hold both things at once, in that order: "I was wrong to yell. Shoes still go on." An apology buys back the relationship. It does not repeal the rule. If you fold here, you teach them the apology is a coupon.
+
+**You have to say no again that same morning.** This is where dads over-correct, get soft to make up for last night, then blow up worse by Thursday. Guilt-driven yes is a loan with bad terms. Keep the limit and lower the volume. Lower volume is the apology.
+
+**They ask "are you still mad?" all day.** That is anxiety looking for a re-check. Answer the same short way every time: "Not mad. We're good." Repetition calms it. A fresh explanation reopens it.
+
 ## Change one lever this week
 
 One yell is a moment. A pattern is a problem. Pick one:
@@ -98,9 +108,17 @@ You cannot white-knuckle your way to calm forever. Systems beat willpower when l
 
 Bedtime battles coming? The guides on [the kid who won't sleep](/guides/the-kid-who-wont-sleep) and [the early riser](/guides/how-to-handle-the-early-riser) help when the night is what broke you.
 
+## When this breaks
+
+**Your partner is still angry after the kid has moved on.** The kid took the apology at 7 a.m. and forgot it by 7:20. Your partner watched you scare someone they love, and they are not on the kid's timeline. Do not use "he's fine now" as evidence. That is the same apology aimed at the wrong person, and it reads as dismissal. Say the repair to them separately, on their schedule, without asking them to reassure you. If you find yourself needing them to say "it's okay," you are asking the person you scared to manage your guilt. Sit in it instead.
+
+**You both yelled.** Now the repair feels like a trap, because whoever apologizes first looks like the one who was wrong. Go first anyway, and only for your own part. No "we both." No summary of what they did. Kids watching two adults each own one thing learn more about repair than any lecture gives them. The alternative is a house where nobody apologizes because it counts as a loss.
+
 ## When it is more than a bad night
 
 If yelling is frequent, if you scare yourself, if kids flinch when you walk in, get help. A therapist, a doctor, a pastor, a friend who will listen without ranking your pain against theirs. Trying your best includes that step.
+
+The flinch is the one to take seriously. Tears and anger back at you are normal reactions to a bad moment. Bracing before anything happens means their body has started predicting you, and that is a different problem than one loud Tuesday.
 
 ## Keep going
 

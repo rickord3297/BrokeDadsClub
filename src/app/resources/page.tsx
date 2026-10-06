@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
 import { ResourceCard } from "@/components/resource-card";
 import { resources } from "@/lib/resources";
+import { buildPageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Free Printable Tools for Dads",
   description:
-    "Free fillable and printable checklists for stretched dads: grocery week, school supply triage, and birthday party budget. Type on your phone or save as PDF.",
-  alternates: {
-    canonical: `${site.url}/resources`,
-  },
-};
+    "Free fillable and printable checklists for stretched dads: grocery week, bedtime night card, school supply triage, and birthday party budget. Type on your phone or save as PDF.",
+  path: "/resources",
+  keywords: [
+    "free printable budget worksheets",
+    "grocery budget checklist printable",
+    "kids bedtime routine checklist printable",
+    "school supply budget sheet",
+    "birthday party budget printable",
+  ],
+});
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -42,7 +48,7 @@ export default function ResourcesPage() {
         guides explain the thinking. These are the working copies.
       </p>
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {resources.map((resource) => (
           <ResourceCard key={resource.slug} resource={resource} />
         ))}

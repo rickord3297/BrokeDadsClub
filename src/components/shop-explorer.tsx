@@ -27,6 +27,8 @@ export function ShopExplorer({ products }: { products: Product[] }) {
 
   return (
     <>
+      {pin ? <CastlePinUpsell product={pin} /> : null}
+
       <div
         className="mt-8 flex flex-wrap gap-2"
         role="group"
@@ -35,6 +37,7 @@ export function ShopExplorer({ products }: { products: Product[] }) {
         {SHOP_FILTERS.map((item) => {
           const selected = filter === item.id;
           const count = counts[item.id];
+          if (item.id !== "all" && count === 0) return null;
           return (
             <button
               key={item.id}
@@ -74,7 +77,7 @@ export function ShopExplorer({ products }: { products: Product[] }) {
           </button>
         </p>
       ) : (
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
           {filtered.map((product) => (
             <ProductCard
               key={product.id}
@@ -84,48 +87,59 @@ export function ShopExplorer({ products }: { products: Product[] }) {
           ))}
         </div>
       )}
-
-      {pin && filter === "all" ? <CastlePinUpsell product={pin} /> : null}
     </>
   );
 }
 
 export function CastlePinUpsell({ product }: { product: Product }) {
   const image = product.images?.[0]?.src ?? product.image;
+  const sizeNote = product.defaultSize ? `${product.defaultSize} enamel pin` : "Enamel pin";
 
   return (
-    <aside className="mt-10 rounded-2xl border border-gold/30 bg-gold/[0.08] p-5 sm:p-6">
-      <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-        {image ? (
-          <Link
-            href={`/shop/${product.slug}`}
-            className="mx-auto block h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-rule bg-paper sm:mx-0"
-          >
-            <Image
-              src={image}
-              alt={product.name}
-              width={192}
-              height={192}
-              className="h-full w-full object-cover"
-            />
-          </Link>
-        ) : null}
-        <div className="min-w-0 flex-1">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-pine">
-            Easy add-on · {formatMoney(product.price_cents)}
-          </p>
-          <h2 className="mt-1 font-display text-2xl leading-snug">
-            <Link href={`/shop/${product.slug}`} className="hover:text-rust">
-              {product.name}
+    <aside
+      aria-labelledby="castle-pin-callout"
+      className="mt-8 rounded-2xl border border-gold/40 bg-gold/[0.08] p-4 sm:p-5"
+    >
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-5">
+        <div className="flex min-w-0 flex-1 items-start gap-4">
+          {image ? (
+            <Link
+              href={`/shop/${product.slug}`}
+              className="block h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-rule bg-paper sm:h-20 sm:w-20"
+            >
+              <Image
+                src={image}
+                alt={product.name}
+                width={160}
+                height={160}
+                className="h-full w-full object-cover"
+              />
             </Link>
-          </h2>
-          <p className="mt-2 text-sm leading-6 text-ink-soft">
-            Low-cost club crest for the jacket that has seen every school
-            drop-off. Toss it in with a tee.
-          </p>
+          ) : null}
+          <div className="min-w-0">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-pine">
+              {product.name} · {formatMoney(product.price_cents)}
+            </p>
+            <h2
+              id="castle-pin-callout"
+              className="mt-0.5 font-display text-xl leading-snug sm:text-2xl"
+            >
+              Join the Club for $5
+            </h2>
+            <p className="mt-1 text-sm leading-6 text-ink-soft">
+              Want to back the mission without buying a tee? Grab the official
+              enamel pin to toss on your pack or jacket.
+            </p>
+          </div>
         </div>
-        <div className="shrink-0 sm:min-w-[10rem]">
-          <AddToCartButton product={product} compact />
+        <div className="shrink-0">
+          <AddToCartButton
+            product={product}
+            compact
+            quickAdd
+            label={`Add pin · ${formatMoney(product.price_cents)}`}
+          />
+          <p className="mt-1.5 text-xs text-ink-soft">{sizeNote}</p>
         </div>
       </div>
     </aside>

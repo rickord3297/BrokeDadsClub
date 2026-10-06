@@ -10,8 +10,8 @@ excerpt: >-
   the project? Where to help, where to stop, and what to say to the teacher.
 category: Kids
 readTime: 7 min
-publishedAt: "2026-09-09"
-status: scheduled
+publishedAt: "2026-09-26"
+status: published
 keywords:
   - parent help on school projects
   - how much to help with homework

@@ -1,19 +1,30 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { GuidesCrawlIndex } from "@/components/guides-crawl-index";
 import { GuidesExplorer } from "@/components/guides-explorer";
+import { JsonLd } from "@/components/json-ld";
 import { resourceTieInForGuide } from "@/lib/guide-catalog";
 import {
   getGuideCategories,
   getGuides,
   toGuideListItem,
 } from "@/lib/guides";
+import { buildPageMetadata } from "@/lib/seo";
+import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Guides",
+export const metadata: Metadata = buildPageMetadata({
+  title: "All Guides: Money, Time, and Kids for Dads",
   description:
-    "Practical dad guides on money, time, kids, and gear, written for fathers stretching every dollar.",
-  alternates: { canonical: "/guides" },
-};
+    "Browse every Broke Dads Club guide in one place: grocery weeks, school fees, after-school meltdowns, bedtime, and work that does not steal bedtime.",
+  path: "/guides",
+  keywords: [
+    "dad guides",
+    "family budget guides",
+    "parenting on a budget",
+    "frugal dad tips",
+    "grocery budget guide",
+  ],
+});
 
 export default async function GuidesPage() {
   const guides = getGuides();
@@ -26,14 +37,30 @@ export default async function GuidesPage() {
     );
   });
 
+  const itemListLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Broke Dads Club guides",
+    itemListElement: list.map((guide, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${site.url}/guides/${guide.slug}`,
+      name: guide.title,
+    })),
+  };
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+      <JsonLd data={itemListLd} />
       <p className="text-xs uppercase tracking-[0.18em] text-rust">Guides</p>
       <h1 className="mt-3 font-display text-5xl">Guides for dads</h1>
       <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
         Filter by topic, skim the takeaways, then open what you need this week:
         groceries, school fees, money talks, and work that does not steal bedtime.
       </p>
+
+      {/* Crawlable link list for bots; visually hidden so the card grid stays the UI */}
+      <GuidesCrawlIndex guides={list} />
 
       <Suspense
         fallback={

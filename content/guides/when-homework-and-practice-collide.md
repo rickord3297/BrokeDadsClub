@@ -10,8 +10,8 @@ excerpt: >-
   is a scheduling collision, not a character test.
 category: Time
 readTime: 7 min
-publishedAt: "2026-09-21"
-status: scheduled
+publishedAt: "2026-10-04"
+status: published
 keywords:
   - homework and sports practice schedule
   - fall sports homework balance

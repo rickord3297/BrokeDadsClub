@@ -10,8 +10,8 @@ excerpt: >-
   what to bring when the budget is real and Costco is not.
 category: Money
 readTime: 6 min
-publishedAt: "2026-09-18"
-status: scheduled
+publishedAt: "2026-10-02"
+status: published
 keywords:
   - team snack duty budget
   - cheap sports team snacks

@@ -10,7 +10,7 @@ import { filterGuidesList } from "@/lib/guide-query";
 import type { GuideListItem } from "@/lib/guide-model";
 import { site } from "@/lib/site";
 
-const PAGE_SIZE = 9;
+const PAGE_SIZE = 30;
 
 export function GuidesExplorer({
   guides,
@@ -64,6 +64,20 @@ export function GuidesExplorer({
   }
 
   function setTopic(next: string) {
+    const pillarSlug =
+      next === "Money"
+        ? "money"
+        : next === "Time"
+          ? "time"
+          : next === "Kids"
+            ? "kids"
+            : null;
+    if (pillarSlug) {
+      trackTopicFilter(next, "guides_index_pillar");
+      router.push(`/guides/${pillarSlug}`);
+      return;
+    }
+
     const value = next === topic ? "" : next;
     trackTopicFilter(value, "guides_index");
     const params = new URLSearchParams(searchParams.toString());

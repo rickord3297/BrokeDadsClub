@@ -203,6 +203,32 @@ export const resources: Resource[] = [
     companionGuideSlugs: ["the-dad-tax", "gas-station-dinner", "dad-math"],
   },
   {
+    slug: "boring-bedtime-night-card",
+    title: "Boring bedtime night card",
+    seoTitle: "Free Kids Bedtime Routine Checklist (Printable)",
+    description:
+      "Free printable kids bedtime routine checklist for tired dads: same order every night, one goodbye line, walk-back script, and a night-two plan so bedtime stops being a negotiation.",
+    excerpt:
+      "Same five steps. Same goodbye line. Walk them back without a second book. Tape it to the door.",
+    intro:
+      "Fill the order and the goodbye line before 8:40 p.m. Post it where you stand when they come out. The card is the plan so you do not invent policy in a dark hallway.",
+    printLabel: "Print night card",
+    guideSlug: "the-kid-who-wont-sleep",
+    guideLabel: "the kid who won't sleep",
+    keywords: [
+      "kids bedtime routine checklist printable",
+      "bedtime checklist for toddlers",
+      "how to get kids to sleep checklist",
+      "printable bedtime routine for parents",
+    ],
+    tags: ["5-Min Prep", "Single-Page", "Ink-Friendly", "Fillable"],
+    companionGuideSlugs: [
+      "the-after-school-collapse-is-not-a-bad-kid",
+      "explaining-we-cant-go",
+      "cheap-date-night",
+    ],
+  },
+  {
     slug: "school-supply-triage",
     title: "School supply triage sheet",
     seoTitle: "Free School Supply List Budget Triage Sheet (Printable)",
@@ -230,21 +256,22 @@ export const resources: Resource[] = [
   },
   {
     slug: "birthday-party-budget",
-    title: "Birthday party budget sheet",
-    seoTitle: "Free Kids Birthday Party Budget Worksheet (Printable)",
+    title: "Birthday party budget template",
+    seoTitle: "Birthday Party Budget Template (Free Printable Worksheet)",
     description:
-      "Free printable kids birthday party budget worksheet: spending limit, guest count, per-kid max, and free or low-cost alternatives so the day stays fun and solvent.",
+      "Free birthday party budget template for kids: spending limit, guest count, per-kid max, spend lines, and free or low-cost alternatives. Printable worksheet for parents.",
     excerpt:
       "Pick the spending limit and the kid count first. Then cake, one activity, done.",
     intro:
       "Set the spending limit and the kid count first. The sheet does the per-kid math so venue and favor limits stay obvious. Use the free and low-cost list when the bounce house quote is a joke.",
-    printLabel: "Print budget sheet",
+    printLabel: "Print budget template",
     guideSlug: "birthday-party-math",
     guideLabel: "birthday party math",
     keywords: [
+      "birthday party budget template",
       "kids birthday party budget worksheet",
-      "cheap birthday party planning sheet",
       "birthday party budget printable",
+      "cheap birthday party planning sheet",
       "low cost kids birthday ideas worksheet",
     ],
     tags: ["5-Min Prep", "Single-Page", "Fillable"],

@@ -6,6 +6,23 @@ export const site = {
   tagline: "Broke doesn't mean broken.",
   description:
     "Practical money guides for fathers stretching every dollar and still showing up.",
+  shareTitle: "Broke Dads Club | Practical Family Budget Systems",
+  shareDescription:
+    "Simple, tactical systems to run your family budget, time, and home.",
+  seoTitle: "Broke Dads Club: Budget Guides for Broke Dads",
+  keywords: [
+    "broke dad",
+    "broke dads club",
+    "family budget",
+    "dad budget",
+    "budgeting for dads",
+    "dad tax meaning",
+    "frugal family",
+    "grocery budget",
+    "parenting on a budget",
+    "family money",
+    "free printables for parents",
+  ],
   email: "dad@brokedadsclub.com",
   social: [
     process.env.NEXT_PUBLIC_TIKTOK_URL

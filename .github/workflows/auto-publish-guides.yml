@@ -1,0 +1,122 @@
+# Merges open "Publish guide:" PRs so the every-3-day cadence lands on main.
+# Trend-scan idea PRs are ignored on purpose.
+
+name: Auto-publish guides
+
+on:
+  schedule:
+    # Daily after the morning trend scan (~16:00 UTC)
+    - cron: "30 17 * * *"
+  workflow_dispatch:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: read
+
+jobs:
+  merge-publish-prs:
+    if: github.event_name != 'pull_request' || startsWith(github.event.pull_request.title, 'Publish guide:')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge eligible Publish guide PRs
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            async function checksGreen(pull) {
+              const refs = await github.rest.repos.getCombinedStatusForRef({
+                owner,
+                repo,
+                ref: pull.head.sha,
+              });
+              if (refs.data.state === 'failure') return false;
+
+              const checkRuns = await github.rest.checks.listForRef({
+                owner,
+                repo,
+                ref: pull.head.sha,
+                per_page: 100,
+              });
+              const runs = checkRuns.data.check_runs || [];
+              const actionable = runs.filter((run) => run.name !== 'merge-publish-prs');
+              if (actionable.some((run) => ['failure', 'timed_out', 'cancelled'].includes(run.conclusion))) {
+                return false;
+              }
+              const pending = actionable.filter((run) => run.status !== 'completed');
+              if (pending.length) {
+                const ageMin = (Date.now() - new Date(pull.created_at).getTime()) / 60000;
+                if (ageMin < 45) return false;
+              }
+              return true;
+            }
+
+            async function tryMerge(pull) {
+              const title = pull.title || '';
+              const branch = pull.head?.ref || '';
+              const eligible =
+                title.startsWith('Publish guide:') ||
+                branch.startsWith('cursor/publish-');
+              if (!eligible) {
+                core.info(`Skip #${pull.number}: ${title}`);
+                return;
+              }
+              if (pull.draft) {
+                try {
+                  await github.graphql(
+                    `mutation($id: ID!) {
+                      markPullRequestReadyForReview(input: { pullRequestId: $id }) {
+                        pullRequest { isDraft }
+                      }
+                    }`,
+                    { id: pull.node_id },
+                  );
+                  core.info(`Marked #${pull.number} ready for review`);
+                } catch (err) {
+                  core.warning(`Could not undraft #${pull.number}: ${err.message}`);
+                }
+              }
+
+              const ok = await checksGreen(pull);
+              if (!ok) {
+                core.info(`Checks not ready for #${pull.number}`);
+                return;
+              }
+
+              try {
+                await github.rest.pulls.merge({
+                  owner,
+                  repo,
+                  pull_number: pull.number,
+                  merge_method: 'squash',
+                  commit_title: title,
+                });
+                core.info(`Merged #${pull.number}`);
+              } catch (err) {
+                core.warning(`Merge failed for #${pull.number}: ${err.message}`);
+              }
+            }
+
+            if (context.eventName === 'pull_request') {
+              const { data: pull } = await github.rest.pulls.get({
+                owner,
+                repo,
+                pull_number: context.payload.pull_request.number,
+              });
+              await tryMerge(pull);
+              return;
+            }
+
+            const pulls = await github.paginate(github.rest.pulls.list, {
+              owner,
+              repo,
+              state: 'open',
+              per_page: 50,
+            });
+            for (const pull of pulls) {
+              await tryMerge(pull);
+            }

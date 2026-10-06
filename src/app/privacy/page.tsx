@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Privacy Policy",
-  description: `How ${site.name} handles email signups and basic site data.`,
-};
+  description: `How ${site.name} handles email signups, orders, and basic site data.`,
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (
@@ -22,6 +24,12 @@ export default function PrivacyPage() {
           Shop orders are processed through Stripe and fulfilled through our
           print partner. Payment details stay with those providers, not in our
           inbox.
+        </p>
+        <p>
+          We may connect a Pinterest business account to publish pins that link
+          back to our guides and printables. That connection uses Pinterest&apos;s
+          OAuth tokens stored for our own publishing tools. We do not post on
+          your personal Pinterest account or sell Pinterest data.
         </p>
         <p>
           Every Sunday email includes an unsubscribe link. You can also email{" "}

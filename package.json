@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "pinterest:auth": "node merch/pinterest/auth.mjs",
+    "pinterest:boards": "node merch/pinterest/list-boards.mjs",
+    "pinterest:export": "node merch/pinterest/export.mjs",
+    "pinterest:publish": "node merch/pinterest/publish.mjs",
+    "pinterest:dry-run": "node merch/pinterest/publish.mjs --dry-run"
   },
   "dependencies": {
     "@aws-sdk/client-sesv2": "^3.1110.0",
@@ -16,6 +21,7 @@
     "@vercel/speed-insights": "^2.0.0",
     "gray-matter": "^4.0.3",
     "next": "16.3.0",
+    "opentype.js": "^2.0.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "react-markdown": "^10.1.0",

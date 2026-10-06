@@ -1,4 +1,9 @@
-import { PREMIUM_PRODUCT_SLUGS, type Product, type ProductArt } from "@/lib/products";
+import {
+  PREMIUM_PRODUCT_SLUGS,
+  isNoveltyProduct,
+  type Product,
+  type ProductArt,
+} from "@/lib/products";
 
 export const SHOP_FILTERS = [
   { id: "all", label: "All" },
@@ -7,11 +12,14 @@ export const SHOP_FILTERS = [
   { id: "hats", label: "Hats" },
   { id: "bags", label: "Bags" },
   { id: "gear", label: "Gear / Pins" },
+  { id: "novelty", label: "Novelty" },
 ] as const;
 
 export type ShopFilterId = (typeof SHOP_FILTERS)[number]["id"];
 
-export function shopFilterForArt(art: ProductArt): Exclude<ShopFilterId, "all"> {
+export function shopFilterForArt(
+  art: ProductArt,
+): Exclude<ShopFilterId, "all" | "novelty"> {
   if (art === "tee") return "tees";
   if (art === "hoodie") return "fleece";
   if (art === "cap") return "hats";
@@ -19,9 +27,13 @@ export function shopFilterForArt(art: ProductArt): Exclude<ShopFilterId, "all"> 
   return "gear";
 }
 
+function shopFilterForProduct(product: Product): Exclude<ShopFilterId, "all"> {
+  return isNoveltyProduct(product) ? "novelty" : shopFilterForArt(product.art);
+}
+
 export function filterShopProducts(products: Product[], filter: ShopFilterId) {
   if (filter === "all") return products;
-  return products.filter((product) => shopFilterForArt(product.art) === filter);
+  return products.filter((product) => shopFilterForProduct(product) === filter);
 }
 
 export function shopFilterCounts(products: Product[]) {
@@ -32,9 +44,10 @@ export function shopFilterCounts(products: Product[]) {
     hats: 0,
     bags: 0,
     gear: 0,
+    novelty: 0,
   };
   for (const product of products) {
-    counts[shopFilterForArt(product.art)] += 1;
+    counts[shopFilterForProduct(product)] += 1;
   }
   return counts;
 }
@@ -103,6 +116,21 @@ export function colorSwatchHex(color: string): string {
     if (key.includes(name) || name.includes(key)) return hex;
   }
   return "#8a8175";
+}
+
+/** Second photo for card hover: same color as the primary shot, different angle. */
+export function productHoverImage(product: Product): string | undefined {
+  const photos = product.images ?? [];
+  if (!product.image || photos.length < 2) return undefined;
+  const primary = photos.find((photo) => photo.src === product.image) ?? photos[0];
+  const alternate =
+    photos.find(
+      (photo) =>
+        photo.src !== product.image &&
+        photo.color === primary.color &&
+        photo.angle !== primary.angle,
+    ) ?? photos.find((photo) => photo.src !== product.image);
+  return alternate?.src;
 }
 
 export function productMaterialNote(product: Product): string {

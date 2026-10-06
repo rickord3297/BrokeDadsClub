@@ -25,6 +25,8 @@ export function AddToCartButton({
   hideColorSelect = false,
   compact = false,
   showSizeGuide = false,
+  quickAdd = false,
+  label,
 }: {
   product: Product;
   color?: string;
@@ -34,6 +36,9 @@ export function AddToCartButton({
   hideColorSelect?: boolean;
   compact?: boolean;
   showSizeGuide?: boolean;
+  /** One tap: hide pickers and add the default size and first color. */
+  quickAdd?: boolean;
+  label?: string;
 }) {
   const { addItem } = useCart();
   const colors = productColors(product);
@@ -84,6 +89,7 @@ export function AddToCartButton({
 
   const buttonLabel = (() => {
     if (added) return "Added to cart";
+    if (label) return label;
     if (needsSize && !size) return "Pick a size";
     if (needsSize && size && color) return `Add ${size} · ${color}`;
     if (needsSize && size) return `Add size ${size}`;
@@ -92,7 +98,7 @@ export function AddToCartButton({
 
   return (
     <div className={compact ? "space-y-2.5" : "space-y-4"}>
-      {colors.length > 1 && !hideColorSelect ? (
+      {colors.length > 1 && !hideColorSelect && !quickAdd ? (
         <div>
           <p className="mb-1.5 text-xs font-medium text-ink-soft">
             Color{color ? `: ${color}` : ""}
@@ -106,7 +112,7 @@ export function AddToCartButton({
         </div>
       ) : null}
 
-      {needsSize ? (
+      {needsSize && !quickAdd ? (
         <div>
           <div className="mb-1.5 flex items-center justify-between gap-3">
             <p className="text-xs font-medium text-ink-soft">

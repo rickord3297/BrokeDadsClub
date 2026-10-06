@@ -1,0 +1,38 @@
+# Broke Dads Club
+
+> Practical family budget guides, free printables, and club gear for dads stretching every dollar.
+
+Broke Dads Club is a content site for fathers managing tight household budgets. We publish tactical guides on groceries, school costs, family money talks, and everyday routines. No hustle talk. No shame.
+
+## Start here
+
+- [Homepage](https://brokedadsclub.com/)
+- [Guides index](https://brokedadsclub.com/guides)
+- [Free printables](https://brokedadsclub.com/resources)
+- [Shop](https://brokedadsclub.com/shop)
+- [About](https://brokedadsclub.com/about)
+- [RSS feed](https://brokedadsclub.com/feed.xml)
+- [Sitemap](https://brokedadsclub.com/sitemap.xml)
+
+## Pillar guides
+
+- [The $47 Grocery Week](https://brokedadsclub.com/guides/the-47-dollar-grocery-week)
+- [The Dad Tax](https://brokedadsclub.com/guides/the-dad-tax)
+- [School supply list triage](https://brokedadsclub.com/guides/school-supply-list)
+- [Gas station dinner](https://brokedadsclub.com/guides/gas-station-dinner)
+
+## Free printables
+
+- [Grocery week checklist](https://brokedadsclub.com/resources/grocery-week-checklist)
+- [School supply triage sheet](https://brokedadsclub.com/resources/school-supply-triage)
+- [Birthday party budget sheet](https://brokedadsclub.com/resources/birthday-party-budget)
+
+## Contact
+
+- Email: dad@brokedadsclub.com
+- TikTok: https://www.tiktok.com/@brokedads.club
+- Etsy: https://brokedadsclub.etsy.com
+
+## Crawl notes
+
+Index guides, printables, shop, about, privacy, and terms. Skip cart, checkout success, unsubscribe, preview pages, and API routes.

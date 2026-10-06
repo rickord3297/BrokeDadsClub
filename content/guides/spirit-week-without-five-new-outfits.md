@@ -10,8 +10,8 @@ excerpt: >-
   How to dress the part without buying the part.
 category: Gear
 readTime: 6 min
-publishedAt: "2026-09-06"
-status: scheduled
+publishedAt: "2026-09-24"
+status: published
 keywords:
   - spirit week on a budget
   - cheap spirit week ideas

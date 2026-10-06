@@ -34,7 +34,7 @@ export const guideGlossaryTerms: GlossaryTerm[] = [
   {
     slug: "the-dad-tax",
     pattern: /\bthe dad tax\b|\bdad tax\b/gi,
-    hint: "Why everything costs more with kids",
+    hint: "Dad tax meaning: why kids make every bill bigger",
   },
 ];
 

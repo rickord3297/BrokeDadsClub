@@ -16,6 +16,8 @@ export type Guide = {
   category: string;
   readTime: string;
   publishedAt: string;
+  /** ISO date when the guide was last substantively revised. Falls back to publishedAt. */
+  updatedAt: string;
   status: GuideStatus;
   keywords: string[];
   takeaways: string[];
@@ -38,6 +40,7 @@ export type GuideListItem = Pick<
   | "category"
   | "readTime"
   | "publishedAt"
+  | "updatedAt"
   | "takeaways"
   | "keywords"
 > & {
@@ -58,6 +61,7 @@ export function toGuideListItem(
     category: guide.category,
     readTime: guide.readTime,
     publishedAt: guide.publishedAt,
+    updatedAt: guide.updatedAt,
     takeaways: guide.takeaways.slice(0, 2),
     keywords: guide.keywords,
     resourceTieIn: resourceTieIn ?? null,

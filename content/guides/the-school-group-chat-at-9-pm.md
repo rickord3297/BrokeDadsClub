@@ -10,8 +10,8 @@ excerpt: >-
   job. How to catch up without the 9 p.m. panic spiral.
 category: Time
 readTime: 6 min
-publishedAt: "2026-09-12"
-status: scheduled
+publishedAt: "2026-09-28"
+status: published
 keywords:
   - school parent group chat stress
   - class WhatsApp boundaries parents

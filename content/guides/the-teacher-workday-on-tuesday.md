@@ -10,8 +10,8 @@ excerpt: >-
   on the calendar in August. Here is how to see them before Tuesday.
 category: Time
 readTime: 6 min
-publishedAt: "2026-09-15"
-status: scheduled
+publishedAt: "2026-09-30"
+status: published
 keywords:
   - teacher workday childcare
   - school professional development day parents

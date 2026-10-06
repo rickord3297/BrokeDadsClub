@@ -1,6 +1,6 @@
 import {
+  cumulativeReaderCount,
   formatWeeklyReaderSignal,
-  weeklyReaderCount,
 } from "@/lib/guide-reader-signal";
 
 export function GuideReaderSignal({
@@ -10,7 +10,7 @@ export function GuideReaderSignal({
   slug: string;
   publishedAt: string;
 }) {
-  const count = weeklyReaderCount(slug, publishedAt);
+  const count = cumulativeReaderCount(slug, publishedAt);
 
   return (
     <p className="mt-1 text-xs font-medium text-ink-soft">
