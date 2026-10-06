@@ -1,14 +1,23 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/lib/site";
+
+const PRODUCTION_URL = "https://brokedadsclub.com";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/preview/", "/api/", "/cart", "/success", "/unsubscribe"],
+      disallow: [
+        "/admin",
+        "/api/",
+        "/cart",
+        "/checkout",
+        "/success",
+        "/preview/",
+        "/unsubscribe",
+      ],
     },
-    sitemap: `${site.url}/sitemap.xml`,
-    host: site.url,
+    sitemap: `${PRODUCTION_URL}/sitemap.xml`,
+    host: PRODUCTION_URL,
   };
 }

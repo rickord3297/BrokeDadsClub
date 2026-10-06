@@ -1,58 +1,78 @@
 import type { MetadataRoute } from "next";
 import { GUIDE_PILLARS } from "@/lib/guide-pillars";
 import { getGuides } from "@/lib/guides";
+import type { Guide } from "@/lib/guide-model";
 import { getProducts } from "@/lib/products";
 import { resources } from "@/lib/resources";
-import { site } from "@/lib/site";
+import { absoluteUrl } from "@/lib/seo";
 
-const STATIC_PAGES: Array<{
-  path: string;
-  changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
-  priority: number;
-}> = [
-  { path: "", changeFrequency: "weekly", priority: 1 },
-  { path: "/guides", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/resources", changeFrequency: "monthly", priority: 0.9 },
-  { path: "/shop", changeFrequency: "weekly", priority: 0.8 },
-  { path: "/about", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
-  { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
-];
+/** Hourly so scheduled guides enter the sitemap on their go-live date without a deploy. */
+export const revalidate = 3600;
+
+type Entry = MetadataRoute.Sitemap[number];
+
+const SITE_EPOCH = new Date("2026-08-11T00:00:00.000Z");
+
+function guideModified(guide: Guide): Date {
+  const date = new Date(`${guide.updatedAt || guide.publishedAt}T12:00:00.000Z`);
+  return Number.isNaN(date.getTime()) ? SITE_EPOCH : date;
+}
+
+function newest(dates: Date[]): Date {
+  return dates.reduce((max, date) => (date > max ? date : max), SITE_EPOCH);
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const guides = getGuides();
   const products = await getProducts();
+  const now = new Date();
+  const latestGuide = newest(guides.map(guideModified));
 
-  return [
-    ...STATIC_PAGES.map(({ path, changeFrequency, priority }) => ({
-      url: `${site.url}${path}`,
-      lastModified: new Date(),
-      changeFrequency,
-      priority,
-    })),
+  const entries: Entry[] = [
+    { url: absoluteUrl("/"), lastModified: latestGuide, changeFrequency: "daily", priority: 1.0 },
+    { url: absoluteUrl("/guides"), lastModified: latestGuide, changeFrequency: "daily", priority: 0.8 },
+    { url: absoluteUrl("/shop"), lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+
     ...GUIDE_PILLARS.map((pillar) => ({
-      url: `${site.url}/guides/${pillar.slug}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.88,
-    })),
-    ...resources.map((resource) => ({
-      url: `${site.url}/resources/${resource.slug}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.85,
-    })),
-    ...guides.map((guide) => ({
-      url: `${site.url}/guides/${guide.slug}`,
-      lastModified: new Date(guide.updatedAt || guide.publishedAt),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    })),
-    ...products.map((product) => ({
-      url: `${site.url}/shop/${product.slug}`,
-      lastModified: new Date(),
+      url: absoluteUrl(`/guides/${pillar.slug}`),
+      lastModified: newest(
+        guides.filter((guide) => guide.category === pillar.category).map(guideModified),
+      ),
       changeFrequency: "weekly" as const,
       priority: 0.7,
     })),
+
+    ...guides.map((guide) => ({
+      url: absoluteUrl(`/guides/${guide.slug}`),
+      lastModified: guideModified(guide),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+
+    { url: absoluteUrl("/resources"), lastModified: latestGuide, changeFrequency: "monthly", priority: 0.6 },
+    ...resources.map((resource) => ({
+      url: absoluteUrl(`/resources/${resource.slug}`),
+      lastModified: SITE_EPOCH,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+
+    ...products.map((product) => ({
+      url: absoluteUrl(`/shop/${product.slug}`),
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.5,
+    })),
+
+    { url: absoluteUrl("/about"), lastModified: SITE_EPOCH, changeFrequency: "yearly", priority: 0.4 },
+    { url: absoluteUrl("/privacy"), lastModified: SITE_EPOCH, changeFrequency: "yearly", priority: 0.2 },
+    { url: absoluteUrl("/terms"), lastModified: SITE_EPOCH, changeFrequency: "yearly", priority: 0.2 },
   ];
+
+  const seen = new Set<string>();
+  return entries.filter((entry) => {
+    if (seen.has(entry.url)) return false;
+    seen.add(entry.url);
+    return true;
+  });
 }
