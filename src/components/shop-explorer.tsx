@@ -37,6 +37,7 @@ export function ShopExplorer({ products }: { products: Product[] }) {
         {SHOP_FILTERS.map((item) => {
           const selected = filter === item.id;
           const count = counts[item.id];
+          if (item.id !== "all" && count === 0) return null;
           return (
             <button
               key={item.id}

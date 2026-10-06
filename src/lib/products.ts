@@ -160,15 +160,38 @@ function isShopListed(product: Product) {
   return !SHOP_HIDDEN_SLUGS.has(product.slug);
 }
 
-const PREMIUM_SORT_ORDER = [...PREMIUM_PRODUCT_SLUGS];
+/** Core brand-identity pieces, shown first in this order. */
+const SHOP_LEAD_ORDER: readonly string[] = [
+  "club-crest-vintage-tee",
+  "club-crest-heavy-tee",
+  "club-crest-cap",
+  "vintage-castle-patch-cap",
+  "club-crest-hoodie",
+  "club-crest-crewneck",
+  "club-crest-tote",
+];
+
+/** One-off graphic designs. Sorted to the bottom and grouped under the Novelty filter. */
+export const NOVELTY_PRODUCT_SLUGS: readonly string[] = [
+  "club-dog-tee",
+  "club-pup-tee",
+  "cool-penguin-on-pool-float-t-shirt-summer-penguin-drinking-lemonade",
+];
+
+export function isNoveltyProduct(product: Product) {
+  return NOVELTY_PRODUCT_SLUGS.includes(product.slug);
+}
+
+function shopSortRank(product: Product) {
+  const lead = SHOP_LEAD_ORDER.indexOf(product.slug);
+  if (lead !== -1) return lead;
+  return isNoveltyProduct(product) ? 200 : 100;
+}
 
 function sortShopProducts(products: Product[]) {
   return [...products].sort((a, b) => {
-    const rankA = PREMIUM_SORT_ORDER.indexOf(a.slug as (typeof PREMIUM_SORT_ORDER)[number]);
-    const rankB = PREMIUM_SORT_ORDER.indexOf(b.slug as (typeof PREMIUM_SORT_ORDER)[number]);
-    const aRank = rankA === -1 ? 100 : rankA;
-    const bRank = rankB === -1 ? 100 : rankB;
-    if (aRank !== bRank) return aRank - bRank;
+    const rankDiff = shopSortRank(a) - shopSortRank(b);
+    if (rankDiff !== 0) return rankDiff;
     return b.price_cents - a.price_cents;
   });
 }
