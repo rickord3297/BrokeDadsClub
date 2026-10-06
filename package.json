@@ -11,7 +11,8 @@
     "pinterest:boards": "node merch/pinterest/list-boards.mjs",
     "pinterest:export": "node merch/pinterest/export.mjs",
     "pinterest:publish": "node merch/pinterest/publish.mjs",
-    "pinterest:dry-run": "node merch/pinterest/publish.mjs --dry-run"
+    "pinterest:dry-run": "node merch/pinterest/publish.mjs --dry-run",
+    "social:drafts": "node scripts/generate-social-copy.mjs"
   },
   "dependencies": {
     "@aws-sdk/client-sesv2": "^3.1110.0",
