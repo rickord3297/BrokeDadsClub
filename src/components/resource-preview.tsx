@@ -1,3 +1,5 @@
+import { getResource } from "@/lib/resources";
+
 function PaperClipIcon() {
   return (
     <svg
@@ -35,6 +37,9 @@ export function ResourcePreview({
   slug: string;
   variant?: "sheet" | "fridge" | "card";
 }) {
+  const resource = getResource(slug);
+  const title = resource?.title ?? "Printable";
+
   if (variant === "card") {
     return (
       <div className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:mx-0 lg:max-w-none">
@@ -46,6 +51,9 @@ export function ResourcePreview({
           {slug === "grocery-week-checklist" ? <GroceryCardPreview /> : null}
           {slug === "school-supply-triage" ? <SchoolCardPreview /> : null}
           {slug === "birthday-party-budget" ? <BirthdayCardPreview /> : null}
+          {!["grocery-week-checklist", "school-supply-triage", "birthday-party-budget"].includes(slug) ? (
+            <GenericCardPreview title={title} />
+          ) : null}
           <CornerFold />
         </div>
       </div>
@@ -60,6 +68,9 @@ export function ResourcePreview({
       {slug === "grocery-week-checklist" ? <GroceryMini /> : null}
       {slug === "school-supply-triage" ? <SchoolMini /> : null}
       {slug === "birthday-party-budget" ? <BirthdayMini /> : null}
+      {!["grocery-week-checklist", "school-supply-triage", "birthday-party-budget"].includes(slug) ? (
+        <GenericMini title={title} slug={slug} />
+      ) : null}
     </div>
   );
 
@@ -286,6 +297,38 @@ function BirthdayMini() {
       <div className="mt-auto rounded border border-ink/20 p-1">
         <p className="font-semibold">Free / low-cost</p>
         <p className="text-ink/60">Park pavilion · backyard games</p>
+      </div>
+    </div>
+  );
+}
+
+function GenericMini({ title, slug }: { title: string; slug: string }) {
+  return (
+    <div className="flex h-full flex-col gap-1.5 text-[7px] leading-tight text-ink">
+      <p className="font-stamp text-[8px] uppercase tracking-wider">BDC</p>
+      <p className="font-display text-[10px] leading-tight">{title}</p>
+      <Line />
+      <Line />
+      <Line />
+      <div className="mt-auto rounded border border-ink/20 p-1">
+        <p className="font-semibold">Fillable</p>
+        <p className="text-ink/60 truncate">{slug.replace(/-/g, " ")}</p>
+      </div>
+    </div>
+  );
+}
+
+function GenericCardPreview({ title }: { title: string }) {
+  return (
+    <div className="aspect-[4/5] bg-white p-6 text-ink sm:p-8">
+      <p className="font-stamp text-[10px] uppercase tracking-[0.22em] text-pine">
+        Broke Dads Club
+      </p>
+      <h3 className="mt-2 font-display text-2xl leading-tight">{title}</h3>
+      <div className="mt-5 space-y-2">
+        <span className="block h-2 rounded bg-ink/15" />
+        <span className="block h-2 rounded bg-ink/15" />
+        <span className="block h-2 w-2/3 rounded bg-ink/15" />
       </div>
     </div>
   );

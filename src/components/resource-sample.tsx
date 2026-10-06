@@ -5,6 +5,11 @@ export function ResourceSample({ slug }: { slug: string }) {
   if (slug === "grocery-week-checklist") return <GrocerySample />;
   if (slug === "school-supply-triage") return <SchoolSample />;
   if (slug === "birthday-party-budget") return <BirthdaySample />;
+  if (slug === "sitter-handoff-card") return <SitterSample />;
+  if (slug === "subscription-burn-sheet") return <SubscriptionSample />;
+  if (slug === "youth-sports-true-cost") return <YouthSportsSample />;
+  if (slug === "morning-launchpad-checklist") return <LaunchpadSample />;
+  if (slug === "can-we-afford-it-flowchart") return <AffordSample />;
   return null;
 }
 
@@ -137,6 +142,57 @@ function BirthdaySample() {
           </FillCheck>
         </ul>
       </div>
+    </div>
+  );
+}
+
+function SitterSample() {
+  return (
+    <div className="space-y-6">
+      <SampleNote>Example for one kid, 7 p.m. bedtime, sitter Saturday night.</SampleNote>
+      <FillLine name="s-wifi" label="Wifi" sample="HomeNet · password on router" wide />
+      <FillLine name="s-bed" label="Bedtime" sample="8:30 p.m. one book" wide />
+      <FillLine name="s-weight" label="Weight" sample="42 lb" />
+      <FillLine name="s-trigger" label="Triggers" sample="No screens after 7" wide />
+    </div>
+  );
+}
+
+function SubscriptionSample() {
+  return (
+    <div className="space-y-4">
+      <SampleNote>Sample totals: $72.97/mo before cuts. Use blank sheet for your list.</SampleNote>
+    </div>
+  );
+}
+
+function YouthSportsSample() {
+  return (
+    <div className="space-y-4">
+      <SampleNote>Sample fall soccer tab: $535 total. Toggle blank sheet to edit.</SampleNote>
+    </div>
+  );
+}
+
+function LaunchpadSample() {
+  return (
+    <div className="space-y-4">
+      <SampleNote>Posted by garage door. Kid checks, dad initials.</SampleNote>
+      <FillCheck name="s-launch-shoes" sampleChecked>
+        Shoes on feet
+      </FillCheck>
+      <FillCheck name="s-launch-water" sampleChecked>
+        Water bottle packed
+      </FillCheck>
+    </div>
+  );
+}
+
+function AffordSample() {
+  return (
+    <div className="space-y-4">
+      <SampleNote>Example: $84 cleats, wait one sleep, Marketplace $25 instead.</SampleNote>
+      <FillLine name="s-afford" label="Your note" sample="Not this week. We have a plan." wide />
     </div>
   );
 }

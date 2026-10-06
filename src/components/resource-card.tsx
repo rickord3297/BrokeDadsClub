@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ResourceActionButtons } from "@/components/resource-actions";
 import { ResourcePreview } from "@/components/resource-preview";
-import type { Resource } from "@/lib/resources";
+import { getResource, type Resource } from "@/lib/resources";
 
 export function ResourceCard({
   resource,
@@ -64,9 +64,12 @@ export function ResourceCard({
 
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-rule bg-paper shadow-md shadow-ink/5 ring-1 ring-ink/5">
-      <Link href={`/resources/${resource.slug}`} className="block px-4 pt-4">
-        <ResourcePreview slug={resource.slug} variant={previewVariant} />
-      </Link>
+        <Link href={`/resources/${resource.slug}`} className="block px-4 pt-4">
+          <ResourcePreview
+            slug={resource.slug}
+            variant={resource.previewVariant ?? previewVariant}
+          />
+        </Link>
       <div className="flex flex-1 flex-col p-5 pt-4">
         <div className="flex flex-wrap gap-1.5">
           {resource.tags.slice(0, 3).map((tag) => (
