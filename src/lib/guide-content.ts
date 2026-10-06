@@ -101,6 +101,14 @@ export function partitionGuideBody(body: string): {
 }
 
 /** TOC: primary H2 sections only (main body, no synthesis or related tables). */
+/** Split at the H2 nearest the middle so a mid-article block lands between sections. */
+export function splitAtMiddleHeading(content: string): [string, string] {
+  const starts = [...content.matchAll(/^## /gm)].map((match) => match.index ?? 0);
+  if (starts.length < 2) return [content, ""];
+  const at = starts[Math.floor(starts.length / 2)];
+  return [content.slice(0, at).trimEnd(), content.slice(at).trimStart()];
+}
+
 export function extractTocHeadings(mainContent: string) {
   return extractGuideHeadings(mainContent);
 }

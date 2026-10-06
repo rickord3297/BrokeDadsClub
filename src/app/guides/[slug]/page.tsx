@@ -21,10 +21,13 @@ import { GuideThePoint } from "@/components/guide-the-point";
 import { GuideViewTracker } from "@/components/guide-view-tracker";
 import { ReadingProgress } from "@/components/reading-progress";
 import { ShareGuide } from "@/components/share-guide";
+import { GuideProductCta } from "@/components/guide-product-cta";
 import {
   extractTocHeadings,
   partitionGuideBody,
+  splitAtMiddleHeading,
 } from "@/lib/guide-content";
+import { getProduct } from "@/lib/products";
 import {
   getGuide,
   getGuides,
@@ -111,6 +114,8 @@ export default async function GuidePage({
   const [intro, body] = splitGuideIntro(guide.content);
   const { fieldProtocol, main, thePoint } = partitionGuideBody(body);
   const headings = extractTocHeadings(main);
+  const [mainFirst, mainSecond] = splitAtMiddleHeading(main);
+  const ctaProduct = guide.productCta ? await getProduct(guide.productCta.slug) : null;
   const headingCounts = new Map<string, number>();
   const companionPrintable = getResourceByGuideSlug(guide.slug);
   const showToc = headings.length >= 2;
@@ -263,10 +268,31 @@ export default async function GuidePage({
               />
             ) : null}
 
-            {main ? (
+            {mainFirst ? (
               <div className="prose-guide mt-8">
                 <GuideMarkdown
-                  content={main}
+                  content={mainFirst}
+                  headingCounts={headingCounts}
+                  currentSlug={guide.slug}
+                />
+              </div>
+            ) : null}
+
+            {guide.productCta && ctaProduct ? (
+              <GuideProductCta
+                headline={guide.productCta.headline}
+                description={guide.productCta.description}
+                productTitle={ctaProduct.name}
+                productHref={`/shop/${ctaProduct.slug}`}
+                productImage={ctaProduct.images?.[0]?.src ?? ctaProduct.image}
+                badgeText={guide.productCta.badge}
+              />
+            ) : null}
+
+            {mainSecond ? (
+              <div className="prose-guide">
+                <GuideMarkdown
+                  content={mainSecond}
                   headingCounts={headingCounts}
                   currentSlug={guide.slug}
                 />

@@ -2,7 +2,13 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { site } from "@/lib/site";
-import type { Guide, GuideFaq, GuideListItem, GuideStatus } from "@/lib/guide-model";
+import type {
+  Guide,
+  GuideFaq,
+  GuideListItem,
+  GuideProductCtaConfig,
+  GuideStatus,
+} from "@/lib/guide-model";
 
 export type {
   Guide,
@@ -49,6 +55,24 @@ function parseFaq(value: unknown): GuideFaq[] {
     }
     return [{ question: row.question, answer: row.answer }];
   });
+}
+
+function parseProductCta(value: unknown): GuideProductCtaConfig | undefined {
+  if (!value || typeof value !== "object") return undefined;
+  const row = value as Record<string, unknown>;
+  if (
+    typeof row.slug !== "string" ||
+    typeof row.headline !== "string" ||
+    typeof row.description !== "string"
+  ) {
+    return undefined;
+  }
+  return {
+    slug: row.slug,
+    headline: row.headline,
+    description: row.description,
+    badge: typeof row.badge === "string" ? row.badge : undefined,
+  };
 }
 
 function isLive(guide: Guide, now = new Date()): boolean {
@@ -128,6 +152,7 @@ function readAllGuides(): Guide[] {
               (item) => item !== (data.slug as string),
             ),
             shop: parseStringList(data.shop),
+            productCta: parseProductCta(data.productCta),
             nextGuide:
               typeof data.nextGuide === "string" && data.nextGuide.length > 0
                 ? data.nextGuide

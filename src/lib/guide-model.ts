@@ -7,6 +7,13 @@ export type GuideFaq = {
   answer: string;
 };
 
+export type GuideProductCtaConfig = {
+  slug: string;
+  headline: string;
+  description: string;
+  badge?: string;
+};
+
 export type Guide = {
   slug: string;
   title: string;
@@ -26,6 +33,8 @@ export type Guide = {
   faq: GuideFaq[];
   related: string[];
   shop: string[];
+  /** Opt-in mid-article product card. Product data comes from the live shop catalog. */
+  productCta?: GuideProductCtaConfig;
   /** Optional next guide for post-signup / end-of-article CTAs. */
   nextGuide?: string;
   content: string;
