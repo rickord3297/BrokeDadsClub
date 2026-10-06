@@ -41,7 +41,6 @@ import { guideCategoryPath, authorBio, guideSchemaDate } from "@/lib/guide-pilla
 import { JsonLd } from "@/components/json-ld";
 import {
   NOINDEX,
-  OG_IMAGE,
   absoluteUrl,
   guideMetaDescription,
   guideMetaTitle,
@@ -66,7 +65,6 @@ export async function generateMetadata({
   const title = guideMetaTitle(guide);
   const description = guideMetaDescription(guide);
   const keywords = guideKeywords(guide);
-  const image = { ...OG_IMAGE, url: absoluteUrl(OG_IMAGE.url), alt: guide.title };
 
   return {
     title: { absolute: title },
@@ -85,13 +83,11 @@ export async function generateMetadata({
       modifiedTime: guideSchemaDate(guide.updatedAt),
       section: guide.category,
       tags: keywords,
-      images: [image],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [{ url: image.url, alt: image.alt }],
     },
   };
 }
@@ -148,9 +144,9 @@ export default async function GuidePage({
     image: [
       {
         "@type": "ImageObject",
-        url: absoluteUrl(OG_IMAGE.url),
-        width: OG_IMAGE.width,
-        height: OG_IMAGE.height,
+        url: absoluteUrl(`/guides/${guide.slug}/opengraph-image`),
+        width: 1200,
+        height: 630,
       },
     ],
     mainEntityOfPage: {
