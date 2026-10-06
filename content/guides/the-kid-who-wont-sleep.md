@@ -2,9 +2,7 @@
 title: The kid who won't sleep
 slug: the-kid-who-wont-sleep
 seoTitle: What to Do When Your Kid Won't Sleep | Broke Dads Club
-description: >-
-  A practical bedtime plan for the kid who won't sleep: fewer negotiations, a
-  boring routine, and scripts that end the night without a war.
+description: "A practical bedtime plan for the kid who won't sleep: fewer negotiations, a boring routine that sticks, and short scripts that end the night without a war."
 excerpt: >-
   Another water cup. Another monster check. Another 40 minutes. Here is how to
   end the night without becoming the entertainment.

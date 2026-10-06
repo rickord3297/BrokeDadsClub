@@ -2,9 +2,7 @@
 title: Talking to kids about money without scaring them
 slug: talking-to-kids-about-money
 seoTitle: How to Talk to Kids About Money Without Scaring Them | Broke Dads Club
-description: >-
-  Age-sized scripts for honest money talks with kids, calm, practical, and not
-  their job to fix the household budget.
+description: "Age-sized scripts for honest money talks with kids. Calm, practical words that explain tight months without scaring them or making the budget their job."
 excerpt: >-
   They already know something is tight. Give them a story that is honest, calm,
   and not their job to fix.

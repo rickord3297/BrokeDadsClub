@@ -72,6 +72,25 @@ export function buildPageMetadata({
   };
 }
 
+const BRAND_SUFFIX = /\s*[|·:-]\s*Broke Dads Club\s*$/i;
+const META_DESCRIPTION_MAX = 160;
+
+/** "[Guide Title] | Broke Dads Club", without doubling a suffix already in frontmatter. */
+export function guideMetaTitle(guide: { title: string; seoTitle?: string }) {
+  const base = (guide.seoTitle || guide.title).replace(BRAND_SUFFIX, "").trim();
+  return `${base} | ${site.name}`;
+}
+
+/** Frontmatter description (excerpt fallback), capped at 160 chars on a word boundary. */
+export function guideMetaDescription(guide: { description?: string; excerpt?: string }) {
+  const text = (guide.description || guide.excerpt || site.description)
+    .replace(/\s+/g, " ")
+    .trim();
+  if (text.length <= META_DESCRIPTION_MAX) return text;
+  const cut = text.slice(0, META_DESCRIPTION_MAX - 1);
+  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:.]$/, "")}…`;
+}
+
 export function resourcePageMetadata(resource: Resource): Metadata {
   return buildPageMetadata({
     title: `${resource.seoTitle} | ${site.name}`,

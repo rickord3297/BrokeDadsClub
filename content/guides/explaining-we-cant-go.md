@@ -2,9 +2,7 @@
 title: Explaining “we can’t go” without making it a speech
 slug: explaining-we-cant-go
 seoTitle: How to Tell Kids We Can't Afford It (Without a Speech) | Broke Dads Club
-description: >-
-  Short, calm scripts for saying no to the trip, party, or thing, honest with
-  kids about money without making them the CFO.
+description: "Short, calm scripts for saying no to the trip, the party, or the thing everyone has. Be honest with kids about money without making them the family CFO."
 excerpt: >-
   A short, calm way to say no to the trip, the party, or the thing, without
   turning money into a monologue.

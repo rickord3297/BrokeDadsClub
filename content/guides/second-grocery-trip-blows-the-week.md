@@ -2,9 +2,7 @@
 title: 'The second grocery trip is how $47 becomes $90'
 slug: second-grocery-trip-blows-the-week
 seoTitle: 'Second Grocery Trip: How a $47 Week Becomes $90'
-description: >-
-  A second grocery store trip is how a tight week blows up. Why "just milk"
-  becomes $30 of nonsense, and how to shop once without running out Tuesday.
+description: "A second grocery store trip is how a tight week blows up. Why just milk becomes $30 of extras, and how to shop once a week without running out by Tuesday."
 excerpt: >-
   Shop once is not a vibe. It is the load-bearing rule. Here is what breaks it
   and how to stop the midweek panic run.

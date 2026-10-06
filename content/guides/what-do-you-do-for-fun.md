@@ -10,9 +10,7 @@ publishedAt: '2026-09-12'
 updatedAt: '2026-09-17'
 status: published
 seoTitle: "What Do You Do for Fun? Honest Dad Answers | Broke Dads Club"
-description: >-
-  Honest answers when someone asks what you do for fun as a dad. Short scripts,
-  how to handle the follow-up, and how to reclaim twenty minutes without a fake lifestyle.
+description: "Honest answers when someone asks what you do for fun as a dad. Short scripts, how to handle the follow-up, and how to reclaim twenty minutes for yourself."
 keywords:
   - what do you do for fun dad
   - dad hobbies after kids

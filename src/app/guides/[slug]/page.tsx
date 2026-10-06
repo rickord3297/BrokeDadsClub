@@ -35,7 +35,14 @@ import {
 } from "@/lib/guides";
 import { getResourceByGuideSlug, otherResources } from "@/lib/resources";
 import { guideCategoryPath, authorBio, guideSchemaDate } from "@/lib/guide-pillars";
-import { OG_IMAGE } from "@/lib/seo";
+import { JsonLd } from "@/components/json-ld";
+import {
+  NOINDEX,
+  OG_IMAGE,
+  absoluteUrl,
+  guideMetaDescription,
+  guideMetaTitle,
+} from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const revalidate = 3600;
@@ -50,32 +57,38 @@ export async function generateMetadata({
 }: PageProps<"/guides/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const guide = getGuide(slug);
-  if (!guide) return { title: "Guide" };
+  if (!guide) return { title: "Guide not found", ...NOINDEX };
 
-  const url = `${site.url}/guides/${guide.slug}`;
+  const url = absoluteUrl(`/guides/${guide.slug}`);
+  const title = guideMetaTitle(guide);
+  const description = guideMetaDescription(guide);
   const keywords = guideKeywords(guide);
+  const image = { ...OG_IMAGE, url: absoluteUrl(OG_IMAGE.url), alt: guide.title };
 
   return {
-    title: { absolute: guide.seoTitle },
-    description: guide.description,
+    title: { absolute: title },
+    description,
     keywords,
+    authors: [{ name: authorBio().name, url: absoluteUrl(authorBio().aboutHref) }],
     alternates: { canonical: url },
     openGraph: {
       type: "article",
-      title: guide.seoTitle,
-      description: guide.description,
+      title,
+      description,
       url,
       siteName: site.name,
+      locale: "en_US",
       publishedTime: guideSchemaDate(guide.publishedAt),
       modifiedTime: guideSchemaDate(guide.updatedAt),
+      section: guide.category,
       tags: keywords,
-      images: [OG_IMAGE],
+      images: [image],
     },
     twitter: {
       card: "summary_large_image",
-      title: guide.seoTitle,
-      description: guide.description,
-      images: [OG_IMAGE.url],
+      title,
+      description,
+      images: [{ url: image.url, alt: image.alt }],
     },
   };
 }
@@ -87,7 +100,8 @@ export default async function GuidePage({
   const guide = getGuide(slug);
   if (!guide) notFound();
 
-  const url = `${site.url}/guides/${guide.slug}`;
+  const url = absoluteUrl(`/guides/${guide.slug}`);
+  const description = guideMetaDescription(guide);
   const keywords = guideKeywords(guide);
   const related = getRelatedGuides(guide, 4).map((item) =>
     toGuideListItem(item),
@@ -106,7 +120,10 @@ export default async function GuidePage({
     "@context": "https://schema.org",
     "@type": "Article",
     headline: guide.title,
-    description: guide.description,
+    description,
+    url,
+    inLanguage: "en-US",
+    isAccessibleForFree: true,
     datePublished: guideSchemaDate(guide.publishedAt),
     dateModified: guideSchemaDate(guide.updatedAt),
     author: {
@@ -126,7 +143,7 @@ export default async function GuidePage({
     image: [
       {
         "@type": "ImageObject",
-        url: `${site.url}${OG_IMAGE.url}`,
+        url: absoluteUrl(OG_IMAGE.url),
         width: OG_IMAGE.width,
         height: OG_IMAGE.height,
       },
@@ -193,20 +210,7 @@ export default async function GuidePage({
       <GuideStickyBar title={guide.title} url={url} slug={guide.slug} />
 
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
-        />
-        {faqLd ? (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
-          />
-        ) : null}
+        <JsonLd data={faqLd ? [articleLd, breadcrumbLd, faqLd] : [articleLd, breadcrumbLd]} />
 
         <GuideBreadcrumbs category={guide.category} title={guide.title} />
 

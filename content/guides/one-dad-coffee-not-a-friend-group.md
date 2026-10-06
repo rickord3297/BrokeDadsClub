@@ -2,7 +2,7 @@
 title: One dad coffee, not a friend group
 slug: one-dad-coffee-not-a-friend-group
 seoTitle: "How to Make One Dad Friend (5 Steps, No Group Chat) | Broke Dads Club"
-description: "You do not need six dads and a fantasy league. One repeat face, one specific coffee invite, 30 minutes max. The dad friendship playbook that actually fits your calendar."
+description: "You do not need six dads and a fantasy league. One repeat face, one specific coffee invite, 30 minutes max: a dad friendship plan that fits your calendar."
 excerpt: Skip the deck-beer ad fantasy. One face, one invite, thirty minutes. The smallest version of dad friendship that still counts as a win.
 category: Time
 readTime: 6 min

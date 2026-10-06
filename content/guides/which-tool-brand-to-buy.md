@@ -2,9 +2,7 @@
 title: Which tool brand to buy
 slug: which-tool-brand-to-buy
 seoTitle: 'Ryobi vs Milwaukee vs DeWalt: Which Tool Brand to Buy | Broke Dads Club'
-description: >-
-  Skip the brand war. Stick with the battery you already own, buy what you will
-  use, and stop collecting chargers you cannot afford.
+description: "Skip the tool brand war. Stick with the battery platform you already own, buy only the tools you will use, and stop collecting chargers you cannot afford."
 excerpt: >-
   Ryobi, Milwaukee, DeWalt, whoever. If you already have a battery that works,
   stay there. Cream of the crop is a credit card bill with extra chargers.

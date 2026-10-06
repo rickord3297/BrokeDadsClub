@@ -2,9 +2,7 @@
 title: The second bill after school starts
 slug: the-second-bill
 seoTitle: 'School Fees After Supplies: The Hidden Second Bill | Broke Dads Club'
-description: >-
-  Supplies were only the first invoice. How to see sports fees, lab fees,
-  fundraisers, and field trips coming, and pay them without a scramble.
+description: "Supplies were only the first invoice. How to see sports fees, lab fees, fundraisers, and field trips coming, and pay them without a September scramble."
 excerpt: >-
   You survived the supply list. Then sports, lab fees, and a fundraiser hit the
   same month. That is the second bill. Here is how to see it early.

@@ -2,9 +2,7 @@
 title: 'Youth sports all-in cost checklist before you click pay'
 slug: youth-sports-all-in-cost-checklist
 seoTitle: 'Youth Sports Fees Checklist: Processing + Hidden Costs'
-description: >-
-  Youth sports processing fees, signup, gear, travel, and buyouts. Run this
-  all-in checklist before you click pay so September does not ambush you.
+description: "Youth sports processing fees, signup, gear, travel, and buyouts. Run this all-in cost checklist before you click pay so the fall season does not ambush you."
 excerpt: >-
   Signup is the down payment. Run the all-in checklist before you click pay so
   September does not ambush you.

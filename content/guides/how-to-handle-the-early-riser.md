@@ -2,9 +2,7 @@
 title: How to handle the early riser
 slug: how-to-handle-the-early-riser
 seoTitle: How to Handle Early Rising Kids (Without Rage) | Broke Dads Club
-description: >-
-  When your kid wakes at 5 a.m., use a clock, a morning box, and clear rules so
-  the early riser does not own the whole house.
+description: "When your kid wakes at 5 a.m., use an ok-to-wake clock, a quiet morning box, and clear rules so the early riser does not own the whole house at sunrise."
 excerpt: >-
   5:12 a.m. is not a personality. It is a schedule problem. Here is how to keep
   the house from waking with them.

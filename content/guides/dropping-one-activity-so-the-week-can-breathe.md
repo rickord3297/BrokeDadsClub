@@ -2,7 +2,7 @@
 title: "Dropping one activity so the week can breathe"
 slug: dropping-one-activity-so-the-week-can-breathe
 seoTitle: "How to Drop a Kids Activity Without Guilt | Broke Dads Club"
-description: "Cut one kids activity so evenings stop breaking. A simple keep/cut test, short scripts for the kid and the coach, and what to protect instead."
+description: "Cut one kids activity so weeknights stop breaking. A simple keep or cut test, short scripts for the kid and the coach, and what to protect with the time."
 excerpt: One less practice. One more dinner that is not eaten in the car. How to cut a commitment without a family referendum.
 category: Time
 readTime: 7 min

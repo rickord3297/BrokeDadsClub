@@ -2,9 +2,7 @@
 title: Side hustles that don't steal bedtime
 slug: side-hustles-that-dont-steal-bedtime
 seoTitle: Side Hustles for Dads That Don't Steal Bedtime | Broke Dads Club
-description: >-
-  Extra cash without a second life. Filter gigs like a dad: clear end times,
-  skills you already have, first dollar in 14 days.
+description: "Extra cash without a second life. Filter side hustles like a dad: clear end times, skills you already have, first dollar within 14 days, and bedtime intact."
 excerpt: >-
   Extra money is useful. A second life that makes you a ghost at 7:30 p.m. is
   not. Filter gigs like a dad, not like a podcast.

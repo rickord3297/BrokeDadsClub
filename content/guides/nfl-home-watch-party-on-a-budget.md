@@ -2,10 +2,7 @@
 title: 'NFL home watch party that feels like game day'
 slug: nfl-home-watch-party-on-a-budget
 seoTitle: 'NFL Home Watch Party on a Budget (Feels Like Game Day)'
-description: >-
-  Skip the $1,475 stadium day. Build an NFL home watch party kids remember:
-  snacks, a cheap bracket, antenna or one app, and a no-shame script for "not
-  this year."
+description: "Skip the $1,475 stadium day. Build an NFL home watch party kids remember: game-day snacks, a cheap bracket, an antenna or one app, and zero shame about it."
 excerpt: >-
   Stadium money is vacation money. A living-room Sunday can still feel like a
   real game day if you plan the vibe, not the debt.

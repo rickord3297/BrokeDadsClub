@@ -1,8 +1,27 @@
+const PRODUCTION_URL = "https://brokedadsclub.com";
+
+/**
+ * Canonical origin. Preview, *.vercel.app, and www hosts all collapse to the
+ * apex domain so canonicals, sitemaps, and OG URLs never leak a non-production
+ * host. Localhost is only honored in `next dev`.
+ */
+function resolveSiteUrl(raw: string | undefined): string {
+  if (!raw) return PRODUCTION_URL;
+  try {
+    const parsed = new URL(raw);
+    const isLocal = parsed.hostname === "localhost" || parsed.hostname === "127.0.0.1";
+    if (isLocal && process.env.NODE_ENV === "development") return parsed.origin;
+  } catch {
+    // Malformed env value: fall through to production.
+  }
+  return PRODUCTION_URL;
+}
+
 export const site = {
   name: "Broke Dads Club",
   shortName: "BDC",
   domain: "brokedadsclub.com",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://brokedadsclub.com",
+  url: resolveSiteUrl(process.env.NEXT_PUBLIC_SITE_URL),
   tagline: "Broke doesn't mean broken.",
   description:
     "Practical money guides for fathers stretching every dollar and still showing up.",

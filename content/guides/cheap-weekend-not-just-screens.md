@@ -2,9 +2,7 @@
 title: Cheap weekend that isn’t just screen time
 slug: cheap-weekend-not-just-screens
 seoTitle: Cheap Weekend Ideas Without Only Screen Time | Broke Dads Club
-description: >-
-  When the budget says stay home and the kids say they’re bored, a weekend plan
-  that costs almost nothing and still feels like a plan.
+description: "When the budget says stay home and the kids say they're bored: a cheap family weekend plan that costs almost nothing and still beats a day of screen time."
 excerpt: >-
   When the budget says stay home and the kids say they're bored, a weekend plan
   that costs almost nothing and still feels like a plan.

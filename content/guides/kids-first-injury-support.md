@@ -2,9 +2,7 @@
 title: "Your kid's first real injury"
 slug: kids-first-injury-support
 seoTitle: "Kid's First Injury: Support Them and Your Partner | Broke Dads Club"
-description: >-
-  When your kid gets hurt for real: calm support for them, how to back up your
-  partner, and what not to say in the ER waiting room.
+description: "When your kid gets hurt for real: calm support for them, how to back up your partner, what not to say in the ER waiting room, and how to handle the week after."
 excerpt: >-
   The first broken bone, bad sprain, or stitches changes the house. Here is how
   to steady your kid and stay a team with your partner.

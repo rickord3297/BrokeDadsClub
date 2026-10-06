@@ -57,7 +57,7 @@ When the user drops ideas into `content/ideas.md` or says **Draft new ideas**:
 title: ...
 slug: kebab-case-slug
 seoTitle: "Search-friendly title under ~60 chars | Broke Dads Club"
-description: "Meta description ~150 chars. Promise the outcome."
+description: "Meta description, 150-160 chars exactly. Promise the outcome."
 excerpt: One or two sentences (card/teaser copy).
 category: Money | Time | Kids | Work | Gear
 readTime: N min

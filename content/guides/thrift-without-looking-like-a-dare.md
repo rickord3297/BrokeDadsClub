@@ -2,9 +2,7 @@
 title: Thrift without looking like a dare
 slug: thrift-without-looking-like-a-dare
 seoTitle: How to Thrift Clothes for Your Family (and Still Look Sharp) | Broke Dads Club
-description: >-
-  Hand-me-downs and thrift as strategy, not costume: fit, condition, palette,
-  and a dad wardrobe that looks like you meant it.
+description: "Hand-me-downs and thrift shopping as strategy, not costume: fit, condition, color palette, and a budget dad wardrobe that looks like you chose every piece."
 excerpt: >-
   Hand-me-downs and thrift are a strategy, not a costume. How to dress a family
   so it looks like you meant it.

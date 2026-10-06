@@ -2,9 +2,7 @@
 title: The $47 grocery week
 slug: the-47-dollar-grocery-week
 seoTitle: 'Family Grocery Budget $50 a Week: The $47 Meal Plan | Broke Dads Club'
-description: >-
-  Family grocery budget under $50 a week for about 3-4 people: a realistic cart,
-  leftover tacos, pasta on the tired night. Not a stunt list.
+description: "Family grocery budget under $50 a week for about 3-4 people: a realistic cart, leftover tacos, and pasta on the tired night. A real plan, not a stunt list."
 excerpt: >-
   Feed about 3-4 people for a week without a second store trip. A practical cart
   and dinners, not a stunt list.

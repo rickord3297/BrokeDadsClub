@@ -2,9 +2,7 @@
 title: Cheap date night that still feels like a date
 slug: cheap-date-night
 seoTitle: Affordable Date Night Ideas at Home (With Kids) | Broke Dads Club
-description: >-
-  Skip the sitter and the second mortgage. A 90-minute at-home date night that
-  still feels like you picked each other.
+description: "Skip the sitter and the second mortgage. A simple 90-minute at-home date night plan for tired parents that still feels like you picked each other on purpose."
 excerpt: >-
   You do not need a sitter and a second mortgage. You need a closed kitchen, a
   plan, and 90 minutes that are not about logistics.

@@ -2,7 +2,7 @@
 title: "The after-school collapse is not a bad kid"
 slug: the-after-school-collapse-is-not-a-bad-kid
 seoTitle: "After-School Meltdown Kids: Snack First, Not Homework | Broke Dads Club"
-description: "Kid held it together all day, then detonates at pickup. Snack first, skip the car interrogation, and protect the first 30 minutes at home."
+description: "Your kid held it together all day, then melts down at pickup. Snack first, skip the car interrogation, and protect the first 30 minutes at home after school."
 excerpt: They were an angel at school. Then the car door closed. A simple after-school reset, not a personality diagnosis.
 category: Kids
 readTime: 6 min

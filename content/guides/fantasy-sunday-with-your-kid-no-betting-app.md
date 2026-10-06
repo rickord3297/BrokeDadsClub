@@ -2,7 +2,7 @@
 title: "Fantasy Sunday with your kid (no betting app)"
 slug: fantasy-sunday-with-your-kid-no-betting-app
 seoTitle: "Fantasy Football with Kids: Free League, No Betting | Broke Dads Club"
-description: "Start a free family fantasy league this NFL weekend. One phone, no cash stakes, clear Sunday window, and a short talk when the betting ads roll."
+description: "Start a free family fantasy football league this NFL weekend. One phone, no cash stakes, a clear Sunday window, and a short talk when the betting ads roll."
 excerpt: Share the board, not the sportsbook. A free league, a Sunday window, and one sentence when DraftKings shows up in the commercial break.
 category: Kids
 readTime: 6 min

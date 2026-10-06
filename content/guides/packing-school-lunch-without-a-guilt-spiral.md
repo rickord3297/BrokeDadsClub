@@ -2,7 +2,7 @@
 title: "Packing school lunch without a $12 guilt spiral"
 slug: packing-school-lunch-without-a-guilt-spiral
 seoTitle: "Cheap School Lunch Ideas for Kids (No Guilt) | Broke Dads Club"
-description: "Pack school lunch without Pinterest shame or a $12 daily bill. A three-part box, a boring rotation, and when cafeteria is the smarter call."
+description: "Pack school lunch without Pinterest shame or a $12 daily bill. A three-part lunch box, a boring rotation that works, and when cafeteria is the smarter call."
 excerpt: Protein, a carb, one fruit. A lunch rotation that survives Tuesday morning, not a bento contest.
 category: Money
 readTime: 6 min

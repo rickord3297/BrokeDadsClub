@@ -2,9 +2,7 @@
 title: Kids who don't listen to Mom
 slug: kids-who-dont-listen-to-mom
 seoTitle: When Kids Don't Listen to Mom (Dad Backup Plan) | Broke Dads Club
-description: >-
-  When kids ignore Mom and only listen to Dad, fix the split. Same rules, same
-  follow-through, no good-cop theater that makes her job harder.
+description: "When kids ignore Mom and only listen to Dad, fix the split. Same rules, same follow-through, and no good-cop theater that quietly makes her job harder."
 excerpt: >-
   They hear her. They are testing which adult is optional. Here is how to stop
   being the fun override button.

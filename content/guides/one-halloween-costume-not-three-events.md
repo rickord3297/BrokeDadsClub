@@ -2,9 +2,7 @@
 title: One Halloween costume, not three events
 slug: one-halloween-costume-not-three-events
 seoTitle: "One Halloween Costume, Not Three | Broke Dads Club"
-description: >-
-  School parade, trunk-or-treat, and Halloween night do not need three outfits.
-  Set a costume cap, reuse one look, and skip the pop-up shop panic.
+description: "School parade, trunk-or-treat, and Halloween night do not need three outfits. Set a costume cap, reuse one look all week, and skip the pop-up shop panic."
 excerpt: >-
   The costume bill is not one night. It is three events asking for a new
   character. Pick one outfit and let it work twice.

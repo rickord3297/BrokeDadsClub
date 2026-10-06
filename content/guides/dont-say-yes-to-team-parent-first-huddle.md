@@ -2,9 +2,7 @@
 title: "Don't say yes to team parent in the first huddle"
 slug: dont-say-yes-to-team-parent-first-huddle
 seoTitle: "Don't Volunteer as Team Parent Too Fast | Broke Dads Club"
-description: >-
-  First practice huddle pressure: snack duty is fine, owning the whole team
-  calendar is not. How to help without becoming unpaid staff.
+description: "First practice huddle pressure: snack duty is fine, owning the whole team calendar is not. How to help the team without becoming unpaid staff all season."
 excerpt: >-
   Take one snack. Do not take the clipboard. How to help the team without
   donating your whole season.

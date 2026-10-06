@@ -2,9 +2,7 @@
 title: Fixing the car vs paying for daycare
 slug: car-vs-daycare
 seoTitle: 'Car Repair vs Daycare: How to Choose When Both Are Due | Broke Dads Club'
-description: >-
-  Two bills, one wallet. A calm triage for when car repair and daycare hit the
-  same paycheck, minimum viable fixes, who to call, and what to defer.
+description: "Two bills, one wallet. A calm triage for when car repair and daycare hit the same paycheck: minimum viable fixes, who to call first, and what you can defer."
 excerpt: >-
   Two bills, one wallet. How to choose the lesser disaster without pretending
   either choice is free.
