@@ -105,6 +105,21 @@ export function colorSwatchHex(color: string): string {
   return "#8a8175";
 }
 
+/** Second photo for card hover: same color as the primary shot, different angle. */
+export function productHoverImage(product: Product): string | undefined {
+  const photos = product.images ?? [];
+  if (!product.image || photos.length < 2) return undefined;
+  const primary = photos.find((photo) => photo.src === product.image) ?? photos[0];
+  const alternate =
+    photos.find(
+      (photo) =>
+        photo.src !== product.image &&
+        photo.color === primary.color &&
+        photo.angle !== primary.angle,
+    ) ?? photos.find((photo) => photo.src !== product.image);
+  return alternate?.src;
+}
+
 export function productMaterialNote(product: Product): string {
   if (product.slug.includes("vintage-tee")) {
     return "Garment-dyed cotton · 6.1 oz · Pre-shrunk";

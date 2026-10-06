@@ -74,7 +74,7 @@ export function ShopExplorer({ products }: { products: Product[] }) {
           </button>
         </p>
       ) : (
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
           {filtered.map((product) => (
             <ProductCard
               key={product.id}
