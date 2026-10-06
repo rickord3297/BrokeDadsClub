@@ -1,3 +1,5 @@
+import { getResource } from "@/lib/resources";
+
 function PaperClipIcon() {
   return (
     <svg
@@ -16,6 +18,17 @@ function PaperClipIcon() {
   );
 }
 
+function CornerFold() {
+  return (
+    <div
+      className="pointer-events-none absolute right-0 bottom-0 h-10 w-10"
+      aria-hidden
+    >
+      <div className="absolute right-0 bottom-0 h-0 w-0 border-b-[2.5rem] border-l-[2.5rem] border-b-paper-2 border-l-transparent" />
+      <div className="absolute right-0 bottom-0 h-0 w-0 border-b-[2.35rem] border-l-[2.35rem] border-b-ink/10 border-l-transparent" />
+    </div>
+  );
+}
 
 export function ResourcePreview({
   slug,
@@ -24,9 +37,12 @@ export function ResourcePreview({
   slug: string;
   variant?: "sheet" | "fridge" | "card";
 }) {
+  const resource = getResource(slug);
+  const title = resource?.title ?? "Printable";
+
   if (variant === "card") {
     return (
-      <div className="relative mx-auto w-full max-w-[15rem]">
+      <div className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:mx-0 lg:max-w-none">
         <PaperClipIcon />
         <div
           className="relative overflow-hidden rounded-sm border border-ink/12 bg-white shadow-[0_2px_8px_rgba(28,25,21,0.06),0_12px_32px_-8px_rgba(28,25,21,0.18)]"
@@ -35,6 +51,10 @@ export function ResourcePreview({
           {slug === "grocery-week-checklist" ? <GroceryCardPreview /> : null}
           {slug === "school-supply-triage" ? <SchoolCardPreview /> : null}
           {slug === "birthday-party-budget" ? <BirthdayCardPreview /> : null}
+          {!["grocery-week-checklist", "school-supply-triage", "birthday-party-budget"].includes(slug) ? (
+            <GenericCardPreview title={title} />
+          ) : null}
+          <CornerFold />
         </div>
       </div>
     );
@@ -42,12 +62,15 @@ export function ResourcePreview({
 
   const sheet = (
     <div
-      className="mx-auto aspect-[8.5/11] w-full max-w-[11rem] overflow-hidden rounded-lg border border-rule bg-white p-2.5 shadow-sm"
+      className="aspect-[8.5/11] overflow-hidden rounded-lg border border-rule bg-white p-2.5 shadow-sm"
       aria-hidden
     >
       {slug === "grocery-week-checklist" ? <GroceryMini /> : null}
       {slug === "school-supply-triage" ? <SchoolMini /> : null}
       {slug === "birthday-party-budget" ? <BirthdayMini /> : null}
+      {!["grocery-week-checklist", "school-supply-triage", "birthday-party-budget"].includes(slug) ? (
+        <GenericMini title={title} slug={slug} />
+      ) : null}
     </div>
   );
 
@@ -274,6 +297,38 @@ function BirthdayMini() {
       <div className="mt-auto rounded border border-ink/20 p-1">
         <p className="font-semibold">Free / low-cost</p>
         <p className="text-ink/60">Park pavilion · backyard games</p>
+      </div>
+    </div>
+  );
+}
+
+function GenericMini({ title, slug }: { title: string; slug: string }) {
+  return (
+    <div className="flex h-full flex-col gap-1.5 text-[7px] leading-tight text-ink">
+      <p className="font-stamp text-[8px] uppercase tracking-wider">BDC</p>
+      <p className="font-display text-[10px] leading-tight">{title}</p>
+      <Line />
+      <Line />
+      <Line />
+      <div className="mt-auto rounded border border-ink/20 p-1">
+        <p className="font-semibold">Fillable</p>
+        <p className="text-ink/60 truncate">{slug.replace(/-/g, " ")}</p>
+      </div>
+    </div>
+  );
+}
+
+function GenericCardPreview({ title }: { title: string }) {
+  return (
+    <div className="aspect-[4/5] bg-white p-6 text-ink sm:p-8">
+      <p className="font-stamp text-[10px] uppercase tracking-[0.22em] text-pine">
+        Broke Dads Club
+      </p>
+      <h3 className="mt-2 font-display text-2xl leading-tight">{title}</h3>
+      <div className="mt-5 space-y-2">
+        <span className="block h-2 rounded bg-ink/15" />
+        <span className="block h-2 rounded bg-ink/15" />
+        <span className="block h-2 w-2/3 rounded bg-ink/15" />
       </div>
     </div>
   );

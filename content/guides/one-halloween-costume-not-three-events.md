@@ -10,9 +10,9 @@ excerpt: >-
   character. Pick one outfit and let it work twice.
 category: Money
 readTime: 6 min
-publishedAt: "2026-10-07"
-updatedAt: "2026-10-01"
-status: scheduled
+publishedAt: "2026-10-05"
+updatedAt: "2026-10-06"
+status: published
 keywords:
   - cheap halloween costume for kids
   - halloween costume budget for families

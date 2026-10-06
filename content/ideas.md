@@ -33,8 +33,14 @@
 | The kid who won't sleep | live | 2026-09-17 | [`the-kid-who-wont-sleep.md`](guides/the-kid-who-wont-sleep.md) |
 | How to handle the early riser | live | 2026-10-01 | [`how-to-handle-the-early-riser.md`](guides/how-to-handle-the-early-riser.md) |
 | Kids who don't listen to Mom | live | 2026-10-04 | [`kids-who-dont-listen-to-mom.md`](guides/kids-who-dont-listen-to-mom.md) |
-| One Halloween costume, not three events | scheduled | 2026-10-07 | trend 2026-10-01: NRF ~$115/person plus daddit multi-event costumes: [`one-halloween-costume-not-three-events.md`](guides/one-halloween-costume-not-three-events.md) |
-| The heat bill before it gets cold | scheduled | 2026-10-10 | trend 2026-10-04: NEADA oil heat about $878 more ($1,749 to $2,627): [`the-heat-bill-before-it-gets-cold.md`](guides/the-heat-bill-before-it-gets-cold.md) |
+| Spirit week without five new outfits | live | 2026-09-24 | [`spirit-week-without-five-new-outfits.md`](guides/spirit-week-without-five-new-outfits.md) |
+| Whose science project is it | live | 2026-09-26 | [`whose-science-project-is-it.md`](guides/whose-science-project-is-it.md) |
+| The school group chat at 9 pm | live | 2026-09-28 | [`the-school-group-chat-at-9-pm.md`](guides/the-school-group-chat-at-9-pm.md) |
+| The teacher workday on Tuesday | live | 2026-09-30 | [`the-teacher-workday-on-tuesday.md`](guides/the-teacher-workday-on-tuesday.md) |
+| Snack duty without the Costco run | live | 2026-10-02 | [`snack-duty-without-the-costco-run.md`](guides/snack-duty-without-the-costco-run.md) |
+| When homework and practice collide | live | 2026-10-04 | [`when-homework-and-practice-collide.md`](guides/when-homework-and-practice-collide.md) |
+| One Halloween costume, not three events | live | 2026-10-05 | trend 2026-10-01: NRF ~$115/person plus daddit multi-event costumes: [`one-halloween-costume-not-three-events.md`](guides/one-halloween-costume-not-three-events.md) |
+| The heat bill before it gets cold | live | 2026-10-06 | trend 2026-10-04: NEADA oil heat about $878 more ($1,749 to $2,627): [`the-heat-bill-before-it-gets-cold.md`](guides/the-heat-bill-before-it-gets-cold.md) |
 | The $47 grocery week | live | 2026-08-04 | `the-47-dollar-grocery-week` |
 | Cheap date night that still feels like a date | live | 2026-07-28 | `cheap-date-night` |
 | The dad tax: why everything costs more | live | 2026-07-21 | `the-dad-tax` |

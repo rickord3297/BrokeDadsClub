@@ -10,9 +10,9 @@ excerpt: >-
   number this week and make one call before the tank is the boss.
 category: Money
 readTime: 6 min
-publishedAt: "2026-10-10"
-updatedAt: "2026-10-04"
-status: scheduled
+publishedAt: "2026-10-06"
+updatedAt: "2026-10-06"
+status: published
 keywords:
   - winter heating bill budget for families
   - heating oil cost increase 2026

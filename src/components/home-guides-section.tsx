@@ -3,7 +3,7 @@ import { GuideCard } from "@/components/guide-card";
 import type { GuideListItem } from "@/lib/guide-model";
 import { START_HERE_SLUGS } from "@/lib/guides";
 
-const LATEST_COUNT = 6;
+const LATEST_COUNT = 9;
 
 export function HomeGuidesSection({ guides }: { guides: GuideListItem[] }) {
   const bySlug = new Map(guides.map((guide) => [guide.slug, guide]));
