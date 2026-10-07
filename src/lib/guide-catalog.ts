@@ -91,6 +91,7 @@ const RELATED_HOOKS: Record<string, string> = {
   "dont-say-yes-to-team-parent-first-huddle": "If the first huddle wants your whole season",
   "one-halloween-costume-not-three-events": "If Halloween is turning into three costumes",
   "the-heat-bill-before-it-gets-cold": "If the first cold week is about to bill you",
+  "the-week-school-closes-and-work-does-not": "If school is out and the job is not",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {

@@ -10,7 +10,7 @@ category: Money
 readTime: 6 min
 publishedAt: "2026-10-07"
 updatedAt: "2026-10-01"
-status: scheduled
+status: published
 keywords:
   - cheap halloween costume for kids
   - halloween costume budget for families
