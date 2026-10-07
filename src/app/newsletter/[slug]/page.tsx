@@ -16,6 +16,8 @@ import { NOINDEX, absoluteUrl, buildPageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const revalidate = 3600;
+/** Lets an issue dated in the future render on its Sunday without a redeploy. */
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return getNewsletterIssues().map((issue) => ({ slug: issue.slug }));
@@ -66,7 +68,7 @@ export default async function NewsletterIssuePage({
       <JsonLd data={articleLd} />
       <nav aria-label="Breadcrumb" className="text-sm text-ink-soft">
         <Link href="/newsletter" className="font-medium text-pine hover:text-rust">
-          ← Sunday Dispatch archive
+          <span aria-hidden>← </span>All Dispatches
         </Link>
       </nav>
 
@@ -82,6 +84,16 @@ export default async function NewsletterIssuePage({
         <h1 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">{issue.title}</h1>
         <p className="mt-4 text-lg leading-8 text-ink-soft">{issue.excerpt}</p>
       </header>
+
+      <p
+        role="note"
+        className="mt-6 flex gap-2 rounded-lg border border-rule bg-paper-2/60 px-4 py-3 text-sm leading-6 text-ink-soft"
+      >
+        <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+        <span>
+          Prices and deals reflect the date of publication and may expire or change.
+        </span>
+      </p>
 
       {issue.takeaways.length > 0 ? (
         <section
@@ -109,8 +121,8 @@ export default async function NewsletterIssuePage({
         <GuideMarkdown content={issue.content} />
       </div>
 
-      <div className="mt-10">
-        <NewsletterDeals deals={issue.deals} headingId="issue-deals" />
+      <div className="mt-12">
+        <NewsletterDeals deals={issue.deals} headingId="issue-deals" variant="callout" />
       </div>
 
       {newer || older ? (

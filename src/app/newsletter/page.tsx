@@ -163,7 +163,6 @@ function LatestIssueCard({ issue }: { issue: NewsletterIssue }) {
           <NewsletterDeals
             deals={issue.deals.slice(0, 3)}
             headingId={`deals-${issue.slug}`}
-            compact
           />
         </div>
       </div>
