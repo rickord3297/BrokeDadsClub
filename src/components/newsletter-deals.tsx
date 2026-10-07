@@ -4,6 +4,9 @@ import {
   type DealItem,
 } from "@/lib/newsletter-model";
 
+/** Google asks for "sponsored" on paid/affiliate links; "nofollow" covers crawlers that ignore it. */
+const DEAL_LINK_REL = "noopener noreferrer nofollow sponsored";
+
 export function NewsletterDeals({
   deals,
   headingId,
@@ -59,22 +62,19 @@ export function NewsletterDeals({
                 <span className="rounded-full bg-rust/15 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-rust-2">
                   {dealMerchantLabel(deal)}
                 </span>
-                <h3 className="mt-3 font-semibold leading-snug text-ink">{deal.title}</h3>
+                <h3 className="mt-3 font-display text-xl leading-snug text-ink">{deal.title}</h3>
+                <p className="mt-1 text-sm font-semibold text-pine">
+                  Target price: {formatTargetPrice(deal.targetPrice)}
+                </p>
                 {deal.note ? (
-                  <p className="mt-1.5 text-sm leading-6 text-ink-soft">{deal.note}</p>
+                  <p className="mt-2 text-sm leading-6 text-ink-soft">{deal.note}</p>
                 ) : null}
               </div>
-              <div className="flex shrink-0 items-center justify-between gap-4 border-t border-rule/80 pt-3 sm:w-40 sm:flex-col sm:items-end sm:border-0 sm:pt-0 sm:text-right">
-                <p className="text-xs leading-4 text-ink-soft">
-                  Target price
-                  <span className="block font-display text-2xl leading-8 text-ink">
-                    {formatTargetPrice(deal.targetPrice)}
-                  </span>
-                </p>
+              <div className="shrink-0 sm:pt-8">
                 <a
                   href={deal.url}
                   target="_blank"
-                  rel="sponsored noopener noreferrer"
+                  rel={DEAL_LINK_REL}
                   className="inline-flex h-10 items-center rounded-full bg-pine px-4 text-sm font-semibold text-paper transition hover:bg-pine-2"
                 >
                   Check price
@@ -108,7 +108,7 @@ export function NewsletterDeals({
             <a
               href={deal.url}
               target="_blank"
-              rel="sponsored noopener noreferrer"
+              rel={DEAL_LINK_REL}
               className="mt-3 text-sm font-semibold text-pine underline decoration-pine/30 underline-offset-2 transition hover:text-rust"
             >
               Check price at {dealMerchantLabel(deal)}

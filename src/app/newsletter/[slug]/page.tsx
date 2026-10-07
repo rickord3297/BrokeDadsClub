@@ -68,7 +68,7 @@ export default async function NewsletterIssuePage({
       <JsonLd data={articleLd} />
       <nav aria-label="Breadcrumb" className="text-sm text-ink-soft">
         <Link href="/newsletter" className="font-medium text-pine hover:text-rust">
-          <span aria-hidden>← </span>All Dispatches
+          <span aria-hidden>← </span>Back to all dispatches
         </Link>
       </nav>
 
@@ -93,7 +93,8 @@ export default async function NewsletterIssuePage({
       >
         <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
         <span>
-          Prices and deals reflect the date of publication and may expire or change.
+          Deals and target prices reflect the date of publication and may expire or
+          change.
         </span>
       </p>
 
@@ -124,7 +125,12 @@ export default async function NewsletterIssuePage({
       </div>
 
       <div className="mt-12">
-        <NewsletterDeals deals={issue.deals} headingId="issue-deals" variant="callout" />
+        <NewsletterDeals
+          deals={issue.deals}
+          headingId="issue-deals"
+          variant="callout"
+          heading="Dad Tax Offsets"
+        />
       </div>
 
       {newer || older ? (
@@ -155,9 +161,9 @@ export default async function NewsletterIssuePage({
 
       <div className="mt-12">
         <NewsletterSignupCard
-          kicker="Sunday email"
-          title="Get the next one in your inbox"
-          body="One email every Sunday at 9am Central. A guide breakdown, real dad math, and 3 vetted deals."
+          kicker="Sunday Dispatch"
+          title="Sign up to stay informed"
+          body="One email every Sunday at 9am Central: a guide breakdown, real dad math, and 3 vetted deals."
           source="newsletter_issue"
           headingLevel="h2"
           showArchiveLink={false}
