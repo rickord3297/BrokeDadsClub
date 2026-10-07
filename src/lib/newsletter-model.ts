@@ -13,6 +13,17 @@ export interface DealItem {
   url: string;
 }
 
+export const WHAT_YOU_MISSED_TYPES = ["guide", "printable", "shop"] as const;
+export type WhatYouMissedType = (typeof WHAT_YOU_MISSED_TYPES)[number];
+
+export interface WhatYouMissedItem {
+  title: string;
+  /** Site path ("/guides/...", "/resources/...", "/shop/...") or absolute URL. */
+  href: string;
+  type: WhatYouMissedType;
+  description: string;
+}
+
 export interface NewsletterIssue {
   slug: string;
   issueNumber: number;
@@ -21,13 +32,22 @@ export interface NewsletterIssue {
   publishedAt: string;
   readTime: string;
   excerpt: string;
+  /** Short bullets for the archive cards. */
   takeaways: string[];
+  /** Primary guide spotlighted this week. Empty when the issue has no spotlight. */
+  featuredGuideSlug: string;
+  /** 1-2 sentence breakdown shown with the spotlight. */
+  featuredGuideNote: string;
+  whatYouMissed: WhatYouMissedItem[];
   deals: DealItem[];
-  /** Markdown body. */
+  /** Markdown body: the Sunday Note. */
   content: string;
 }
 
-export type NewsletterIssueListItem = Omit<NewsletterIssue, "content" | "deals"> & {
+export type NewsletterIssueListItem = Pick<
+  NewsletterIssue,
+  "slug" | "issueNumber" | "title" | "publishedAt" | "readTime" | "excerpt" | "takeaways"
+> & {
   dealCount: number;
 };
 

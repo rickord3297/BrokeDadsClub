@@ -11,6 +11,24 @@ takeaways:
   - "The second store trip is where the week goes over. Shop once, cook extra Monday."
   - "A trunk kit turns a $28 drive-thru stop into a $3 snack. It pays for itself in two bad afternoons."
   - "Check tire pressure monthly. Low tires cost you at the pump every single mile."
+featuredGuideSlug: trunk-dinner-kit-beat-gas-station-panic
+featuredGuideNote: >-
+  The gas station is where good grocery weeks go to die. This one is a small bin
+  of shelf-stable food that lives in the car, so the 5:40 p.m. panic stop
+  becomes a $3 snack instead of a $28 drive-thru.
+whatYouMissed:
+  - title: "The second grocery trip is how $47 becomes $90"
+    href: /guides/second-grocery-trip-blows-the-week
+    type: guide
+    description: The quick run for milk is never just milk. Where the second trip comes from and how to plan it out of the week.
+  - title: The $47 grocery-week checklist
+    href: /resources/grocery-week-checklist
+    type: printable
+    description: The whole cart on one sheet. Protein, starch, produce, pantry, and a swap box for when chicken is up. Fillable on your phone.
+  - title: The Castle Pin
+    href: /shop/castle-pin
+    type: shop
+    description: "$5. The club crest in enamel. The cheapest way to back the free guides without buying a shirt."
 deals:
   - title: Collapsible trunk organizer tote
     merchant: Amazon
@@ -29,35 +47,12 @@ deals:
     url: https://www.amazon.com/s?k=digital+tire+pressure+gauge
 ---
 
-This week is about two plans that work together: the one at the grocery store and the one in your trunk.
+Most grocery budgets do not die at the grocery store. They die on Thursday at 5:40 p.m., when practice ran long, nothing is thawed, and the drive-thru is right there.
 
-## The grocery side
+So this week is two plans that work together. **One store, one trip, one list** for the week. And **one small bin in the trunk** for the afternoons the plan breaks anyway.
 
-The full system is in [the $47 grocery week](/guides/the-47-dollar-grocery-week), but here is the short version: **one store, one trip, one list.** Cook extra Monday so Wednesday is leftovers. The cart is boring on purpose.
+The trunk kit is not an emergency bunker. Shelf-stable snacks with real protein, a few bottles of water, wipes, and a tire gauge because you are already in the car. A box of snack bars costs less than one drive-thru stop for four, and it covers a month of bad afternoons.
 
-The week does not usually fail at the register. It fails on Thursday at 5:40 p.m. when practice ran long, there is nothing thawed, and the drive-thru is right there.
-
-## The trunk side
-
-That is what the trunk kit is for. Not an emergency bunker. A small bin that covers the gap between "we're starving" and "we're home."
-
-What goes in it:
-
-- **Shelf-stable snacks** with real protein, not just crackers
-- **Water**, a few bottles, swapped out every couple of months
-- **A tire gauge**, because you are already in the car
-- **Wet wipes and a roll of paper towels**, because kids
-
-What does not go in it: anything that melts, anything that expires in a week, anything you would be mad about if it got crushed.
-
-For the dinner version of this idea, see the [trunk dinner kit](/guides/trunk-dinner-kit-beat-gas-station-panic).
-
-## The math
-
-One drive-thru stop for a family of four runs $25 to $35 now. A box of snack bars stored in the trunk costs less than that and covers a month of bad afternoons. You do not need to win every day. You need to stop losing the same day every week.
-
-## Do this today
-
-Put a bin in the trunk. Put whatever snacks you have in it. Upgrade it later. A half-stocked kit beats the perfect one you are still researching.
+You do not need to win every day. You need to stop losing the same day every week. Put a bin in the trunk today with whatever snacks you have. Upgrade it later.
 
 See you next Sunday.

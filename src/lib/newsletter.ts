@@ -4,9 +4,11 @@ import matter from "gray-matter";
 import { withAffiliateTag } from "@/lib/affiliate";
 import {
   DEAL_MERCHANTS,
+  WHAT_YOU_MISSED_TYPES,
   type DealItem,
   type DealMerchant,
   type NewsletterIssue,
+  type WhatYouMissedItem,
 } from "@/lib/newsletter-model";
 
 export type {
@@ -14,9 +16,12 @@ export type {
   DealMerchant,
   NewsletterIssue,
   NewsletterIssueListItem,
+  WhatYouMissedItem,
+  WhatYouMissedType,
 } from "@/lib/newsletter-model";
 export {
   DEAL_MERCHANTS,
+  WHAT_YOU_MISSED_TYPES,
   dealMerchantLabel,
   formatIssueDate,
   formatIssueNumber,
@@ -61,6 +66,28 @@ function parseDeals(value: unknown, file: string): DealItem[] {
         targetPrice: targetPrice.trim(),
         note: row.note.trim(),
         url,
+      },
+    ];
+  });
+}
+
+function parseWhatYouMissed(value: unknown, file: string): WhatYouMissedItem[] {
+  if (!Array.isArray(value)) return [];
+  return value.flatMap((item, index) => {
+    const row = (item ?? {}) as Record<string, unknown>;
+    const type = WHAT_YOU_MISSED_TYPES.find((option) => option === row.type);
+    const href = isNonEmptyString(row.href) ? row.href.trim() : "";
+    const validHref = href.startsWith("/") || /^https?:\/\//.test(href);
+    if (!isNonEmptyString(row.title) || !type || !validHref) {
+      console.error(`Skipping invalid whatYouMissed #${index + 1} in newsletter ${file}`);
+      return [];
+    }
+    return [
+      {
+        title: row.title.trim(),
+        href,
+        type,
+        description: typeof row.description === "string" ? row.description.trim() : "",
       },
     ];
   });
@@ -113,6 +140,13 @@ function readAllIssues(): NewsletterIssue[] {
             takeaways: Array.isArray(data.takeaways)
               ? data.takeaways.filter(isNonEmptyString).map((item) => item.trim())
               : [],
+            featuredGuideSlug: isNonEmptyString(data.featuredGuideSlug)
+              ? data.featuredGuideSlug.trim()
+              : "",
+            featuredGuideNote: isNonEmptyString(data.featuredGuideNote)
+              ? data.featuredGuideNote.trim()
+              : "",
+            whatYouMissed: parseWhatYouMissed(data.whatYouMissed, file),
             deals: parseDeals(data.deals, file),
             content,
           },
