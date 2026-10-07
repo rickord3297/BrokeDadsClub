@@ -6,7 +6,10 @@ export type NewsletterDeal = {
   /** Buy-at-or-under price in USD. */
   targetPrice: number;
   note: string;
-  /** Outbound link. Render with rel="sponsored noopener" since it may carry an affiliate tag. */
+  /**
+   * Outbound link. In frontmatter this may also be a bare Amazon ASIN; Amazon links get the
+   * Associate tag at load time. Render with rel="sponsored noopener".
+   */
   affiliateUrl: string;
 };
 

@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { withAffiliateTag } from "@/lib/affiliate";
 import type { NewsletterDeal, NewsletterIssue } from "@/lib/newsletter-model";
 
 export type {
@@ -26,14 +27,16 @@ function parseDeals(value: unknown, file: string): NewsletterDeal[] {
   return value.flatMap((item, index) => {
     const row = (item ?? {}) as Record<string, unknown>;
     const targetPrice = Number(row.targetPrice);
+    const affiliateUrl = isNonEmptyString(row.affiliateUrl)
+      ? withAffiliateTag(row.affiliateUrl)
+      : null;
     const valid =
       isNonEmptyString(row.title) &&
       isNonEmptyString(row.merchant) &&
       Number.isFinite(targetPrice) &&
       targetPrice >= 0 &&
       typeof row.note === "string" &&
-      isNonEmptyString(row.affiliateUrl) &&
-      /^https?:\/\//.test(row.affiliateUrl);
+      affiliateUrl != null;
     if (!valid) {
       console.error(`Skipping invalid deal #${index + 1} in newsletter ${file}`);
       return [];
@@ -44,7 +47,7 @@ function parseDeals(value: unknown, file: string): NewsletterDeal[] {
         merchant: row.merchant as string,
         targetPrice,
         note: (row.note as string).trim(),
-        affiliateUrl: row.affiliateUrl as string,
+        affiliateUrl,
       },
     ];
   });

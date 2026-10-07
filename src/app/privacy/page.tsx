@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AMAZON_DISCLOSURE } from "@/lib/affiliate";
 import { buildPageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -30,6 +31,19 @@ export default function PrivacyPage() {
           back to our guides and printables. That connection uses Pinterest&apos;s
           OAuth tokens stored for our own publishing tools. We do not post on
           your personal Pinterest account or sell Pinterest data.
+        </p>
+        <h2 id="affiliate-links">Affiliate links</h2>
+        <p>
+          Some outbound links on {site.name} and in the Sunday email are
+          affiliate links. If you buy through one, we may earn a commission at
+          no extra cost to you. {AMAZON_DISCLOSURE}
+        </p>
+        <p>
+          When you click an affiliate link, the retailer (for example, Amazon)
+          may set cookies or use similar technology on its own site to credit
+          the referral. Those retailers handle that data under their own privacy
+          policies. We do not receive your name, payment details, or what else
+          you buy, only aggregate reports of qualifying sales.
         </p>
         <p>
           Every Sunday email includes an unsubscribe link. You can also email{" "}

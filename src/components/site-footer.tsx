@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ClubLogo } from "@/components/club-logo";
 import { SocialLinks } from "@/components/social-links";
 import { SiteTagline } from "@/components/site-tagline";
+import { AMAZON_DISCLOSURE } from "@/lib/affiliate";
 import { site } from "@/lib/site";
 
 export function SiteFooter() {
@@ -62,7 +63,8 @@ export function SiteFooter() {
       </div>
 
       <div className="border-t border-white/15">
-        <div className="mx-auto max-w-6xl px-4 py-4 text-sm text-paper/70 sm:px-6">
+        <div className="mx-auto max-w-6xl space-y-1 px-4 py-4 text-sm text-paper/70 sm:px-6">
+          <p className="text-xs text-paper/55">{AMAZON_DISCLOSURE}</p>
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
         </div>
       </div>
