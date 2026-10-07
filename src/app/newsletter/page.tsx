@@ -14,9 +14,10 @@ import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 export const revalidate = 3600;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "The Sunday Dispatch Archive: Weekly Dad Math and Deals",
+  title: "The Sunday Dispatch Archive · Broke Dads Club",
+  absoluteTitle: true,
   description:
-    "Every past issue of the Sunday Dispatch: one guide breakdown, real dad math, and 3 vetted deals that offset the dad tax. No spam, no hustle-bro advice.",
+    "Every past issue of the Sunday Dispatch: one guide breakdown, real dad math, and 3 vetted deals that offset the dad tax. No fluff, no hustle-bro advice.",
   path: "/newsletter",
   keywords: [
     "dad newsletter",
@@ -48,22 +49,24 @@ export default function NewsletterPage() {
       {issues.length > 0 ? <JsonLd data={itemListLd} /> : null}
 
       <header>
-        <p className="text-xs uppercase tracking-[0.18em] text-rust">Sunday Dispatch</p>
-        <h1 className="mt-3 font-display text-4xl sm:text-5xl">
+        <span className="inline-flex rounded-full bg-rust/15 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-rust-2">
+          Sunday Dispatch
+        </span>
+        <h1 className="mt-4 font-display text-4xl sm:text-5xl">
           The Sunday Dispatch Archive
         </h1>
         <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
           One email every Sunday: a guide breakdown, real dad math, and 3 vetted deals
-          that offset the dad tax. No spam, no hustle-bro advice.
+          that offset the dad tax. No fluff, no hustle-bro advice.
         </p>
       </header>
 
       <div className="mt-8">
         <NewsletterSignupCard
           id="subscribe"
-          kicker="Sunday email"
-          title="Get the next dispatch"
-          body="Lands every Sunday at 9am Central, plus the free grocery checklist to start the week."
+          kicker="Sunday Dispatch"
+          title="Sign up to stay informed"
+          body="One email every Sunday at 9am Central, plus the free grocery checklist to start the week."
           source="newsletter_index"
           headingLevel="h2"
           showArchiveLink={false}
@@ -165,6 +168,7 @@ function LatestIssueCard({ issue }: { issue: NewsletterIssue }) {
           <NewsletterDeals
             deals={issue.deals.slice(0, 3)}
             headingId={`deals-${issue.slug}`}
+            heading="This Week's Deals"
           />
         </div>
       </div>

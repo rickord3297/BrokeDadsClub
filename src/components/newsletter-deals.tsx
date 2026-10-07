@@ -8,9 +8,11 @@ export function NewsletterDeals({
   deals,
   headingId,
   variant = "compact",
+  heading,
 }: {
   deals: DealItem[];
   headingId: string;
+  heading?: string;
   /** "compact" stacks inside archive cards; "callout" is the full issue-page block. */
   variant?: "compact" | "callout";
 }) {
@@ -32,7 +34,7 @@ export function NewsletterDeals({
             Deals
           </p>
           <h2 id={headingId} className="mt-1 font-display text-2xl leading-snug sm:text-3xl">
-            This Week&apos;s Dad Tax Offsets
+            {heading ?? "This Week's Dad Tax Offsets"}
           </h2>
           <p className="mt-1 text-sm leading-6 text-ink-soft">
             Buy at or under the target price. Above it, wait.
@@ -43,7 +45,7 @@ export function NewsletterDeals({
           id={headingId}
           className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-soft"
         >
-          {deals.length === 3 ? "3 vetted deals" : "Vetted deals"} this week
+          {heading ?? `${deals.length === 3 ? "3 vetted deals" : "Vetted deals"} this week`}
         </h3>
       )}
       <ul className={`grid gap-3 ${isCallout ? "mt-5" : "mt-3"}`}>
