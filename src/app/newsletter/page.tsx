@@ -66,6 +66,7 @@ export default function NewsletterPage() {
           body="Lands every Sunday at 9am Central, plus the free grocery checklist to start the week."
           source="newsletter_index"
           headingLevel="h2"
+          showArchiveLink={false}
         />
       </div>
 

@@ -8,6 +8,7 @@ export function NewsletterSignupCard({
   source,
   headingLevel = "h3",
   id,
+  showArchiveLink = true,
 }: {
   kicker: string;
   title: string;
@@ -15,6 +16,7 @@ export function NewsletterSignupCard({
   source: string;
   headingLevel?: "h2" | "h3";
   id?: string;
+  showArchiveLink?: boolean;
 }) {
   const Heading = headingLevel;
   const headingId = id ? `${id}-heading` : undefined;
@@ -43,6 +45,7 @@ export function NewsletterSignupCard({
             successMessage={site.weekStart.success}
             successHref="/resources/grocery-week-checklist"
             successLinkLabel="Print the grocery checklist"
+            showArchiveLink={showArchiveLink}
           />
         </div>
       </div>

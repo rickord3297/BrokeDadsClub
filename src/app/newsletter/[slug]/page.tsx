@@ -158,6 +158,7 @@ export default async function NewsletterIssuePage({
           body="One email every Sunday at 9am Central. A guide breakdown, real dad math, and 3 vetted deals."
           source="newsletter_issue"
           headingLevel="h2"
+          showArchiveLink={false}
         />
       </div>
     </article>

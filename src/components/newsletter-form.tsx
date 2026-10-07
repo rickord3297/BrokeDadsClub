@@ -13,6 +13,8 @@ type NewsletterFormProps = {
   successHref?: string;
   successLinkLabel?: string;
   trustLine?: string;
+  /** Hide on the newsletter pages themselves, where the link would point at the current page. */
+  showArchiveLink?: boolean;
 };
 
 function validateEmail(value: string) {
@@ -32,6 +34,7 @@ export function NewsletterForm({
   successHref,
   successLinkLabel,
   trustLine,
+  showArchiveLink = true,
 }: NewsletterFormProps) {
   const inputId = useId();
   const feedbackId = useId();
@@ -200,6 +203,25 @@ export function NewsletterForm({
         </p>
       ) : trustLine ? (
         <p className="text-xs leading-5 text-ink-soft">{trustLine}</p>
+      ) : null}
+      {showArchiveLink ? (
+        <p
+          className={`w-full basis-full text-xs leading-5 ${
+            isInline || isArticle ? "text-ink-soft" : "text-paper/70"
+          }`}
+        >
+          Want to see what we send?{" "}
+          <Link
+            href="/newsletter"
+            className={`font-medium underline underline-offset-2 transition ${
+              isInline || isArticle
+                ? "text-pine decoration-pine/30 hover:text-rust"
+                : "text-gold decoration-gold/40 hover:text-paper"
+            }`}
+          >
+            Read previous Sunday drops in the archive.
+          </Link>
+        </p>
       ) : null}
     </form>
   );

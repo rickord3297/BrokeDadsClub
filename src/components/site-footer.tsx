@@ -40,7 +40,7 @@ export function SiteFooter() {
               Printables
             </Link>
             <Link href="/newsletter" className="transition hover:text-gold">
-              Sunday Dispatch
+              Newsletter
             </Link>
             <Link href="/shop" className="transition hover:text-gold">
               Shop
