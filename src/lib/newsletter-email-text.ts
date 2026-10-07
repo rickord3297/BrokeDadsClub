@@ -1,6 +1,6 @@
-import { AMAZON_DISCLOSURE, isAmazonUrl } from "@/lib/affiliate";
 import type { Guide } from "@/lib/guide-model";
 import {
+  dealDisclosures,
   dealMerchantLabel,
   formatIssueDate,
   formatIssueNumber,
@@ -98,7 +98,7 @@ export function buildIssueEmailText(issue: NewsletterIssue, featuredGuide: Guide
         ...deals,
         "",
         "Deals and target prices reflect the date of publication and may expire or change.",
-        ...(issue.deals.some((deal) => isAmazonUrl(deal.url)) ? [AMAZON_DISCLOSURE] : []),
+        ...dealDisclosures(issue.deals),
       ]),
     );
   }

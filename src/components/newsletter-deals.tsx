@@ -1,5 +1,5 @@
 import { DealCard } from "@/components/deal-card";
-import type { DealItem } from "@/lib/newsletter-model";
+import { dealDisclosures, type DealItem } from "@/lib/newsletter-model";
 
 export function NewsletterDeals({
   deals,
@@ -56,7 +56,7 @@ export function NewsletterDeals({
       </ul>
       <p className="mt-4 text-xs leading-5 text-ink-soft/80">
         {isCallout ? "" : "Target prices are what we would pay, not live prices. "}
-        Some links may earn us a small commission at no cost to you.
+        {dealDisclosures(deals).join(" ")}
       </p>
     </section>
   );

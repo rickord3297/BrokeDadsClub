@@ -1,15 +1,15 @@
 /** Shared newsletter issue shapes safe for client components. */
 
-export const DEAL_MERCHANTS = ["Amazon", "Home Depot", "Target", "Other"] as const;
-export type DealMerchant = (typeof DEAL_MERCHANTS)[number];
+import { merchantDisclosures, merchantName, type ApprovedMerchant } from "@/lib/affiliate";
 
 export interface DealItem {
   title: string;
-  merchant: DealMerchant;
+  /** Enabled merchant id from AFFILIATE_CONFIG. */
+  merchant: ApprovedMerchant;
   /** Display-ready price target, e.g. "$24.99", "Under $25", "$0.90/bar". */
   targetPrice: string;
   note: string;
-  /** Clean retailer URL or amazonUrl() output. Amazon links are tagged at load time. Render with rel="sponsored noopener". */
+  /** Tracked link from buildAffiliateUrl(), resolved at load time. */
   url: string;
 }
 
@@ -56,14 +56,13 @@ export function toNewsletterListItem(issue: NewsletterIssue): NewsletterIssueLis
   return { slug, issueNumber, title, publishedAt, readTime, excerpt, takeaways, dealCount: deals.length };
 }
 
-/** "Other" merchants show the retailer's domain instead of a generic label. */
-export function dealMerchantLabel(deal: Pick<DealItem, "merchant" | "url">): string {
-  if (deal.merchant !== "Other") return deal.merchant;
-  try {
-    return new URL(deal.url).hostname.replace(/^www\./, "");
-  } catch {
-    return "Retailer";
-  }
+export function dealMerchantLabel(deal: Pick<DealItem, "merchant">): string {
+  return merchantName(deal.merchant);
+}
+
+/** Required affiliate disclosures for the merchants in a deal list. */
+export function dealDisclosures(deals: Pick<DealItem, "merchant">[]): string[] {
+  return merchantDisclosures(deals.map((deal) => deal.merchant));
 }
 
 /** Bare numbers like "24.99" get a dollar sign; anything else is shown as written. */

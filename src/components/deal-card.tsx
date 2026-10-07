@@ -1,32 +1,35 @@
-import {
-  dealMerchantLabel,
-  formatTargetPrice,
-  type DealItem,
-} from "@/lib/newsletter-model";
+import { AFFILIATE_CONFIG, type ApprovedMerchant } from "@/lib/affiliate";
+import { formatTargetPrice, type DealItem } from "@/lib/newsletter-model";
 
 /** Google asks for "sponsored" on paid/affiliate links; "nofollow" covers crawlers that ignore it. */
 export const DEAL_LINK_REL = "noopener noreferrer nofollow sponsored";
 
-function MerchantBadge({ deal }: { deal: DealItem }) {
+function MerchantBadge({ merchant }: { merchant: ApprovedMerchant }) {
   return (
     <span className="rounded-full bg-rust/15 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-rust-2">
-      {dealMerchantLabel(deal)}
+      {AFFILIATE_CONFIG[merchant].name}
     </span>
   );
 }
 
 /**
  * One curated deal. "row" is the full-width issue-page layout; "compact" stacks
- * inside the archive's latest-issue card.
+ * inside the archive's latest-issue card. Lists show the merchant disclosure
+ * once below the cards; pass `showDisclosure` when a card stands alone.
  */
 export function DealCard({
   deal,
   variant = "row",
+  showDisclosure = false,
 }: {
   deal: DealItem;
   variant?: "row" | "compact";
+  showDisclosure?: boolean;
 }) {
-  const merchant = dealMerchantLabel(deal);
+  const { name: merchant, disclosure } = AFFILIATE_CONFIG[deal.merchant];
+  const disclosureLine = showDisclosure ? (
+    <p className="mt-3 text-xs leading-5 text-ink-soft/80">{disclosure}</p>
+  ) : null;
   const srLabel = (
     <span className="sr-only">
       {" "}at {merchant} for {deal.title} (opens in a new tab)
@@ -37,7 +40,7 @@ export function DealCard({
     return (
       <article className="flex h-full flex-col rounded-xl border border-rule bg-paper p-4">
         <div className="flex items-start justify-between gap-3">
-          <MerchantBadge deal={deal} />
+          <MerchantBadge merchant={deal.merchant} />
           <p className="text-right text-xs leading-4 text-ink-soft">
             Target price
             <span className="block font-display text-xl leading-6 text-ink">
@@ -57,6 +60,7 @@ export function DealCard({
         >
           Check price{srLabel} <span aria-hidden>→</span>
         </a>
+        {disclosureLine}
       </article>
     );
   }
@@ -64,7 +68,7 @@ export function DealCard({
   return (
     <article className="flex flex-col gap-4 rounded-xl border border-rule bg-paper p-4 sm:flex-row sm:items-start sm:justify-between sm:p-5">
       <div className="min-w-0 flex-1">
-        <MerchantBadge deal={deal} />
+        <MerchantBadge merchant={deal.merchant} />
         <h3 className="mt-3 font-display text-xl leading-snug text-ink">{deal.title}</h3>
         <p className="mt-1 text-sm font-semibold text-pine">
           Target price: {formatTargetPrice(deal.targetPrice)}
@@ -72,6 +76,7 @@ export function DealCard({
         {deal.note ? (
           <p className="mt-2 text-sm leading-6 text-ink-soft">{deal.note}</p>
         ) : null}
+        {disclosureLine}
       </div>
       <div className="shrink-0 sm:pt-8">
         <a
