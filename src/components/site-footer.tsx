@@ -37,11 +37,11 @@ export function SiteFooter() {
             <Link href="/guides" className="transition hover:text-gold">
               Guides
             </Link>
-            <Link href="/resources" className="transition hover:text-gold">
-              Printables
-            </Link>
             <Link href="/newsletter" className="transition hover:text-gold">
               Newsletter
+            </Link>
+            <Link href="/resources" className="transition hover:text-gold">
+              Printables
             </Link>
             <Link href="/shop" className="transition hover:text-gold">
               Shop
