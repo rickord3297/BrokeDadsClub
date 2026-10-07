@@ -6,7 +6,7 @@ import { NewsletterSignupCard } from "@/components/newsletter-signup-card";
 import {
   formatIssueDate,
   formatIssueNumber,
-  getNewsletterIssues,
+  getAllIssues,
   type NewsletterIssue,
 } from "@/lib/newsletter";
 import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
@@ -28,7 +28,7 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 export default function NewsletterPage() {
-  const issues = getNewsletterIssues();
+  const issues = getAllIssues();
   const [latest, ...archive] = issues;
 
   const itemListLd = {
@@ -116,6 +116,7 @@ function IssueMeta({ issue }: { issue: NewsletterIssue }) {
       <time dateTime={issue.publishedAt} className="text-xs font-medium text-ink-soft">
         {formatIssueDate(issue.publishedAt)}
       </time>
+      <span className="text-xs font-medium text-ink-soft">· {issue.readTime} read</span>
     </>
   );
 }

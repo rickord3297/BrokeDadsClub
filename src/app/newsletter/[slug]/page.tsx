@@ -9,8 +9,8 @@ import {
   formatIssueDate,
   formatIssueNumber,
   getAdjacentIssues,
-  getNewsletterIssue,
-  getNewsletterIssues,
+  getAllIssues,
+  getIssueBySlug,
 } from "@/lib/newsletter";
 import { NOINDEX, absoluteUrl, buildPageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -20,14 +20,14 @@ export const revalidate = 3600;
 export const dynamicParams = true;
 
 export function generateStaticParams() {
-  return getNewsletterIssues().map((issue) => ({ slug: issue.slug }));
+  return getAllIssues().map((issue) => ({ slug: issue.slug }));
 }
 
 export async function generateMetadata({
   params,
 }: PageProps<"/newsletter/[slug]">): Promise<Metadata> {
   const { slug } = await params;
-  const issue = getNewsletterIssue(slug);
+  const issue = getIssueBySlug(slug);
   if (!issue) return { title: "Dispatch not found", ...NOINDEX };
 
   const base = buildPageMetadata({
@@ -46,7 +46,7 @@ export default async function NewsletterIssuePage({
   params,
 }: PageProps<"/newsletter/[slug]">) {
   const { slug } = await params;
-  const issue = getNewsletterIssue(slug);
+  const issue = getIssueBySlug(slug);
   if (!issue) notFound();
 
   const { newer, older } = getAdjacentIssues(issue);
@@ -80,6 +80,8 @@ export default async function NewsletterIssuePage({
           <time dateTime={issue.publishedAt} className="text-xs font-medium text-ink-soft">
             {formatIssueDate(issue.publishedAt)}
           </time>
+          <span aria-hidden className="text-xs text-ink-soft">·</span>
+          <span className="text-xs font-medium text-ink-soft">{issue.readTime} read</span>
         </div>
         <h1 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">{issue.title}</h1>
         <p className="mt-4 text-lg leading-8 text-ink-soft">{issue.excerpt}</p>

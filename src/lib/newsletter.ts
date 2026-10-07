@@ -2,14 +2,22 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { withAffiliateTag } from "@/lib/affiliate";
-import type { NewsletterDeal, NewsletterIssue } from "@/lib/newsletter-model";
+import {
+  DEAL_MERCHANTS,
+  type DealItem,
+  type DealMerchant,
+  type NewsletterIssue,
+} from "@/lib/newsletter-model";
 
 export type {
-  NewsletterDeal,
+  DealItem,
+  DealMerchant,
   NewsletterIssue,
   NewsletterIssueListItem,
 } from "@/lib/newsletter-model";
 export {
+  DEAL_MERCHANTS,
+  dealMerchantLabel,
   formatIssueDate,
   formatIssueNumber,
   formatTargetPrice,
@@ -22,32 +30,37 @@ function isNonEmptyString(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0;
 }
 
-function parseDeals(value: unknown, file: string): NewsletterDeal[] {
+function parseMerchant(value: unknown): DealMerchant {
+  if (typeof value !== "string") return "Other";
+  const match = DEAL_MERCHANTS.find(
+    (merchant) => merchant.toLowerCase() === value.trim().toLowerCase(),
+  );
+  return match ?? "Other";
+}
+
+function parseDeals(value: unknown, file: string): DealItem[] {
   if (!Array.isArray(value)) return [];
   return value.flatMap((item, index) => {
     const row = (item ?? {}) as Record<string, unknown>;
-    const targetPrice = Number(row.targetPrice);
-    const affiliateUrl = isNonEmptyString(row.affiliateUrl)
-      ? withAffiliateTag(row.affiliateUrl)
-      : null;
-    const valid =
-      isNonEmptyString(row.title) &&
-      isNonEmptyString(row.merchant) &&
-      Number.isFinite(targetPrice) &&
-      targetPrice >= 0 &&
-      typeof row.note === "string" &&
-      affiliateUrl != null;
-    if (!valid) {
+    const targetPrice =
+      typeof row.targetPrice === "number" ? String(row.targetPrice) : row.targetPrice;
+    const url = isNonEmptyString(row.url) ? withAffiliateTag(row.url) : null;
+    if (
+      !isNonEmptyString(row.title) ||
+      !isNonEmptyString(targetPrice) ||
+      typeof row.note !== "string" ||
+      url == null
+    ) {
       console.error(`Skipping invalid deal #${index + 1} in newsletter ${file}`);
       return [];
     }
     return [
       {
-        title: row.title as string,
-        merchant: row.merchant as string,
-        targetPrice,
-        note: (row.note as string).trim(),
-        affiliateUrl,
+        title: row.title.trim(),
+        merchant: parseMerchant(row.merchant),
+        targetPrice: targetPrice.trim(),
+        note: row.note.trim(),
+        url,
       },
     ];
   });
@@ -92,9 +105,10 @@ function readAllIssues(): NewsletterIssue[] {
         return [
           {
             slug: data.slug.trim(),
-            title: data.title.trim(),
             issueNumber,
+            title: data.title.trim(),
             publishedAt,
+            readTime: isNonEmptyString(data.readTime) ? data.readTime.trim() : "4 min",
             excerpt: typeof data.excerpt === "string" ? data.excerpt.trim() : "",
             takeaways: Array.isArray(data.takeaways)
               ? data.takeaways.filter(isNonEmptyString).map((item) => item.trim())
@@ -116,19 +130,23 @@ function isLive(issue: NewsletterIssue, now = new Date()): boolean {
 }
 
 /** Live issues, newest first. */
-export function getNewsletterIssues(): NewsletterIssue[] {
+export function getAllIssues(): NewsletterIssue[] {
   return readAllIssues().filter((issue) => isLive(issue));
 }
 
-export function getNewsletterIssue(slug: string): NewsletterIssue | null {
-  return getNewsletterIssues().find((issue) => issue.slug === slug) ?? null;
+export function getIssueBySlug(slug: string): NewsletterIssue | null {
+  return getAllIssues().find((issue) => issue.slug === slug) ?? null;
+}
+
+export function getLatestIssue(): NewsletterIssue | null {
+  return getAllIssues()[0] ?? null;
 }
 
 export function getAdjacentIssues(issue: NewsletterIssue): {
   newer: NewsletterIssue | null;
   older: NewsletterIssue | null;
 } {
-  const issues = getNewsletterIssues();
+  const issues = getAllIssues();
   const index = issues.findIndex((item) => item.slug === issue.slug);
   return {
     newer: index > 0 ? issues[index - 1] : null,

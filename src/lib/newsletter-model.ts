@@ -1,43 +1,55 @@
 /** Shared newsletter issue shapes safe for client components. */
 
-export type NewsletterDeal = {
-  title: string;
-  merchant: string;
-  /** Buy-at-or-under price in USD. */
-  targetPrice: number;
-  note: string;
-  /**
-   * Outbound link. In frontmatter this may also be a bare Amazon ASIN; Amazon links get the
-   * Associate tag at load time. Render with rel="sponsored noopener".
-   */
-  affiliateUrl: string;
-};
+export const DEAL_MERCHANTS = ["Amazon", "Home Depot", "Target", "Other"] as const;
+export type DealMerchant = (typeof DEAL_MERCHANTS)[number];
 
-export type NewsletterIssue = {
-  slug: string;
+export interface DealItem {
   title: string;
+  merchant: DealMerchant;
+  /** Display-ready price target, e.g. "$24.99", "Under $25", "$0.90/bar". */
+  targetPrice: string;
+  note: string;
+  /** Clean retailer URL or amazonUrl() output. Amazon links are tagged at load time. Render with rel="sponsored noopener". */
+  url: string;
+}
+
+export interface NewsletterIssue {
+  slug: string;
   issueNumber: number;
+  title: string;
   /** ISO date (YYYY-MM-DD) of the Sunday send. Future dates stay hidden until that day. */
   publishedAt: string;
+  readTime: string;
   excerpt: string;
-  /** Short bullets for archive cards. */
   takeaways: string[];
-  deals: NewsletterDeal[];
+  deals: DealItem[];
   /** Markdown body. */
   content: string;
-};
+}
 
 export type NewsletterIssueListItem = Omit<NewsletterIssue, "content" | "deals"> & {
   dealCount: number;
 };
 
 export function toNewsletterListItem(issue: NewsletterIssue): NewsletterIssueListItem {
-  const { slug, title, issueNumber, publishedAt, excerpt, takeaways, deals } = issue;
-  return { slug, title, issueNumber, publishedAt, excerpt, takeaways, dealCount: deals.length };
+  const { slug, issueNumber, title, publishedAt, readTime, excerpt, takeaways, deals } = issue;
+  return { slug, issueNumber, title, publishedAt, readTime, excerpt, takeaways, dealCount: deals.length };
 }
 
-export function formatTargetPrice(price: number): string {
-  return `$${price.toFixed(price % 1 === 0 ? 0 : 2)}`;
+/** "Other" merchants show the retailer's domain instead of a generic label. */
+export function dealMerchantLabel(deal: Pick<DealItem, "merchant" | "url">): string {
+  if (deal.merchant !== "Other") return deal.merchant;
+  try {
+    return new URL(deal.url).hostname.replace(/^www\./, "");
+  } catch {
+    return "Retailer";
+  }
+}
+
+/** Bare numbers like "24.99" get a dollar sign; anything else is shown as written. */
+export function formatTargetPrice(price: string): string {
+  const trimmed = price.trim();
+  return /^\d+(\.\d{1,2})?$/.test(trimmed) ? `$${trimmed}` : trimmed;
 }
 
 /** Issue dates are calendar days, so format in UTC to avoid slipping to Saturday in US timezones. */

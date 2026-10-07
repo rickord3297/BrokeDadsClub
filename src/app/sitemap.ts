@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { GUIDE_PILLARS } from "@/lib/guide-pillars";
 import { getGuides } from "@/lib/guides";
 import type { Guide } from "@/lib/guide-model";
-import { getNewsletterIssues, type NewsletterIssue } from "@/lib/newsletter";
+import { getAllIssues, type NewsletterIssue } from "@/lib/newsletter";
 import { getProducts } from "@/lib/products";
 import { resources } from "@/lib/resources";
 import { absoluteUrl } from "@/lib/seo";
@@ -29,7 +29,7 @@ function newest(dates: Date[]): Date {
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const guides = getGuides();
-  const issues = getNewsletterIssues();
+  const issues = getAllIssues();
   const products = await getProducts();
   const now = new Date();
   const latestGuide = newest(guides.map(guideModified));
