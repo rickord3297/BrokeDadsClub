@@ -6,6 +6,24 @@ import { withGuideGlossary } from "@/components/guide-glossary-text";
 import { ScriptCallout } from "@/components/script-callout";
 import { parseScriptListItem } from "@/lib/guide-content";
 import { slugifyHeading } from "@/lib/guide-model";
+import { site } from "@/lib/site";
+
+const SITE_HOSTS = new Set(
+  [new URL(site.url).hostname, "brokedadsclub.com", "www.brokedadsclub.com"],
+);
+
+/** Absolute or protocol-relative links to another host. Same-site absolute URLs stay internal. */
+export function isExternalHref(href: string): boolean {
+  if (!/^(https?:)?\/\//i.test(href)) return false;
+  try {
+    return !SITE_HOSTS.has(new URL(href, site.url).hostname.toLowerCase());
+  } catch {
+    return false;
+  }
+}
+
+const LINK_CLASS =
+  "font-medium text-pine underline decoration-rule underline-offset-2 hover:text-rust";
 
 function plainText(node: ReactNode): string {
   if (typeof node === "string" || typeof node === "number") return String(node);
@@ -36,10 +54,13 @@ export function GuideMarkdown({
   content,
   headingCounts,
   currentSlug,
+  externalLinkRel = "noopener noreferrer",
 }: {
   content: string;
   headingCounts?: Map<string, number>;
   currentSlug?: string;
+  /** rel for links that leave the site. External links always open in a new tab. */
+  externalLinkRel?: string;
 }) {
   const counts = headingCounts ?? new Map<string, number>();
 
@@ -60,15 +81,16 @@ export function GuideMarkdown({
       components={{
         a: ({ href, children }) => {
           if (!href) return <span>{children}</span>;
-          const external = href.startsWith("http");
+          if (isExternalHref(href)) {
+            return (
+              <a href={href} target="_blank" rel={externalLinkRel} className={LINK_CLASS}>
+                {children}
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            );
+          }
           return (
-            <Link
-              href={href}
-              className="font-medium text-pine underline decoration-rule underline-offset-2 hover:text-rust"
-              {...(external
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
-            >
+            <Link href={href} className={LINK_CLASS}>
               {children}
             </Link>
           );

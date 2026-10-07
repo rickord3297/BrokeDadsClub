@@ -105,7 +105,10 @@ export default async function NewsletterIssuePage({
       <section aria-labelledby="sunday-note" className="mt-10">
         <SectionHeading id="sunday-note" eyebrow="01 · This week" title="The Sunday Note" />
         <div className="prose-guide mt-4">
-          <GuideMarkdown content={issue.content} />
+          <GuideMarkdown
+            content={issue.content}
+            externalLinkRel="noopener noreferrer nofollow"
+          />
         </div>
       </section>
 
