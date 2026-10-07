@@ -8,5 +8,5 @@ Open any file to edit. `status: scheduled` goes live automatically on `published
 
 | Title | Go live | File |
 |-------|---------|------|
-| One Halloween costume, not three events | 2026-10-07 | [one-halloween-costume-not-three-events.md](guides/one-halloween-costume-not-three-events.md) |
 | The heat bill before it gets cold | 2026-10-10 | [the-heat-bill-before-it-gets-cold.md](guides/the-heat-bill-before-it-gets-cold.md) |
+| The week school closes and work does not | 2026-10-13 | [the-week-school-closes-and-work-does-not.md](guides/the-week-school-closes-and-work-does-not.md) |
