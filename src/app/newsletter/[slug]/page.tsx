@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CopyEmailTextButton } from "@/components/copy-email-text-button";
 import { GuideMarkdown } from "@/components/guide-markdown";
 import { JsonLd } from "@/components/json-ld";
 import { NewsletterDeals } from "@/components/newsletter-deals";
@@ -15,6 +16,7 @@ import {
   type WhatYouMissedItem,
   type WhatYouMissedType,
 } from "@/lib/newsletter";
+import { buildIssueEmailText } from "@/lib/newsletter-email-text";
 import { NOINDEX, absoluteUrl, buildPageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -184,6 +186,8 @@ export default async function NewsletterIssuePage({
           showArchiveLink={false}
         />
       </div>
+
+      <CopyEmailTextButton text={buildIssueEmailText(issue, featuredGuide)} />
     </article>
   );
 }
