@@ -5,7 +5,11 @@ issueNumber: 1
 publishedAt: "2026-09-27"
 excerpt: >-
   One coffee, one bank app, three questions. The cheapest meeting you will have
-  all week, plus four deals worth waiting for.
+  all week, plus three deals worth waiting for.
+takeaways:
+  - "Ask three questions: what landed, what left unplanned, what is due by next Sunday."
+  - Small gas station and drive-thru charges are a food or time problem, not a willpower problem.
+  - "With a partner, go monthly. Weekly joint money meetings start fights over string cheese."
 deals:
   - title: Family pack chicken thighs (per lb)
     merchant: Aldi
@@ -22,11 +26,6 @@ deals:
     targetPrice: 18
     note: Leakproof means the lunchbox does not need its own laundry cycle. Skip anything with a snap lid that your kid can't open alone.
     affiliateUrl: https://www.target.com/s?searchTerm=rubbermaid+brilliance+2+cup
-  - title: Hanes boys' crew socks, 10-pack
-    merchant: Walmart
-    targetPrice: 10
-    note: A dollar a pair or less. Buy one color so the sock pile sorts itself.
-    affiliateUrl: https://www.walmart.com/search?q=hanes+boys+crew+socks+10+pack
 ---
 
 Most money stress is not one big number. It is the feeling of not knowing the number.

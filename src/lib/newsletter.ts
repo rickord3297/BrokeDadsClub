@@ -8,7 +8,12 @@ export type {
   NewsletterIssue,
   NewsletterIssueListItem,
 } from "@/lib/newsletter-model";
-export { formatTargetPrice, toNewsletterListItem } from "@/lib/newsletter-model";
+export {
+  formatIssueDate,
+  formatIssueNumber,
+  formatTargetPrice,
+  toNewsletterListItem,
+} from "@/lib/newsletter-model";
 
 const newsletterDir = path.join(process.cwd(), "content/newsletter");
 
@@ -88,6 +93,9 @@ function readAllIssues(): NewsletterIssue[] {
             issueNumber,
             publishedAt,
             excerpt: typeof data.excerpt === "string" ? data.excerpt.trim() : "",
+            takeaways: Array.isArray(data.takeaways)
+              ? data.takeaways.filter(isNonEmptyString).map((item) => item.trim())
+              : [],
             deals: parseDeals(data.deals, file),
             content,
           },

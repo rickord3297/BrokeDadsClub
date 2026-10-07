@@ -6,6 +6,10 @@ publishedAt: "2026-10-04"
 excerpt: >-
   Set the Halloween number before the costume aisle sets it for you. A $40 plan
   for the whole night, plus the deals worth grabbing early.
+takeaways:
+  - "A $40 night for two kids: $20 costumes, $15 candy, $5 pumpkin. School parties come out of the same number."
+  - Every house already has three costumes in it. Flannel, sweatsuit, old sheet.
+  - "When they want the $60 one: offer two choices, both yours, and park it on the birthday list."
 deals:
   - title: Kids' costume, store brand
     merchant: Target
@@ -22,11 +26,6 @@ deals:
     targetPrice: 3
     note: Small pumpkins carve faster and kids lose interest at the 20 minute mark anyway. The giant ones are a $9 arm workout.
     affiliateUrl: https://www.aldi.us/
-  - title: LED glow sticks, 100-pack
-    merchant: Amazon
-    targetPrice: 9
-    note: Safety and costume upgrade in one. A glow stick bracelet turns a plain hoodie into a robot if you say it with confidence.
-    affiliateUrl: https://www.amazon.com/s?k=glow+sticks+100+pack
 ---
 
 Halloween is the first holiday of the season where the stores get to set your budget if you let them. This week's tactic: **pick the number before you walk into the costume aisle.**

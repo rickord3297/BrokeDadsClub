@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { GUIDE_PILLARS } from "@/lib/guide-pillars";
 import { getGuides } from "@/lib/guides";
 import type { Guide } from "@/lib/guide-model";
+import { getNewsletterIssues, type NewsletterIssue } from "@/lib/newsletter";
 import { getProducts } from "@/lib/products";
 import { resources } from "@/lib/resources";
 import { absoluteUrl } from "@/lib/seo";
@@ -18,12 +19,17 @@ function guideModified(guide: Guide): Date {
   return Number.isNaN(date.getTime()) ? SITE_EPOCH : date;
 }
 
+function issueDate(issue: NewsletterIssue): Date {
+  return new Date(`${issue.publishedAt}T12:00:00.000Z`);
+}
+
 function newest(dates: Date[]): Date {
   return dates.reduce((max, date) => (date > max ? date : max), SITE_EPOCH);
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const guides = getGuides();
+  const issues = getNewsletterIssues();
   const products = await getProducts();
   const now = new Date();
   const latestGuide = newest(guides.map(guideModified));
@@ -47,6 +53,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: guideModified(guide),
       changeFrequency: "monthly" as const,
       priority: 0.6,
+    })),
+
+    {
+      url: absoluteUrl("/newsletter"),
+      lastModified: newest(issues.map(issueDate)),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    ...issues.map((issue) => ({
+      url: absoluteUrl(`/newsletter/${issue.slug}`),
+      lastModified: issueDate(issue),
+      changeFrequency: "yearly" as const,
+      priority: 0.5,
     })),
 
     { url: absoluteUrl("/resources"), lastModified: latestGuide, changeFrequency: "monthly", priority: 0.6 },

@@ -4,11 +4,10 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 import { GuideCard } from "@/components/guide-card";
 import { GuideSearch } from "@/components/guide-search";
-import { NewsletterForm } from "@/components/newsletter-form";
+import { NewsletterSignupCard } from "@/components/newsletter-signup-card";
 import { trackTopicFilter } from "@/lib/analytics";
 import { filterGuidesList } from "@/lib/guide-query";
 import type { GuideListItem } from "@/lib/guide-model";
-import { site } from "@/lib/site";
 
 const PAGE_SIZE = 30;
 
@@ -266,31 +265,11 @@ export function GuidesExplorer({
 
 function GuidesStayInformedSignup() {
   return (
-    <aside className="rounded-2xl border border-pine/20 border-l-[3px] border-l-pine bg-pine/[0.06] px-5 py-6 sm:px-7">
-      <div className="mx-auto flex max-w-3xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div className="min-w-0 flex-1">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-pine">
-            New guides
-          </p>
-          <h3 className="mt-1 font-display text-2xl leading-snug">
-            Sign up to stay informed
-          </h3>
-          <p className="mt-1 text-sm leading-6 text-ink-soft">
-            One email on Sunday when a new guide drops, plus the free grocery
-            checklist to start the week.
-          </p>
-        </div>
-        <div className="w-full sm:max-w-sm">
-          <NewsletterForm
-            variant="inline"
-            source="guides_index"
-            submitLabel="Keep me posted"
-            successMessage={site.weekStart.success}
-            successHref="/resources/grocery-week-checklist"
-            successLinkLabel="Print the grocery checklist"
-          />
-        </div>
-      </div>
-    </aside>
+    <NewsletterSignupCard
+      kicker="New guides"
+      title="Sign up to stay informed"
+      body="One email on Sunday when a new guide drops, plus the free grocery checklist to start the week."
+      source="guides_index"
+    />
   );
 }
