@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useId, useState } from "react";
 import { trackEmailSignup } from "@/lib/analytics";
+import { validateEmail } from "@/lib/email";
 import { site } from "@/lib/site";
 
 type NewsletterFormProps = {
@@ -16,15 +17,6 @@ type NewsletterFormProps = {
   /** Hide on the newsletter pages themselves, where the link would point at the current page. */
   showArchiveLink?: boolean;
 };
-
-function validateEmail(value: string) {
-  const trimmed = value.trim();
-  if (!trimmed) return "Enter your email address.";
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
-    return "That email doesn't look right.";
-  }
-  return null;
-}
 
 export function NewsletterForm({
   variant = "footer",

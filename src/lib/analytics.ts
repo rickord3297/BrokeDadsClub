@@ -47,6 +47,10 @@ export function trackEmailSignup(source: string) {
   send("email_signup", { source });
 }
 
+export function trackLeadMagnetDownload(slug: string) {
+  send("lead_magnet_download", { slug });
+}
+
 export function trackPrintableView(slug: string) {
   send("printable_view", { slug });
 }

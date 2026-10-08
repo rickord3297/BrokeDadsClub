@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ResourceCard } from "@/components/resource-card";
 import { resources } from "@/lib/resources";
 import { buildPageMetadata } from "@/lib/seo";
@@ -53,6 +54,27 @@ export default function ResourcesPage() {
           <ResourceCard key={resource.slug} resource={resource} />
         ))}
       </div>
+
+      <aside className="mt-12 flex flex-col gap-4 rounded-2xl border border-rule border-l-[3px] border-l-rust bg-paper-2/70 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-7">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-rust">
+            Downloadable PDF
+          </p>
+          <h2 className="mt-1 font-display text-2xl leading-snug">
+            The $47 Weekly Grocery Reset &amp; Trunk Kit Checklist
+          </h2>
+          <p className="mt-1 max-w-2xl text-sm leading-6 text-ink-soft">
+            The cart, seven dinners, price swaps, and the car kit on one printed page. This one asks
+            for your email, then downloads instantly.
+          </p>
+        </div>
+        <Link
+          href="/resources/grocery-reset-trunk-kit"
+          className="inline-flex h-10 shrink-0 items-center self-start rounded-full bg-pine px-4 text-sm font-semibold text-paper transition hover:bg-pine-2 sm:self-center"
+        >
+          Get the PDF
+        </Link>
+      </aside>
     </div>
   );
 }

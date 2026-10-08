@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { GUIDE_PILLARS } from "@/lib/guide-pillars";
 import { getGuides } from "@/lib/guides";
 import type { Guide } from "@/lib/guide-model";
+import { LEAD_MAGNETS } from "@/lib/lead-magnets";
 import { getAllIssues, type NewsletterIssue } from "@/lib/newsletter";
 import { getProducts } from "@/lib/products";
 import { resources } from "@/lib/resources";
@@ -71,6 +72,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: absoluteUrl("/resources"), lastModified: latestGuide, changeFrequency: "monthly", priority: 0.6 },
     ...resources.map((resource) => ({
       url: absoluteUrl(`/resources/${resource.slug}`),
+      lastModified: SITE_EPOCH,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    ...Object.keys(LEAD_MAGNETS).map((slug) => ({
+      url: absoluteUrl(`/resources/${slug}`),
       lastModified: SITE_EPOCH,
       changeFrequency: "monthly" as const,
       priority: 0.6,
