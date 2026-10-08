@@ -64,6 +64,8 @@ const RELATED_HOOKS: Record<string, string> = {
   "the-second-bill": "If you need to see the fees after supplies",
   "birthday-party-math": "If you need a party that stays solvent",
   "gas-station-dinner": "If you need dinner that still counts on the road",
+  "trunk-dinner-kit-beat-gas-station-panic":
+    "If the car is empty and dinner is already late",
   "cheap-weekend-not-just-screens": "If you need a weekend plan that is not just screens",
   "car-vs-daycare": "If two bills hit the same paycheck",
   "dad-math": "If DIY pride is about to buy another tool",

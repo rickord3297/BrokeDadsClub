@@ -17,13 +17,23 @@ export const pins = [
   },
   {
     id: "grocery-week-checklist",
-    path: "/resources/grocery-week-checklist",
-    title: "Free $47 grocery checklist for a family of 4",
+    path: "/free/grocery-week-checklist",
+    title: "Free dad grocery template ($47 week)",
     description:
-      "A one-page cart for about 3-4 people. Shop once. Cook extra Monday. Free printable.",
-    alt: "Free $47 grocery week checklist",
-    lines: ["$47 grocery week", "for a family of four"],
-    footer: "free printable · shop once",
+      "One-page $47 grocery checklist for a family of 3-4. Shop once. Cook extra Monday. Email unlocks the printable PDF.",
+    alt: "Free dad grocery template from Broke Dads Club",
+    lines: ["Free dad", "grocery template"],
+    footer: "free printable · email unlock",
+  },
+  {
+    id: "trunk-dinner-kit",
+    path: "/free/trunk-dinner-kit",
+    title: "Free trunk dinner kit checklist",
+    description:
+      "One-page car dinner kit so gas station panic is optional. Pack protein, carb, fruit, water. Free printable for dads.",
+    alt: "Free trunk dinner kit checklist",
+    lines: ["Trunk dinner kit", "beats gas station", "panic"],
+    footer: "free printable · pack once",
   },
   {
     id: "the-47-dollar-grocery-week",

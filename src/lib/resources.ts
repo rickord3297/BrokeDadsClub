@@ -124,6 +124,32 @@ export const resources: Resource[] = [
       "cheap-weekend-not-just-screens",
     ],
   },
+  {
+    slug: "trunk-dinner-kit",
+    title: "Trunk dinner kit checklist",
+    seoTitle: "Free Trunk Dinner Kit Checklist (Printable)",
+    description:
+      "Free one-page trunk dinner kit checklist: protein, carb, fruit, water, wipes. Restock on grocery day so gas station panic is optional.",
+    excerpt:
+      "A twelve-dollar bridge kit for the car. Protein, carb, fruit, water. Restock when you shop.",
+    intro:
+      "Pack it once. Check it on grocery day. Print this for the glove box or tape it inside the trunk tote so the pump stays a backup, not the plan.",
+    printLabel: "Print kit checklist",
+    guideSlug: "trunk-dinner-kit-beat-gas-station-panic",
+    guideLabel: "trunk dinner kit: beat gas station panic",
+    keywords: [
+      "emergency food in car with kids printable",
+      "car snack kit checklist",
+      "trunk dinner kit printable",
+      "gas station dinner alternative checklist",
+    ],
+    tags: ["5-Min Prep", "Single-Page", "Ink-Friendly", "Fillable"],
+    companionGuideSlugs: [
+      "gas-station-dinner",
+      "the-47-dollar-grocery-week",
+      "packing-school-lunch-without-a-guilt-spiral",
+    ],
+  },
 ];
 
 export function getResource(slug: string) {

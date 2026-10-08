@@ -5,6 +5,7 @@ export function ResourceSample({ slug }: { slug: string }) {
   if (slug === "grocery-week-checklist") return <GrocerySample />;
   if (slug === "school-supply-triage") return <SchoolSample />;
   if (slug === "birthday-party-budget") return <BirthdaySample />;
+  if (slug === "trunk-dinner-kit") return <TrunkSample />;
   return null;
 }
 
@@ -134,6 +135,46 @@ function BirthdaySample() {
           <FillCheck name="s-act-park">Park picnic + one game</FillCheck>
           <FillCheck name="s-act-yard" sampleChecked>
             Backyard obstacle course
+          </FillCheck>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function TrunkSample() {
+  return (
+    <div className="space-y-8">
+      <SampleNote>
+        Example kit that survives a hot car and a late practice night.
+      </SampleNote>
+      <div>
+        <h2 className="font-display text-3xl">Who / where</h2>
+        <FillLine name="s-car" label="Car / tote" sample="Trunk bin" />
+        <FillLine
+          name="s-restock"
+          label="Restock day"
+          sample="Grocery Sunday"
+          wide
+        />
+      </div>
+      <div>
+        <h2 className="font-display text-3xl">Packed</h2>
+        <ul className="mt-3 space-y-2">
+          <FillCheck name="s-tuna" sampleChecked>
+            Chicken pouches (3)
+          </FillCheck>
+          <FillCheck name="s-crackers" sampleChecked>
+            Crackers
+          </FillCheck>
+          <FillCheck name="s-sauce" sampleChecked>
+            Applesauce pouches
+          </FillCheck>
+          <FillCheck name="s-water" sampleChecked>
+            Two water bottles
+          </FillCheck>
+          <FillCheck name="s-wipes" sampleChecked>
+            Wipes
           </FillCheck>
         </ul>
       </div>

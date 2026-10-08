@@ -76,10 +76,10 @@ export function GatedResourceCard({ resource }: { resource: Resource }) {
           <NewsletterForm
             variant="inline"
             source="homepage_printable_gate"
-            submitLabel="Get the full checklist"
+            submitLabel="Send me the free template"
             successMessage={site.weekStart.success}
             successHref={`/resources/${resource.slug}`}
-            successLinkLabel="Open fillable checklist"
+            successLinkLabel="Open free grocery template"
             trustLine={TRUST_LINE}
           />
         </div>
