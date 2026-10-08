@@ -54,6 +54,7 @@
 | Your kid's first real injury | live | 2026-09-23 | Support kid + partner; [`kids-first-injury-support.md`](guides/kids-first-injury-support.md) |
 | What you cut so the kid can keep playing sports | live | 2026-09-26 | [`what-you-cut-so-the-kid-can-keep-playing-sports.md`](guides/what-you-cut-so-the-kid-can-keep-playing-sports.md) |
 | Don't say yes to team parent in the first-game huddle | live | 2026-09-28 | [`dont-say-yes-to-team-parent-first-huddle.md`](guides/dont-say-yes-to-team-parent-first-huddle.md) |
+| How much gear to buy for a first youth soccer season | draft | 2026-10-16 | Long-tail SEO, uses gear-pick cards: [`first-youth-soccer-season-gear.md`](guides/first-youth-soccer-season-gear.md) |
 
 ### Status
 

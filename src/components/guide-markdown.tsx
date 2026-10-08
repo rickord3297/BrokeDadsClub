@@ -2,8 +2,10 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { GearPickCard } from "@/components/gear-pick-card";
 import { withGuideGlossary } from "@/components/guide-glossary-text";
 import { ScriptCallout } from "@/components/script-callout";
+import { parseGearPick } from "@/lib/gear-pick";
 import { parseScriptListItem } from "@/lib/guide-content";
 import { slugifyHeading } from "@/lib/guide-model";
 import { site } from "@/lib/site";
@@ -140,6 +142,19 @@ export function GuideMarkdown({
               {children}
             </ScriptCallout>
           );
+        },
+        pre: ({ node, children }) => {
+          const code = node?.children[0];
+          if (code?.type === "element" && code.tagName === "code") {
+            const className = code.properties?.className;
+            if (Array.isArray(className) && className.includes("language-gear-pick")) {
+              const source = code.children
+                .map((child) => (child.type === "text" ? child.value : ""))
+                .join("");
+              return <GearPickCard pick={parseGearPick(source, `guide ${currentSlug ?? ""} gear-pick`)} />;
+            }
+          }
+          return <pre>{children}</pre>;
         },
         p: ({ children }) => <p>{gloss(children)}</p>,
         table: () => null,

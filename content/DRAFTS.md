@@ -10,3 +10,4 @@ Open any file to edit. `status: scheduled` goes live automatically on `published
 |-------|---------|------|
 | The heat bill before it gets cold | 2026-10-10 | [the-heat-bill-before-it-gets-cold.md](guides/the-heat-bill-before-it-gets-cold.md) |
 | The week school closes and work does not | 2026-10-13 | [the-week-school-closes-and-work-does-not.md](guides/the-week-school-closes-and-work-does-not.md) |
+| How much gear to buy for a first youth soccer season (draft) | 2026-10-16 | [first-youth-soccer-season-gear.md](guides/first-youth-soccer-season-gear.md) |
