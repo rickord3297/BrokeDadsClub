@@ -72,7 +72,7 @@ Chocolate in July. Yogurt. Leftover drive-thru. Anything you "might use for lunc
 
 **Trunk bin or tote** if you have space. **Glove box** for the smallest version (two pouches, crackers, wipes). **Under a seat** only if you will still check it on grocery day.
 
-Restock when you do [the $47 grocery week](/guides/the-47-dollar-grocery-week) cart. Same trip. Same brain. No heroic extra errand.
+Restock when you do [the $47 grocery week](/guides/the-47-dollar-grocery-week) cart. Same trip. Same brain. No heroic extra errand. Print the [trunk dinner kit checklist](/resources/trunk-dinner-kit) for the glove box if you want it on paper.
 
 ## When you still stop at the gas station
 

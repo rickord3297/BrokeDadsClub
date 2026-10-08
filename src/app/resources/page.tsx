@@ -44,8 +44,13 @@ export default function ResourcesPage() {
       </h1>
       <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
         One-page sheets for the fridge, the backpack, or the party. Fill the
-        numbers on your phone, print them, or save as a PDF. No email wall. The
-        guides explain the thinking. These are the working copies.
+        numbers on your phone, print them, or save as a PDF. Direct links stay
+        open. Pinterest and social ads use the{" "}
+        <a href="/free/grocery-week-checklist" className="font-medium text-pine hover:text-rust">
+          free dad grocery template
+        </a>{" "}
+        email unlock. The guides explain the thinking. These are the working
+        copies.
       </p>
 
       <div className="mt-10 grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">

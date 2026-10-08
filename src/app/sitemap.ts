@@ -4,6 +4,7 @@ import { getGuides } from "@/lib/guides";
 import type { Guide } from "@/lib/guide-model";
 import { getAllIssues, type NewsletterIssue } from "@/lib/newsletter";
 import { getProducts } from "@/lib/products";
+import { leadMagnets } from "@/lib/lead-magnets";
 import { resources } from "@/lib/resources";
 import { absoluteUrl } from "@/lib/seo";
 
@@ -74,6 +75,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: SITE_EPOCH,
       changeFrequency: "monthly" as const,
       priority: 0.6,
+    })),
+    ...leadMagnets.map((magnet) => ({
+      url: absoluteUrl(`/free/${magnet.slug}`),
+      lastModified: SITE_EPOCH,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
 
     ...products.map((product) => ({

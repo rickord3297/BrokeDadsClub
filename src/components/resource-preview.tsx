@@ -35,6 +35,8 @@ export function ResourcePreview({
           {slug === "grocery-week-checklist" ? <GroceryCardPreview /> : null}
           {slug === "school-supply-triage" ? <SchoolCardPreview /> : null}
           {slug === "birthday-party-budget" ? <BirthdayCardPreview /> : null}
+          {slug === "trunk-dinner-kit" ? <TrunkCardPreview /> : null}
+          {slug === "boring-bedtime-night-card" ? <BedtimeCardPreview /> : null}
         </div>
       </div>
     );
@@ -48,6 +50,8 @@ export function ResourcePreview({
       {slug === "grocery-week-checklist" ? <GroceryMini /> : null}
       {slug === "school-supply-triage" ? <SchoolMini /> : null}
       {slug === "birthday-party-budget" ? <BirthdayMini /> : null}
+      {slug === "trunk-dinner-kit" ? <TrunkMini /> : null}
+      {slug === "boring-bedtime-night-card" ? <BedtimeMini /> : null}
     </div>
   );
 
@@ -198,6 +202,62 @@ function BirthdayCardPreview() {
   );
 }
 
+function TrunkCardPreview() {
+  return (
+    <div className="aspect-[4/5] bg-white p-6 text-ink sm:p-8">
+      <p className="font-stamp text-[10px] uppercase tracking-[0.22em] text-pine">
+        Broke Dads Club
+      </p>
+      <h3 className="mt-2 font-display text-2xl leading-tight">
+        Trunk dinner kit
+      </h3>
+      <p className="mt-1 text-sm text-ink-soft">Car bridge meal · restock weekly</p>
+      <ul className="mt-5 space-y-2.5 text-sm">
+        {[
+          "Protein pouches",
+          "Crackers / tortillas",
+          "Applesauce + water",
+          "Wipes",
+        ].map((item) => (
+          <li key={item} className="flex items-center gap-2.5">
+            <CheckSvg />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+      <div className="mt-5 rounded-md border border-ink/20 bg-paper-2/40 p-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em]">
+          Never pack
+        </p>
+        <p className="mt-1 text-sm text-ink-soft">Chocolate · yogurt · leftovers</p>
+      </div>
+    </div>
+  );
+}
+
+function BedtimeCardPreview() {
+  return (
+    <div className="aspect-[4/5] bg-white p-6 text-ink sm:p-8">
+      <p className="font-stamp text-[10px] uppercase tracking-[0.22em] text-pine">
+        Broke Dads Club
+      </p>
+      <h3 className="mt-2 font-display text-2xl leading-tight">
+        Boring bedtime
+      </h3>
+      <ul className="mt-5 space-y-2.5 text-sm">
+        {["Bathroom", "PJs", "Teeth", "One book", "Lights / leave"].map(
+          (item) => (
+            <li key={item} className="flex items-center gap-2.5">
+              <CheckSvg />
+              <span>{item}</span>
+            </li>
+          ),
+        )}
+      </ul>
+    </div>
+  );
+}
+
 function Line({ children }: { children?: string }) {
   return (
     <div className="flex items-center gap-1.5">
@@ -275,6 +335,37 @@ function BirthdayMini() {
         <p className="font-semibold">Free / low-cost</p>
         <p className="text-ink/60">Park pavilion · backyard games</p>
       </div>
+    </div>
+  );
+}
+
+function TrunkMini() {
+  return (
+    <div className="flex h-full flex-col gap-1.5 text-[7px] leading-tight text-ink">
+      <p className="font-stamp text-[8px] uppercase tracking-wider">Trunk kit</p>
+      <p className="font-display text-[10px] leading-tight">Bridge dinner in the car</p>
+      <Line>Protein pouches</Line>
+      <Line>Crackers</Line>
+      <Line>Applesauce</Line>
+      <Line>Water + wipes</Line>
+      <div className="mt-auto rounded border border-ink/20 p-1">
+        <p className="font-semibold">Never</p>
+        <p className="text-ink/60">Chocolate · yogurt</p>
+      </div>
+    </div>
+  );
+}
+
+function BedtimeMini() {
+  return (
+    <div className="flex h-full flex-col gap-1.5 text-[7px] leading-tight text-ink">
+      <p className="font-stamp text-[8px] uppercase tracking-wider">Bedtime</p>
+      <p className="font-display text-[10px] leading-tight">Same order every night</p>
+      <Line>Bathroom</Line>
+      <Line>PJs</Line>
+      <Line>Teeth</Line>
+      <Line>Book</Line>
+      <Line>Leave</Line>
     </div>
   );
 }

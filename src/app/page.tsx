@@ -58,8 +58,8 @@ export default async function Home() {
                 One sheet for the fridge
               </h2>
               <p className="mt-2 max-w-xl text-sm leading-6 text-ink-soft">
-                Preview the grocery-week checklist below. Sign up for the full
-                fillable PDF and Sunday guide drops.
+                Free dad grocery template below. Email unlocks the one-page PDF
+                plus Sunday guide drops.
               </p>
             </div>
             <div className="mt-6">
