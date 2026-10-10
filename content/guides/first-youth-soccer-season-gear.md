@@ -10,7 +10,7 @@ category: Gear
 readTime: 6 min
 publishedAt: '2026-10-16'
 updatedAt: '2026-10-16'
-status: draft
+status: scheduled
 keywords:
   - how much gear to buy for first youth soccer season
   - youth soccer gear list for beginners

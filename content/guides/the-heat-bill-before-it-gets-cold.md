@@ -11,8 +11,8 @@ excerpt: >-
 category: Money
 readTime: 6 min
 publishedAt: "2026-10-10"
-updatedAt: "2026-10-04"
-status: scheduled
+updatedAt: "2026-10-10"
+status: published
 keywords:
   - winter heating bill budget for families
   - heating oil cost increase 2026
