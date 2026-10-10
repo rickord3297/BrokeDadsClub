@@ -25,34 +25,31 @@ const C = {
 };
 
 const RULES = [
+  ["Buy for pairs.", "Every item covers two dinners or stays on the shelf."],
   ["Shop once.", "A second trip is how $47 turns into $90."],
-  ["Cook extra Monday.", "Tuesday and Thursday are leftovers with a new name."],
-  ["Name one snack.", "Skip it and you buy three unplanned ones."],
+  ["Cook the whole pack.", "Tuesday and Thursday are leftovers with a new name."],
 ] as const;
 
 const CART = [
-  { group: "Protein", target: "about $12", items: ["Dozen eggs", "2-3 lb chicken thighs (family pack)"] },
   {
-    group: "Starch (pick the cheaper)",
-    target: "about $8",
-    items: ["2 lb rice or a bag of potatoes", "1 loaf bread or 1 pack tortillas", "1 lb pasta for the tired night"],
+    group: "Protein",
+    target: "about $19",
+    items: ["Chicken thighs, bone-in, 4 lb bag", "Ground beef, 1 lb", "Eggs, 18 count", "Black beans, 2 cans"],
+  },
+  {
+    group: "Starch",
+    target: "about $11",
+    items: ["Rice, 5 lb", "Russet potatoes, 5 lb", "Burrito tortillas, 8 count", "Spaghetti, 1 lb", "1 loaf bread"],
   },
   {
     group: "Produce",
-    target: "about $10",
-    items: ["2 onions", "Frozen mixed vegetables (2 bags)", "1 bunch bananas", "1 fruit the kids will actually eat"],
+    target: "about $7",
+    items: ["Yellow onions, 3 lb bag", "Frozen mixed vegetables (4 bags)"],
   },
   {
     group: "Dairy and pantry",
-    target: "about $12",
-    items: [
-      "8 oz cheddar",
-      "2 cans beans",
-      "Peanut butter",
-      "1 jar salsa or pasta sauce",
-      "Oats",
-      "1 planned snack (store-brand cookies or popcorn)",
-    ],
+    target: "about $7.50",
+    items: ["Shredded cheddar, 16 oz", "Pasta sauce, 24 oz", "Salsa, 16 oz"],
   },
 ] as const;
 
@@ -66,26 +63,26 @@ const KIT = [
 const NEVER_IN_KIT = "Chocolate in July. Yogurt. Leftover drive-thru. Anything that needs a fridge.";
 
 const WEEK = [
-  ["Mon", "Bake thighs, onions, rice, frozen veg. Cook extra rice."],
-  ["Tue", "Leftover chicken in tortillas with cheese and salsa."],
-  ["Wed", "Pasta and sauce. Second bag of veg in the pot."],
-  ["Thu", "Bean and rice bowls. Cheddar on top."],
-  ["Fri", "Grilled cheese or egg sandwiches."],
-  ["Sat", "Breakfast for dinner. Eggs, toast, fruit."],
-  ["Sun", "Leftovers. No carcass homework."],
+  ["Mon", "Bake the whole chicken bag. Eat half. Rice, veg."],
+  ["Tue", "Leftover chicken quesadillas, cheese, salsa."],
+  ["Wed", "Brown the beef. Half into spaghetti sauce."],
+  ["Thu", "Saved beef + black beans over rice. Taco bowls."],
+  ["Fri", "Breakfast for dinner. Eggs, potatoes, toast."],
+  ["Sat", "Baked potato bar. Beans, cheese, veg."],
+  ["Sun", "Fried rice. Old rice, eggs, last veg."],
 ] as const;
 
 const SWAPS = [
-  ["Chicken over $2.50/lb", "2nd dozen eggs + 3rd can of beans"],
-  ["Eggs over $4/dozen", "Oats carry breakfast, PB carries lunch"],
-  ["Fresh veg high or wilting", "Frozen wins and lasts till Thursday"],
-  ["Bread over $3", "Tortillas cover tacos and quesadillas"],
-  ["Rice and potatoes up", "Pasta is the floor. 2 lb, 2 dinners"],
-  ["Milk", "Only if someone drinks a glass a day"],
+  ["Chicken bag over $10", "2nd 18 eggs + 2 more cans of beans"],
+  ["Beef over $7/lb", "Veg spaghetti, all-bean taco bowls"],
+  ["Eggs over $4 for 18", "Grilled cheese and skillet potatoes"],
+  ["Potatoes over $5", "Rice Friday, 2nd box of pasta Saturday"],
+  ["Fresh veg high", "Frozen wins and lasts till Sunday"],
+  ["Milk", "Breakfast line, not the $47"],
 ] as const;
 
 const PUT_BACK =
-  "Over at the register? Put back in this order: the second fruit, the milk, one bag of frozen veg, then a smaller cheese. Protein, starch, beans, eggs, and the snack ride home.";
+  "Over at the register? Put back in this order: the bread, one bag of frozen veg, then the salsa. Still over? Find the items that were not on the list. Walmart prices, Oct 2026: $44.04.";
 
 type Fonts = { display: PDFFont; stamp: PDFFont; body: PDFFont; bodyBold: PDFFont };
 
@@ -176,7 +173,7 @@ function drawHeader(page: PDFPage, fonts: Fonts, title: string): number {
   y = drawLines(
     page,
     wrap(
-      "One shop, one cart, one bin in the trunk. Check the cart off in the store, write what you paid, and restock the trunk kit on the same trip. Built for about 3-4 people at store-brand prices.",
+      "One shop, one cart, one bin in the trunk. Check the cart off in the store, write what you paid, and restock the trunk kit on the same trip. Seven dinners for 3-4 people at Walmart store-brand prices.",
       fonts.body, 9, PAGE_W - MARGIN * 2,
     ),
     { x: MARGIN, y: y - 3, font: fonts.body, size: 9, color: C.inkSoft, leading: 12 },
@@ -186,7 +183,7 @@ function drawHeader(page: PDFPage, fonts: Fonts, title: string): number {
 }
 
 function drawGroceryColumn(page: PDFPage, fonts: Fonts, x: number, top: number, width: number): number {
-  let y = sectionHeader(page, fonts, "THE $47 GROCERY RESET", x, top, width, "Target: $47, 3-4 people");
+  let y = sectionHeader(page, fonts, "THE $47 GROCERY RESET", x, top, width, "7 dinners, 3-4 people");
 
   RULES.forEach(([lead, rest], i) => {
     const label = `${i + 1}. ${lead}`;
@@ -224,7 +221,7 @@ function drawGroceryColumn(page: PDFPage, fonts: Fonts, x: number, top: number, 
   const itemsX = x + 140;
   page.drawText(itemsLabel, { x: itemsX, y, font: fonts.bodyBold, size: 9, color: C.ink });
   blank(page, itemsX + fonts.bodyBold.widthOfTextAtSize(itemsLabel, 9) + 4, y - 1, 26);
-  page.drawText("(about 20)", { x: x + width - fonts.body.widthOfTextAtSize("(about 20)", 7.5), y, font: fonts.body, size: 7.5, color: C.inkSoft });
+  page.drawText("(14 items)", { x: x + width - fonts.body.widthOfTextAtSize("(14 items)", 7.5), y, font: fonts.body, size: 7.5, color: C.inkSoft });
   y -= 14;
   return drawLines(page, wrap(PUT_BACK, fonts.body, 7.5, width), {
     x, y, font: fonts.body, size: 7.5, color: C.inkSoft, leading: 10,
@@ -270,7 +267,7 @@ function drawKitColumn(page: PDFPage, fonts: Fonts, x: number, top: number, widt
 
 function drawWeek(page: PDFPage, fonts: Fonts, top: number): number {
   const width = PAGE_W - MARGIN * 2;
-  const y = sectionHeader(page, fonts, "THE WEEK", MARGIN, top, width, "Breakfast: oats or PB toast + banana. Lunch: leftovers.");
+  const y = sectionHeader(page, fonts, "THE WEEK", MARGIN, top, width, "Dinners only. Breakfast and lunch run about $28 more.");
   const gap = 6;
   const colW = (width - gap * 6) / 7;
   let lowest = y;

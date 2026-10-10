@@ -31,8 +31,8 @@ function GrocerySample() {
   return (
     <div className="space-y-8">
       <SampleNote>
-        Example for a family of 4 with a $47 hard number. Numbers are store-brand
-        targets, not a dare.
+        Example for a family of 4 shopping the seven-dinner cart at Walmart with
+        a $47 hard number.
       </SampleNote>
       <div>
         <h2 className="font-display text-3xl">Who this feeds</h2>
@@ -43,21 +43,21 @@ function GrocerySample() {
         <h2 className="font-display text-3xl">Already at home</h2>
         <FillLine name="s-home-1" sample="Olive oil, salt, pepper" />
         <FillLine name="s-home-2" sample="Half jar salsa" />
-        <FillLine name="s-home-3" sample="One onion left" />
+        <FillLine name="s-home-3" sample="Half bag of rice" />
       </div>
       <div>
         <h2 className="font-display text-3xl">Category paid</h2>
-        <FillLine name="s-protein" label="Protein paid" sample="$11.40" />
-        <FillLine name="s-starch" label="Starch paid" sample="$7.80" />
-        <FillLine name="s-produce" label="Produce paid" sample="$9.50" />
-        <FillLine name="s-pantry" label="Pantry paid" sample="$12.10" />
-        <FillLine name="s-total" label="Cart total" sample="$45.80" />
+        <FillLine name="s-protein" label="Protein paid" sample="$18.59" />
+        <FillLine name="s-starch" label="Starch paid" sample="$11.33" />
+        <FillLine name="s-produce" label="Produce paid" sample="$6.70" />
+        <FillLine name="s-pantry" label="Pantry paid" sample="$7.42" />
+        <FillLine name="s-total" label="Cart total" sample="$44.04" />
       </div>
       <div>
         <h2 className="font-display text-3xl">Swap this week</h2>
         <FillLine
           name="s-swap"
-          sample="Thighs were up; used ground turkey instead"
+          sample="Already had rice, so I skipped it: $41.56"
         />
       </div>
     </div>

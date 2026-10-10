@@ -14,7 +14,7 @@ export const metadata: Metadata = buildPageMetadata({
   title: "Free $47 Grocery Reset & Trunk Kit Checklist (Printable PDF) | Broke Dads Club",
   absoluteTitle: true,
   description:
-    "A free one-page printable: the $47 family grocery cart with price targets, a 7-night dinner plan, price spike swaps, and a car emergency dinner kit checklist.",
+    "A free one-page printable: seven family dinners for about $47 at Walmart, every item covering two nights, price spike swaps, and a car emergency dinner kit checklist.",
   path: `/resources/${SLUG}`,
   keywords: [
     "printable grocery budget checklist",
@@ -27,15 +27,15 @@ export const metadata: Metadata = buildPageMetadata({
 const INSIDE = [
   {
     title: "The $47 cart",
-    body: "About 20 items in four groups, each with a price target and a Paid line. Check it off in the aisle.",
+    body: "14 items, $44.04 at Walmart in October 2026. Four groups, each with a price target and a Paid line.",
   },
   {
     title: "Seven dinners",
-    body: "Monday cooks extra so Tuesday and Thursday are leftovers. Wednesday is the tired night on purpose.",
+    body: "Every purchase covers two nights. Monday's chicken is Tuesday's quesadillas. One pound of beef is spaghetti and taco bowls.",
   },
   {
     title: "Price spike swaps",
-    body: "What to grab when chicken, eggs, or bread jump, plus the put-back order when the register says $61.",
+    body: "What to grab when chicken, beef, eggs, or potatoes jump, plus the put-back order when the register runs over.",
   },
   {
     title: "The trunk kit",

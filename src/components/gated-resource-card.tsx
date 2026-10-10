@@ -8,7 +8,7 @@ const TRUST_LINE =
   "Sent every Sunday at 9 AM CT. Free forever. Unsubscribe anytime.";
 
 const PREVIEW_POINTS = [
-  "Protein, starch, produce, and pantry targets for about $47",
+  "Seven dinners, every item covering two nights, about $47",
   "Swap box for store markdowns without blowing the week",
   "Fillable on your phone or print after signup",
 ];

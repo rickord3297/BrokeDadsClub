@@ -1,150 +1,163 @@
 ---
 title: The $47 grocery week
 slug: the-47-dollar-grocery-week
-seoTitle: 'Family Grocery Budget $50 a Week: The $47 Meal Plan | Broke Dads Club'
-description: "Family grocery budget under $50 a week for about 3-4 people: a realistic cart, leftover tacos, and pasta on the tired night. A real plan, not a stunt list."
+seoTitle: '7 Family Dinners for $47: A Real Walmart Grocery List'
+description: "Seven dinners for a family of four for about $44 at Walmart. Every item covers two meals: one pack of chicken, two nights. Real prices, real list."
 excerpt: >-
-  Feed about 3-4 people for a week without a second store trip. A practical cart
-  and dinners, not a stunt list.
+  Seven dinners for a family of four, about $44 at Walmart. Every item on the
+  list covers two meals, so nothing gets bought for one night.
 category: Money
-readTime: 6 min
+readTime: 7 min
 publishedAt: '2026-08-04'
-updatedAt: '2026-09-19'
+updatedAt: '2026-10-10'
 status: published
 keywords:
-  - cheap grocery list for family
+  - cheap family dinners for the week
+  - walmart grocery list for family of 4
   - feed family on a budget
   - family grocery budget $50 a week
-  - how to eat cheap with toddlers
-  - $50 grocery week
   - $47 grocery week
   - budget meal plan for dads
-  - frugal family dinners
+  - stretch one pack of chicken two meals
 related:
-  - talking-to-kids-about-money
+  - second-grocery-trip-blows-the-week
   - the-dad-tax
   - gas-station-dinner
-  - second-grocery-trip-blows-the-week
+  - packing-school-lunch-without-a-guilt-spiral
 shop:
   - broke-mug
   - club-pup-tee
 faq:
-  - question: Can you really feed a family for about $47 a week?
+  - question: Can you really feed a family for $47 a week?
     answer: >-
-      For about 3-4 people, at store-brand prices, yes as a target. Shop once,
-      cook extra on Monday, and buy one planned snack. Milk or teenagers will
-      push it closer to $55.
-  - question: What if chicken is expensive this week?
+      Dinners, yes. Seven dinners for four came to $44.04 at Walmart in October
+      2026. Breakfast and lunch are a separate line, about $28 more, so the whole
+      week lands near $72 for a family with young kids.
+  - question: How do you make one pack of chicken cover two meals?
     answer: >-
-      Swap the thighs for extra beans and a second dozen eggs. The plan is the
-      structure. The protein is flexible.
-  - question: Do I really need 18 eggs?
+      Cook the whole pack the first night and eat half. Pull the rest off the bone
+      and it becomes quesadillas the next night with tortillas, cheese, and salsa.
+  - question: Why is breakfast and lunch not in the $47?
     answer: >-
-      No. A dozen is enough for this week: breakfast, one egg-sandwich night,
-      and a little leftover. Eighteen was a stunt quantity.
+      Because a list that claims to cover every meal for four people on $47 is
+      lying to you. Dinner is where the plan matters most, so the $47 is dinner.
+      The breakfast and lunch add-on is priced out separately below.
   - question: Is there a printable grocery checklist?
     answer: >-
-      Yes. Use the free $47 grocery-week checklist printable, then come back to
-      this meal plan for the dinners.
+      Yes. The free $47 grocery-week checklist has this exact cart with category
+      targets, so you can check it off in the aisle.
 takeaways:
-  - Shop once; second trips blow the week
-  - Cook extra Monday so leftover nights stay cheap
+  - Every item covers two dinners, so nothing is bought for one night
+  - Seven dinners for four came to $44.04 at Walmart
+action: Write this week's two-night pairs on the fridge before you shop.
 ---
 
-You do not need a 37-step meal-prep Sunday. You need food that shows up on a Tuesday when the leftover plan has already failed.
+You do not need a 37-step meal-prep Sunday. You need a cart where nothing is bought for one night.
 
-This is a week of dinners for about 3-4 people, plus breakfast and lunch that do not require a second store. Print the [free grocery-week checklist](/resources/grocery-week-checklist) if you want it on the fridge.
+That is the whole trick. One pack of chicken is Monday's dinner and Tuesday's quesadillas. One pound of ground beef is Wednesday's spaghetti and Thursday's taco bowls. One bag of potatoes is two dinners. Buy for pairs, not for nights, and seven dinners for a family of four came to **$44.04 at Walmart** in October 2026.
 
-## The rules
+This is a dinner plan for about 3-4 people. Breakfast and lunch are a separate line, priced out further down, because a list that claims to cover every meal for four people on $47 is not being honest with you. Print the [free grocery-week checklist](/resources/grocery-week-checklist) if you want the cart on the fridge.
 
-1. **Shop once.** A second trip is how a $47 plan becomes $90 of "we needed milk and also these chips."
-2. **Cook extra on Monday.** Tuesday and Thursday are leftovers with a different name.
-3. **Name one snack.** If you do not buy a planned snack, you will buy three unplanned ones.
-
-These are not discipline rules, they are load-bearing. Break the first one and the other two stop mattering.
+> Remember: Nothing in the cart gets bought for one night.
 
 ## The cart
 
-Protein:
-- A dozen eggs (not a crate)
-- 2-3 lb chicken thighs, family pack
+Store brand, Walmart prices checked October 10, 2026. Your store will be a little different. The shape will not.
 
-Starch, pick what is cheaper:
-- 2 lb rice or a bag of potatoes
-- 1 loaf of bread or 1 pack of tortillas
-- 1 lb pasta for the night you are done
+| Item | Price | Covers |
+|---|---|---|
+| Chicken thighs, bone-in, 4 lb bag | $7.96 | Mon + Tue |
+| Ground beef, 1 lb | $6.44 | Wed + Thu |
+| Eggs, 18 count | $2.47 | Fri + Sun |
+| Black beans, 2 cans | $1.72 | Thu + Sat |
+| Shredded cheddar, 16 oz | $3.48 | Tue + Thu + Sat |
+| Burrito tortillas, 8 count | $2.12 | Tue |
+| Long grain rice, 5 lb | $2.48 | Mon + Thu + Sun |
+| Spaghetti, 1 lb | $1.24 | Wed |
+| Pasta sauce, 24 oz | $1.97 | Wed |
+| Salsa, 16 oz | $1.97 | Tue + Thu |
+| Russet potatoes, 5 lb | $3.97 | Fri + Sat |
+| Yellow onions, 3 lb | $2.78 | Mon + Wed + Fri + Sun |
+| Frozen mixed vegetables, 4 bags | $3.92 | Mon + Wed + Sat + Sun |
+| White bread, 1 loaf | $1.52 | Fri |
+| **Total** | **$44.04** | **7 dinners for 4** |
 
-Produce:
-- 2 onions
-- Frozen mixed vegetables, two bags
-- 1 bunch of bananas
-- One other fruit the kids will actually eat
+That is about $1.47 a plate. Fourteen items. You walk out with leftovers for next week too: about 3 lb of rice, half a loaf, a few eggs, an onion.
 
-Dairy and pantry:
-- 8 oz cheddar
-- 2 cans of beans
-- Peanut butter
-- 1 jar of salsa or pasta sauce
-- Oats
-- One planned snack (store-brand cookies or popcorn)
+Oil, salt, and whatever seasoning is already in the cabinet are assumed. If the pantry is truly empty, a bottle of oil is the first add.
 
-Milk only if someone drinks it. That is usually the first add that pushes you past $47. If chicken is high, swap the thighs for extra beans and a second dozen eggs. The shape of the week matters more than the mascot protein.
+## The week, in pairs
+
+**Mon: Baked chicken, rice, and veg.** Bake the whole 4 lb bag with a sliced onion. Eat half. Cook double rice on purpose. *About $6.16.*
+
+**Tue: Chicken quesadillas.** Pull the leftover chicken off the bone. Tortillas, cheese, chicken, salsa on the side. Kids will call this tacos. Let them. *About $8.25.*
+
+> Truth: Monday's chicken is Tuesday's dinner. You just cooked it once.
+
+**Wed: Spaghetti with meat sauce.** Brown the whole pound of beef with an onion. Stir **half** into the sauce. Put the other half in a container for tomorrow. Dump a bag of frozen veg in the pasta pot for the last two minutes. *About $7.87.*
+
+**Thu: Beef and bean taco bowls.** The saved beef plus a can of black beans over rice, with cheese and salsa. The beans are what make half a pound feed four. Cook extra rice again. *About $6.73.*
+
+**Fri: Breakfast for dinner.** Scrambled eggs, skillet potatoes with onion, toast. Call it brunch if that helps. *About $4.18.*
+
+**Sat: Baked potato bar.** Bake the rest of the potatoes. Top with beans, cheese, and a bag of veg. Everybody builds their own, so nobody negotiates. *About $5.38.*
+
+**Sun: Fried rice.** Day-old rice from Thursday, a few eggs, onion, the last bag of veg, and any chicken that survived. This is the clean-out night. *About $2.49.*
+
+The nights add up to about $41. The other $3 is what you take home: rice, bread, eggs, and an onion for next week.
+
+## Breakfast and lunch are a separate line
+
+The $47 is dinner. Here is the honest add-on for mornings and lunches at the same store:
+
+- Oats, 42 oz: $4.18
+- Peanut butter, 40 oz: $3.74
+- Bread, 2 more loaves: $3.04
+- Bananas, about 5 lb: about $2.50
+- Milk, 1 gallon: $3.48
+- Yogurt, two 32 oz tubs: $5.28
+- Eggs, another 18: $2.47
+- Baby carrots, 1 lb: $1.32
+- One planned snack (popcorn): $2.08
+
+That is about **$28 more**, so a full week for a family with young kids lands near **$72**. Teenagers, a second gallon of milk, or packed lunches every day push it toward $90. That is still a real number you can plan around. A $47 "everything" list is not.
+
+## The rules
+
+1. **Buy for pairs.** If an item only shows up one night, it either gets a second job or it stays on the shelf.
+2. **Shop once.** A second trip is how a $47 plan becomes $90 of "we needed milk and also these chips."
+3. **Cook the whole pack.** Half-cooked plans are how the second half goes bad in the fridge on Friday.
+
+These are not discipline rules, they are load-bearing. Break the first one and the cart grows by six things you use once.
 
 ## Where the money actually leaks
 
-Four line items move the total. Everything else is noise.
-
-- **Protein per pound.** Thighs at $1.49/lb versus $2.99/lb is a $4 swing on one package. Read the small per-pound number, not the sticker price. Family packs are usually cheaper per pound, but check, because sometimes they are not.
-- **Produce sold by the container.** Berries, grapes, pre-cut melon. One clamshell can eat a third of the produce budget and be gone in a day.
-- **Anything in a cup, pouch, or single serving.** Yogurt cups, applesauce pouches, snack packs. Same food, two to three times the price, and you are paying for plastic.
+- **Boneless and pre-cut.** The 4 lb bone-in bag is $1.99 a pound. Boneless, pre-cut, and "family size" trays usually cost more per pound for the same bird. Read the small per-pound number, not the sticker.
+- **Single-night ingredients.** The special cheese for one recipe, the herb you use a teaspoon of. Same rule: no second job, no spot in the cart.
+- **Anything in a cup, pouch, or single serving.** Yogurt cups, applesauce pouches, snack packs. Same food, two to three times the price.
 - **The impulse shelf at the register.** It is at kid eye level on purpose.
 
-The fastest signal that something went wrong: count items, not dollars. This list is roughly 20 items. If you are unloading 28 onto the belt, eight things got in without a plan, and they are the reason the total surprises you.
+The fastest signal that something went wrong: count items, not dollars. This list is 14 items. If you are unloading 22 onto the belt, eight things got in without a plan.
 
 ## Swaps when a price spikes
 
-- Chicken over about $2.50/lb: skip it, buy a second dozen eggs and a third can of beans.
-- Eggs over about $4 a dozen: oats carry breakfast, peanut butter carries lunch.
-- Fresh vegetables high or already wilting: frozen wins on price and does not rot by Thursday.
-- Bread over $3: tortillas stretch further and cover both taco night and quesadilla lunches.
-- Rice and potatoes both up: pasta is the floor. Two pounds covers two dinners.
+- **Chicken bag over $10:** buy a second 18 eggs and two more cans of beans. Monday becomes egg fried rice, Tuesday becomes bean and cheese quesadillas.
+- **Ground beef over $7 a pound:** skip it. Wednesday is spaghetti with veg, Thursday's bowls are all beans. Add one can.
+- **Eggs over $4 for 18:** Friday becomes grilled cheese and skillet potatoes. Sunday's fried rice takes the leftover chicken instead.
+- **Potatoes over $5 for the bag:** rice covers Friday and pasta covers Saturday. One more box of spaghetti is $1.24.
 
-Make the swap standing in the aisle. The plan is the shape of the week. The specific animal is negotiable.
-
-## The week
-
-Breakfast all week: oats or peanut-butter toast plus a banana. Lunch: leftovers or another PB sandwich.
-
-**Mon:** Bake the thighs with onions, rice, and a bag of frozen veg. Cook extra rice on purpose.
-
-**Tue:** Leftover chicken in tortillas with cheese and salsa. Kids will call this tacos. Let them.
-
-**Wed:** Pasta + sauce. Dump the second bag of veg in the pot. This is the tired night. It still counts.
-
-**Thu:** Bean and rice bowls. Cheddar on top. Banana for dessert so nobody stages a coup.
-
-**Fri:** Grilled cheese or egg sandwiches, leftover fruit.
-
-**Sat:** Breakfast-for-dinner. Eggs, toast or oats, whatever fruit is left. Call it brunch if that helps.
-
-**Sun:** Leftovers. Soup only if you feel like it. You do not owe the internet a carcass project.
-
-Teenagers: add a second pack of thighs and more rice. The $47 is a target at store-brand prices, not a dare.
+Make the swap standing in the aisle. The pairs are the plan. The specific animal is negotiable.
 
 ## When this breaks
 
-**The register says $61.** Do not freeze and do not abandon the cart. Put things back in this order: the second fruit, the milk if nobody actually drinks a glass a day, one bag of frozen veg, then a smaller block of cheese. If you are still over, cut the chicken pack in half rather than dropping it. Protein, starch, beans, eggs, and the named snack are the week; those five ride home. A half pack of thighs still covers Monday, and Tuesday becomes bean tacos, which nobody complains about as long as the cheese and salsa are there.
+**The register says $58.** Do not freeze and do not abandon the cart. Put back in this order: the bread (Friday is eggs and potatoes without toast), one bag of frozen veg, then the salsa. If you are still over, look for the eight things that were not on the list. They are usually the reason.
 
-**Monday never happened.** You got home at 7:40, nobody cooked, and now Tuesday has no leftovers to reheat. The week does not restart, it slides. Move the pasta night up to tonight (one pot, twenty minutes), then cook the thighs tomorrow with double rice. Thursday's bowls move to Friday, and Saturday's eggs come a night early. The plan absorbs one slide. It does not absorb two, so if a second night falls apart, cook the entire chicken pack that night and eat it three ways instead of trying to save the original order.
+**Monday never happened.** You got home at 7:40 and nobody cooked. The pairs slide, they do not restart. Make Wednesday's spaghetti tonight with plain sauce, and cook the whole chicken bag tomorrow. The beef night moves to the end of the week. The plan absorbs one slide. If a second night falls apart, cook everything that can spoil that night and eat it three ways.
 
 ## The second trip you could not avoid
 
-Sometimes you have to go back. The milk really did run out, or somebody got sick. Cap it before you walk in: a dollar number said out loud, the items written down, and no cart. A cart is permission. Carry what you came for in your hands and the trip stays a trip instead of becoming a second shop.
+Sometimes you have to go back. The milk really did run out, or somebody got sick. Cap it before you walk in: a dollar number said out loud, the items written down, and no cart. A cart is permission. Carry what you came for in your hands. More on that in [the second grocery trip](/guides/second-grocery-trip-blows-the-week).
 
-## If it still blows up
-
-It will. Someone will want "real" snacks. Buy one planned treat in the original trip, a box of store-brand cookies, and put it on the counter like you meant it. The goal is not purity. The goal is dinner, most nights, without a speech.
-
-> Remember: The plan is the shape of the week, not the receipt. One slid night is not a failed week.
+> Remember: The plan is the pairs, not the receipt. One slid night is not a failed week.
 
 When the week still feels tight, read [the dad tax](/guides/the-dad-tax) and [talking to kids about money](/guides/talking-to-kids-about-money), same season, different tools.

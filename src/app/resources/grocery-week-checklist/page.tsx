@@ -12,45 +12,44 @@ export const metadata: Metadata = resourcePageMetadata(resource);
 const cart = [
   {
     group: "Protein",
-    target: "about $12",
+    target: "about $19",
     paidName: "paid-protein",
     items: [
-      { name: "check-eggs", label: "Dozen eggs" },
-      { name: "check-thighs", label: "2-3 lb chicken thighs (family pack)" },
+      { name: "check-thighs", label: "Chicken thighs, bone-in, 4 lb bag (Mon + Tue)" },
+      { name: "check-beef", label: "Ground beef, 1 lb (Wed + Thu)" },
+      { name: "check-eggs", label: "Eggs, 18 count (Fri + Sun)" },
+      { name: "check-beans", label: "Black beans, 2 cans (Thu + Sat)" },
     ],
   },
   {
-    group: "Starch (pick what is cheaper)",
-    target: "about $8",
+    group: "Starch",
+    target: "about $11",
     paidName: "paid-starch",
     items: [
-      { name: "check-rice", label: "2 lb rice or a bag of potatoes" },
-      { name: "check-bread", label: "1 loaf bread or 1 pack tortillas" },
-      { name: "check-pasta", label: "1 lb pasta" },
+      { name: "check-rice", label: "Rice, 5 lb (Mon + Thu + Sun)" },
+      { name: "check-potatoes", label: "Russet potatoes, 5 lb (Fri + Sat)" },
+      { name: "check-tortillas", label: "Burrito tortillas, 8 count (Tue)" },
+      { name: "check-pasta", label: "Spaghetti, 1 lb (Wed)" },
+      { name: "check-bread", label: "1 loaf bread (Fri)" },
     ],
   },
   {
     group: "Produce",
-    target: "about $10",
+    target: "about $7",
     paidName: "paid-produce",
     items: [
-      { name: "check-onions", label: "2 onions" },
-      { name: "check-frozen", label: "Frozen mixed vegetables (2 bags)" },
-      { name: "check-bananas", label: "1 bunch bananas" },
-      { name: "check-fruit", label: "1 other fruit the kids will actually eat" },
+      { name: "check-onions", label: "Yellow onions, 3 lb bag" },
+      { name: "check-frozen", label: "Frozen mixed vegetables (4 bags)" },
     ],
   },
   {
     group: "Dairy and pantry",
-    target: "about $12",
+    target: "about $7.50",
     paidName: "paid-pantry",
     items: [
-      { name: "check-cheddar", label: "8 oz cheddar" },
-      { name: "check-beans", label: "2 cans beans" },
-      { name: "check-pb", label: "Peanut butter" },
-      { name: "check-sauce", label: "1 jar salsa or pasta sauce" },
-      { name: "check-oats", label: "Oats" },
-      { name: "check-snack", label: "1 planned snack (store-brand cookies or popcorn)" },
+      { name: "check-cheddar", label: "Shredded cheddar, 16 oz (Tue + Thu + Sat)" },
+      { name: "check-sauce", label: "Pasta sauce, 24 oz (Wed)" },
+      { name: "check-salsa", label: "Salsa, 16 oz (Tue + Thu)" },
     ],
   },
 ];
@@ -58,20 +57,20 @@ const cart = [
 const week = [
   {
     day: "Mon",
-    plan: "Bake the thighs with onions, rice, and a bag of frozen veg. Cook extra rice.",
+    plan: "Bake the whole chicken bag with an onion. Eat half. Rice and frozen veg. Cook double rice.",
   },
   {
     day: "Tue",
-    plan: "Leftover chicken in tortillas with cheese and salsa. Kids will call this tacos.",
+    plan: "Pull the leftover chicken off the bone. Quesadillas with cheese and salsa.",
   },
   {
     day: "Wed",
-    plan: "Pasta + sauce. Dump the second bag of veg in the pot. This is the tired night on purpose.",
+    plan: "Brown the pound of beef with an onion. Half into the spaghetti sauce, half saved. Veg in the pot.",
   },
-  { day: "Thu", plan: "Bean and rice bowls. Cheddar on top. Banana for dessert." },
-  { day: "Fri", plan: "Grilled cheese or egg sandwiches, leftover fruit." },
-  { day: "Sat", plan: "Breakfast-for-dinner: eggs, toast or oats, whatever fruit is left." },
-  { day: "Sun", plan: "Leftovers. Soup only if you feel like it. No carcass homework." },
+  { day: "Thu", plan: "Taco bowls: saved beef plus a can of black beans over rice, cheese, salsa. Extra rice." },
+  { day: "Fri", plan: "Breakfast for dinner: eggs, skillet potatoes with onion, toast." },
+  { day: "Sat", plan: "Baked potato bar: beans, cheese, a bag of veg." },
+  { day: "Sun", plan: "Fried rice: Thursday's rice, eggs, onion, last bag of veg, any chicken left." },
 ];
 
 export default function GroceryWeekChecklistPage() {
@@ -81,14 +80,14 @@ export default function GroceryWeekChecklistPage() {
         <div>
           <h2 className="font-display text-3xl">Who this feeds</h2>
           <p className="mt-3 text-base leading-7">
-            About <strong>3-4 people</strong> for a week: dinners, plus breakfast
-            and lunch that are not another store trip. Oats or peanut-butter
-            toast in the morning. Leftovers or another PB sandwich at lunch.
+            <strong>Seven dinners for 3-4 people.</strong> Every item covers
+            two nights, so nothing gets bought for one dinner. This cart came to
+            $44.04 at Walmart in October 2026.
           </p>
           <p className="mt-3 text-base leading-7 text-ink-soft">
-            Teenagers: add a second pack of thighs and more rice. If someone
-            drinks milk, write it in. That is usually the first thing that
-            pushes the ticket past $47.
+            Breakfast and lunch are a separate line: oats, peanut butter, two
+            more loaves, bananas, milk, and yogurt run about $28 more.
+            Teenagers: add a second pound of beef and more rice.
           </p>
           <FillLine name="family-size" label="Family size" placeholder="3-4" />
           <FillLine name="hard-number" label="Hard number" placeholder="$47" />
@@ -98,14 +97,15 @@ export default function GroceryWeekChecklistPage() {
           <h2 className="font-display text-3xl">The three rules</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5 text-base leading-7">
             <li>
+              <strong>Buy for pairs.</strong> If an item only shows up one
+              night, it gets a second job or stays on the shelf.
+            </li>
+            <li>
               <strong>Shop once.</strong> A second trip is how $47 becomes $90.
             </li>
             <li>
-              <strong>Cook extra on Monday.</strong> Tuesday and Thursday are
-              leftovers with a different name.
-            </li>
-            <li>
-              <strong>Name one snack.</strong> Unplanned snacks are the leak.
+              <strong>Cook the whole pack.</strong> Tuesday and Thursday are
+              Monday and Wednesday with a different name.
             </li>
           </ol>
         </div>
@@ -126,9 +126,9 @@ export default function GroceryWeekChecklistPage() {
         <div>
           <h2 className="font-display text-3xl">The cart</h2>
           <p className="mt-3 text-base leading-7 text-ink-soft">
-            Store brand. This is a target of about $47 in most US stores, not a
-            dare. Skip anything you already have. Type what you actually paid
-            next to the category target.
+            Store brand, Walmart prices from October 2026: $44.04 total. Skip
+            anything you already have. Type what you actually paid next to the
+            category target.
           </p>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {cart.map((section) => (
@@ -155,9 +155,11 @@ export default function GroceryWeekChecklistPage() {
           <div className="mt-6 break-inside-avoid rounded-xl border border-rule/80 bg-paper-2/30 p-4 md:max-w-[calc(50%-0.75rem)] print:border-black/20 print:bg-white">
             <h3 className="font-display text-xl">Only if you need it</h3>
             <ul className="mt-3 space-y-2">
-              <FillCheck name="check-milk">Gallon of milk</FillCheck>
               <FillCheck name="check-oil">
-                Butter or oil if the pantry is empty
+                Cooking oil if the pantry is empty
+              </FillCheck>
+              <FillCheck name="check-milk">
+                Milk (breakfast line, not the $47)
               </FillCheck>
             </ul>
           </div>
@@ -171,13 +173,13 @@ export default function GroceryWeekChecklistPage() {
           </p>
           <ul className="mt-4 space-y-2">
             <FillCheck name="swap-thighs">
-              Thighs high: ground turkey, or extra beans plus a second dozen eggs
+              Chicken bag over $10: second 18 eggs plus two more cans of beans
             </FillCheck>
-            <FillCheck name="swap-pasta">
-              Pasta night: extra beans if the sauce jar is pricey
+            <FillCheck name="swap-beef">
+              Beef over $7/lb: veg spaghetti and all-bean taco bowls
             </FillCheck>
-            <FillCheck name="swap-fruit">
-              Fruit: whatever is marked down that the kids will eat
+            <FillCheck name="swap-potatoes">
+              Potatoes over $5: rice Friday, a second box of pasta Saturday
             </FillCheck>
           </ul>
           <FillLine
@@ -191,7 +193,7 @@ export default function GroceryWeekChecklistPage() {
         <div>
           <h2 className="font-display text-3xl">The week</h2>
           <p className="mt-2 text-sm text-ink-soft">
-            Dinner plan at a glance. Cook extra Monday for leftover nights.
+            Dinner plan at a glance. Each pair is one purchase, two nights.
           </p>
           <WeekMealPlan days={week} />
         </div>

@@ -31,13 +31,13 @@ export const resources: Resource[] = [
     slug: "grocery-week-checklist",
     publishedAt: "2026-08-12",
     title: "The $47 grocery-week checklist",
-    seoTitle: "Free $47 Family Grocery Budget Checklist (Printable)",
+    seoTitle: "Free $47 Family Dinner Grocery Checklist (Printable)",
     description:
-      "Printable family grocery budget checklist for about $47 a week: protein, starch, produce, pantry targets, and a swap box. Full fillable PDF with Sunday email signup.",
+      "Printable grocery checklist for seven family dinners for about $47 at Walmart: every item covers two meals, with category targets and a swap box.",
     excerpt:
-      "A week of dinners for about 3-4 people. Dozen eggs, a pack of thighs, pasta on the tired night. Shop once.",
+      "Seven dinners for 3-4 people, $44 at Walmart. One bag of chicken is Monday and Tuesday. Nothing gets bought for one night.",
     intro:
-      "Print this before you walk into the store, or type your numbers on your phone first. Category targets keep the cart honest. The swap box lets you take a markdown without blowing the week.",
+      "Print this before you walk into the store, or type your numbers on your phone first. Every item is paired with the two nights it covers. The swap box handles a price spike without a second trip.",
     printLabel: "Print checklist",
     guideSlug: "the-47-dollar-grocery-week",
     guideLabel: "the $47 grocery week",

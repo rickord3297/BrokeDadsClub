@@ -60,7 +60,7 @@ export function resourceTieInForGuide(
 /** "If you need..." hooks for the Keep going hub. */
 const RELATED_HOOKS: Record<string, string> = {
   "the-dad-tax": "If you need the big picture on kid costs",
-  "the-47-dollar-grocery-week": "If you need a one-week grocery plan",
+  "the-47-dollar-grocery-week": "If you need a week of cheap dinners",
   "school-supply-list": "If you need to survive the school list",
   "talking-to-kids-about-money": "If you need calm money talk scripts",
   "the-second-bill": "If you need to see the fees after supplies",

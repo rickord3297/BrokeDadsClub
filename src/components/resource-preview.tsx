@@ -127,7 +127,7 @@ function GroceryCardPreview() {
           <h3 className="mt-2 font-display text-2xl leading-tight">
             Grocery week
           </h3>
-          <p className="mt-1 text-sm text-ink-soft">$47 cart · 3–4 people</p>
+          <p className="mt-1 text-sm text-ink-soft">7 dinners · 3-4 people · $44</p>
         </div>
         <div className="rounded-md border border-ink px-2 py-1 text-[10px] font-semibold uppercase tracking-wider">
           Print
@@ -136,10 +136,10 @@ function GroceryCardPreview() {
       <div className="mt-5 space-y-4 text-sm">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-soft">
-            Protein · $12
+            Protein · $19
           </p>
           <ul className="mt-2 space-y-2">
-            {["Dozen eggs", "Chicken thighs", "Canned beans"].map((item) => (
+            {["Chicken thighs, 4 lb", "Ground beef, 1 lb", "Eggs, 18"].map((item) => (
               <li key={item} className="flex items-center gap-2.5">
                 <CheckSvg />
                 <span>{item}</span>
@@ -149,10 +149,10 @@ function GroceryCardPreview() {
         </div>
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-soft">
-            Starch · $8
+            Starch · $11
           </p>
           <ul className="mt-2 space-y-2">
-            {["Rice or potatoes", "Pasta"].map((item) => (
+            {["Rice, 5 lb", "Potatoes, 5 lb"].map((item) => (
               <li key={item} className="flex items-center gap-2.5">
                 <CheckSvg />
                 <span>{item}</span>
@@ -162,10 +162,10 @@ function GroceryCardPreview() {
         </div>
         <div className="rounded-md border border-ink/20 bg-paper-2/40 p-3">
           <p className="text-xs font-semibold uppercase tracking-[0.14em]">
-            Swap box
+            Two nights each
           </p>
           <p className="mt-1 text-sm text-ink-soft">
-            Turkey or extra beans if chicken is up
+            Mon chicken is Tue quesadillas
           </p>
         </div>
       </div>
@@ -242,18 +242,18 @@ function GroceryMini() {
   return (
     <div className="flex h-full flex-col gap-1.5 text-[7px] leading-tight text-ink">
       <p className="font-stamp text-[8px] uppercase tracking-wider">Grocery week</p>
-      <p className="font-display text-[10px] leading-tight">$47 cart · 3-4 people</p>
-      <p className="mt-1 font-semibold">Protein · about $12</p>
-      <Line>Dozen eggs</Line>
-      <Line>Chicken thighs</Line>
-      <p className="mt-1 font-semibold">Starch · about $8</p>
-      <Line>Rice or potatoes</Line>
-      <Line>Pasta</Line>
-      <p className="mt-1 font-semibold">Produce · about $10</p>
+      <p className="font-display text-[10px] leading-tight">7 dinners · 3-4 people</p>
+      <p className="mt-1 font-semibold">Protein · about $19</p>
+      <Line>Chicken thighs, 4 lb</Line>
+      <Line>Ground beef, 1 lb</Line>
+      <p className="mt-1 font-semibold">Starch · about $11</p>
+      <Line>Rice, 5 lb</Line>
+      <Line>Potatoes, 5 lb</Line>
+      <p className="mt-1 font-semibold">Produce · about $7</p>
       <Line>Onions + frozen veg</Line>
       <div className="mt-auto rounded border border-ink/20 p-1">
-        <p className="font-semibold">Swap box</p>
-        <p className="text-ink/60">Turkey or extra beans</p>
+        <p className="font-semibold">Two nights each</p>
+        <p className="text-ink/60">Mon chicken, Tue quesadillas</p>
       </div>
     </div>
   );
