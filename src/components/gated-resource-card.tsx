@@ -69,7 +69,7 @@ export function GatedResourceCard({ resource }: { resource: Resource }) {
         </div>
 
         <div className="mt-6 flex justify-center bg-paper-2/50 p-6 sm:p-8">
-          <ResourcePreview slug={resource.slug} variant="card" />
+          <ResourcePreview resource={resource} variant="card" />
         </div>
 
         <div className="mt-6">

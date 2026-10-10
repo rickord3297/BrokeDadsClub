@@ -1,23 +1,26 @@
 import Link from "next/link";
 import { GuideEmailCta } from "@/components/guide-email-cta";
 import { JsonLd } from "@/components/json-ld";
-import { ResourceSheetWorkspace } from "@/components/resource-sheet-workspace";
+import { hasResourceSample } from "@/components/resource-sample";
+import {
+  ResourceSheetWorkspace,
+  type ResourceSampleMode,
+} from "@/components/resource-sheet-workspace";
 import { ResourceViewTracker } from "@/components/resource-view-tracker";
 import { resourceWebPageJsonLd } from "@/lib/seo";
-import {
-  otherResources,
-  resourceIdeaMailto,
-  type Resource,
-} from "@/lib/resources";
+import { otherLiveResources } from "@/lib/printables";
+import { resourceIdeaMailto, type Resource } from "@/lib/resources";
 
 export function ResourceLayout({
   resource,
+  sampleMode,
   children,
 }: {
   resource: Resource;
+  sampleMode?: ResourceSampleMode;
   children: React.ReactNode;
 }) {
-  const related = otherResources(resource.slug);
+  const related = otherLiveResources(resource.slug);
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6">
@@ -65,6 +68,10 @@ export function ResourceLayout({
       <ResourceSheetWorkspace
         resourceSlug={resource.slug}
         printLabel={resource.printLabel}
+        sampleMode={
+          sampleMode ??
+          (hasResourceSample(resource.slug) ? "custom" : "inline")
+        }
       >
         {children}
       </ResourceSheetWorkspace>

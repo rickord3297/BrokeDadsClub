@@ -4,6 +4,7 @@ import { GuidesCrawlIndex } from "@/components/guides-crawl-index";
 import { GuidesExplorer } from "@/components/guides-explorer";
 import { JsonLd } from "@/components/json-ld";
 import { resourceTieInForGuide } from "@/lib/guide-catalog";
+import { getLiveResources } from "@/lib/printables";
 import {
   getGuideCategories,
   getGuides,
@@ -29,8 +30,9 @@ export const metadata: Metadata = buildPageMetadata({
 export default async function GuidesPage() {
   const guides = getGuides();
   const categories = getGuideCategories(guides);
+  const liveResources = getLiveResources();
   const list = guides.map((guide) => {
-    const tieIn = resourceTieInForGuide(guide.slug);
+    const tieIn = resourceTieInForGuide(guide.slug, liveResources);
     return toGuideListItem(
       guide,
       tieIn ? { href: tieIn.href, label: tieIn.label } : null,

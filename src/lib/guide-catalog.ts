@@ -1,4 +1,4 @@
-import { resources } from "@/lib/resources";
+import { resources, type Resource } from "@/lib/resources";
 
 export type CategoryAccent = {
   bar: string;
@@ -43,10 +43,12 @@ export type GuideResourceTieIn = {
   kind: "printable";
 };
 
+/** Server callers pass `getLiveResources()` so content-file printables count too. */
 export function resourceTieInForGuide(
   guideSlug: string,
+  pool: readonly Resource[] = resources,
 ): GuideResourceTieIn | null {
-  const resource = resources.find((item) => item.guideSlug === guideSlug);
+  const resource = pool.find((item) => item.guideSlug === guideSlug);
   if (!resource) return null;
   return {
     href: `/resources/${resource.slug}`,

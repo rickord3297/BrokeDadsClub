@@ -3,6 +3,7 @@ import Link from "next/link";
 import { GuideCard } from "@/components/guide-card";
 import { JsonLd } from "@/components/json-ld";
 import { resourceTieInForGuide } from "@/lib/guide-catalog";
+import { getLiveResources } from "@/lib/printables";
 import {
   GUIDE_PILLARS,
   getGuidePillar,
@@ -27,11 +28,12 @@ export function pillarMetadata(slug: GuidePillar["slug"]): Metadata {
 export function GuidePillarPage({ slug }: { slug: GuidePillar["slug"] }) {
   const pillar = getGuidePillar(slug);
   if (!pillar) return null;
+  const liveResources = getLiveResources();
 
   const guides = getGuides()
     .filter((guide) => guide.category === pillar.category)
     .map((guide) => {
-      const tieIn = resourceTieInForGuide(guide.slug);
+      const tieIn = resourceTieInForGuide(guide.slug, liveResources);
       return toGuideListItem(
         guide,
         tieIn ? { href: tieIn.href, label: tieIn.label } : null,

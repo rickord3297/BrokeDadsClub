@@ -20,11 +20,16 @@ export type Resource = {
   keywords: string[];
   tags: ResourceTag[];
   companionGuideSlugs: string[];
+  /** YYYY-MM-DD the printable went live. Newest sort first on /resources. */
+  publishedAt: string;
+  /** Labels for the generic thumbnail when there is no hand-drawn preview. */
+  previewItems?: string[];
 };
 
 export const resources: Resource[] = [
   {
     slug: "grocery-week-checklist",
+    publishedAt: "2026-08-12",
     title: "The $47 grocery-week checklist",
     seoTitle: "Free $47 Family Grocery Budget Checklist (Printable)",
     description:
@@ -47,6 +52,8 @@ export const resources: Resource[] = [
   },
   {
     slug: "boring-bedtime-night-card",
+    publishedAt: "2026-09-17",
+    previewItems: ["Bathroom", "Pajamas", "Teeth", "One book", "Lights down, goodbye, leave"],
     title: "Boring bedtime night card",
     seoTitle: "Free Kids Bedtime Routine Checklist (Printable)",
     description:
@@ -73,6 +80,7 @@ export const resources: Resource[] = [
   },
   {
     slug: "school-supply-triage",
+    publishedAt: "2026-08-14",
     title: "School supply triage sheet",
     seoTitle: "Free School Supply List Budget Triage Sheet (Printable)",
     description:
@@ -99,6 +107,7 @@ export const resources: Resource[] = [
   },
   {
     slug: "birthday-party-budget",
+    publishedAt: "2026-08-14",
     title: "Birthday party budget template",
     seoTitle: "Birthday Party Budget Template (Free Printable Worksheet)",
     description:

@@ -1,3 +1,5 @@
+import type { Resource } from "@/lib/resources";
+
 function PaperClipIcon() {
   return (
     <svg
@@ -17,11 +19,39 @@ function PaperClipIcon() {
 }
 
 
+type PreviewResource = Pick<Resource, "slug" | "title" | "previewItems">;
+
+function CardPreview({ resource }: { resource: PreviewResource }) {
+  switch (resource.slug) {
+    case "grocery-week-checklist":
+      return <GroceryCardPreview />;
+    case "school-supply-triage":
+      return <SchoolCardPreview />;
+    case "birthday-party-budget":
+      return <BirthdayCardPreview />;
+    default:
+      return <GenericCardPreview resource={resource} />;
+  }
+}
+
+function MiniPreview({ resource }: { resource: PreviewResource }) {
+  switch (resource.slug) {
+    case "grocery-week-checklist":
+      return <GroceryMini />;
+    case "school-supply-triage":
+      return <SchoolMini />;
+    case "birthday-party-budget":
+      return <BirthdayMini />;
+    default:
+      return <GenericMini resource={resource} />;
+  }
+}
+
 export function ResourcePreview({
-  slug,
+  resource,
   variant = "sheet",
 }: {
-  slug: string;
+  resource: PreviewResource;
   variant?: "sheet" | "fridge" | "card";
 }) {
   if (variant === "card") {
@@ -32,9 +62,7 @@ export function ResourcePreview({
           className="relative overflow-hidden rounded-sm border border-ink/12 bg-white shadow-[0_2px_8px_rgba(28,25,21,0.06),0_12px_32px_-8px_rgba(28,25,21,0.18)]"
           aria-hidden
         >
-          {slug === "grocery-week-checklist" ? <GroceryCardPreview /> : null}
-          {slug === "school-supply-triage" ? <SchoolCardPreview /> : null}
-          {slug === "birthday-party-budget" ? <BirthdayCardPreview /> : null}
+          <CardPreview resource={resource} />
         </div>
       </div>
     );
@@ -45,9 +73,7 @@ export function ResourcePreview({
       className="mx-auto aspect-[8.5/11] w-full max-w-[11rem] overflow-hidden rounded-lg border border-rule bg-white p-2.5 shadow-sm"
       aria-hidden
     >
-      {slug === "grocery-week-checklist" ? <GroceryMini /> : null}
-      {slug === "school-supply-triage" ? <SchoolMini /> : null}
-      {slug === "birthday-party-budget" ? <BirthdayMini /> : null}
+      <MiniPreview resource={resource} />
     </div>
   );
 
@@ -275,6 +301,49 @@ function BirthdayMini() {
         <p className="font-semibold">Free / low-cost</p>
         <p className="text-ink/60">Park pavilion · backyard games</p>
       </div>
+    </div>
+  );
+}
+
+function GenericMini({ resource }: { resource: PreviewResource }) {
+  const items = resource.previewItems ?? [];
+  return (
+    <div className="flex h-full flex-col gap-1.5 text-[7px] leading-tight text-ink">
+      <p className="font-stamp text-[8px] uppercase tracking-wider">Broke Dads Club</p>
+      <p className="font-display text-[10px] leading-tight">{resource.title}</p>
+      {items.map((item) => (
+        <Line key={item}>{item}</Line>
+      ))}
+      <Line />
+      <Line />
+      <Line />
+      <div className="mt-auto rounded border border-ink/20 p-1">
+        <p className="font-semibold">Fill it in</p>
+        <div className="mt-1 space-y-1">
+          <span className="block h-1 rounded-sm bg-ink/15" />
+          <span className="block h-1 w-2/3 rounded-sm bg-ink/15" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function GenericCardPreview({ resource }: { resource: PreviewResource }) {
+  const items = (resource.previewItems ?? []).slice(0, 4);
+  return (
+    <div className="aspect-[4/5] bg-white p-6 text-ink sm:p-8">
+      <p className="font-stamp text-[10px] uppercase tracking-[0.22em] text-pine">
+        Broke Dads Club
+      </p>
+      <h3 className="mt-2 font-display text-2xl leading-tight">{resource.title}</h3>
+      <ul className="mt-5 space-y-2 text-sm">
+        {items.map((item) => (
+          <li key={item} className="flex items-center gap-2.5">
+            <CheckSvg />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

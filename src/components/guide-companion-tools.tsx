@@ -30,7 +30,7 @@ export function GuidePrintableEmbed({
           href={`/resources/${resource.slug}`}
           className={`mx-auto block sm:mx-0 ${compact ? "w-20" : "w-28 sm:w-full"}`}
         >
-          <ResourcePreview slug={resource.slug} variant="sheet" />
+          <ResourcePreview resource={resource} variant="sheet" />
         </Link>
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-pine">

@@ -1,4 +1,4 @@
-# Merges open "Publish guide:" PRs so the every-3-day cadence lands on main.
+# Merges open "Publish guide:" and "Publish printable:" PRs so the content cadence lands on main.
 # Trend-scan idea PRs are ignored on purpose.
 
 name: Auto-publish guides
@@ -18,10 +18,13 @@ permissions:
 
 jobs:
   merge-publish-prs:
-    if: github.event_name != 'pull_request' || startsWith(github.event.pull_request.title, 'Publish guide:')
+    if: >-
+      github.event_name != 'pull_request' ||
+      startsWith(github.event.pull_request.title, 'Publish guide:') ||
+      startsWith(github.event.pull_request.title, 'Publish printable:')
     runs-on: ubuntu-latest
     steps:
-      - name: Merge eligible Publish guide PRs
+      - name: Merge eligible Publish guide and printable PRs
         uses: actions/github-script@v7
         with:
           script: |
@@ -60,7 +63,9 @@ jobs:
               const branch = pull.head?.ref || '';
               const eligible =
                 title.startsWith('Publish guide:') ||
-                branch.startsWith('cursor/publish-');
+                title.startsWith('Publish printable:') ||
+                branch.startsWith('cursor/publish-') ||
+                branch.startsWith('cursor/printable-');
               if (!eligible) {
                 core.info(`Skip #${pull.number}: ${title}`);
                 return;

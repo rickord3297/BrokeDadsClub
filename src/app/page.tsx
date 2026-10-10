@@ -7,6 +7,7 @@ import { HomeHero } from "@/components/home-hero";
 import { ProductCard } from "@/components/product-card";
 import { isPremiumProduct } from "@/lib/product-display";
 import { resourceTieInForGuide } from "@/lib/guide-catalog";
+import { getLiveResources } from "@/lib/printables";
 import {
   getGuides,
   toGuideListItem,
@@ -27,9 +28,10 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 export default async function Home() {
+  const liveResources = getLiveResources();
   const guides = getGuides();
   const list = guides.map((guide) => {
-    const tieIn = resourceTieInForGuide(guide.slug);
+    const tieIn = resourceTieInForGuide(guide.slug, liveResources);
     return toGuideListItem(
       guide,
       tieIn ? { href: tieIn.href, label: tieIn.label } : null,

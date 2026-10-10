@@ -5,7 +5,7 @@ import type { Guide } from "@/lib/guide-model";
 import { LEAD_MAGNETS } from "@/lib/lead-magnets";
 import { getAllIssues, type NewsletterIssue } from "@/lib/newsletter";
 import { getProducts } from "@/lib/products";
-import { resources } from "@/lib/resources";
+import { getLiveResources } from "@/lib/printables";
 import { absoluteUrl } from "@/lib/seo";
 
 /** Hourly so scheduled guides enter the sitemap on their go-live date without a deploy. */
@@ -70,9 +70,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
 
     { url: absoluteUrl("/resources"), lastModified: latestGuide, changeFrequency: "monthly", priority: 0.6 },
-    ...resources.map((resource) => ({
+    ...getLiveResources().map((resource) => ({
       url: absoluteUrl(`/resources/${resource.slug}`),
-      lastModified: SITE_EPOCH,
+      lastModified: new Date(`${resource.publishedAt}T00:00:00.000Z`),
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),

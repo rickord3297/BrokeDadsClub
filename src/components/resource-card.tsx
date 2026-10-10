@@ -39,10 +39,12 @@ export function ResourceCard({
   resource,
   previewVariant = "sheet",
   variant = "default",
+  isNew = false,
 }: {
   resource: Resource;
   previewVariant?: "sheet" | "fridge" | "card";
   variant?: "default" | "featured";
+  isNew?: boolean;
 }) {
   const featured = variant === "featured";
 
@@ -64,7 +66,7 @@ export function ResourceCard({
             </ResourceCardSection>
           </div>
           <div className="mt-6 flex justify-center bg-paper-2/50 p-6 sm:p-8">
-            <ResourcePreview slug={resource.slug} variant={previewVariant} />
+            <ResourcePreview resource={resource} variant={previewVariant} />
           </div>
           <div className="mt-6 flex flex-col gap-3">
             <ResourceActionButtons
@@ -93,6 +95,11 @@ export function ResourceCard({
   return (
     <article className="flex flex-col rounded-2xl border border-rule bg-paper shadow-md shadow-ink/5 ring-1 ring-ink/5">
       <div className="p-5">
+        {isNew ? (
+          <p className="mb-2 inline-flex rounded-full bg-rust px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-paper">
+            New
+          </p>
+        ) : null}
         <h3 className="font-display text-2xl leading-tight">
           <Link href={`/resources/${resource.slug}`} className="hover:text-rust">
             {resource.title}
@@ -119,7 +126,7 @@ export function ResourceCard({
         className="block px-5 pb-5"
       >
         <div className="rounded-xl bg-paper-2/60 p-3">
-          <ResourcePreview slug={resource.slug} variant={previewVariant} />
+          <ResourcePreview resource={resource} variant={previewVariant} />
         </div>
       </Link>
 

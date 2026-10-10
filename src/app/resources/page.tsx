@@ -1,14 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ResourceCard } from "@/components/resource-card";
-import { resources } from "@/lib/resources";
+import { getLiveResources, getNextScheduledPrintable } from "@/lib/printables";
 import { buildPageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
+
+export const revalidate = 3600;
+
+const NEW_FOR_DAYS = 14;
+
+function isNew(publishedAt: string) {
+  const cutoff = new Date(Date.now() - NEW_FOR_DAYS * 24 * 60 * 60 * 1000);
+  return publishedAt >= cutoff.toISOString().slice(0, 10);
+}
+
+function dropDay(iso: string) {
+  return new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${iso}T00:00:00.000Z`));
+}
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Free Printable Tools for Dads",
   description:
-    "Free fillable and printable checklists for stretched dads: grocery week, bedtime night card, school supply triage, and birthday party budget. Type on your phone or save as PDF.",
+    "Free fillable and printable checklists for stretched dads: grocery week, bedtime, school supplies, party budgets, and a new sheet most Fridays. Type on your phone or save as PDF.",
   path: "/resources",
   keywords: [
     "free printable budget worksheets",
@@ -19,20 +37,23 @@ export const metadata: Metadata = buildPageMetadata({
   ],
 });
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Free printable tools from Broke Dads Club",
-  isAccessibleForFree: true,
-  itemListElement: resources.map((resource, index) => ({
-    "@type": "ListItem",
-    position: index + 1,
-    url: `${site.url}/resources/${resource.slug}`,
-    name: resource.title,
-  })),
-};
-
 export default function ResourcesPage() {
+  const resources = getLiveResources();
+  const next = getNextScheduledPrintable();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Free printable tools from Broke Dads Club",
+    isAccessibleForFree: true,
+    itemListElement: resources.map((resource, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${site.url}/resources/${resource.slug}`,
+      name: resource.title,
+    })),
+  };
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
       <script
@@ -48,10 +69,19 @@ export default function ResourcesPage() {
         numbers on your phone, print them, or save as a PDF. No email wall. The
         guides explain the thinking. These are the working copies.
       </p>
+      {next ? (
+        <p className="mt-4 inline-flex rounded-full border border-rule bg-paper-2/70 px-3 py-1 text-sm text-ink-soft">
+          Next sheet drops {dropDay(next.publishedAt)}: {next.title}
+        </p>
+      ) : null}
 
       <div className="mt-10 grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {resources.map((resource) => (
-          <ResourceCard key={resource.slug} resource={resource} />
+          <ResourceCard
+            key={resource.slug}
+            resource={resource}
+            isNew={isNew(resource.publishedAt)}
+          />
         ))}
       </div>
 

@@ -36,7 +36,7 @@ import {
   splitGuideIntro,
   toGuideListItem,
 } from "@/lib/guides";
-import { getResourceByGuideSlug, otherResources } from "@/lib/resources";
+import { getLiveResourceForGuide, otherLiveResources } from "@/lib/printables";
 import { guideCategoryPath, authorBio, guideSchemaDate } from "@/lib/guide-pillars";
 import { JsonLd } from "@/components/json-ld";
 import {
@@ -113,7 +113,7 @@ export default async function GuidePage({
   const [mainFirst, mainSecond] = splitAtMiddleHeading(main);
   const ctaProduct = guide.productCta ? await getProduct(guide.productCta.slug) : null;
   const headingCounts = new Map<string, number>();
-  const companionPrintable = getResourceByGuideSlug(guide.slug);
+  const companionPrintable = getLiveResourceForGuide(guide.slug);
   const showToc = headings.length >= 2;
 
   const author = authorBio();
@@ -315,7 +315,7 @@ export default async function GuidePage({
             <GuideCompanionPrintables
               printables={
                 companionPrintable
-                  ? otherResources(companionPrintable.slug)
+                  ? otherLiveResources(companionPrintable.slug)
                   : []
               }
             />

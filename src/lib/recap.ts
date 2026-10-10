@@ -1,5 +1,5 @@
 import type { Guide } from "@/lib/guides";
-import { resources } from "@/lib/resources";
+import { getLiveResources } from "@/lib/printables";
 import { site } from "@/lib/site";
 
 const PAPER = "#f9f4e8";
@@ -21,6 +21,7 @@ export function buildRecapEmail(
   options?: { quietWeek?: boolean },
 ): { subject: string; html: string; text: string } {
   const quietWeek = Boolean(options?.quietWeek);
+  const resources = getLiveResources().slice(0, 4);
   const printableUrl = `${site.url}/resources`;
   const intro = quietWeek
     ? "Nothing new went up this week. Here is one thing worth using anyway, plus the fridge sheets if you need them."

@@ -1,5 +1,16 @@
 import { FillCheck, FillLine } from "@/components/fillable-fields";
 
+const CUSTOM_SAMPLE_SLUGS = new Set([
+  "grocery-week-checklist",
+  "school-supply-triage",
+  "birthday-party-budget",
+]);
+
+/** True when the sheet has a hand-built filled example below. */
+export function hasResourceSample(slug: string) {
+  return CUSTOM_SAMPLE_SLUGS.has(slug);
+}
+
 /** Static filled examples parents can skim before using the blank sheet. */
 export function ResourceSample({ slug }: { slug: string }) {
   if (slug === "grocery-week-checklist") return <GrocerySample />;
