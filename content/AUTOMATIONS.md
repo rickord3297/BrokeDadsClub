@@ -10,7 +10,7 @@ Broke Dads Club uses Cursor Automations plus one GitHub Action.
 | Publish guide (every 3 days) | Every 3 days | Drafts/schedules/publishes the next guide. Opens a PR titled `Publish guide: …`. |
 | Publish printable (weekly) | Fridays | Keeps one new printable going live per Friday from `content/printables/`. Opens a PR titled `Publish printable: …`. |
 | Publish newsletter (weekly) | Thursdays | Writes the next Sunday Dispatch in `content/newsletter/`, dated the coming Sunday. Opens a PR titled `Publish newsletter: …`. |
-| `weekly-recap` Vercel cron | Sundays, 9 a.m. Central | Emails subscribers the issue dated that Sunday. With no issue, sends the automatic guide recap instead. |
+| `weekly-recap` Vercel cron | Sundays, 9 a.m. Central | Off until an email provider is configured. Once on, emails subscribers the issue dated that Sunday, or the guide recap if there is none. |
 | `auto-publish-guides` GitHub Action | Daily + on publish PRs | Squash-merges open PRs whose title starts with `Publish guide:`, `Publish printable:`, or `Publish newsletter:` (or branch `cursor/publish-*` / `cursor/printable-*` / `cursor/newsletter-*`). |
 
 Scheduled guides on `main` with `status: scheduled` and `publishedAt <= today` go live on the site automatically after deploy. Scheduled printables do the same; `/resources` and `/resources/<slug>` refresh hourly, so a printable goes live on its date even without a deploy. Newsletter issues work the same way on `/newsletter`.
@@ -85,7 +85,7 @@ Broke Dads Club: weekly Sunday Dispatch pass.
 Follow `.cursor/skills/write-bdc-newsletter/SKILL.md` section "Weekly pass (Thursdays)".
 
 Goals:
-1. Have the next Sunday Dispatch issue on main before Sunday 9 a.m. Central, dated that Sunday.
+1. Have the next Sunday Dispatch issue on main before Saturday evening, dated that Sunday.
 2. Open a pull request whose title MUST start with exactly: Publish newsletter:
    The repo GitHub Action auto-merges Publish newsletter PRs once checks pass.
 

@@ -13,16 +13,16 @@ Each issue is one markdown file: `content/newsletter/NNN-<slug>.md`. Frontmatter
 
 ## How it goes out
 
-- An issue appears on `/newsletter` on its `publishedAt` date (pages refresh hourly, no deploy needed).
-- The Vercel cron (`/api/cron/weekly-recap`) runs Sundays and sends at **9 a.m. Central**. If a live issue is dated within the last 6 days, every subscriber gets that issue. If not, they get the automatic guide recap instead.
-- So the issue must be **on `main` before Sunday 9 a.m. Central**, dated that Sunday.
+- The Dispatch is website-only for now. An issue appears on `/newsletter` on its `publishedAt` date (pages refresh hourly, no deploy needed).
+- Email sending is built but switched off until an email provider is configured (`/api/cron/weekly-recap` returns 503 without SES keys). When it is on, it sends the issue dated that Sunday at 9 a.m. Central.
+- So the issue must be **on `main` before Saturday evening**, dated that Sunday.
 
 ## Weekly pass (Thursdays)
 
 When the user says **newsletter cadence**, **next issue**, or the **Publish newsletter** automation runs:
 
 1. Start from latest `origin/main`. Branch `cursor/newsletter-<slug>-XXXX`.
-2. Find the coming Sunday (today if today is Sunday and it is before 9 a.m. Central, otherwise the next Sunday).
+2. Find the coming Sunday (if today is Sunday, use next Sunday).
 3. If an issue is already dated that Sunday, stop. Do not open a PR.
 4. Read the last two issues (do not repeat their topics or deals), then the guides and printables that will be **live by that Sunday**: `content/guides/*.md` and `content/printables/*.md` with `status: published`, or `scheduled` with `publishedAt <= Sunday`.
 5. Pick the lead:
