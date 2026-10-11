@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { isGmailConfigured, sendGmail } from "@/lib/gmail";
 import { isSesConfigured, sendSesEmail } from "@/lib/ses";
 import { site } from "@/lib/site";
 
@@ -42,7 +43,8 @@ export async function POST(request: Request) {
     );
   }
 
-  if (!isSesConfigured()) {
+  const useSes = isSesConfigured();
+  if (!useSes && !isGmailConfigured()) {
     return NextResponse.json(
       { message: "Contact form is not available right now. Try again later." },
       { status: 503 },
@@ -65,13 +67,17 @@ export async function POST(request: Request) {
   `.trim();
 
   try {
-    await sendSesEmail({
-      to: site.email,
-      replyTo: email,
-      subject,
-      text,
-      html,
-    });
+    if (useSes) {
+      await sendSesEmail({
+        to: site.email,
+        replyTo: email,
+        subject,
+        text,
+        html,
+      });
+    } else {
+      await sendGmail({ to: site.email, replyTo: email, subject, text });
+    }
   } catch (error) {
     console.error("Contact form send failed:", error);
     return NextResponse.json(

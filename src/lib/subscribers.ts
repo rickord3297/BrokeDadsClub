@@ -1,4 +1,6 @@
+import { after } from "next/server";
 import { normalizeEmail } from "@/lib/email";
+import { notifyNewSubscriber } from "@/lib/signup-notify";
 import { createPublicClient } from "@/lib/supabase/public";
 
 export type AddSubscriberResult =
@@ -22,6 +24,9 @@ export async function addSubscriber(email: string, source = ""): Promise<AddSubs
   }
   if (error && error.code !== "23505") {
     return { ok: false, message: error.message };
+  }
+  if (!error) {
+    after(() => notifyNewSubscriber(normalized, cleanSource));
   }
   return { ok: true, stored: true };
 }
