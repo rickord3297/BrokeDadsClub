@@ -1,8 +1,12 @@
 {
   "crons": [
     {
-      "path": "/api/cron/weekly-recap",
+      "path": "/api/cron/weekly-recap?slot=cdt",
       "schedule": "0 14 * * 0"
+    },
+    {
+      "path": "/api/cron/weekly-recap?slot=cst",
+      "schedule": "0 15 * * 0"
     }
   ]
 }

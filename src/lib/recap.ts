@@ -2,13 +2,16 @@ import type { Guide } from "@/lib/guides";
 import { getLiveResources } from "@/lib/printables";
 import { site } from "@/lib/site";
 
-const PAPER = "#f9f4e8";
-const INK = "#1c1915";
-const INK_SOFT = "#5c5348";
-const PINE = "#2c5f63";
-const RUST = "#d97b51";
-const GOLD = "#d4a84b";
-const RULE = "#e0d3bc";
+export const EMAIL_COLORS = {
+  PAPER: "#f9f4e8",
+  INK: "#1c1915",
+  INK_SOFT: "#5c5348",
+  PINE: "#2c5f63",
+  RUST: "#d97b51",
+  GOLD: "#d4a84b",
+  RULE: "#e0d3bc",
+} as const;
+const { PAPER, INK, INK_SOFT, PINE, RUST, GOLD, RULE } = EMAIL_COLORS;
 
 export function recapWindowStart(now = new Date()): string {
   const start = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
@@ -147,7 +150,7 @@ function guideCard(guide: Guide) {
     </table>`;
 }
 
-function pillButton(label: string, href: string) {
+export function pillButton(label: string, href: string) {
   return `<table role="presentation" cellpadding="0" cellspacing="0">
     <tr>
       <td style="background:${PINE};border-radius:999px;">
@@ -157,7 +160,7 @@ function pillButton(label: string, href: string) {
   </table>`;
 }
 
-function escapeHtml(value: string) {
+export function escapeHtml(value: string) {
   return value
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")

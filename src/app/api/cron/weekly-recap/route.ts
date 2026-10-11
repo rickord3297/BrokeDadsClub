@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
-import { getGuides, getGuidesSince } from "@/lib/guides";
+import { getGuide, getGuides, getGuidesSince } from "@/lib/guides";
+import { getAllIssues } from "@/lib/newsletter";
+import { buildIssueEmail } from "@/lib/newsletter-email";
 import { buildRecapEmail, recapWindowStart } from "@/lib/recap";
 import { isSesConfigured, sendSesEmail } from "@/lib/ses";
 import { site } from "@/lib/site";
@@ -15,9 +17,31 @@ function isAuthorized(request: Request): boolean {
   return header === `Bearer ${secret}`;
 }
 
+const SEND_HOUR_CENTRAL = 9;
+
+/** vercel.json schedules 14:00 and 15:00 UTC; only the run that lands at 9 a.m. Central sends, so DST never shifts it. */
+function isSendHour(now: Date): boolean {
+  const hour = new Intl.DateTimeFormat("en-US", {
+    hour: "numeric",
+    hourCycle: "h23",
+    timeZone: "America/Chicago",
+  }).format(now);
+  return Number(hour) === SEND_HOUR_CENTRAL;
+}
+
 export async function GET(request: Request) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
+
+  const now = new Date();
+  const force = new URL(request.url).searchParams.get("force") === "1";
+  if (!force && !isSendHour(now)) {
+    return NextResponse.json({
+      ok: true,
+      skipped: true,
+      reason: `Not ${SEND_HOUR_CENTRAL} a.m. Central; the other scheduled run sends.`,
+    });
   }
 
   if (!isSesConfigured()) {
@@ -27,14 +51,17 @@ export async function GET(request: Request) {
     );
   }
 
-  const since = recapWindowStart();
+  const since = recapWindowStart(now);
+  const issue = getAllIssues(now).find((item) => item.publishedAt > since) ?? null;
+  const featuredGuide =
+    issue?.featuredGuideSlug ? getGuide(issue.featuredGuideSlug) : null;
   const publishedThisWeek = getGuidesSince(since);
   const quietWeek = publishedThisWeek.length === 0;
   const fallback =
     getGuides().find((guide) => guide.slug === "the-47-dollar-grocery-week") ??
     getGuides()[0];
   const guides = quietWeek ? (fallback ? [fallback] : []) : publishedThisWeek;
-  if (guides.length === 0) {
+  if (!issue && guides.length === 0) {
     return NextResponse.json({
       ok: true,
       skipped: true,
@@ -73,13 +100,15 @@ export async function GET(request: Request) {
   let failed = 0;
   for (const subscriber of subscribers) {
     const unsubscribeUrl = `${site.url}/unsubscribe?token=${subscriber.unsubscribe_token}`;
-    const recap = buildRecapEmail(guides, unsubscribeUrl, { quietWeek });
+    const email = issue
+      ? buildIssueEmail(issue, featuredGuide, unsubscribeUrl)
+      : buildRecapEmail(guides, unsubscribeUrl, { quietWeek });
     try {
       await sendSesEmail({
         to: subscriber.email,
-        subject: recap.subject,
-        html: recap.html,
-        text: recap.text,
+        subject: email.subject,
+        html: email.html,
+        text: email.text,
         unsubscribeUrl,
       });
       sent += 1;
@@ -91,8 +120,9 @@ export async function GET(request: Request) {
   return NextResponse.json({
     ok: true,
     since,
+    issue: issue?.slug ?? null,
     quietWeek,
-    guides: guides.map((guide) => guide.slug),
+    guides: issue ? [] : guides.map((guide) => guide.slug),
     attempted: subscribers.length,
     sent,
     failed,

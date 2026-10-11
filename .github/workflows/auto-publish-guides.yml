@@ -1,4 +1,4 @@
-# Merges open "Publish guide:" and "Publish printable:" PRs so the content cadence lands on main.
+# Merges open "Publish guide:", "Publish printable:", and "Publish newsletter:" PRs so the content cadence lands on main.
 # Trend-scan idea PRs are ignored on purpose.
 
 name: Auto-publish guides
@@ -21,10 +21,11 @@ jobs:
     if: >-
       github.event_name != 'pull_request' ||
       startsWith(github.event.pull_request.title, 'Publish guide:') ||
-      startsWith(github.event.pull_request.title, 'Publish printable:')
+      startsWith(github.event.pull_request.title, 'Publish printable:') ||
+      startsWith(github.event.pull_request.title, 'Publish newsletter:')
     runs-on: ubuntu-latest
     steps:
-      - name: Merge eligible Publish guide and printable PRs
+      - name: Merge eligible Publish guide, printable, and newsletter PRs
         uses: actions/github-script@v7
         with:
           script: |
@@ -64,8 +65,10 @@ jobs:
               const eligible =
                 title.startsWith('Publish guide:') ||
                 title.startsWith('Publish printable:') ||
+                title.startsWith('Publish newsletter:') ||
                 branch.startsWith('cursor/publish-') ||
-                branch.startsWith('cursor/printable-');
+                branch.startsWith('cursor/printable-') ||
+                branch.startsWith('cursor/newsletter-');
               if (!eligible) {
                 core.info(`Skip #${pull.number}: ${title}`);
                 return;

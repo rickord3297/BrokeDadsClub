@@ -185,8 +185,8 @@ function isLive(issue: NewsletterIssue, now = new Date()): boolean {
 }
 
 /** Live issues, newest first. */
-export function getAllIssues(): NewsletterIssue[] {
-  return readAllIssues().filter((issue) => isLive(issue));
+export function getAllIssues(now = new Date()): NewsletterIssue[] {
+  return readAllIssues().filter((issue) => isLive(issue, now));
 }
 
 export function getIssueBySlug(slug: string): NewsletterIssue | null {

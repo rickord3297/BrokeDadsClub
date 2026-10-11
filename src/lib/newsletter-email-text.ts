@@ -12,7 +12,7 @@ import { site } from "@/lib/site";
 const DIVIDER = "-".repeat(32);
 
 /** Site links get UTM tags so email clicks show up in analytics. Off-site links pass through untouched. */
-function emailHref(href: string, campaign: string): string {
+export function emailHref(href: string, campaign: string): string {
   let url: URL;
   try {
     url = new URL(href, site.url);

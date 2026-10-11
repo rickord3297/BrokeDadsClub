@@ -9,9 +9,11 @@ Broke Dads Club uses Cursor Automations plus one GitHub Action.
 | Daily dad trend scan | Daily | Adds `idea` rows only. Opens a normal PR. Does **not** publish. |
 | Publish guide (every 3 days) | Every 3 days | Drafts/schedules/publishes the next guide. Opens a PR titled `Publish guide: …`. |
 | Publish printable (weekly) | Fridays | Keeps one new printable going live per Friday from `content/printables/`. Opens a PR titled `Publish printable: …`. |
-| `auto-publish-guides` GitHub Action | Daily + on publish PRs | Squash-merges open PRs whose title starts with `Publish guide:` or `Publish printable:` (or branch `cursor/publish-*` / `cursor/printable-*`). |
+| Publish newsletter (weekly) | Thursdays | Writes the next Sunday Dispatch in `content/newsletter/`, dated the coming Sunday. Opens a PR titled `Publish newsletter: …`. |
+| `weekly-recap` Vercel cron | Sundays, 9 a.m. Central | Emails subscribers the issue dated that Sunday. With no issue, sends the automatic guide recap instead. |
+| `auto-publish-guides` GitHub Action | Daily + on publish PRs | Squash-merges open PRs whose title starts with `Publish guide:`, `Publish printable:`, or `Publish newsletter:` (or branch `cursor/publish-*` / `cursor/printable-*` / `cursor/newsletter-*`). |
 
-Scheduled guides on `main` with `status: scheduled` and `publishedAt <= today` go live on the site automatically after deploy. Scheduled printables do the same; `/resources` and `/resources/<slug>` refresh hourly, so a printable goes live on its date even without a deploy.
+Scheduled guides on `main` with `status: scheduled` and `publishedAt <= today` go live on the site automatically after deploy. Scheduled printables do the same; `/resources` and `/resources/<slug>` refresh hourly, so a printable goes live on its date even without a deploy. Newsletter issues work the same way on `/newsletter`.
 
 ## Cursor automation prompt: Publish guide (every 3 days)
 
@@ -71,6 +73,32 @@ Steps:
 10. Do not edit guides or site code in this job. Do not ask the user to merge.
 
 Voice rules from the skill apply (no em/en dashes, short scripts, real numbers from the paired guide).
+```
+
+## Cursor automation prompt: Publish newsletter (weekly)
+
+Create a Cursor Automation on a **weekly, Thursday morning** schedule. Paste this as the prompt:
+
+```text
+Broke Dads Club: weekly Sunday Dispatch pass.
+
+Follow `.cursor/skills/write-bdc-newsletter/SKILL.md` section "Weekly pass (Thursdays)".
+
+Goals:
+1. Have the next Sunday Dispatch issue on main before Sunday 9 a.m. Central, dated that Sunday.
+2. Open a pull request whose title MUST start with exactly: Publish newsletter:
+   The repo GitHub Action auto-merges Publish newsletter PRs once checks pass.
+
+Steps:
+1. Fetch and checkout latest origin/main. Create branch cursor/newsletter-<short-slug>-79d1 (use the repo's required branch suffix if different).
+2. Work out the coming Sunday. If content/newsletter/ already has an issue dated that Sunday, stop without opening a PR.
+3. Read the last two issues, then the guides and printables live by that Sunday.
+4. Write the next issue per the skill: lead tactic from a recent or seasonal guide, 3 What You Missed items, 3 deals.
+5. Run npm run build. Fix anything it reports.
+6. Commit only the new content/newsletter/* file. Push, then open/update a PR titled: Publish newsletter: <issue title>
+7. Do not edit guides, printables, or site code in this job. Do not ask the user to merge.
+
+Voice rules from the skill apply (no em/en dashes, real numbers only, no invented readers or quotes).
 ```
 
 ## Cursor automation prompt note: Daily trend scan
