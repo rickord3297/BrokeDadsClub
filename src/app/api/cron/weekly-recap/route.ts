@@ -19,6 +19,12 @@ function isAuthorized(request: Request): boolean {
 
 const SEND_HOUR_CENTRAL = 9;
 
+/** Reserved test domains never deliver; sending to them bounces and hurts the SES sender reputation. */
+function isUndeliverableTestAddress(email: string): boolean {
+  const domain = email.split("@").pop()?.trim().toLowerCase() ?? "";
+  return /(^|\.)example\.(com|net|org)$/.test(domain) || /\.(test|invalid|example|localhost)$/.test(domain);
+}
+
 /** vercel.json schedules 14:00 and 15:00 UTC; only the run that lands at 9 a.m. Central sends, so DST never shifts it. */
 function isSendHour(now: Date): boolean {
   const hour = new Intl.DateTimeFormat("en-US", {
@@ -93,7 +99,8 @@ export async function GET(request: Request) {
   const subscribers = (data ?? []).filter(
     (row): row is { email: string; unsubscribe_token: string } =>
       typeof row.email === "string" &&
-      typeof row.unsubscribe_token === "string",
+      typeof row.unsubscribe_token === "string" &&
+      !isUndeliverableTestAddress(row.email),
   );
 
   let sent = 0;

@@ -2,7 +2,7 @@
 slug: one-pack-two-dinners
 issueNumber: 3
 title: One pack, two dinners
-publishedAt: "2026-10-18"
+publishedAt: "2026-10-11"
 readTime: 4 min
 excerpt: >-
   The $47 grocery week got rebuilt with real Walmart prices. Seven dinners for
@@ -20,14 +20,14 @@ whatYouMissed:
     href: /guides/the-heat-bill-before-it-gets-cold
     type: guide
     description: The first cold night is a bad time to meet the heat bill. Find last winter's number this week and make one call.
-  - title: The week school closes and work does not
-    href: /guides/the-week-school-closes-and-work-does-not
+  - title: One Halloween costume, not three events
+    href: /guides/one-halloween-costume-not-three-events
     type: guide
-    description: Fall break is a coverage week, not a vacation. Write the dates, price one option, and split what is left.
-  - title: Fall break coverage plan
-    href: /resources/fall-break-coverage-plan
+    description: The school parade, the trunk-or-treat, and the 31st are three events asking for three costumes. Pick one outfit and let it work twice.
+  - title: Halloween costume cap card
+    href: /resources/halloween-costume-cap-card
     type: printable
-    description: The closed dates, who has each day, and one priced camp or sitter quote. One sheet on the fridge before Sunday night.
+    description: Three events, one costume. Write the nights, the cap, and what is already in the bin before anyone opens a browser.
 deals:
   - title: Half sheet pans, 2-pack
     merchant: Amazon
