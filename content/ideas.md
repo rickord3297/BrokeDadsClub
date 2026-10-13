@@ -35,7 +35,7 @@
 | Kids who don't listen to Mom | live | 2026-10-04 | [`kids-who-dont-listen-to-mom.md`](guides/kids-who-dont-listen-to-mom.md) |
 | One Halloween costume, not three events | live | 2026-10-07 | trend 2026-10-01: NRF ~$115/person plus daddit multi-event costumes: [`one-halloween-costume-not-three-events.md`](guides/one-halloween-costume-not-three-events.md) |
 | The heat bill before it gets cold | live | 2026-10-10 | trend 2026-10-04: NEADA oil heat about $878 more ($1,749 to $2,627): [`the-heat-bill-before-it-gets-cold.md`](guides/the-heat-bill-before-it-gets-cold.md) |
-| The week school closes and work does not | scheduled | 2026-10-13 | trend 2026-10-07: fall break childcare, Knox Oct 5-9 and Pulaski Oct 12-16: [`the-week-school-closes-and-work-does-not.md`](guides/the-week-school-closes-and-work-does-not.md) |
+| The week school closes and work does not | live | 2026-10-13 | trend 2026-10-07: fall break childcare, Knox Oct 5-9 and Pulaski Oct 12-16: [`the-week-school-closes-and-work-does-not.md`](guides/the-week-school-closes-and-work-does-not.md) |
 | The $47 grocery week | live | 2026-08-04 | `the-47-dollar-grocery-week` |
 | Cheap date night that still feels like a date | live | 2026-07-28 | `cheap-date-night` |
 | The dad tax: why everything costs more | live | 2026-07-21 | `the-dad-tax` |
@@ -55,6 +55,7 @@
 | What you cut so the kid can keep playing sports | live | 2026-09-26 | [`what-you-cut-so-the-kid-can-keep-playing-sports.md`](guides/what-you-cut-so-the-kid-can-keep-playing-sports.md) |
 | Don't say yes to team parent in the first-game huddle | live | 2026-09-28 | [`dont-say-yes-to-team-parent-first-huddle.md`](guides/dont-say-yes-to-team-parent-first-huddle.md) |
 | How much gear to buy for a first youth soccer season | scheduled | 2026-10-16 | Long-tail SEO, uses gear-pick cards: [`first-youth-soccer-season-gear.md`](guides/first-youth-soccer-season-gear.md) |
+| The class party signup is one job | scheduled | 2026-10-19 | trend 2026-10-13: class Halloween signup, one store-bought slot: [`the-class-party-signup-is-one-job.md`](guides/the-class-party-signup-is-one-job.md) |
 
 ### Status
 

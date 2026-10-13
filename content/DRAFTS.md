@@ -8,5 +8,5 @@ Open any file to edit. `status: scheduled` goes live automatically on `published
 
 | Title | Go live | File |
 |-------|---------|------|
-| The week school closes and work does not | 2026-10-13 | [the-week-school-closes-and-work-does-not.md](guides/the-week-school-closes-and-work-does-not.md) |
 | How much gear to buy for a first youth soccer season | 2026-10-16 | [first-youth-soccer-season-gear.md](guides/first-youth-soccer-season-gear.md) |
+| The class party signup is one job | 2026-10-19 | [the-class-party-signup-is-one-job.md](guides/the-class-party-signup-is-one-job.md) |
