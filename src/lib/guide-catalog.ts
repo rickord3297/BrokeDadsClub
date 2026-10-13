@@ -95,6 +95,7 @@ const RELATED_HOOKS: Record<string, string> = {
   "the-heat-bill-before-it-gets-cold": "If the first cold week is about to bill you",
   "the-week-school-closes-and-work-does-not": "If school is out and the job is not",
   "first-youth-soccer-season-gear": "If the first soccer season is a gear catalog",
+  "the-class-party-signup-is-one-job": "If the class party sheet wants your whole afternoon",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {

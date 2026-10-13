@@ -9,8 +9,8 @@ excerpt: >-
 category: Time
 readTime: 6 min
 publishedAt: "2026-10-13"
-updatedAt: "2026-10-07"
-status: scheduled
+updatedAt: "2026-10-13"
+status: published
 keywords:
   - fall break childcare for working parents
   - what to do when school is closed and you work
