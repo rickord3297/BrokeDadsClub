@@ -154,9 +154,29 @@ export async function GET(request: Request) {
     }
   }
 
+  const ownerCopyTo = normalizeEmail(process.env.NEWSLETTER_OWNER_COPY ?? "");
+  let ownerCopy = false;
+  if (ownerCopyTo && !subscribers.some((row) => normalizeEmail(row.email) === ownerCopyTo)) {
+    const copy = issue
+      ? buildIssueEmail(issue, featuredGuide, `${site.url}/unsubscribe`)
+      : buildRecapEmail(guides, `${site.url}/unsubscribe`, { quietWeek });
+    try {
+      await send({
+        to: ownerCopyTo,
+        subject: `[Owner copy, sent to ${sent}] ${copy.subject}`,
+        html: copy.html,
+        text: copy.text,
+      });
+      ownerCopy = true;
+    } catch (copyError) {
+      console.error("Owner copy failed:", copyError);
+    }
+  }
+
   return NextResponse.json({
     ok: true,
     since,
+    ownerCopy,
     issue: issue?.slug ?? null,
     quietWeek,
     guides: issue ? [] : guides.map((guide) => guide.slug),

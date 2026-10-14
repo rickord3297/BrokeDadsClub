@@ -16,6 +16,11 @@ export function trackMetaPageView() {
   fbq("track", "PageView");
 }
 
+/** Standard Lead event so Meta campaigns can optimize for email signups. */
+export function trackMetaLead(source: string) {
+  fbq("track", "Lead", { content_name: source || "newsletter" });
+}
+
 export function trackMetaAddToCart(input: {
   slug: string;
   priceCents?: number;

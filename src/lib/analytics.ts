@@ -4,6 +4,7 @@ import { track } from "@vercel/analytics/react";
 import {
   trackMetaAddToCart,
   trackMetaInitiateCheckout,
+  trackMetaLead,
 } from "@/lib/meta-pixel";
 
 type AnalyticsProps = Record<string, string | number | boolean | null | undefined>;
@@ -45,6 +46,7 @@ export function trackReadingMilestone(
 
 export function trackEmailSignup(source: string) {
   send("email_signup", { source });
+  trackMetaLead(source);
 }
 
 export function trackLeadMagnetDownload(slug: string) {
