@@ -21,7 +21,10 @@ export function HomeHero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-start">
-            <div className="w-full max-w-md">
+            <div
+              id="signup"
+              className="w-full max-w-md scroll-mt-24"
+            >
               <NewsletterForm
                 variant="inline"
                 source="homepage_hero"
@@ -29,6 +32,7 @@ export function HomeHero() {
                 successMessage={site.weekStart.success}
                 successHref="/resources/grocery-week-checklist"
                 successLinkLabel="Open the full grocery checklist"
+                redirectOnSuccess="/thank-you"
                 trustLine={TRUST_LINE}
               />
             </div>

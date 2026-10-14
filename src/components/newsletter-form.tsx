@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useId, useState } from "react";
 import { trackEmailSignup } from "@/lib/analytics";
 import { validateEmail } from "@/lib/email";
@@ -13,6 +14,8 @@ type NewsletterFormProps = {
   successMessage?: string;
   successHref?: string;
   successLinkLabel?: string;
+  /** After a successful signup, navigate here (e.g. Meta URL conversion). */
+  redirectOnSuccess?: string;
   trustLine?: string;
   /** Hide on the newsletter pages themselves, where the link would point at the current page. */
   showArchiveLink?: boolean;
@@ -25,9 +28,11 @@ export function NewsletterForm({
   successMessage,
   successHref,
   successLinkLabel,
+  redirectOnSuccess,
   trustLine,
   showArchiveLink = true,
 }: NewsletterFormProps) {
+  const router = useRouter();
   const inputId = useId();
   const feedbackId = useId();
   const [email, setEmail] = useState("");
@@ -66,8 +71,12 @@ export function NewsletterForm({
     }
 
     trackEmailSignup(source);
-    setStatus("done");
     setEmail("");
+    if (redirectOnSuccess) {
+      router.push(redirectOnSuccess);
+      return;
+    }
+    setStatus("done");
     setMessage(
       successMessage ??
         payload.message ??
