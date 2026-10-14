@@ -7,6 +7,14 @@
     {
       "path": "/api/cron/weekly-recap?slot=cst",
       "schedule": "0 15 * * 0"
+    },
+    {
+      "path": "/api/cron/signup-digest?slot=cdt",
+      "schedule": "0 3 * * *"
+    },
+    {
+      "path": "/api/cron/signup-digest?slot=cst",
+      "schedule": "0 4 * * *"
     }
   ]
 }

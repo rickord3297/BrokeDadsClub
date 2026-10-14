@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { isCentralHour, isCronAuthorized } from "@/lib/cron";
 import { isUndeliverableTestAddress, normalizeEmail, validateEmail } from "@/lib/email";
 import { isGmailConfigured, sendGmail } from "@/lib/gmail";
 import { getGuide, getGuides, getGuidesSince } from "@/lib/guides";
@@ -12,13 +13,6 @@ import { createAdminClient } from "@/lib/supabase/admin";
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
-function isAuthorized(request: Request): boolean {
-  const secret = process.env.CRON_SECRET;
-  if (!secret) return false;
-  const header = request.headers.get("authorization");
-  return header === `Bearer ${secret}`;
-}
-
 const SEND_HOUR_CENTRAL = 9;
 
 type SendInput = { to: string; subject: string; html: string; text: string; unsubscribeUrl?: string };
@@ -30,18 +24,8 @@ function pickSender(): ((input: SendInput) => Promise<void>) | null {
   return null;
 }
 
-/** vercel.json schedules 14:00 and 15:00 UTC; only the run that lands at 9 a.m. Central sends, so DST never shifts it. */
-function isSendHour(now: Date): boolean {
-  const hour = new Intl.DateTimeFormat("en-US", {
-    hour: "numeric",
-    hourCycle: "h23",
-    timeZone: "America/Chicago",
-  }).format(now);
-  return Number(hour) === SEND_HOUR_CENTRAL;
-}
-
 export async function GET(request: Request) {
-  if (!isAuthorized(request)) {
+  if (!isCronAuthorized(request)) {
     return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
   }
 
@@ -49,7 +33,7 @@ export async function GET(request: Request) {
   const params = new URL(request.url).searchParams;
   const testTo = normalizeEmail(params.get("test") ?? "");
   const force = params.get("force") === "1";
-  if (!testTo && !force && !isSendHour(now)) {
+  if (!testTo && !force && !isCentralHour(now, SEND_HOUR_CENTRAL)) {
     return NextResponse.json({
       ok: true,
       skipped: true,

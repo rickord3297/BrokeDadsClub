@@ -1,6 +1,5 @@
 import { after } from "next/server";
 import { normalizeEmail } from "@/lib/email";
-import { notifyNewSubscriber } from "@/lib/signup-notify";
 import { sendWelcomeEmail } from "@/lib/welcome-email";
 import { createPublicClient } from "@/lib/supabase/public";
 
@@ -27,7 +26,7 @@ export async function addSubscriber(email: string, source = ""): Promise<AddSubs
     return { ok: false, message: error.message };
   }
   if (!error) {
-    after(() => Promise.all([sendWelcomeEmail(normalized), notifyNewSubscriber(normalized, cleanSource)]));
+    after(() => sendWelcomeEmail(normalized));
   }
   return { ok: true, stored: true };
 }
