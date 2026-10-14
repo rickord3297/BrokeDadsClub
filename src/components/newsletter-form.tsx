@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useId, useState } from "react";
 import { trackEmailSignup } from "@/lib/analytics";
 import { validateEmail } from "@/lib/email";
@@ -16,6 +17,8 @@ type NewsletterFormProps = {
   trustLine?: string;
   /** Hide on the newsletter pages themselves, where the link would point at the current page. */
   showArchiveLink?: boolean;
+  /** Internal path to send the visitor to after a successful signup, instead of the inline success note. */
+  redirectTo?: `/${string}`;
 };
 
 export function NewsletterForm({
@@ -27,7 +30,9 @@ export function NewsletterForm({
   successLinkLabel,
   trustLine,
   showArchiveLink = true,
+  redirectTo,
 }: NewsletterFormProps) {
+  const router = useRouter();
   const inputId = useId();
   const feedbackId = useId();
   const [email, setEmail] = useState("");
@@ -52,20 +57,30 @@ export function NewsletterForm({
     setStatus("loading");
     setMessage("");
 
-    const response = await fetch("/api/subscribe", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, source }),
-    });
-    const payload = (await response.json()) as { message?: string };
-
-    if (!response.ok) {
+    let payload: { message?: string } = {};
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, source }),
+      });
+      payload = (await response.json().catch(() => ({}))) as { message?: string };
+      if (!response.ok) {
+        setStatus("error");
+        setMessage(payload.message ?? "Could not subscribe. Try again?");
+        return;
+      }
+    } catch {
       setStatus("error");
-      setMessage(payload.message ?? "Could not subscribe. Try again?");
+      setMessage("Could not reach the server. Check your connection and try again.");
       return;
     }
 
     trackEmailSignup(source);
+    if (redirectTo) {
+      router.push(`${redirectTo}?from=${encodeURIComponent(source)}`);
+      return;
+    }
     setStatus("done");
     setEmail("");
     setMessage(

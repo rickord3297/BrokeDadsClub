@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { SiteTagline } from "@/components/site-tagline";
-import { site } from "@/lib/site";
 
 const TRUST_LINE =
   "Sent every Sunday at 9 AM CT. Free forever. Unsubscribe anytime.";
@@ -21,14 +20,12 @@ export function HomeHero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-start">
-            <div className="w-full max-w-md">
+            <div id="signup" className="w-full max-w-md scroll-mt-24">
               <NewsletterForm
                 variant="inline"
                 source="homepage_hero"
                 submitLabel="Get the checklist"
-                successMessage={site.weekStart.success}
-                successHref="/resources/grocery-week-checklist"
-                successLinkLabel="Open the full grocery checklist"
+                redirectTo="/thank-you"
                 trustLine={TRUST_LINE}
               />
             </div>
