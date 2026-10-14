@@ -1,6 +1,12 @@
 /** Shared by client forms and API routes so both reject the same inputs. */
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+/** Reserved test domains never deliver; sending to them bounces and hurts the sender reputation. */
+export function isUndeliverableTestAddress(email: string): boolean {
+  const domain = email.split("@").pop()?.trim().toLowerCase() ?? "";
+  return /(^|\.)example\.(com|net|org)$/.test(domain) || /\.(test|invalid|example|localhost)$/.test(domain);
+}
+
 export function normalizeEmail(value: string): string {
   return value.trim().toLowerCase();
 }

@@ -31,6 +31,7 @@ export async function sendGmail(input: {
   html?: string;
   replyTo?: string;
   unsubscribeUrl?: string;
+  attachments?: { filename: string; content: Uint8Array; contentType: string }[];
 }): Promise<void> {
   const gmail = getGmailTransport();
   if (!gmail) throw new Error("Gmail is not configured.");
@@ -42,6 +43,11 @@ export async function sendGmail(input: {
     text: input.text,
     html: input.html,
     replyTo: input.replyTo,
+    attachments: input.attachments?.map((file) => ({
+      filename: file.filename,
+      content: Buffer.from(file.content),
+      contentType: file.contentType,
+    })),
     headers: input.unsubscribeUrl
       ? { "List-Unsubscribe": `<${input.unsubscribeUrl}>, <mailto:${from}?subject=unsubscribe>` }
       : undefined,

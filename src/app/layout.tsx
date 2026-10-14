@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { CartProvider } from "@/components/cart-provider";
 import { MetaPixelHead } from "@/components/meta-pixel";
+import { SiteChrome } from "@/components/site-chrome";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SiteJsonLd } from "@/components/site-json-ld";
@@ -87,9 +88,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col text-ink">
         <SiteJsonLd />
         <CartProvider>
-          <SiteHeader />
+          <SiteChrome>
+            <SiteHeader />
+          </SiteChrome>
           <main className="flex-1">{children}</main>
-          <SiteFooter />
+          <SiteChrome>
+            <SiteFooter />
+          </SiteChrome>
         </CartProvider>
         <Analytics />
         <SpeedInsights />

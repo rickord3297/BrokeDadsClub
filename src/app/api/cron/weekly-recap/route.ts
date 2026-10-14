@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { normalizeEmail, validateEmail } from "@/lib/email";
+import { isUndeliverableTestAddress, normalizeEmail, validateEmail } from "@/lib/email";
 import { isGmailConfigured, sendGmail } from "@/lib/gmail";
 import { getGuide, getGuides, getGuidesSince } from "@/lib/guides";
 import { getAllIssues, getIssueBySlug, getLatestIssue } from "@/lib/newsletter";
@@ -28,12 +28,6 @@ function pickSender(): ((input: SendInput) => Promise<void>) | null {
   if (isSesConfigured()) return sendSesEmail;
   if (isGmailConfigured()) return sendGmail;
   return null;
-}
-
-/** Reserved test domains never deliver; sending to them bounces and hurts the SES sender reputation. */
-function isUndeliverableTestAddress(email: string): boolean {
-  const domain = email.split("@").pop()?.trim().toLowerCase() ?? "";
-  return /(^|\.)example\.(com|net|org)$/.test(domain) || /\.(test|invalid|example|localhost)$/.test(domain);
 }
 
 /** vercel.json schedules 14:00 and 15:00 UTC; only the run that lands at 9 a.m. Central sends, so DST never shifts it. */

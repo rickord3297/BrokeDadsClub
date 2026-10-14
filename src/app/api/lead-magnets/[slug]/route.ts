@@ -11,7 +11,7 @@ export async function POST(request: NextRequest, ctx: RouteContext<"/api/lead-ma
     return NextResponse.json({ message: "That download doesn't exist." }, { status: 404 });
   }
 
-  let body: { email?: unknown; company?: unknown };
+  let body: { email?: unknown; company?: unknown; source?: unknown };
   try {
     body = (await request.json()) as typeof body;
   } catch {
@@ -27,7 +27,11 @@ export async function POST(request: NextRequest, ctx: RouteContext<"/api/lead-ma
   // Honeypot: real people never see the "company" field, so bots get the file without polluting the list.
   const isBot = typeof body.company === "string" && body.company.trim() !== "";
   if (!isBot) {
-    const result = await addSubscriber(email, magnet.source);
+    const source =
+      typeof body.source === "string" && /^[a-z0-9_-]{1,60}$/.test(body.source)
+        ? body.source
+        : magnet.source;
+    const result = await addSubscriber(email, source);
     if (!result.ok) {
       // Still hand over the PDF. Losing one signup beats punishing the reader for our outage.
       console.error(`Lead magnet ${slug}: could not store subscriber: ${result.message}`);

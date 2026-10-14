@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   ...NOINDEX,
 };
 
-/** Picks up a new latest issue each week without a deploy. */
-export const revalidate = 3600;
+/** Signup sources that already handed over the grocery PDF. */
+const PDF_SOURCES = new Set(["free_grocery_list_landing"]);
 
 const NEXT_STEPS = [
   {
@@ -29,7 +29,9 @@ const NEXT_STEPS = [
   },
 ] as const;
 
-export default function ThankYouPage() {
+export default async function ThankYouPage({ searchParams }: PageProps<"/thank-you">) {
+  const { from } = await searchParams;
+  const gotPdf = typeof from === "string" && PDF_SOURCES.has(from);
   const latest = getLatestIssue();
 
   return (
@@ -41,10 +43,18 @@ export default function ThankYouPage() {
         <h1 className="mt-3 font-display text-5xl leading-tight text-ink sm:text-6xl">
           You&apos;re in.
         </h1>
-        <p className="mx-auto mt-5 max-w-xl text-lg leading-8 text-ink-soft">
-          Your first email lands Sunday at 9 a.m. Central. One tactic, a few real
-          numbers, done in four minutes. Free, and you can unsubscribe anytime.
-        </p>
+        {gotPdf ? (
+          <p className="mx-auto mt-5 max-w-xl text-lg leading-8 text-ink-soft">
+            Your grocery list is downloading. A copy is on its way to your inbox too,
+            in case your phone hid the download. After that, one email every Sunday at
+            9 a.m. Central. Unsubscribe anytime.
+          </p>
+        ) : (
+          <p className="mx-auto mt-5 max-w-xl text-lg leading-8 text-ink-soft">
+            Your first email lands Sunday at 9 a.m. Central. One tactic, a few real
+            numbers, done in four minutes. Free, and you can unsubscribe anytime.
+          </p>
+        )}
       </section>
 
       <div className="mt-12 grid gap-4 sm:grid-cols-2">

@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { trackEmailSignup, trackLeadMagnetDownload } from "@/lib/analytics";
 import { validateEmail } from "@/lib/email";
@@ -18,13 +19,20 @@ export function LeadMagnetForm({
   fileName,
   source,
   submitLabel = "Download the PDF",
+  storeSource = false,
+  redirectTo,
 }: {
   slug: string;
   fileName: string;
-  /** Analytics label; the server stores its own source per lead magnet. */
+  /** Analytics label; the server stores its own source per lead magnet unless `storeSource` is set. */
   source: string;
   submitLabel?: string;
+  /** Save `source` on the subscriber row instead of the lead magnet default, to tell landing pages apart. */
+  storeSource?: boolean;
+  /** Internal path to open once the download has started. */
+  redirectTo?: `/${string}`;
 }) {
+  const router = useRouter();
   const inputId = useId();
   const feedbackId = useId();
   const [email, setEmail] = useState("");
@@ -52,7 +60,11 @@ export function LeadMagnetForm({
       const response = await fetch(`/api/lead-magnets/${slug}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, company: honeypot.current?.value ?? "" }),
+        body: JSON.stringify({
+          email,
+          company: honeypot.current?.value ?? "",
+          ...(storeSource ? { source } : {}),
+        }),
       });
       if (!response.ok || !response.headers.get("Content-Type")?.includes("application/pdf")) {
         const payload = (await response.json().catch(() => ({}))) as { message?: string };
@@ -60,10 +72,17 @@ export function LeadMagnetForm({
       }
       const url = URL.createObjectURL(await response.blob());
       saveFile(url, fileName);
-      setFileUrl(url);
-      setStatus("done");
       trackEmailSignup(source);
       trackLeadMagnetDownload(slug);
+      if (redirectTo) {
+        // Give the browser a beat to start the blob download before the page changes.
+        window.setTimeout(() => {
+          router.push(`${redirectTo}?from=${encodeURIComponent(source)}`);
+        }, 700);
+        return;
+      }
+      setFileUrl(url);
+      setStatus("done");
     } catch (error) {
       setStatus("error");
       setMessage(error instanceof Error ? error.message : "Could not get the PDF. Try again in a bit.");
