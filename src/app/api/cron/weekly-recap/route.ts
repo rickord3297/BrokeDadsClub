@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
+import { normalizeEmail, validateEmail } from "@/lib/email";
+import { isGmailConfigured, sendGmail } from "@/lib/gmail";
 import { getGuide, getGuides, getGuidesSince } from "@/lib/guides";
-import { getAllIssues } from "@/lib/newsletter";
+import { getAllIssues, getIssueBySlug, getLatestIssue } from "@/lib/newsletter";
 import { buildIssueEmail } from "@/lib/newsletter-email";
 import { buildRecapEmail, recapWindowStart } from "@/lib/recap";
 import { isSesConfigured, sendSesEmail } from "@/lib/ses";
@@ -18,6 +20,15 @@ function isAuthorized(request: Request): boolean {
 }
 
 const SEND_HOUR_CENTRAL = 9;
+
+type SendInput = { to: string; subject: string; html: string; text: string; unsubscribeUrl?: string };
+
+/** SES when configured; otherwise Gmail, which caps a Workspace account at about 2,000 recipients a day. */
+function pickSender(): ((input: SendInput) => Promise<void>) | null {
+  if (isSesConfigured()) return sendSesEmail;
+  if (isGmailConfigured()) return sendGmail;
+  return null;
+}
 
 /** Reserved test domains never deliver; sending to them bounces and hurts the SES sender reputation. */
 function isUndeliverableTestAddress(email: string): boolean {
@@ -41,8 +52,10 @@ export async function GET(request: Request) {
   }
 
   const now = new Date();
-  const force = new URL(request.url).searchParams.get("force") === "1";
-  if (!force && !isSendHour(now)) {
+  const params = new URL(request.url).searchParams;
+  const testTo = normalizeEmail(params.get("test") ?? "");
+  const force = params.get("force") === "1";
+  if (!testTo && !force && !isSendHour(now)) {
     return NextResponse.json({
       ok: true,
       skipped: true,
@@ -50,11 +63,27 @@ export async function GET(request: Request) {
     });
   }
 
-  if (!isSesConfigured()) {
+  const send = pickSender();
+  if (!send) {
     return NextResponse.json(
-      { message: "Amazon SES is not configured yet." },
+      { message: "No email sender is configured (Amazon SES or Gmail)." },
       { status: 503 },
     );
+  }
+
+  if (testTo) {
+    if (validateEmail(testTo)) {
+      return NextResponse.json({ message: "test must be a valid email." }, { status: 400 });
+    }
+    const slug = params.get("issue");
+    const testIssue = slug ? getIssueBySlug(slug) : getLatestIssue();
+    if (!testIssue) {
+      return NextResponse.json({ message: "No live issue to test." }, { status: 404 });
+    }
+    const testGuide = testIssue.featuredGuideSlug ? getGuide(testIssue.featuredGuideSlug) : null;
+    const email = buildIssueEmail(testIssue, testGuide, `${site.url}/unsubscribe`);
+    await send({ to: testTo, subject: `[Test] ${email.subject}`, html: email.html, text: email.text });
+    return NextResponse.json({ ok: true, test: true, to: testTo, issue: testIssue.slug });
   }
 
   const since = recapWindowStart(now);
@@ -111,7 +140,7 @@ export async function GET(request: Request) {
       ? buildIssueEmail(issue, featuredGuide, unsubscribeUrl)
       : buildRecapEmail(guides, unsubscribeUrl, { quietWeek });
     try {
-      await sendSesEmail({
+      await send({
         to: subscriber.email,
         subject: email.subject,
         html: email.html,
@@ -119,7 +148,8 @@ export async function GET(request: Request) {
         unsubscribeUrl,
       });
       sent += 1;
-    } catch {
+    } catch (sendError) {
+      console.error(`Weekly send failed for one subscriber:`, sendError);
       failed += 1;
     }
   }

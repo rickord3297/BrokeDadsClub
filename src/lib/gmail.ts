@@ -3,6 +3,7 @@ import nodemailer from "nodemailer";
 /**
  * GMAIL_USER is the Google Workspace login; GMAIL_APP_PASSWORD is a 16-character app password, not the account password.
  * GMAIL_FROM must be a "Send mail as" address on that account, or Gmail rewrites it to the login.
+ * Gmail files mail sent to the login's own addresses under Sent only, so alerts must go to a different inbox.
  */
 function getGmailTransport() {
   const user = process.env.GMAIL_USER?.trim();
@@ -27,7 +28,9 @@ export async function sendGmail(input: {
   to: string;
   subject: string;
   text: string;
+  html?: string;
   replyTo?: string;
+  unsubscribeUrl?: string;
 }): Promise<void> {
   const gmail = getGmailTransport();
   if (!gmail) throw new Error("Gmail is not configured.");
@@ -37,6 +40,10 @@ export async function sendGmail(input: {
     to: input.to,
     subject: input.subject,
     text: input.text,
+    html: input.html,
     replyTo: input.replyTo,
+    headers: input.unsubscribeUrl
+      ? { "List-Unsubscribe": `<${input.unsubscribeUrl}>, <mailto:${from}?subject=unsubscribe>` }
+      : undefined,
   });
 }
