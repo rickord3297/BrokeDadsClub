@@ -42,7 +42,7 @@ export async function sendGmail(input: {
     subject: input.subject,
     text: input.text,
     html: input.html,
-    replyTo: input.replyTo,
+    replyTo: input.replyTo ?? from,
     attachments: input.attachments?.map((file) => ({
       filename: file.filename,
       content: Buffer.from(file.content),
