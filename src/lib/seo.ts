@@ -11,6 +11,14 @@ export const OG_IMAGE = {
   alt: site.shareTitle,
 } as const;
 
+/** Share card for the free grocery list, used by the homepage and the ad landing page. */
+export const GROCERY_LIST_OG_IMAGE = {
+  url: "/og/grocery-list",
+  width: 1200,
+  height: 630,
+  alt: "Free grocery list: 7 family dinners for $44 at Walmart. Broke Dads Club.",
+} as const;
+
 export const NOINDEX: Metadata = {
   robots: { index: false, follow: false },
 };

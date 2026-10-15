@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ClubLogo } from "@/components/club-logo";
 import { LeadMagnetForm } from "@/components/lead-magnet-form";
 import { LEAD_MAGNETS } from "@/lib/lead-magnets";
-import { NOINDEX } from "@/lib/seo";
+import { GROCERY_LIST_OG_IMAGE, NOINDEX } from "@/lib/seo";
 import { site } from "@/lib/site";
 import preview from "../../../public/lead-magnets/grocery-reset-trunk-kit-preview.jpg";
 
@@ -12,6 +12,20 @@ export const metadata: Metadata = {
   title: "Free grocery list: 7 family dinners for $44",
   description:
     "A free one-page Walmart grocery list where every item covers two dinners. Seven family dinners came to $44.04.",
+  openGraph: {
+    title: "Free grocery list: 7 family dinners for $44",
+    description: "A free one-page Walmart grocery list where every item covers two dinners.",
+    url: `${site.url}/free-grocery-list`,
+    siteName: site.name,
+    type: "website",
+    images: [GROCERY_LIST_OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free grocery list: 7 family dinners for $44",
+    description: "A free one-page Walmart grocery list where every item covers two dinners.",
+    images: [GROCERY_LIST_OG_IMAGE.url],
+  },
   ...NOINDEX,
 };
 

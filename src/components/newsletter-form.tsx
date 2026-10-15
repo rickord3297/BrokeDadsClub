@@ -76,7 +76,7 @@ export function NewsletterForm({
       return;
     }
 
-    trackEmailSignup(source);
+    trackEmailSignup(source, { metaLead: !redirectTo });
     if (redirectTo) {
       router.push(`${redirectTo}?from=${encodeURIComponent(source)}`);
       return;

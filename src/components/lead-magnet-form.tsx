@@ -72,7 +72,7 @@ export function LeadMagnetForm({
       }
       const url = URL.createObjectURL(await response.blob());
       saveFile(url, fileName);
-      trackEmailSignup(source);
+      trackEmailSignup(source, { metaLead: !redirectTo });
       trackLeadMagnetDownload(slug);
       if (redirectTo) {
         // Give the browser a beat to start the blob download before the page changes.

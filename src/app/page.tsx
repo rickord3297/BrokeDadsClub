@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import groceryPdfPreview from "../../public/lead-magnets/grocery-reset-trunk-kit-preview.jpg";
 import { GatedResourceCard } from "@/components/gated-resource-card";
 import { HomeFinalSignup } from "@/components/home-final-signup";
 import { HomeFollowSection } from "@/components/home-follow-section";
@@ -15,17 +17,19 @@ import {
 } from "@/lib/guides";
 import { getHomeShopProducts } from "@/lib/products";
 import { getResource } from "@/lib/resources";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata, GROCERY_LIST_OG_IMAGE } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 const FEATURED_PRINTABLE = "grocery-week-checklist";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: site.seoTitle,
-  description: site.shareDescription,
+  title: "Broke Dads Club | Practical Budget Guides & Free Family Printables",
+  description:
+    "Free meal plans, grocery checklists, and tactical money guides for dads raising a family on a tight budget. Real math, zero financial shame.",
   path: "/",
   keywords: site.keywords,
   absoluteTitle: true,
+  images: [GROCERY_LIST_OG_IMAGE],
 });
 
 export default async function Home() {
@@ -61,12 +65,22 @@ export default async function Home() {
                 One sheet for the fridge
               </h2>
               <p className="mt-2 max-w-xl text-sm leading-6 text-ink-soft">
-                Preview the grocery-week checklist below. Sign up for the full
-                fillable PDF and Sunday guide drops.
+                The whole one-page PDF: the cart, the week, the swaps. Sign up
+                and it lands in your inbox, plus the Sunday drop.
               </p>
             </div>
             <div className="mt-6">
-              <GatedResourceCard resource={featuredPrintable} />
+              <GatedResourceCard
+                resource={featuredPrintable}
+                preview={
+                  <Image
+                    src={groceryPdfPreview}
+                    alt="The full one-page grocery list PDF: a 14-item Walmart cart, the week's seven dinners, swaps, and a trunk snack kit."
+                    sizes="(min-width: 640px) 28rem, 90vw"
+                    className="w-full max-w-md rounded-md border border-rule shadow-sm"
+                  />
+                }
+              />
             </div>
           </div>
         </section>

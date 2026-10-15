@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ThankYouLead } from "@/components/thank-you-lead";
 import { formatIssueNumber, getLatestIssue } from "@/lib/newsletter";
 import { NOINDEX } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -11,21 +12,15 @@ export const metadata: Metadata = {
 
 /** Signup sources that already handed over the grocery PDF. */
 const PDF_SOURCES = new Set(["free_grocery_list_landing"]);
+const DOWNLOAD_HREF = "/api/lead-magnets/grocery-reset-trunk-kit";
 
 const NEXT_STEPS = [
   {
-    kicker: "Start here",
+    kicker: "Fill it in on your phone",
     title: "The $47 grocery-week checklist",
     body: "Seven dinners, every item covering two nights. Print it or fill it in on your phone.",
     href: "/resources/grocery-week-checklist",
     cta: "Open the checklist",
-  },
-  {
-    kicker: "Then",
-    title: "Browse the guides",
-    body: "Money, time, and home. Short reads with real numbers, built for a tired Tuesday.",
-    href: "/guides",
-    cta: "See the guides",
   },
 ] as const;
 
@@ -51,13 +46,29 @@ export default async function ThankYouPage({ searchParams }: PageProps<"/thank-y
           </p>
         ) : (
           <p className="mx-auto mt-5 max-w-xl text-lg leading-8 text-ink-soft">
-            Your first email lands Sunday at 9 a.m. Central. One tactic, a few real
-            numbers, done in four minutes. Free, and you can unsubscribe anytime.
+            Your grocery list is ready below, and a copy is on its way to your inbox.
+            After that, one email every Sunday at 9 a.m. Central. Unsubscribe anytime.
           </p>
         )}
+        <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <a
+            href={DOWNLOAD_HREF}
+            download
+            className="inline-flex h-12 items-center rounded-md bg-pine px-6 text-sm font-semibold text-paper transition hover:bg-pine-2"
+          >
+            {gotPdf ? "Download didn't start? Get the PDF" : "Download the grocery list (PDF)"}
+          </a>
+          <Link
+            href="/guides"
+            className="inline-flex h-12 items-center rounded-md border border-rule bg-paper px-6 text-sm font-semibold text-ink transition hover:border-pine hover:text-pine"
+          >
+            Browse the guides
+          </Link>
+        </div>
       </section>
+      <ThankYouLead from={typeof from === "string" ? from : undefined} />
 
-      <div className="mt-12 grid gap-4 sm:grid-cols-2">
+      <div className="mt-12 grid gap-4">
         {NEXT_STEPS.map((step) => (
           <Link
             key={step.href}

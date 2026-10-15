@@ -31,7 +31,14 @@ function CardSection({
 }
 
 /** Homepage preview: full PDF unlocked via Sunday email signup. */
-export function GatedResourceCard({ resource }: { resource: Resource }) {
+export function GatedResourceCard({
+  resource,
+  preview,
+}: {
+  resource: Resource;
+  /** Replaces the default card preview, e.g. when the page already shows that card higher up. */
+  preview?: React.ReactNode;
+}) {
   return (
     <article className="overflow-hidden rounded-2xl border border-rule bg-paper shadow-sm shadow-ink/5">
       <div className="p-6 sm:p-8 lg:p-10">
@@ -69,7 +76,7 @@ export function GatedResourceCard({ resource }: { resource: Resource }) {
         </div>
 
         <div className="mt-6 flex justify-center bg-paper-2/50 p-6 sm:p-8">
-          <ResourcePreview resource={resource} variant="card" />
+          {preview ?? <ResourcePreview resource={resource} variant="card" />}
         </div>
 
         <div className="mt-6">

@@ -44,9 +44,10 @@ export function trackReadingMilestone(
   send("reading_milestone", { slug, percent });
 }
 
-export function trackEmailSignup(source: string) {
+/** Forms that redirect to /thank-you pass metaLead: false; that page fires the Lead so it counts once. */
+export function trackEmailSignup(source: string, { metaLead = true }: { metaLead?: boolean } = {}) {
   send("email_signup", { source });
-  trackMetaLead(source);
+  if (metaLead) trackMetaLead(source);
 }
 
 export function trackLeadMagnetDownload(slug: string) {

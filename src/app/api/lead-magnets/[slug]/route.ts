@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { validateEmail } from "@/lib/email";
-import { getLeadMagnet, getLeadMagnetPdf } from "@/lib/lead-magnets";
+import { getLeadMagnet, getLeadMagnetPdf, type LeadMagnet } from "@/lib/lead-magnets";
 import { addSubscriber } from "@/lib/subscribers";
 
 /** Stores the email, then streams the PDF back as an attachment for the form to save. */
@@ -38,6 +38,20 @@ export async function POST(request: NextRequest, ctx: RouteContext<"/api/lead-ma
     }
   }
 
+  return pdfResponse(magnet);
+}
+
+/** Plain download link for /thank-you. The email was already captured by the form that sent them there. */
+export async function GET(_request: NextRequest, ctx: RouteContext<"/api/lead-magnets/[slug]">) {
+  const { slug } = await ctx.params;
+  const magnet = getLeadMagnet(slug);
+  if (!magnet) {
+    return NextResponse.json({ message: "That download doesn't exist." }, { status: 404 });
+  }
+  return pdfResponse(magnet);
+}
+
+async function pdfResponse(magnet: LeadMagnet): Promise<Response> {
   const pdf = await getLeadMagnetPdf(magnet);
   return new Response(new Uint8Array(pdf), {
     headers: {

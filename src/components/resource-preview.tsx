@@ -50,13 +50,16 @@ function MiniPreview({ resource }: { resource: PreviewResource }) {
 export function ResourcePreview({
   resource,
   variant = "sheet",
+  cardWidthClass = "max-w-[15rem]",
 }: {
   resource: PreviewResource;
   variant?: "sheet" | "fridge" | "card";
+  /** Width cap for the card variant. */
+  cardWidthClass?: string;
 }) {
   if (variant === "card") {
     return (
-      <div className="relative mx-auto w-full max-w-[15rem]">
+      <div className={`relative mx-auto w-full ${cardWidthClass}`}>
         <PaperClipIcon />
         <div
           className="relative overflow-hidden rounded-sm border border-ink/12 bg-white shadow-[0_2px_8px_rgba(28,25,21,0.06),0_12px_32px_-8px_rgba(28,25,21,0.18)]"

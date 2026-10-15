@@ -52,7 +52,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...guides.map((guide) => ({
       url: absoluteUrl(`/guides/${guide.slug}`),
       lastModified: guideModified(guide),
-      changeFrequency: "monthly" as const,
+      changeFrequency: "weekly" as const,
       priority: 0.6,
     })),
 
@@ -69,17 +69,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5,
     })),
 
-    { url: absoluteUrl("/resources"), lastModified: latestGuide, changeFrequency: "monthly", priority: 0.6 },
+    { url: absoluteUrl("/resources"), lastModified: latestGuide, changeFrequency: "weekly", priority: 0.6 },
     ...getLiveResources().map((resource) => ({
       url: absoluteUrl(`/resources/${resource.slug}`),
       lastModified: new Date(`${resource.publishedAt}T00:00:00.000Z`),
-      changeFrequency: "monthly" as const,
+      changeFrequency: "weekly" as const,
       priority: 0.6,
     })),
     ...Object.keys(LEAD_MAGNETS).map((slug) => ({
       url: absoluteUrl(`/resources/${slug}`),
       lastModified: SITE_EPOCH,
-      changeFrequency: "monthly" as const,
+      changeFrequency: "weekly" as const,
       priority: 0.6,
     })),
 
