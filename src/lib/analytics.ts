@@ -50,6 +50,10 @@ export function trackEmailSignup(source: string, { metaLead = true }: { metaLead
   if (metaLead) trackMetaLead(source);
 }
 
+export function trackWelcomeBack(kind: "guide" | "newsletter", slug: string) {
+  send("welcome_back_shown", { kind, slug });
+}
+
 export function trackLeadMagnetDownload(slug: string) {
   send("lead_magnet_download", { slug });
 }

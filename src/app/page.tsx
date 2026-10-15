@@ -7,6 +7,10 @@ import { HomeFinalSignup } from "@/components/home-final-signup";
 import { HomeFollowSection } from "@/components/home-follow-section";
 import { HomeGuidesSection } from "@/components/home-guides-section";
 import { HomeHero } from "@/components/home-hero";
+import {
+  WelcomeBackBanner,
+  type WelcomeBackItem,
+} from "@/components/welcome-back-banner";
 import { ProductCard } from "@/components/product-card";
 import { isPremiumProduct } from "@/lib/product-display";
 import { resourceTieInForGuide } from "@/lib/guide-catalog";
@@ -15,10 +19,40 @@ import {
   getGuides,
   toGuideListItem,
 } from "@/lib/guides";
+import { formatIssueNumber, getLatestIssue } from "@/lib/newsletter";
 import { getHomeShopProducts } from "@/lib/products";
 import { getResource } from "@/lib/resources";
 import { buildPageMetadata, GROCERY_LIST_OG_IMAGE } from "@/lib/seo";
 import { site } from "@/lib/site";
+
+function pickWelcomeBackItem(
+  guides: ReturnType<typeof getGuides>,
+): WelcomeBackItem | null {
+  const latestGuide = guides[0] ?? null;
+  const latestIssue = getLatestIssue();
+  const guideDate = latestGuide ? Date.parse(`${latestGuide.publishedAt}T00:00:00.000Z`) : 0;
+  const issueDate = latestIssue ? Date.parse(`${latestIssue.publishedAt}T00:00:00.000Z`) : 0;
+
+  if (latestIssue && issueDate >= guideDate) {
+    return {
+      kind: "newsletter",
+      slug: latestIssue.slug,
+      title: latestIssue.title,
+      href: `/newsletter/${latestIssue.slug}`,
+      publishedAt: latestIssue.publishedAt,
+      kicker: `${formatIssueNumber(latestIssue.issueNumber)} · Sunday Dispatch`,
+    };
+  }
+  if (!latestGuide) return null;
+  return {
+    kind: "guide",
+    slug: latestGuide.slug,
+    title: latestGuide.title,
+    href: `/guides/${latestGuide.slug}`,
+    publishedAt: latestGuide.publishedAt,
+    kicker: `${latestGuide.category} · ${latestGuide.readTime}`,
+  };
+}
 
 const FEATURED_PRINTABLE = "grocery-week-checklist";
 
@@ -45,8 +79,11 @@ export default async function Home() {
   const featuredPrintable = getResource(FEATURED_PRINTABLE);
   const shopPicks = await getHomeShopProducts();
 
+  const welcomeBack = pickWelcomeBackItem(guides);
+
   return (
     <div>
+      <WelcomeBackBanner latest={welcomeBack} />
       <HomeHero />
 
       <HomeGuidesSection guides={list} />
