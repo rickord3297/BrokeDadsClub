@@ -53,9 +53,9 @@ export const site = {
   ].filter((item): item is { label: string; href: string } => Boolean(item)),
   weekStart: {
     kicker: "Sunday email",
-    title: "The $47 grocery checklist + one weekly tactic",
-    body: "Get the free grocery-week checklist, then one short dad tactic every Sunday at 9am Central. No daily spam pile.",
-    button: "Send it Sundays",
+    title: "The free grocery list + one weekly tactic",
+    body: "Get the free grocery list (7 family dinners for $44 at Walmart), then one short dad tactic every Sunday at 9am Central. No daily spam pile.",
+    button: "Get the free list",
     success: "You're on the Sunday list. Grab the grocery checklist while you wait.",
   },
 } as const;

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GatedResourceCard } from "@/components/gated-resource-card";
+import { HomeFinalSignup } from "@/components/home-final-signup";
 import { HomeFollowSection } from "@/components/home-follow-section";
 import { HomeGuidesSection } from "@/components/home-guides-section";
 import { HomeHero } from "@/components/home-hero";
@@ -117,6 +118,8 @@ export default async function Home() {
           )}
         </div>
       </section>
+
+      <HomeFinalSignup />
 
       <HomeFollowSection />
     </div>

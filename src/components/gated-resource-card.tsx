@@ -8,7 +8,7 @@ const TRUST_LINE =
   "Sent every Sunday at 9 AM CT. Free forever. Unsubscribe anytime.";
 
 const PREVIEW_POINTS = [
-  "Seven dinners, every item covering two nights, about $47",
+  "Seven dinners for $44.04, every item covering two nights",
   "Swap box for store markdowns without blowing the week",
   "Fillable on your phone or print after signup",
 ];
@@ -76,7 +76,7 @@ export function GatedResourceCard({ resource }: { resource: Resource }) {
           <NewsletterForm
             variant="inline"
             source="homepage_printable_gate"
-            submitLabel="Get the full checklist"
+            submitLabel="Get the free checklist"
             successMessage={site.weekStart.success}
             successHref={`/resources/${resource.slug}`}
             successLinkLabel="Open fillable checklist"
