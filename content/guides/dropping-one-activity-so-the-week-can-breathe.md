@@ -16,6 +16,7 @@ keywords:
   - too many kids activities
   - cutting kids sports or clubs
 related:
+  - the-sports-signup-fee-you-didnt-budget-for
   - explaining-we-cant-go
   - cheap-weekend-not-just-screens
   - the-second-bill
@@ -56,6 +57,8 @@ Look at every recurring activity. Ask three questions:
 3. **What breaks if it stays?** Bedtime, homework, sibling time, or your ability to be a person after 8 p.m.
 
 Keep the thing that still lights them up *and* fits the week. Cut the thing that mostly feeds adult guilt or other parents' highlight reels.
+
+If the activity is a sport and money is the real reason, start with [how to budget for kids sports](/guides/the-sports-signup-fee-you-didnt-budget-for) before you cut anything.
 
 > Truth: You are not required to run a youth athletics department out of a sedan.
 

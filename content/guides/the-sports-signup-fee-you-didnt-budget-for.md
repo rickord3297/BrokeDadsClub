@@ -1,15 +1,17 @@
 ---
 title: The sports signup fee you did not budget for
 slug: the-sports-signup-fee-you-didnt-budget-for
-seoTitle: "Youth Sports Hidden Fees: What Signup Really Costs | Broke Dads Club"
-description: "The flyer said $85. The total didn't. Uniforms, photos, travel, volunteer buyouts: the real youth sports bill, plus scripts to say yes, no, or not this season."
+seoTitle: "How to Budget for Kids Sports: Real Costs Beyond Signup | Broke Dads Club"
+description: "Keep kids sports from draining your budget. The real cost beyond the $85 signup, the hidden fees, and scripts to say yes, no, or not this season."
 excerpt: Signup is the down payment, not the movie. The hidden fees that hit in September, three questions to ask before you pay, and scripts when the answer is not this year.
 category: Money
 readTime: 6 min
 publishedAt: "2026-08-29"
-updatedAt: '2026-09-09'
+updatedAt: '2026-10-14'
 status: published
 keywords:
+  - keep kids sports from draining your budget
+  - kids sports budget
   - youth sports costs
   - hidden kids sports fees
   - how much does youth sports cost
@@ -22,6 +24,8 @@ related:
   - school-supply-list
   - explaining-we-cant-go
   - youth-sports-all-in-cost-checklist
+  - what-you-cut-so-the-kid-can-keep-playing-sports
+  - dropping-one-activity-so-the-week-can-breathe
 shop:
   - broke-mug
   - club-pup-tee
@@ -48,6 +52,12 @@ You did not budget wrong. You were given the trailer, not the movie.
 Late August and September are sports signup season. Same rhythm as [the second bill after school starts](/guides/the-second-bill): the first number is never the last number.
 
 **Before you click pay:** ask three questions below. Two minutes now beats a surprise fee in week three.
+
+This is the main sports money guide. Three shorter ones go deeper on one piece each:
+
+- [The all-in cost checklist](/guides/youth-sports-all-in-cost-checklist): ten minutes with real numbers before anyone hits pay.
+- [What you cut so the kid can keep playing](/guides/what-you-cut-so-the-kid-can-keep-playing-sports): when the sport stays and something else has to go.
+- [Dropping one activity](/guides/dropping-one-activity-so-the-week-can-breathe): when the problem is the calendar, not just the bill.
 
 ## Do this before you sign
 

@@ -17,7 +17,6 @@ keywords:
   - cannot afford kids sports
   - cutting costs for youth sports
   - kids sports too expensive what to cut
-  - how families afford youth sports
   - delay kids sports for money
 related:
   - the-sports-signup-fee-you-didnt-budget-for

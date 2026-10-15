@@ -14,9 +14,7 @@ status: published
 keywords:
   - youth sports processing fees
   - youth sports cost checklist
-  - how much does youth sports cost
   - kids sports hidden fees checklist
-  - youth sports budget
   - all in cost kids sports
 related:
   - the-sports-signup-fee-you-didnt-budget-for
