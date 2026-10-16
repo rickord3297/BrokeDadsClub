@@ -8,5 +8,5 @@ Open any file to edit. `status: scheduled` goes live automatically on `published
 
 | Title | Go live | File |
 |-------|---------|------|
-| How much gear to buy for a first youth soccer season | 2026-10-16 | [first-youth-soccer-season-gear.md](guides/first-youth-soccer-season-gear.md) |
 | The class party signup is one job | 2026-10-19 | [the-class-party-signup-is-one-job.md](guides/the-class-party-signup-is-one-job.md) |
+| The extra hour is not extra sleep | 2026-10-22 | [the-extra-hour-is-not-extra-sleep.md](guides/the-extra-hour-is-not-extra-sleep.md) |

@@ -96,6 +96,7 @@ const RELATED_HOOKS: Record<string, string> = {
   "the-week-school-closes-and-work-does-not": "If school is out and the job is not",
   "first-youth-soccer-season-gear": "If the first soccer season is a gear catalog",
   "the-class-party-signup-is-one-job": "If the class party sheet wants your whole afternoon",
+  "the-extra-hour-is-not-extra-sleep": "If the extra hour did not come with any sleep",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {

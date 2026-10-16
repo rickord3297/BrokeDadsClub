@@ -54,8 +54,9 @@
 | Your kid's first real injury | live | 2026-09-23 | Support kid + partner; [`kids-first-injury-support.md`](guides/kids-first-injury-support.md) |
 | What you cut so the kid can keep playing sports | live | 2026-09-26 | [`what-you-cut-so-the-kid-can-keep-playing-sports.md`](guides/what-you-cut-so-the-kid-can-keep-playing-sports.md) |
 | Don't say yes to team parent in the first-game huddle | live | 2026-09-28 | [`dont-say-yes-to-team-parent-first-huddle.md`](guides/dont-say-yes-to-team-parent-first-huddle.md) |
-| How much gear to buy for a first youth soccer season | scheduled | 2026-10-16 | Long-tail SEO, uses gear-pick cards: [`first-youth-soccer-season-gear.md`](guides/first-youth-soccer-season-gear.md) |
+| How much gear to buy for a first youth soccer season | live | 2026-10-16 | Long-tail SEO, uses gear-pick cards: [`first-youth-soccer-season-gear.md`](guides/first-youth-soccer-season-gear.md) |
 | The class party signup is one job | scheduled | 2026-10-19 | trend 2026-10-13: class Halloween signup, one store-bought slot: [`the-class-party-signup-is-one-job.md`](guides/the-class-party-signup-is-one-job.md) |
+| The extra hour is not extra sleep | scheduled | 2026-10-22 | trend 2026-10-16: clocks fall back Nov 1, bedtime does not: [`the-extra-hour-is-not-extra-sleep.md`](guides/the-extra-hour-is-not-extra-sleep.md) |
 
 ### Status
 
