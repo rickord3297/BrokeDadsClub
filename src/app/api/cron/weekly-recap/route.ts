@@ -51,7 +51,10 @@ export async function GET(request: Request) {
   const now = new Date();
   const params = new URL(request.url).searchParams;
   const testTo = normalizeEmail(params.get("test") ?? "");
+  /** force=1: run outside the hour window. Does NOT bypass the same-day send lock. */
   const force = params.get("force") === "1";
+  /** Explicit second blast only. Prefer never; use for true recovery after a failed partial send. */
+  const allowResend = params.get("allow_resend") === "1";
   if (!testTo && !force && !isWeeklyRecapSendWindow(now)) {
     return NextResponse.json({
       ok: true,
@@ -111,7 +114,7 @@ export async function GET(request: Request) {
   }
 
   const runDate = centralDateString(now);
-  if (!force) {
+  if (!allowResend) {
     const claim = await claimCronJobRun(
       supabase,
       WEEKLY_RECAP_JOB,
@@ -131,7 +134,7 @@ export async function GET(request: Request) {
       });
     }
   } else {
-    // Manual force still records a completed row so a later cron cannot double-send.
+    // Recovery resend: refresh the day row so later crons still see a completed claim.
     await claimCronJobRun(supabase, WEEKLY_RECAP_JOB, runDate, issue?.slug ?? null);
   }
 
