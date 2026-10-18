@@ -38,9 +38,24 @@ create table if not exists public.orders (
   created_at timestamptz not null default now()
 );
 
+-- One row per cron job per Central calendar day. Inserts claim the day; duplicates skip.
+create table if not exists public.cron_job_runs (
+  job text not null,
+  run_date date not null,
+  issue_slug text,
+  attempted integer not null default 0,
+  sent integer not null default 0,
+  failed integer not null default 0,
+  status text not null default 'claimed',
+  created_at timestamptz not null default now(),
+  completed_at timestamptz,
+  primary key (job, run_date)
+);
+
 alter table public.products enable row level security;
 alter table public.subscribers enable row level security;
 alter table public.orders enable row level security;
+alter table public.cron_job_runs enable row level security;
 
 create policy "Public can read active products"
   on public.products for select

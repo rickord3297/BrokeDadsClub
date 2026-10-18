@@ -10,7 +10,7 @@ Broke Dads Club uses Cursor Automations plus one GitHub Action.
 | Publish guide (every 3 days) | Every 3 days | Drafts/schedules/publishes the next guide. Opens a PR titled `Publish guide: …`. |
 | Publish printable (weekly) | Fridays | Keeps one new printable going live per Friday from `content/printables/`. Opens a PR titled `Publish printable: …`. |
 | Publish newsletter (weekly) | Thursdays | Writes the next Sunday Dispatch in `content/newsletter/`, dated the coming Sunday. Opens a PR titled `Publish newsletter: …`. |
-| `weekly-recap` Vercel cron | Sundays, 9 a.m. Central | Emails subscribers (via Gmail) the issue dated that Sunday, or the guide recap if there is none, plus an owner copy. |
+| `weekly-recap` Vercel cron | Sundays, 9–11 a.m. Central | Emails subscribers (via Gmail) the issue dated that Sunday, or the guide recap if there is none, plus an owner copy. Same-day lock in `cron_job_runs` prevents double sends; a 11 a.m. UTC catch-up slot covers Hobby drift. |
 | `signup-digest` Vercel cron | Daily, 10 p.m. Central | Emails the owner a list of the day's new signups. Silent on days with none. |
 | `auto-publish-guides` GitHub Action | Daily + on publish PRs | Squash-merges open PRs whose title starts with `Publish guide:`, `Publish printable:`, or `Publish newsletter:` (or branch `cursor/publish-*` / `cursor/printable-*` / `cursor/newsletter-*`). |
 

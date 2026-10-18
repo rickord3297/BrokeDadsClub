@@ -9,6 +9,10 @@
       "schedule": "0 15 * * 0"
     },
     {
+      "path": "/api/cron/weekly-recap?slot=catchup",
+      "schedule": "0 16 * * 0"
+    },
+    {
       "path": "/api/cron/signup-digest?slot=cdt",
       "schedule": "0 3 * * *"
     },

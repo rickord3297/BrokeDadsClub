@@ -1,5 +1,14 @@
 import { NextResponse } from "next/server";
-import { isCentralHour, isCronAuthorized } from "@/lib/cron";
+import {
+  centralDateString,
+  isCronAuthorized,
+  isWeeklyRecapSendWindow,
+} from "@/lib/cron";
+import {
+  WEEKLY_RECAP_JOB,
+  claimCronJobRun,
+  completeCronJobRun,
+} from "@/lib/cron-job-runs";
 import { isUndeliverableTestAddress, normalizeEmail, validateEmail } from "@/lib/email";
 import { isGmailConfigured, sendGmail } from "@/lib/gmail";
 import { getGuide, getGuides, getGuidesSince } from "@/lib/guides";
@@ -13,8 +22,6 @@ import { createAdminClient } from "@/lib/supabase/admin";
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
-const SEND_HOUR_CENTRAL = 9;
-
 type SendInput = { to: string; subject: string; html: string; text: string; unsubscribeUrl?: string };
 
 /** SES when configured; otherwise Gmail, which caps a Workspace account at about 2,000 recipients a day. */
@@ -22,6 +29,18 @@ function pickSender(): ((input: SendInput) => Promise<void>) | null {
   if (isSesConfigured()) return sendSesEmail;
   if (isGmailConfigured()) return sendGmail;
   return null;
+}
+
+/** Prefer the issue dated today (Central), else the newest issue published in the last week. */
+function pickSundayIssue(now: Date) {
+  const today = centralDateString(now);
+  const since = recapWindowStart(now);
+  const live = getAllIssues(now);
+  return (
+    live.find((item) => item.publishedAt === today) ??
+    live.find((item) => item.publishedAt > since) ??
+    null
+  );
 }
 
 export async function GET(request: Request) {
@@ -33,11 +52,11 @@ export async function GET(request: Request) {
   const params = new URL(request.url).searchParams;
   const testTo = normalizeEmail(params.get("test") ?? "");
   const force = params.get("force") === "1";
-  if (!testTo && !force && !isCentralHour(now, SEND_HOUR_CENTRAL)) {
+  if (!testTo && !force && !isWeeklyRecapSendWindow(now)) {
     return NextResponse.json({
       ok: true,
       skipped: true,
-      reason: `Not ${SEND_HOUR_CENTRAL} a.m. Central; the other scheduled run sends.`,
+      reason: "Outside the Sunday 9–11 a.m. Central send window; another scheduled run covers DST.",
     });
   }
 
@@ -65,7 +84,7 @@ export async function GET(request: Request) {
   }
 
   const since = recapWindowStart(now);
-  const issue = getAllIssues(now).find((item) => item.publishedAt > since) ?? null;
+  const issue = pickSundayIssue(now);
   const featuredGuide =
     issue?.featuredGuideSlug ? getGuide(issue.featuredGuideSlug) : null;
   const publishedThisWeek = getGuidesSince(since);
@@ -91,12 +110,44 @@ export async function GET(request: Request) {
     );
   }
 
+  const runDate = centralDateString(now);
+  if (!force) {
+    const claim = await claimCronJobRun(
+      supabase,
+      WEEKLY_RECAP_JOB,
+      runDate,
+      issue?.slug ?? null,
+    );
+    if (!claim.ok) {
+      return NextResponse.json({ message: claim.message }, { status: 500 });
+    }
+    if (!claim.claimed) {
+      return NextResponse.json({
+        ok: true,
+        skipped: true,
+        reason: "Already sent (or claimed) for this Central date.",
+        runDate,
+        previous: claim.existing,
+      });
+    }
+  } else {
+    // Manual force still records a completed row so a later cron cannot double-send.
+    await claimCronJobRun(supabase, WEEKLY_RECAP_JOB, runDate, issue?.slug ?? null);
+  }
+
   const { data, error } = await supabase
     .from("subscribers")
     .select("email, unsubscribe_token")
     .is("unsubscribed_at", null);
 
   if (error) {
+    // Release the day claim so the catch-up slot can retry.
+    await supabase
+      .from("cron_job_runs")
+      .delete()
+      .eq("job", WEEKLY_RECAP_JOB)
+      .eq("run_date", runDate)
+      .eq("status", "claimed");
     return NextResponse.json(
       { message: "Could not load subscribers." },
       { status: 500 },
@@ -151,9 +202,17 @@ export async function GET(request: Request) {
     }
   }
 
+  await completeCronJobRun(supabase, WEEKLY_RECAP_JOB, runDate, {
+    issueSlug: issue?.slug ?? null,
+    attempted: subscribers.length,
+    sent,
+    failed,
+  });
+
   return NextResponse.json({
     ok: true,
     since,
+    runDate,
     ownerCopy,
     issue: issue?.slug ?? null,
     quietWeek,
