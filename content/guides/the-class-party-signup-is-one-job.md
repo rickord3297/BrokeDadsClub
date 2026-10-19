@@ -10,7 +10,7 @@ category: Time
 readTime: 6 min
 publishedAt: "2026-10-19"
 updatedAt: "2026-10-13"
-status: scheduled
+status: published
 keywords:
   - halloween class party snack ideas
   - class party signup for parents

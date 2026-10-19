@@ -97,6 +97,7 @@ const RELATED_HOOKS: Record<string, string> = {
   "first-youth-soccer-season-gear": "If the first soccer season is a gear catalog",
   "the-class-party-signup-is-one-job": "If the class party sheet wants your whole afternoon",
   "the-extra-hour-is-not-extra-sleep": "If the extra hour did not come with any sleep",
+  "the-book-fair-is-one-number": "If the book fair flyer came home with no cap",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {

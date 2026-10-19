@@ -8,5 +8,5 @@ Open any file to edit. `status: scheduled` goes live automatically on `published
 
 | Title | Go live | File |
 |-------|---------|------|
-| The class party signup is one job | 2026-10-19 | [the-class-party-signup-is-one-job.md](guides/the-class-party-signup-is-one-job.md) |
 | The extra hour is not extra sleep | 2026-10-22 | [the-extra-hour-is-not-extra-sleep.md](guides/the-extra-hour-is-not-extra-sleep.md) |
+| The book fair is one number | 2026-10-25 | [the-book-fair-is-one-number.md](guides/the-book-fair-is-one-number.md) |
