@@ -10,7 +10,7 @@ category: Time
 readTime: 6 min
 publishedAt: "2026-10-22"
 updatedAt: "2026-10-22"
-status: scheduled
+status: published
 keywords:
   - daylight saving time kids bedtime
   - clocks fall back kids wake up early
