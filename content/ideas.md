@@ -57,8 +57,9 @@
 | How much gear to buy for a first youth soccer season | live | 2026-10-16 | Long-tail SEO, uses gear-pick cards: [`first-youth-soccer-season-gear.md`](guides/first-youth-soccer-season-gear.md) |
 | The class party signup is one job | live | 2026-10-19 | trend 2026-10-13: class Halloween signup, one store-bought slot: [`the-class-party-signup-is-one-job.md`](guides/the-class-party-signup-is-one-job.md) |
 | The extra hour is not extra sleep | live | 2026-10-22 | trend 2026-10-16: clocks fall back Nov 1, bedtime does not: [`the-extra-hour-is-not-extra-sleep.md`](guides/the-extra-hour-is-not-extra-sleep.md) |
-| The book fair is one number | scheduled | 2026-10-25 | trend 2026-10-19: Scholastic fairs this week and next, $20-$25 cap: [`the-book-fair-is-one-number.md`](guides/the-book-fair-is-one-number.md) |
+| The book fair is one number | live | 2026-10-25 | trend 2026-10-19: Scholastic fairs this week and next, $20-$25 cap: [`the-book-fair-is-one-number.md`](guides/the-book-fair-is-one-number.md) |
 | The porch bowl is one bag | scheduled | 2026-10-28 | trend 2026-10-22: BLS candy +7.7% in September, one porch bag: [`the-porch-bowl-is-one-bag.md`](guides/the-porch-bowl-is-one-bag.md) |
+| The loop ends at 8 | scheduled | 2026-10-31 | trend 2026-10-25: city trick-or-treat windows end at 8, one loop: [`the-loop-ends-at-8.md`](guides/the-loop-ends-at-8.md) |
 
 ### Status
 

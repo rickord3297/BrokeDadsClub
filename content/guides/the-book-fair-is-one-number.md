@@ -10,7 +10,7 @@ category: Money
 readTime: 6 min
 publishedAt: "2026-10-25"
 updatedAt: "2026-10-19"
-status: scheduled
+status: published
 keywords:
   - scholastic book fair budget for kids
   - how much money to send to book fair
