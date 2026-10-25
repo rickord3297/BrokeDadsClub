@@ -99,6 +99,7 @@ const RELATED_HOOKS: Record<string, string> = {
   "the-extra-hour-is-not-extra-sleep": "If the extra hour did not come with any sleep",
   "the-book-fair-is-one-number": "If the book fair flyer came home with no cap",
   "the-porch-bowl-is-one-bag": "If the candy aisle wants a second bag",
+  "the-loop-ends-at-8": "If Halloween night is turning into a second neighborhood",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {

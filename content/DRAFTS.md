@@ -8,5 +8,5 @@ Open any file to edit. `status: scheduled` goes live automatically on `published
 
 | Title | Go live | File |
 |-------|---------|------|
-| The book fair is one number | 2026-10-25 | [the-book-fair-is-one-number.md](guides/the-book-fair-is-one-number.md) |
 | The porch bowl is one bag | 2026-10-28 | [the-porch-bowl-is-one-bag.md](guides/the-porch-bowl-is-one-bag.md) |
+| The loop ends at 8 | 2026-10-31 | [the-loop-ends-at-8.md](guides/the-loop-ends-at-8.md) |
