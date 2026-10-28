@@ -10,7 +10,7 @@ category: Money
 readTime: 6 min
 publishedAt: "2026-10-28"
 updatedAt: "2026-10-22"
-status: scheduled
+status: published
 keywords:
   - how much to spend on halloween candy
   - halloween candy budget for trick or treat
