@@ -100,6 +100,7 @@ const RELATED_HOOKS: Record<string, string> = {
   "the-book-fair-is-one-number": "If the book fair flyer came home with no cap",
   "the-porch-bowl-is-one-bag": "If the candy aisle wants a second bag",
   "the-loop-ends-at-8": "If Halloween night is turning into a second neighborhood",
+  "four-seats-or-one-car": "If Thanksgiving is turning into four plane tickets",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {
