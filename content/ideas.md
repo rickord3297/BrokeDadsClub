@@ -59,8 +59,9 @@
 | The extra hour is not extra sleep | live | 2026-10-22 | trend 2026-10-16: clocks fall back Nov 1, bedtime does not: [`the-extra-hour-is-not-extra-sleep.md`](guides/the-extra-hour-is-not-extra-sleep.md) |
 | The book fair is one number | live | 2026-10-25 | trend 2026-10-19: Scholastic fairs this week and next, $20-$25 cap: [`the-book-fair-is-one-number.md`](guides/the-book-fair-is-one-number.md) |
 | The porch bowl is one bag | live | 2026-10-28 | trend 2026-10-22: BLS candy +7.7% in September, one porch bag: [`the-porch-bowl-is-one-bag.md`](guides/the-porch-bowl-is-one-bag.md) |
-| The loop ends at 8 | scheduled | 2026-10-31 | trend 2026-10-25: city trick-or-treat windows end at 8, one loop: [`the-loop-ends-at-8.md`](guides/the-loop-ends-at-8.md) |
+| The loop ends at 8 | live | 2026-10-31 | trend 2026-10-25: city trick-or-treat windows end at 8, one loop: [`the-loop-ends-at-8.md`](guides/the-loop-ends-at-8.md) |
 | Four seats or one car | scheduled | 2026-11-03 | trend 2026-10-28: Hopper Thanksgiving round trip $402, Sunday return about $250 more: [`four-seats-or-one-car.md`](guides/four-seats-or-one-car.md) |
+| The basket is the dinner | scheduled | 2026-11-06 | trend 2026-10-31: Walmart $35 basket for 10, Aldi under $39, Target $30 for six: [`the-basket-is-the-dinner.md`](guides/the-basket-is-the-dinner.md) |
 
 ### Status
 
