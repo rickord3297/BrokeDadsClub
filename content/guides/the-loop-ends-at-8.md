@@ -10,7 +10,7 @@ category: Time
 readTime: 6 min
 publishedAt: "2026-10-31"
 updatedAt: "2026-10-25"
-status: scheduled
+status: published
 keywords:
   - what time does trick or treat end
   - trick or treat hours 2026

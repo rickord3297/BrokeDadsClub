@@ -8,5 +8,5 @@ Open any file to edit. `status: scheduled` goes live automatically on `published
 
 | Title | Go live | File |
 |-------|---------|------|
-| The loop ends at 8 | 2026-10-31 | [the-loop-ends-at-8.md](guides/the-loop-ends-at-8.md) |
 | Four seats or one car | 2026-11-03 | [four-seats-or-one-car.md](guides/four-seats-or-one-car.md) |
+| The basket is the dinner | 2026-11-06 | [the-basket-is-the-dinner.md](guides/the-basket-is-the-dinner.md) |
