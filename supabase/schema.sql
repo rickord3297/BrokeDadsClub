@@ -20,11 +20,15 @@ create table if not exists public.subscribers (
   source text,
   unsubscribe_token uuid not null default gen_random_uuid(),
   unsubscribed_at timestamptz,
-  created_at timestamptz not null default now()
+  created_at timestamptz not null default now(),
+  drip_day3_sent_at timestamptz,
+  drip_day7_sent_at timestamptz
 );
 
 -- If subscribers already exists without source:
 -- alter table public.subscribers add column if not exists source text;
+-- alter table public.subscribers add column if not exists drip_day3_sent_at timestamptz;
+-- alter table public.subscribers add column if not exists drip_day7_sent_at timestamptz;
 
 create table if not exists public.orders (
   id uuid primary key default gen_random_uuid(),

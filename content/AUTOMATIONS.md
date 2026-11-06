@@ -7,12 +7,15 @@ Broke Dads Club uses Cursor Automations plus one GitHub Action.
 | Job | How often | What it does |
 |-----|-----------|--------------|
 | Daily dad trend scan | Daily | Adds `idea` rows only. Opens a normal PR. Does **not** publish. |
+| Daily SEO health check | Daily | Audits titles, metas, internal links, CTA copy. Opens a PR titled `SEO: …` only when something needs fixing. |
 | Publish guide (every 3 days) | Every 3 days | Drafts/schedules/publishes the next guide. Opens a PR titled `Publish guide: …`. |
 | Publish printable (weekly) | Fridays | Keeps one new printable going live per Friday from `content/printables/`. Opens a PR titled `Publish printable: …`. |
 | Publish newsletter (weekly) | Thursdays | Writes the next Sunday Dispatch in `content/newsletter/`, dated the coming Sunday. Opens a PR titled `Publish newsletter: …`. |
 | `weekly-recap` Vercel cron | Sundays, 9–11 a.m. Central | Emails subscribers (via Gmail) the issue dated that Sunday, or the guide recap if there is none, plus an owner copy. Same-day lock in `cron_job_runs` prevents double sends; a 11 a.m. UTC catch-up slot covers Hobby drift. |
 | `signup-digest` Vercel cron | Daily, 10 p.m. Central | Emails the owner a list of the day's new signups. Silent on days with none. |
-| `auto-publish-guides` GitHub Action | Daily + on publish PRs | Squash-merges open PRs whose title starts with `Publish guide:`, `Publish printable:`, or `Publish newsletter:` (or branch `cursor/publish-*` / `cursor/printable-*` / `cursor/newsletter-*`). |
+| `monday-digest` Vercel cron | Mondays, 9 a.m. Central | Owner email: list size, new signups, content live this week, local SEO gaps, GSC checklist. |
+| `subscriber-drip` Vercel cron | Daily, 10 a.m. Central | Day-3 and day-7 follow-ups to new subscribers only (opted-in list). |
+| `auto-publish-guides` GitHub Action | Daily + on publish PRs | Squash-merges open PRs whose title starts with `Publish guide:`, `Publish printable:`, `Publish newsletter:`, or `SEO:` (or branch `cursor/publish-*` / `cursor/printable-*` / `cursor/newsletter-*` / `cursor/seo-*`). |
 
 Scheduled guides on `main` with `status: scheduled` and `publishedAt <= today` go live on the site automatically after deploy. Scheduled printables do the same; `/resources` and `/resources/<slug>` refresh hourly, so a printable goes live on its date even without a deploy. Newsletter issues work the same way on `/newsletter`.
 
@@ -101,6 +104,30 @@ Steps:
 
 Voice rules from the skill apply (no em/en dashes, real numbers only, no invented readers or quotes).
 ```
+
+## Cursor automation prompt: Daily SEO health check
+
+Create (or edit) a Cursor Automation on a **daily** schedule (morning Central is fine). Paste this as the prompt:
+
+```text
+Broke Dads Club — daily SEO health check.
+
+Follow `.cursor/skills/seo-bdc-daily/SKILL.md`.
+
+Goals:
+1. Catch weak titles, metas, and internal links on live or soon-live guides/printables.
+2. Open a PR only when there is a real fix. Title MUST start with exactly: SEO:
+3. Cap at 3 fixes. No empty PRs. No mass republishes.
+
+Steps:
+1. Fetch and checkout latest origin/main. Branch cursor/seo-<short>-79d1 only if you will change files.
+2. Audit per the skill. Fix at most 3 concrete items.
+3. If nothing to fix, stop (optional one-line note in content/trends.md).
+4. If you fixed something: npm run build, commit, push, open/update PR titled: SEO: <short summary>
+5. Do not ask the user to merge. The GitHub Action merges SEO: PRs when checks pass.
+```
+
+Meta retargeting copy and audiences live in `content/ads/meta-retargeting.md` (manual Ads Manager setup, not a cron).
 
 ## Cursor automation prompt note: Daily trend scan
 

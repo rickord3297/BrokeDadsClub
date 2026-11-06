@@ -19,6 +19,22 @@
     {
       "path": "/api/cron/signup-digest?slot=cst",
       "schedule": "0 4 * * *"
+    },
+    {
+      "path": "/api/cron/monday-digest?slot=cdt",
+      "schedule": "0 14 * * 1"
+    },
+    {
+      "path": "/api/cron/monday-digest?slot=cst",
+      "schedule": "0 15 * * 1"
+    },
+    {
+      "path": "/api/cron/subscriber-drip?slot=cdt",
+      "schedule": "0 15 * * *"
+    },
+    {
+      "path": "/api/cron/subscriber-drip?slot=cst",
+      "schedule": "0 16 * * *"
     }
   ]
 }
