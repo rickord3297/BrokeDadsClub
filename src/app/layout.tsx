@@ -74,6 +74,9 @@ export const metadata: Metadata = {
     icon: "/brand/club-logo.png",
     apple: "/brand/club-logo.png",
   },
+  other: {
+    "p:domain_verify": "5a90ba5ef07c4c41778f3d94efb42ed4",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
