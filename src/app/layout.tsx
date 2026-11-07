@@ -74,9 +74,6 @@ export const metadata: Metadata = {
     icon: "/brand/club-logo.png",
     apple: "/brand/club-logo.png",
   },
-  other: {
-    "p:domain_verify": "5a90ba5ef07c4c41778f3d94efb42ed4",
-  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -86,6 +83,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${fraunces.variable} ${oswald.variable} h-full scroll-smooth antialiased`}
     >
       <head>
+        {/* Pinterest domain verify: must be a raw name= meta; their crawler does not wait on JS. */}
+        <meta
+          name="p:domain_verify"
+          content="5a90ba5ef07c4c41778f3d94efb42ed4"
+        />
         <MetaPixelHead />
       </head>
       <body className="min-h-full flex flex-col text-ink">
