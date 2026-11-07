@@ -103,6 +103,7 @@ const RELATED_HOOKS: Record<string, string> = {
   "four-seats-or-one-car": "If Thanksgiving is turning into four plane tickets",
   "the-basket-is-the-dinner": "If Thanksgiving dinner is turning into a second cart",
   "the-calendar-is-two-dollars": "If the advent wall wants a $35 toy calendar",
+  "the-pie-is-the-assignment": "If the group text says just bring dessert",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {

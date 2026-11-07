@@ -61,8 +61,9 @@
 | The porch bowl is one bag | live | 2026-10-28 | trend 2026-10-22: BLS candy +7.7% in September, one porch bag: [`the-porch-bowl-is-one-bag.md`](guides/the-porch-bowl-is-one-bag.md) |
 | The loop ends at 8 | live | 2026-10-31 | trend 2026-10-25: city trick-or-treat windows end at 8, one loop: [`the-loop-ends-at-8.md`](guides/the-loop-ends-at-8.md) |
 | Four seats or one car | live | 2026-11-03 | trend 2026-10-28: Hopper Thanksgiving round trip $402, Sunday return about $250 more: [`four-seats-or-one-car.md`](guides/four-seats-or-one-car.md) |
-| The basket is the dinner | scheduled | 2026-11-06 | trend 2026-10-31: Walmart $35 basket for 10, Aldi under $39, Target $30 for six: [`the-basket-is-the-dinner.md`](guides/the-basket-is-the-dinner.md) |
+| The basket is the dinner | live | 2026-11-06 | trend 2026-10-31: Walmart $35 basket for 10, Aldi under $39, Target $30 for six: [`the-basket-is-the-dinner.md`](guides/the-basket-is-the-dinner.md) |
 | The calendar is two dollars | scheduled | 2026-11-09 | trend 2026-11-04: Aldi kids chocolate advent calendar $1.99, LEGO one $34.99: [`the-calendar-is-two-dollars.md`](guides/the-calendar-is-two-dollars.md) |
+| The pie is the assignment | scheduled | 2026-11-12 | trend 2026-11-07: Costco pumpkin pie $5.99, Walmart 22 oz pie $4.94, one guest pie: [`the-pie-is-the-assignment.md`](guides/the-pie-is-the-assignment.md) |
 
 ### Status
 
