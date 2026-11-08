@@ -23,6 +23,10 @@ related:
 shop:
   - sticker-pack
   - club-pup-tee
+takeaways:
+  - Steal a short line; skip LinkedIn energy at the curb
+  - Two weeks of the same hello beats one clever opener
+action: Pick one repeat face at pickup and say hello both days this week.
 nextGuide: tagging-along-without-becoming-furniture
 faq:
   - question: What do I say to other parents at school pickup?

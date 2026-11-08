@@ -24,6 +24,10 @@ related:
 shop:
   - broke-mug
   - sticker-pack
+takeaways:
+  - Do not wake them for a midnight guilt speech
+  - Four short sentences in the morning beat a long apology monologue
+action: Write tomorrow's four-sentence repair on a sticky note before you sleep.
 nextGuide: explaining-we-cant-go
 faq:
   - question: What should I do after yelling at my kid tonight?

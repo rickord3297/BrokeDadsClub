@@ -16,15 +16,15 @@ export const CATEGORY_ACCENTS: Record<string, CategoryAccent> = {
   },
   Kids: {
     bar: "bg-gold",
-    soft: "bg-gold/20 text-ink",
+    soft: "bg-gold/25 text-ink",
   },
   Work: {
     bar: "bg-ink",
     soft: "bg-ink/10 text-ink",
   },
   Gear: {
-    bar: "bg-pine-2",
-    soft: "bg-pine-2/15 text-pine",
+    bar: "bg-ink-soft",
+    soft: "bg-ink-soft/15 text-ink",
   },
 };
 

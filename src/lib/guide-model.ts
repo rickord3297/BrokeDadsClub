@@ -57,11 +57,39 @@ export type GuideListItem = Pick<
   | "takeaways"
   | "keywords"
 > & {
+  /** Search-facing line under a clever H1 when it differs from the title. */
+  cardSubtitle?: string | null;
   resourceTieIn?: {
     href: string;
     label: string;
   } | null;
 };
+
+/** Strip brand suffix and return a card subtitle when SEO title ≠ display title. */
+export function guideCardSubtitle(title: string, seoTitle: string): string | null {
+  const plain = seoTitle
+    .replace(/\s*\|\s*Broke Dads Club\s*$/i, "")
+    .trim();
+  if (!plain) return null;
+  const norm = (value: string) =>
+    value
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim();
+  if (norm(plain) === norm(title)) return null;
+  // Avoid near-duplicates like title embedded in a slightly longer SEO string.
+  if (norm(plain).includes(norm(title)) && plain.length < title.length + 12) {
+    return null;
+  }
+  return plain;
+}
+
+/** ~200 wpm; floor at 3 so short hubs do not look like stubs. */
+export function estimateReadTime(content: string): string {
+  const words = content.trim().split(/\s+/).filter(Boolean).length;
+  const minutes = Math.max(3, Math.round(words / 200));
+  return `${minutes} min`;
+}
 
 /** Never report an "updated" day earlier than published (schema + byline). */
 export function effectiveUpdatedAt(publishedAt: string, updatedAt?: string | null): string {
@@ -86,6 +114,7 @@ export function toGuideListItem(
     updatedAt: guide.updatedAt,
     takeaways: guide.takeaways.slice(0, 2),
     keywords: guide.keywords,
+    cardSubtitle: guideCardSubtitle(guide.title, guide.seoTitle),
     resourceTieIn: resourceTieIn ?? null,
   };
 }

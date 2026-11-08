@@ -23,6 +23,10 @@ related:
 shop:
   - club-pup-tee
   - sticker-pack
+takeaways:
+  - Pick one job at practice: watch, volunteer, or connect
+  - Phone stays pocketed for one full drill set
+action: At the next kid event, name your job out loud before you park.
 nextGuide: one-dad-coffee-not-a-friend-group
 faq:
   - question: Why do dads feel invisible at kid activities?

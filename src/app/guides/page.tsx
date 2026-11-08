@@ -7,7 +7,9 @@ import { resourceTieInForGuide } from "@/lib/guide-catalog";
 import { getLiveResources } from "@/lib/printables";
 import {
   getGuideCategories,
-  getGuides,
+  getGuidesForBrowse,
+  MIN_CATEGORY_FILTER_COUNT,
+  partitionGuidesForBrowse,
   toGuideListItem,
 } from "@/lib/guides";
 import { buildPageMetadata } from "@/lib/seo";
@@ -28,8 +30,10 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 export default async function GuidesPage() {
-  const guides = getGuides();
-  const categories = getGuideCategories(guides);
+  const guides = getGuidesForBrowse();
+  const categories = getGuideCategories(guides, {
+    minCount: MIN_CATEGORY_FILTER_COUNT,
+  });
   const liveResources = getLiveResources();
   const list = guides.map((guide) => {
     const tieIn = resourceTieInForGuide(guide.slug, liveResources);
@@ -38,6 +42,7 @@ export default async function GuidesPage() {
       tieIn ? { href: tieIn.href, label: tieIn.label } : null,
     );
   });
+  const { current, pastSeason } = partitionGuidesForBrowse(list);
 
   const itemListLd = {
     "@context": "https://schema.org",
@@ -69,7 +74,12 @@ export default async function GuidesPage() {
           <div className="mt-10 h-40 animate-pulse rounded-2xl bg-paper-2" />
         }
       >
-        <GuidesExplorer guides={list} categories={categories} />
+        <GuidesExplorer
+          guides={list}
+          currentGuides={current}
+          pastSeasonGuides={pastSeason}
+          categories={categories}
+        />
       </Suspense>
     </div>
   );

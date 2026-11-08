@@ -23,6 +23,10 @@ related:
 shop:
   - broke-mug
   - club-pup-tee
+takeaways:
+  - One repeat face and one specific invite beat a fantasy friend group
+  - Thirty minutes with an easy out is a full win
+action: Text one dad a specific coffee invite for a day you already leave the house.
 nextGuide: gas-station-dinner
 faq:
   - question: How many dad friends do you really need?

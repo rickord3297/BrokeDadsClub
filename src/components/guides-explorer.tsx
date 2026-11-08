@@ -13,9 +13,13 @@ const PAGE_SIZE = 30;
 
 export function GuidesExplorer({
   guides,
+  currentGuides,
+  pastSeasonGuides,
   categories,
 }: {
   guides: GuideListItem[];
+  currentGuides: GuideListItem[];
+  pastSeasonGuides: GuideListItem[];
   categories: string[];
 }) {
   const router = useRouter();
@@ -38,13 +42,27 @@ export function GuidesExplorer({
     [guides, topic, query],
   );
 
-  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const browseCurrent = useMemo(
+    () => filterGuidesList(currentGuides, topic, query),
+    [currentGuides, topic, query],
+  );
+  const browsePast = useMemo(
+    () => filterGuidesList(pastSeasonGuides, topic, query),
+    [pastSeasonGuides, topic, query],
+  );
+
+  const useSeasonShelf = !hasFilters;
+  const primaryPool = useSeasonShelf ? browseCurrent : filtered;
+  const pastPool = useSeasonShelf ? browsePast : [];
+
+  const totalPages = Math.max(1, Math.ceil(primaryPool.length / PAGE_SIZE));
   const safePage = Math.min(page, totalPages);
   const pageStart = (safePage - 1) * PAGE_SIZE;
-  const pageSlice = filtered.slice(pageStart, pageStart + PAGE_SIZE);
+  const pageSlice = primaryPool.slice(pageStart, pageStart + PAGE_SIZE);
   const showHero = !hasFilters && safePage === 1 && pageSlice.length > 0;
   const hero = showHero ? pageSlice[0] : null;
   const gridGuides = showHero ? pageSlice.slice(1) : pageSlice;
+  const showPastShelf = useSeasonShelf && safePage === 1 && pastPool.length > 0;
 
   const topics = [
     "",
@@ -99,8 +117,9 @@ export function GuidesExplorer({
     document.getElementById("guides-list")?.scrollIntoView({ behavior: "smooth" });
   }
 
-  const rangeStart = filtered.length ? pageStart + 1 : 0;
-  const rangeEnd = Math.min(pageStart + PAGE_SIZE, filtered.length);
+  const rangeStart = primaryPool.length ? pageStart + 1 : 0;
+  const rangeEnd = Math.min(pageStart + PAGE_SIZE, primaryPool.length);
+  const empty = primaryPool.length === 0 && pastPool.length === 0;
 
   return (
     <>
@@ -144,8 +163,8 @@ export function GuidesExplorer({
           {hasFilters || totalPages > 1 ? (
             <div className="mt-3 flex flex-wrap items-center gap-3 text-sm">
               <p className="text-ink-soft">
-                {filtered.length
-                  ? `Showing ${rangeStart}–${rangeEnd} of ${filtered.length}`
+                {primaryPool.length
+                  ? `Showing ${rangeStart}–${rangeEnd} of ${primaryPool.length}`
                   : "No guides match"}
                 {topic ? ` in ${topic}` : ""}
                 {query ? ` for "${query}"` : ""}
@@ -167,7 +186,7 @@ export function GuidesExplorer({
         </div>
       </div>
 
-      {filtered.length === 0 ? (
+      {empty ? (
         <p className="mt-10 text-base text-ink-soft">
           Nothing matches that yet.{" "}
           <button
@@ -183,11 +202,11 @@ export function GuidesExplorer({
           {hero ? (
             <div>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pine">
-                Latest
+                This week
               </p>
               <GuideCard
                 guide={hero}
-                badge="New"
+                badge="Now"
                 placement="guides_index_hero"
                 variant="hero"
               />
@@ -198,15 +217,36 @@ export function GuidesExplorer({
             <div>
               {hero ? (
                 <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-ink-soft">
-                  All guides
+                  Guides for right now
                 </p>
               ) : null}
-              <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid items-start gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {gridGuides.map((guide) => (
                   <GuideCard
                     key={guide.slug}
                     guide={guide}
                     placement="guides_index"
+                  />
+                ))}
+              </div>
+            </div>
+          ) : null}
+
+          {showPastShelf ? (
+            <div>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-ink-soft">
+                Past season
+              </p>
+              <p className="mb-4 max-w-2xl text-sm leading-6 text-ink-soft">
+                Halloween, fall-break, and other dated pieces stay here until next year.
+                Same URLs. Fresh when the calendar comes back around.
+              </p>
+              <div className="grid items-start gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {pastPool.map((guide) => (
+                  <GuideCard
+                    key={guide.slug}
+                    guide={guide}
+                    placement="guides_index_past_season"
                   />
                 ))}
               </div>

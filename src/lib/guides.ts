@@ -4,12 +4,14 @@ import matter from "gray-matter";
 import { site } from "@/lib/site";
 import {
   effectiveUpdatedAt,
+  estimateReadTime,
   type Guide,
   type GuideFaq,
   type GuideListItem,
   type GuideProductCtaConfig,
   type GuideStatus,
 } from "@/lib/guide-model";
+import { compareGuidesForBrowse } from "@/lib/guide-season";
 
 export type {
   Guide,
@@ -20,13 +22,20 @@ export type {
 } from "@/lib/guide-model";
 export {
   effectiveUpdatedAt,
+  estimateReadTime,
   extractGuideHeadings,
+  guideCardSubtitle,
   parseReadMinutes,
   slugifyHeading,
   splitGuideIntro,
   toGuideListItem,
 } from "@/lib/guide-model";
 export { filterGuidesList, matchesGuideQuery } from "@/lib/guide-query";
+export {
+  compareGuidesForBrowse,
+  partitionGuidesForBrowse,
+  seasonStatusForSlug,
+} from "@/lib/guide-season";
 
 const guidesDir = path.join(process.cwd(), "content/guides");
 
@@ -133,10 +142,7 @@ function readAllGuides(): Guide[] {
                 ? data.description
                 : excerpt.slice(0, 155),
             category: data.category as string,
-            readTime:
-              typeof data.readTime === "string" && data.readTime.trim()
-                ? data.readTime
-                : "5 min",
+            readTime: estimateReadTime(content),
             publishedAt: data.publishedAt as string,
             updatedAt: effectiveUpdatedAt(
               data.publishedAt as string,
@@ -195,6 +201,11 @@ export function getGuides(): Guide[] {
   );
 }
 
+/** Same live set, ranked for /guides and homepage “what matters now.” */
+export function getGuidesForBrowse(now = new Date()): Guide[] {
+  return [...getGuides()].sort((a, b) => compareGuidesForBrowse(a, b, now));
+}
+
 export function getGuide(slug: string): Guide | null {
   return getGuides().find((guide) => guide.slug === slug) ?? null;
 }
@@ -208,15 +219,27 @@ export const START_HERE_SLUGS = [
 
 const CATEGORY_ORDER = ["Money", "Time", "Kids", "Work", "Gear"];
 
-export function getGuideCategories(guides: Guide[] = getGuides()): string[] {
-  const found = new Set(
-    guides
-      .map((guide) => guide.category)
-      .filter((category): category is string => Boolean(category?.trim())),
-  );
+/** Hide sparse topic chips until the category has enough guides to feel like a shelf. */
+export const MIN_CATEGORY_FILTER_COUNT = 3;
+
+export function getGuideCategories(
+  guides: Guide[] = getGuides(),
+  options: { minCount?: number } = {},
+): string[] {
+  const minCount = options.minCount ?? 0;
+  const counts = new Map<string, number>();
+  for (const guide of guides) {
+    const category = guide.category?.trim();
+    if (!category) continue;
+    counts.set(category, (counts.get(category) ?? 0) + 1);
+  }
+  const found = [...counts.entries()]
+    .filter(([, count]) => count >= minCount)
+    .map(([category]) => category);
+  const foundSet = new Set(found);
   return [
-    ...CATEGORY_ORDER.filter((category) => found.has(category)),
-    ...[...found].filter((category) => !CATEGORY_ORDER.includes(category)).sort(),
+    ...CATEGORY_ORDER.filter((category) => foundSet.has(category)),
+    ...found.filter((category) => !CATEGORY_ORDER.includes(category)).sort(),
   ];
 }
 

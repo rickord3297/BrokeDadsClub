@@ -25,6 +25,10 @@ related:
 shop:
   - club-pup-tee
   - broke-mug
+takeaways:
+  - One face, one spot, one hello is the whole week
+  - Friendly nods are not the same as being included
+action: Stand in the same spot twice this week and say hello to one parent both times.
 nextGuide: the-pickup-line-is-not-a-networking-event
 faq:
   - question: Why is it harder for dads to make friends at kid activities?

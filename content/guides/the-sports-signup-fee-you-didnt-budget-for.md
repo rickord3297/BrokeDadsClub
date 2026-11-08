@@ -35,6 +35,11 @@ related:
 shop:
   - broke-mug
   - club-pup-tee
+takeaways:
+  - Signup is the down payment; write the all-in number first
+  - Ask required vs optional before anyone hits pay
+action: >-
+  Email the league one question tonight: what did families spend all-in last season?
 nextGuide: the-second-bill
 faq:
   - question: How much do kids sports really cost beyond signup?

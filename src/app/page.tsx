@@ -17,6 +17,7 @@ import { resourceTieInForGuide } from "@/lib/guide-catalog";
 import { getLiveResources } from "@/lib/printables";
 import {
   getGuides,
+  getGuidesForBrowse,
   toGuideListItem,
 } from "@/lib/guides";
 import { formatIssueNumber, getLatestIssue } from "@/lib/newsletter";
@@ -68,7 +69,8 @@ export const metadata: Metadata = buildPageMetadata({
 
 export default async function Home() {
   const liveResources = getLiveResources();
-  const guides = getGuides();
+  const guidesChronological = getGuides();
+  const guides = getGuidesForBrowse();
   const list = guides.map((guide) => {
     const tieIn = resourceTieInForGuide(guide.slug, liveResources);
     return toGuideListItem(
@@ -79,7 +81,8 @@ export default async function Home() {
   const featuredPrintable = getResource(FEATURED_PRINTABLE);
   const shopPicks = await getHomeShopProducts();
 
-  const welcomeBack = pickWelcomeBackItem(guides);
+  // Newest by publish date for the banner; browse rank for the guide grid.
+  const welcomeBack = pickWelcomeBackItem(guidesChronological);
 
   return (
     <div>
