@@ -21,6 +21,13 @@ export default function AboutPage() {
         You&apos;re not the only one doing the math.
       </h1>
       <p className="mt-4 font-display text-2xl text-pine">{site.tagline}</p>
+      <p className="mt-4 text-sm text-ink-soft">
+        Guides are written by{" "}
+        <Link href="/about/author" className="font-medium text-pine hover:text-rust">
+          the author
+        </Link>
+        .
+      </p>
       <Image
         src="/brand/club-logo.png"
         alt="Broke Dads Club crest"

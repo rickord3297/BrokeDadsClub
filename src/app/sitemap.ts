@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { siteAuthor } from "@/lib/author";
 import { GUIDE_PILLARS } from "@/lib/guide-pillars";
 import { getGuides } from "@/lib/guides";
 import type { Guide } from "@/lib/guide-model";
@@ -91,6 +92,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
 
     { url: absoluteUrl("/about"), lastModified: SITE_EPOCH, changeFrequency: "yearly", priority: 0.4 },
+    {
+      url: absoluteUrl(siteAuthor.path),
+      lastModified: SITE_EPOCH,
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
     { url: absoluteUrl("/privacy"), lastModified: SITE_EPOCH, changeFrequency: "yearly", priority: 0.2 },
     { url: absoluteUrl("/terms"), lastModified: SITE_EPOCH, changeFrequency: "yearly", priority: 0.2 },
   ];

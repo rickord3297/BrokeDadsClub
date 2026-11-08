@@ -4,36 +4,86 @@ import { GuidesCrawlIndex } from "@/components/guides-crawl-index";
 import { GuidesExplorer } from "@/components/guides-explorer";
 import { JsonLd } from "@/components/json-ld";
 import { resourceTieInForGuide } from "@/lib/guide-catalog";
+import { GUIDE_PILLARS } from "@/lib/guide-pillars";
 import { getLiveResources } from "@/lib/printables";
 import {
-  getGuideCategories,
   getGuidesForBrowse,
-  MIN_CATEGORY_FILTER_COUNT,
   partitionGuidesForBrowse,
   toGuideListItem,
 } from "@/lib/guides";
-import { buildPageMetadata } from "@/lib/seo";
+import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = buildPageMetadata({
-  title: "All Guides: Money, Time, and Kids for Dads",
-  description:
-    "Browse every Broke Dads Club guide in one place: grocery weeks, school fees, after-school meltdowns, bedtime, and work that does not steal bedtime.",
-  path: "/guides",
-  keywords: [
-    "dad guides",
-    "family budget guides",
-    "parenting on a budget",
-    "frugal dad tips",
-    "grocery budget guide",
-  ],
-});
+const GUIDES_DESCRIPTION =
+  "Browse every Broke Dads Club guide in one place: grocery weeks, school fees, after-school meltdowns, bedtime, and work that does not steal bedtime.";
 
-export default async function GuidesPage() {
-  const guides = getGuidesForBrowse();
-  const categories = getGuideCategories(guides, {
-    minCount: MIN_CATEGORY_FILTER_COUNT,
+const GUIDES_KEYWORDS = [
+  "dad guides",
+  "family budget guides",
+  "parenting on a budget",
+  "frugal dad tips",
+  "grocery budget guide",
+];
+
+function pageNumberFromSearchParams(
+  searchParams: Record<string, string | string[] | undefined>,
+): number {
+  const raw = searchParams.page;
+  const value = Array.isArray(raw) ? raw[0] : raw;
+  return Math.max(1, Number(value) || 1);
+}
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}): Promise<Metadata> {
+  const params = await searchParams;
+  const page = pageNumberFromSearchParams(params);
+
+  if (page > 1) {
+    const title = `All Guides - Page ${page} · ${site.name}`;
+    const canonical = absoluteUrl(`/guides?page=${page}`);
+    return {
+      title: { absolute: title },
+      description: GUIDES_DESCRIPTION,
+      keywords: [...GUIDES_KEYWORDS],
+      alternates: { canonical },
+      openGraph: {
+        title,
+        description: GUIDES_DESCRIPTION,
+        url: canonical,
+        siteName: site.name,
+        type: "website",
+        locale: "en_US",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description: GUIDES_DESCRIPTION,
+      },
+    };
+  }
+
+  return buildPageMetadata({
+    title: "All Guides: Money, Time, and Kids for Dads",
+    description: GUIDES_DESCRIPTION,
+    path: "/guides",
+    keywords: GUIDES_KEYWORDS,
   });
+}
+
+export default async function GuidesPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const params = await searchParams;
+  const page = pageNumberFromSearchParams(params);
+  const guides = getGuidesForBrowse();
+  const categories = GUIDE_PILLARS.map((pillar) => pillar.category).filter(
+    (category) => guides.some((guide) => guide.category === category),
+  );
   const liveResources = getLiveResources();
   const list = guides.map((guide) => {
     const tieIn = resourceTieInForGuide(guide.slug, liveResources);
@@ -79,6 +129,7 @@ export default async function GuidesPage() {
           currentGuides={current}
           pastSeasonGuides={pastSeason}
           categories={categories}
+          initialPage={page}
         />
       </Suspense>
     </div>

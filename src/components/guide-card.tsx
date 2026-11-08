@@ -79,7 +79,19 @@ export function GuideCard({
             ) : null}
             <div className="mt-5 flex flex-wrap items-end justify-between gap-3 border-t border-rule/80 pt-4">
               <p className="text-xs text-ink-soft/80">
-                {formatDate(guide.publishedAt)}
+                <time dateTime={guide.publishedAt}>
+                  Published {formatDate(guide.publishedAt)}
+                </time>
+                {guide.updatedAt !== guide.publishedAt ? (
+                  <>
+                    <span className="mx-1.5 text-rule" aria-hidden>
+                      ·
+                    </span>
+                    <time dateTime={guide.updatedAt}>
+                      Updated {formatDate(guide.updatedAt)}
+                    </time>
+                  </>
+                ) : null}
               </p>
               <span
                 className="inline-flex h-10 items-center rounded-full bg-pine px-4 text-sm font-semibold text-paper transition group-hover:bg-pine-2"
@@ -145,7 +157,19 @@ export function GuideCard({
           ) : null}
           <div className="mt-4 flex items-end justify-between gap-3 border-t border-rule/80 pt-4">
             <p className="text-xs text-ink-soft/80">
-              {formatDate(guide.publishedAt)}
+              <time dateTime={guide.publishedAt}>
+                Published {formatDate(guide.publishedAt)}
+              </time>
+              {guide.updatedAt !== guide.publishedAt ? (
+                <>
+                  <span className="mx-1.5 text-rule" aria-hidden>
+                    ·
+                  </span>
+                  <time dateTime={guide.updatedAt}>
+                    Updated {formatDate(guide.updatedAt)}
+                  </time>
+                </>
+              ) : null}
             </p>
             <span
               className="inline-flex h-10 items-center rounded-full bg-pine px-4 text-sm font-semibold text-paper transition group-hover:bg-pine-2"

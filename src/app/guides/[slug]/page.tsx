@@ -37,7 +37,9 @@ import {
   toGuideListItem,
 } from "@/lib/guides";
 import { getLiveResourceForGuide, otherLiveResources } from "@/lib/printables";
-import { guideCategoryPath, authorBio, guideSchemaDate } from "@/lib/guide-pillars";
+import { authorBio, authorJsonLd } from "@/lib/author";
+import { formatDate } from "@/lib/format";
+import { guideCategoryPath, guideSchemaDate } from "@/lib/guide-pillars";
 import { JsonLd } from "@/components/json-ld";
 import {
   NOINDEX,
@@ -116,7 +118,6 @@ export default async function GuidePage({
   const companionPrintable = getLiveResourceForGuide(guide.slug);
   const showToc = headings.length >= 2;
 
-  const author = authorBio();
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -127,11 +128,7 @@ export default async function GuidePage({
     isAccessibleForFree: true,
     datePublished: guideSchemaDate(guide.publishedAt),
     dateModified: guideSchemaDate(guide.updatedAt),
-    author: {
-      "@type": "Person",
-      name: author.name,
-      url: `${site.url}${author.aboutHref}`,
-    },
+    author: authorJsonLd(),
     publisher: {
       "@type": "Organization",
       name: site.name,
@@ -233,6 +230,17 @@ export default async function GuidePage({
             <h1 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">
               {guide.title}
             </h1>
+            <p className="mt-3 text-sm text-ink-soft">
+              <time dateTime={guide.publishedAt}>
+                Published {formatDate(guide.publishedAt)}
+              </time>
+              <span className="mx-2 text-rule" aria-hidden>
+                ·
+              </span>
+              <time dateTime={guide.updatedAt}>
+                Updated {formatDate(guide.updatedAt)}
+              </time>
+            </p>
             <div className="mt-5 flex flex-wrap items-start justify-between gap-4 border-b border-rule pb-5">
               <GuideByline
                 publishedAt={guide.publishedAt}

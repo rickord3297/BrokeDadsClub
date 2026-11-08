@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 import { GuideCard } from "@/components/guide-card";
@@ -8,8 +9,17 @@ import { NewsletterSignupCard } from "@/components/newsletter-signup-card";
 import { trackTopicFilter } from "@/lib/analytics";
 import { filterGuidesList } from "@/lib/guide-query";
 import type { GuideListItem } from "@/lib/guide-model";
+import { topicSlugForCategory } from "@/lib/guide-topics";
 
 const PAGE_SIZE = 30;
+
+function pageHref(pageNumber: number, query: string) {
+  const params = new URLSearchParams();
+  if (query) params.set("q", query);
+  if (pageNumber > 1) params.set("page", String(pageNumber));
+  const search = params.toString();
+  return search ? `/guides?${search}` : "/guides";
+}
 
 export function GuidesExplorer({
   guides,
@@ -21,6 +31,7 @@ export function GuidesExplorer({
   currentGuides: GuideListItem[];
   pastSeasonGuides: GuideListItem[];
   categories: string[];
+  initialPage?: number;
 }) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -75,46 +86,9 @@ export function GuidesExplorer({
     ],
   ];
 
-  function pushParams(next: URLSearchParams) {
-    const search = next.toString();
-    router.push(search ? `/guides?${search}` : "/guides", { scroll: false });
-  }
-
-  function setTopic(next: string) {
-    const pillarSlug =
-      next === "Money"
-        ? "money"
-        : next === "Time"
-          ? "time"
-          : next === "Kids"
-            ? "kids"
-            : null;
-    if (pillarSlug) {
-      trackTopicFilter(next, "guides_index_pillar");
-      router.push(`/guides/${pillarSlug}`);
-      return;
-    }
-
-    const value = next === topic ? "" : next;
-    trackTopicFilter(value, "guides_index");
-    const params = new URLSearchParams(searchParams.toString());
-    if (value) params.set("topic", value);
-    else params.delete("topic");
-    params.delete("page");
-    pushParams(params);
-  }
-
   function clearFilters() {
     trackTopicFilter("", "guides_index_clear");
     router.push("/guides", { scroll: false });
-  }
-
-  function setPage(next: number) {
-    const params = new URLSearchParams(searchParams.toString());
-    if (next <= 1) params.delete("page");
-    else params.set("page", String(next));
-    pushParams(params);
-    document.getElementById("guides-list")?.scrollIntoView({ behavior: "smooth" });
   }
 
   const rangeStart = primaryPool.length ? pageStart + 1 : 0;
@@ -127,24 +101,29 @@ export function GuidesExplorer({
         <div className="min-w-0 flex-1">
           <div
             className="flex flex-wrap gap-2 sm:gap-3"
-            role="group"
-            aria-label="Filter guides by topic"
+            role="navigation"
+            aria-label="Browse guides by topic"
           >
             {topics.map((value) => {
-              const selected = value === topic;
+              const selected = value === topic || (!value && !topic);
               const count = value ? (counts.get(value) ?? 0) : guides.length;
               const label = value || "All";
+              const topicSlug = value ? topicSlugForCategory(value) : null;
+              const href = topicSlug ? `/guides/${topicSlug}` : "/guides";
+              const className = selected
+                ? "rounded-full bg-ink px-4 py-2.5 text-sm font-semibold text-paper shadow-sm ring-2 ring-ink ring-offset-2 ring-offset-paper sm:text-base"
+                : "rounded-full border border-rule bg-paper px-4 py-2.5 text-sm font-medium text-ink transition hover:border-pine hover:text-pine sm:text-base";
+
               return (
-                <button
+                <Link
                   key={value || "all-topics"}
-                  type="button"
-                  aria-pressed={selected}
-                  onClick={() => setTopic(value)}
-                  className={
-                    selected
-                      ? "rounded-full bg-ink px-4 py-2.5 text-sm font-semibold text-paper shadow-sm ring-2 ring-ink ring-offset-2 ring-offset-paper sm:text-base"
-                      : "rounded-full border border-rule bg-paper px-4 py-2.5 text-sm font-medium text-ink transition hover:border-pine hover:text-pine sm:text-base"
-                  }
+                  href={href}
+                  aria-current={selected && !topicSlug ? "page" : undefined}
+                  onClick={() => {
+                    if (topicSlug) trackTopicFilter(value, "guides_index_pillar");
+                    else trackTopicFilter("", "guides_index");
+                  }}
+                  className={className}
                 >
                   {label}
                   <span
@@ -156,7 +135,7 @@ export function GuidesExplorer({
                   >
                     ({count})
                   </span>
-                </button>
+                </Link>
               );
             })}
           </div>
@@ -164,7 +143,7 @@ export function GuidesExplorer({
             <div className="mt-3 flex flex-wrap items-center gap-3 text-sm">
               <p className="text-ink-soft">
                 {primaryPool.length
-                  ? `Showing ${rangeStart}–${rangeEnd} of ${primaryPool.length}`
+                  ? `Showing ${rangeStart}-${rangeEnd} of ${primaryPool.length}`
                   : "No guides match"}
                 {topic ? ` in ${topic}` : ""}
                 {query ? ` for "${query}"` : ""}
@@ -189,13 +168,9 @@ export function GuidesExplorer({
       {empty ? (
         <p className="mt-10 text-base text-ink-soft">
           Nothing matches that yet.{" "}
-          <button
-            type="button"
-            onClick={clearFilters}
-            className="font-medium text-pine hover:text-rust"
-          >
+          <Link href="/guides" className="font-medium text-pine hover:text-rust">
             Show all guides
-          </button>
+          </Link>
         </p>
       ) : (
         <div id="guides-list" className="mt-10 scroll-mt-24 space-y-8">
@@ -258,23 +233,26 @@ export function GuidesExplorer({
               className="flex flex-wrap items-center justify-center gap-2 pt-2"
               aria-label="Guide pages"
             >
-              <button
-                type="button"
-                onClick={() => setPage(safePage - 1)}
-                disabled={safePage <= 1}
-                className="rounded-full border border-rule px-3 py-1.5 text-sm font-medium text-ink transition hover:border-pine hover:text-pine disabled:cursor-not-allowed disabled:opacity-40"
-              >
-                Previous
-              </button>
+              {safePage > 1 ? (
+                <Link
+                  href={pageHref(safePage - 1, query)}
+                  className="rounded-full border border-rule px-3 py-1.5 text-sm font-medium text-ink transition hover:border-pine hover:text-pine"
+                >
+                  Previous
+                </Link>
+              ) : (
+                <span className="rounded-full border border-rule px-3 py-1.5 text-sm font-medium text-ink opacity-40">
+                  Previous
+                </span>
+              )}
               {Array.from({ length: totalPages }, (_, index) => {
                 const pageNumber = index + 1;
                 const current = pageNumber === safePage;
                 return (
-                  <button
+                  <Link
                     key={pageNumber}
-                    type="button"
+                    href={pageHref(pageNumber, query)}
                     aria-current={current ? "page" : undefined}
-                    onClick={() => setPage(pageNumber)}
                     className={
                       current
                         ? "flex h-9 min-w-9 items-center justify-center rounded-full bg-ink px-3 text-sm font-semibold text-paper"
@@ -282,17 +260,21 @@ export function GuidesExplorer({
                     }
                   >
                     {pageNumber}
-                  </button>
+                  </Link>
                 );
               })}
-              <button
-                type="button"
-                onClick={() => setPage(safePage + 1)}
-                disabled={safePage >= totalPages}
-                className="rounded-full border border-rule px-3 py-1.5 text-sm font-medium text-ink transition hover:border-pine hover:text-pine disabled:cursor-not-allowed disabled:opacity-40"
-              >
-                Next
-              </button>
+              {safePage < totalPages ? (
+                <Link
+                  href={pageHref(safePage + 1, query)}
+                  className="rounded-full border border-rule px-3 py-1.5 text-sm font-medium text-ink transition hover:border-pine hover:text-pine"
+                >
+                  Next
+                </Link>
+              ) : (
+                <span className="rounded-full border border-rule px-3 py-1.5 text-sm font-medium text-ink opacity-40">
+                  Next
+                </span>
+              )}
             </nav>
           ) : null}
 

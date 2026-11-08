@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { guideCategoryPath } from "@/lib/guide-pillars";
+import { guideCategoryPath } from "@/lib/guide-topics";
 
 export function GuideBreadcrumbs({
   category,

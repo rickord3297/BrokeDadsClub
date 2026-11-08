@@ -8,12 +8,13 @@ import {
   GUIDE_PILLARS,
   getGuidePillar,
   type GuidePillar,
+  type GuideTopicSlug,
 } from "@/lib/guide-pillars";
 import { getGuides, toGuideListItem } from "@/lib/guides";
-import { buildPageMetadata } from "@/lib/seo";
+import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export function pillarMetadata(slug: GuidePillar["slug"]): Metadata {
+export function pillarMetadata(slug: GuideTopicSlug): Metadata {
   const pillar = getGuidePillar(slug);
   if (!pillar) return { title: "Guides" };
   return buildPageMetadata({
@@ -25,10 +26,12 @@ export function pillarMetadata(slug: GuidePillar["slug"]): Metadata {
   });
 }
 
-export function GuidePillarPage({ slug }: { slug: GuidePillar["slug"] }) {
+export function GuidePillarPage({ slug }: { slug: GuideTopicSlug }) {
   const pillar = getGuidePillar(slug);
   if (!pillar) return null;
   const liveResources = getLiveResources();
+  const path = `/guides/${pillar.slug}`;
+  const url = absoluteUrl(path);
 
   const guides = getGuides()
     .filter((guide) => guide.category === pillar.category)
@@ -40,38 +43,84 @@ export function GuidePillarPage({ slug }: { slug: GuidePillar["slug"] }) {
       );
     });
 
-  const collectionLd = {
+  const itemListLd = {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
+    "@type": "ItemList",
     name: pillar.title,
     description: pillar.description,
-    url: `${site.url}/guides/${pillar.slug}`,
-    isPartOf: {
-      "@type": "WebSite",
-      name: site.name,
-      url: site.url,
-    },
-    mainEntity: {
-      "@type": "ItemList",
-      itemListElement: guides.map((guide, index) => ({
+    url,
+    numberOfItems: guides.length,
+    itemListElement: guides.map((guide, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: absoluteUrl(`/guides/${guide.slug}`),
+      name: guide.title,
+    })),
+  };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
         "@type": "ListItem",
-        position: index + 1,
-        url: `${site.url}/guides/${guide.slug}`,
-        name: guide.title,
-      })),
-    },
+        position: 1,
+        name: "Home",
+        item: site.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Guides",
+        item: absoluteUrl("/guides"),
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: pillar.title,
+        item: url,
+      },
+    ],
   };
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-      <JsonLd data={collectionLd} />
-      <p className="text-xs uppercase tracking-[0.18em] text-rust">
+      <JsonLd data={[itemListLd, breadcrumbLd]} />
+      <nav aria-label="Breadcrumb" className="text-sm text-ink-soft">
+        <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <li>
+            <Link href="/" className="font-medium hover:text-pine">
+              Home
+            </Link>
+          </li>
+          <li aria-hidden className="text-rule">
+            /
+          </li>
+          <li>
+            <Link href="/guides" className="font-medium hover:text-pine">
+              Guides
+            </Link>
+          </li>
+          <li aria-hidden className="text-rule">
+            /
+          </li>
+          <li className="font-medium text-ink" aria-current="page">
+            {pillar.category}
+          </li>
+        </ol>
+      </nav>
+
+      <p className="mt-6 text-xs uppercase tracking-[0.18em] text-rust">
         Guides · {pillar.category}
       </p>
       <h1 className="mt-3 font-display text-5xl">{pillar.title}</h1>
-      <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-soft">
-        {pillar.description}
-      </p>
+      <div className="mt-4 max-w-2xl space-y-4 text-lg leading-8 text-ink-soft">
+        {pillar.intro.length > 0 ? (
+          pillar.intro.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
+        ) : (
+          <p>{pillar.description}</p>
+        )}
+      </div>
 
       <p className="mt-6 text-sm">
         <Link href="/guides" className="font-medium text-pine hover:text-rust">
@@ -92,7 +141,7 @@ export function GuidePillarPage({ slug }: { slug: GuidePillar["slug"] }) {
         )}
       </p>
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {guides.map((guide) => (
           <GuideCard
             key={guide.slug}
