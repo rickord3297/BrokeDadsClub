@@ -19,9 +19,11 @@ keywords:
   - talking to kids about vacations we cannot afford
   - cheap family trip ideas
 related:
+  - the-lonely-dad
   - explaining-we-cant-go
   - talking-to-kids-about-money
   - cheap-weekend-not-just-screens
+  - cheap-date-night
 faq:
   - question: What do I tell my kid when another family posts a big vacation?
     answer: >-

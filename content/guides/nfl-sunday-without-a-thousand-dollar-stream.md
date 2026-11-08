@@ -23,6 +23,7 @@ related:
   - one-nfl-game-for-four-is-a-second-vacation
   - nfl-home-watch-party-on-a-budget
   - fantasy-sunday-with-your-kid-no-betting-app
+  - the-dad-tax
 shop:
   - broke-mug
   - club-pup-tee

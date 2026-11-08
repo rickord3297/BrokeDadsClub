@@ -18,6 +18,7 @@ keywords:
   - snack schedule youth sports
   - first practice volunteer pressure
 related:
+  - the-lonely-dad
   - the-sports-signup-fee-you-didnt-budget-for
   - dropping-one-activity-so-the-week-can-breathe
   - tagging-along-without-becoming-furniture

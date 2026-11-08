@@ -20,7 +20,9 @@ keywords:
 related:
   - explaining-we-cant-go
   - birthday-party-math
+  - fantasy-sunday-with-your-kid-no-betting-app
   - the-47-dollar-grocery-week
+  - disney-world-us-against-the-kids
 shop:
   - sticker-pack
   - club-pup-tee

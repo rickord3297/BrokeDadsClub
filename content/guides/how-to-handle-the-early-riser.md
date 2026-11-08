@@ -18,6 +18,8 @@ keywords:
   - how to handle early rising kids
   - toddler morning routine dad
 related:
+  - dont-say-yes-to-team-parent-first-huddle
+  - the-lonely-dad
   - side-hustles-that-dont-steal-bedtime
   - cheap-date-night
   - talking-to-kids-about-money

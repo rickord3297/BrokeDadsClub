@@ -18,8 +18,11 @@ keywords:
   - free date night for parents
   - budget date night for couples with kids
 related:
-  - explaining-we-cant-go
-  - talking-to-kids-about-money
+  - when-the-other-dads-vacation-photos-hit
+  - what-do-you-do-for-fun
+  - the-week-school-closes-and-work-does-not
+  - the-loop-ends-at-8
+  - the-extra-hour-is-not-extra-sleep
 shop:
   - club-hoodie
   - broke-mug

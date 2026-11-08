@@ -20,6 +20,7 @@ related:
   - the-lonely-dad
   - the-pickup-line-is-not-a-networking-event
   - tagging-along-without-becoming-furniture
+  - cheap-date-night
 shop:
   - broke-mug
   - club-pup-tee

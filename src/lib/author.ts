@@ -1,4 +1,4 @@
-import { absoluteUrl } from "@/lib/seo";
+import { ORGANIZATION_ID, absoluteUrl } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 /**
@@ -44,10 +44,6 @@ export function authorPageJsonLd() {
     "@context": "https://schema.org",
     ...authorJsonLd(),
     image: `${site.url}${siteAuthor.photoSrc}`,
-    worksFor: {
-      "@type": "Organization" as const,
-      name: site.name,
-      url: site.url,
-    },
+    worksFor: { "@id": ORGANIZATION_ID },
   };
 }

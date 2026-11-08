@@ -30,6 +30,7 @@ const nextConfig: NextConfig = {
       },
       { source: "/shop/club-patch", destination: "/shop", permanent: false },
       { source: "/shop/candy-stripe-patch", destination: "/shop", permanent: false },
+      { source: "/shop/club-tee", destination: "/shop", permanent: true },
       {
         source: "/guides/youth-sports-all-in-cost-checklist",
         destination: "/guides/the-sports-signup-fee-you-didnt-budget-for",

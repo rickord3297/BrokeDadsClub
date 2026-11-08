@@ -19,10 +19,11 @@ keywords:
   - NFL watch party at home
   - fantasy football with kids
 related:
+  - the-47-dollar-grocery-week
+  - the-dad-tax
   - nfl-sunday-without-a-thousand-dollar-stream
   - one-nfl-game-for-four-is-a-second-vacation
   - nfl-home-watch-party-on-a-budget
-  - fantasy-sunday-with-your-kid-no-betting-app
 shop:
   - broke-mug
   - club-pup-tee

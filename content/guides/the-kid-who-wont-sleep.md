@@ -21,6 +21,7 @@ related:
   - talking-to-kids-about-money
   - cheap-date-night
   - explaining-we-cant-go
+  - birthday-party-math
 faq:
   - question: What do I do when my kid won't sleep?
     answer: >-

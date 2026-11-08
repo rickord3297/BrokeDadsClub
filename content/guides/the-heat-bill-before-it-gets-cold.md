@@ -22,6 +22,7 @@ keywords:
   - LIHEAP help for families
   - budget plan for home heating oil
 related:
+  - the-47-dollar-grocery-week
   - explaining-we-cant-go
   - the-dad-tax
   - car-vs-daycare

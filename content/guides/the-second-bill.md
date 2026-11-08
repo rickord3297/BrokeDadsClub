@@ -18,9 +18,11 @@ keywords:
   - school fundraiser pressure
   - extra school costs for parents
 related:
+  - the-47-dollar-grocery-week
   - school-supply-list
   - the-dad-tax
   - explaining-we-cant-go
+  - car-vs-daycare
 shop:
   - club-pup-tee
 faq:

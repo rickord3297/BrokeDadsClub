@@ -19,7 +19,8 @@ keywords:
   - kids sports too expensive what to cut
   - delay kids sports for money
 related:
-  - the-sports-signup-fee-you-didnt-budget-for
+  - the-47-dollar-grocery-week
+  - the-dad-tax
   - the-sports-signup-fee-you-didnt-budget-for
   - dropping-one-activity-so-the-week-can-breathe
   - explaining-we-cant-go

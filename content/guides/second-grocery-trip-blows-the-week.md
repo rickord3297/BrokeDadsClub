@@ -22,6 +22,7 @@ related:
   - the-47-dollar-grocery-week
   - gas-station-dinner
   - the-dad-tax
+  - car-vs-daycare
 shop:
   - broke-mug
 takeaways:

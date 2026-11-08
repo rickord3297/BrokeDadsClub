@@ -21,6 +21,7 @@ keywords:
   - advent calendar on a budget for kids
   - when to start opening an advent calendar
 related:
+  - the-47-dollar-grocery-week
   - the-basket-is-the-dinner
   - the-book-fair-is-one-number
   - explaining-we-cant-go

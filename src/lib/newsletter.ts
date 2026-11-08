@@ -189,8 +189,9 @@ export function getAllIssues(now = new Date()): NewsletterIssue[] {
   return readAllIssues().filter((issue) => isLive(issue, now));
 }
 
+/** By slug, including issues dated in the future (direct URL / local preview). */
 export function getIssueBySlug(slug: string): NewsletterIssue | null {
-  return getAllIssues().find((issue) => issue.slug === slug) ?? null;
+  return readAllIssues().find((issue) => issue.slug === slug) ?? null;
 }
 
 export function getLatestIssue(): NewsletterIssue | null {

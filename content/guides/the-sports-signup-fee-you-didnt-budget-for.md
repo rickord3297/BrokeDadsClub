@@ -26,12 +26,11 @@ keywords:
   - kids sports hidden fees checklist
   - all in cost kids sports
 related:
+  - the-47-dollar-grocery-week
+  - the-dad-tax
   - the-second-bill
   - school-supply-list
   - explaining-we-cant-go
-  - what-you-cut-so-the-kid-can-keep-playing-sports
-  - dropping-one-activity-so-the-week-can-breathe
-  - first-youth-soccer-season-gear
 shop:
   - broke-mug
   - club-pup-tee

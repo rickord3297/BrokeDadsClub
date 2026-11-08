@@ -18,9 +18,11 @@ keywords:
   - back to school shopping for dads
   - generic school supplies vs brand name
 related:
+  - the-47-dollar-grocery-week
   - the-dad-tax
   - explaining-we-cant-go
   - birthday-party-math
+  - car-vs-daycare
 shop:
   - club-pup-tee
 faq:

@@ -20,10 +20,11 @@ keywords:
   - cheap football Sunday ideas
   - family NFL watch party
 related:
+  - the-47-dollar-grocery-week
+  - the-dad-tax
   - nfl-on-a-budget
   - one-nfl-game-for-four-is-a-second-vacation
   - nfl-sunday-without-a-thousand-dollar-stream
-  - fantasy-sunday-with-your-kid-no-betting-app
 shop:
   - club-pup-tee
 takeaways:

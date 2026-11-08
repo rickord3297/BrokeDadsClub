@@ -20,10 +20,10 @@ keywords:
   - trunk or treat on a budget
   - how much to spend on a kids costume
 related:
+  - the-47-dollar-grocery-week
   - birthday-party-math
   - the-dad-tax
   - explaining-we-cant-go
-  - the-dad-tax
 takeaways:
   - One costume covers school, trunk-or-treat, and the block
   - Name the dollar cap before the store, not in the aisle

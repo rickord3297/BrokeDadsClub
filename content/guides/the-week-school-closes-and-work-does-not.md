@@ -20,6 +20,7 @@ keywords:
   - school closed week childcare plan
   - backup care when school is out
 related:
+  - the-lonely-dad
   - car-vs-daycare
   - explaining-we-cant-go
   - cheap-weekend-not-just-screens

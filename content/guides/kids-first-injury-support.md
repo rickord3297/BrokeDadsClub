@@ -19,6 +19,7 @@ keywords:
   - dad at ER with kid
   - child sports injury parent tips
 related:
+  - talking-to-kids-about-money
   - when-you-yelled-and-youre-the-last-one-awake
   - the-after-school-collapse-is-not-a-bad-kid
   - tagging-along-without-becoming-furniture

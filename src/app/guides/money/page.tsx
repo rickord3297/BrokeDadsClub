@@ -3,9 +3,17 @@ import {
   GuidePillarPage,
   pillarMetadata,
 } from "@/components/guide-pillar-page";
+import { parseGuidePage } from "@/lib/guide-pagination";
 
-export const metadata: Metadata = pillarMetadata("money");
+type Props = {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
 
-export default function MoneyGuidesPage() {
-  return <GuidePillarPage slug="money" />;
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+  const params = await searchParams;
+  return pillarMetadata("money", parseGuidePage(params));
+}
+
+export default async function MoneyGuidesPage({ searchParams }: Props) {
+  return <GuidePillarPage slug="money" searchParams={await searchParams} />;
 }

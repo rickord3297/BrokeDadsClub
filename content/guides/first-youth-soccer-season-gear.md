@@ -18,7 +18,7 @@ keywords:
   - cheap youth soccer gear
   - soccer ball size by age
 related:
-  - the-sports-signup-fee-you-didnt-budget-for
+  - which-tool-brand-to-buy
   - the-sports-signup-fee-you-didnt-budget-for
   - what-you-cut-so-the-kid-can-keep-playing-sports
   - the-dad-tax

@@ -21,6 +21,7 @@ related:
   - talking-to-kids-about-money
   - birthday-party-math
   - the-dad-tax
+  - disney-world-us-against-the-kids
 shop:
   - sticker-pack
   - club-pup-tee

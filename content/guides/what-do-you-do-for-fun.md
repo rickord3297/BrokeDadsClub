@@ -17,9 +17,11 @@ keywords:
   - honest answer dad small talk
   - reclaiming free time as a father
 related:
+  - the-lonely-dad
   - cheap-date-night
   - one-dad-coffee-not-a-friend-group
   - dropping-one-activity-so-the-week-can-breathe
+  - cheap-weekend-not-just-screens
 faq:
   - question: What should a dad say when asked what he does for fun?
     answer: >-

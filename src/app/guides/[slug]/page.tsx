@@ -44,6 +44,7 @@ import { guideCategoryPath, guideSchemaDate } from "@/lib/guide-pillars";
 import { JsonLd } from "@/components/json-ld";
 import {
   NOINDEX,
+  ORGANIZATION_ID,
   absoluteUrl,
   guideMetaDescription,
   guideMetaTitle,
@@ -69,6 +70,13 @@ export async function generateMetadata({
   const description = guideMetaDescription(guide);
   const keywords = guideKeywords(guide);
 
+  const ogImage = {
+    url: absoluteUrl(`/guides/${guide.slug}/opengraph-image`),
+    width: 1200,
+    height: 630,
+    alt: title,
+  };
+
   return {
     title: { absolute: title },
     description,
@@ -86,11 +94,13 @@ export async function generateMetadata({
       modifiedTime: guideSchemaDate(guide.updatedAt),
       section: guide.category,
       tags: keywords,
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [ogImage.url],
     },
   };
 }
@@ -105,7 +115,7 @@ export default async function GuidePage({
   const url = absoluteUrl(`/guides/${guide.slug}`);
   const description = guideMetaDescription(guide);
   const keywords = guideKeywords(guide);
-  const related = getRelatedGuides(guide, 4).map((item) =>
+  const related = getRelatedGuides(guide, 6).map((item) =>
     toGuideListItem(item),
   );
   const nextGuide = guide.nextGuide ? getGuide(guide.nextGuide) : null;
@@ -130,15 +140,7 @@ export default async function GuidePage({
     datePublished: guideSchemaDate(guide.publishedAt),
     dateModified: guideSchemaDate(guide.updatedAt),
     author: authorJsonLd(),
-    publisher: {
-      "@type": "Organization",
-      name: site.name,
-      url: site.url,
-      logo: {
-        "@type": "ImageObject",
-        url: `${site.url}/brand/club-logo.png`,
-      },
-    },
+    publisher: { "@id": ORGANIZATION_ID },
     image: [
       {
         "@type": "ImageObject",
@@ -221,14 +223,7 @@ export default async function GuidePage({
           }
         >
           <article data-reading-progress className="min-w-0 max-w-3xl pb-6">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-rust">
-              {guide.category} · {guide.readTime}
-            </p>
-            <GuideReaderSignal
-              slug={guide.slug}
-              publishedAt={guide.publishedAt}
-            />
-            <h1 className="mt-3 font-display text-4xl leading-tight sm:text-5xl">
+            <h1 className="font-display text-4xl leading-tight sm:text-5xl">
               {guide.title}
             </h1>
             <p className="mt-3 text-sm text-ink-soft">
@@ -251,8 +246,15 @@ export default async function GuidePage({
               />
               <ShareGuide title={guide.title} url={url} slug={guide.slug} />
             </div>
+            <p className="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-rust">
+              {guide.category} · {guide.readTime}
+            </p>
+            <GuideReaderSignal
+              slug={guide.slug}
+              publishedAt={guide.publishedAt}
+            />
 
-            <div className="prose-guide mt-8">
+            <div className="prose-guide mt-6">
               <GuideMarkdown
                 content={intro}
                 headingCounts={headingCounts}

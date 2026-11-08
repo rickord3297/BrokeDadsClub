@@ -20,6 +20,7 @@ related:
   - the-lonely-dad
   - the-pickup-line-is-not-a-networking-event
   - one-dad-coffee-not-a-friend-group
+  - cheap-date-night
 shop:
   - club-pup-tee
   - sticker-pack

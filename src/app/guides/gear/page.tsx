@@ -3,9 +3,17 @@ import {
   GuidePillarPage,
   pillarMetadata,
 } from "@/components/guide-pillar-page";
+import { parseGuidePage } from "@/lib/guide-pagination";
 
-export const metadata: Metadata = pillarMetadata("gear");
+type Props = {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
 
-export default function GearGuidesPage() {
-  return <GuidePillarPage slug="gear" />;
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+  const params = await searchParams;
+  return pillarMetadata("gear", parseGuidePage(params));
+}
+
+export default async function GearGuidesPage({ searchParams }: Props) {
+  return <GuidePillarPage slug="gear" searchParams={await searchParams} />;
 }

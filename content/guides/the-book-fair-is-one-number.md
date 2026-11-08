@@ -21,6 +21,7 @@ keywords:
   - what to say at the school book fair
   - coinless book fair change
 related:
+  - the-47-dollar-grocery-week
   - talking-to-kids-about-money
   - school-supply-list
   - the-class-party-signup-is-one-job

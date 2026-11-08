@@ -21,6 +21,7 @@ keywords:
   - store bought pie for thanksgiving
   - just bring dessert thanksgiving
 related:
+  - the-dad-tax
   - the-basket-is-the-dinner
   - the-47-dollar-grocery-week
   - four-seats-or-one-car

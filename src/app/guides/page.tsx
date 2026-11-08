@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { GuideCard } from "@/components/guide-card";
 import { GuidesCrawlIndex } from "@/components/guides-crawl-index";
-import { GuidesExplorer } from "@/components/guides-explorer";
+import { GuidesPagination } from "@/components/guides-pagination";
+import { GuidesTopicNav } from "@/components/guides-topic-nav";
+import { GuideSearch } from "@/components/guide-search";
 import { JsonLd } from "@/components/json-ld";
+import { NewsletterSignupCard } from "@/components/newsletter-signup-card";
 import { resourceTieInForGuide } from "@/lib/guide-catalog";
 import { GUIDE_PILLARS } from "@/lib/guide-pillars";
+import {
+  GUIDES_PAGE_SIZE,
+  paginateItems,
+  parseGuidePage,
+} from "@/lib/guide-pagination";
 import { getLiveResources } from "@/lib/printables";
 import {
   getGuidesForBrowse,
@@ -25,21 +34,13 @@ const GUIDES_KEYWORDS = [
   "grocery budget guide",
 ];
 
-function pageNumberFromSearchParams(
-  searchParams: Record<string, string | string[] | undefined>,
-): number {
-  const raw = searchParams.page;
-  const value = Array.isArray(raw) ? raw[0] : raw;
-  return Math.max(1, Number(value) || 1);
-}
-
 export async function generateMetadata({
   searchParams,
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }): Promise<Metadata> {
   const params = await searchParams;
-  const page = pageNumberFromSearchParams(params);
+  const page = parseGuidePage(params);
 
   if (page > 1) {
     const title = `All Guides - Page ${page} · ${site.name}`;
@@ -56,11 +57,14 @@ export async function generateMetadata({
         siteName: site.name,
         type: "website",
         locale: "en_US",
-      },
-      twitter: {
-        card: "summary_large_image",
-        title,
-        description: GUIDES_DESCRIPTION,
+        images: [
+          {
+            url: absoluteUrl("/opengraph-image"),
+            width: 1200,
+            height: 630,
+            alt: title,
+          },
+        ],
       },
     };
   }
@@ -79,10 +83,16 @@ export default async function GuidesPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const params = await searchParams;
-  const page = pageNumberFromSearchParams(params);
+  const page = parseGuidePage(params);
   const guides = getGuidesForBrowse();
   const categories = GUIDE_PILLARS.map((pillar) => pillar.category).filter(
     (category) => guides.some((guide) => guide.category === category),
+  );
+  const counts = Object.fromEntries(
+    categories.map((category) => [
+      category,
+      guides.filter((guide) => guide.category === category).length,
+    ]),
   );
   const liveResources = getLiveResources();
   const list = guides.map((guide) => {
@@ -93,6 +103,15 @@ export default async function GuidesPage({
     );
   });
   const { current, pastSeason } = partitionGuidesForBrowse(list);
+  const { page: safePage, totalPages, slice } = paginateItems(
+    current,
+    page,
+    GUIDES_PAGE_SIZE,
+  );
+  const showHero = safePage === 1 && slice.length > 0;
+  const hero = showHero ? slice[0] : null;
+  const gridGuides = showHero ? slice.slice(1) : slice;
+  const showPastShelf = safePage === 1 && pastSeason.length > 0;
 
   const itemListLd = {
     "@context": "https://schema.org",
@@ -106,6 +125,9 @@ export default async function GuidesPage({
     })),
   };
 
+  const rangeStart = current.length ? (safePage - 1) * GUIDES_PAGE_SIZE + 1 : 0;
+  const rangeEnd = Math.min(safePage * GUIDES_PAGE_SIZE, current.length);
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
       <JsonLd data={itemListLd} />
@@ -116,22 +138,101 @@ export default async function GuidesPage({
         groceries, school fees, money talks, and work that does not steal bedtime.
       </p>
 
-      {/* Crawlable link list for bots; visually hidden so the card grid stays the UI */}
       <GuidesCrawlIndex guides={list} />
 
-      <Suspense
-        fallback={
-          <div className="mt-10 h-40 animate-pulse rounded-2xl bg-paper-2" />
-        }
-      >
-        <GuidesExplorer
-          guides={list}
-          currentGuides={current}
-          pastSeasonGuides={pastSeason}
-          categories={categories}
-          initialPage={page}
+      <div className="mt-10 flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+        <div className="min-w-0 flex-1">
+          <GuidesTopicNav
+            categories={categories}
+            counts={counts}
+            total={guides.length}
+          />
+          {totalPages > 1 ? (
+            <p className="mt-3 text-sm text-ink-soft">
+              Showing {rangeStart}-{rangeEnd} of {current.length}
+              {safePage > 1 ? ` · Page ${safePage}` : ""}
+            </p>
+          ) : null}
+        </div>
+        <div className="w-full shrink-0 lg:max-w-xs">
+          <Suspense
+            fallback={
+              <div className="h-11 animate-pulse rounded-full bg-paper-2" />
+            }
+          >
+            <GuideSearch />
+          </Suspense>
+        </div>
+      </div>
+
+      <div id="guides-list" className="mt-10 scroll-mt-24 space-y-8">
+        {hero ? (
+          <div>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-pine">
+              This week
+            </p>
+            <GuideCard
+              guide={hero}
+              badge="Now"
+              placement="guides_index_hero"
+              variant="hero"
+            />
+          </div>
+        ) : null}
+
+        {gridGuides.length > 0 ? (
+          <div>
+            {hero ? (
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-ink-soft">
+                Guides for right now
+              </p>
+            ) : null}
+            <div className="grid items-start gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {gridGuides.map((guide) => (
+                <GuideCard
+                  key={guide.slug}
+                  guide={guide}
+                  placement="guides_index"
+                />
+              ))}
+            </div>
+          </div>
+        ) : null}
+
+        {showPastShelf ? (
+          <div>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-ink-soft">
+              Past season
+            </p>
+            <p className="mb-4 max-w-2xl text-sm leading-6 text-ink-soft">
+              Halloween, fall-break, and other dated pieces stay here until next
+              year. Same URLs. Fresh when the calendar comes back around.
+            </p>
+            <div className="grid items-start gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {pastSeason.map((guide) => (
+                <GuideCard
+                  key={guide.slug}
+                  guide={guide}
+                  placement="guides_index_past_season"
+                />
+              ))}
+            </div>
+          </div>
+        ) : null}
+
+        <GuidesPagination
+          basePath="/guides"
+          page={safePage}
+          totalPages={totalPages}
         />
-      </Suspense>
+
+        <NewsletterSignupCard
+          kicker="New guides"
+          title="Sign up to stay informed"
+          body="One email on Sunday when a new guide drops, plus the free grocery checklist to start the week."
+          source="guides_index"
+        />
+      </div>
     </div>
   );
 }

@@ -78,6 +78,13 @@ export default async function Home() {
       tieIn ? { href: tieIn.href, label: tieIn.label } : null,
     );
   });
+  const chronologicalList = guidesChronological.map((guide) => {
+    const tieIn = resourceTieInForGuide(guide.slug, liveResources);
+    return toGuideListItem(
+      guide,
+      tieIn ? { href: tieIn.href, label: tieIn.label } : null,
+    );
+  });
   const featuredPrintable = getResource(FEATURED_PRINTABLE);
   const shopPicks = await getHomeShopProducts();
 
@@ -89,7 +96,7 @@ export default async function Home() {
       <WelcomeBackBanner latest={welcomeBack} />
       <HomeHero />
 
-      <HomeGuidesSection guides={list} />
+      <HomeGuidesSection guides={list} chronological={chronologicalList} />
 
       {featuredPrintable ? (
         <section

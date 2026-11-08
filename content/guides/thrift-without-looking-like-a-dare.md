@@ -18,9 +18,11 @@ keywords:
   - thrift without looking thrifted
   - cheap clothes that look good dads
 related:
+  - which-tool-brand-to-buy
   - the-dad-tax
   - the-47-dollar-grocery-week
   - cheap-date-night
+  - first-youth-soccer-season-gear
 shop:
   - dad-cap
   - club-pup-tee

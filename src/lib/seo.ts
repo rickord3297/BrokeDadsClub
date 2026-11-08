@@ -28,6 +28,9 @@ export function absoluteUrl(path: string) {
   return `${site.url}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
+export const ORGANIZATION_ID = `${site.url}/#organization`;
+export const WEBSITE_ID = `${site.url}/#website`;
+
 type PageMetadataInput = {
   title: string;
   description: string;
@@ -48,14 +51,13 @@ export function buildPageMetadata({
   images,
 }: PageMetadataInput): Metadata {
   const url = absoluteUrl(path);
-  const resolvedTitle = absoluteTitle ? title : title;
   const ogTitle = absoluteTitle ? title : `${title} · ${site.name}`;
   const ogImages =
     images?.map((image) =>
       typeof image === "string"
         ? { url: image, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: ogTitle }
-        : image,
-    ) ?? [OG_IMAGE];
+        : { ...image, alt: image.alt ?? ogTitle },
+    ) ?? [{ ...OG_IMAGE, alt: ogTitle }];
 
   return {
     title: absoluteTitle ? { absolute: title } : title,
@@ -109,10 +111,12 @@ export function resourcePageMetadata(resource: Resource): Metadata {
   });
 }
 
+/** Root-layout only. Guide pages reference this via @id instead of nesting a second Organization. */
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": ORGANIZATION_ID,
     name: site.name,
     url: site.url,
     logo: `${site.url}/brand/club-logo.png`,
@@ -122,18 +126,16 @@ export function organizationJsonLd() {
   };
 }
 
+/** Root-layout only. */
 export function webSiteJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": WEBSITE_ID,
     name: site.name,
     url: site.url,
     description: site.shareDescription,
-    publisher: {
-      "@type": "Organization",
-      name: site.name,
-      logo: `${site.url}/brand/club-logo.png`,
-    },
+    publisher: { "@id": ORGANIZATION_ID },
   };
 }
 
@@ -156,10 +158,7 @@ export function productJsonLd(product: Product) {
       priceCurrency: "USD",
       price: (product.price_cents / 100).toFixed(2),
       availability: "https://schema.org/InStock",
-      seller: {
-        "@type": "Organization",
-        name: site.name,
-      },
+      seller: { "@id": ORGANIZATION_ID },
     },
   };
 }
@@ -172,10 +171,7 @@ export function resourceWebPageJsonLd(resource: Resource) {
     description: resource.description,
     url: absoluteUrl(`/resources/${resource.slug}`),
     isAccessibleForFree: true,
-    publisher: {
-      "@type": "Organization",
-      name: site.name,
-      url: site.url,
-    },
+    isPartOf: { "@id": WEBSITE_ID },
+    publisher: { "@id": ORGANIZATION_ID },
   };
 }

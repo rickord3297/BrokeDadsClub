@@ -18,9 +18,11 @@ keywords:
   - how to support mom with kids
   - parenting when kids only obey one parent
 related:
+  - disney-world-us-against-the-kids
   - explaining-we-cant-go
   - talking-to-kids-about-money
   - the-dad-tax
+  - birthday-party-math
 faq:
   - question: Why do kids listen to Dad but not Mom?
     answer: >-

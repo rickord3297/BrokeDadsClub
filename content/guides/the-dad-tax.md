@@ -71,17 +71,19 @@ takeaways:
 action: Open your bank app and circle every under-$40 kid ask from the last two weeks
 ---
 
-**Dad tax meaning:** it is not one bill. It is the way every normal purchase grows a kid-shaped shadow: the bigger car, the extra chicken, the birthday party that "isn't a big deal" until it is $86 of paper plates and a bounce house you did not want.
+Dad tax is the pile of kid costs that never show up as one big bill: spirit wear, cleats, classroom gifts, birthday bags, snack duty, and the convenience buys you make when the day runs late. Rent stays rent. The dad tax is that extra layer that makes every normal week cost more.
 
-People also call it **daddy tax** or **dad price**. Same math. Different nickname.
+People also call it daddy tax or dad price. Same math. Different nickname. The usual examples are listed below. For the grocery version of the same squeeze, start with [the $47 grocery week](/guides/the-47-dollar-grocery-week).
 
 ## What does dad tax mean?
 
-In simple words: kids make everyday spending bigger and less predictable. Rent stays rent. The dad tax is the extra layer on top, spirit wear, cleats, classroom gifts, birthday bags, snack duty, and the convenience buys you make when you are out of runway.
+In plain words: kids make everyday spending bigger and less predictable. The dad tax is that extra cost layer you did not put on the calendar.
 
 If you searched "what does dad tax mean," that is the answer. The usual suspects are listed below.
 
 ## Common dad tax examples
+
+If you came here looking for a separate "dad tax examples" list, this is that page. The old standalone examples URL redirects here so one hub keeps the meaning and the list together.
 
 **Spirit wear and team merch.** Optional until your kid is the only one without the shirt on Friday.
 

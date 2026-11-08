@@ -19,10 +19,11 @@ keywords:
   - baseball game vs NFL game cost
   - taking kids to NFL game budget
 related:
+  - the-47-dollar-grocery-week
+  - the-dad-tax
   - nfl-on-a-budget
   - nfl-sunday-without-a-thousand-dollar-stream
   - nfl-home-watch-party-on-a-budget
-  - explaining-we-cant-go
 shop:
   - broke-mug
   - club-pup-tee

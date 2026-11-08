@@ -21,6 +21,7 @@ keywords:
   - how much are thanksgiving plane tickets
   - grandparents fly for thanksgiving instead
 related:
+  - dad-math
   - explaining-we-cant-go
   - the-47-dollar-grocery-week
   - the-heat-bill-before-it-gets-cold

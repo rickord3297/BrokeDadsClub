@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { siteAuthor } from "@/lib/author";
 import { GUIDE_PILLARS } from "@/lib/guide-pillars";
-import { getGuides } from "@/lib/guides";
+import { GUIDES_PAGE_SIZE, paginateItems } from "@/lib/guide-pagination";
+import { getGuides, getGuidesForBrowse, partitionGuidesForBrowse } from "@/lib/guides";
 import type { Guide } from "@/lib/guide-model";
 import { LEAD_MAGNETS } from "@/lib/lead-magnets";
 import { getAllIssues, type NewsletterIssue } from "@/lib/newsletter";
@@ -29,8 +30,35 @@ function newest(dates: Date[]): Date {
   return dates.reduce((max, date) => (date > max ? date : max), SITE_EPOCH);
 }
 
+function paginatedHubEntries(
+  basePath: string,
+  items: Guide[],
+  lastModified: Date,
+): Entry[] {
+  const { totalPages } = paginateItems(items, 1, GUIDES_PAGE_SIZE);
+  const entries: Entry[] = [
+    {
+      url: absoluteUrl(basePath),
+      lastModified,
+      changeFrequency: "daily",
+      priority: basePath === "/guides" ? 0.8 : 0.7,
+    },
+  ];
+  for (let page = 2; page <= totalPages; page += 1) {
+    entries.push({
+      url: absoluteUrl(`${basePath}?page=${page}`),
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.5,
+    });
+  }
+  return entries;
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const guides = getGuides();
+  const browse = getGuidesForBrowse();
+  const { current } = partitionGuidesForBrowse(browse);
   const issues = getAllIssues();
   const products = await getProducts();
   const now = new Date();
@@ -38,17 +66,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const entries: Entry[] = [
     { url: absoluteUrl("/"), lastModified: latestGuide, changeFrequency: "daily", priority: 1.0 },
-    { url: absoluteUrl("/guides"), lastModified: latestGuide, changeFrequency: "daily", priority: 0.8 },
+    ...paginatedHubEntries("/guides", current, latestGuide),
     { url: absoluteUrl("/shop"), lastModified: now, changeFrequency: "weekly", priority: 0.8 },
 
-    ...GUIDE_PILLARS.map((pillar) => ({
-      url: absoluteUrl(`/guides/${pillar.slug}`),
-      lastModified: newest(
-        guides.filter((guide) => guide.category === pillar.category).map(guideModified),
-      ),
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
-    })),
+    ...GUIDE_PILLARS.flatMap((pillar) => {
+      const inCategory = guides.filter((guide) => guide.category === pillar.category);
+      return paginatedHubEntries(
+        `/guides/${pillar.slug}`,
+        inCategory,
+        newest(inCategory.map(guideModified)),
+      );
+    }),
 
     ...guides.map((guide) => ({
       url: absoluteUrl(`/guides/${guide.slug}`),

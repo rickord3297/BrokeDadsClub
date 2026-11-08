@@ -18,9 +18,11 @@ keywords:
   - emergency budget decisions parents
   - broke dad money decisions
 related:
-  - the-dad-tax
-  - the-47-dollar-grocery-week
-  - side-hustles-that-dont-steal-bedtime
+  - the-porch-bowl-is-one-bag
+  - the-pie-is-the-assignment
+  - the-heat-bill-before-it-gets-cold
+  - the-calendar-is-two-dollars
+  - the-book-fair-is-one-number
 shop:
   - broke-mug
   - club-pup-tee

@@ -20,10 +20,11 @@ keywords:
   - surviving disney world as a couple
   - enjoy disney through kids eyes
 related:
-  - cheap-date-night
-  - the-after-school-collapse-is-not-a-bad-kid
-  - explaining-we-cant-go
-  - tagging-along-without-becoming-furniture
+  - when-you-yelled-and-youre-the-last-one-awake
+  - the-kid-who-wont-sleep
+  - kids-who-dont-listen-to-mom
+  - kids-first-injury-support
+  - talking-to-kids-about-money
 takeaways:
   - Stay a team: you vs the day, not each other
   - Watch the magic through their eyes; they are only this age once

@@ -21,6 +21,7 @@ related:
   - talking-to-kids-about-money
   - explaining-we-cant-go
   - the-dad-tax
+  - birthday-party-math
 shop:
   - broke-mug
   - sticker-pack

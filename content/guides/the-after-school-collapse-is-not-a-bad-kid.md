@@ -16,9 +16,11 @@ keywords:
   - after school routine for kids
   - snack before homework
 related:
+  - talking-to-kids-about-money
   - cheap-weekend-not-just-screens
   - explaining-we-cant-go
   - the-dad-tax
+  - birthday-party-math
 shop:
   - club-pup-tee
   - broke-mug

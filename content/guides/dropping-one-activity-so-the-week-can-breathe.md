@@ -16,10 +16,11 @@ keywords:
   - too many kids activities
   - cutting kids sports or clubs
 related:
+  - dont-say-yes-to-team-parent-first-huddle
+  - the-lonely-dad
   - the-sports-signup-fee-you-didnt-budget-for
   - explaining-we-cant-go
   - cheap-weekend-not-just-screens
-  - the-second-bill
 shop:
   - club-pup-tee
   - broke-mug

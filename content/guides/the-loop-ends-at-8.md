@@ -21,6 +21,7 @@ keywords:
   - one neighborhood on halloween night
   - when to come home on halloween
 related:
+  - the-lonely-dad
   - one-halloween-costume-not-three-events
   - the-extra-hour-is-not-extra-sleep
   - explaining-we-cant-go

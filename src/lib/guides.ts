@@ -262,17 +262,26 @@ export function getGuidesSince(sinceIsoDate: string): Guide[] {
   });
 }
 
-export function getRelatedGuides(guide: Guide, limit = 3): Guide[] {
+/** Prefer same-category peers so Keep Going reinforces the topic hub. */
+export function getRelatedGuides(guide: Guide, limit = 6): Guide[] {
   const all = getGuides().filter((item) => item.slug !== guide.slug);
   const preferred = guide.related
     .map((slug) => all.find((item) => item.slug === slug))
     .filter((item): item is Guide => item != null);
-  if (preferred.length >= limit) return preferred.slice(0, limit);
 
   const sameCategory = all.filter(
     (item) =>
       item.category === guide.category &&
       !preferred.some((picked) => picked.slug === item.slug),
   );
-  return [...preferred, ...sameCategory, ...all].slice(0, limit);
+  const preferredSame = preferred.filter(
+    (item) => item.category === guide.category,
+  );
+  const preferredOther = preferred.filter(
+    (item) => item.category !== guide.category,
+  );
+  return [...preferredSame, ...sameCategory, ...preferredOther, ...all].slice(
+    0,
+    limit,
+  );
 }

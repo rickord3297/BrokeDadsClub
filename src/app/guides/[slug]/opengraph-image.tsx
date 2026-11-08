@@ -4,10 +4,11 @@ import { ImageResponse } from "next/og";
 import { getGuide, getGuides } from "@/lib/guides";
 import { site } from "@/lib/site";
 
-export const alt = `${site.name} guide`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const revalidate = 3600;
+
+// Alt comes from generateMetadata openGraph.images[].alt (page title), not a generic constant.
 
 export function generateStaticParams() {
   return getGuides().map((guide) => ({ slug: guide.slug }));

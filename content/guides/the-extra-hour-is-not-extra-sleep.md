@@ -18,9 +18,11 @@ keywords:
   - fall back bedtime for toddlers
   - extra hour kids won't stay in bed
 related:
+  - the-lonely-dad
   - how-to-handle-the-early-riser
   - the-kid-who-wont-sleep
   - side-hustles-that-dont-steal-bedtime
+  - cheap-date-night
 takeaways:
   - Sunday uses Monday's wake time, even if they are not tired at bedtime
   - A few cranky mornings are the clock, not a report card

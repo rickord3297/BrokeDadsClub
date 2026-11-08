@@ -18,9 +18,11 @@ keywords:
   - staycation with kids on a budget
   - bored kids at home weekend
 related:
-  - cheap-date-night
-  - explaining-we-cant-go
-  - talking-to-kids-about-money
+  - when-the-other-dads-vacation-photos-hit
+  - what-do-you-do-for-fun
+  - the-week-school-closes-and-work-does-not
+  - the-loop-ends-at-8
+  - the-extra-hour-is-not-extra-sleep
 shop:
   - club-pup-tee
 faq:

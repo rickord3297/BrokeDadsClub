@@ -16,7 +16,9 @@ keywords:
   - easy school lunches for dads
   - cafeteria vs packed lunch cost
 related:
+  - the-dad-tax
   - the-47-dollar-grocery-week
+  - second-grocery-trip-blows-the-week
   - gas-station-dinner
   - school-supply-list
 shop:

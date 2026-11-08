@@ -21,6 +21,7 @@ related:
   - dad-math
   - the-dad-tax
   - thrift-without-looking-like-a-dare
+  - first-youth-soccer-season-gear
 shop:
   - club-pup-tee
 faq:

@@ -24,6 +24,7 @@ keywords:
   - road trip dinner kit
   - emergency dinner for kids on the go
 related:
+  - dad-math
   - the-47-dollar-grocery-week
   - explaining-we-cant-go
   - the-dad-tax

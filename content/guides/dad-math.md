@@ -18,9 +18,11 @@ keywords:
   - when to hire vs diy dads
   - pride and money parenting
 related:
-  - the-dad-tax
-  - car-vs-daycare
-  - thrift-without-looking-like-a-dare
+  - the-porch-bowl-is-one-bag
+  - the-pie-is-the-assignment
+  - the-heat-bill-before-it-gets-cold
+  - the-calendar-is-two-dollars
+  - the-book-fair-is-one-number
 shop:
   - club-pup-tee
 faq:

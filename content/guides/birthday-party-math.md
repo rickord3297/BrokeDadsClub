@@ -23,9 +23,11 @@ keywords:
   - park birthday party ideas
   - birthday party on a budget for dads
 related:
+  - when-you-yelled-and-youre-the-last-one-awake
+  - the-kid-who-wont-sleep
+  - kids-who-dont-listen-to-mom
+  - kids-first-injury-support
   - explaining-we-cant-go
-  - talking-to-kids-about-money
-  - the-dad-tax
 shop:
   - sticker-pack
   - club-pup-tee

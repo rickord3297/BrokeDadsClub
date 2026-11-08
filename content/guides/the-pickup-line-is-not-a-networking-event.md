@@ -20,6 +20,7 @@ related:
   - the-lonely-dad
   - tagging-along-without-becoming-furniture
   - one-dad-coffee-not-a-friend-group
+  - cheap-date-night
 shop:
   - sticker-pack
   - club-pup-tee
