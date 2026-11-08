@@ -11,6 +11,8 @@ readTime: 6 min
 publishedAt: "2026-10-28"
 updatedAt: "2026-10-22"
 status: published
+priceYear: 2026
+priceRefreshBy: "2027-09-01"
 keywords:
   - how much to spend on halloween candy
   - halloween candy budget for trick or treat
@@ -22,7 +24,7 @@ related:
   - one-halloween-costume-not-three-events
   - the-class-party-signup-is-one-job
   - the-47-dollar-grocery-week
-  - dad-tax-examples-the-small-asks-that-stack
+  - the-dad-tax
 takeaways:
   - One porch bag: about $10 for a quiet block, about $25 if the street fills up
   - Running out means the light goes off, not a second trip
@@ -85,7 +87,7 @@ The class party was a different receipt too. Juice boxes for the room are not th
 
 If the answer is a $25 pile of singles next to a $10 mix, the answer is still one of them. You can name which one. You do not owe a speech about cocoa prices.
 
-The small asks stack the same way as [the $25-$40 stuff that shows up all fall](/guides/dad-tax-examples-the-small-asks-that-stack). One extra bag feels tiny until it sits next to the costume and the class party.
+The small asks stack the same way as [dad tax examples that show up all fall](/guides/the-dad-tax). One extra bag feels tiny until it sits next to the costume and the class party.
 
 ## When the bag gets thin
 

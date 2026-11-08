@@ -17,9 +17,9 @@ keywords:
   - how to talk to parents at pickup
   - making friends at school pickup
 related:
-  - the-dad-tax
-  - school-supply-list
-  - explaining-we-cant-go
+  - the-lonely-dad
+  - tagging-along-without-becoming-furniture
+  - one-dad-coffee-not-a-friend-group
 shop:
   - sticker-pack
   - club-pup-tee

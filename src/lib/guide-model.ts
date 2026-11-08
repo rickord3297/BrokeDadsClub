@@ -37,6 +37,10 @@ export type Guide = {
   productCta?: GuideProductCtaConfig;
   /** Optional next guide for post-signup / end-of-article CTAs. */
   nextGuide?: string;
+  /** Calendar year for dollar figures in seasonal / priced guides. */
+  priceYear?: number;
+  /** ISO date when priced figures should be rechecked. */
+  priceRefreshBy?: string;
   content: string;
 };
 

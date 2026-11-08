@@ -46,7 +46,7 @@ deals:
 
 Fall seasons are underway, which means the gear emails are coming. Cleats, bags, the "recommended" shin guards, the team-branded water bottle. This week's tactic: **set the gear cutoff before the season sets it for you.**
 
-Two numbers, decided before the first practice. A **dollar cap** for gear this season, and a **date**, usually two weeks in, after which nothing new gets bought. Kids quit things. That is not a parenting failure, it is being eight. Borrow and make do for two weeks, then buy the real stuff if they are still excited. If you have not run the full season number yet, the [youth sports all-in cost checklist](/guides/youth-sports-all-in-cost-checklist) will get you there in ten minutes.
+Two numbers, decided before the first practice. A **dollar cap** for gear this season, and a **date**, usually two weeks in, after which nothing new gets bought. Kids quit things. That is not a parenting failure, it is being eight. Borrow and make do for two weeks, then buy the real stuff if they are still excited. If you have not run the full season number yet, [how to budget for kids sports](/guides/the-sports-signup-fee-you-didnt-budget-for) will get you there in ten minutes.
 
 Same idea in the hardware aisle. If you already own one cordless tool, you own the most expensive part of every other tool on that platform: the battery. Look for **"tool only"** on the tag. Pick one platform, stay on it, and buy every tool after the first one bare.
 

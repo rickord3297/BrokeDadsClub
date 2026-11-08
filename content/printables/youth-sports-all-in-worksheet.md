@@ -16,7 +16,7 @@ intro: >-
   not the flyer. If you cannot write a number for travel, you are not ready to
   say yes.
 printLabel: Print worksheet
-guideSlug: youth-sports-all-in-cost-checklist
+guideSlug: the-sports-signup-fee-you-didnt-budget-for
 guideLabel: the youth sports all-in cost checklist
 keywords:
   - youth sports cost worksheet printable

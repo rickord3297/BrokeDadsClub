@@ -8,6 +8,8 @@ category: Kids
 readTime: 6 min
 publishedAt: "2026-09-10"
 status: published
+priceYear: 2026
+priceRefreshBy: "2027-08-01"
 keywords:
   - fantasy football with kids
   - family fantasy football league
@@ -15,9 +17,10 @@ keywords:
   - fantasy football for beginners family
   - NFL Sunday with kids
 related:
+  - nfl-on-a-budget
   - nfl-sunday-without-a-thousand-dollar-stream
+  - nfl-home-watch-party-on-a-budget
   - talking-to-kids-about-money
-  - cheap-weekend-not-just-screens
 shop:
   - club-pup-tee
   - sticker-pack
@@ -43,7 +46,7 @@ faq:
 
 Fantasy season is rolling and the commercials are already louder than the crowd noise. Your kid wants in. You want a thing you can share on the couch. The trap is the sportsbook sitting inside the same apps and the same ad breaks.
 
-You can do fantasy without turning Sunday into a betting tutorial. Free league. Your login. Clear window. One honest line when the odds graphics show up.
+You can do fantasy without turning Sunday into a betting tutorial. Free league. Your login. Clear window. One honest line when the odds graphics show up. Streaming, stadium, and watch-party lanes are on [NFL on a budget](/guides/nfl-on-a-budget).
 
 ## Do this today
 

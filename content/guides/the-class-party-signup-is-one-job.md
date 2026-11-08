@@ -11,6 +11,8 @@ readTime: 6 min
 publishedAt: "2026-10-19"
 updatedAt: "2026-10-13"
 status: published
+priceYear: 2026
+priceRefreshBy: "2027-09-01"
 keywords:
   - halloween class party snack ideas
   - class party signup for parents
@@ -21,7 +23,7 @@ keywords:
 related:
   - one-halloween-costume-not-three-events
   - dont-say-yes-to-team-parent-first-huddle
-  - dad-tax-examples-the-small-asks-that-stack
+  - the-dad-tax
   - packing-school-lunch-without-a-guilt-spiral
 takeaways:
   - Take one slot on the sheet, not the bakery order and the afternoon
@@ -82,7 +84,7 @@ You can narrow it the same day. The person running the party would rather have a
 
 Do it in the reply, not in a long apology. You are handing back slots someone else can take. That is helpful.
 
-If money is the pinch, pick the cheapest named slot that is still sealed and allowed. Drinks and pretzels usually beat cupcakes. If every remaining slot is a bakery order, your job is the short no, not a speech about the budget. [The small asks that stack](/guides/dad-tax-examples-the-small-asks-that-stack) are the same shape: one yes feels tiny until it sits next to the costume.
+If money is the pinch, pick the cheapest named slot that is still sealed and allowed. Drinks and pretzels usually beat cupcakes. If every remaining slot is a bakery order, your job is the short no, not a speech about the budget. [Dad tax examples](/guides/the-dad-tax) are the same shape: one yes feels tiny until it sits next to the costume.
 
 Lunch packing is a different problem, and it already has a ceiling in [packing school lunch without a guilt spiral](/guides/packing-school-lunch-without-a-guilt-spiral). Do not let a class party reset that number for one Friday.
 

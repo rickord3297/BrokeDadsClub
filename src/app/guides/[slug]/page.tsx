@@ -237,6 +237,8 @@ export default async function GuidePage({
               <GuideByline
                 publishedAt={guide.publishedAt}
                 updatedAt={guide.updatedAt}
+                priceYear={guide.priceYear}
+                priceRefreshBy={guide.priceRefreshBy}
               />
               <ShareGuide title={guide.title} url={url} slug={guide.slug} />
             </div>

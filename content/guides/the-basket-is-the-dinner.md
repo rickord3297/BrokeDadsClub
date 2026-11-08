@@ -11,6 +11,8 @@ readTime: 6 min
 publishedAt: "2026-11-06"
 updatedAt: "2026-10-31"
 status: published
+priceYear: 2026
+priceRefreshBy: "2027-10-01"
 keywords:
   - thanksgiving dinner cost for a family
   - walmart thanksgiving meal basket 2026

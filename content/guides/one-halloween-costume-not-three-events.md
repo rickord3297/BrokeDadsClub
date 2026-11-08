@@ -11,6 +11,8 @@ readTime: 6 min
 publishedAt: "2026-10-07"
 updatedAt: "2026-10-01"
 status: published
+priceYear: 2026
+priceRefreshBy: "2027-09-01"
 keywords:
   - cheap halloween costume for kids
   - halloween costume budget for families
@@ -21,7 +23,7 @@ related:
   - birthday-party-math
   - the-dad-tax
   - explaining-we-cant-go
-  - dad-tax-examples-the-small-asks-that-stack
+  - the-dad-tax
 takeaways:
   - One costume covers school, trunk-or-treat, and the block
   - Name the dollar cap before the store, not in the aisle

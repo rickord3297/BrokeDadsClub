@@ -18,7 +18,7 @@ keywords:
   - cheap youth soccer gear
   - soccer ball size by age
 related:
-  - youth-sports-all-in-cost-checklist
+  - the-sports-signup-fee-you-didnt-budget-for
   - the-sports-signup-fee-you-didnt-budget-for
   - what-you-cut-so-the-kid-can-keep-playing-sports
   - the-dad-tax
@@ -46,7 +46,7 @@ faq:
 
 The signup email lands, and ten minutes later the gear emails follow. Cleats, a "recommended" bag, grip socks, a training net for the backyard. The total quietly passes the registration fee.
 
-Here is the honest list. For a first rec season, four things before practice one. Everything else waits until you know your kid still likes it after two weeks. If you have not run the full season number yet, start with the [youth sports all-in cost checklist](/guides/youth-sports-all-in-cost-checklist).
+Here is the honest list. For a first rec season, four things before practice one. Everything else waits until you know your kid still likes it after two weeks. If you have not run the full season number yet, start with [how to budget for kids sports](/guides/the-sports-signup-fee-you-didnt-budget-for).
 
 ## The short answer
 

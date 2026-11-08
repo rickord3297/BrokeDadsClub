@@ -13,7 +13,7 @@ One new printable goes live every **Friday**. Each one is a single file in this 
 | 2026-10-07 | published | `halloween-costume-cap-card` | one-halloween-costume-not-three-events |
 | 2026-10-16 | scheduled | `fall-break-coverage-plan` | the-week-school-closes-and-work-does-not |
 | 2026-10-23 | scheduled | `winter-heat-number-card` | the-heat-bill-before-it-gets-cold |
-| 2026-10-30 | scheduled | `youth-sports-all-in-worksheet` | youth-sports-all-in-cost-checklist |
+| 2026-10-30 | scheduled | `youth-sports-all-in-worksheet` | the-sports-signup-fee-you-didnt-budget-for |
 
 ## Ideas backlog
 
@@ -22,7 +22,7 @@ Status `idea` rows get built by the weekly pass, oldest first, unless a seasonal
 | Status | Printable idea | Pairs with guide | Season / timing | Notes |
 |---|---|---|---|---|
 | idea | Lunch week planner: five boxes, one backup lunch, the "good enough" list | packing-school-lunch-without-a-guilt-spiral | Any school week | |
-| idea | Dad tax tracker: one week of small asks, who asked, what it cost | dad-tax-examples-the-small-asks-that-stack | Any | Good newsletter tie-in |
+| idea | Dad tax tracker: one week of small asks, who asked, what it cost | the-dad-tax | Any | Good newsletter tie-in |
 | idea | Second grocery trip guard card: the three reasons you are allowed back in | second-grocery-trip-blows-the-week | Any | Pairs with grocery checklist |
 | idea | Early riser morning card: wake light time, quiet box list, first words | how-to-handle-the-early-riser | Daylight saving ends Nov 1 | Ship by 2026-10-30 if possible |
 | idea | After-school reset card: snack, quiet 20, one question | the-after-school-collapse-is-not-a-bad-kid | Any school week | |

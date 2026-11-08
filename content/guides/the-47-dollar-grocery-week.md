@@ -9,7 +9,9 @@ excerpt: >-
 category: Money
 readTime: 7 min
 publishedAt: '2026-08-04'
-updatedAt: '2026-10-10'
+updatedAt: "2026-11-07"
+priceYear: 2026
+priceRefreshBy: "2027-08-01"
 status: published
 keywords:
   - cheap family dinners for the week
@@ -57,6 +59,11 @@ You do not need a 37-step meal-prep Sunday. You need a cart where nothing is bou
 That is the whole trick. One pack of chicken is Monday's dinner and Tuesday's quesadillas. One pound of ground beef is Wednesday's spaghetti and Thursday's taco bowls. One bag of potatoes is two dinners. Buy for pairs, not for nights, and seven dinners for a family of four came to **$44.04 at Walmart** in October 2026.
 
 This is a dinner plan for about 3-4 people. Breakfast and lunch are a separate line, priced out further down, because a list that claims to cover every meal for four people on $47 is not being honest with you. Print the [free grocery-week checklist](/resources/grocery-week-checklist) if you want the cart on the fridge.
+
+This is the grocery hub. Two related guides go deeper on one piece each:
+
+- [The second grocery trip](/guides/second-grocery-trip-blows-the-week): how a $47 week becomes $90 when you go back midweek.
+- [Packing school lunch without a guilt spiral](/guides/packing-school-lunch-without-a-guilt-spiral): cheap lunch boxes that ride on the same cart.
 
 > Remember: Nothing in the cart gets bought for one night.
 

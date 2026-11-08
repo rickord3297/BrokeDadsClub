@@ -11,6 +11,8 @@ readTime: 6 min
 publishedAt: "2026-11-12"
 updatedAt: "2026-11-07"
 status: scheduled
+priceYear: 2026
+priceRefreshBy: "2027-10-01"
 keywords:
   - what to bring to a thanksgiving potluck
   - cheap pumpkin pie to bring to thanksgiving

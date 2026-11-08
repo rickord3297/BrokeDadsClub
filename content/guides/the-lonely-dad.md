@@ -7,7 +7,7 @@ excerpt: She knows three parents by name. You know one guy who checks his phone.
 category: Time
 readTime: 7 min
 publishedAt: "2026-08-26"
-updatedAt: '2026-09-09'
+updatedAt: "2026-11-07"
 status: published
 keywords:
   - lonely dad
@@ -18,9 +18,10 @@ keywords:
   - feeling alone as a dad
   - dads at school pickup lonely
 related:
+  - the-pickup-line-is-not-a-networking-event
+  - tagging-along-without-becoming-furniture
+  - one-dad-coffee-not-a-friend-group
   - the-dad-tax
-  - cheap-date-night
-  - explaining-we-cant-go
 shop:
   - club-pup-tee
   - broke-mug
@@ -45,6 +46,12 @@ You showed up. You drove there. You are standing by the fence while someone else
 This is the lonely dad lane. Not everyone is in it. Some dads roll in with a group, inside jokes, and a group chat from 2019. Good for them. A lot of us are not there, and pretending we are fine gets old fast.
 
 **This week:** pick one face, one spot, one hello. That is the whole assignment.
+
+This is the dad friendship hub. Three related guides go deeper on one piece each:
+
+- [School pickup small talk](/guides/the-pickup-line-is-not-a-networking-event): exact lines when your mind goes blank.
+- [Tagging along without becoming furniture](/guides/tagging-along-without-becoming-furniture): how to show up on purpose at practice.
+- [One dad coffee, not a friend group](/guides/one-dad-coffee-not-a-friend-group): the smallest invite that still counts.
 
 ## Do this today (5 minutes)
 

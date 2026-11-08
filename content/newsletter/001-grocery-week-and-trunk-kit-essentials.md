@@ -11,7 +11,7 @@ takeaways:
   - "The second store trip is where the week goes over. Shop once, cook extra Monday."
   - "A trunk kit turns a $28 drive-thru stop into a $3 snack. It pays for itself in two bad afternoons."
   - "Check tire pressure monthly. Low tires cost you at the pump every single mile."
-featuredGuideSlug: trunk-dinner-kit-beat-gas-station-panic
+featuredGuideSlug: gas-station-dinner
 featuredGuideNote: >-
   The gas station is where good grocery weeks go to die. This one is a small bin
   of shelf-stable food that lives in the car, so the 5:40 p.m. panic stop

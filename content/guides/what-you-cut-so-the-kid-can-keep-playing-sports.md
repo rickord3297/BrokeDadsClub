@@ -20,7 +20,7 @@ keywords:
   - delay kids sports for money
 related:
   - the-sports-signup-fee-you-didnt-budget-for
-  - youth-sports-all-in-cost-checklist
+  - the-sports-signup-fee-you-didnt-budget-for
   - dropping-one-activity-so-the-week-can-breathe
   - explaining-we-cant-go
 takeaways:
@@ -51,7 +51,7 @@ If your kid is staying on the team, something else usually leaves the budget. Pr
 
 ## Run the all-in number first
 
-Before you cut dinner out or cancel streaming, write the real sports total. Use the [all-in checklist](/guides/youth-sports-all-in-cost-checklist): signup, processing fees, gear, gas, photos, volunteer buyouts, travel.
+Before you cut dinner out or cancel streaming, write the real sports total. Use the [kids sports budget hub](/guides/the-sports-signup-fee-you-didnt-budget-for): signup, processing fees, gear, gas, photos, volunteer buyouts, travel.
 
 If the number only works by putting groceries on a card, the cut is the sport, not the milk. Dignity over a fake yes.
 

@@ -113,7 +113,7 @@ export default function GroceryResetTrunkKitPage() {
               the $47 grocery week
             </Link>{" "}
             and{" "}
-            <Link href="/guides/trunk-dinner-kit-beat-gas-station-panic" className="font-medium text-pine hover:text-rust">
+            <Link href="/guides/gas-station-dinner" className="font-medium text-pine hover:text-rust">
               the trunk dinner kit
             </Link>
             .

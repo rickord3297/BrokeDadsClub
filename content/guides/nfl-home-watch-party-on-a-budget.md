@@ -11,6 +11,8 @@ readTime: 5 min
 publishedAt: '2026-09-19'
 updatedAt: '2026-09-19'
 status: published
+priceYear: 2026
+priceRefreshBy: "2027-08-01"
 keywords:
   - NFL watch party at home
   - football watch party ideas cheap
@@ -18,10 +20,10 @@ keywords:
   - cheap football Sunday ideas
   - family NFL watch party
 related:
+  - nfl-on-a-budget
   - one-nfl-game-for-four-is-a-second-vacation
   - nfl-sunday-without-a-thousand-dollar-stream
-  - cheap-weekend-not-just-screens
-  - explaining-we-cant-go
+  - fantasy-sunday-with-your-kid-no-betting-app
 shop:
   - club-pup-tee
 takeaways:
@@ -44,7 +46,7 @@ faq:
       home watch party and pizza." See explaining we cannot go for more scripts.
 ---
 
-One NFL game for four can land near vacation money. That math lives in [one NFL game for four is a second vacation](/guides/one-nfl-game-for-four-is-a-second-vacation).
+One NFL game for four can land near vacation money. That math lives in [one NFL game for four is a second vacation](/guides/one-nfl-game-for-four-is-a-second-vacation). The full map is [NFL on a budget](/guides/nfl-on-a-budget).
 
 This page is the alternative that still feels like a Sunday: a home watch party you planned, not a sad default.
 

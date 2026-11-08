@@ -5,9 +5,13 @@ import { authorBio } from "@/lib/guide-pillars";
 export function GuideByline({
   publishedAt,
   updatedAt,
+  priceYear,
+  priceRefreshBy,
 }: {
   publishedAt: string;
   updatedAt: string;
+  priceYear?: number;
+  priceRefreshBy?: string;
 }) {
   const bio = authorBio();
   const showUpdated = updatedAt !== publishedAt;
@@ -30,6 +34,17 @@ export function GuideByline({
           </>
         ) : null}
       </p>
+      {priceYear ? (
+        <p className="mt-2 text-sm text-ink-soft">
+          <span>{priceYear} prices</span>
+          {priceRefreshBy ? (
+            <>
+              <span className="mx-2 text-rule">·</span>
+              <span>Refresh by {formatDate(priceRefreshBy)}</span>
+            </>
+          ) : null}
+        </p>
+      ) : null}
     </div>
   );
 }

@@ -17,9 +17,9 @@ keywords:
   - lonely dad help
   - dad coffee meetup
 related:
-  - the-dad-tax
-  - cheap-date-night
-  - side-hustles-that-dont-steal-bedtime
+  - the-lonely-dad
+  - the-pickup-line-is-not-a-networking-event
+  - tagging-along-without-becoming-furniture
 shop:
   - broke-mug
   - club-pup-tee

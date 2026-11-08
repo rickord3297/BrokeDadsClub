@@ -13,6 +13,8 @@ readTime: 6 min
 publishedAt: "2026-10-10"
 updatedAt: "2026-10-10"
 status: published
+priceYear: 2026
+priceRefreshBy: "2027-08-01"
 keywords:
   - winter heating bill budget for families
   - heating oil cost increase 2026

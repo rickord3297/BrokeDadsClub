@@ -7,8 +7,10 @@ excerpt: Signup is the down payment, not the movie. The hidden fees that hit in 
 category: Money
 readTime: 6 min
 publishedAt: "2026-08-29"
-updatedAt: '2026-10-14'
+updatedAt: "2026-11-07"
 status: published
+priceYear: 2026
+priceRefreshBy: "2027-08-01"
 keywords:
   - keep kids sports from draining your budget
   - kids sports budget
@@ -19,13 +21,17 @@ keywords:
   - budget for kids sports
   - how to afford kids sports
   - kids sports too expensive what to do
+  - youth sports processing fees
+  - youth sports cost checklist
+  - kids sports hidden fees checklist
+  - all in cost kids sports
 related:
   - the-second-bill
   - school-supply-list
   - explaining-we-cant-go
-  - youth-sports-all-in-cost-checklist
   - what-you-cut-so-the-kid-can-keep-playing-sports
   - dropping-one-activity-so-the-week-can-breathe
+  - first-youth-soccer-season-gear
 shop:
   - broke-mug
   - club-pup-tee
@@ -34,6 +40,9 @@ faq:
   - question: How much do kids sports really cost beyond signup?
     answer: >-
       Plan for uniform gear, team photos, tournament travel, volunteer buyouts, and mid-season asks. Most families spend well above the registration line on the flyer.
+  - question: What are youth sports processing fees?
+    answer: >-
+      Processing fees are the card or platform charges added on top of registration, often 2-4% or a flat convenience fee. Ask if paying by check or ACH avoids them, and include them in your all-in total.
   - question: What questions should I ask before signing up for youth sports?
     answer: >-
       Ask the all-in total from last season, what is required vs optional, and whether scholarships, loaner gear, or payment plans exist. Get answers in writing if you can.
@@ -53,9 +62,8 @@ Late August and September are sports signup season. Same rhythm as [the second b
 
 **Before you click pay:** ask three questions below. Two minutes now beats a surprise fee in week three.
 
-This is the main sports money guide. Three shorter ones go deeper on one piece each:
+This is the hub for kids sports money. Two related guides go deeper on one piece each:
 
-- [The all-in cost checklist](/guides/youth-sports-all-in-cost-checklist): ten minutes with real numbers before anyone hits pay.
 - [What you cut so the kid can keep playing](/guides/what-you-cut-so-the-kid-can-keep-playing-sports): when the sport stays and something else has to go.
 - [Dropping one activity](/guides/dropping-one-activity-so-the-week-can-breathe): when the problem is the calendar, not just the bill.
 
@@ -70,6 +78,36 @@ Ask in email or at the table:
 Leagues have heard this before. Silence is data.
 
 Use the [school supply triage printable](/resources/school-supply-triage) if you are triaging the whole August bill stack at once.
+
+## The all-in checklist (write real numbers)
+
+**1. Registration / league fee**  
+The number on the email.
+
+**1b. Processing / convenience fees**  
+Card platforms often add 2-4% or a flat fee at checkout. Ask if check or ACH skips it. Put the real charged total here, not the flyer number.
+
+**2. Required uniform and gear**  
+Cleats, pads, specialty socks, bag. Ask what is mandatory vs "looks cool."
+
+**3. Travel**  
+Count likely tournaments. Gas, food, maybe a hotel. One away weekend can beat the signup fee.
+
+**4. Photos and keepsakes**  
+Optional until the packet makes your kid the exception.
+
+**5. Volunteer hours or buyout**  
+Time you do not have, converted to cash.
+
+**6. Team fees and snack duty**  
+Pizza nights, coach gifts, end-of-season party.
+
+**7. Misc buffer**  
+Mouthguard, spirit wear, replacement ball. Put $40-$75 here on purpose so it is not a surprise.
+
+Add them. That sum is the decision, not line one.
+
+> Truth: If you cannot write a number for travel, you are not ready to say yes.
 
 ## The fees that show up after "yes"
 

@@ -11,6 +11,8 @@ readTime: 6 min
 publishedAt: "2026-10-25"
 updatedAt: "2026-10-19"
 status: published
+priceYear: 2026
+priceRefreshBy: "2027-09-01"
 keywords:
   - scholastic book fair budget for kids
   - how much money to send to book fair
@@ -22,7 +24,7 @@ related:
   - talking-to-kids-about-money
   - school-supply-list
   - the-class-party-signup-is-one-job
-  - dad-tax-examples-the-small-asks-that-stack
+  - the-dad-tax
 takeaways:
   - Send one number, about $20 to $25, and books come before erasers
   - Coinless cash and an eWallet do not bring the same leftover home

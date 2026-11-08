@@ -11,6 +11,8 @@ readTime: 6 min
 publishedAt: "2026-11-09"
 updatedAt: "2026-11-04"
 status: scheduled
+priceYear: 2026
+priceRefreshBy: "2027-10-01"
 keywords:
   - cheap kids advent calendar
   - aldi chocolate advent calendar 2026

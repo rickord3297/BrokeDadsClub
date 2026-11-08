@@ -9,6 +9,8 @@ readTime: 6 min
 publishedAt: "2026-09-10"
 updatedAt: "2026-09-19"
 status: published
+priceYear: 2026
+priceRefreshBy: "2027-08-01"
 keywords:
   - NFL game cost family of 4
   - how much is an NFL game for a family
@@ -17,11 +19,10 @@ keywords:
   - baseball game vs NFL game cost
   - taking kids to NFL game budget
 related:
-  - explaining-we-cant-go
-  - birthday-party-math
+  - nfl-on-a-budget
   - nfl-sunday-without-a-thousand-dollar-stream
-  - the-dad-tax
   - nfl-home-watch-party-on-a-budget
+  - explaining-we-cant-go
 shop:
   - broke-mug
   - club-pup-tee
@@ -52,7 +53,7 @@ faq:
 
 Action Network's 2026 fan-cost math puts a family of four at an NFL game around **$1,475** on average: four tickets, hot dogs, sodas, beers for the adults, parking. Some buildings clear $1,800. That is not a casual afternoon. That is a weekend trip with a kickoff time.
 
-If your kid asked "can we go" after the opener, you are not cheap for pausing. You are doing the same triage as [birthday party math](/guides/birthday-party-math) and [explaining we can't go](/guides/explaining-we-cant-go): one number, then a decision.
+If your kid asked "can we go" after the opener, you are not cheap for pausing. You are doing the same triage as [birthday party math](/guides/birthday-party-math) and [explaining we can't go](/guides/explaining-we-cant-go): one number, then a decision. More NFL money lanes live on [NFL on a budget](/guides/nfl-on-a-budget).
 
 ## Do this before you buy
 

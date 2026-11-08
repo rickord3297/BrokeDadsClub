@@ -11,6 +11,8 @@ readTime: 6 min
 publishedAt: "2026-11-03"
 updatedAt: "2026-10-28"
 status: published
+priceYear: 2026
+priceRefreshBy: "2027-10-01"
 keywords:
   - thanksgiving travel cost for a family of four
   - is it cheaper to drive or fly for thanksgiving

@@ -11,6 +11,8 @@ readTime: 6 min
 publishedAt: "2026-10-31"
 updatedAt: "2026-10-25"
 status: published
+priceYear: 2026
+priceRefreshBy: "2027-09-01"
 keywords:
   - what time does trick or treat end
   - trick or treat hours 2026

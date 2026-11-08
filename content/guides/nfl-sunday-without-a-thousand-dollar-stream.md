@@ -9,6 +9,8 @@ readTime: 6 min
 publishedAt: "2026-09-10"
 updatedAt: "2026-09-19"
 status: published
+priceYear: 2026
+priceRefreshBy: "2027-08-01"
 keywords:
   - watch NFL without cable 2026
   - NFL Sunday Ticket worth it
@@ -17,11 +19,10 @@ keywords:
   - antenna NFL games
   - watch NFL without cable
 related:
-  - cheap-weekend-not-just-screens
-  - the-dad-tax
-  - explaining-we-cant-go
+  - nfl-on-a-budget
   - one-nfl-game-for-four-is-a-second-vacation
   - nfl-home-watch-party-on-a-budget
+  - fantasy-sunday-with-your-kid-no-betting-app
 shop:
   - broke-mug
   - club-pup-tee
@@ -48,7 +49,7 @@ faq:
 
 Kickoff is this weekend. The ads want you to stack five apps, add Sunday Ticket, and call it "just this season." That is how football becomes a fourth streaming bill next to the ones you already resent.
 
-You do not need every game. You need *your* game, maybe one night game, and enough dignity not to spend a thousand dollars to sit on your own couch.
+You do not need every game. You need *your* game, maybe one night game, and enough dignity not to spend a thousand dollars to sit on your own couch. For the full NFL money map (streaming, stadium, watch party, fantasy), start at [NFL on a budget](/guides/nfl-on-a-budget).
 
 ## Do this before Sunday
 

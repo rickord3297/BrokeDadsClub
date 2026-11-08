@@ -17,9 +17,9 @@ keywords:
   - how to be present at kids activities
   - plus one dad at practice
 related:
-  - the-dad-tax
-  - cheap-date-night
-  - side-hustles-that-dont-steal-bedtime
+  - the-lonely-dad
+  - the-pickup-line-is-not-a-networking-event
+  - one-dad-coffee-not-a-friend-group
 shop:
   - club-pup-tee
   - sticker-pack

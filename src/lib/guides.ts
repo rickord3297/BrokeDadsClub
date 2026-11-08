@@ -159,6 +159,17 @@ function readAllGuides(): Guide[] {
               typeof data.nextGuide === "string" && data.nextGuide.length > 0
                 ? data.nextGuide
                 : undefined,
+            priceYear:
+              typeof data.priceYear === "number" && Number.isFinite(data.priceYear)
+                ? data.priceYear
+                : typeof data.priceYear === "string" && /^\d{4}$/.test(data.priceYear)
+                  ? Number(data.priceYear)
+                  : undefined,
+            priceRefreshBy:
+              typeof data.priceRefreshBy === "string" &&
+              /^\d{4}-\d{2}-\d{2}$/.test(data.priceRefreshBy.trim())
+                ? data.priceRefreshBy.trim()
+                : undefined,
             content,
           },
         ];
