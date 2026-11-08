@@ -1,24 +1,21 @@
 import { absoluteUrl } from "@/lib/seo";
+import { site } from "@/lib/site";
 
 /**
- * Site author for bylines and Article JSON-LD.
- * Fill name, bio, photo, and sameAs when ready; placeholders are intentional.
+ * Site author for bylines, guide footers, /about/author, and Article JSON-LD.
+ * Cord Elmore is a pen name. sameAs stays empty until public profiles exist.
  */
 export const siteAuthor = {
   slug: "author",
-  /** Replace with your real name. */
-  name: "[Your name]",
-  /** One-line byline under the name on guide pages. */
-  line: "Dad writing practical money and family guides at Broke Dads Club.",
-  /** Longer bio on /about/author. */
-  bio: [
-    "Replace this with a short bio: kids, city or region, and what you budget on.",
-    "Keep it plain. Search and readers both care that a real person stands behind the money advice.",
-  ],
+  name: "Cord Elmore",
+  jobTitle: "Founder and writer, Broke Dads Club",
+  /** Short bio for the bottom of each guide + Person.description. */
+  shortBio:
+    "Cord Elmore is a Chicago-area dad of two young kids who works a desk job and writes Broke Dads Club. He does the math on groceries, school fees, and family weekends so you can make the call and get back to bedtime.",
   /** Path under /public. Swap for a real headshot when you have one. */
   photoSrc: "/brand/club-logo.png",
-  photoAlt: "Author photo placeholder",
-  /** Profile URLs for sameAs (LinkedIn, X, etc.). Leave empty until real. */
+  photoAlt: "Cord Elmore, founder of Broke Dads Club",
+  /** Profile URLs for sameAs. Leave empty until social accounts exist under this name. */
   sameAs: [] as string[],
   path: "/about/author",
 } as const;
@@ -26,7 +23,7 @@ export const siteAuthor = {
 export function authorBio() {
   return {
     name: siteAuthor.name,
-    line: siteAuthor.line,
+    line: siteAuthor.shortBio,
     aboutHref: siteAuthor.path,
   };
 }
@@ -35,7 +32,22 @@ export function authorJsonLd() {
   return {
     "@type": "Person" as const,
     name: siteAuthor.name,
+    jobTitle: siteAuthor.jobTitle,
+    description: siteAuthor.shortBio,
     url: absoluteUrl(siteAuthor.path),
     ...(siteAuthor.sameAs.length > 0 ? { sameAs: [...siteAuthor.sameAs] } : {}),
+  };
+}
+
+export function authorPageJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    ...authorJsonLd(),
+    image: `${site.url}${siteAuthor.photoSrc}`,
+    worksFor: {
+      "@type": "Organization" as const,
+      name: site.name,
+      url: site.url,
+    },
   };
 }

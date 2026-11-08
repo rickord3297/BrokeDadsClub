@@ -24,7 +24,7 @@ export default function AboutPage() {
       <p className="mt-4 text-sm text-ink-soft">
         Guides are written by{" "}
         <Link href="/about/author" className="font-medium text-pine hover:text-rust">
-          the author
+          Cord Elmore
         </Link>
         .
       </p>

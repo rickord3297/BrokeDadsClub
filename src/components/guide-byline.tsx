@@ -13,21 +13,13 @@ export function GuideByline({
 }) {
   return (
     <div className="min-w-0">
-      <p className="text-sm font-medium text-ink">
+      <p className="text-sm text-ink">
+        By{" "}
         <Link
           href={siteAuthor.path}
           className="font-medium text-ink hover:text-pine"
         >
           {siteAuthor.name}
-        </Link>
-      </p>
-      <p className="mt-1 max-w-md text-sm leading-6 text-ink-soft">
-        {siteAuthor.line}{" "}
-        <Link
-          href={siteAuthor.path}
-          className="font-medium text-pine hover:text-rust"
-        >
-          About the author
         </Link>
       </p>
       {priceYear ? (

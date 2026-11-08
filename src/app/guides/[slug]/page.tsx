@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ActionBox } from "@/components/guide-action-box";
 import { FieldChecklist } from "@/components/field-checklist";
+import { GuideAuthorBio } from "@/components/guide-author-bio";
 import { GuideByline } from "@/components/guide-byline";
 import { GuideBreadcrumbs } from "@/components/guide-breadcrumbs";
 import {
@@ -331,6 +332,8 @@ export default async function GuidePage({
             />
 
             <GuideKeepGoing guides={related} />
+
+            <GuideAuthorBio />
 
             <GuideEmailCta
               source={`guide:${guide.slug}`}
