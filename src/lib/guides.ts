@@ -2,12 +2,13 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { site } from "@/lib/site";
-import type {
-  Guide,
-  GuideFaq,
-  GuideListItem,
-  GuideProductCtaConfig,
-  GuideStatus,
+import {
+  effectiveUpdatedAt,
+  type Guide,
+  type GuideFaq,
+  type GuideListItem,
+  type GuideProductCtaConfig,
+  type GuideStatus,
 } from "@/lib/guide-model";
 
 export type {
@@ -18,6 +19,7 @@ export type {
   GuideStatus,
 } from "@/lib/guide-model";
 export {
+  effectiveUpdatedAt,
   extractGuideHeadings,
   parseReadMinutes,
   slugifyHeading,
@@ -136,10 +138,10 @@ function readAllGuides(): Guide[] {
                 ? data.readTime
                 : "5 min",
             publishedAt: data.publishedAt as string,
-            updatedAt:
-              typeof data.updatedAt === "string" && data.updatedAt.trim()
-                ? data.updatedAt.trim()
-                : (data.publishedAt as string),
+            updatedAt: effectiveUpdatedAt(
+              data.publishedAt as string,
+              typeof data.updatedAt === "string" ? data.updatedAt : null,
+            ),
             status: parseStatus(data.status),
             keywords: parseKeywords(data.keywords),
             takeaways: parseStringList(data.takeaways).slice(0, 2),

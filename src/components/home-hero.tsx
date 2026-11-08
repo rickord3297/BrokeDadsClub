@@ -20,8 +20,9 @@ export function HomeHero() {
           </p>
           <p className="mt-3 max-w-2xl text-base leading-7 text-ink-soft sm:text-lg sm:leading-8">
             Get the{" "}
-            <strong className="font-semibold text-ink">$47 Grocery Week Checklist</strong>{" "}
-            (7 family dinners for $44 at Walmart) plus our free Sunday tactical drop.
+            <strong className="font-semibold text-ink">$47 Grocery Week Checklist</strong>
+            : 7 family dinners came to $44.04 at Walmart; $47 leaves a buffer for price
+            changes. Plus our free Sunday tactical drop.
           </p>
 
           <div id="signup" className="mt-7 w-full max-w-md scroll-mt-24">

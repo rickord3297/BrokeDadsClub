@@ -157,7 +157,13 @@ export function GuideMarkdown({
           return <pre>{children}</pre>;
         },
         p: ({ children }) => <p>{gloss(children)}</p>,
-        table: () => null,
+        table: ({ children }) => (
+          <div className="guide-table-wrap">
+            <table>{children}</table>
+          </div>
+        ),
+        th: ({ children }) => <th>{gloss(children)}</th>,
+        td: ({ children }) => <td>{gloss(children)}</td>,
       }}
     >
       {content}

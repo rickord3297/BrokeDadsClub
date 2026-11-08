@@ -59,6 +59,15 @@ export type GuideListItem = Pick<
   } | null;
 };
 
+/** Never report an "updated" day earlier than published (schema + byline). */
+export function effectiveUpdatedAt(publishedAt: string, updatedAt?: string | null): string {
+  const published = publishedAt.trim().slice(0, 10);
+  const updated = (updatedAt ?? "").trim().slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(published)) return publishedAt;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(updated)) return published;
+  return updated >= published ? updated : published;
+}
+
 export function toGuideListItem(
   guide: Guide,
   resourceTieIn?: GuideListItem["resourceTieIn"],

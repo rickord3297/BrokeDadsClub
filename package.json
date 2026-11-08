@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/check-guide-markdown.mjs && next build",
     "start": "next start",
     "lint": "eslint",
+    "check:guides": "node scripts/check-guide-markdown.mjs",
     "pinterest:auth": "node merch/pinterest/auth.mjs",
     "pinterest:boards": "node merch/pinterest/list-boards.mjs",
     "pinterest:export": "node merch/pinterest/export.mjs",

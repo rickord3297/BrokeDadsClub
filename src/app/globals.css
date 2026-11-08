@@ -256,6 +256,40 @@ body {
   border-top: 1px solid var(--rule);
 }
 
+.prose-guide .guide-table-wrap {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  border-radius: 0.75rem;
+}
+
+.prose-guide .guide-table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.prose-guide .guide-table-wrap th,
+.prose-guide .guide-table-wrap td {
+  padding: 0.7rem 0.9rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule);
+}
+
+.prose-guide .guide-table-wrap th {
+  background: color-mix(in srgb, var(--paper-2) 80%, var(--paper));
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.prose-guide .guide-table-wrap tr:last-child td {
+  border-bottom: 0;
+}
+
 .prose-guide .guide-glossary-pill {
   position: relative;
   display: inline;
@@ -267,7 +301,9 @@ body {
   font-size: 0.95em;
   font-weight: 600;
   color: var(--pine);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--pine) 35%, transparent);
+  text-underline-offset: 2px;
   white-space: nowrap;
 }
 
@@ -278,13 +314,9 @@ body {
   outline: none;
 }
 
-.prose-guide .guide-glossary-pill-label {
-  text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--pine) 35%, transparent);
-  text-underline-offset: 2px;
-}
-
-.prose-guide .guide-glossary-pill-hint {
+/* Hint from data-hint only: never in the document text flow / copy-paste / snippets. */
+.prose-guide .guide-glossary-pill::after {
+  content: attr(data-hint);
   pointer-events: none;
   position: absolute;
   left: 50%;
@@ -302,13 +334,15 @@ body {
   font-weight: 500;
   line-height: 1.35;
   color: var(--ink-soft);
+  text-decoration: none;
+  white-space: normal;
   opacity: 0;
   box-shadow: 0 8px 24px rgba(28, 25, 21, 0.08);
   transition: opacity 0.15s ease;
 }
 
-.prose-guide .guide-glossary-pill:hover .guide-glossary-pill-hint,
-.prose-guide .guide-glossary-pill:focus-visible .guide-glossary-pill-hint {
+.prose-guide .guide-glossary-pill:hover::after,
+.prose-guide .guide-glossary-pill:focus-visible::after {
   opacity: 1;
 }
 

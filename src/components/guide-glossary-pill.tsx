@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-/** Inline badge for coined BDC terms with a hover/focus hint. */
+/** Inline badge for coined BDC terms. Hint lives in data-hint + CSS, not in the text flow. */
 export function GuideGlossaryPill({
   slug,
   label,
@@ -13,13 +13,12 @@ export function GuideGlossaryPill({
   return (
     <Link
       href={`/guides/${slug}`}
-      className="guide-glossary-pill group"
+      className="guide-glossary-pill"
+      data-hint={hint}
+      aria-label={`${label}: ${hint}`}
       title={hint}
     >
-      <span className="guide-glossary-pill-label">{label}</span>
-      <span className="guide-glossary-pill-hint" role="tooltip">
-        {hint}
-      </span>
+      {label}
     </Link>
   );
 }

@@ -22,8 +22,9 @@ export const guideGlossaryTerms: GlossaryTerm[] = [
     hint: "When dinner happens in aisle three",
   },
   {
+    // Only the school-fees guide phrase. Generic "second bill" (sports, camp late fees, menus) must not match.
     slug: "the-second-bill",
-    pattern: /\bthe second bill\b|\bsecond bill\b/gi,
+    pattern: /\bthe second bill after school(?: starts)?\b|\bsecond bill after school starts\b/gi,
     hint: "School fees that hit after class starts",
   },
   {
