@@ -118,6 +118,7 @@ export function organizationJsonLd() {
     "@type": "Organization",
     "@id": ORGANIZATION_ID,
     name: site.name,
+    legalName: site.legal.companyName,
     url: site.url,
     logo: `${site.url}/brand/club-logo.png`,
     email: site.email,

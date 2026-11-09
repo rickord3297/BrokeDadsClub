@@ -17,10 +17,12 @@ export default function TermsPage() {
       <h1 className="mt-3 font-display text-4xl">Terms of Use</h1>
       <div className="prose-guide mt-8">
         <p>
-          {site.name} provides practical guides, newsletters, and printable
-          tools for everyday household organization and parenting. All content
-          is shared for informational and educational purposes only, not legal,
-          medical, or financial counsel. Your household, your call.
+          {site.name} is operated by {site.legal.companyName}, an{" "}
+          {site.legal.jurisdiction} limited liability company. We provide
+          practical guides, newsletters, and printable tools for everyday
+          household organization and parenting. All content is shared for
+          informational and educational purposes only, not legal, medical, or
+          financial counsel. Your household, your call.
         </p>
 
         <h2>Digital Products &amp; Downloads</h2>
@@ -66,6 +68,15 @@ export default function TermsPage() {
             Contact us
           </Link>{" "}
           page.
+        </p>
+        <p>
+          Formal legal notices for {site.legal.companyName} may be sent to{" "}
+          {site.legal.registeredAgent.name}, {site.legal.registeredAgent.street},{" "}
+          {site.legal.registeredAgent.suite}, {site.legal.registeredAgent.city},{" "}
+          {site.legal.registeredAgent.region}{" "}
+          {site.legal.registeredAgent.postalCode},{" "}
+          {site.legal.registeredAgent.country}. Customer support and general
+          questions should use the Contact us form, not this address.
         </p>
       </div>
     </div>

@@ -43,6 +43,20 @@ export const site = {
     "free printables for parents",
   ],
   email: "dad@brokedadsclub.com",
+  legal: {
+    companyName: "Green Family Ventures, LLC",
+    jurisdiction: "Illinois",
+    /** Formal legal notices / service of process only. Not for customer support. */
+    registeredAgent: {
+      name: "Northwest Registered Agent Service, Inc.",
+      street: "2501 Chatham Rd",
+      suite: "Suite N",
+      city: "Springfield",
+      region: "IL",
+      postalCode: "62704",
+      country: "USA",
+    },
+  },
   social: [
     process.env.NEXT_PUBLIC_TIKTOK_URL
       ? { label: "TikTok", href: process.env.NEXT_PUBLIC_TIKTOK_URL }

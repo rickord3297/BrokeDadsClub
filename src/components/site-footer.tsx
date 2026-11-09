@@ -65,7 +65,10 @@ export function SiteFooter() {
       <div className="border-t border-white/15">
         <div className="mx-auto max-w-6xl space-y-1 px-4 py-4 text-sm text-paper/70 sm:px-6">
           <p className="text-xs text-paper/55">{AMAZON_DISCLOSURE}</p>
-          <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} {site.legal.companyName}. {site.name}.
+            All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
