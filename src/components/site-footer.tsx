@@ -23,12 +23,12 @@ export function SiteFooter() {
               hustle-bro nonsense.
             </p>
             <p className="mt-3 text-sm">
-              <a
-                href={`mailto:${site.email}`}
+              <Link
+                href="/about"
                 className="text-gold transition hover:text-paper"
               >
-                {site.email}
-              </a>
+                Contact us
+              </Link>
             </p>
             <SocialLinks className="mt-4" />
           </div>

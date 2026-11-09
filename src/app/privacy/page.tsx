@@ -46,18 +46,19 @@ export default function PrivacyPage() {
           you buy, only aggregate reports of qualifying sales.
         </p>
         <p>
-          Every Sunday email includes an unsubscribe link. You can also email{" "}
-          <a href={`mailto:${site.email}`} className="text-pine hover:text-rust">
-            {site.email}
-          </a>{" "}
-          to opt out.
+          Every Sunday email includes an unsubscribe link. You can also reach
+          out via our{" "}
+          <Link href="/about" className="text-pine hover:text-rust">
+            Contact us
+          </Link>{" "}
+          page to opt out.
         </p>
         <p>
-          Questions? See the{" "}
+          Questions? Reach out via our{" "}
           <Link href="/about" className="text-pine hover:text-rust">
-            About
+            Contact us
           </Link>{" "}
-          page or contact us directly.
+          page.
         </p>
       </div>
     </div>
