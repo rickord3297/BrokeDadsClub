@@ -106,6 +106,7 @@ const RELATED_HOOKS: Record<string, string> = {
   "the-basket-is-the-dinner": "If Thanksgiving dinner is turning into a second cart",
   "the-calendar-is-two-dollars": "If the advent wall wants a $35 toy calendar",
   "the-pie-is-the-assignment": "If the group text says just bring dessert",
+  "the-donut-ends-at-the-bell": "If the dad breakfast wants a dance tunnel",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {
