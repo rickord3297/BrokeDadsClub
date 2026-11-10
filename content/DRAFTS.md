@@ -8,5 +8,5 @@ Open any file to edit. `status: scheduled` goes live automatically on `published
 
 | Title | Go live | File |
 |-------|---------|------|
-| The calendar is two dollars | 2026-11-09 | [the-calendar-is-two-dollars.md](guides/the-calendar-is-two-dollars.md) |
 | The pie is the assignment | 2026-11-12 | [the-pie-is-the-assignment.md](guides/the-pie-is-the-assignment.md) |
+| The donut ends at the bell | 2026-11-15 | [the-donut-ends-at-the-bell.md](guides/the-donut-ends-at-the-bell.md) |
