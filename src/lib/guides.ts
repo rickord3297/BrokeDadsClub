@@ -136,6 +136,7 @@ function readAllGuides(): Guide[] {
               typeof data.seoTitle === "string" && data.seoTitle.length > 0
                 ? data.seoTitle
                 : `${title} | ${site.name}`,
+            omitBrandInTitle: data.omitBrandInTitle === true,
             excerpt,
             description:
               typeof data.description === "string" && data.description.length > 0

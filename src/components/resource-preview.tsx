@@ -249,6 +249,7 @@ function GroceryMini() {
       <p className="mt-1 font-semibold">Protein · about $19</p>
       <Line>Chicken thighs, 4 lb</Line>
       <Line>Ground beef, 1 lb</Line>
+      <Line>Eggs, 18 count</Line>
       <p className="mt-1 font-semibold">Starch · about $11</p>
       <Line>Rice, 5 lb</Line>
       <Line>Potatoes, 5 lb</Line>

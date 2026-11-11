@@ -18,6 +18,8 @@ export type Guide = {
   slug: string;
   title: string;
   seoTitle: string;
+  /** When true, meta/OG/Twitter title omit the "| Broke Dads Club" suffix. */
+  omitBrandInTitle?: boolean;
   excerpt: string;
   description: string;
   category: string;

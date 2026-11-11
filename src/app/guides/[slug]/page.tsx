@@ -15,7 +15,6 @@ import { GuideFaqAccordion } from "@/components/guide-faq";
 import { GuideFeedback } from "@/components/guide-feedback";
 import { GuideKeepGoing } from "@/components/guide-keep-going";
 import { GuideMarkdown } from "@/components/guide-markdown";
-import { GuideReaderSignal } from "@/components/guide-reader-signal";
 import { GuideStickyBar } from "@/components/guide-sticky-bar";
 import { GuideTableOfContents } from "@/components/guide-toc";
 import { GuideThePoint } from "@/components/guide-the-point";
@@ -74,7 +73,7 @@ export async function generateMetadata({
     url: absoluteUrl(`/guides/${guide.slug}/opengraph-image`),
     width: 1200,
     height: 630,
-    alt: title,
+    alt: guide.title,
   };
 
   return {
@@ -100,7 +99,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [ogImage.url],
+      images: [{ url: ogImage.url, alt: guide.title }],
     },
   };
 }
@@ -249,10 +248,6 @@ export default async function GuidePage({
             <p className="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-rust">
               {guide.category} · {guide.readTime}
             </p>
-            <GuideReaderSignal
-              slug={guide.slug}
-              publishedAt={guide.publishedAt}
-            />
 
             <div className="prose-guide mt-6">
               <GuideMarkdown

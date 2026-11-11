@@ -86,8 +86,13 @@ const BRAND_SUFFIX = /\s*[|·:-]\s*Broke Dads Club\s*$/i;
 const META_DESCRIPTION_MAX = 160;
 
 /** "[Guide Title] | Broke Dads Club", without doubling a suffix already in frontmatter. */
-export function guideMetaTitle(guide: { title: string; seoTitle?: string }) {
+export function guideMetaTitle(guide: {
+  title: string;
+  seoTitle?: string;
+  omitBrandInTitle?: boolean;
+}) {
   const base = (guide.seoTitle || guide.title).replace(BRAND_SUFFIX, "").trim();
+  if (guide.omitBrandInTitle) return base;
   return `${base} | ${site.name}`;
 }
 

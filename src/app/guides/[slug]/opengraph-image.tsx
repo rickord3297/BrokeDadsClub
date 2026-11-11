@@ -57,7 +57,10 @@ export default async function GuideOpenGraphImage({
   ]);
   const logoSrc = `data:image/jpeg;base64,${logo.toString("base64")}`;
 
-  const title = clampTitle(guide?.title ?? "Practical guides for dads stretching every dollar");
+  const rawTitle = (guide?.seoTitle || guide?.title || "Practical guides for dads stretching every dollar")
+    .replace(/\s*[|·:-]\s*Broke Dads Club\s*$/i, "")
+    .trim();
+  const title = clampTitle(rawTitle);
   const kicker = guide ? `${guide.category} guide` : "Guides";
   const readTime = guide?.readTime ? `${guide.readTime} read` : null;
 
