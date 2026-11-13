@@ -2,7 +2,7 @@
 title: NFL on a budget
 slug: nfl-on-a-budget
 seoTitle: "NFL on a Budget: Watch, Stadium, Watch Party, Fantasy | Broke Dads Club"
-description: "NFL Sundays without wrecking the month: how to watch without stacking apps, when the stadium is vacation money, a home watch party that still feels like game day, and fantasy with your kid."
+description: "NFL on a budget: skip the app stack and the $1,475 stadium day. Use an antenna or one app, host at home, and play fantasy with your kid, not a betting app."
 excerpt: Four ways to do football season without pretending $1,475 is "just tickets." Pick the lane that fits this paycheck.
 category: Money
 readTime: 5 min
