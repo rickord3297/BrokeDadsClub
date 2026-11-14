@@ -9,7 +9,7 @@ excerpt: >-
 category: Money
 readTime: 6 min
 publishedAt: "2026-11-06"
-updatedAt: "2026-10-31"
+updatedAt: "2026-11-14"
 status: published
 priceYear: 2026
 priceRefreshBy: "2027-10-01"
@@ -21,6 +21,7 @@ keywords:
   - target 30 thanksgiving meal for six
   - how much to spend on thanksgiving dinner
 related:
+  - the-pie-is-the-assignment
   - four-seats-or-one-car
   - the-47-dollar-grocery-week
   - explaining-we-cant-go
@@ -83,7 +84,7 @@ The receipt you can use in the aisle is the posted basket.
 
 > Say: "We're doing the $35 basket. That's the dinner."
 
-If someone wants to bring a dish, one dish is a gift. A second menu is a second bill.
+If someone wants to bring a dish, one dish is a gift. A pie around $6 is the whole ask, and the prices are in [the pie is the assignment](/guides/the-pie-is-the-assignment). A second menu is a second bill.
 
 > To the group text: "We've got the basket. Bring one thing if you want."
 

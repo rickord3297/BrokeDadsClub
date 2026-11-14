@@ -9,7 +9,7 @@ excerpt: >-
 category: Money
 readTime: 6 min
 publishedAt: "2026-11-03"
-updatedAt: "2026-10-28"
+updatedAt: "2026-11-14"
 status: published
 priceYear: 2026
 priceRefreshBy: "2027-10-01"
@@ -21,7 +21,8 @@ keywords:
   - how much are thanksgiving plane tickets
   - grandparents fly for thanksgiving instead
 related:
-  - dad-math
+  - the-basket-is-the-dinner
+  - the-pie-is-the-assignment
   - explaining-we-cant-go
   - the-47-dollar-grocery-week
   - the-heat-bill-before-it-gets-cold
@@ -96,7 +97,7 @@ That $170 is gas only. A hotel on the way, tolls, and a drive-through can pass a
 
 > Say: "We're driving. I wrote the miles down."
 
-Hosting is the other cheap seat. Dinner for the people already in the house is a grocery week, not a fare. The pair-the-nights plan is in [the $47 grocery week](/guides/the-47-dollar-grocery-week). If they stay over, the heat runs. That bill already has a move in [the heat bill before it gets cold](/guides/the-heat-bill-before-it-gets-cold). A full house is still cheaper than four Sunday seats. The wider pattern, small asks that turn into a real bill, is the [dad tax](/guides/the-dad-tax). Four plane seats are this month's version.
+Hosting is the other cheap seat. Dinner for the people already in the house is one posted list, not a fare. That list is [the basket is the dinner](/guides/the-basket-is-the-dinner). If the text asked you to bring dessert, one pie is the job in [the pie is the assignment](/guides/the-pie-is-the-assignment). A normal week still uses [the $47 grocery week](/guides/the-47-dollar-grocery-week). If they stay over, the heat runs. That bill already has a move in [the heat bill before it gets cold](/guides/the-heat-bill-before-it-gets-cold). A full house is still cheaper than four Sunday seats. The wider pattern, small asks that turn into a real bill, is the [dad tax](/guides/the-dad-tax). Four plane seats are this month's version.
 
 ## Do it this week
 
