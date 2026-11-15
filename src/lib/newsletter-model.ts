@@ -11,6 +11,14 @@ export interface DealItem {
   note: string;
   /** Tracked link from buildAffiliateUrl(), resolved at load time. */
   url: string;
+  /** Optional Amazon ASIN when the deal points at a specific product. */
+  asin?: string;
+  /** Current buy-box price when known, e.g. "$18.99". */
+  price?: string;
+  /** List / was price when known, e.g. "$29.99". */
+  wasPrice?: string;
+  /** Percent off vs wasPrice when known. */
+  discountPercent?: number;
 }
 
 export const WHAT_YOU_MISSED_TYPES = ["guide", "printable", "shop"] as const;
@@ -69,6 +77,28 @@ export function dealDisclosures(deals: Pick<DealItem, "merchant">[]): string[] {
 export function formatTargetPrice(price: string): string {
   const trimmed = price.trim();
   return /^\d+(\.\d{1,2})?$/.test(trimmed) ? `$${trimmed}` : trimmed;
+}
+
+/** True when the deal has a real markdown we can show (was → now, or % off). */
+export function dealHasDiscount(deal: Pick<DealItem, "wasPrice" | "price" | "discountPercent">): boolean {
+  if (typeof deal.discountPercent === "number" && deal.discountPercent > 0) return true;
+  return Boolean(deal.wasPrice?.trim() && deal.price?.trim());
+}
+
+export function formatDealDiscountLabel(
+  deal: Pick<DealItem, "wasPrice" | "price" | "discountPercent">,
+): string | null {
+  if (!dealHasDiscount(deal)) return null;
+  const parts: string[] = [];
+  if (deal.wasPrice?.trim() && deal.price?.trim()) {
+    parts.push(`${formatTargetPrice(deal.wasPrice)} → ${formatTargetPrice(deal.price)}`);
+  } else if (deal.price?.trim()) {
+    parts.push(formatTargetPrice(deal.price));
+  }
+  if (typeof deal.discountPercent === "number" && deal.discountPercent > 0) {
+    parts.push(`${Math.round(deal.discountPercent)}% off`);
+  }
+  return parts.join(" · ") || null;
 }
 
 /** Issue dates are calendar days, so format in UTC to avoid slipping to Saturday in US timezones. */

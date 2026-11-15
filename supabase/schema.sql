@@ -56,10 +56,31 @@ create table if not exists public.cron_job_runs (
   primary key (job, run_date)
 );
 
+-- Live Amazon markdowns from the Creators API deal scanner.
+create table if not exists public.scanned_deals (
+  asin text primary key,
+  title text not null,
+  url text not null,
+  merchant text not null default 'amazon',
+  price text not null,
+  was_price text not null,
+  discount_percent integer not null check (discount_percent > 0),
+  price_cents integer not null check (price_cents >= 0),
+  was_price_cents integer not null check (was_price_cents >= 0),
+  note text not null default '',
+  image_url text,
+  keyword text not null default '',
+  checked_at timestamptz not null default now()
+);
+
+create index if not exists scanned_deals_discount_idx
+  on public.scanned_deals (discount_percent desc, checked_at desc);
+
 alter table public.products enable row level security;
 alter table public.subscribers enable row level security;
 alter table public.orders enable row level security;
 alter table public.cron_job_runs enable row level security;
+alter table public.scanned_deals enable row level security;
 
 create policy "Public can read active products"
   on public.products for select

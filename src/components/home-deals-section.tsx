@@ -1,11 +1,24 @@
 import Link from "next/link";
 import { DealCard } from "@/components/deal-card";
 import { getFeaturedDeals } from "@/lib/deals";
-import { dealDisclosures } from "@/lib/newsletter-model";
+import { dealDisclosures, dealHasDiscount } from "@/lib/newsletter-model";
+import { getScannedDeals } from "@/lib/scanned-deals";
 
-export function HomeDealsSection() {
-  const deals = getFeaturedDeals(3);
+export async function HomeDealsSection() {
+  const [scanned, featured] = await Promise.all([
+    getScannedDeals(6),
+    Promise.resolve(getFeaturedDeals(6)),
+  ]);
+  const scannedKeys = new Set(
+    scanned.map((deal) => deal.asin ?? deal.url),
+  );
+  const deals = [
+    ...scanned,
+    ...featured.filter((deal) => !scannedKeys.has(deal.asin ?? deal.url)),
+  ].slice(0, 3);
   if (deals.length === 0) return null;
+
+  const liveCount = deals.filter(dealHasDiscount).length;
 
   return (
     <section id="deals" className="scroll-mt-20 border-t border-rule">
@@ -16,11 +29,12 @@ export function HomeDealsSection() {
               Deals
             </p>
             <h2 className="mt-1 font-display text-3xl sm:text-[2rem]">
-              Dad tax offsets
+              {liveCount > 0 ? "On sale now" : "Dad tax offsets"}
             </h2>
             <p className="mt-2 max-w-xl text-sm leading-6 text-ink-soft">
-              Buy at or under the target. Above it, wait. We only list things we
-              would buy for our own house.
+              {liveCount > 0
+                ? "Live Amazon markdowns first. Buy at or under the number."
+                : "Buy at or under the target. Above it, wait. We only list things we would buy for our own house."}
             </p>
           </div>
           <Link

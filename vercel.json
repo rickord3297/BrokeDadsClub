@@ -35,6 +35,22 @@
     {
       "path": "/api/cron/subscriber-drip?slot=cst",
       "schedule": "0 16 * * *"
+    },
+    {
+      "path": "/api/cron/refresh-deals?slot=am-cdt",
+      "schedule": "0 13 * * *"
+    },
+    {
+      "path": "/api/cron/refresh-deals?slot=am-cst",
+      "schedule": "0 14 * * *"
+    },
+    {
+      "path": "/api/cron/refresh-deals?slot=pm-cdt",
+      "schedule": "0 19 * * *"
+    },
+    {
+      "path": "/api/cron/refresh-deals?slot=pm-cst",
+      "schedule": "0 20 * * *"
     }
   ]
 }

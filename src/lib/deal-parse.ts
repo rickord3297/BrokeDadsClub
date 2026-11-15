@@ -55,6 +55,20 @@ export function parseDealItems(value: unknown, wherePrefix: string): DealItem[] 
     }
     const merchant = parseMerchant(row.merchant, where);
     const url = resolveDealUrl(row.url, merchant, where);
+    const asin =
+      isNonEmptyString(row.asin) && /^[A-Z0-9]{10}$/i.test(row.asin.trim())
+        ? row.asin.trim().toUpperCase()
+        : extractAsinFromUrl(url);
+    const price = isNonEmptyString(row.price) ? row.price.trim() : undefined;
+    const wasPrice = isNonEmptyString(row.wasPrice) ? row.wasPrice.trim() : undefined;
+    const discountRaw =
+      typeof row.discountPercent === "number"
+        ? row.discountPercent
+        : isNonEmptyString(row.discountPercent)
+          ? Number(row.discountPercent)
+          : NaN;
+    const discountPercent =
+      Number.isFinite(discountRaw) && discountRaw > 0 ? Math.round(discountRaw) : undefined;
     return [
       {
         title: row.title.trim(),
@@ -62,7 +76,24 @@ export function parseDealItems(value: unknown, wherePrefix: string): DealItem[] 
         targetPrice: targetPrice.trim(),
         note: row.note.trim(),
         url,
+        ...(asin ? { asin } : {}),
+        ...(price ? { price } : {}),
+        ...(wasPrice ? { wasPrice } : {}),
+        ...(discountPercent ? { discountPercent } : {}),
       },
     ];
   });
+}
+
+/** Pull a 10-char ASIN from common Amazon product URL shapes. */
+export function extractAsinFromUrl(rawUrl: string): string | undefined {
+  try {
+    const url = new URL(rawUrl);
+    const fromPath =
+      url.pathname.match(/\/(?:dp|gp\/product|product)\/([A-Z0-9]{10})(?:[/?]|$)/i) ??
+      url.pathname.match(/\/([A-Z0-9]{10})(?:[/?]|$)/i);
+    return fromPath?.[1]?.toUpperCase();
+  } catch {
+    return undefined;
+  }
 }
