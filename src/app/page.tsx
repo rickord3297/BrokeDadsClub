@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import groceryPdfPreview from "../../public/lead-magnets/grocery-reset-trunk-kit-preview.jpg";
 import { GatedResourceCard } from "@/components/gated-resource-card";
+import { HomeDealsSection } from "@/components/home-deals-section";
 import { HomeFinalSignup } from "@/components/home-final-signup";
 import { HomeFollowSection } from "@/components/home-follow-section";
 import { HomeGuidesSection } from "@/components/home-guides-section";
@@ -132,6 +133,8 @@ export default async function Home() {
           </div>
         </section>
       ) : null}
+
+      <HomeDealsSection />
 
       <section id="shop" className="scroll-mt-20 border-t border-rule">
         <div className="mx-auto max-w-6xl px-4 section-pad-sm sm:px-6">

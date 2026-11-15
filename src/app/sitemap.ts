@@ -5,6 +5,7 @@ import { GUIDES_PAGE_SIZE, paginateItems } from "@/lib/guide-pagination";
 import { getGuides, getGuidesForBrowse, partitionGuidesForBrowse } from "@/lib/guides";
 import type { Guide } from "@/lib/guide-model";
 import { LEAD_MAGNETS } from "@/lib/lead-magnets";
+import { getDealsBoard } from "@/lib/deals";
 import { getAllIssues, type NewsletterIssue } from "@/lib/newsletter";
 import { getProducts } from "@/lib/products";
 import { getLiveResources } from "@/lib/printables";
@@ -60,9 +61,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const browse = getGuidesForBrowse();
   const { current } = partitionGuidesForBrowse(browse);
   const issues = getAllIssues();
+  const dealsBoard = getDealsBoard();
   const products = await getProducts();
   const now = new Date();
   const latestGuide = newest(guides.map(guideModified));
+  const dealsModified = dealsBoard
+    ? new Date(`${dealsBoard.updatedAt}T12:00:00.000Z`)
+    : newest(issues.map(issueDate));
 
   const entries: Entry[] = [
     { url: absoluteUrl("/"), lastModified: latestGuide, changeFrequency: "daily", priority: 1.0 },
@@ -97,6 +102,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "yearly" as const,
       priority: 0.5,
     })),
+
+    {
+      url: absoluteUrl("/deals"),
+      lastModified: dealsModified,
+      changeFrequency: "daily",
+      priority: 0.7,
+    },
 
     { url: absoluteUrl("/resources"), lastModified: latestGuide, changeFrequency: "weekly", priority: 0.6 },
     ...getLiveResources().map((resource) => ({
