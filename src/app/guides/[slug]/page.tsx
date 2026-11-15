@@ -19,6 +19,7 @@ import { GuideStickyBar } from "@/components/guide-sticky-bar";
 import { GuideTableOfContents } from "@/components/guide-toc";
 import { GuideThePoint } from "@/components/guide-the-point";
 import { GuideViewTracker } from "@/components/guide-view-tracker";
+import { InlineEmailBar } from "@/components/inline-email-bar";
 import { ReadingProgress } from "@/components/reading-progress";
 import { ShareGuide } from "@/components/share-guide";
 import { GuideProductCta } from "@/components/guide-product-cta";
@@ -27,6 +28,10 @@ import {
   partitionGuideBody,
   splitAtMiddleHeading,
 } from "@/lib/guide-content";
+import {
+  guideShowsEarlySignup,
+  guideSignupCopy,
+} from "@/lib/guide-signup-cta";
 import { getProduct } from "@/lib/products";
 import {
   getGuide,
@@ -127,6 +132,8 @@ export default async function GuidePage({
   const headingCounts = new Map<string, number>();
   const companionPrintable = getLiveResourceForGuide(guide.slug);
   const showToc = headings.length >= 2;
+  const showEarlySignup = guideShowsEarlySignup(guide);
+  const earlySignupCopy = guideSignupCopy(guide.slug);
 
   const articleLd = {
     "@context": "https://schema.org",
@@ -207,7 +214,12 @@ export default async function GuidePage({
     <>
       <GuideViewTracker slug={guide.slug} category={guide.category} />
       <ReadingProgress slug={guide.slug} />
-      <GuideStickyBar title={guide.title} url={url} slug={guide.slug} />
+      <GuideStickyBar
+        title={guide.title}
+        url={url}
+        slug={guide.slug}
+        listCta={showEarlySignup}
+      />
 
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <JsonLd data={faqLd ? [articleLd, breadcrumbLd, faqLd] : [articleLd, breadcrumbLd]} />
@@ -263,6 +275,23 @@ export default async function GuidePage({
               <ActionBox steps={actionSteps} />
             )}
 
+            {showEarlySignup ? (
+              <InlineEmailBar
+                embedded
+                source={`guide-inline:${guide.slug}`}
+                title={earlySignupCopy?.title}
+                body={earlySignupCopy?.body}
+                submitLabel={earlySignupCopy?.button}
+              />
+            ) : null}
+
+            {companionPrintable ? (
+              <GuidePrintableEmbed
+                resource={companionPrintable}
+                placement="inline"
+              />
+            ) : null}
+
             {showToc ? (
               <GuideTableOfContents
                 headings={headings}
@@ -311,13 +340,6 @@ export default async function GuidePage({
 
             {guide.faq.length > 0 ? (
               <GuideFaqAccordion items={guide.faq} />
-            ) : null}
-
-            {companionPrintable ? (
-              <GuidePrintableEmbed
-                resource={companionPrintable}
-                placement="bottom"
-              />
             ) : null}
 
             <GuideCompanionPrintables

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ShareGuide } from "@/components/share-guide";
 
@@ -8,10 +9,13 @@ export function GuideStickyBar({
   title,
   url,
   slug,
+  listCta = false,
 }: {
   title: string;
   url: string;
   slug: string;
+  /** Jump to the early grocery-list signup when this guide shows one. */
+  listCta?: boolean;
 }) {
   const [visible, setVisible] = useState(false);
 
@@ -40,7 +44,17 @@ export function GuideStickyBar({
         <p className="min-w-0 truncate text-sm font-medium text-ink-soft">
           {title}
         </p>
-        <ShareGuide title={title} url={url} slug={slug} />
+        <div className="flex shrink-0 items-center gap-3">
+          {listCta ? (
+            <Link
+              href="#get-list"
+              className="hidden text-sm font-semibold text-pine transition hover:text-rust sm:inline"
+            >
+              Free grocery list
+            </Link>
+          ) : null}
+          <ShareGuide title={title} url={url} slug={slug} />
+        </div>
       </div>
     </div>
   );

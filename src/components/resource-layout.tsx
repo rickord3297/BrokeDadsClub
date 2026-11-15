@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GuideEmailCta } from "@/components/guide-email-cta";
+import { InlineEmailBar } from "@/components/inline-email-bar";
 import { JsonLd } from "@/components/json-ld";
 import { hasResourceSample } from "@/components/resource-sample";
 import {
@@ -65,6 +65,34 @@ export function ResourceLayout({
         required.
       </p>
 
+      <div className="print:hidden">
+        <InlineEmailBar
+          embedded
+          source={`resource-inline:${resource.slug}`}
+          title={
+            resource.slug === "grocery-week-checklist"
+              ? "Email yourself the printable + Sunday tactic"
+              : "Get the free $47 grocery list too"
+          }
+          body={
+            resource.slug === "grocery-week-checklist"
+              ? "This sheet stays free here. Leave your email for the PDF copy and one short dad tactic every Sunday."
+              : "Seven dinners for about $44 at Walmart. This sheet stays free here. The grocery list PDF comes with the Sunday email."
+          }
+          submitLabel="Get the free list"
+          successHref={
+            resource.slug === "grocery-week-checklist"
+              ? `/resources/${resource.slug}`
+              : "/resources/grocery-week-checklist"
+          }
+          successLinkLabel={
+            resource.slug === "grocery-week-checklist"
+              ? "Back to this sheet"
+              : "Open the grocery checklist"
+          }
+        />
+      </div>
+
       <ResourceSheetWorkspace
         resourceSlug={resource.slug}
         printLabel={resource.printLabel}
@@ -77,7 +105,6 @@ export function ResourceLayout({
       </ResourceSheetWorkspace>
 
       <div className="mt-12 print:hidden">
-        <GuideEmailCta source={`resource:${resource.slug}`} />
         {related.length > 0 ? (
           <div className="mt-10">
             <p className="text-xs uppercase tracking-[0.18em] text-rust">

@@ -9,12 +9,22 @@ export function InlineEmailBar({
   successHref = "/resources/grocery-week-checklist",
   successLinkLabel = "Print the grocery checklist",
   embedded = false,
+  title,
+  body,
+  submitLabel,
 }: {
   source: string;
   successHref?: string;
   successLinkLabel?: string;
   embedded?: boolean;
+  title?: string;
+  body?: string;
+  submitLabel?: string;
 }) {
+  const headline = title ?? site.weekStart.title;
+  const supporting = body ?? site.weekStart.body;
+  const button = submitLabel ?? site.weekStart.button;
+
   const content = (
     <div className={embedded ? "" : "mx-auto max-w-6xl px-4 section-pad-sm sm:px-6"}>
       <div className="mx-auto max-w-3xl">
@@ -22,16 +32,14 @@ export function InlineEmailBar({
           {site.weekStart.kicker}
         </p>
         <h2 className="mt-2 font-display text-3xl leading-snug sm:text-[2rem]">
-          {site.weekStart.title}
+          {headline}
         </h2>
-        <p className="mt-2 text-sm leading-6 text-ink-soft">
-          {site.weekStart.body}
-        </p>
+        <p className="mt-2 text-sm leading-6 text-ink-soft">{supporting}</p>
         <div className="mt-5">
           <NewsletterForm
             variant="inline"
             source={source}
-            submitLabel={site.weekStart.button}
+            submitLabel={button}
             successMessage={site.weekStart.success}
             successHref={successHref}
             successLinkLabel={successLinkLabel}
@@ -45,7 +53,8 @@ export function InlineEmailBar({
   if (embedded) {
     return (
       <aside
-        className="mt-8 rounded-2xl border border-pine/20 border-l-[3px] border-l-pine bg-pine/[0.06] px-5 py-6 sm:px-7"
+        id="get-list"
+        className="mt-8 scroll-mt-28 rounded-2xl border border-pine/20 border-l-[3px] border-l-pine bg-pine/[0.06] px-5 py-6 sm:px-7"
         aria-label="Sunday email"
       >
         {content}
