@@ -21,10 +21,11 @@ keywords:
   - target 30 thanksgiving meal for six
   - how much to spend on thanksgiving dinner
 related:
+  - the-pie-is-the-assignment
+  - the-calendar-is-two-dollars
   - four-seats-or-one-car
   - the-47-dollar-grocery-week
   - explaining-we-cant-go
-  - the-dad-tax
 takeaways:
   - About $35 for ten at Walmart, or $30 for six at Target
   - One list, because a second cart is how $35 becomes about $90
@@ -83,7 +84,7 @@ The receipt you can use in the aisle is the posted basket.
 
 > Say: "We're doing the $35 basket. That's the dinner."
 
-If someone wants to bring a dish, one dish is a gift. A second menu is a second bill.
+If someone wants to bring a dish, one dish is a gift. A second menu is a second bill. When the text says just bring dessert, one store pie is the job: [the pie is the assignment](/guides/the-pie-is-the-assignment).
 
 > To the group text: "We've got the basket. Bring one thing if you want."
 
@@ -91,7 +92,7 @@ If someone wants to bring a dish, one dish is a gift. A second menu is a second 
 
 The basket already has stuffing, potatoes, a vegetable, and, at Walmart or Aldi, a pie. The add-on aisle is a relish tray, soda, and "the kids will want something else." That pile is how a posted price turns into the forecast.
 
-Write the store on the fridge before you park. If the bird is not in yet, wait for the day the list is actually the list. Do not pre-build a cart of stand-ins and then buy the basket too.
+Write the store on the fridge before you park. If the bird is not in yet, wait for the day the list is actually the list. Do not pre-build a cart of stand-ins and then buy the basket too. A kids advent calendar on that same trip is a separate yes. The $2 box, or none, is in [the calendar is two dollars](/guides/the-calendar-is-two-dollars).
 
 Getting there is a different cut. Seats versus the car is in [four seats or one car](/guides/four-seats-or-one-car). If you are staying home, this basket is the grocery version of that same decision. A normal week still uses the pair-the-nights plan in [the $47 grocery week](/guides/the-47-dollar-grocery-week). If the visit is not happening, the short no is in [explaining we can't go](/guides/explaining-we-cant-go). The wider pattern, small adds that become a real bill, is the [dad tax](/guides/the-dad-tax).
 

@@ -18,6 +18,7 @@ keywords:
   - snack schedule youth sports
   - first practice volunteer pressure
 related:
+  - the-donut-ends-at-the-bell
   - the-lonely-dad
   - the-sports-signup-fee-you-didnt-budget-for
   - dropping-one-activity-so-the-week-can-breathe
@@ -100,7 +101,7 @@ Take team parent if:
 - You want the info early and hate being last to know
 - You and your partner agreed before the meeting
 
-Do not take it because silence felt rude for eight seconds.
+Do not take it because silence felt rude for eight seconds. A dad breakfast uses the same rule. [The donut ends at the bell](/guides/the-donut-ends-at-the-bell): eat the donut and leave when school starts. The dance tunnel is the clipboard.
 
 ## The point
 
