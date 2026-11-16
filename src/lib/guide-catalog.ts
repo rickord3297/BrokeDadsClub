@@ -108,6 +108,7 @@ const RELATED_HOOKS: Record<string, string> = {
   "the-pie-is-the-assignment": "If the group text says just bring dessert",
   "the-donut-ends-at-the-bell": "If the dad breakfast wants a dance tunnel",
   "the-list-is-one-name": "If the Black Friday ad wants a second cart",
+  "the-card-is-the-gift": "If the teacher gift wants a tumbler before break",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {

@@ -10,7 +10,7 @@ category: Time
 readTime: 6 min
 publishedAt: "2026-11-15"
 updatedAt: "2026-11-10"
-status: scheduled
+status: published
 keywords:
   - donuts with dads school event
   - do I have to stay for donuts with dads
