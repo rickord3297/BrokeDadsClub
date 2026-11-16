@@ -151,18 +151,10 @@ export function extractAsinFromUrl(rawUrl: string): string | undefined {
   }
 }
 
-/** Associates-supported product image widget (SiteStripe-compatible). */
-export function amazonAssociatesImageUrl(asin: string, size: "_SL160_" | "_SL250_" = "_SL250_"): string {
-  const tag = AFFILIATE_CONFIG.amazon.tag;
-  const params = new URLSearchParams({
-    _encoding: "UTF8",
-    ASIN: asin.toUpperCase(),
-    Format: size,
-    ID: "AsinImage",
-    MarketPlace: "US",
-    ServiceVersion: "20070822",
-    WS: "1",
-    tag,
-  });
-  return `https://ws-na.amazon-adsystem.com/widgets/q?${params.toString()}`;
+/**
+ * Local deal photo path. Amazon retired the old SiteStripe AsinImage widget
+ * host (ws-na.amazon-adsystem.com), so we ship product stills under /public/deals.
+ */
+export function amazonAssociatesImageUrl(asin: string): string {
+  return `/deals/${asin.toUpperCase()}.jpg`;
 }

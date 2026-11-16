@@ -142,20 +142,17 @@ export function DealCard({
     </a>
   );
 
-  const image =
-    deal.imageUrl && !internal ? (
-      <div className="relative mx-auto h-28 w-28 shrink-0 overflow-hidden rounded-lg border border-rule bg-paper sm:mx-0">
-        {/* Associates image widget URLs are remote; unoptimized keeps them reliable. */}
-        <Image
-          src={deal.imageUrl}
-          alt=""
-          width={160}
-          height={160}
-          unoptimized
-          className="h-full w-full object-contain p-2"
-        />
-      </div>
-    ) : null;
+  const image = deal.imageUrl ? (
+    <div className="relative mx-auto h-28 w-28 shrink-0 overflow-hidden rounded-lg border border-rule bg-paper sm:mx-0">
+      <Image
+        src={deal.imageUrl}
+        alt=""
+        width={160}
+        height={160}
+        className="h-full w-full object-contain p-2"
+      />
+    </div>
+  ) : null;
 
   if (variant === "compact") {
     return (

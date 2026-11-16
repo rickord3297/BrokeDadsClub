@@ -93,6 +93,7 @@ deals:
     section: house
     sectionLabel: From the club
     lastChecked: "2026-11-15"
+    imageUrl: /lead-magnets/grocery-reset-trunk-kit-preview.jpg
     note: Seven dinners, 14 Walmart items, every item covers two nights.
     whyThis: >-
       Our own printable. No Amazon cut. Sign up, get the PDF, keep the Sunday
