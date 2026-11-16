@@ -99,11 +99,6 @@ export function parseDealItems(value: unknown, wherePrefix: string): DealItem[] 
       Number.isFinite(discountRaw) && discountRaw > 0 ? Math.round(discountRaw) : undefined;
     const math = isNonEmptyString(row.math) ? row.math.trim() : undefined;
     const whyThis = isNonEmptyString(row.whyThis) ? row.whyThis.trim() : undefined;
-    const imageUrl = isNonEmptyString(row.imageUrl)
-      ? row.imageUrl.trim()
-      : asin && merchant === "amazon"
-        ? amazonAssociatesImageUrl(asin)
-        : undefined;
     const lastChecked = parseOptionalDate(row.lastChecked);
     const section = parseSection(row.section);
     const sectionLabel = isNonEmptyString(row.sectionLabel)
@@ -130,7 +125,6 @@ export function parseDealItems(value: unknown, wherePrefix: string): DealItem[] 
         ...(discountPercent ? { discountPercent } : {}),
         ...(math ? { math } : {}),
         ...(whyThis ? { whyThis } : {}),
-        ...(imageUrl ? { imageUrl } : {}),
         ...(lastChecked ? { lastChecked } : {}),
         ...(sectionLabel ? { sectionLabel } : {}),
       },
@@ -149,12 +143,4 @@ export function extractAsinFromUrl(rawUrl: string): string | undefined {
   } catch {
     return undefined;
   }
-}
-
-/**
- * Local deal photo path. Amazon retired the old SiteStripe AsinImage widget
- * host (ws-na.amazon-adsystem.com), so we ship product stills under /public/deals.
- */
-export function amazonAssociatesImageUrl(asin: string): string {
-  return `/deals/${asin.toUpperCase()}.jpg`;
 }

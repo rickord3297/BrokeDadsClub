@@ -28,8 +28,6 @@ export interface DealItem {
   math?: string;
   /** Why this exact SKU, not a search page. */
   whyThis?: string;
-  /** Product image URL (Associates image widget or first-party photo). */
-  imageUrl?: string;
   /** ISO date this pick was last manually checked. */
   lastChecked?: string;
   /** Optional section eyebrow override, e.g. "This week: Thanksgiving". */

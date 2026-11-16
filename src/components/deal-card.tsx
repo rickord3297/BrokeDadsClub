@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { AFFILIATE_CONFIG, type ApprovedMerchant } from "@/lib/affiliate";
 import { trackDealClick } from "@/lib/analytics";
@@ -142,18 +141,6 @@ export function DealCard({
     </a>
   );
 
-  const image = deal.imageUrl ? (
-    <div className="relative mx-auto h-28 w-28 shrink-0 overflow-hidden rounded-lg border border-rule bg-paper sm:mx-0">
-      <Image
-        src={deal.imageUrl}
-        alt=""
-        width={160}
-        height={160}
-        className="h-full w-full object-contain p-2"
-      />
-    </div>
-  ) : null;
-
   if (variant === "compact") {
     return (
       <article className="flex h-full flex-col rounded-xl border border-rule bg-paper p-4">
@@ -166,7 +153,6 @@ export function DealCard({
             </span>
           </p>
         </div>
-        {image ? <div className="mt-3">{image}</div> : null}
         <h4 className="mt-2 font-semibold leading-snug text-ink">{deal.title}</h4>
         <DiscountBadge deal={deal} />
         {deal.math ? (
@@ -184,38 +170,35 @@ export function DealCard({
 
   return (
     <article className="flex flex-col gap-4 rounded-xl border border-rule bg-paper p-4 sm:flex-row sm:items-start sm:justify-between sm:p-5">
-      <div className="flex min-w-0 flex-1 flex-col gap-4 sm:flex-row sm:items-start">
-        {image}
-        <div className="min-w-0 flex-1">
-          <MerchantBadge merchant={deal.merchant} />
-          <h3 className="mt-3 font-display text-xl leading-snug text-ink">
-            {deal.title}
-          </h3>
-          <DiscountBadge deal={deal} />
-          <p className="mt-1 text-sm font-semibold text-pine">
-            {onSale
-              ? `Now: ${formatTargetPrice(deal.price ?? deal.targetPrice)}`
-              : `Target price: ${formatTargetPrice(deal.targetPrice)}`}
+      <div className="min-w-0 flex-1">
+        <MerchantBadge merchant={deal.merchant} />
+        <h3 className="mt-3 font-display text-xl leading-snug text-ink">
+          {deal.title}
+        </h3>
+        <DiscountBadge deal={deal} />
+        <p className="mt-1 text-sm font-semibold text-pine">
+          {onSale
+            ? `Now: ${formatTargetPrice(deal.price ?? deal.targetPrice)}`
+            : `Target price: ${formatTargetPrice(deal.targetPrice)}`}
+        </p>
+        {deal.math ? (
+          <p className="mt-2 text-sm font-medium leading-6 text-pine">{deal.math}</p>
+        ) : null}
+        {deal.note ? (
+          <p className="mt-2 text-sm leading-6 text-ink-soft">{deal.note}</p>
+        ) : null}
+        {deal.whyThis ? (
+          <p className="mt-2 text-sm leading-6 text-ink-soft">
+            <span className="font-semibold text-ink">Why this one: </span>
+            {deal.whyThis}
           </p>
-          {deal.math ? (
-            <p className="mt-2 text-sm font-medium leading-6 text-pine">{deal.math}</p>
-          ) : null}
-          {deal.note ? (
-            <p className="mt-2 text-sm leading-6 text-ink-soft">{deal.note}</p>
-          ) : null}
-          {deal.whyThis ? (
-            <p className="mt-2 text-sm leading-6 text-ink-soft">
-              <span className="font-semibold text-ink">Why this one: </span>
-              {deal.whyThis}
-            </p>
-          ) : null}
-          {deal.lastChecked ? (
-            <p className="mt-2 text-xs text-ink-soft">
-              Last checked {formatDate(deal.lastChecked)}
-            </p>
-          ) : null}
-          {disclosureLine}
-        </div>
+        ) : null}
+        {deal.lastChecked ? (
+          <p className="mt-2 text-xs text-ink-soft">
+            Last checked {formatDate(deal.lastChecked)}
+          </p>
+        ) : null}
+        {disclosureLine}
       </div>
       <div className="shrink-0 sm:pt-8">
         {cta}
