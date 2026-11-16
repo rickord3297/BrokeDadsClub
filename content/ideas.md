@@ -65,8 +65,9 @@
 | The basket is the dinner | live | 2026-11-06 | trend 2026-10-31: Walmart $35 basket for 10, Aldi under $39, Target $30 for six: [`the-basket-is-the-dinner.md`](guides/the-basket-is-the-dinner.md) |
 | The calendar is two dollars | live | 2026-11-09 | trend 2026-11-04: Aldi kids chocolate advent calendar $1.99, LEGO one $34.99: [`the-calendar-is-two-dollars.md`](guides/the-calendar-is-two-dollars.md) |
 | The pie is the assignment | live | 2026-11-12 | trend 2026-11-07: Costco pumpkin pie $5.99, Walmart 22 oz pie $4.94, one guest pie: [`the-pie-is-the-assignment.md`](guides/the-pie-is-the-assignment.md) |
-| The donut ends at the bell | scheduled | 2026-11-15 | trend 2026-11-10: Donuts with Dads and Dudes at the Door, leave when the bell rings: [`the-donut-ends-at-the-bell.md`](guides/the-donut-ends-at-the-bell.md) |
+| The donut ends at the bell | live | 2026-11-15 | trend 2026-11-10: Donuts with Dads and Dudes at the Door, leave when the bell rings: [`the-donut-ends-at-the-bell.md`](guides/the-donut-ends-at-the-bell.md) |
 | The list is one name | scheduled | 2026-11-18 | trend 2026-11-13: Walmart three events Nov 12-Dec 2, $5 game vs $128 TV: [`the-list-is-one-name.md`](guides/the-list-is-one-name.md) |
+| The card is the gift | scheduled | 2026-11-21 | trend 2026-11-16: USA Today teacher gifts $15 to $30, DoorDash from $5, one card before break: [`the-card-is-the-gift.md`](guides/the-card-is-the-gift.md) |
 
 ### Status
 
