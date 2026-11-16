@@ -8,7 +8,11 @@ import {
   isAsin,
   type ApprovedMerchant,
 } from "@/lib/affiliate";
-import type { DealItem } from "@/lib/newsletter-model";
+import {
+  DEAL_SECTIONS,
+  type DealItem,
+  type DealSection,
+} from "@/lib/newsletter-model";
 
 function isNonEmptyString(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0;
@@ -27,10 +31,34 @@ function parseMerchant(value: unknown, where: string): ApprovedMerchant {
 
 function resolveDealUrl(raw: string, merchant: ApprovedMerchant, where: string): string {
   try {
+    if (merchant === "house") {
+      const path = raw.trim().startsWith("/")
+        ? `https://brokedadsclub.com${raw.trim()}`
+        : raw.trim();
+      return buildAffiliateUrl(path, merchant);
+    }
     return merchant === "amazon" && isAsin(raw) ? amazonUrl(raw) : buildAffiliateUrl(raw, merchant);
   } catch (error) {
     throw new AffiliateLinkError(`${where}: ${(error as Error).message}`);
   }
+}
+
+function parseSection(value: unknown): DealSection {
+  if (typeof value === "string") {
+    const match = DEAL_SECTIONS.find((section) => section === value.trim().toLowerCase());
+    if (match) return match;
+  }
+  return "always";
+}
+
+function parseOptionalDate(value: unknown): string | undefined {
+  if (value instanceof Date && !Number.isNaN(value.getTime())) {
+    return value.toISOString().slice(0, 10);
+  }
+  if (isNonEmptyString(value) && /^\d{4}-\d{2}-\d{2}$/.test(value.trim())) {
+    return value.trim();
+  }
+  return undefined;
 }
 
 /**
@@ -69,6 +97,25 @@ export function parseDealItems(value: unknown, wherePrefix: string): DealItem[] 
           : NaN;
     const discountPercent =
       Number.isFinite(discountRaw) && discountRaw > 0 ? Math.round(discountRaw) : undefined;
+    const math = isNonEmptyString(row.math) ? row.math.trim() : undefined;
+    const whyThis = isNonEmptyString(row.whyThis) ? row.whyThis.trim() : undefined;
+    const imageUrl = isNonEmptyString(row.imageUrl)
+      ? row.imageUrl.trim()
+      : asin && merchant === "amazon"
+        ? amazonAssociatesImageUrl(asin)
+        : undefined;
+    const lastChecked = parseOptionalDate(row.lastChecked);
+    const section = parseSection(row.section);
+    const sectionLabel = isNonEmptyString(row.sectionLabel)
+      ? row.sectionLabel.trim()
+      : undefined;
+
+    if (merchant === "amazon" && !asin) {
+      console.error(
+        `${where}: Amazon deal "${row.title}" should use a product ASIN/dp URL, not a search page.`,
+      );
+    }
+
     return [
       {
         title: row.title.trim(),
@@ -76,10 +123,16 @@ export function parseDealItems(value: unknown, wherePrefix: string): DealItem[] 
         targetPrice: targetPrice.trim(),
         note: row.note.trim(),
         url,
+        section,
         ...(asin ? { asin } : {}),
         ...(price ? { price } : {}),
         ...(wasPrice ? { wasPrice } : {}),
         ...(discountPercent ? { discountPercent } : {}),
+        ...(math ? { math } : {}),
+        ...(whyThis ? { whyThis } : {}),
+        ...(imageUrl ? { imageUrl } : {}),
+        ...(lastChecked ? { lastChecked } : {}),
+        ...(sectionLabel ? { sectionLabel } : {}),
       },
     ];
   });
@@ -89,11 +142,27 @@ export function parseDealItems(value: unknown, wherePrefix: string): DealItem[] 
 export function extractAsinFromUrl(rawUrl: string): string | undefined {
   try {
     const url = new URL(rawUrl);
-    const fromPath =
-      url.pathname.match(/\/(?:dp|gp\/product|product)\/([A-Z0-9]{10})(?:[/?]|$)/i) ??
-      url.pathname.match(/\/([A-Z0-9]{10})(?:[/?]|$)/i);
+    const fromPath = url.pathname.match(
+      /\/(?:dp|gp\/product|product)\/([A-Z0-9]{10})(?:[/?]|$)/i,
+    );
     return fromPath?.[1]?.toUpperCase();
   } catch {
     return undefined;
   }
+}
+
+/** Associates-supported product image widget (SiteStripe-compatible). */
+export function amazonAssociatesImageUrl(asin: string, size: "_SL160_" | "_SL250_" = "_SL250_"): string {
+  const tag = AFFILIATE_CONFIG.amazon.tag;
+  const params = new URLSearchParams({
+    _encoding: "UTF8",
+    ASIN: asin.toUpperCase(),
+    Format: size,
+    ID: "AsinImage",
+    MarketPlace: "US",
+    ServiceVersion: "20070822",
+    WS: "1",
+    tag,
+  });
+  return `https://ws-na.amazon-adsystem.com/widgets/q?${params.toString()}`;
 }

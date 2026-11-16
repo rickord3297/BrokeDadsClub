@@ -30,6 +30,17 @@ export const AFFILIATE_CONFIG = {
     disclosure: "As an Amazon Associate I earn from qualifying purchases.",
     enabled: true,
   },
+  /** First-party printables/shop cards on /deals. Not an affiliate network. */
+  house: {
+    id: "house",
+    name: "Broke Dads Club",
+    tag: "",
+    tagParam: "ref",
+    domains: ["brokedadsclub.com", "www.brokedadsclub.com", "localhost"],
+    shortLinkDomains: [],
+    disclosure: "",
+    enabled: true,
+  },
   // Future networks can be toggled on here (e.g. Home Depot, Target):
   // homedepot: { id: "homedepot", name: "The Home Depot", tag: "...", tagParam: "...", domains: ["homedepot.com"], shortLinkDomains: [], disclosure: "...", enabled: false },
 } as const satisfies Record<string, MerchantConfig>;
@@ -116,7 +127,10 @@ export function buildAffiliateUrl(rawUrl: string, merchant: ApprovedMerchant): s
   }
 
   url.protocol = "https:";
-  if (!hostMatches(url.hostname, config.shortLinkDomains)) {
+  if (
+    config.tag &&
+    !hostMatches(url.hostname, config.shortLinkDomains)
+  ) {
     url.searchParams.set(config.tagParam, config.tag);
   }
   return url.toString();

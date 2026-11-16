@@ -13,17 +13,17 @@ import {
   dealDisclosures,
   dealHasDiscount,
   formatIssueNumber,
+  type DealItem,
 } from "@/lib/newsletter-model";
 import { getScannedDeals } from "@/lib/scanned-deals";
 import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
-import { site } from "@/lib/site";
 
 export const revalidate = 1800;
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Dad Tax Deals",
   description:
-    "Live Amazon markdowns and curated dad tax offsets. We surface real discounts when we can, then target-price watches for the rest.",
+    "Specific product picks with target prices, the money math, and a free club printable. Buy at or under the number.",
   path: "/deals",
   keywords: [
     "dad tax deals",
@@ -34,6 +34,19 @@ export const metadata: Metadata = buildPageMetadata({
   ],
 });
 
+function DealList({ deals, keyPrefix }: { deals: DealItem[]; keyPrefix: string }) {
+  if (deals.length === 0) return null;
+  return (
+    <ul className="mt-6 grid gap-4">
+      {deals.map((deal) => (
+        <li key={`${keyPrefix}-${deal.asin ?? deal.title}-${deal.url}`}>
+          <DealCard deal={deal} variant="row" />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default async function DealsPage() {
   const [scannedDeals, board, dispatch] = await Promise.all([
     getScannedDeals(18),
@@ -42,8 +55,15 @@ export default async function DealsPage() {
   ]);
 
   const boardDeals = board?.deals ?? [];
+  const seasonal = boardDeals.filter((deal) => deal.section === "seasonal");
+  const always = boardDeals.filter(
+    (deal) => deal.section === "always" || deal.section == null,
+  );
+  const house = boardDeals.filter((deal) => deal.section === "house");
   const onSaleBoard = boardDeals.filter(dealHasDiscount);
-  const watchBoard = boardDeals.filter((deal) => !dealHasDiscount(deal));
+  const liveOnSale = [...scannedDeals, ...onSaleBoard];
+  const hasLivePrices = scannedDeals.length > 0 || onSaleBoard.length > 0;
+
   const scannedAsins = new Set(
     scannedDeals.map((deal) => deal.asin).filter(Boolean) as string[],
   );
@@ -66,21 +86,25 @@ export default async function DealsPage() {
     ...(dispatchOnly?.deals ?? []),
   ]);
   const scanReady = isAmazonCreatorsConfigured();
+  const seasonalLabel =
+    seasonal.find((deal) => deal.sectionLabel)?.sectionLabel ??
+    "This week · seasonal";
+  const alwaysLabel =
+    always.find((deal) => deal.sectionLabel)?.sectionLabel ??
+    "Always worth having";
 
   const itemListLd =
-    scannedDeals.length + onSaleBoard.length > 0
+    boardDeals.length > 0
       ? {
           "@context": "https://schema.org",
           "@type": "ItemList",
-          name: "Dad tax deals on sale",
-          itemListElement: [...scannedDeals, ...onSaleBoard]
-            .slice(0, 20)
-            .map((deal, index) => ({
-              "@type": "ListItem",
-              position: index + 1,
-              name: deal.title,
-              url: absoluteUrl("/deals"),
-            })),
+          name: board?.title ?? "Dad tax deals",
+          itemListElement: boardDeals.slice(0, 20).map((deal, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: deal.title,
+            url: deal.url.startsWith("http") ? deal.url : absoluteUrl(deal.url),
+          })),
         }
       : null;
 
@@ -93,65 +117,81 @@ export default async function DealsPage() {
         {board?.title ?? "Dad tax offsets"}
       </h1>
       <p className="mt-4 text-lg leading-8 text-ink-soft">
-        We scan Amazon for real markdowns on dad-household gear, then keep a
-        short watchlist with target prices. Buy at or under the number. Above
-        it, wait.
+        One product per card, linked straight to the listing. Target prices are
+        what we would pay. Above the number, wait.
       </p>
       {board?.updatedAt ? (
         <p className="mt-3 text-sm text-ink-soft">
           Watchlist updated {formatDate(board.updatedAt)}
-          {scannedDeals[0] ? " · Live scan refreshes twice a day" : ""}
+          {hasLivePrices ? " · Live scan refreshes twice a day" : ""}
         </p>
       ) : null}
 
-      <section aria-labelledby="on-sale-now" className="mt-12">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-pine">
-          Live scan
-        </p>
-        <h2 id="on-sale-now" className="mt-2 font-display text-3xl">
-          On sale now
-        </h2>
-        <p className="mt-2 text-sm leading-6 text-ink-soft">
-          Items Amazon is already marking down (list/was price vs buy box).
-          Sorted by percent off.
-        </p>
-
-        {scannedDeals.length > 0 || onSaleBoard.length > 0 ? (
-          <ul className="mt-6 grid gap-4">
-            {[...scannedDeals, ...onSaleBoard].map((deal) => (
-              <li key={`sale-${deal.asin ?? deal.title}-${deal.url}`}>
-                <DealCard deal={deal} variant="row" />
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="mt-6 rounded-2xl border border-rule bg-paper-2/60 px-5 py-6 text-sm leading-6 text-ink-soft">
-            {scanReady
-              ? "No live markdowns in the latest scan. The next run is at 8 a.m. or 2 p.m. Central."
-              : "Live discount scanning needs Amazon Creators API credentials in Vercel (and 10 Associates sales in the last 30 days). Until then, use the watchlist below."}
+      {hasLivePrices ? (
+        <section aria-labelledby="on-sale-now" className="mt-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-pine">
+            Live scan
           </p>
-        )}
-      </section>
+          <h2 id="on-sale-now" className="mt-2 font-display text-3xl">
+            On sale now
+          </h2>
+          <p className="mt-2 text-sm leading-6 text-ink-soft">
+            Items Amazon is already marking down. Sorted by percent off.
+          </p>
+          <DealList deals={liveOnSale} keyPrefix="sale" />
+        </section>
+      ) : scanReady ? (
+        <p className="mt-10 rounded-2xl border border-rule bg-paper-2/60 px-5 py-6 text-sm leading-6 text-ink-soft">
+          No live markdowns in the latest scan. Next run is 8 a.m. or 2 p.m.
+          Central. The watchlist below still stands.
+        </p>
+      ) : null}
 
-      {watchBoard.length > 0 ? (
-        <section aria-labelledby="watchlist" className="mt-14">
+      {seasonal.length > 0 ? (
+        <section aria-labelledby="seasonal-deals" className="mt-14">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-rust">
-            Watchlist
+            Seasonal
           </p>
-          <h2 id="watchlist" className="mt-2 font-display text-3xl">
-            Worth buying at the target
+          <h2 id="seasonal-deals" className="mt-2 font-display text-3xl">
+            {seasonalLabel}
+          </h2>
+          <p className="mt-2 text-sm leading-6 text-ink-soft">
+            Time-boxed picks. After the holiday, ignore these and keep the
+            always list.
+          </p>
+          <DealList deals={seasonal} keyPrefix="seasonal" />
+        </section>
+      ) : null}
+
+      {always.length > 0 ? (
+        <section aria-labelledby="always-deals" className="mt-14">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-pine">
+            Year-round
+          </p>
+          <h2 id="always-deals" className="mt-2 font-display text-3xl">
+            {alwaysLabel}
           </h2>
           <p className="mt-2 text-sm leading-6 text-ink-soft">
             {board?.intro ??
-              "No live strikethrough yet. Buy only at or under the target."}
+              "Buy at or under the target. These stay useful after the holiday cart clears."}
           </p>
-          <ul className="mt-6 grid gap-4">
-            {watchBoard.map((deal) => (
-              <li key={`watch-${deal.title}-${deal.url}`}>
-                <DealCard deal={deal} variant="row" />
-              </li>
-            ))}
-          </ul>
+          <DealList deals={always} keyPrefix="always" />
+        </section>
+      ) : null}
+
+      {house.length > 0 ? (
+        <section aria-labelledby="house-deals" className="mt-14">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-rust">
+            From the club
+          </p>
+          <h2 id="house-deals" className="mt-2 font-display text-3xl">
+            Free from us
+          </h2>
+          <p className="mt-2 text-sm leading-6 text-ink-soft">
+            No affiliate cut. Our printables and grocery list keep more of the
+            value in your kitchen.
+          </p>
+          <DealList deals={house} keyPrefix="house" />
         </section>
       ) : null}
 
@@ -173,38 +213,34 @@ export default async function DealsPage() {
               Read the issue →
             </Link>
           </p>
-          <ul className="mt-6 grid gap-4">
-            {dispatchOnly.deals.map((deal) => (
-              <li key={`dispatch-${deal.title}-${deal.url}`}>
-                <DealCard deal={deal} variant="row" />
-              </li>
-            ))}
-          </ul>
+          <DealList deals={dispatchOnly.deals} keyPrefix="dispatch" />
         </section>
-      ) : null}
-
-      {disclosures.length > 0 ? (
-        <p className="mt-10 text-xs leading-5 text-ink-soft">
-          Live prices are a snapshot from Amazon&apos;s catalog API and can
-          change before you check out. {disclosures.join(" ")} See our{" "}
-          <Link
-            href="/terms#affiliate-disclosure"
-            className="underline hover:text-rust"
-          >
-            affiliate disclosure
-          </Link>
-          .
-        </p>
       ) : null}
 
       <div className="mt-12">
         <InlineEmailBar
           embedded
-          source="deals_page"
-          title="Get deals in the Sunday email"
-          body={site.weekStart.body}
+          source="deals_watchlist_alerts"
+          title="Email me when these drop below target"
+          body="Join the Sunday list. When a watchlist item hits the target, we call it out in the Dispatch and link back here. Same list also brings the free grocery checklist."
+          submitLabel="Watch the list"
         />
       </div>
+
+      <p className="mt-10 text-xs leading-5 text-ink-soft">
+        {hasLivePrices
+          ? "Live prices are a snapshot from Amazon's catalog API and can change before you check out."
+          : "Target prices are our guidance. Check Amazon for the current price."}{" "}
+        {disclosures.length > 0 ? `${disclosures.join(" ")} ` : null}
+        See our{" "}
+        <Link
+          href="/terms#affiliate-disclosure"
+          className="underline hover:text-rust"
+        >
+          affiliate disclosure
+        </Link>
+        .
+      </p>
     </div>
   );
 }

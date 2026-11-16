@@ -2,6 +2,9 @@
 
 import { merchantDisclosures, merchantName, type ApprovedMerchant } from "@/lib/affiliate";
 
+export const DEAL_SECTIONS = ["seasonal", "always", "house"] as const;
+export type DealSection = (typeof DEAL_SECTIONS)[number];
+
 export interface DealItem {
   title: string;
   /** Enabled merchant id from AFFILIATE_CONFIG. */
@@ -19,6 +22,18 @@ export interface DealItem {
   wasPrice?: string;
   /** Percent off vs wasPrice when known. */
   discountPercent?: number;
+  /** seasonal | always | house. Defaults to always. */
+  section?: DealSection;
+  /** Short money line: "Pays for itself after 2 gas-station runs." */
+  math?: string;
+  /** Why this exact SKU, not a search page. */
+  whyThis?: string;
+  /** Product image URL (Associates image widget or first-party photo). */
+  imageUrl?: string;
+  /** ISO date this pick was last manually checked. */
+  lastChecked?: string;
+  /** Optional section eyebrow override, e.g. "This week: Thanksgiving". */
+  sectionLabel?: string;
 }
 
 export const WHAT_YOU_MISSED_TYPES = ["guide", "printable", "shop"] as const;
@@ -70,7 +85,9 @@ export function dealMerchantLabel(deal: Pick<DealItem, "merchant">): string {
 
 /** Required affiliate disclosures for the merchants in a deal list. */
 export function dealDisclosures(deals: Pick<DealItem, "merchant">[]): string[] {
-  return merchantDisclosures(deals.map((deal) => deal.merchant));
+  return merchantDisclosures(
+    deals.map((deal) => deal.merchant).filter((merchant) => merchant !== "house"),
+  ).filter(Boolean);
 }
 
 /** Bare numbers like "24.99" get a dollar sign; anything else is shown as written. */

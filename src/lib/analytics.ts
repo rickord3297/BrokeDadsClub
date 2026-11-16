@@ -79,3 +79,17 @@ export function trackCheckoutStart(itemCount: number, subtotalCents: number) {
 export function trackStartHereClick(target: string) {
   send("start_here_click", { target });
 }
+
+export function trackDealClick(input: {
+  title: string;
+  merchant: string;
+  section?: string;
+  asin?: string;
+}) {
+  send("deal_click", {
+    title: input.title,
+    merchant: input.merchant,
+    section: input.section ?? "always",
+    asin: input.asin ?? "",
+  });
+}
