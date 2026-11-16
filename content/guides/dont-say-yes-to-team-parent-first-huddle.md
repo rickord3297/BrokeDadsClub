@@ -9,7 +9,7 @@ excerpt: >-
 category: Time
 readTime: 6 min
 publishedAt: "2026-09-28"
-updatedAt: "2026-09-28"
+updatedAt: "2026-11-16"
 status: published
 keywords:
   - team parent volunteer
@@ -18,11 +18,11 @@ keywords:
   - snack schedule youth sports
   - first practice volunteer pressure
 related:
+  - the-donut-ends-at-the-bell
   - the-lonely-dad
-  - the-sports-signup-fee-you-didnt-budget-for
   - dropping-one-activity-so-the-week-can-breathe
   - tagging-along-without-becoming-furniture
-  - the-dad-tax
+  - the-sports-signup-fee-you-didnt-budget-for
 takeaways:
   - One concrete help beats a vague yes to everything
   - The clipboard is a season job, not a friendly favor
@@ -100,7 +100,7 @@ Take team parent if:
 - You want the info early and hate being last to know
 - You and your partner agreed before the meeting
 
-Do not take it because silence felt rude for eight seconds.
+Do not take it because silence felt rude for eight seconds. A dad breakfast uses the same rule. [The donut ends at the bell](/guides/the-donut-ends-at-the-bell): eat the donut and leave when school starts. The dance tunnel is the clipboard.
 
 ## The point
 
