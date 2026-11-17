@@ -21,6 +21,7 @@ keywords:
   - store bought food for class parties
   - nut free drinks for a class party
 related:
+  - the-donut-ends-at-the-bell
   - the-lonely-dad
   - one-halloween-costume-not-three-events
   - dont-say-yes-to-team-parent-first-huddle
@@ -74,6 +75,8 @@ Spider crackers and ghost pretzels photograph well. The kids eat the pretzels. S
 The costume decision is a different bill. If you already picked one outfit for school, trunk-or-treat, and the 31st, this signup does not get to invent another look. That plan lives in [one Halloween costume, not three events](/guides/one-halloween-costume-not-three-events).
 
 Same muscle as [not saying yes to team parent in the first huddle](/guides/dont-say-yes-to-team-parent-first-huddle). A team clipboard is a season. This is one party. The sentence is shorter, and it still works.
+
+A Friday dad breakfast is the same shape. Eat the donut and leave when the bell rings. The longer version is in [the donut ends at the bell](/guides/the-donut-ends-at-the-bell).
 
 > Truth: Plain food that shows up beats a cute tray you resent.
 

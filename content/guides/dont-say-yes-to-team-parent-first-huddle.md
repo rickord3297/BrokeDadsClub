@@ -18,6 +18,7 @@ keywords:
   - snack schedule youth sports
   - first practice volunteer pressure
 related:
+  - the-donut-ends-at-the-bell
   - the-lonely-dad
   - the-sports-signup-fee-you-didnt-budget-for
   - dropping-one-activity-so-the-week-can-breathe
@@ -81,6 +82,8 @@ Same energy as [tagging along without becoming furniture](/guides/tagging-along-
 > Say: "I can take October 12 snack. I cannot run the calendar."
 
 > Or: "Not team parent this season. Put me down for one volunteer shift."
+
+A school dad breakfast is the same yes. Eat the donut and leave when the bell rings. Thursday bag setup is a different job. That line is in [the donut ends at the bell](/guides/the-donut-ends-at-the-bell).
 
 ## Protect your partner too
 

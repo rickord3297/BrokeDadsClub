@@ -21,10 +21,11 @@ keywords:
   - what to say at the school book fair
   - coinless book fair change
 related:
+  - the-list-is-one-name
+  - the-card-is-the-gift
   - the-47-dollar-grocery-week
   - talking-to-kids-about-money
   - school-supply-list
-  - the-class-party-signup-is-one-job
   - the-dad-tax
 takeaways:
   - Send one number, about $20 to $25, and books come before erasers
