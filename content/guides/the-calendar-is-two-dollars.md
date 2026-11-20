@@ -21,6 +21,7 @@ keywords:
   - advent calendar on a budget for kids
   - when to start opening an advent calendar
 related:
+  - the-list-is-one-name
   - the-47-dollar-grocery-week
   - the-basket-is-the-dinner
   - the-book-fair-is-one-number
@@ -95,7 +96,7 @@ That month is how "we might as well get the good one" starts. The good one is a 
 
 > Remember: A calendar bought in November lives in a closet until December.
 
-If the LEGO box is what your kid asked for as a present, it can be the present. It does not also get to be the daily chocolate. One job.
+If the LEGO box is what your kid asked for as a present, it can be the present. It does not also get to be the daily chocolate. One job. A toy on the sale list is a different decision: one name, then close the ad. That plan is in [the list is one name](/guides/the-list-is-one-name).
 
 > To your kid: "One chocolate box. Doors start in December."
 

@@ -33,6 +33,7 @@ keywords:
   - cost of raising kids
   - budgeting with kids
 related:
+  - the-card-is-the-gift
   - the-47-dollar-grocery-week
   - birthday-party-math
   - car-vs-daycare
