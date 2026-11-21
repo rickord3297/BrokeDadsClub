@@ -9,7 +9,7 @@ excerpt: >-
 category: Money
 readTime: 6 min
 publishedAt: "2026-11-18"
-updatedAt: "2026-11-13"
+updatedAt: "2026-11-21"
 status: published
 priceYear: 2026
 priceRefreshBy: "2027-10-01"
@@ -21,11 +21,11 @@ keywords:
   - how much to spend on one christmas toy
   - yahtzee candy land black friday price
 related:
+  - the-card-is-the-gift
   - the-calendar-is-two-dollars
   - the-book-fair-is-one-number
   - the-dad-tax
   - talking-to-kids-about-money
-  - the-porch-bowl-is-one-bag
 takeaways:
   - A $5 game is the gift. A $128 TV is a second cart
   - Three sale dates still get one name
@@ -88,6 +88,8 @@ If the name is already in a bag from November 12-15, you are done. Do not tour N
 > Truth: A second event is a second cart.
 
 That small yes is the [dad tax](/guides/the-dad-tax). A $5 game is the plan. "While I'm here" is the bill.
+
+A teacher thank-you is not a second name on this list. The card your kid writes before break is the gift. That plan is in [the card is the gift](/guides/the-card-is-the-gift).
 
 ## Do not join a club for a board game
 
