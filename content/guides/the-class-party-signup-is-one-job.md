@@ -21,6 +21,7 @@ keywords:
   - store bought food for class parties
   - nut free drinks for a class party
 related:
+  - the-donut-ends-at-the-bell
   - the-lonely-dad
   - one-halloween-costume-not-three-events
   - dont-say-yes-to-team-parent-first-huddle
@@ -96,6 +97,8 @@ They may want you in the room. That is a fair want. It is not the same as a debt
 > To your kid: "I'm sending the drinks. I have to work. Tell me one funny thing after."
 
 If you are staying, say that too, and do not also promise the fancy snack on the way in. One job.
+
+A morning donut is the same job. Eat it, then leave when the bell rings. That plan is in [the donut ends at the bell](/guides/the-donut-ends-at-the-bell).
 
 > Remember: Missing the party is not missing your kid.
 
