@@ -67,8 +67,9 @@
 | The pie is the assignment | live | 2026-11-12 | trend 2026-11-07: Costco pumpkin pie $5.99, Walmart 22 oz pie $4.94, one guest pie: [`the-pie-is-the-assignment.md`](guides/the-pie-is-the-assignment.md) |
 | The donut ends at the bell | live | 2026-11-15 | trend 2026-11-10: Donuts with Dads and Dudes at the Door, leave when the bell rings: [`the-donut-ends-at-the-bell.md`](guides/the-donut-ends-at-the-bell.md) |
 | The list is one name | live | 2026-11-18 | trend 2026-11-13: Walmart three events Nov 12-Dec 2, $5 game vs $128 TV: [`the-list-is-one-name.md`](guides/the-list-is-one-name.md) |
-| The card is the gift | scheduled | 2026-11-21 | trend 2026-11-16: USA Today teacher gifts $15 to $30, DoorDash from $5, one card before break: [`the-card-is-the-gift.md`](guides/the-card-is-the-gift.md) |
+| The card is the gift | live | 2026-11-21 | trend 2026-11-16: USA Today teacher gifts $15 to $30, DoorDash from $5, one card before break: [`the-card-is-the-gift.md`](guides/the-card-is-the-gift.md) |
 | The car leaves before noon | scheduled | 2026-11-24 | trend 2026-11-19: AAA Nov 16, INRIX Tuesday before 1 p.m. and Wednesday before noon: [`the-car-leaves-before-noon.md`](guides/the-car-leaves-before-noon.md) |
+| The tree is one price | scheduled | 2026-11-27 | trend 2026-11-22: Home Depot $49.98 pre-lit ended Nov 25, one height and one price: [`the-tree-is-one-price.md`](guides/the-tree-is-one-price.md) |
 
 ### Status
 
