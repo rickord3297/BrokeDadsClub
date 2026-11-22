@@ -110,6 +110,7 @@ const RELATED_HOOKS: Record<string, string> = {
   "the-list-is-one-name": "If the Black Friday ad wants a second cart",
   "the-card-is-the-gift": "If the teacher gift wants a tumbler before break",
   "the-car-leaves-before-noon": "If the Thanksgiving drive wants a 3 p.m. start",
+  "the-tree-is-one-price": "If the lot wants a taller tree than the stand",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {

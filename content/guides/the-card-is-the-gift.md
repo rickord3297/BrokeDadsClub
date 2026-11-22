@@ -10,7 +10,7 @@ category: Money
 readTime: 6 min
 publishedAt: "2026-11-21"
 updatedAt: "2026-11-16"
-status: scheduled
+status: published
 priceYear: 2026
 priceRefreshBy: "2027-01-15"
 keywords:
