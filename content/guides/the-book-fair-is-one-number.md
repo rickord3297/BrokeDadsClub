@@ -21,6 +21,7 @@ keywords:
   - what to say at the school book fair
   - coinless book fair change
 related:
+  - the-card-is-the-gift
   - the-47-dollar-grocery-week
   - talking-to-kids-about-money
   - school-supply-list
@@ -106,6 +107,8 @@ If you do go at night, bring the same number. A family night is how a $20 cap be
 ## If your fair already happened
 
 Some schools ran the fair last week. The number still matters for the school down the road, and for spring. Write it where you will see it while the flyer is still on the counter. October does not have to teach your kid that every sheet from school is a promise.
+
+The next sheet before break is a teacher thank-you. One card your kid writes, not a tumbler from the ad. That plan is in [the card is the gift](/guides/the-card-is-the-gift).
 
 The [school supply list](/guides/school-supply-list) was the same shape in August. A list with no cap spends the month. A list with a number spends an afternoon.
 

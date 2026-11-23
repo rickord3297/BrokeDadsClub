@@ -21,6 +21,7 @@ keywords:
   - advent calendar on a budget for kids
   - when to start opening an advent calendar
 related:
+  - the-list-is-one-name
   - the-47-dollar-grocery-week
   - the-basket-is-the-dinner
   - the-book-fair-is-one-number
@@ -114,6 +115,8 @@ Pick one:
 - A toy calendar only if it is the gift, and then you do not also buy the chocolate one.
 
 Not two. This is one of those small yeses, and it is optional. The wider pattern is in [the dad tax](/guides/the-dad-tax).
+
+The holiday ad is the same stop in a different aisle. One name, then close the tab. That plan is in [the list is one name](/guides/the-list-is-one-name).
 
 > Say: "One box. I'm not getting both."
 
