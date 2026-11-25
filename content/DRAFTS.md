@@ -8,5 +8,5 @@ Open any file to edit. `status: scheduled` goes live automatically on `published
 
 | Title | Go live | File |
 |-------|---------|------|
-| The car leaves before noon | 2026-11-24 | [the-car-leaves-before-noon.md](guides/the-car-leaves-before-noon.md) |
 | The tree is one price | 2026-11-27 | [the-tree-is-one-price.md](guides/the-tree-is-one-price.md) |
+| The photo is one pose | 2026-11-30 | [the-photo-is-one-pose.md](guides/the-photo-is-one-pose.md) |

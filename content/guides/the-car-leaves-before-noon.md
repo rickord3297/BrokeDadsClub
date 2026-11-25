@@ -10,7 +10,7 @@ category: Time
 readTime: 6 min
 publishedAt: "2026-11-24"
 updatedAt: "2026-11-19"
-status: scheduled
+status: published
 priceYear: 2026
 priceRefreshBy: "2027-10-01"
 keywords:
