@@ -9,7 +9,7 @@ excerpt: >-
 category: Money
 readTime: 6 min
 publishedAt: "2026-10-25"
-updatedAt: "2026-10-19"
+updatedAt: "2026-11-26"
 status: published
 priceYear: 2026
 priceRefreshBy: "2027-09-01"
@@ -21,7 +21,7 @@ keywords:
   - what to say at the school book fair
   - coinless book fair change
 related:
-  - the-47-dollar-grocery-week
+  - the-card-is-the-gift
   - talking-to-kids-about-money
   - school-supply-list
   - the-class-party-signup-is-one-job
@@ -98,6 +98,8 @@ If the kid at the next desk walks out with a stack, that is not a bill. It is so
 A lot of fairs add a family night. Penn Valley's is PJs and Cookie Night on October 22, 6 to 8 p.m., plus a volunteer ask for the shopping shift and the cookies. That is three jobs wearing one flyer.
 
 You already know this move from the [class party signup](/guides/the-class-party-signup-is-one-job). One slot, or a short no. The book budget and the evening are not a package.
+
+The teacher thank-you is a different sheet. One note your kid writes, not a tumbler from the ad. That plan is in [the card is the gift](/guides/the-card-is-the-gift).
 
 > Say: "I can send the envelope. I can't stay for the table."
 

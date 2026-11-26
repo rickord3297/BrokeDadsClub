@@ -25,7 +25,7 @@ related:
   - the-book-fair-is-one-number
   - the-dad-tax
   - talking-to-kids-about-money
-  - the-porch-bowl-is-one-bag
+  - the-tree-is-one-price
 takeaways:
   - A $5 game is the gift. A $128 TV is a second cart
   - Three sale dates still get one name
