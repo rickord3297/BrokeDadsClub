@@ -21,6 +21,7 @@ keywords:
   - how much are thanksgiving plane tickets
   - grandparents fly for thanksgiving instead
 related:
+  - the-car-leaves-before-noon
   - dad-math
   - explaining-we-cant-go
   - the-47-dollar-grocery-week
@@ -92,7 +93,7 @@ If they cannot travel, you are back to four seats or the car. That is a choice. 
 
 AAA listed the national average for regular at **$4.25 a gallon** on October 28, 2026. The figure on the page that day was $4.247. At 25 miles a gallon, every 100 miles of the round trip is 4 gallons, about $17. A 1,000-mile round trip is 40 gallons, about **$170**.
 
-That $170 is gas only. A hotel on the way, tolls, and a drive-through can pass a cheap pair of tickets. Write the miles before you announce the drive. If the map says two days each way, price the beds out loud. If it says one long day, the car is usually the cheaper seat.
+That $170 is gas only. A hotel on the way, tolls, and a drive-through can pass a cheap pair of tickets. Write the miles before you announce the drive. If the map says two days each way, price the beds out loud. If it says one long day, the car is usually the cheaper seat. If the car is the plan, the afternoon is the jam. Sunday, November 29, runs noon to 8 p.m. Leave before 11 a.m. The hours are in [the car leaves before noon](/guides/the-car-leaves-before-noon).
 
 > Say: "We're driving. I wrote the miles down."
 

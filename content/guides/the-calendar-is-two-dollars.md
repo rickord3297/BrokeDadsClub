@@ -21,6 +21,7 @@ keywords:
   - advent calendar on a budget for kids
   - when to start opening an advent calendar
 related:
+  - the-tree-is-one-price
   - the-47-dollar-grocery-week
   - the-basket-is-the-dinner
   - the-book-fair-is-one-number
@@ -121,6 +122,6 @@ These are Aldi Finds, in the store for a short time. Aldi does not restock them 
 
 ## The point
 
-Broke does not mean broken. A countdown can be two dollars of chocolate and a door a day. The LEGO calendar can be loved in somebody else's cart. Yours already has a dinner to cook.
+Broke does not mean broken. A countdown can be two dollars of chocolate and a door a day. The LEGO calendar can be loved in somebody else's cart. The tree is a separate price, one height and one number, in [the tree is one price](/guides/the-tree-is-one-price). Yours already has a dinner to cook.
 
 > Remember: Decide on the calendar before you hit that aisle.

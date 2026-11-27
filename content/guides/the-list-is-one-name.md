@@ -21,6 +21,7 @@ keywords:
   - how much to spend on one christmas toy
   - yahtzee candy land black friday price
 related:
+  - the-tree-is-one-price
   - the-calendar-is-two-dollars
   - the-book-fair-is-one-number
   - the-dad-tax
@@ -123,6 +124,6 @@ If the name they want is past the number on your note, say that. You do not owe 
 
 ## The point
 
-Broke does not mean broken. A $5 game under the tree is a real gift. The second sale is how a list with one name becomes the cart you did not mean to fill.
+Broke does not mean broken. A $5 game under the tree is a real gift. The tree is its own number: one height, one price, in [the tree is one price](/guides/the-tree-is-one-price). The second sale is how a list with one name becomes the cart you did not mean to fill.
 
 > Remember: Write the name, then close the tab.

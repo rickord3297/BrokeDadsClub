@@ -21,6 +21,7 @@ keywords:
   - store bought pie for thanksgiving
   - just bring dessert thanksgiving
 related:
+  - the-car-leaves-before-noon
   - the-dad-tax
   - the-basket-is-the-dinner
   - the-47-dollar-grocery-week
@@ -104,7 +105,7 @@ A cousin will talk about a pie from scratch. You do not owe a speech about money
 
 > To your kid: "We're bringing the pie. That's our part."
 
-If the expensive part is getting there, seats versus the car is a different cut, in [four seats or one car](/guides/four-seats-or-one-car). If you are not going, the short no is in [explaining we can't go](/guides/explaining-we-cant-go). Dessert is not how you make the trip make sense.
+If the expensive part is getting there, seats versus the car is a different cut, in [four seats or one car](/guides/four-seats-or-one-car). If you are driving, the leave time is the other half, in [the car leaves before noon](/guides/the-car-leaves-before-noon). If you are not going, the short no is in [explaining we can't go](/guides/explaining-we-cant-go). Dessert is not how you make the trip make sense.
 
 > To your kid: "Store pie still counts."
 
