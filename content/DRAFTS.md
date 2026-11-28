@@ -8,5 +8,5 @@ Open any file to edit. `status: scheduled` goes live automatically on `published
 
 | Title | Go live | File |
 |-------|---------|------|
-| The tree is one price | 2026-11-27 | [the-tree-is-one-price.md](guides/the-tree-is-one-price.md) |
 | The photo is one pose | 2026-11-30 | [the-photo-is-one-pose.md](guides/the-photo-is-one-pose.md) |
+| The label is one date | 2026-12-03 | [the-label-is-one-date.md](guides/the-label-is-one-date.md) |

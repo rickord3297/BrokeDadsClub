@@ -112,6 +112,7 @@ const RELATED_HOOKS: Record<string, string> = {
   "the-car-leaves-before-noon": "If the Thanksgiving drive wants a 3 p.m. start",
   "the-tree-is-one-price": "If the lot wants a taller tree than the stand",
   "the-photo-is-one-pose": "If the Santa line wants a photo package",
+  "the-label-is-one-date": "If the counter wants Express for a gift that can wait",
 };
 
 export function relatedGuideHook(slug: string, category: string): string {
