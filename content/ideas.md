@@ -69,8 +69,9 @@
 | The list is one name | live | 2026-11-18 | trend 2026-11-13: Walmart three events Nov 12-Dec 2, $5 game vs $128 TV: [`the-list-is-one-name.md`](guides/the-list-is-one-name.md) |
 | The card is the gift | live | 2026-11-21 | trend 2026-11-16: USA Today teacher gifts $15 to $30, DoorDash from $5, one card before break: [`the-card-is-the-gift.md`](guides/the-card-is-the-gift.md) |
 | The car leaves before noon | live | 2026-11-24 | trend 2026-11-19: AAA Nov 16, INRIX Tuesday before 1 p.m. and Wednesday before noon: [`the-car-leaves-before-noon.md`](guides/the-car-leaves-before-noon.md) |
-| The tree is one price | scheduled | 2026-11-27 | trend 2026-11-22: Home Depot $49.98 pre-lit ended Nov 25, one height and one price: [`the-tree-is-one-price.md`](guides/the-tree-is-one-price.md) |
+| The tree is one price | live | 2026-11-27 | trend 2026-11-22: Home Depot $49.98 pre-lit ended Nov 25, one height and one price: [`the-tree-is-one-price.md`](guides/the-tree-is-one-price.md) |
 | The photo is one pose | scheduled | 2026-11-30 | trend 2026-11-25: Holyoke visit free, packages from $44.99, no phone photos; Montgomery one digital $24.95: [`the-photo-is-one-pose.md`](guides/the-photo-is-one-pose.md) |
+| The label is one date | scheduled | 2026-12-03 | trend 2026-11-28: USPS holiday page, overseas and military December 9, lower 48 Ground Advantage December 17: [`the-label-is-one-date.md`](guides/the-label-is-one-date.md) |
 
 ### Status
 
