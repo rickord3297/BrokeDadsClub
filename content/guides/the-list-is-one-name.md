@@ -9,7 +9,7 @@ excerpt: >-
 category: Money
 readTime: 6 min
 publishedAt: "2026-11-18"
-updatedAt: "2026-11-13"
+updatedAt: "2026-11-28"
 status: published
 priceYear: 2026
 priceRefreshBy: "2027-10-01"
@@ -21,6 +21,8 @@ keywords:
   - how much to spend on one christmas toy
   - yahtzee candy land black friday price
 related:
+  - the-tree-is-one-price
+  - the-card-is-the-gift
   - the-calendar-is-two-dollars
   - the-book-fair-is-one-number
   - the-dad-tax
@@ -105,7 +107,7 @@ The ad is a menu. You are not taking the whole menu home.
 
 > To your kid: "Pick one. We'll get that one."
 
-If the name they want is past the number on your note, say that. You do not owe a speech about three sale dates. The longer version is in [talking to kids about money](/guides/talking-to-kids-about-money). Same shape as [the book fair is one number](/guides/the-book-fair-is-one-number) and [the calendar is two dollars](/guides/the-calendar-is-two-dollars). This one is the sale.
+If the name they want is past the number on your note, say that. You do not owe a speech about three sale dates. The longer version is in [talking to kids about money](/guides/talking-to-kids-about-money). Same shape as [the book fair is one number](/guides/the-book-fair-is-one-number) and [the calendar is two dollars](/guides/the-calendar-is-two-dollars). This one is the sale. A teacher thank-you is not this cart. The note your kid writes is the gift in [the card is the gift](/guides/the-card-is-the-gift). The tree lot is a different trip. One height and one price is in [the tree is one price](/guides/the-tree-is-one-price).
 
 > To your kid: "That one's past the number."
 

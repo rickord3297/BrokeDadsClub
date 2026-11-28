@@ -9,7 +9,7 @@ excerpt: >-
 category: Money
 readTime: 6 min
 publishedAt: "2026-11-27"
-updatedAt: "2026-11-22"
+updatedAt: "2026-11-28"
 status: scheduled
 priceYear: 2026
 priceRefreshBy: "2027-10-01"
@@ -22,8 +22,8 @@ keywords:
   - flat price tree vs per foot farm
 related:
   - the-list-is-one-name
+  - the-photo-is-one-pose
   - the-dad-tax
-  - explaining-we-cant-go
   - the-calendar-is-two-dollars
   - the-book-fair-is-one-number
 takeaways:
